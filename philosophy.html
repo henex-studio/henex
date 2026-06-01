@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HENEX is Cafe Yi's practice-based design framework for reading relationships, locating relational needs and turning them into method recipes across services, digital products and built environments.">
+  <title>Philosophy | HENEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/icons/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="assets/icons/favicon-dark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+  <link rel="stylesheet" href="assets/css/philosophy.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body class="page-philosophy">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-brand" href="index.html" aria-label="Cafe Yi home">HENEX</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+        <a href="about.html">About</a>
+        <a href="philosophy.html" aria-current="page">Philosophy</a>
+        <a href="works.html">Works</a>
+        <a href="lab.html">Lab</a>
+        <a class="site-nav__cta" href="mailto:cafeyee@gmail.com">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <img class="theme-icon theme-icon--sun" src="assets/icons/ui/icon-sun.svg" alt="" aria-hidden="true">
+          <img class="theme-icon theme-icon--moon" src="assets/icons/ui/icon-moon.svg" alt="" aria-hidden="true">
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="philosophy-hero section-pad" aria-labelledby="philosophy-hero-title">
+      <div class="container philosophy-hero__grid">
+        <div class="philosophy-hero__content">
+          <p class="section-kicker">Philosophy</p>
+          <h1 id="philosophy-hero-title">A framework distilled from practice.</h1>
+          <p class="lead philosophy-hero__lead">HENEX is my working framework for reading and shaping design relationships across services, digital products and built environments.</p>
+          <p class="philosophy-hero__summary">It helps me move from observation to method, and from method to work that can be tested, delivered and used.</p>
+          <div class="button-row">
+            <a class="button button--hero-primary" href="#framework">Explore the framework</a>
+            <a class="button button--hero-outline" href="works.html">View Works</a>
+          </div>
+        </div>
+        <div class="philosophy-hero__visual" aria-hidden="true">
+          <div class="hero-logo-wrap">
+            <svg class="hero-henex-logo" viewBox="0 0 214 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<path d="M162.684 83.27C187.712 97.563 199.523 127.16 191.532 154.647C194.452 143.564 191.29 131.778 183.189 123.664C176.032 116.496 167.887 110.361 158.995 105.457C160.861 98.2006 162.091 90.7903 162.684 83.27Z" fill="url(#paint0_linear_4210_6174_1)"/>
+<path d="M141.629 75.376C141.497 82.6543 140.619 89.8888 139.039 96.9473C117.786 90.3066 95.4586 90.5484 74.953 96.9473C68.0593 99.0802 61.3631 101.939 54.9963 105.457C46.2364 110.273 38.0693 116.386 30.8023 123.664C18.9029 135.582 18.2882 154.537 29.002 167.18C29.5729 167.862 30.1656 168.5 30.8023 169.137C50.5615 189.873 82.0883 194.447 107.007 179.868C94.9098 188.18 81.5174 194.359 67.3567 198.163C48.8929 203.111 29.1777 197.833 15.6756 184.288C-5.2252 163.376 -5.2252 129.447 15.6756 108.514C26.1918 97.9807 38.2888 89.5149 51.3079 83.27C58.0919 80.0376 65.1174 77.377 72.3404 75.376C94.6243 69.153 118.555 68.9332 141.629 75.376Z" fill="url(#paint1_linear_4210_6174_1)"/>
+<path d="M141.629 75.376C141.849 65.3489 140.663 55.2339 138.007 45.2729C133.66 29.0009 117.567 18.9959 101.298 21.9644C100.442 22.0964 99.5641 22.2943 98.6859 22.5361C98.6639 22.5581 98.62 22.5581 98.5981 22.5581C70.8255 29.3748 51.1761 54.3984 51.3078 83.2701C50.1662 68.6253 51.5274 53.9146 55.3255 39.7316C60.2653 21.2388 74.6895 6.79195 93.1533 1.8444C121.694 -5.8298 151.026 11.1458 158.688 39.7316C162.552 54.1345 163.825 68.8672 162.684 83.2701C162.091 90.7903 160.861 98.2007 158.995 105.457C153.221 127.908 141.453 148.776 124.351 165.575C118.116 161.815 112.32 157.417 107.007 152.514C123.363 137.385 134.296 117.925 139.038 96.9473C140.619 89.8888 141.497 82.6544 141.629 75.376Z" fill="url(#paint2_linear_4210_6174_1)"/>
+<path d="M89.6625 165.575C94.9975 170.831 100.815 175.624 107.007 179.868C82.0882 194.447 50.5614 189.873 30.8022 169.137C38.9035 177.251 50.737 180.44 61.8021 177.449C71.5939 174.833 80.9685 170.831 89.6625 165.575Z" fill="url(#paint3_linear_4210_6174_1)"/>
+<path d="M198.338 108.514C211.84 122.059 217.131 141.783 212.169 160.276C204.529 188.862 175.198 205.815 146.657 198.163C132.276 194.293 118.906 188.048 107.007 179.868C100.815 175.624 94.9974 170.831 89.6625 165.575C73.1307 149.347 60.9678 128.7 54.9962 105.457C61.363 101.939 68.0591 99.0802 74.9529 96.9472C79.8488 118.694 91.2212 137.935 107.007 152.514C112.32 157.417 118.116 161.815 124.351 165.575C132.913 170.743 142.244 174.789 152.189 177.449C168.458 181.825 185.165 172.876 190.719 157.263C190.719 157.175 190.785 157.087 190.807 156.999C191.071 156.274 191.29 155.548 191.488 154.801C191.51 154.735 191.532 154.691 191.532 154.647C199.523 127.16 187.712 97.5629 162.683 83.27C175.922 89.6029 187.975 98.1346 198.338 108.514Z" fill="url(#paint4_linear_4210_6174_1)"/>
+<path d="M98.598 22.5581C87.5768 25.5486 78.9706 34.1903 75.9848 45.2728C73.3722 55.08 72.1427 65.217 72.3403 75.3759C65.1172 77.3769 58.0918 80.0376 51.3078 83.27C51.1761 54.3983 70.8254 29.3747 98.598 22.5581Z" fill="url(#paint5_linear_4210_6174_1)"/>
+<defs>
+<linearGradient id="paint0_linear_4210_6174_1" x1="43.71" y1="142.373" x2="197.993" y2="104.044" gradientUnits="userSpaceOnUse"><stop stop-color="#31BB8E"/><stop offset="1" stop-color="#A2FFE1"/></linearGradient>
+<linearGradient id="paint1_linear_4210_6174_1" x1="43.71" y1="142.373" x2="197.993" y2="104.044" gradientUnits="userSpaceOnUse"><stop stop-color="#31BB8E"/><stop offset="1" stop-color="#A2FFE1"/></linearGradient>
+<linearGradient id="paint2_linear_4210_6174_1" x1="136.603" y1="68.4285" x2="90.7927" y2="177.943" gradientUnits="userSpaceOnUse"><stop stop-color="#3C8CF4"/><stop offset="1" stop-color="#AFD1FF"/></linearGradient>
+<linearGradient id="paint3_linear_4210_6174_1" x1="136.603" y1="68.4285" x2="90.7927" y2="177.943" gradientUnits="userSpaceOnUse"><stop stop-color="#3C8CF4"/><stop offset="1" stop-color="#AFD1FF"/></linearGradient>
+<linearGradient id="paint4_linear_4210_6174_1" x1="159.627" y1="146.661" x2="6.58235" y2="52.6293" gradientUnits="userSpaceOnUse"><stop stop-color="#FF5688"/><stop offset="0.826923" stop-color="#FFD9E4"/></linearGradient>
+<linearGradient id="paint5_linear_4210_6174_1" x1="159.627" y1="146.661" x2="6.58235" y2="52.6293" gradientUnits="userSpaceOnUse"><stop stop-color="#FF5688"/><stop offset="0.826923" stop-color="#FFD9E4"/></linearGradient>
+</defs></svg>
+          </div>
+          <p class="hero-formula">(Human + Emotion + Nature) × Nexus = Experience</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="relational-section section-pad" aria-labelledby="relational-title">
+      <div class="container">
+        <div class="section-header section-header--spacious philosophy-section-header">
+          <p class="section-kicker">Core idea</p>
+          <h2 id="relational-title">Design as relational work.</h2>
+          <p>HENEX helps me read how relationships work, locate where relationships need support, and reorganise them into more coherent, meaningful and usable experiences.</p>
+        </div>
+        <div class="relational-cards" aria-label="Relational condition examples">
+          <article class="relational-card relational-card--service">
+            <div class="lucide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 7h10a3 3 0 0 1 3 3v9"/><path d="M8 19h12"/><path d="M17 10h3"/></svg></div>
+            <h3>Services</h3>
+            <p>People may need a clearer path, stronger trust or better support to move forward.</p>
+          </article>
+          <article class="relational-card relational-card--digital">
+            <div class="lucide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></div>
+            <h3>Digital products</h3>
+            <p>Interfaces may need better feedback, guidance and structure for confident action.</p>
+          </article>
+          <article class="relational-card relational-card--built">
+            <div class="lucide-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-7h6v7"/><path d="M9 10h.01"/><path d="M15 10h.01"/></svg></div>
+            <h3>Built environments</h3>
+            <p>Movement, material and context may need to work together to support public experience.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="dimension-section section-pad" id="framework" aria-labelledby="dimension-title">
+      <div class="container">
+        <div class="section-header section-header--spacious philosophy-section-header">
+          <p class="section-kicker">Framework structure</p>
+          <h2 id="dimension-title">Three dimensions of every design relationship.</h2>
+          <p>HENEX reads design relationships through three dimensions: Human, Emotion and Nature. The three dimensions work together to describe who is involved, what is felt, and where the experience happens.</p>
+        </div>
+        <div class="dimension-grid">
+          <article class="dimension-card dimension-card--human" id="human">
+            <div class="dimension-card__icon"><img src="assets/icons/henex/dimension-human.svg" alt="" aria-hidden="true" loading="lazy"></div>
+            <div class="dimension-card__body"><p class="dimension-card__label">Human</p><h3>People within a design relationship.</h3><p>Identity, perception and agency describe who is involved, how people understand and how people act.</p><ul class="node-chip-list" aria-label="Human nodes"><li>Identity</li><li>Perception</li><li>Agency</li></ul></div>
+          </article>
+          <article class="dimension-card dimension-card--emotion" id="emotion">
+            <div class="dimension-card__icon"><img src="assets/icons/henex/dimension-emotion.svg" alt="" aria-hidden="true" loading="lazy"></div>
+            <div class="dimension-card__body"><p class="dimension-card__label">Emotion</p><h3>The felt quality of experience.</h3><p>Affect, empathy and meaning describe what is felt, where support is needed and what gives the experience value.</p><ul class="node-chip-list" aria-label="Emotion nodes"><li>Affect</li><li>Empathy</li><li>Meaning</li></ul></div>
+          </article>
+          <article class="dimension-card dimension-card--nature" id="nature">
+            <div class="dimension-card__icon"><img src="assets/icons/henex/dimension-nature.svg" alt="" aria-hidden="true" loading="lazy"></div>
+            <div class="dimension-card__body"><p class="dimension-card__label">Nature</p><h3>The carrier where experience happens.</h3><p>Medium, matter and interface describe what carries the relationship and where interaction takes place.</p><ul class="node-chip-list" aria-label="Nature nodes"><li>Medium</li><li>Matter</li><li>Interface</li></ul></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="node-section section-pad" aria-labelledby="node-title">
+      <div class="container">
+        <div class="section-header section-header--spacious philosophy-section-header">
+          <p class="section-kicker">Nodes</p>
+          <h2 id="node-title">Nine nodes for locating relational needs.</h2>
+          <p>Each node points to a place where a design relationship may need attention. A node helps locate what needs to be understood, supported or reorganised.</p>
+        </div>
+        <div class="node-grid node-grid--all">
+            <article class="node-card node-card--human" data-dimension="human">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-identity.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Human node</p>
+                <h4>Identity</h4>
+                <p>Culture, role, belonging and self understanding.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--human" data-dimension="human">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-perception.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Human node</p>
+                <h4>Perception</h4>
+                <p>How people read, sense and understand information or environments.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--human" data-dimension="human">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-agency.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Human node</p>
+                <h4>Agency</h4>
+                <p>The ability to choose, act and influence outcomes.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--emotion" data-dimension="emotion">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-affect.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Emotion node</p>
+                <h4>Affect</h4>
+                <p>The immediate tone or felt quality of an experience.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--emotion" data-dimension="emotion">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-empathy.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Emotion node</p>
+                <h4>Empathy</h4>
+                <p>Recognition of context, needs and support.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--emotion" data-dimension="emotion">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-meaning.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Emotion node</p>
+                <h4>Meaning</h4>
+                <p>Memory, value, story and purpose.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--nature" data-dimension="nature">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-medium.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Nature node</p>
+                <h4>Medium</h4>
+                <p>The physical or digital carrier where experience happens.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--nature" data-dimension="nature">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-matter.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Nature node</p>
+                <h4>Matter</h4>
+                <p>Material, form, texture, durability and physical quality.</p>
+              </div>
+            </article>
+            <article class="node-card node-card--nature" data-dimension="nature">
+              <div class="node-card__visual">
+                <img src="assets/icons/henex/node-interface.svg" alt="" aria-hidden="true" loading="lazy">
+              </div>
+              <div class="node-card__body">
+                <p class="node-card__label">Nature node</p>
+                <h4>Interface</h4>
+                <p>The touchpoint, page, screen or boundary where people interact with a system.</p>
+              </div>
+            </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="recipe-section section-pad" id="recipes" aria-labelledby="recipe-title">
+      <div class="container">
+        <div class="section-header section-header--spacious philosophy-section-header">
+          <p class="section-kicker">Method logic</p>
+          <h2 id="recipe-title">From node relationships to recipes.</h2>
+          <p>A recipe brings three nodes together, one from each dimension, to describe a fuller design situation. It is a practical method for reading and reorganising a specific relationship through design.</p>
+        </div>
+        <div class="recipe-formation">
+          <div class="recipe-equation" aria-label="Recipe formation example">
+            <div class="recipe-equation__node recipe-equation__node--human"><span>Human</span><strong>Agency</strong></div>
+            <span class="recipe-equation__symbol" aria-hidden="true">+</span>
+            <div class="recipe-equation__node recipe-equation__node--emotion"><span>Emotion</span><strong>Empathy</strong></div>
+            <span class="recipe-equation__symbol" aria-hidden="true">+</span>
+            <div class="recipe-equation__node recipe-equation__node--nature"><span>Nature</span><strong>Interface</strong></div>
+            <span class="recipe-equation__symbol recipe-equation__symbol--equals" aria-hidden="true">=</span>
+            <article class="featured-recipe"><p class="recipe-id">R24</p><h3>Trust &amp; Cooperation Rules</h3><p class="recipe-triad"><span>Agency</span><span>Empathy</span><span>Interface</span></p><p>Build trust mechanisms for safe participation and exchange.</p><p class="recipe-when">Use when people need to act with confidence inside a marketplace, support system or collaborative service.</p></article>
+          </div>
+        </div>
+        <div class="recipe-library" aria-labelledby="recipe-library-heading">
+          <div class="section-header section-header--spacious philosophy-section-header philosophy-section-header--compact"><p class="section-kicker">Recipe library</p><h3 id="recipe-library-heading">A library of 27 method recipes.</h3><p>The compact cards below show the full method system. A future detail page may expand each recipe for deeper exploration.</p></div>
+          <div class="recipe-grid">
+            <article class="recipe-card" id="r01" data-recipe="r01" data-human="identity" data-emotion="affect" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R01</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Identity Toneboard</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Affect</span><span>Medium</span></p>
+              <p>Set the emotional tone and channel mix for a specific community so the experience feels immediately welcoming.</p>
+            </article>
+
+            <article class="recipe-card" id="r02" data-recipe="r02" data-human="identity" data-emotion="affect" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R02</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Atmosphere Palette</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Affect</span><span>Matter</span></p>
+              <p>Translate identity into material, texture, and light choices to create a coherent sense of place and feel.</p>
+            </article>
+
+            <article class="recipe-card" id="r03" data-recipe="r03" data-human="identity" data-emotion="affect" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R03</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Brand Personality UI</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Affect</span><span>Interface</span></p>
+              <p>Define a consistent UI personality through color, motion, and microcopy cadence for cohesive digital experiences.</p>
+            </article>
+
+            <article class="recipe-card" id="r04" data-recipe="r04" data-human="identity" data-emotion="empathy" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R04</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Lived Story Capture</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Empathy</span><span>Medium</span></p>
+              <p>Collect and share real stories to represent people accurately and avoid stereotype-driven design.</p>
+            </article>
+
+            <article class="recipe-card" id="r05" data-recipe="r05" data-human="identity" data-emotion="empathy" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R05</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Belonging Artifacts Walk</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Empathy</span><span>Matter</span></p>
+              <p>Use objects and places people care about to uncover identity, belonging, and cultural context.</p>
+            </article>
+
+            <article class="recipe-card" id="r06" data-recipe="r06" data-human="identity" data-emotion="empathy" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R06</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Inclusive Onboarding Paths</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Empathy</span><span>Interface</span></p>
+              <p>Design onboarding and flows that adapt to language, ability, and cultural context to reduce exclusion.</p>
+            </article>
+
+            <article class="recipe-card" id="r07" data-recipe="r07" data-human="identity" data-emotion="meaning" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R07</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Purpose Story Script</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Meaning</span><span>Medium</span></p>
+              <p>Explain purpose clearly and memorably by scripting the “why” in plain language and narrative beats.</p>
+            </article>
+
+            <article class="recipe-card" id="r08" data-recipe="r08" data-human="identity" data-emotion="meaning" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R08</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Ritual Moments Plan</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Meaning</span><span>Matter</span></p>
+              <p>Design repeatable moments (arrival, transition, repair, celebration) that build belonging and habits.</p>
+            </article>
+
+            <article class="recipe-card" id="r09" data-recipe="r09" data-human="identity" data-emotion="meaning" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R09</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Mission-First Navigation</h4>
+              <p class="recipe-triad"><span>Identity</span><span>Meaning</span><span>Interface</span></p>
+              <p>Structure IA around user goals and identity needs rather than features to increase relevance.</p>
+            </article>
+
+            <article class="recipe-card" id="r10" data-recipe="r10" data-human="perception" data-emotion="affect" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R10</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Attention Pacing Map</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Affect</span><span>Medium</span></p>
+              <p>Guide attention with pacing, contrast, and breathing room so users don’t skim or drop off.</p>
+            </article>
+
+            <article class="recipe-card" id="r11" data-recipe="r11" data-human="perception" data-emotion="affect" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R11</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Sensory Wayfinding Map</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Affect</span><span>Matter</span></p>
+              <p>Use sensory cues (light, sound, texture) to make wayfinding feel intuitive across space and screens.</p>
+            </article>
+
+            <article class="recipe-card" id="r12" data-recipe="r12" data-human="perception" data-emotion="affect" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R12</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Calm Clarity Tuning</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Affect</span><span>Interface</span></p>
+              <p>Reduce cognitive load with hierarchy, contrast, and feedback that stays legible under stress.</p>
+            </article>
+
+            <article class="recipe-card" id="r13" data-recipe="r13" data-human="perception" data-emotion="empathy" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R13</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Multiple Viewpoint Story</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Empathy</span><span>Medium</span></p>
+              <p>Reframe information through multiple viewpoints to reveal gaps and reduce bias in decisions.</p>
+            </article>
+
+            <article class="recipe-card" id="r14" data-recipe="r14" data-human="perception" data-emotion="empathy" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R14</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Accessibility Walkthrough</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Empathy</span><span>Matter</span></p>
+              <p>Simulate constraints to expose hidden barriers and validate inclusive design choices.</p>
+            </article>
+
+            <article class="recipe-card" id="r15" data-recipe="r15" data-human="perception" data-emotion="empathy" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R15</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Clarity &amp; Accessibility Audit</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Empathy</span><span>Interface</span></p>
+              <p>Audit readability, WCAG, and cognitive load, then convert findings into concrete component fixes.</p>
+            </article>
+
+            <article class="recipe-card" id="r16" data-recipe="r16" data-human="perception" data-emotion="meaning" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R16</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Why-First Data Story</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Meaning</span><span>Medium</span></p>
+              <p>Lead with meaning, then show only the data needed to support it so information feels readable.</p>
+            </article>
+
+            <article class="recipe-card" id="r17" data-recipe="r17" data-human="perception" data-emotion="meaning" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R17</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Make It Tangible Model</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Meaning</span><span>Matter</span></p>
+              <p>Use physical/visual models to make abstract systems concrete and easier to remember.</p>
+            </article>
+
+            <article class="recipe-card" id="r18" data-recipe="r18" data-human="perception" data-emotion="meaning" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R18</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Step-by-Step Path Design</h4>
+              <p class="recipe-triad"><span>Perception</span><span>Meaning</span><span>Interface</span></p>
+              <p>Arrange tasks in the order people think: understand → decide → act to reduce drop-off.</p>
+            </article>
+
+            <article class="recipe-card" id="r19" data-recipe="r19" data-human="agency" data-emotion="affect" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R19</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Quick Motivation Prompts</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Affect</span><span>Medium</span></p>
+              <p>Use short, timely prompts to trigger action in the moment across digital and physical touchpoints.</p>
+            </article>
+
+            <article class="recipe-card" id="r20" data-recipe="r20" data-human="agency" data-emotion="affect" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R20</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Starter Tools Kit</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Affect</span><span>Matter</span></p>
+              <p>Provide tools, materials access, and simple guides to remove friction and help people begin.</p>
+            </article>
+
+            <article class="recipe-card" id="r21" data-recipe="r21" data-human="agency" data-emotion="affect" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R21</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Small-Step Actions</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Affect</span><span>Interface</span></p>
+              <p>Break complex behavior into tiny steps (save, remind, template) that users can complete easily.</p>
+            </article>
+
+            <article class="recipe-card" id="r22" data-recipe="r22" data-human="agency" data-emotion="empathy" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R22</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Peer Momentum Sharing</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Empathy</span><span>Medium</span></p>
+              <p>Leverage social proof and sharing to normalize action and sustain motivation.</p>
+            </article>
+
+            <article class="recipe-card" id="r23" data-recipe="r23" data-human="agency" data-emotion="empathy" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R23</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Community Workbench</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Empathy</span><span>Matter</span></p>
+              <p>Create shared spaces/resources so people can act together instead of feeling isolated.</p>
+            </article>
+
+            <article class="recipe-card" id="r24" data-recipe="r24" data-human="agency" data-emotion="empathy" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R24</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Trust &amp; Cooperation Rules</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Empathy</span><span>Interface</span></p>
+              <p>Build trust mechanisms and collaboration norms for safe, reliable exchange and participation.</p>
+            </article>
+
+            <article class="recipe-card" id="r25" data-recipe="r25" data-human="agency" data-emotion="meaning" data-nature="medium">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R25</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Impact Story Chain</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Meaning</span><span>Medium</span></p>
+              <p>Link personal actions to community and intergenerational meaning to strengthen motivation.</p>
+            </article>
+
+            <article class="recipe-card" id="r26" data-recipe="r26" data-human="agency" data-emotion="meaning" data-nature="matter">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R26</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Visible Circular Loop</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Meaning</span><span>Matter</span></p>
+              <p>Make the reuse/repair/exchange loop visible with clear touchpoints and feedback.</p>
+            </article>
+
+            <article class="recipe-card" id="r27" data-recipe="r27" data-human="agency" data-emotion="meaning" data-nature="interface">
+              <div class="recipe-card__top">
+                <p class="recipe-id">R27</p>
+                <div class="recipe-card__markers" aria-hidden="true">
+                  <span class="marker marker--human"></span>
+                  <span class="marker marker--emotion"></span>
+                  <span class="marker marker--nature"></span>
+                </div>
+              </div>
+              <h4>Impact Dashboard</h4>
+              <p class="recipe-triad"><span>Agency</span><span>Meaning</span><span>Interface</span></p>
+              <p>Show personal and collective impact with progress and milestones to reinforce self-efficacy.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="practice-section section-pad" aria-labelledby="practice-title">
+      <div class="container">
+        <div class="section-header section-header--spacious philosophy-section-header"><p class="section-kicker">Selected work</p><h2 id="practice-title">How recipes return to practice.</h2><p>Selected projects show how HENEX moves from framework to work. Each case may use one primary recipe and several supporting recipes.</p></div>
+        <div class="practice-grid">
+          <article class="practice-card"><a class="practice-card__media" href="works/victim-hub.html"><img src="assets/img/projects/vth/vth-home.webp" alt="Victim Hub project preview" loading="lazy"></a><div class="practice-card__body"><p class="practice-card__type">Public sector digital service</p><h3>NZ Police Victim Hub</h3><div class="practice-card__recipe"><span>Primary</span><strong>R24 · Trust &amp; Cooperation Rules</strong></div><ul class="supporting-recipes"><li>R18 Step by Step Path Design</li><li>R15 Clarity &amp; Accessibility Audit</li><li>R04 Lived Story Capture</li></ul><p>This project can be read through trust, support and safe action. HENEX helps connect the service pathway, user confidence and implementation handover.</p><a class="button button--soft" href="works/victim-hub.html">View project</a></div></article>
+          <article class="practice-card"><a class="practice-card__media" href="works/accessibility-support-hub.html"><img src="assets/img/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview" loading="lazy"></a><div class="practice-card__body"><p class="practice-card__type">Accessibility focused service prototype</p><h3>Accessibility Support Hub</h3><div class="practice-card__recipe"><span>Primary</span><strong>R15 · Clarity &amp; Accessibility Audit</strong></div><ul class="supporting-recipes"><li>R14 Accessibility Walkthrough</li><li>R06 Inclusive Onboarding Paths</li><li>R18 Step by Step Path Design</li></ul><p>This project can be read through support pathways and interface clarity. HENEX helps connect accessibility barriers, service flow and prototype evidence.</p><a class="button button--soft" href="works/accessibility-support-hub.html">View project</a></div></article>
+          <article class="practice-card"><a class="practice-card__media" href="works/new-world-design-system.html"><img src="assets/img/projects/nds/nds-home.webp" alt="New World Design System project preview" loading="lazy"></a><div class="practice-card__body"><p class="practice-card__type">Design system audit and rebuild</p><h3>New World Design System</h3><div class="practice-card__recipe"><span>Primary</span><strong>R12 · Calm Clarity Tuning</strong></div><ul class="supporting-recipes"><li>R03 Personality System UI</li><li>R15 Clarity &amp; Accessibility Audit</li><li>R09 Mission First Navigation</li></ul><p>This project can be read through clarity, consistency and interface tone. HENEX helps connect component behaviour, accessibility and system coherence.</p><a class="button button--soft" href="works/new-world-design-system.html">View project</a></div></article>
+          <article class="practice-card"><a class="practice-card__media" href="works/guangzhou-baiyun-t2.html"><img src="assets/img/projects/bt2/bt2-home.webp" alt="Guangzhou Baiyun International Airport Terminal 2 project preview" loading="lazy"></a><div class="practice-card__body"><p class="practice-card__type">Transport environment and built environment</p><h3>Guangzhou Baiyun T2</h3><div class="practice-card__recipe"><span>Primary</span><strong>R11 · Sensory Wayfinding Map</strong></div><ul class="supporting-recipes"><li>R14 Accessibility Walkthrough</li><li>R17 Tangible Meaning Model</li><li>R02 Atmosphere Palette</li></ul><p>This project can be read through spatial perception, material systems and operational context. HENEX keeps the case grounded in spatial thinking rather than forcing it into digital UX language.</p><a class="button button--soft" href="works/guangzhou-baiyun-t2.html">View project</a></div></article>
+        </div>
+        <div class="practice-note"><p>If you want to see how these recipes appear inside project work, start with the selected works page and open the relevant case studies.</p><a class="button button--primary" href="works.html">View Works</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-intro">
+        <h2>Cafe Yi</h2>
+        <p>Creating evidence-informed design work across public services, digital products and built environments.</p>
+        <a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a>
+      </div>
+      <div class="footer-column">
+        <h3>Social</h3>
+        <a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a>
+        <a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a>
+      </div>
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="about.html">About</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="works.html">Works</a>
+        <a href="lab.html">Lab</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div>
+  </footer>
+
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top"><img src="assets/icons/ui/icon-arrow-up.svg" alt="" aria-hidden="true"></button>
+</body>
+</html>
