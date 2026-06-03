@@ -307,3 +307,232 @@
   .hero-logo { width: min(300px, 86%); }
   .henex-formula { white-space: normal; }
 }
+
+/* HENEX selected work project cards update 2026-06-03
+   Scope: Philosophy page Selected work section only.
+   Purpose: implement the confirmed Project Card Mood v6 Option E1 with three lighter project cards, inline recipe titles, node labels and soft gradient card backgrounds.
+*/
+.practice-section .practice-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.practice-card--recipe-link {
+  --project-soft-a: var(--philosophy-human);
+  --project-soft-b: var(--philosophy-nature);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--project-soft-a) 8%, var(--theme-surface)) 0%, var(--theme-surface) 54%, color-mix(in srgb, var(--project-soft-b) 6%, var(--theme-surface)) 100%);
+  box-shadow: var(--shadow-card);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.practice-card--service {
+  --project-soft-a: var(--philosophy-human);
+  --project-soft-b: var(--philosophy-nature);
+}
+
+.practice-card--digital {
+  --project-soft-a: var(--philosophy-emotion);
+  --project-soft-b: var(--philosophy-human);
+}
+
+.practice-card--built {
+  --project-soft-a: var(--philosophy-nature);
+  --project-soft-b: var(--philosophy-emotion);
+}
+
+.practice-card--recipe-link:hover,
+.practice-card--recipe-link:focus-within,
+.practice-card--recipe-link:focus-visible {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--philosophy-human) 20%, var(--theme-border));
+  box-shadow: var(--shadow-card-hover);
+  outline: none;
+}
+
+.practice-card--recipe-link .practice-card__media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--theme-surface-soft);
+}
+
+.practice-card--recipe-link .practice-card__media img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.practice-card--recipe-link:hover .practice-card__media img,
+.practice-card--recipe-link:focus-within .practice-card__media img {
+  transform: scale(1.025);
+}
+
+.practice-card--recipe-link .practice-card__body {
+  display: grid;
+  gap: 14px;
+  min-height: 370px;
+  padding: 24px;
+}
+
+.practice-card__topline {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+
+.practice-card__category {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 28px;
+  align-items: center;
+  margin: 0;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--theme-text) 10%, var(--theme-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--theme-surface) 82%, transparent);
+  color: var(--theme-muted);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.practice-card__nodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.practice-card__node {
+  display: inline-flex;
+  min-height: 25px;
+  align-items: center;
+  padding: 3px 8px;
+  border: 1px solid color-mix(in srgb, var(--node-color) 30%, var(--theme-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--node-color) 8%, var(--theme-surface));
+  color: color-mix(in srgb, var(--node-color) 82%, var(--theme-text));
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.practice-card__node--human {
+  --node-color: var(--philosophy-human);
+}
+
+.practice-card__node--emotion {
+  --node-color: var(--philosophy-emotion);
+}
+
+.practice-card__node--nature {
+  --node-color: var(--philosophy-nature);
+}
+
+.practice-card--recipe-link .practice-card__type {
+  margin: 0;
+  color: var(--theme-muted);
+  font-size: 0.7rem;
+  font-weight: 850;
+  letter-spacing: 0.13em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.practice-card--recipe-link h3 {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: clamp(1.24rem, 1.68vw, 1.72rem);
+  line-height: 1.08;
+}
+
+.practice-card__recipe-line {
+  display: grid;
+  gap: 8px;
+}
+
+.practice-card__recipe-line strong {
+  color: var(--theme-text);
+  font-size: 0.96rem;
+  font-weight: 850;
+  line-height: 1.28;
+}
+
+.practice-card__recipe-line strong span {
+  font-weight: 850;
+}
+
+.practice-card__recipe-line p {
+  margin: 0;
+  color: var(--theme-text-soft);
+  font-size: 0.9rem;
+  line-height: 1.46;
+}
+
+.practice-card__cta {
+  display: inline-flex;
+  width: 100%;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--theme-text) 16%, var(--theme-border));
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--theme-surface) 76%, transparent);
+  color: var(--theme-text);
+  font-size: 0.88rem;
+  font-weight: 850;
+  text-decoration: none;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+
+.practice-card__cta:hover,
+.practice-card__cta:focus-visible {
+  background: #151719;
+  border-color: #151719;
+  color: #fff;
+  outline: none;
+}
+
+[data-theme="dark"] .practice-card__cta:hover,
+[data-theme="dark"] .practice-card__cta:focus-visible {
+  background: #fff;
+  border-color: #fff;
+  color: #070809;
+}
+
+@media(max-width:1100px) {
+  .practice-section .practice-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(max-width:720px) {
+  .practice-section .practice-grid {
+    grid-template-columns: 1fr;
+  }
+  .practice-card__topline {
+    grid-template-columns: 1fr;
+  }
+  .practice-card__nodes {
+    justify-content: flex-start;
+  }
+  .practice-card--recipe-link .practice-card__body {
+    min-height: auto;
+  }
+}
