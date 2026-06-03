@@ -755,3 +755,82 @@
     padding: 24px;
   }
 }
+
+
+/* HENEX Home Dimension card surface patch v1
+   Scope: Home page HENEX framework dimension cards only.
+   Intent: keep the existing Home card structure, icon size, title size, spacing and hover.
+   Change only the card surface from a hard icon tint panel to a soft full-card gradient.
+*/
+.page-home .dimension-card--human {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-human) 10%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-human) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card--emotion {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-emotion) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card--nature {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-nature) 10%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-nature) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card__icon {
+  background: transparent;
+}
+
+[data-theme="dark"] .page-home .dimension-card--human {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-human) 18%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-human) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+[data-theme="dark"] .page-home .dimension-card--emotion {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-emotion) 17%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+[data-theme="dark"] .page-home .dimension-card--nature {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-nature) 18%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-nature) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+
+/* HENEX Home Dimension card icon balance patch v1
+   Scope: Home page HENEX framework dimension cards only.
+   Intent: keep the existing card layout and move only the icon artwork slightly down to improve visual balance.
+*/
+.page-home .dimension-card__icon img {
+  transform: translateY(12px);
+}
+
+@media (max-width: 520px) {
+  .page-home .dimension-card__icon img {
+    transform: translateY(8px);
+  }
+}
