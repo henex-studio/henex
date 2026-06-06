@@ -140,6 +140,41 @@
   background: rgba(0, 0, 0, 0.16);
 }
 
+.page-hero--lab {
+  min-height: 560px;
+  background: #FFF7FA;
+  border-bottom: 0;
+}
+.page-hero--lab::before {
+  inset: -18%;
+  background:
+    linear-gradient(125deg, rgba(255, 86, 136, 0.34), transparent 50%),
+    radial-gradient(ellipse at 82% 12%, rgba(255, 86, 136, 0.26), transparent 36%),
+    radial-gradient(ellipse at 16% 84%, rgba(255, 86, 136, 0.13), transparent 42%),
+    #FFF7FA;
+  filter: blur(16px);
+}
+.page-hero--lab::after {
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .page-hero--lab {
+  background: #10060A;
+}
+[data-theme="dark"] .page-hero--lab::before {
+  inset: -18%;
+  background:
+    linear-gradient(125deg, rgba(255, 86, 136, 0.62), transparent 50%),
+    radial-gradient(ellipse at 82% 12%, rgba(255, 86, 136, 0.44), transparent 36%),
+    radial-gradient(ellipse at 18% 78%, rgba(255, 86, 136, 0.18), transparent 40%),
+    #10060A;
+  filter: blur(18px);
+}
+[data-theme="dark"] .page-hero--lab::after {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.16);
+}
+
 .section-header {
   max-width: 980px;
   margin-bottom: 56px;

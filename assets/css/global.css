@@ -93,6 +93,18 @@
   --page-nav-card-border: rgba(49, 187, 142, 0.30);
 }
 
+.page-lab {
+  --page-accent: var(--color-emotion);
+  --page-accent-border: rgba(255, 86, 136, 0.28);
+  --page-nav-card-bg: #FFFFFF;
+  --page-nav-card-border: rgba(255, 86, 136, 0.24);
+}
+[data-theme="dark"] .page-lab {
+  --page-accent-border: rgba(255, 86, 136, 0.34);
+  --page-nav-card-bg: #120A0E;
+  --page-nav-card-border: rgba(255, 86, 136, 0.32);
+}
+
 * {
   box-sizing: border-box;
 }
