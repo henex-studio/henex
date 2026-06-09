@@ -1,0 +1,679 @@
+/* UX system-oriented case study pattern layer.
+   Scope: design system, dashboard system, component library and product system cases.
+   NDS current state: background-image hero, red narrative headings, purple DS artefact headings, muted grey section kickers.
+*/
+
+.ux-case-page--new-world {
+  --case-red: #E11A2C;
+  --case-red-hover: #CB1728;
+  --case-red-muted: #CB1728;
+  --case-red-strong: #B71524;
+  --case-red-soft: #FFF0F1;
+  --nds-purple: #571060;
+  --nds-purple-hover: #460D4D;
+  --nds-purple-soft: #EEE7EF;
+  --nds-ink: #231F20;
+  --ux-theme: var(--case-red);
+  --ux-dark: var(--case-red-strong);
+  --ux-soft: var(--case-red-soft);
+  --ux-pale: #FFF7F7;
+}
+
+.ux-case-page--new-world .ux-hero {
+  background:
+    linear-gradient(90deg, rgba(255,247,247,.98) 0%, rgba(255,247,247,.94) 38%, rgba(255,247,247,.72) 58%, rgba(255,247,247,.20) 100%),
+    url("../img/projects/nds/hero-bg.webp"),
+    radial-gradient(circle at 12% 24%, rgba(225, 26, 44, .16), transparent 34%),
+    linear-gradient(142deg, #FFF7F7, #FFF0F1 52%, var(--theme-bg));
+  background-size: cover, cover, auto, auto;
+  background-position: center center, center right, center, center;
+  background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .ux-case-page--new-world .ux-hero {
+  background:
+    linear-gradient(90deg, rgba(23,7,10,.96) 0%, rgba(23,7,10,.90) 42%, rgba(23,7,10,.58) 68%, rgba(23,7,10,.24) 100%),
+    url("../img/projects/nds/hero-bg.webp"),
+    radial-gradient(circle at 18% 18%, rgba(225, 26, 44, .26), transparent 38%),
+    linear-gradient(135deg, #17070A 0%, #2A070D 48%, #100609 100%);
+  background-size: cover, cover, auto, auto;
+  background-position: center center, center right, center, center;
+  background-repeat: no-repeat;
+}
+
+.ux-case-page--new-world .system-hero {
+  min-height: auto;
+  display: block;
+  overflow: hidden;
+  padding-top: clamp(128px, 14vw, 190px);
+  padding-bottom: clamp(88px, 10vw, 140px);
+}
+
+.ux-case-page--new-world .system-hero__inner {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.ux-case-page--new-world .system-hero__copy {
+  max-width: min(900px, 60vw);
+  margin: 0;
+  padding-top: 0;
+}
+
+/* The old separate hero artwork is hidden. The hero now uses hero-bg.webp as a controlled background layer. */
+.ux-case-page--new-world .system-hero-art {
+  display: none;
+}
+
+.ux-case-page--new-world .ux-hero h1,
+.ux-case-page--new-world .ux-intro h2,
+.ux-case-page--new-world .ux-wide-head h2,
+.ux-case-page--new-world .ux-copy h2,
+.ux-case-page--new-world .ux-copy h3,
+.ux-case-page--new-world .ux-retro h2,
+.ux-case-page--new-world .ux-retro h3 {
+  color: var(--case-red);
+}
+
+.ux-case-page--new-world .ux-hero h1 {
+  white-space: normal;
+}
+
+.ux-case-page--new-world .ux-tags span {
+  border-color: color-mix(in srgb, var(--case-red) 24%, var(--theme-border));
+  color: var(--case-red);
+  background: color-mix(in srgb, var(--case-red) 8%, var(--theme-surface));
+}
+
+.ux-case-page--new-world .ux-kicker,
+.ux-case-page--new-world .ux-intro p,
+.ux-case-page--new-world .ux-recipe-primary span,
+.ux-case-page--new-world .ux-related-card span,
+.ux-case-page--new-world .system-foundation-card > span,
+.ux-case-page--new-world .system-component-demo > span {
+  color: var(--theme-muted);
+}
+
+.ux-case-page--new-world .ux-meta span,
+.ux-case-page--new-world .ux-skills > span,
+.ux-case-page--new-world .ux-lens span {
+  color: var(--case-red);
+}
+
+.ux-case-page--new-world figcaption {
+  color: color-mix(in srgb, var(--case-red) 58%, var(--theme-text-soft));
+}
+
+.ux-case-page--new-world .ux-copy h2 + p,
+.ux-case-page--new-world .ux-wide-head h2 + p {
+  margin-top: 34px;
+}
+
+.system-theme-ds {
+  --section-theme: var(--nds-purple);
+  --section-theme-hover: var(--nds-purple-hover);
+  --section-theme-soft: var(--nds-purple-soft);
+}
+
+.system-theme-ds .ux-wide-head h2,
+.system-theme-ds .ux-intro h2,
+.system-theme-ds .ux-copy h2,
+.system-theme-ds .ux-copy h3,
+.system-theme-ds .system-foundation-card h3,
+.system-theme-ds .system-component-demo h3,
+.system-theme-ds .system-spec-tile b {
+  color: var(--section-theme);
+}
+
+.system-theme-ds figcaption {
+  color: color-mix(in srgb, var(--section-theme) 58%, var(--theme-text-soft));
+}
+
+.system-video .ux-video {
+  background: var(--nds-ink);
+}
+
+.system-video .ux-video-grid > div p:not(.ux-kicker) {
+  margin-top: 34px;
+}
+
+.system-hmw {
+  background:
+    radial-gradient(circle at 18% 24%, rgba(225, 26, 44, .10), transparent 34%),
+    linear-gradient(145deg, var(--case-red-soft), var(--theme-bg) 82%);
+}
+
+.system-hmw__note {
+  max-width: 760px;
+  margin-top: 30px;
+  color: var(--theme-text-soft);
+  font-size: clamp(1.02rem, 1.4vw, 1.22rem);
+  line-height: 1.56;
+}
+
+.system-problem-cards .ux-card span,
+.system-audit-section .ux-card span {
+  color: var(--case-red-muted);
+}
+
+.system-problem-cards .ux-card h3,
+.system-audit-section .ux-card h3,
+.system-principle-card h3 {
+  color: var(--case-red);
+}
+
+.system-solution {
+  background: linear-gradient(145deg, var(--case-red-soft), var(--theme-bg) 86%);
+}
+
+.system-solution__head {
+  max-width: 920px;
+}
+
+.system-solution__head h2 {
+  color: var(--case-red);
+}
+
+.system-solution__head h2 + p {
+  margin-top: 40px;
+}
+
+.system-solution__head p:not(.ux-kicker) {
+  color: var(--theme-text-soft);
+  font-size: clamp(1rem, 1.35vw, 1.18rem);
+  line-height: 1.62;
+}
+
+.system-solution__head p + p {
+  margin-top: 18px;
+}
+
+.system-solution__wide {
+  margin-top: 52px;
+}
+
+.system-solution__figure {
+  width: 100%;
+  margin: 0;
+  padding: clamp(18px, 3vw, 38px);
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--case-red-soft) 78%, var(--theme-surface));
+}
+
+.system-solution__figure img,
+.system-showcase__figure img,
+.system-component-media img,
+.system-evidence-image img,
+.system-detail-gallery img,
+.system-typography-image-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.system-showcase .ux-wide-head {
+  margin-bottom: 40px;
+}
+
+.system-showcase__figure {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.system-showcase__figure img {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--theme-shadow-card);
+}
+
+.system-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.system-feedback-card {
+  min-height: 190px;
+  padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--case-red) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--case-red-soft) 64%, var(--theme-surface));
+  box-shadow: var(--theme-shadow-card);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.system-feedback-card:hover,
+.system-feedback-card:focus-within {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--case-red) 38%, var(--theme-border));
+  box-shadow: var(--theme-shadow-card-hover);
+}
+
+.system-feedback-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  background: var(--case-red);
+}
+
+.system-feedback-icon svg {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+.system-feedback-icon circle,
+.system-feedback-icon path,
+.system-principle-icon path,
+.system-principle-icon circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.system-feedback-icon circle,
+.system-feedback-icon path {
+  stroke: #fff;
+}
+
+.system-feedback-card p {
+  margin: 0;
+  color: var(--theme-text);
+  font-family: var(--font-heading);
+  font-size: clamp(1.04rem, 1.36vw, 1.24rem);
+  line-height: 1.38;
+}
+
+.system-process-section .ux-process span {
+  color: var(--case-red);
+}
+
+.system-findings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 42px 0 52px;
+}
+
+.system-findings-grid article {
+  padding: 20px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--ux-radius);
+  background: var(--theme-surface);
+}
+
+.system-findings-grid span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--nds-purple);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.system-findings-grid p {
+  margin: 0;
+  color: var(--theme-text-soft);
+  font-size: .92rem;
+  line-height: 1.55;
+}
+
+.system-insights-grid .ux-card span {
+  color: var(--case-red-muted);
+}
+
+.system-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.system-principle-card,
+.system-foundation-card,
+.system-component-demo,
+.system-component-scope {
+  border: 1px solid color-mix(in srgb, var(--case-red) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+
+.system-theme-ds .system-foundation-card,
+.system-theme-ds .system-component-demo,
+.system-theme-ds .system-component-scope {
+  border-color: color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
+}
+
+.system-principle-card {
+  padding: 28px;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.system-principle-card:hover,
+.system-principle-card:focus-within {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--case-red) 34%, var(--theme-border));
+  box-shadow: var(--theme-shadow-card-hover);
+}
+
+.system-principle-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: 999px;
+  color: var(--case-red);
+  background: color-mix(in srgb, var(--case-red-soft) 72%, var(--theme-surface));
+}
+
+.system-principle-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.system-principle-card h3,
+.system-foundation-card h3,
+.system-component-demo h3,
+.system-microsite-card h3 {
+  margin-bottom: 14px;
+  font-size: 1.16rem;
+}
+
+.system-principle-card p,
+.system-foundation-card p,
+.system-component-demo p {
+  color: var(--theme-text-soft);
+  font-size: .94rem;
+  line-height: 1.58;
+}
+
+.system-scope-note {
+  max-width: 880px;
+  margin-top: 58px;
+  padding: 26px 0 0;
+  border-top: 1px solid var(--theme-border-soft);
+}
+
+.system-scope-note p {
+  color: var(--theme-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.62;
+}
+
+.system-microsite-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin: 46px 0 46px;
+}
+
+.system-microsite-card {
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+
+.system-microsite-card h3 {
+  color: var(--nds-purple);
+}
+
+.system-microsite-viewport {
+  max-height: 520px;
+  overflow-y: auto;
+  border-radius: var(--ux-radius);
+  border: 1px solid var(--theme-border-soft);
+  background: var(--theme-surface-soft);
+}
+
+.system-microsite-viewport img {
+  width: 100%;
+  display: block;
+}
+
+.system-foundation-stack {
+  display: grid;
+  gap: 38px;
+}
+
+.system-foundation-card {
+  padding: clamp(30px, 4vw, 46px);
+}
+
+.system-swatch-section {
+  margin-top: 30px;
+}
+
+.system-swatch-section h4 {
+  margin-bottom: 14px;
+  color: var(--theme-text);
+  font-size: 1rem;
+}
+
+.system-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.system-swatch-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.system-swatch {
+  min-height: 116px;
+  display: grid;
+  align-content: end;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,.08);
+  color: #fff;
+}
+
+.system-swatch b { font-size: .8rem; }
+.system-swatch strong { color: inherit; font-size: .9rem; }
+.system-swatch small { font-size: .72rem; opacity: .82; }
+.system-swatch--red { background: #E11A2C; }
+.system-swatch--red-light { background: #FCD7D7; color: #231F20; }
+.system-swatch--red-dark { background: #CB1728; }
+.system-swatch--purple { background: #571060; }
+.system-swatch--purple-light { background: #EEE7EF; color: #231F20; }
+.system-swatch--purple-dark { background: #460D4D; }
+.system-swatch--ink { background: #231F20; }
+.system-swatch--white { background: #fff; color: #231F20; }
+.system-swatch--info { background: #004085; }
+.system-swatch--success { background: #155724; }
+.system-swatch--warning { background: #856404; }
+.system-swatch--error { background: #721C24; }
+
+.system-typography-image-grid,
+.system-detail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 30px;
+}
+
+.system-typography-image-grid,
+.system-detail-gallery--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.system-typography-image-grid figure,
+.system-detail-gallery figure,
+.system-evidence-image {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.system-detail-gallery--stacked { grid-template-columns: 1fr; gap: 30px; }
+
+.system-component-scope {
+  padding: clamp(24px, 3.5vw, 36px);
+  margin: 0 0 64px;
+}
+
+.system-component-scope h3 { color: var(--nds-purple); margin-bottom: 14px; }
+.system-component-scope p { max-width: 980px; color: var(--theme-text-soft); font-size: 1.02rem; line-height: 1.66; }
+.system-scope-flow { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.system-scope-flow span { display: inline-flex; align-items: center; min-height: 36px; padding: 0 15px; border-radius: 999px; background: color-mix(in srgb, var(--nds-purple-soft) 72%, var(--theme-surface)); border: 1px solid color-mix(in srgb, var(--nds-purple) 22%, var(--theme-border)); color: var(--nds-purple); font-weight: 850; font-size: .88rem; }
+
+.system-component-stack { display: grid; gap: 86px; }
+.system-component-row { display: grid; grid-template-columns: minmax(260px, .34fr) minmax(0, .66fr); gap: 56px; align-items: start; padding-top: 58px; border-top: 1px solid var(--theme-border-soft); }
+.system-component-demo { padding: clamp(24px, 3vw, 36px); }
+.system-image-demo { padding: 0; border: 0; background: transparent; box-shadow: none; }
+.system-image-demo > span, .system-image-demo > h3, .system-image-demo > p { display: block; }
+.system-evidence-image { margin-top: 34px; }
+.system-evidence-image button { width: 100%; display: block; margin: 0; padding: 0; border: 0; background: transparent; cursor: zoom-in; }
+.system-evidence-image figcaption { margin-top: 16px; }
+
+[data-theme="dark"] .system-solution,
+[data-theme="dark"] .system-hmw { background: linear-gradient(145deg, rgba(225, 26, 44, .12), var(--theme-bg) 84%); }
+[data-theme="dark"] .system-solution__figure,
+[data-theme="dark"] .system-foundation-card,
+[data-theme="dark"] .system-component-demo,
+[data-theme="dark"] .system-principle-card,
+[data-theme="dark"] .system-feedback-card,
+[data-theme="dark"] .system-microsite-card,
+[data-theme="dark"] .system-findings-grid article,
+[data-theme="dark"] .system-component-scope { background: var(--theme-surface); }
+
+@media(max-width:1100px) {
+  .system-feedback-grid,
+  .system-principle-grid,
+  .system-findings-grid,
+  .system-microsite-grid,
+  .system-component-row,
+  .system-detail-gallery,
+  .system-typography-image-grid { grid-template-columns: 1fr; }
+  .system-swatch-grid,
+  .system-swatch-grid--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media(max-width:768px) {
+  .ux-case-page--new-world .system-hero { padding-top: clamp(96px, 16vw, 128px); padding-bottom: clamp(72px, 12vw, 104px); }
+  .ux-case-page--new-world .system-hero__copy { max-width: 100%; }
+  .system-foundation-card,
+  .system-component-demo,
+  .system-feedback-card,
+  .system-principle-card { padding: 22px; }
+  .system-microsite-viewport { max-height: 440px; }
+  .system-swatch-grid,
+  .system-swatch-grid--four { grid-template-columns: 1fr; }
+}
+
+@media(max-width:520px) {
+  .system-microsite-viewport { max-height: 360px; }
+}
+/* NDS principle icon semantic fix
+   Apply at the end of assets/css/ux-system-case.css.
+   This keeps the existing principle card structure and replaces weak placeholder icons with clearer semantic CSS SVG icons.
+*/
+
+.ux-case-page--new-world .system-principle-icon {
+  position: relative;
+  overflow: hidden;
+}
+
+.ux-case-page--new-world .system-principle-icon svg {
+  display: none;
+}
+
+.ux-case-page--new-world .system-principle-icon::before {
+  content: "";
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+}
+
+/* Consistency: repeated aligned units. */
+.ux-case-page--new-world .system-principle-card:nth-child(1) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4' y='5' width='5' height='5' rx='1.2'/%3E%3Crect x='15' y='5' width='5' height='5' rx='1.2'/%3E%3Crect x='9.5' y='14' width='5' height='5' rx='1.2'/%3E%3Cpath d='M9 7.5h6M12 10v4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Clarity: focused target with centre point. */
+.ux-case-page--new-world .system-principle-card:nth-child(2) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='6.5'/%3E%3Ccircle cx='12' cy='12' r='1.7' fill='%23E11A2C' stroke='none'/%3E%3Cpath d='M12 3v3M12 18v3M3 12h3M18 12h3'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Accessibility: simplified universal access person. */
+.ux-case-page--new-world .system-principle-card:nth-child(3) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='5' r='2'/%3E%3Cpath d='M5.5 9h13M12 9v5.2M8.2 20l3.8-5.8L15.8 20'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Inclusivity: connected group of nodes. */
+.ux-case-page--new-world .system-principle-card:nth-child(4) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='8' r='2.5'/%3E%3Ccircle cx='17' cy='8' r='2.5'/%3E%3Ccircle cx='12' cy='17' r='2.5'/%3E%3Cpath d='M9.2 9.4l2 5.2M14.8 9.4l-2 5.2M9.5 8h5'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Simplicity: reduction from many to few. */
+.ux-case-page--new-world .system-principle-card:nth-child(5) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 7h14M7.5 12h9M10 17h4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Visibility keeps the existing eye icon from the HTML. */
+.ux-case-page--new-world .system-principle-card:nth-child(6) .system-principle-icon svg {
+  display: block;
+}
+
+.ux-case-page--new-world .system-principle-card:nth-child(6) .system-principle-icon::before {
+  display: none;
+}
+/* NDS principle icon semantic fix v2
+   Apply at the end of assets/css/ux-system-case.css.
+   This version only changes Consistency and Simplicity.
+   Clarity, Accessibility, Inclusivity and Visibility can keep the previous semantic icon treatment.
+*/
+
+/* Consistency: repeated matching blocks, not connected nodes. */
+.ux-case-page--new-world .system-principle-card:nth-child(1) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='14' y='5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='4.5' y='14.5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='14' y='14.5' width='5.5' height='4.5' rx='1.1'/%3E%3Cpath d='M4.5 12h15'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Simplicity: a direct minimal path with only essential steps. */
+.ux-case-page--new-world .system-principle-card:nth-child(5) .system-principle-icon::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5' cy='12' r='2'/%3E%3Ccircle cx='19' cy='12' r='2'/%3E%3Cpath d='M7 12h10'/%3E%3Cpath d='M12 8l4 4-4 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ux-case-page--new-world .system-feedback-card {
+  border-color: color-mix(in srgb, var(--case-red) 22%, var(--theme-border-soft));
+  background:
+    radial-gradient(circle at 12% 12%, rgba(225, 26, 44, .08), transparent 34%),
+    color-mix(in srgb, var(--case-red-soft) 50%, var(--theme-surface));
+}
+
+.ux-case-page--new-world .system-feedback-card:hover,
+.ux-case-page--new-world .system-feedback-card:focus-within {
+  border-color: color-mix(in srgb, var(--case-red) 42%, var(--theme-border));
+}
+
+.ux-case-page--new-world .system-feedback-icon {
+  background: color-mix(in srgb, var(--case-red-soft) 72%, var(--theme-surface));
+  color: var(--case-red);
+}
+
+.ux-case-page--new-world .system-feedback-icon circle,
+.ux-case-page--new-world .system-feedback-icon path {
+  stroke: currentColor;
+}
