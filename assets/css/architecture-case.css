@@ -1,0 +1,604 @@
+/* HENEX Architecture Case CSS v0.2
+   Scope: architecture case study pages only.
+   Dependencies: global.css and main.js. */
+
+.architecture-case-page {
+  background: var(--theme-bg);
+}
+
+.arch-kicker,
+.arch-section-head p,
+.arch-henex__label,
+.arch-meta-item span,
+.arch-skills > span,
+.arch-award-card span,
+.arch-publication-block span,
+.arch-related-card span {
+  margin: 0 0 14px;
+  color: var(--theme-muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.arch-hero {
+  position: relative;
+  min-height: min(88vh, 860px);
+  overflow: hidden;
+}
+
+.arch-hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 46%;
+}
+
+.arch-hero__top {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.arch-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.arch-tags--hero {
+  justify-content: flex-start;
+}
+
+.arch-tags span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.arch-title-block,
+.arch-section {
+  border-bottom: 1px solid var(--theme-border-soft);
+}
+
+.arch-title-block {
+  padding: 84px 0 72px;
+}
+
+.arch-title-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.52fr) minmax(0, 0.48fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.arch-title-copy h1 {
+  max-width: 920px;
+  color: var(--theme-text);
+  font-size: clamp(2.9rem, 4.8vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.arch-lead {
+  max-width: 760px;
+  margin-top: 24px;
+  color: var(--theme-text-soft);
+  font-size: clamp(1.06rem, 1.5vw, 1.28rem);
+  line-height: 1.5;
+}
+
+.arch-meta-panel {
+  padding-top: 6px;
+}
+
+.arch-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 36px;
+  padding-top: 26px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+
+.arch-meta-item {
+  min-width: 0;
+}
+
+.arch-meta-item span,
+.arch-skills > span,
+.arch-award-card span,
+.arch-publication-block span,
+.arch-related-card span,
+.arch-henex__label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.arch-meta-item strong,
+.arch-meta-item a {
+  color: var(--theme-text);
+  font-size: 0.96rem;
+  line-height: 1.45;
+  font-family: var(--font-heading);
+  font-weight: 720;
+}
+
+.arch-meta-item small {
+  display: block;
+  margin-top: 6px;
+  color: var(--theme-text-soft);
+}
+
+.arch-skills {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+
+.arch-skill-list,
+.arch-pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.arch-skill-list span,
+.arch-pill-row span {
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 12px;
+  border: 1px solid var(--theme-border);
+  border-radius: 999px;
+  background: var(--theme-surface);
+  color: var(--theme-text-soft);
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.arch-pill-row--nodes span:first-child {
+  border-color: color-mix(in srgb, var(--color-brand-secondary) 24%, var(--theme-border));
+  background: color-mix(in srgb, var(--color-brand-secondary) 10%, var(--theme-surface));
+}
+
+.arch-pill-row--nodes span:nth-child(2) {
+  border-color: color-mix(in srgb, var(--color-brand-primary) 22%, var(--theme-border));
+  background: color-mix(in srgb, var(--color-brand-primary) 7%, var(--theme-surface));
+}
+
+.arch-pill-row--nodes span:nth-child(3) {
+  border-color: color-mix(in srgb, var(--color-human) 22%, var(--theme-border));
+  background: color-mix(in srgb, var(--color-human) 9%, var(--theme-surface));
+}
+
+.arch-pill-row--secondary {
+  margin-top: 14px;
+}
+
+.arch-pill-row--secondary span {
+  color: var(--theme-muted);
+  background: var(--theme-surface-soft);
+}
+
+.arch-section {
+  padding: 96px 0;
+}
+
+.arch-section--soft {
+  background: linear-gradient(145deg, var(--theme-surface), var(--theme-bg) 78%);
+}
+
+.arch-two-col,
+.arch-media-row,
+.arch-henex {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
+  gap: 72px;
+  align-items: start;
+}
+
+.arch-section-head h2,
+.arch-related h2,
+.arch-henex__intro h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.03;
+}
+
+.arch-copy {
+  max-width: 860px;
+}
+
+.arch-copy p {
+  color: var(--theme-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.arch-copy p + p {
+  margin-top: 18px;
+}
+
+.arch-inline-figure,
+.arch-wide-image,
+.arch-image-pair,
+.arch-interface-grid,
+.arch-gallery-trio,
+.arch-award-grid,
+.arch-publication-block,
+.arch-callout-row {
+  margin-top: 52px;
+}
+
+.arch-figure {
+  margin: 0;
+}
+
+.arch-figure img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.arch-figure figcaption {
+  max-width: 980px;
+  margin-top: 12px;
+  color: var(--theme-muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.arch-figure--line img,
+.arch-figure--drawing img,
+.arch-image-pair--analysis img {
+  max-height: 360px;
+  object-fit: contain !important;
+  padding: 16px;
+  background: #FFFFFF;
+}
+
+.arch-inline-figure .arch-figure {
+  max-width: 980px;
+  margin-left: auto;
+}
+
+.arch-wide-image .arch-figure img {
+  width: 100%;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.arch-wide-image .arch-figure figcaption {
+  width: min(var(--container), calc(100% - var(--gutter)));
+  margin-inline: auto;
+}
+
+.arch-image-pair,
+.arch-interface-grid,
+.arch-award-grid,
+.arch-findings,
+.arch-related__grid {
+  display: grid;
+  gap: 18px;
+}
+
+.arch-image-pair,
+.arch-award-grid,
+.arch-findings {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.arch-interface-grid,
+.arch-related__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.arch-image-pair:not(.arch-image-pair--analysis) .arch-figure img,
+.arch-interface-grid .arch-figure:not(.arch-figure--drawing) img {
+  height: 260px;
+  object-fit: cover;
+}
+
+.arch-interface-grid .arch-figure--drawing img,
+.arch-interface-grid .arch-figure--line img {
+  height: 260px;
+}
+
+.arch-gallery-trio {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.95fr);
+  gap: 18px;
+}
+
+.arch-gallery-trio__large {
+  grid-row: span 2;
+}
+
+.arch-gallery-trio__large img {
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.arch-callout-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.46fr) minmax(0, 0.54fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.arch-callout,
+.arch-findings div,
+.arch-award-card,
+.arch-publication-block,
+.arch-related-card {
+  border: 1px solid var(--theme-border-soft);
+  border-radius: 18px;
+  background: var(--theme-surface);
+}
+
+.arch-callout,
+.arch-findings div,
+.arch-award-card,
+.arch-publication-block {
+  padding: 24px;
+}
+
+.arch-callout p,
+.arch-findings p,
+.arch-publication-block p {
+  color: var(--theme-text-soft);
+  line-height: 1.62;
+}
+
+.arch-findings strong,
+.arch-award-card strong {
+  color: var(--theme-text);
+  font-family: var(--font-heading);
+  font-size: 1.08rem;
+  line-height: 1.35;
+}
+
+.arch-award-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.arch-award-card {
+  min-height: 168px;
+  display: grid;
+  align-content: start;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.arch-award-card span,
+.arch-publication-block span {
+  color: var(--color-brand-secondary);
+}
+
+.arch-award-card:hover,
+.arch-award-card:focus-within {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--color-brand-secondary) 30%, var(--theme-border));
+  box-shadow: 0 18px 42px rgba(17, 24, 39, 0.08);
+  background: color-mix(in srgb, var(--color-brand-secondary) 4%, var(--theme-surface));
+}
+
+.arch-publication-block {
+  background: var(--theme-surface-soft);
+}
+
+.arch-section--henex {
+  background: var(--theme-surface);
+}
+
+.arch-henex__intro h2 {
+  color: var(--color-brand-secondary);
+}
+
+.arch-henex__body h3 {
+  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  line-height: 1.12;
+}
+
+.arch-henex__body h3 a {
+  color: var(--theme-text);
+}
+
+.arch-henex__triad {
+  margin-top: 8px;
+  color: var(--theme-text-soft);
+  font-weight: 700;
+}
+
+.arch-henex__body p + .arch-pill-row {
+  margin-top: 24px;
+}
+
+.arch-related {
+  background: var(--theme-surface);
+}
+
+.arch-related__grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.arch-related-card {
+  min-height: 290px;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  gap: 8px;
+  padding: 0 0 22px;
+  overflow: hidden;
+  background: var(--theme-surface-soft);
+  color: var(--theme-text);
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.arch-related-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 18px 18px 0 0;
+  border-bottom: 1px solid var(--theme-border-soft);
+}
+
+.arch-related-card span,
+.arch-related-card strong,
+.arch-related-card small {
+  padding-inline: 18px;
+}
+
+.arch-related-card strong {
+  color: var(--theme-text);
+  font-family: var(--font-heading);
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.arch-related-card small {
+  color: var(--theme-text-soft);
+  line-height: 1.62;
+}
+
+.arch-related-card:hover,
+.arch-related-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--theme-border);
+  box-shadow: var(--theme-shadow-card);
+}
+
+.arch-related__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+[data-theme="dark"] .arch-tags span {
+  background: rgba(0, 0, 0, 0.14);
+}
+
+[data-theme="dark"] .arch-figure--line img,
+[data-theme="dark"] .arch-figure--drawing img,
+[data-theme="dark"] .arch-image-pair--analysis img {
+  background: #FFFFFF;
+}
+
+[data-theme="dark"] .arch-award-card:hover,
+[data-theme="dark"] .arch-award-card:focus-within {
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.26);
+}
+
+@media (max-width: 1180px) {
+  .arch-title-grid,
+  .arch-two-col,
+  .arch-media-row,
+  .arch-henex,
+  .arch-callout-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .arch-interface-grid,
+  .arch-related__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .arch-title-block,
+  .arch-section {
+    padding: 68px 0;
+  }
+
+  .arch-hero {
+    min-height: 66vh;
+  }
+
+  .arch-meta-grid,
+  .arch-image-pair,
+  .arch-award-grid,
+  .arch-findings,
+  .arch-gallery-trio,
+  .arch-interface-grid,
+  .arch-related__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-gallery-trio__large {
+    grid-row: auto;
+  }
+
+  .arch-gallery-trio__large img {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 640px) {
+  .arch-hero {
+    min-height: 56vh;
+  }
+
+  .arch-hero__top {
+    top: 18px;
+  }
+
+  .arch-tags span {
+    font-size: 0.64rem;
+    padding: 3px 8px;
+  }
+
+  .arch-title-copy h1 {
+    font-size: clamp(2.35rem, 10vw, 3.55rem);
+  }
+
+  .arch-section-head h2,
+  .arch-related h2,
+  .arch-henex__intro h2 {
+    font-size: clamp(1.65rem, 8vw, 2.7rem);
+  }
+
+  .arch-copy p,
+  .arch-figure figcaption,
+  .arch-callout p,
+  .arch-findings p,
+  .arch-publication-block p,
+  .arch-related-card small {
+    font-size: 0.98rem;
+  }
+
+  .arch-award-card,
+  .arch-callout,
+  .arch-findings div,
+  .arch-publication-block {
+    padding: 20px;
+  }
+
+  .arch-related-card {
+    min-height: 0;
+  }
+
+  .arch-related__actions .button {
+    width: 100%;
+  }
+}
