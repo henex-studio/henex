@@ -1,5 +1,11 @@
-/* HENEX Pages CSS v1.2
-   Scope: page hero system, Home sections, HENEX cards, project cards and Works page components. */
+/* HENEX Pages CSS v1.3
+   Scope: page hero system, Home sections, HENEX cards, project cards and Works page components.
+
+   Breakpoint system follows global.css:
+   900px  Tablet, navigation collapse
+   520px  Mobile
+*/
+
 
 .page-hero {
   position: relative;
@@ -145,6 +151,7 @@
   background: #FFF7FA;
   border-bottom: 0;
 }
+
 .page-hero--lab::before {
   inset: -18%;
   background:
@@ -154,13 +161,16 @@
     #FFF7FA;
   filter: blur(16px);
 }
+
 .page-hero--lab::after {
   inset: 0;
   background: rgba(255, 255, 255, 0.12);
 }
+
 [data-theme="dark"] .page-hero--lab {
   background: #10060A;
 }
+
 [data-theme="dark"] .page-hero--lab::before {
   inset: -18%;
   background:
@@ -170,10 +180,14 @@
     #10060A;
   filter: blur(18px);
 }
+
 [data-theme="dark"] .page-hero--lab::after {
   inset: 0;
   background: rgba(0, 0, 0, 0.16);
 }
+
+
+/* Section layout */
 
 .section-header {
   max-width: 980px;
@@ -192,6 +206,9 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
+
+/* Cards */
 
 .capability-card,
 .dimension-card,
@@ -272,17 +289,9 @@
   box-shadow: var(--theme-shadow-card-hover);
 }
 
-.dimension-card--human {
-  color: var(--color-human);
-}
-
-.dimension-card--emotion {
-  color: var(--color-emotion);
-}
-
-.dimension-card--nature {
-  color: var(--color-nature);
-}
+.dimension-card--human { color: var(--color-human); }
+.dimension-card--emotion { color: var(--color-emotion); }
+.dimension-card--nature { color: var(--color-nature); }
 
 .dimension-card__icon {
   min-height: 245px;
@@ -290,17 +299,9 @@
   place-items: center;
 }
 
-.dimension-card--human .dimension-card__icon {
-  background: var(--color-human-tint);
-}
-
-.dimension-card--emotion .dimension-card__icon {
-  background: var(--color-emotion-tint);
-}
-
-.dimension-card--nature .dimension-card__icon {
-  background: var(--color-nature-tint);
-}
+.dimension-card--human .dimension-card__icon { background: var(--color-human-tint); }
+.dimension-card--emotion .dimension-card__icon { background: var(--color-emotion-tint); }
+.dimension-card--nature .dimension-card__icon { background: var(--color-nature-tint); }
 
 .dimension-card__icon img {
   width: min(62%, 190px);
@@ -327,6 +328,73 @@
   font-size: clamp(1.35rem, 1.7vw, 1.75rem);
 }
 
+/* Home dimension card surface */
+
+.page-home .dimension-card--human {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-human) 10%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-human) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card--emotion {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-emotion) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card--nature {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-nature) 10%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-nature) 5%, var(--theme-surface)) 44%,
+    var(--theme-surface) 78%
+  );
+}
+
+.page-home .dimension-card__icon {
+  background: transparent;
+}
+
+[data-theme="dark"] .page-home .dimension-card--human {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-human) 18%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-human) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+[data-theme="dark"] .page-home .dimension-card--emotion {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-emotion) 17%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+[data-theme="dark"] .page-home .dimension-card--nature {
+  background: linear-gradient(
+    145deg,
+    color-mix(in srgb, var(--color-nature) 18%, var(--theme-surface)) 0%,
+    color-mix(in srgb, var(--color-nature) 9%, var(--theme-surface)) 46%,
+    var(--theme-surface) 80%
+  );
+}
+
+.page-home .dimension-card__icon img {
+  transform: translateY(12px);
+}
+
+
+/* Node chips and tags */
+
 .node-chip-row {
   display: flex;
   flex-wrap: wrap;
@@ -347,6 +415,9 @@
   font-size: 0.78rem;
   font-weight: 750;
 }
+
+
+/* Works layout */
 
 .works-layout {
   display: grid;
@@ -504,17 +575,9 @@
   border-radius: 999px;
 }
 
-.tag-dot--human {
-  background: var(--color-human);
-}
-
-.tag-dot--emotion {
-  background: var(--color-emotion);
-}
-
-.tag-dot--nature {
-  background: var(--color-nature);
-}
+.tag-dot--human   { background: var(--color-human); }
+.tag-dot--emotion { background: var(--color-emotion); }
+.tag-dot--nature  { background: var(--color-nature); }
 
 .section-cta {
   margin-top: 12px;
@@ -530,6 +593,9 @@
   font-weight: 800;
   text-align: center;
 }
+
+
+/* About, Lab, Works sections */
 
 .about-preview-section,
 .lab-entry-section,
@@ -683,6 +749,9 @@
   box-shadow: var(--theme-shadow-card);
 }
 
+
+/* Responsive: 900px — tablet */
+
 @media (max-width: 900px) {
   .page-hero,
   .home-hero__content {
@@ -731,6 +800,9 @@
   }
 }
 
+
+/* Responsive: 520px — mobile */
+
 @media (max-width: 520px) {
   .section-header,
   .section-header--spacious {
@@ -766,6 +838,7 @@
 
   .dimension-card__icon img {
     width: min(70%, 210px);
+    transform: translateY(8px);
   }
 
   .project-card--lead .project-card__media,
@@ -788,84 +861,5 @@
 
   .works-archive-card {
     padding: 24px;
-  }
-}
-
-
-/* HENEX Home Dimension card surface patch v1
-   Scope: Home page HENEX framework dimension cards only.
-   Intent: keep the existing Home card structure, icon size, title size, spacing and hover.
-   Change only the card surface from a hard icon tint panel to a soft full-card gradient.
-*/
-.page-home .dimension-card--human {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-human) 10%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-human) 5%, var(--theme-surface)) 44%,
-    var(--theme-surface) 78%
-  );
-}
-
-.page-home .dimension-card--emotion {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-emotion) 5%, var(--theme-surface)) 44%,
-    var(--theme-surface) 78%
-  );
-}
-
-.page-home .dimension-card--nature {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-nature) 10%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-nature) 5%, var(--theme-surface)) 44%,
-    var(--theme-surface) 78%
-  );
-}
-
-.page-home .dimension-card__icon {
-  background: transparent;
-}
-
-[data-theme="dark"] .page-home .dimension-card--human {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-human) 18%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-human) 9%, var(--theme-surface)) 46%,
-    var(--theme-surface) 80%
-  );
-}
-
-[data-theme="dark"] .page-home .dimension-card--emotion {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-emotion) 17%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-emotion) 9%, var(--theme-surface)) 46%,
-    var(--theme-surface) 80%
-  );
-}
-
-[data-theme="dark"] .page-home .dimension-card--nature {
-  background: linear-gradient(
-    145deg,
-    color-mix(in srgb, var(--color-nature) 18%, var(--theme-surface)) 0%,
-    color-mix(in srgb, var(--color-nature) 9%, var(--theme-surface)) 46%,
-    var(--theme-surface) 80%
-  );
-}
-
-
-/* HENEX Home Dimension card icon balance patch v1
-   Scope: Home page HENEX framework dimension cards only.
-   Intent: keep the existing card layout and move only the icon artwork slightly down to improve visual balance.
-*/
-.page-home .dimension-card__icon img {
-  transform: translateY(12px);
-}
-
-@media (max-width: 520px) {
-  .page-home .dimension-card__icon img {
-    transform: translateY(8px);
   }
 }

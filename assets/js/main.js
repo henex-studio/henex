@@ -29,25 +29,36 @@
   }
 
   if (navToggle && siteNav) {
+    function closeNav() {
+      document.body.classList.remove('nav-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.focus();
+    }
+
     navToggle.addEventListener('click', function () {
       const isOpen = document.body.classList.toggle('nav-open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     siteNav.addEventListener('click', function (event) {
-      const target = event.target;
-      if (target instanceof HTMLAnchorElement && document.body.classList.contains('nav-open')) {
-        document.body.classList.remove('nav-open');
-        navToggle.setAttribute('aria-expanded', 'false');
+      if (event.target instanceof HTMLAnchorElement && document.body.classList.contains('nav-open')) {
+        closeNav();
       }
     });
 
     document.addEventListener('keydown', function (event) {
       if (event.key === 'Escape' && document.body.classList.contains('nav-open')) {
+        closeNav();
+      }
+    });
+
+    /* Reset nav state when viewport expands to desktop width. */
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 900 && document.body.classList.contains('nav-open')) {
         document.body.classList.remove('nav-open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
-    });
+    }, { passive: true });
   }
 
   if (backToTop) {

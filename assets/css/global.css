@@ -1,5 +1,13 @@
-/* HENEX Global CSS v1.6
-   Scope: design tokens, light/dark theme, base reset, global navigation, buttons, footer, Back to Top and responsive menu. */
+/* HENEX Global CSS v1.7
+   Scope: design tokens, light/dark theme, base reset, global navigation, buttons, footer, Back to Top and responsive menu.
+
+   Breakpoint system (four official breakpoints):
+   1180px  Complex content pages, wide-layout collapse (case study, architecture case)
+    900px  Tablet, navigation collapse
+    640px  Small tablet and landscape phone
+    520px  Mobile
+*/
+
 
 :root {
   --font-heading: "IBM Plex Sans", sans-serif;
@@ -50,8 +58,9 @@
 
   --container: 1320px;
   --gutter: 40px;
-  --section-pad: 96px;
+  --section-pad: 92px;
 }
+
 
 [data-theme="dark"] {
   --theme-bg: #070809;
@@ -80,6 +89,7 @@
   --page-nav-card-border: var(--theme-border);
 }
 
+
 .page-works {
   --page-accent: var(--color-nature);
   --page-accent-border: rgba(49, 187, 142, 0.28);
@@ -99,13 +109,15 @@
   --page-nav-card-bg: #FFFFFF;
   --page-nav-card-border: rgba(255, 86, 136, 0.24);
 }
+
 [data-theme="dark"] .page-lab {
   --page-accent-border: rgba(255, 86, 136, 0.34);
   --page-nav-card-bg: #120A0E;
   --page-nav-card-border: rgba(255, 86, 136, 0.32);
 }
 
-* {
+
+*  {
   box-sizing: border-box;
 }
 
@@ -224,6 +236,9 @@ p {
   line-height: 1.45;
 }
 
+
+/* Site header */
+
 .site-header {
   position: sticky;
   top: 0;
@@ -337,18 +352,22 @@ p {
   display: none;
   pointer-events: none;
 }
+
 [data-theme="light"] .theme-icon--sun,
 [data-theme="dark"] .theme-icon--moon {
   display: block;
 }
+
 [data-theme="dark"] .theme-icon,
 [data-theme="dark"] .back-to-top img {
   filter: invert(1);
 }
+
 [data-theme="light"] .theme-icon,
 [data-theme="light"] .back-to-top img {
   filter: none;
 }
+
 .theme-toggle__dot,
 .theme-toggle [data-theme-label] {
   display: none;
@@ -403,6 +422,9 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   transform: rotate(-45deg);
 }
 
+
+/* Buttons */
+
 .button-row {
   display: flex;
   flex-wrap: wrap;
@@ -439,15 +461,44 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 }
 
 .button--hero-primary {
-  background: var(--hero-button-bg);
-  color: var(--hero-button-text);
-  border-color: var(--hero-button-bg);
+  background: #151719;
+  color: #ffffff;
+  border-color: #151719;
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.10);
 }
 
 .button--hero-outline {
-  color: var(--hero-text);
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--hero-button-border);
+  background: rgba(255, 255, 255, 0.72);
+  color: #151719;
+  border-color: rgba(17, 24, 39, 0.14);
+  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.07);
+}
+
+.button--hero-primary:hover,
+.button--hero-primary:focus-visible,
+.button--hero-outline:hover,
+.button--hero-outline:focus-visible {
+  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.13);
+}
+
+[data-theme="dark"] .button--hero-primary {
+  background: #ffffff;
+  color: #070809;
+  border-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+[data-theme="dark"] .button--hero-outline {
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .button--hero-outline:hover,
+[data-theme="dark"] .button--hero-outline:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
 }
 
 .button--footer {
@@ -455,6 +506,9 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   color: #151719;
   border-color: #FFFFFF;
 }
+
+
+/* Footer */
 
 .site-footer {
   padding: 76px 0 34px;
@@ -503,6 +557,9 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   color: rgba(255, 255, 255, 0.72);
 }
 
+
+/* Back to top */
+
 .back-to-top {
   position: fixed;
   right: 24px;
@@ -523,30 +580,42 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   transform: translateY(10px);
   transition: opacity 180ms ease, visibility 180ms ease, transform 180ms ease, border-color 180ms ease;
 }
+
 .back-to-top img {
   width: 20px;
   height: 20px;
   pointer-events: none;
 }
+
 .back-to-top.is-visible {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
+
 .back-to-top:hover,
 .back-to-top:focus-visible {
   border-color: color-mix(in srgb, var(--theme-text) 28%, var(--theme-border));
   transform: translateY(-2px);
 }
+
+
+/* Page hero utility */
+
 .page-hero {
   width: 100%;
   margin-inline: 0 !important;
 }
+
 .page-hero > .container,
 .page-hero .page-hero__content {
   width: min(var(--container), calc(100% - var(--gutter)));
   margin-inline: auto;
 }
+
+
+/* Responsive: 900px — tablet, navigation collapse */
+
 @media (max-width: 900px) {
   :root {
     --gutter: 32px;
@@ -636,10 +705,12 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     margin-top: 10px;
     flex: 0 0 auto;
   }
+
   .theme-icon {
     width: 25px;
     height: 25px;
   }
+
   .back-to-top {
     right: 18px;
     bottom: 18px;
@@ -649,6 +720,9 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Responsive: 520px — mobile */
 
 @media (max-width: 520px) {
   :root {
@@ -674,6 +748,9 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   }
 }
 
+
+/* Reduced motion */
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -683,49 +760,4 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
   }
-}
-
-/* HENEX global hero CTA correction v5
-   Scope: primary and secondary hero CTA buttons across Home, About, Philosophy and Works.
-   Purpose: improve secondary CTA visibility on pale hero backgrounds while keeping dark mode consistent.
-*/
-.button--hero-primary {
-  background: #151719;
-  color: #ffffff;
-  border-color: #151719;
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.10);
-}
-
-.button--hero-outline {
-  background: rgba(255, 255, 255, 0.72);
-  color: #151719;
-  border-color: rgba(17, 24, 39, 0.14);
-  box-shadow: 0 10px 26px rgba(17, 24, 39, 0.07);
-}
-
-.button--hero-primary:hover,
-.button--hero-primary:focus-visible,
-.button--hero-outline:hover,
-.button--hero-outline:focus-visible {
-  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.13);
-}
-
-[data-theme="dark"] .button--hero-primary {
-  background: #ffffff;
-  color: #070809;
-  border-color: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
-}
-
-[data-theme="dark"] .button--hero-outline {
-  background: rgba(255, 255, 255, 0.10);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.22);
-  box-shadow: none;
-}
-
-[data-theme="dark"] .button--hero-outline:hover,
-[data-theme="dark"] .button--hero-outline:focus-visible {
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.34);
 }

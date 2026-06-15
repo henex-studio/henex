@@ -1,10 +1,8 @@
-/* HENEX Architecture Case CSS v0.3
+/* HENEX Architecture Case CSS v0.4
    Scope: architecture case study pages only.
-   Dependencies: global.css and main.js. */
+   Dependencies: global.css */
 
 :root {
-  --arch-accent: #374151;
-  --arch-accent-tint: #EEF2F7;
   --arch-award-gold: #D8B253;
   --arch-award-gold-strong: #E7C978;
   --arch-award-gold-tint: #FFF8E8;
@@ -29,6 +27,9 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
+
+
+/* Hero */
 
 .arch-hero {
   position: relative;
@@ -77,6 +78,9 @@
   font-weight: 700;
   letter-spacing: 0.02em;
 }
+
+
+/* Title block */
 
 .arch-title-block,
 .arch-section {
@@ -174,16 +178,19 @@
   display: inline-flex;
   align-items: center;
   padding: 0 12px;
-  border: 1px solid color-mix(in srgb, var(--arch-accent) 28%, var(--theme-border));
+  border: 1px solid color-mix(in srgb, var(--color-brand-secondary) 28%, var(--theme-border));
   border-radius: 999px;
-  background: color-mix(in srgb, var(--arch-accent) 8%, var(--theme-surface));
-  color: color-mix(in srgb, var(--arch-accent) 48%, var(--theme-text));
+  background: color-mix(in srgb, var(--color-brand-secondary) 8%, var(--theme-surface));
+  color: color-mix(in srgb, var(--color-brand-secondary) 48%, var(--theme-text));
   font-size: 0.84rem;
   font-weight: 700;
 }
 
+
+/* Sections */
+
 .arch-section {
-  padding: 96px 0;
+  padding: var(--section-pad) 0;
 }
 
 .arch-section--soft {
@@ -191,7 +198,7 @@
 }
 
 .arch-section--henex {
-  background: color-mix(in srgb, var(--arch-accent) 4%, var(--theme-surface));
+  background: color-mix(in srgb, var(--color-brand-secondary) 4%, var(--theme-surface));
 }
 
 .arch-two-col,
@@ -239,6 +246,9 @@
   margin-top: 52px;
 }
 
+
+/* Figures */
+
 .arch-figure {
   margin: 0;
 }
@@ -264,7 +274,7 @@
 .arch-figure--drawing img,
 .arch-image-pair--analysis img {
   max-height: 360px;
-  object-fit: contain !important;
+  object-fit: contain;
   padding: 16px;
   background: #FFFFFF;
 }
@@ -282,7 +292,7 @@
   max-width: 840px;
   padding: 0;
   background: transparent;
-  object-fit: contain !important;
+  object-fit: contain;
 }
 
 .arch-figure--masterplan figcaption {
@@ -309,6 +319,9 @@
   margin-inline: auto;
 }
 
+
+/* Image grids */
+
 .arch-image-pair,
 .arch-interface-grid,
 .arch-award-grid,
@@ -328,28 +341,27 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.arch-image-pair:not(.arch-image-pair--analysis):not(.arch-image-pair--macro):not(.arch-image-pair--details) .arch-figure img,
-.arch-interface-grid .arch-figure img {
-  height: 320px;
+.arch-figure--photo img {
   object-fit: cover;
 }
 
-.arch-interface-grid .arch-figure--drawing img {
+.arch-image-pair .arch-figure--photo img {
   height: 320px;
-  object-fit: contain !important;
-  padding: 10px;
-  background: transparent;
 }
 
-.arch-interface-grid .arch-figure:not(.arch-figure--drawing) img {
+.arch-interface-grid .arch-figure--photo img {
+  height: 320px;
+}
+
+.arch-interface-grid .arch-figure:not(.arch-figure--photo):not(.arch-figure--drawing) img {
   height: 340px;
 }
 
-.arch-image-pair--commercial .arch-figure img {
+.arch-image-pair--commercial .arch-figure--photo img {
   height: 460px;
 }
 
-.arch-image-pair--atmosphere .arch-figure img {
+.arch-image-pair--atmosphere .arch-figure--photo img {
   height: 360px;
 }
 
@@ -365,11 +377,32 @@
   height: 340px;
 }
 
-.arch-image-pair--macro .arch-figure img,
-.arch-image-pair--details .arch-figure img,
-.arch-image-pair--analysis .arch-figure img {
+.arch-image-pair--macro img,
+.arch-image-pair--details img,
+.arch-image-pair--analysis img {
   height: auto;
 }
+
+.arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+
+.arch-interface-grid .arch-figure--drawing .arch-drawing-frame img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 0;
+  background: transparent;
+}
+
+
+/* Callout */
 
 .arch-callout-row {
   display: grid;
@@ -419,6 +452,9 @@
   line-height: 1.12;
 }
 
+
+/* Awards */
+
 .arch-award-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -447,8 +483,11 @@
   background: var(--theme-surface-soft);
 }
 
+
+/* HENEX section */
+
 .arch-henex__intro h2 {
-  color: color-mix(in srgb, var(--arch-accent) 68%, var(--theme-text));
+  color: color-mix(in srgb, var(--color-brand-secondary) 68%, var(--theme-text));
 }
 
 .arch-henex__body h3 {
@@ -472,14 +511,17 @@
 }
 
 .arch-pill-row--nodes span {
-  border-color: color-mix(in srgb, var(--arch-accent) 32%, var(--theme-border));
-  background: color-mix(in srgb, var(--arch-accent) 10%, var(--theme-surface));
-  color: color-mix(in srgb, var(--arch-accent) 54%, var(--theme-text));
+  border-color: color-mix(in srgb, var(--color-brand-secondary) 32%, var(--theme-border));
+  background: color-mix(in srgb, var(--color-brand-secondary) 10%, var(--theme-surface));
+  color: color-mix(in srgb, var(--color-brand-secondary) 54%, var(--theme-text));
 }
 
 .arch-pill-row--secondary {
   margin-top: 14px;
 }
+
+
+/* Recipe trigger and popover */
 
 .arch-recipe-trigger {
   min-height: 34px;
@@ -499,7 +541,7 @@
 .arch-recipe-trigger:hover,
 .arch-recipe-trigger:focus-visible {
   transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--arch-accent) 28%, var(--theme-border));
+  border-color: color-mix(in srgb, var(--color-brand-secondary) 28%, var(--theme-border));
 }
 
 .arch-recipe-trigger[aria-expanded="true"] {
@@ -543,11 +585,14 @@
 .arch-popover__link {
   display: inline-flex;
   margin-top: 12px;
-  color: color-mix(in srgb, var(--arch-accent) 70%, var(--theme-text));
+  color: color-mix(in srgb, var(--color-brand-secondary) 70%, var(--theme-text));
   font-size: 0.88rem;
   font-weight: 700;
   text-decoration: none;
 }
+
+
+/* Related */
 
 .arch-related {
   background: var(--theme-surface);
@@ -606,13 +651,17 @@
   margin-top: 30px;
 }
 
+
+/* Dark mode */
+
 [data-theme="dark"] .arch-tags span {
   background: rgba(0, 0, 0, 0.14);
 }
 
 [data-theme="dark"] .arch-figure--line img,
 [data-theme="dark"] .arch-figure--drawing img,
-[data-theme="dark"] .arch-image-pair--analysis img {
+[data-theme="dark"] .arch-image-pair--analysis img,
+[data-theme="dark"] .arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
   background: #FFFFFF;
 }
 
@@ -620,138 +669,3 @@
 [data-theme="dark"] .arch-award-card:focus-within {
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.26);
   background: color-mix(in srgb, var(--arch-award-gold) 14%, var(--theme-surface));
-}
-
-[data-theme="dark"] .arch-recipe-trigger[aria-expanded="true"] {
-  background: #FFFFFF;
-  color: #0B0C0D;
-  border-color: #FFFFFF;
-}
-
-[data-theme="dark"] .arch-popover {
-  background: var(--theme-surface);
-  border-color: var(--theme-border);
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.36);
-}
-
-@media (max-width: 1180px) {
-  .arch-title-grid,
-  .arch-two-col,
-  .arch-media-row,
-  .arch-media-row--context,
-  .arch-henex,
-  .arch-callout-row {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .arch-interface-grid,
-  .arch-related__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 900px) {
-  .arch-title-block,
-  .arch-section {
-    padding: 68px 0;
-  }
-
-  .arch-hero {
-    min-height: 66vh;
-  }
-
-  .arch-meta-grid,
-  .arch-image-pair,
-  .arch-award-grid,
-  .arch-findings,
-  .arch-interface-grid,
-  .arch-related__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .arch-image-pair--atmosphere-break {
-    grid-template-columns: 1fr;
-  }
-
-  .arch-image-pair--atmosphere-break .arch-figure:first-child img,
-  .arch-image-pair--atmosphere-break .arch-figure:last-child img {
-    height: 360px;
-  }
-
-  .arch-findings {
-    gap: 12px;
-  }
-}
-
-@media (max-width: 640px) {
-  .arch-hero {
-    min-height: 56vh;
-  }
-
-  .arch-hero__top {
-    top: 18px;
-  }
-
-  .arch-tags span {
-    font-size: 0.64rem;
-    padding: 3px 8px;
-  }
-
-  .arch-title-copy h1 {
-    font-size: clamp(2.35rem, 10vw, 3.55rem);
-  }
-
-  .arch-section-head h2,
-  .arch-related h2,
-  .arch-henex__intro h2 {
-    font-size: clamp(1.65rem, 8vw, 2.7rem);
-  }
-
-  .arch-copy p,
-  .arch-figure figcaption,
-  .arch-callout p,
-  .arch-finding-card p,
-  .arch-publication-block p,
-  .arch-related-card small {
-    font-size: 0.98rem;
-  }
-
-  .arch-award-card,
-  .arch-callout,
-  .arch-finding-card,
-  .arch-publication-block {
-    padding: 20px;
-  }
-
-  .arch-related-card {
-    min-height: 0;
-  }
-
-  .arch-related__actions .button {
-    width: 100%;
-  }
-}
-
-
-.arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
-  min-height: 340px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  border-radius: 8px;
-  background: #FFFFFF;
-}
-
-.arch-interface-grid .arch-figure--drawing .arch-drawing-frame img {
-  width: 100%;
-  max-height: 100%;
-  padding: 0;
-  background: transparent;
-  object-fit: contain !important;
-}
-
-[data-theme="dark"] .arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
-  background: #FFFFFF;
-}
