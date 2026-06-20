@@ -237,6 +237,22 @@
   background: var(--theme-surface);
   border-color: rgba(255, 255, 255, .12);
 }
+
+.studier-platform-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 18px;
+  margin-top: 46px;
+  padding-top: 30px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+.studier-platform-cta p {
+  margin: 0;
+  color: color-mix(in srgb, var(--ux-theme) 62%, var(--theme-text-soft));
+  font-size: .92rem;
+  line-height: 1.5;
+}
 @media (max-width: 1180px) {
   .studier-problem__grid,
   .studier-solution__grid,
