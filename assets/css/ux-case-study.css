@@ -60,6 +60,21 @@ body.ux-modal-open {
     linear-gradient(135deg, #071211 0%, #0B2424 46%, #081010 100%);
 }
 
+
+.ux-hero__top {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+@media (max-width: 640px) {
+  .ux-hero__top {
+    top: 20px;
+  }
+}
+
 .ux-hero__inner {
   position: relative;
   min-height: 610px;
@@ -148,6 +163,48 @@ body.ux-modal-open {
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
 }
 
+
+
+/* Accessibility Support Hub image hero */
+.ux-case-page--support-hub .ux-hero {
+  background: url("../img/projects/ash/hero-bg.png");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+[data-theme=dark] .ux-case-page--support-hub .ux-hero {
+  background: url("../img/projects/ash/hero-bg.png");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.ux-case-page--support-hub .ux-hero h1 {
+  color: var(--ux-dark);
+}
+
+.ux-case-page--support-hub .ux-hero__copy p {
+  color: color-mix(in srgb, var(--ux-dark) 70%, var(--theme-text-soft));
+}
+
+.ux-case-page--support-hub .ux-hero__mark {
+  display: none;
+}
+
+[data-theme=dark] .ux-case-page--support-hub .ux-hero h1 {
+  color: var(--ux-dark);
+}
+
+[data-theme=dark] .ux-case-page--support-hub .ux-hero__copy p {
+  color: color-mix(in srgb, var(--ux-dark) 72%, #FFFFFF);
+}
+
+@media (max-width: 640px) {
+  .ux-case-page--support-hub .ux-hero {
+    background-position: center center;
+  }
+}
 
 /* Sections */
 

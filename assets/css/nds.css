@@ -83,12 +83,6 @@
   white-space: normal;
 }
 
-.ux-case-page--new-world .ux-tags span {
-  border-color: color-mix(in srgb, var(--case-red) 24%, var(--theme-border));
-  color: var(--case-red);
-  background: color-mix(in srgb, var(--case-red) 8%, var(--theme-surface));
-}
-
 .ux-case-page--new-world .ux-kicker,
 .ux-case-page--new-world .ux-intro p,
 .ux-case-page--new-world .ux-recipe-primary span,

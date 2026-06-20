@@ -25,7 +25,7 @@ HENEX/
 ├── about.html
 ├── philosophy.html
 ├── works.html
-├── lab.html (placeholder)
+├── lab.html (have page but placeholder)
 ├── projects/
 │ ├── accessibility-support-hub.html (ash)
 │ ├── new-world-design-system.html (nds)

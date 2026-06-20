@@ -55,28 +55,55 @@
   z-index: 2;
 }
 
+.arch-hero__tag-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
 .arch-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .arch-tags--hero {
   justify-content: flex-start;
 }
-
 .arch-tags span {
-  min-height: 28px;
+  min-height: 30px;
   display: inline-flex;
   align-items: center;
-  padding: 4px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.42);
+  padding: 5px 12px;
   border-radius: 999px;
-  background: rgba(0, 0, 0, 0.08);
-  color: #FFFFFF;
-  font-size: 0.68rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 760;
+  line-height: 1;
   letter-spacing: 0.02em;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.arch-tags--primary span {
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  background: rgba(255, 255, 255, 0.84);
+  color: #1F2937;
+}
+.arch-tags--secondary {
+  flex-shrink: 0;
+}
+.arch-tags--secondary span {
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(15, 23, 42, 0.66);
+  color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .arch-hero__tag-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .arch-tags--secondary {
+    align-self: flex-start;
+  }
 }
 
 
@@ -242,7 +269,10 @@
 .arch-interface-grid,
 .arch-award-grid,
 .arch-publication-block,
-.arch-callout-row {
+.arch-callout-row,
+.arch-portrait-trio,
+.arch-concept-image-stack,
+.arch-media-col {
   margin-top: 52px;
 }
 
@@ -383,6 +413,305 @@
   height: auto;
 }
 
+.arch-image-pair--site .arch-figure--photo img {
+  height: 460px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .arch-image-pair--site .arch-figure--photo img {
+    height: 320px;
+  }
+}
+
+
+/* Portrait and square image layouts (for projects with predominantly tall or square photography) */
+
+.arch-image-pair--portrait {
+  align-items: start;
+}
+
+.arch-image-pair--portrait .arch-figure--photo img {
+  height: 560px;
+  object-fit: cover;
+}
+
+.arch-portrait-trio {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 64px;
+}
+
+.arch-portrait-trio .arch-figure--photo img {
+  height: 460px;
+  object-fit: cover;
+}
+
+.arch-portrait-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.arch-portrait-feature .arch-figure--photo img {
+  height: 620px;
+  object-fit: cover;
+}
+
+.arch-portrait-feature .arch-figure--wide img {
+  height: 300px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .arch-image-pair--portrait,
+  .arch-portrait-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-portrait-trio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arch-image-pair--portrait .arch-figure--photo img,
+  .arch-portrait-trio .arch-figure--photo img,
+  .arch-portrait-feature .arch-figure--photo img {
+    height: 420px;
+  }
+}
+
+@media (max-width: 520px) {
+  .arch-portrait-trio {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Technical drawing cluster (small unframed line drawings paired with a large photo) */
+
+.arch-tech-cluster {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.26fr) minmax(0, 0.74fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.arch-tech-cluster__drawings {
+  display: grid;
+  gap: 28px;
+}
+
+.arch-figure--line-plain img {
+  width: 100%;
+  max-width: 280px;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+}
+
+.arch-tech-cluster__photo {
+  margin: 0;
+}
+
+.arch-tech-cluster__photo img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .arch-tech-cluster {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-tech-cluster__drawings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arch-figure--line-plain img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .arch-tech-cluster__drawings {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Concept section spacing (extra gap between heading copy and a following full-bleed image) */
+
+.arch-wide-image--concept {
+  margin-top: 64px;
+}
+
+.arch-concept-note {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.arch-concept-note .arch-figure {
+  max-width: 520px;
+  text-align: center;
+}
+
+.arch-concept-note .arch-figure--line-plain img {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.arch-concept-note--tight {
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+
+/* Diamond row: two small line-drawing groups placed side by side, same visual weight */
+
+.arch-diamond-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.arch-diamond-row__diamond img,
+.arch-diamond-row__masterplan img {
+  width: 100%;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+}
+
+.arch-diamond-row__caption {
+  width: min(var(--container), calc(100% - var(--gutter)));
+  margin: 14px auto 0;
+  color: var(--theme-muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 900px) {
+  .arch-diamond-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Follow-up paragraph block: continues a section's copy after an image, without repeating the heading */
+
+.arch-two-col--followup {
+  margin-top: 56px;
+}
+
+.arch-two-col--followup .arch-section-head {
+  min-height: 1px;
+}
+
+
+/* Empty section head placeholder — keeps grid alignment without visible content */
+
+.arch-section-head--empty {
+  visibility: hidden;
+}
+
+
+/* Concept image stack — images aligned to the copy column, stacked vertically */
+
+.arch-concept-image-stack {
+  align-items: start;
+}
+
+.arch-concept-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.arch-concept-stack .arch-figure--line-plain img {
+  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+
+
+/* Media col — left column holds heading + copy + small drawing; right column holds photo at natural ratio */
+
+.arch-media-col {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
+  gap: 52px;
+  align-items: start;
+}
+
+.arch-media-col__left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.arch-media-col__left .arch-kicker {
+  margin-bottom: 14px;
+}
+
+.arch-media-col__left h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.03;
+}
+
+.arch-copy--spaced {
+  margin-top: 24px;
+}
+
+.arch-copy--spaced p {
+  color: var(--theme-text-soft);
+  font-size: 1.02rem;
+  line-height: 1.68;
+}
+
+.arch-copy--spaced p + p {
+  margin-top: 18px;
+}
+
+.arch-media-col__drawing {
+  margin-top: 32px;
+}
+
+.arch-media-col__drawing img {
+  width: 100%;
+  object-fit: contain;
+  background: transparent;
+}
+
+.arch-media-col__photo {
+  margin: 0;
+}
+
+.arch-media-col__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .arch-media-col {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .arch-concept-image-stack {
+    grid-template-columns: 1fr;
+  }
+}
+
 .arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
   min-height: 340px;
   display: flex;
@@ -521,6 +850,110 @@
 }
 
 
+/* Video showcase block (reusable across architecture case pages) */
+
+.arch-video {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.arch-video__copy p:first-child {
+  margin: 0 0 14px;
+  color: var(--theme-muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.arch-video__copy h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+  line-height: 1.08;
+  color: var(--theme-text);
+}
+
+.arch-video__copy p.arch-video__desc {
+  margin-top: 16px;
+  color: var(--theme-text-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.arch-video__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000000;
+}
+
+.arch-video__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .arch-video {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+
+/* Video showcase block (reusable across architecture case pages) */
+
+.arch-video {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.arch-video__copy p:first-child {
+  margin: 0 0 14px;
+  color: var(--theme-muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.arch-video__copy h2 {
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+  line-height: 1.08;
+  color: var(--theme-text);
+}
+
+.arch-video__copy p.arch-video__desc {
+  margin-top: 16px;
+  color: var(--theme-text-soft);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.arch-video__frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000000;
+}
+
+.arch-video__frame video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 900px) {
+  .arch-video {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+
 /* Recipe trigger and popover */
 
 .arch-recipe-trigger {
@@ -654,8 +1087,15 @@
 
 /* Dark mode */
 
-[data-theme="dark"] .arch-tags span {
-  background: rgba(0, 0, 0, 0.14);
+[data-theme="dark"] .arch-tags--primary span {
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(15, 23, 42, 0.72);
+  color: #FFFFFF;
+}
+[data-theme="dark"] .arch-tags--secondary span {
+  border-color: rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.88);
+  color: #151719;
 }
 
 [data-theme="dark"] .arch-figure--line img,
@@ -669,3 +1109,4 @@
 [data-theme="dark"] .arch-award-card:focus-within {
   box-shadow: 0 24px 56px rgba(0, 0, 0, 0.26);
   background: color-mix(in srgb, var(--arch-award-gold) 14%, var(--theme-surface));
+}
