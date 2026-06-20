@@ -1,0 +1,275 @@
+/* Studier case study page styles.
+   Dependencies: global.css, ux-case-study.css */
+.ux-case-page--studier {
+  --ux-theme: #315CF6;
+  --ux-dark: #172554;
+  --ux-soft: #EEF4FF;
+  --ux-pale: #F7FAFF;
+  --std-indigo: #5B5DF7;
+  --std-cyan: #5BC8FF;
+  --std-ink: #172554;
+  --std-gradient: linear-gradient(135deg, #315CF6 0%, #5B5DF7 62%, #7C3AED 100%);
+}
+.ux-case-page--studier figcaption {
+  color: color-mix(in srgb, var(--ux-theme) 70%, var(--theme-text-soft));
+}
+[data-theme="dark"] .ux-case-page--studier figcaption {
+  color: color-mix(in srgb, #9DB4FF 70%, var(--theme-text-soft));
+}
+.studier-hero {
+  background:
+    linear-gradient(145deg, #EFF5FF 0%, #E4ECFF 52%, #F1EEFF 100%);
+  border-bottom: 1px solid color-mix(in srgb, var(--ux-theme) 16%, var(--theme-border-soft));
+}
+[data-theme="dark"] .studier-hero {
+  background: linear-gradient(145deg, #060A1F 0%, #0B1237 58%, #111042 100%);
+}
+.studier-hero__inner {
+  display: flex;
+  align-items: center;
+  min-height: 610px;
+}
+.studier-hero__copy {
+  max-width: min(960px, 76vw);
+}
+.studier-hero__copy h1 {
+  width: fit-content;
+  background: var(--std-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.studier-hero__copy p {
+  color: color-mix(in srgb, var(--std-ink) 72%, var(--theme-text-soft));
+}
+[data-theme="dark"] .studier-hero__copy p {
+  color: rgba(238, 244, 255, .82);
+}
+.studier-problem {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 7%, var(--theme-surface)), var(--theme-bg) 80%);
+}
+.studier-problem__grid {
+  grid-template-columns: minmax(0, .56fr) minmax(360px, .44fr);
+}
+.studier-problem-note {
+  max-width: 760px;
+  margin-top: 28px;
+  color: var(--theme-text-soft);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.6;
+}
+.studier-product-frame {
+  margin: 0;
+}
+.studier-product-frame button {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.studier-product-frame img {
+  width: 100%;
+  display: block;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 16%, var(--theme-border-soft));
+  border-radius: 20px;
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+.studier-product-frame--large img {
+  min-height: 360px;
+  object-fit: contain;
+}
+.studier-role-grid,
+.studier-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.studier-impact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.studier-impact-grid article {
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+.studier-impact-grid span,
+.studier-timeline span,
+.studier-solution-cards span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--ux-theme);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.studier-impact-grid h3,
+.studier-timeline h3,
+.studier-solution-cards h3,
+.studier-feature-row h3 {
+  color: var(--ux-dark);
+}
+[data-theme="dark"] .studier-impact-grid h3,
+[data-theme="dark"] .studier-timeline h3,
+[data-theme="dark"] .studier-solution-cards h3,
+[data-theme="dark"] .studier-feature-row h3 {
+  color: var(--theme-text);
+}
+.studier-impact-grid p,
+.studier-timeline p,
+.studier-solution-cards p {
+  color: var(--theme-text-soft);
+  line-height: 1.58;
+}
+.studier-solution {
+  padding: 86px 0;
+  background: var(--std-gradient);
+  color: #FFFFFF;
+}
+.studier-solution .ux-kicker,
+.studier-solution h2,
+.studier-solution-cards span,
+.studier-solution-cards h3 {
+  color: #FFFFFF;
+}
+.studier-solution p,
+.studier-solution-cards p {
+  color: rgba(255, 255, 255, .78);
+}
+.studier-solution__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, .34fr) minmax(0, .66fr);
+  gap: clamp(34px, 6vw, 74px);
+  align-items: start;
+}
+.studier-solution-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.studier-solution-cards article {
+  min-height: 220px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, .28);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, .12);
+  box-shadow: 0 20px 54px rgba(12, 23, 94, .18);
+}
+.studier-feature-stack {
+  display: grid;
+  gap: 64px;
+}
+.studier-feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, .34fr) minmax(0, .66fr);
+  gap: 48px;
+  align-items: center;
+  padding-top: 54px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+.studier-feature-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.studier-feature-row--reverse {
+  grid-template-columns: minmax(0, .66fr) minmax(0, .34fr);
+}
+.studier-feature-row--reverse .ux-copy {
+  order: 2;
+}
+.studier-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+.studier-timeline article {
+  position: relative;
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+.studier-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.studier-metrics article {
+  padding: 28px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, color-mix(in srgb, var(--ux-soft) 54%, var(--theme-surface)), var(--theme-surface));
+  box-shadow: var(--theme-shadow-card);
+}
+.studier-metrics span {
+  display: block;
+  margin-bottom: 12px;
+  color: color-mix(in srgb, var(--ux-theme) 70%, var(--theme-text-soft));
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.studier-metrics strong {
+  display: block;
+  color: var(--ux-dark);
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+[data-theme="dark"] .studier-metrics strong {
+  color: var(--theme-text);
+}
+.studier-research-note {
+  margin-top: 28px;
+}
+[data-theme="dark"] .studier-impact-grid article,
+[data-theme="dark"] .studier-timeline article,
+[data-theme="dark"] .studier-metrics article {
+  background: var(--theme-surface);
+  border-color: rgba(255, 255, 255, .12);
+}
+@media (max-width: 1180px) {
+  .studier-problem__grid,
+  .studier-solution__grid,
+  .studier-feature-row,
+  .studier-feature-row--reverse {
+    grid-template-columns: 1fr;
+  }
+  .studier-feature-row--reverse .ux-copy {
+    order: 0;
+  }
+  .studier-role-grid,
+  .studier-timeline,
+  .studier-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .studier-solution-cards,
+  .studier-impact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .studier-role-grid,
+  .studier-timeline,
+  .studier-metrics {
+    grid-template-columns: 1fr;
+  }
+  .studier-solution {
+    padding: 68px 0;
+  }
+  .studier-product-frame img {
+    border-radius: 14px;
+  }
+  .studier-product-frame--large img {
+    min-height: auto;
+  }
+}
