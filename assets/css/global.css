@@ -116,6 +116,18 @@
   --page-nav-card-border: rgba(255, 86, 136, 0.32);
 }
 
+.page-about {
+  --page-accent: var(--color-human);
+  --page-accent-border: rgba(60, 140, 244, 0.28);
+  --page-nav-card-bg: #FFFFFF;
+  --page-nav-card-border: rgba(60, 140, 244, 0.24);
+}
+
+[data-theme="dark"] .page-about {
+  --page-accent-border: rgba(60, 140, 244, 0.34);
+  --page-nav-card-bg: #0A0E14;
+  --page-nav-card-border: rgba(60, 140, 244, 0.30);
+}
 
 *  {
   box-sizing: border-box;
