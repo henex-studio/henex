@@ -1,10 +1,6 @@
 /* UX case study template styles. */
 
 :root {
-  --ux-theme: #13838A;
-  --ux-dark: #0B6469;
-  --ux-soft: #E8F6F5;
-  --ux-pale: #F3FAF9;
   --ux-radius: 16px;
 }
 

@@ -1,6 +1,14 @@
 /* Victim Hub case study theme and page-specific modules. */
-:root { --ux-theme:#00164B; --ux-dark:#00164B; --ux-soft:#DFEDF7; --ux-pale:#EEF5FB; --vth-blue:#223D92; --vth-blue-mid:#0E488D; --vth-cyan:#00BDF2; --vth-red:#B30D0D; }
-.ux-case-page--victim-hub { --ux-theme:#00164B; --ux-dark:#00164B; --ux-soft:#DFEDF7; --ux-pale:#EEF5FB; }
+.ux-case-page--victim-hub {
+  --ux-theme: #00164B;
+  --ux-dark: #00164B;
+  --ux-soft: #DFEDF7;
+  --ux-pale: #EEF5FB;
+  --vth-blue: #223D92;
+  --vth-blue-mid: #0E488D;
+  --vth-cyan: #00BDF2;
+  --vth-red: #B30D0D;
+}
 .vth-hero {
   background: url("../img/projects/vth/hero-bg.png");
   background-size: cover;

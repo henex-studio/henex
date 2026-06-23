@@ -1,0 +1,11 @@
+/* Accessibility Support Hub case styles.
+   Dependencies: global.css, ux-case-study.css */
+
+.ux-case-page--support-hub {
+  --ux-theme: #13838A;
+  --ux-dark: #0B6469;
+  --ux-soft: #E8F6F5;
+  --ux-pale: #F3FAF9;
+  --ash-pink: #A5205F;
+  --ash-blue: #09397C;
+}
