@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
   <title>Studier | HENEX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..800&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet">
   <link rel="icon" href="../assets/icons/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
   <link rel="icon" href="../assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="../assets/css/global.css">
@@ -15,47 +18,436 @@
   <link rel="stylesheet" href="../assets/css/std.css">
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/case-interactions.js" defer></script>
+  <!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="HENEX">
+<meta property="og:title" content="Studier | HENEX">
+<meta property="og:description" content="Studier research operations platform UX case study by HENEX.">
+<meta property="og:image" content="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp">
+<meta property="og:url" content="https://henex.uk/works/studier.html">
 </head>
+
 <body class="ux-case-page ux-case-page--studier">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
       <a class="site-brand" href="../index.html" aria-label="Cafe Yi home">HENEX</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__label">Menu</span></button>
-      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html" aria-current="page">Works</a><a href="../lab.html">Lab</a><a class="site-nav__cta" href="mailto:cafeyee@gmail.com">Contact</a><button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><img class="theme-icon theme-icon--sun" src="../assets/icons/ui/icon-sun.svg" alt="" aria-hidden="true"><img class="theme-icon theme-icon--moon" src="../assets/icons/ui/icon-moon.svg" alt="" aria-hidden="true"></button></nav>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle><span
+          class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span
+          class="nav-toggle__label">Menu</span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav><a
+          href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html"
+          aria-current="page">Works</a><a href="../lab.html">Lab</a><a class="site-nav__cta"
+          href="mailto:cafeyee@gmail.com">Contact</a><button class="theme-toggle" type="button" data-theme-toggle
+          aria-label="Switch theme"><img class="theme-icon theme-icon--sun" src="../assets/icons/ui/icon-sun.svg" alt=""
+            aria-hidden="true"><img class="theme-icon theme-icon--moon" src="../assets/icons/ui/icon-moon.svg" alt=""
+            aria-hidden="true"></button></nav>
     </div>
   </header>
   <main id="main-content">
     <section class="ux-hero studier-hero" aria-labelledby="case-title">
-      <div class="container ux-hero__top"><div class="case-tag-row case-tag-row--surface"><div class="case-tags case-tags--primary" aria-label="Project categories"><span class="case-tag">UX</span><span class="case-tag">Research Ops</span><span class="case-tag">Tree Testing</span></div><div class="case-tags case-tags--secondary" aria-label="Project type"><span class="case-tag">Self initiated</span></div></div></div>
-      <div class="container ux-hero__inner studier-hero__inner"><div class="ux-hero__copy studier-hero__copy"><h1 id="case-title">Studier</h1><p>A lightweight tree testing platform built in three days to protect a live public-service research timeline.</p><div class="ux-actions"><a class="button button--primary" href="https://uxstudier.vercel.app" target="_blank" rel="noopener noreferrer">Open Studier Platform</a><a class="button button--soft" href="#core-features">View Case Details</a></div></div></div>
+      <div class="container ux-hero__top">
+        <div class="case-tag-row case-tag-row--surface">
+          <div class="case-tags case-tags--primary" aria-label="Project categories"><span
+              class="case-tag">UX</span><span class="case-tag">Research Ops</span><span class="case-tag">Tree
+              Testing</span></div>
+          <div class="case-tags case-tags--secondary" aria-label="Project type"><span class="case-tag">Self
+              initiated</span></div>
+        </div>
+      </div>
+      <div class="container ux-hero__inner studier-hero__inner">
+        <div class="ux-hero__copy studier-hero__copy">
+          <h1 id="case-title">Studier</h1>
+          <p>A lightweight tree testing platform built in three days to protect a live public-service research timeline.
+          </p>
+          <div class="ux-actions"><a class="button button--primary" href="https://uxstudier.vercel.app" target="_blank"
+              rel="noopener noreferrer">Open Studier Platform</a><a class="button button--soft"
+              href="#core-features">View Case Details</a></div>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="overview-title"><div class="container ux-two-col"><aside class="ux-intro"><p>Overview</p><h2 id="overview-title">A fast internal tool for a time-critical research need.</h2></aside><div class="ux-copy"><p>Studier was created during a sensitive public-service navigation project, when the team needed to run a tree test within the same week. Existing options did not fit the project constraints. The required Qualtrics module was unavailable, external procurement would take too long, and third party platforms raised privacy and security concerns.</p><p>I built the first working MVP in three days. It supported the essential workflow for tree testing: create a study, set up an IA tree, add tasks, publish a participant link and collect responses. The platform later expanded into a reusable research operations tool with preview, lifecycle controls, custom questions, exports, data cleaning support, guide content and version history.</p><div class="ux-meta" aria-label="Project facts"><div><span>Client</span><strong>Internal programme tool</strong></div><div><span>Role</span><strong>Product Owner, UX Researcher, AI-assisted Product Builder</strong></div><div><span>Team</span><strong>Individual build, used by programme members</strong></div><div><span>Timeline</span><strong>3-day MVP, followed by iterative releases</strong></div><div><span>Tools</span><strong>Copilot, React, Supabase, GitHub, Vercel</strong></div><div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r27">R27 · Impact Dashboard</a><small>Agency × Meaning × Interface</small></div></div><div class="ux-skills"><span>Skills</span><div><em>Product ownership</em><em>Research operations</em><em>Tree testing</em><em>Information architecture</em><em>AI-assisted development</em><em>Dashboard design</em><em>Data analysis</em><em>Privacy-aware research</em></div></div></div></div></section>
+    <section class="ux-section" aria-labelledby="overview-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>Overview</p>
+          <h2 id="overview-title">A fast internal tool for a time-critical research need.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p>Studier was created during a sensitive public-service navigation project, when the team needed to run a
+            tree test within the same week. Existing options did not fit the project constraints. The required Qualtrics
+            module was unavailable, external procurement would take too long, and third party platforms raised privacy
+            and security concerns.</p>
+          <p>I built the first working MVP in three days. It supported the essential workflow for tree testing: create a
+            study, set up an IA tree, add tasks, publish a participant link and collect responses. The platform later
+            expanded into a reusable research operations tool with preview, lifecycle controls, custom questions,
+            exports, data cleaning support, guide content and version history.</p>
+          <div class="ux-meta" aria-label="Project facts">
+            <div><span>Client</span><strong>Internal programme tool</strong></div>
+            <div><span>Role</span><strong>Product Owner, UX Researcher, AI-assisted Product Builder</strong></div>
+            <div><span>Team</span><strong>Individual build, used by programme members</strong></div>
+            <div><span>Timeline</span><strong>3-day MVP, followed by iterative releases</strong></div>
+            <div><span>Tools</span><strong>Copilot, React, Supabase, GitHub, Vercel</strong></div>
+            <div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r27">R27 · Impact
+                Dashboard</a><small>Agency × Meaning × Interface</small></div>
+          </div>
+          <div class="ux-skills"><span>Skills</span>
+            <div><em>Product ownership</em><em>Research operations</em><em>Tree testing</em><em>Information
+                architecture</em><em>AI-assisted development</em><em>Dashboard design</em><em>Data
+                analysis</em><em>Privacy-aware research</em></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-problem studier-problem" aria-labelledby="problem-title"><div class="container ux-problem__grid studier-problem__grid"><div><p class="ux-kicker">Problem</p><h2 id="problem-title"><strong>How might I</strong> create a safe, fast and customisable tree testing workflow that captures enough behavioural evidence for IA decisions without delaying the project?</h2><p class="studier-problem-note">The project team needed evidence about whether people could find support information in a proposed navigation structure. A standard survey could not capture enough behavioural evidence. The research needed selected paths, first clicks, click history, time, click count, skipped tasks and acceptable path logic.</p></div><figure class="studier-product-frame"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png" data-modal-title="Studier dashboard" data-modal-caption="Dashboard for creating, reviewing and managing tree test studies."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png" alt="Studier dashboard for managing tree test studies." loading="lazy"></button><figcaption>The dashboard made study status, links and response management visible in one place.</figcaption></figure></div></section>
+    <section class="ux-section ux-problem studier-problem" aria-labelledby="problem-title">
+      <div class="container ux-problem__grid studier-problem__grid">
+        <div>
+          <p class="ux-kicker">Problem</p>
+          <h2 id="problem-title"><strong>How might I</strong> create a safe, fast and customisable tree testing workflow
+            that captures enough behavioural evidence for IA decisions without delaying the project?</h2>
+          <p class="studier-problem-note">The project team needed evidence about whether people could find support
+            information in a proposed navigation structure. A standard survey could not capture enough behavioural
+            evidence. The research needed selected paths, first clicks, click history, time, click count, skipped tasks
+            and acceptable path logic.</p>
+        </div>
+        <figure class="studier-product-frame"><button type="button"
+            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+            data-modal-title="Studier dashboard"
+            data-modal-caption="Dashboard for creating, reviewing and managing tree test studies."><img
+              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+              alt="Studier dashboard for managing tree test studies." loading="lazy"></button>
+          <figcaption>The dashboard made study status, links and response management visible in one place.</figcaption>
+        </figure>
+      </div>
+    </section>
 
-    <section class="ux-section" aria-labelledby="role-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">My Role</p><h2 id="role-title">I owned the tool, the test workflow and the analysis.</h2><p>I owned the full process independently, from product framing and MVP scoping to Copilot-assisted build direction, internal testing, research setup, response management and analysis.</p></div><div class="studier-role-grid"><article class="ux-card"><span>Product ownership</span><h3>Define the useful minimum</h3><p>I shaped the product need, scoped the first MVP and kept each feature tied to a real research or operational problem.</p></article><article class="ux-card"><span>AI-assisted build</span><h3>Build through small changes</h3><p>I used Copilot to move quickly, then tested each generated change against the intended workflow.</p></article><article class="ux-card"><span>Research operations</span><h3>Set up the test workflow</h3><p>I created the tree test structure, target paths, acceptable paths and response handling process.</p></article><article class="ux-card"><span>Data analysis</span><h3>Turn outputs into findings</h3><p>I cleaned, validated and analysed the exported data so the research could support IA decisions.</p></article></div></div></section>
+    <section class="ux-section" aria-labelledby="role-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">My Role</p>
+          <h2 id="role-title">I owned the tool, the test workflow and the analysis.</h2>
+          <p>I owned the full process independently, from product framing and MVP scoping to Copilot-assisted build
+            direction, internal testing, research setup, response management and analysis.</p>
+        </div>
+        <div class="studier-role-grid">
+          <article class="ux-card"><span>Product ownership</span>
+            <h3>Define the useful minimum</h3>
+            <p>I shaped the product need, scoped the first MVP and kept each feature tied to a real research or
+              operational problem.</p>
+          </article>
+          <article class="ux-card"><span>AI-assisted build</span>
+            <h3>Build through small changes</h3>
+            <p>I used Copilot to move quickly, then tested each generated change against the intended workflow.</p>
+          </article>
+          <article class="ux-card"><span>Research operations</span>
+            <h3>Set up the test workflow</h3>
+            <p>I created the tree test structure, target paths, acceptable paths and response handling process.</p>
+          </article>
+          <article class="ux-card"><span>Data analysis</span>
+            <h3>Turn outputs into findings</h3>
+            <p>I cleaned, validated and analysed the exported data so the research could support IA decisions.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="studier-solution" aria-labelledby="solution-title"><div class="container studier-solution__grid"><div><p class="ux-kicker">Solution</p><h2 id="solution-title">A controlled workflow for tree testing.</h2><p>Studier turned tree testing into a controlled research workflow. It was designed around the smallest useful flow, avoiding unnecessary personal data while still capturing the behavioural evidence needed for IA decisions.</p></div><div class="studier-solution-cards" aria-label="Studier solution areas"><article><span>01</span><h3>Create and publish tests</h3><p>Set up studies, IA trees, task scenarios, target paths, acceptable paths and public participant links.</p></article><article><span>02</span><h3>Run participant flows</h3><p>Guide participants through intro, privacy guidance, task-by-task navigation and selected path submission.</p></article><article><span>03</span><h3>Export and analyse responses</h3><p>Capture path choices, match types, first clicks, time, click count and outputs for data cleaning.</p></article></div></div></section>
+    <section class="studier-solution" aria-labelledby="solution-title">
+      <div class="container studier-solution__grid">
+        <div>
+          <p class="ux-kicker">Solution</p>
+          <h2 id="solution-title">A controlled workflow for tree testing.</h2>
+          <p>Studier turned tree testing into a controlled research workflow. It was designed around the smallest useful
+            flow, avoiding unnecessary personal data while still capturing the behavioural evidence needed for IA
+            decisions.</p>
+        </div>
+        <div class="studier-solution-cards" aria-label="Studier solution areas">
+          <article><span>01</span>
+            <h3>Create and publish tests</h3>
+            <p>Set up studies, IA trees, task scenarios, target paths, acceptable paths and public participant links.
+            </p>
+          </article>
+          <article><span>02</span>
+            <h3>Run participant flows</h3>
+            <p>Guide participants through intro, privacy guidance, task-by-task navigation and selected path submission.
+            </p>
+          </article>
+          <article><span>03</span>
+            <h3>Export and analyse responses</h3>
+            <p>Capture path choices, match types, first clicks, time, click count and outputs for data cleaning.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section" id="core-features" aria-labelledby="features-title"><div class="container ux-wide-head"><p class="ux-kicker">Core Features</p><h2 id="features-title">One platform for setup, testing and response management.</h2><p>The platform was built around the core research workflow, then expanded where real use showed a need.</p></div><div class="container studier-feature-stack"><article class="studier-feature-row"><div class="ux-copy"><p class="ux-kicker">Study dashboard</p><h3>Create, review and manage studies.</h3><p>The dashboard lets internal users check status, copy participant links and manage the test lifecycle from one place.</p></div><figure class="studier-product-frame"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png" data-modal-title="Study dashboard" data-modal-caption="Dashboard for creating and managing internal tree test studies."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png" alt="Studier study dashboard interface." loading="lazy"></button></figure></article><article class="studier-feature-row studier-feature-row--reverse"><div class="ux-copy"><p class="ux-kicker">Study builder</p><h3>Set up custom trees, tasks and questions.</h3><p>The builder supports study instructions, privacy notes, IA tree setup, task scenarios, target paths, acceptable paths, pre-task questions and final questions.</p></div><figure class="studier-product-frame"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/edit-page.png" data-modal-title="Study builder" data-modal-caption="Builder interface for setting up a tree test study."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/edit-page.png" alt="Studier study builder interface." loading="lazy"></button></figure></article><article class="studier-feature-row"><div class="ux-copy"><p class="ux-kicker">Responsible use gate</p><h3>Set clear use conditions before access.</h3><p>Before users enter the platform, Studier presents clear use conditions for responsible internal testing. The screen sets expectations around approval, privacy, sensitive information and checking exported data before sharing.</p></div><figure class="studier-product-frame studier-product-frame--large"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/responsible-use.png" data-modal-title="Responsible use gate" data-modal-caption="Responsible use screen showing conditions and consent before entering the platform."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/responsible-use.png" alt="Studier responsible use screen showing use conditions and consent before entering the platform." loading="lazy"></button></figure></article><article class="studier-feature-row"><div class="ux-copy"><p class="ux-kicker">Participant flow</p><h3>Complete tasks through a collapsed navigation tree.</h3><p>Participants can open a public link, read the introduction, complete tasks and submit selected paths without logging in.</p></div><figure class="studier-product-frame studier-product-frame--large"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/test1.png" data-modal-title="Participant flow" data-modal-caption="Participant flow for completing a tree test task."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/test1.png" alt="Studier participant task screen." loading="lazy"></button></figure></article><article class="studier-feature-row studier-feature-row--reverse"><div class="ux-copy"><p class="ux-kicker">Guide and internal use</p><h3>Make the tool usable beyond one project.</h3><p>Guide content and version history helped the platform become a usable internal tool rather than a one-off prototype.</p></div><figure class="studier-product-frame studier-product-frame--large"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/guide.png" data-modal-title="Studier guide" data-modal-caption="Guide content for internal Studier users."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/guide.png" alt="Studier guide page." loading="lazy"></button></figure></article></div><div class="container studier-platform-cta"><a class="button button--primary" href="https://uxstudier.vercel.app" target="_blank" rel="noopener noreferrer">Open Studier Platform</a><p>Public access starts from a registration screen.</p></div></section>
+    <section class="ux-section" id="core-features" aria-labelledby="features-title">
+      <div class="container ux-wide-head">
+        <p class="ux-kicker">Core Features</p>
+        <h2 id="features-title">One platform for setup, testing and response management.</h2>
+        <p>The platform was built around the core research workflow, then expanded where real use showed a need.</p>
+      </div>
+      <div class="container studier-feature-stack">
+        <article class="studier-feature-row">
+          <div class="ux-copy">
+            <p class="ux-kicker">Study dashboard</p>
+            <h3>Create, review and manage studies.</h3>
+            <p>The dashboard lets internal users check status, copy participant links and manage the test lifecycle from
+              one place.</p>
+          </div>
+          <figure class="studier-product-frame"><button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+              data-modal-title="Study dashboard"
+              data-modal-caption="Dashboard for creating and managing internal tree test studies."><img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+                alt="Studier study dashboard interface." loading="lazy"></button></figure>
+        </article>
+        <article class="studier-feature-row studier-feature-row--reverse">
+          <div class="ux-copy">
+            <p class="ux-kicker">Study builder</p>
+            <h3>Set up custom trees, tasks and questions.</h3>
+            <p>The builder supports study instructions, privacy notes, IA tree setup, task scenarios, target paths,
+              acceptable paths, pre-task questions and final questions.</p>
+          </div>
+          <figure class="studier-product-frame"><button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/edit-page.png"
+              data-modal-title="Study builder"
+              data-modal-caption="Builder interface for setting up a tree test study."><img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/edit-page.png"
+                alt="Studier study builder interface." loading="lazy"></button></figure>
+        </article>
+        <article class="studier-feature-row">
+          <div class="ux-copy">
+            <p class="ux-kicker">Responsible use gate</p>
+            <h3>Set clear use conditions before access.</h3>
+            <p>Before users enter the platform, Studier presents clear use conditions for responsible internal testing.
+              The screen sets expectations around approval, privacy, sensitive information and checking exported data
+              before sharing.</p>
+          </div>
+          <figure class="studier-product-frame studier-product-frame--large"><button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/responsible-use.png"
+              data-modal-title="Responsible use gate"
+              data-modal-caption="Responsible use screen showing conditions and consent before entering the platform."><img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/responsible-use.png"
+                alt="Studier responsible use screen showing use conditions and consent before entering the platform."
+                loading="lazy"></button></figure>
+        </article>
+        <article class="studier-feature-row">
+          <div class="ux-copy">
+            <p class="ux-kicker">Participant flow</p>
+            <h3>Complete tasks through a collapsed navigation tree.</h3>
+            <p>Participants can open a public link, read the introduction, complete tasks and submit selected paths
+              without logging in.</p>
+          </div>
+          <figure class="studier-product-frame studier-product-frame--large"><button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/test1.png"
+              data-modal-title="Participant flow"
+              data-modal-caption="Participant flow for completing a tree test task."><img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/test1.png"
+                alt="Studier participant task screen." loading="lazy"></button></figure>
+        </article>
+        <article class="studier-feature-row studier-feature-row--reverse">
+          <div class="ux-copy">
+            <p class="ux-kicker">Guide and internal use</p>
+            <h3>Make the tool usable beyond one project.</h3>
+            <p>Guide content and version history helped the platform become a usable internal tool rather than a one-off
+              prototype.</p>
+          </div>
+          <figure class="studier-product-frame studier-product-frame--large"><button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/guide.png"
+              data-modal-title="Studier guide" data-modal-caption="Guide content for internal Studier users."><img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/guide.png"
+                alt="Studier guide page." loading="lazy"></button></figure>
+        </article>
+      </div>
+      <div class="container studier-platform-cta"><a class="button button--primary" href="https://uxstudier.vercel.app"
+          target="_blank" rel="noopener noreferrer">Open Studier Platform</a>
+        <p>Public access starts from a registration screen.</p>
+      </div>
+    </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="evolution-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Product Evolution</p><h2 id="evolution-title">From a three day MVP to a reusable research tool.</h2><p>Studier did not grow from a fixed roadmap. It grew from real use. Each update responded to a specific research or operational need.</p></div><div class="studier-timeline"><article><span>01</span><h3>MVP workflow</h3><p>Create study, IA tree, tasks, participant runner and response capture.</p></article><article><span>02</span><h3>Study setup maturity</h3><p>Add pre-task questions, CSV checks, preview and readiness checks.</p></article><article><span>03</span><h3>Lifecycle and review</h3><p>Add closing time, review mode, task navigation and response path review.</p></article><article><span>04</span><h3>Data operations</h3><p>Add exports, data cleaning, clear data options, guide content and version history.</p></article></div></div></section>
+    <section class="ux-section ux-section--tint" aria-labelledby="evolution-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Product Evolution</p>
+          <h2 id="evolution-title">From a three day MVP to a reusable research tool.</h2>
+          <p>Studier did not grow from a fixed roadmap. It grew from real use. Each update responded to a specific
+            research or operational need.</p>
+        </div>
+        <div class="studier-timeline">
+          <article><span>01</span>
+            <h3>MVP workflow</h3>
+            <p>Create study, IA tree, tasks, participant runner and response capture.</p>
+          </article>
+          <article><span>02</span>
+            <h3>Study setup maturity</h3>
+            <p>Add pre-task questions, CSV checks, preview and readiness checks.</p>
+          </article>
+          <article><span>03</span>
+            <h3>Lifecycle and review</h3>
+            <p>Add closing time, review mode, task navigation and response path review.</p>
+          </article>
+          <article><span>04</span>
+            <h3>Data operations</h3>
+            <p>Add exports, data cleaning, clear data options, guide content and version history.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section" aria-labelledby="research-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Research Use Case</p><h2 id="research-title">Testing whether people could find support information.</h2><p>Studier was used to support a public-service tree test across ten support information scenarios. The analysis helped identify IA issues around category boundaries, support pathways, process labels and safety-related content.</p></div><div class="studier-metrics" aria-label="Tree test summary metrics"><article><span>Participants</span><strong>35</strong></article><article><span>Cleaned task responses</span><strong>323</strong></article><article><span>Tasks</span><strong>10</strong></article><article><span>Total success</span><strong>50.5%</strong></article></div><div class="ux-influence studier-research-note"><strong>Influence</strong><p>One clearer route performed strongly and became a useful benchmark for improving labels and navigation paths.</p></div></div></section>
+    <section class="ux-section" aria-labelledby="research-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Research Use Case</p>
+          <h2 id="research-title">Testing whether people could find support information.</h2>
+          <p>Studier was used to support a public-service tree test across ten support information scenarios. The
+            analysis helped identify IA issues around category boundaries, support pathways, process labels and
+            safety-related content.</p>
+        </div>
+        <div class="studier-metrics" aria-label="Tree test summary metrics">
+          <article><span>Participants</span><strong>35</strong></article>
+          <article><span>Cleaned task responses</span><strong>323</strong></article>
+          <article><span>Tasks</span><strong>10</strong></article>
+          <article><span>Total success</span><strong>50.5%</strong></article>
+        </div>
+        <div class="ux-influence studier-research-note"><strong>Influence</strong>
+          <p>One clearer route performed strongly and became a useful benchmark for improving labels and navigation
+            paths.</p>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="impact-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Impact</p><h2 id="impact-title">A project risk became working infrastructure.</h2><p>Studier helped the team run the tree test on time, reduce dependency on unavailable tools and create a controlled environment for privacy-sensitive research.</p></div><div class="studier-impact-grid"><article><span>Saved time</span><h3>Protected the research schedule.</h3><p>The team could run the tree test within the required week instead of waiting for procurement or adapting an unsuitable tool.</p></article><article><span>Protected data control</span><h3>Reduced tool and privacy risk.</h3><p>The platform avoided unnecessary personal data and introduced clear responsible-use conditions before access.</p></article><article><span>Made research repeatable</span><h3>Supported wider programme use.</h3><p>Other programme members could register, create studies and manage tests from the dashboard.</p></article></div></div></section>
+    <section class="ux-section ux-section--tint" aria-labelledby="impact-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Impact</p>
+          <h2 id="impact-title">A project risk became working infrastructure.</h2>
+          <p>Studier helped the team run the tree test on time, reduce dependency on unavailable tools and create a
+            controlled environment for privacy-sensitive research.</p>
+        </div>
+        <div class="studier-impact-grid">
+          <article><span>Saved time</span>
+            <h3>Protected the research schedule.</h3>
+            <p>The team could run the tree test within the required week instead of waiting for procurement or adapting
+              an unsuitable tool.</p>
+          </article>
+          <article><span>Protected data control</span>
+            <h3>Reduced tool and privacy risk.</h3>
+            <p>The platform avoided unnecessary personal data and introduced clear responsible-use conditions before
+              access.</p>
+          </article>
+          <article><span>Made research repeatable</span>
+            <h3>Supported wider programme use.</h3>
+            <p>Other programme members could register, create studies and manage tests from the dashboard.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-retro" aria-labelledby="retro-title"><div class="container"><p class="ux-kicker">Retrospective</p><h2 id="retro-title">Build only what the delivery risk needs.</h2><div class="ux-card-grid ux-card-grid--three ux-retro__grid"><article class="ux-card"><h3>Value</h3><p>A focused internal tool protected the research timeline and turned IA testing into a repeatable workflow.</p></article><article class="ux-card"><h3>Limitation</h3><p>The platform was built under pressure, so advanced reporting and dashboard visualisation stayed outside the MVP.</p></article><article class="ux-card"><h3>Next</h3><p>Add testing rounds, stronger visualisations, wrong path clustering and exportable findings reports.</p></article></div></div></section>
+    <section class="ux-retro" aria-labelledby="retro-title">
+      <div class="container">
+        <p class="ux-kicker">Retrospective</p>
+        <h2 id="retro-title">Build only what the delivery risk needs.</h2>
+        <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
+          <article class="ux-card">
+            <h3>Value</h3>
+            <p>A focused internal tool protected the research timeline and turned IA testing into a repeatable workflow.
+            </p>
+          </article>
+          <article class="ux-card">
+            <h3>Limitation</h3>
+            <p>The platform was built under pressure, so advanced reporting and dashboard visualisation stayed outside
+              the MVP.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Next</h3>
+            <p>Add testing rounds, stronger visualisations, wrong path clustering and exportable findings reports.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section" aria-labelledby="recipe-title"><div class="container ux-two-col"><aside class="ux-intro"><p>HENEX Method Recipe</p><h2 id="recipe-title">R27 explains how research progress became actionable.</h2></aside><div class="ux-copy"><p class="ux-recipe-primary"><span>Primary recipe</span><a href="../philosophy.html#r27">R27 · Impact Dashboard</a><small>Agency × Meaning × Interface</small></p><p>Studier uses R27 because the project turned a time critical research process into an actionable internal dashboard. It made study status, participant links, response capture, lifecycle controls, exports and IA evidence visible enough for the team to manage progress and act on findings.</p><div class="ux-recipe-tags"><span>Agency</span><span>Meaning</span><span>Interface</span></div><div class="ux-recipe-popovers"><button type="button" class="ux-recipe-trigger" data-recipe-title="R18 · Step by Step Path Design" data-recipe-body="Arrange tasks in the order people think and decide." data-recipe-link="../philosophy.html#r18">R18</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R15 · Clarity & Accessibility Audit" data-recipe-body="Turn repeated usability issues into concrete fixes." data-recipe-link="../philosophy.html#r15">R15</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R24 · Trust & Cooperation Rules" data-recipe-body="Build trust mechanisms for safe participation and exchange." data-recipe-link="../philosophy.html#r24">R24</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R21 · Small Step Actions" data-recipe-body="Break complex action into manageable interface steps." data-recipe-link="../philosophy.html#r21">R21</button></div></div></div></section>
+    <section class="ux-section" aria-labelledby="recipe-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>HENEX Method Recipe</p>
+          <h2 id="recipe-title">R27 explains how research progress became actionable.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p class="ux-recipe-primary"><span>Primary recipe</span><a href="../philosophy.html#r27">R27 · Impact
+              Dashboard</a><small>Agency × Meaning × Interface</small></p>
+          <p>Studier uses R27 because the project turned a time critical research process into an actionable internal
+            dashboard. It made study status, participant links, response capture, lifecycle controls, exports and IA
+            evidence visible enough for the team to manage progress and act on findings.</p>
+          <div class="ux-recipe-tags"><span>Agency</span><span>Meaning</span><span>Interface</span></div>
+          <div class="ux-recipe-popovers"><button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R18 · Step by Step Path Design"
+              data-recipe-body="Arrange tasks in the order people think and decide."
+              data-recipe-link="../philosophy.html#r18">R18</button><button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R15 · Clarity & Accessibility Audit"
+              data-recipe-body="Turn repeated usability issues into concrete fixes."
+              data-recipe-link="../philosophy.html#r15">R15</button><button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R24 · Trust & Cooperation Rules"
+              data-recipe-body="Build trust mechanisms for safe participation and exchange."
+              data-recipe-link="../philosophy.html#r24">R24</button><button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R21 · Small Step Actions"
+              data-recipe-body="Break complex action into manageable interface steps."
+              data-recipe-link="../philosophy.html#r21">R21</button></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-related" aria-labelledby="related-title"><div class="container"><p class="ux-kicker">Related Projects</p><h2 id="related-title">More work across service, research and digital systems.</h2><div class="ux-related__grid"><a class="ux-related-card" href="victim-hub.html"><img src="../assets/img/projects/vth/vth-home.webp" alt="Related service project preview." loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service improvement case.</small></a><a class="ux-related-card" href="accessibility-support-hub.html"><img src="../assets/img/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support pathway case focused on clearer access to court assistance.</small></a><a class="ux-related-card" href="new-world-design-system.html"><img src="../assets/img/projects/nds/nds-home.webp" alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New World Design System</strong><small>A design system case focused on reusable UI structure.</small></a><a class="ux-related-card" href="voting-starter-kit.html"><img src="../assets/img/projects/vsk/vsk-home.webp" alt="Voting Starter Kit project preview." loading="lazy"><span>Service Systems</span><strong>Voting Starter Kit</strong><small>A civic service case focused on motivation and action.</small></a></div><div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div></div></section>
+    <section class="ux-section ux-related" aria-labelledby="related-title">
+      <div class="container">
+        <p class="ux-kicker">Related Projects</p>
+        <h2 id="related-title">More work across service, research and digital systems.</h2>
+        <div class="ux-related__grid"><a class="ux-related-card" href="victim-hub.html"><img
+              src="../assets/img/projects/vth/vth-home.webp" alt="Related service project preview."
+              loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service
+              improvement case.</small></a><a class="ux-related-card" href="accessibility-support-hub.html"><img
+              src="../assets/img/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview."
+              loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support
+              pathway case focused on clearer access to court assistance.</small></a><a class="ux-related-card"
+            href="new-world-design-system.html"><img src="../assets/img/projects/nds/nds-home.webp"
+              alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New
+              World Design System</strong><small>A design system case focused on reusable UI structure.</small></a><a
+            class="ux-related-card" href="voting-starter-kit.html"><img src="../assets/img/projects/vsk/vsk-home.webp"
+              alt="Voting Starter Kit project preview." loading="lazy"><span>Service Systems</span><strong>Voting
+              Starter Kit</strong><small>A civic service case focused on motivation and action.</small></a></div>
+        <div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-intro"><h2>Cafe Yi</h2><p>Creating evidence-informed design work across public services, digital products and built environments.</p><a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a></div><div class="footer-column"><h3>Social</h3><a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a><a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a></div><div class="footer-column"><h3>Explore</h3><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html">Works</a><a href="../lab.html">Lab</a></div></div><div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div></footer>
-  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top"><img src="../assets/icons/ui/icon-arrow-up.svg" alt="" aria-hidden="true"></button>
-  <div class="ux-modal" data-ux-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-caption"><div class="ux-modal__panel"><button class="ux-modal__close" type="button" data-modal-close aria-label="Close image preview"><img src="../assets/icons/ui/icon-close.svg" alt="" aria-hidden="true"></button><h2 id="modal-title">Image preview</h2><div class="ux-modal__canvas"><img data-modal-image alt=""></div><p id="modal-caption" data-modal-caption></p></div></div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-intro">
+        <h2>Cafe Yi</h2>
+        <p>Creating evidence-informed design work across public services, digital products and built environments.</p><a
+          class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a>
+      </div>
+      <div class="footer-column">
+        <h3>Social</h3><a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a><a
+          href="https://www.instagram.com/cafe.yi_photo/">Instagram</a>
+      </div>
+      <div class="footer-column">
+        <h3>Explore</h3><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a
+          href="../works.html">Works</a><a href="../lab.html">Lab</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div>
+  </footer>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top"><img
+      src="../assets/icons/ui/icon-arrow-up.svg" alt="" aria-hidden="true"></button>
+  <div class="ux-modal" data-ux-modal role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-describedby="modal-caption">
+    <div class="ux-modal__panel"><button class="ux-modal__close" type="button" data-modal-close
+        aria-label="Close image preview"><img src="../assets/icons/ui/icon-close.svg" alt=""
+          aria-hidden="true"></button>
+      <h2 id="modal-title">Image preview</h2>
+      <div class="ux-modal__canvas"><img data-modal-image alt=""></div>
+      <p id="modal-caption" data-modal-caption></p>
+    </div>
+  </div>
   <div class="ux-popover" data-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
 </body>
+
 </html>
