@@ -1,0 +1,450 @@
+/* Who's Singing OuTūīside? case page extension.
+   Scope: works/whos-singing-outuiside.html only.
+   Primary: deep green #46564C  Secondary (dark-bg only): orange #F5B154
+   This file is additive and does not modify existing HENEX case study styles. */
+
+/* ─── Theme variables ─── */
+.ux-case-page--wso {
+  --ux-theme: #46564C;
+  --ux-dark: #2D3B32;
+  --ux-soft: #EDF1EE;
+  --ux-pale: #F5F7F5;
+  --wso-orange: #F5B154;
+  --wso-orange-soft: #FEF3E2;
+}
+
+/* ─── Hero (full-bleed background, no right-side image) ─── */
+.ux-case-page--wso.ux-case-page--background-hero .ux-hero {
+  background:
+    linear-gradient(100deg,
+      rgba(45,59,50,.80) 0%,
+      rgba(45,59,50,.58) 42%,
+      rgba(70,86,76,.22) 72%,
+      rgba(230,238,232,.04) 100%),
+    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png"),
+    linear-gradient(150deg, #EDF1EE, #F5F7F5 54%, var(--theme-bg));
+  background-size: cover, cover, cover;
+  background-position: center, center right, center;
+  background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .ux-case-page--wso.ux-case-page--background-hero .ux-hero {
+  background:
+    linear-gradient(100deg,
+      rgba(20,32,24,.88) 0%,
+      rgba(20,32,24,.68) 44%,
+      rgba(45,59,50,.32) 72%,
+      rgba(7,8,9,.18) 100%),
+    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png"),
+    linear-gradient(140deg, #0D120E 0%, #070809 100%);
+  background-size: cover, cover, cover;
+  background-position: center, center right, center;
+  background-repeat: no-repeat;
+}
+
+/* Hero text colours */
+.ux-case-page--wso .ux-hero h1,
+.ux-case-page--wso .wso-hero__subtitle {
+  color: #ffffff;
+}
+
+.ux-case-page--wso .wso-hero__subtitle {
+  margin-top: 8px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-style: italic;
+  opacity: .86;
+}
+
+/* Hero tags — use ux-tags, match VSK pattern */
+.ux-case-page--wso .ux-hero .ux-tags span {
+  border-color: rgba(255,255,255,.34);
+  background: rgba(255,255,255,.16);
+  color: #ffffff;
+}
+
+.ux-case-page--wso .ux-hero .ux-tags--secondary span {
+  background: rgba(245,177,84,.26);
+  border-color: rgba(245,177,84,.52);
+  color: #ffffff;
+}
+
+/* Hero CTA */
+.ux-case-page--wso .ux-hero .ux-button--primary {
+  background: var(--wso-orange);
+  color: #2D3B32;
+  border-color: var(--wso-orange);
+  font-weight: 800;
+}
+
+/* ─── Global heading colour (primary green, NO orange on light bg) ─── */
+.ux-case-page--wso .ux-intro h2,
+.ux-case-page--wso .ux-wide-head h2,
+.ux-case-page--wso .ux-copy h2,
+.ux-case-page--wso .ux-copy h3,
+.ux-case-page--wso .ux-retro h2,
+.ux-case-page--wso .ux-retro h3 {
+  color: var(--ux-theme);
+}
+
+/* Kicker on light bg → green, not orange */
+.ux-case-page--wso .ux-kicker,
+.ux-case-page--wso .ux-intro > p:first-child {
+  color: var(--ux-theme);
+}
+
+/* figcaption tint */
+.ux-case-page--wso figcaption {
+  color: color-mix(in srgb, var(--ux-theme) 54%, var(--theme-text-soft));
+}
+
+/* Buttons on light bg */
+.ux-case-page--wso .ux-button--primary {
+  background: var(--ux-theme);
+  color: #ffffff;
+  border-color: var(--ux-theme);
+}
+
+.ux-case-page--wso .ux-button--soft {
+  background: var(--ux-soft);
+  color: var(--ux-theme);
+  border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
+}
+
+/* ─── Meta grid (inside Overview copy column) ─── */
+.wso-meta {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 28px;
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+
+.wso-meta div { display: flex; flex-direction: column; gap: 4px; }
+
+.wso-meta span {
+  color: var(--theme-muted);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.wso-meta strong {
+  color: var(--theme-text);
+  font-size: .94rem;
+  font-weight: 600;
+}
+
+/* Skills row */
+.ux-case-page--wso .ux-skills { margin-top: 24px; }
+
+.wso-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.wso-skill-tags span {
+  padding: 5px 13px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 26%, var(--theme-border-soft));
+  border-radius: 999px;
+  background: var(--ux-soft);
+  color: var(--ux-theme);
+  font-size: .82rem;
+  font-weight: 650;
+}
+
+/* ─── Problem + Solution combined dark block ─── */
+/* Reuse .ux-solution, override background to deep green */
+.ux-case-page--wso .ux-solution {
+  background:
+    radial-gradient(circle at 16% 22%, rgba(255,255,255,.10), transparent 32%),
+    linear-gradient(135deg, #2D3B32 0%, #3A4D3F 58%, #2D3B32 100%);
+}
+
+.ux-case-page--wso .ux-solution__grid {
+  grid-template-columns: minmax(0, .52fr) minmax(0, .48fr);
+  align-items: center;
+}
+
+/* Problem text sits on dark bg */
+.wso-problem {
+  color: rgba(255,255,255,.86);
+}
+
+.wso-problem h2 { color: #ffffff; }
+.wso-problem p { color: rgba(255,255,255,.78); }
+
+/* Kicker on dark bg → orange */
+.ux-case-page--wso .ux-solution .ux-kicker,
+.wso-solution-card .ux-kicker {
+  color: var(--wso-orange);
+}
+
+/* Solution card floats as white card on dark bg */
+.wso-solution-card {
+  padding: clamp(24px, 3.5vw, 40px);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: 0 24px 64px rgba(0,0,0,.28);
+}
+
+[data-theme="dark"] .wso-solution-card {
+  background: var(--theme-card);
+  box-shadow: 0 24px 64px rgba(0,0,0,.46);
+}
+
+.wso-solution-card h2 { color: var(--ux-theme); }
+.wso-solution-card p { color: var(--theme-text-soft); }
+
+/* ─── Feedback wall — deeper dark green ─── */
+.wso-feedback-wall {
+  margin-top: 48px;
+  padding: clamp(28px, 4vw, 44px) clamp(28px, 4vw, 48px);
+  border-radius: var(--radius-lg);
+  background: #1E2B22;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.wso-feedback-wall blockquote {
+  margin: 0;
+  padding: 18px 24px;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.08);
+  color: rgba(255,255,255,.88);
+  font-size: .96rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.wso-feedback-wall blockquote:nth-child(3) {
+  background: color-mix(in srgb, var(--wso-orange) 26%, transparent);
+}
+
+.wso-feedback-wall blockquote:nth-child(6) {
+  background: rgba(255,255,255,.14);
+}
+
+.wso-feedback-wall__label {
+  margin-top: 10px;
+  color: rgba(255,255,255,.38);
+  font-size: .76rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ─── Discover research cards ─── */
+.wso-research-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+.wso-research-card {
+  padding: 28px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 14%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--ux-soft);
+}
+
+[data-theme="dark"] .wso-research-card {
+  background: var(--theme-surface);
+}
+
+.wso-research-card h3 {
+  margin: 6px 0 10px;
+  color: var(--ux-theme);
+  font-size: 1.15rem;
+}
+
+.wso-research-subhead {
+  margin-bottom: 8px;
+  color: var(--theme-muted);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.wso-research-card figure { margin: 16px 0 0; }
+
+.wso-research-card img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.wso-research-card__images { display: grid; gap: 10px; margin-top: 14px; }
+.wso-research-card__images img { width: 100%; border-radius: var(--radius-sm); display: block; }
+
+.wso-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.wso-info-grid img { width: 100%; border-radius: var(--radius-sm); display: block; }
+
+/* ─── Sketch grid (3 col small) ─── */
+.wso-sketch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 18px;
+  margin-top: 48px;
+}
+
+.wso-sketch-grid figure { margin: 0; }
+
+.wso-sketch-grid img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--theme-border-soft);
+  display: block;
+}
+
+/* ─── Lo-fi grid (2 col, larger) ─── */
+.wso-lofi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.wso-lofi-grid figure { margin: 0; }
+
+.wso-lofi-grid img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--theme-border-soft);
+  display: block;
+}
+
+/* ─── Develop section — orange warm background ─── */
+.wso-develop-section {
+  background: linear-gradient(140deg, #FDECD0 0%, #FEF3E2 54%, #FDF6EA 100%);
+  padding-block: var(--section-pad);
+}
+
+[data-theme="dark"] .wso-develop-section {
+  background: linear-gradient(140deg, #2A1F0A 0%, #1E1508 100%);
+}
+
+/* Headings and kicker on warm bg — use dark green for contrast */
+.wso-develop-section .ux-intro > p:first-child,
+.wso-develop-section .ux-kicker {
+  color: #8B5A00;
+}
+
+[data-theme="dark"] .wso-develop-section .ux-intro > p:first-child,
+[data-theme="dark"] .wso-develop-section .ux-kicker {
+  color: var(--wso-orange);
+}
+
+.wso-develop-section .ux-intro h2,
+.wso-develop-section .ux-wide-head h2 {
+  color: var(--ux-dark);
+}
+
+/* DS card grid */
+.wso-ds-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0,1fr));
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.wso-ds-card {
+  padding: 20px;
+  border: 1px solid rgba(139,90,0,.16);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(8px);
+}
+
+[data-theme="dark"] .wso-ds-card {
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.10);
+}
+
+.wso-ds-card .ux-kicker {
+  margin-bottom: 12px;
+  display: block;
+  color: #8B5A00;
+}
+
+[data-theme="dark"] .wso-ds-card .ux-kicker { color: var(--wso-orange); }
+
+.wso-ds-card img { width: 100%; display: block; border-radius: var(--radius-sm); }
+
+/* ─── Final design grid (2 col) ─── */
+.wso-final-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 22px;
+  margin-top: 48px;
+}
+
+.wso-final-grid figure { margin: 0; }
+
+.wso-final-grid img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--theme-border-soft);
+  display: block;
+}
+
+/* ─── CTA row ─── */
+.wso-cta-row {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ─── Retro cards ─── */
+.ux-case-page--wso .ux-card {
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+}
+
+.ux-case-page--wso .ux-card h3 { color: var(--ux-theme); }
+
+/* ─── Recipe ─── */
+.ux-case-page--wso .ux-recipe-primary a { color: var(--ux-theme); }
+
+.ux-case-page--wso .ux-recipe-tags span {
+  background: var(--ux-soft);
+  color: var(--ux-theme);
+  border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
+}
+
+/* ─── Related projects ─── */
+.ux-case-page--wso .ux-related-card {
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 1100px) {
+  .wso-ds-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .ux-case-page--wso .ux-solution__grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 900px) {
+  .wso-research-pair { grid-template-columns: 1fr; }
+  .wso-sketch-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .wso-lofi-grid { grid-template-columns: 1fr; }
+  .wso-final-grid { grid-template-columns: 1fr; }
+  .wso-feedback-wall { padding: 24px 20px; }
+  .wso-meta { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 520px) {
+  .wso-sketch-grid { grid-template-columns: 1fr; }
+  .wso-ds-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .wso-info-grid { grid-template-columns: 1fr; }
+}
