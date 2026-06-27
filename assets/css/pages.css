@@ -461,6 +461,17 @@
   min-height: 280px;
 }
 
+/* Locked / in-progress card — no hover lift, default cursor, non-clickable state */
+.project-card--locked {
+  cursor: default;
+}
+
+.project-card--locked:hover {
+  transform: none;
+  box-shadow: var(--theme-shadow-card);
+  border-color: var(--theme-border-soft);
+}
+
 .project-grid {
   display: grid;
   gap: 18px;
@@ -592,6 +603,16 @@
   font-size: 0.85rem;
   font-weight: 800;
   text-align: center;
+}
+
+.project-status {
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--theme-muted);
+  font-size: 0.82rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 
@@ -729,16 +750,6 @@
 [data-theme="dark"] .works-category-card__cta {
   filter: invert(1);
   opacity: 0.92;
-}
-
-.project-status {
-  margin-top: auto;
-  padding-top: 20px;
-  color: var(--theme-muted);
-  font-size: 0.82rem;
-  font-weight: 750;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .works-archive-card {
