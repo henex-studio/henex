@@ -1,5 +1,6 @@
-/* HENEX Chronology CSS v1.0
-   Scope: works-chronology.html page — hero, timeline rows, thumbnails and bottom navigation.
+/* HENEX Chronology CSS v1.1
+   Scope: works-chronology.html — hero, timeline rows and bottom navigation.
+   Project cards reuse global project-card--compact from pages.css.
 */
 
 
@@ -81,12 +82,12 @@
   display: grid;
   grid-template-columns: 120px 1fr;
   gap: 0 56px;
-  padding-block: 44px;
+  padding-block: 48px;
   border-top: 1px solid var(--theme-border-soft);
   align-items: start;
 }
 
-.chronology-row:last-child {
+.chronology-row:last-of-type {
   border-bottom: 1px solid var(--theme-border-soft);
 }
 
@@ -100,64 +101,11 @@
   color: var(--theme-text);
   letter-spacing: -0.04em;
   line-height: 1;
-  padding-top: 6px;
+  padding-top: 8px;
 }
 
 
-/* Thumbnail grid */
-
-.chronology-thumbs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-  max-width: 720px;
-}
-
-
-/* Individual thumbnail — clickable */
-
-.chronology-thumb {
-  aspect-ratio: 1;
-  display: block;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--theme-surface-soft);
-  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.07);
-  transition: transform 220ms ease, box-shadow 220ms ease;
-}
-
-a.chronology-thumb:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(17, 24, 39, 0.13);
-}
-
-.chronology-thumb img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 280ms ease;
-}
-
-a.chronology-thumb:hover img {
-  transform: scale(1.04);
-}
-
-
-/* Locked thumbnail — no page yet */
-
-.chronology-thumb--locked {
-  cursor: default;
-  opacity: 0.82;
-}
-
-[data-theme="dark"] .chronology-thumb--locked {
-  opacity: 0.72;
-}
-
-
-/* Bottom navigation — Back to Works and To the Top */
+/* Bottom navigation */
 
 .chronology-footer-nav {
   display: flex;
@@ -175,21 +123,6 @@ a.chronology-thumb:hover img {
     grid-template-columns: 1fr;
     gap: 20px;
     padding-block: 36px;
-  }
-
-  .chronology-thumbs {
-    max-width: 100%;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-
-/* Responsive: 640px — small tablet */
-
-@media (max-width: 640px) {
-  .chronology-thumbs {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
   }
 }
 
