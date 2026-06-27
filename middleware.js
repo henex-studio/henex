@@ -1,9 +1,10 @@
 // middleware.js
-// Vercel Edge Middleware — intercepts requests to password-protected case study pages.
+// Vercel Routing Middleware — intercepts requests to password-protected case study pages.
 // Checks for the portfolio-auth cookie set by /api/auth.
 // Redirects unauthenticated users to /password.html.
+// IMPORTANT: must be a default export for Vercel to detect this as middleware.
 
-export function middleware(request) {
+export default function middleware(request) {
   const url = new URL(request.url)
   const cookieHeader = request.headers.get('cookie') || ''
 
