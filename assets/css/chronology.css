@@ -1,0 +1,215 @@
+/* HENEX Chronology CSS v1.0
+   Scope: works-chronology.html page — hero, timeline rows, thumbnails and bottom navigation.
+*/
+
+
+/* Page accent — matches works green */
+
+.page-chronology {
+  --page-accent: var(--color-nature);
+  --page-accent-border: rgba(49, 187, 142, 0.28);
+}
+
+
+/* Hero */
+
+.page-hero--chronology {
+  min-height: 400px;
+  background: #FAFBFC;
+  text-align: center;
+}
+
+.page-hero--chronology::before {
+  inset: -18%;
+  background:
+    linear-gradient(125deg, rgba(49, 187, 142, 0.22), transparent 50%),
+    radial-gradient(ellipse at 80% 14%, rgba(49, 187, 142, 0.18), transparent 36%),
+    radial-gradient(ellipse at 20% 82%, rgba(49, 187, 142, 0.10), transparent 42%),
+    #FAFBFC;
+  filter: blur(16px);
+}
+
+.page-hero--chronology::after {
+  inset: 0;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .page-hero--chronology {
+  background: #050C09;
+}
+
+[data-theme="dark"] .page-hero--chronology::before {
+  inset: -18%;
+  background:
+    linear-gradient(125deg, rgba(49, 187, 142, 0.50), transparent 50%),
+    radial-gradient(ellipse at 80% 14%, rgba(49, 187, 142, 0.36), transparent 36%),
+    #050C09;
+  filter: blur(18px);
+}
+
+[data-theme="dark"] .page-hero--chronology::after {
+  inset: 0;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.chronology-hero__content {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.chronology-hero__content h1 {
+  margin-top: 14px;
+}
+
+.chronology-hero__content .lead {
+  margin-top: 18px;
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+
+/* Timeline section */
+
+.chronology-section {
+  padding-block: var(--section-pad);
+}
+
+
+/* Each year row */
+
+.chronology-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 0 56px;
+  padding-block: 44px;
+  border-top: 1px solid var(--theme-border-soft);
+  align-items: start;
+}
+
+.chronology-row:last-child {
+  border-bottom: 1px solid var(--theme-border-soft);
+}
+
+
+/* Year label */
+
+.chronology-year__label {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+  font-weight: 700;
+  color: var(--theme-text);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  padding-top: 6px;
+}
+
+
+/* Thumbnail grid */
+
+.chronology-thumbs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  max-width: 720px;
+}
+
+
+/* Individual thumbnail — clickable */
+
+.chronology-thumb {
+  aspect-ratio: 1;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--theme-surface-soft);
+  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.07);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+a.chronology-thumb:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(17, 24, 39, 0.13);
+}
+
+.chronology-thumb img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 280ms ease;
+}
+
+a.chronology-thumb:hover img {
+  transform: scale(1.04);
+}
+
+
+/* Locked thumbnail — no page yet */
+
+.chronology-thumb--locked {
+  cursor: default;
+  opacity: 0.82;
+}
+
+[data-theme="dark"] .chronology-thumb--locked {
+  opacity: 0.72;
+}
+
+
+/* Bottom navigation — Back to Works and To the Top */
+
+.chronology-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 48px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+
+
+/* Responsive: 900px — tablet */
+
+@media (max-width: 900px) {
+  .chronology-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-block: 36px;
+  }
+
+  .chronology-thumbs {
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/* Responsive: 640px — small tablet */
+
+@media (max-width: 640px) {
+  .chronology-thumbs {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+
+/* Responsive: 520px — mobile */
+
+@media (max-width: 520px) {
+  .chronology-row {
+    padding-block: 28px;
+    gap: 16px;
+  }
+
+  .chronology-year__label {
+    font-size: 1.5rem;
+  }
+
+  .chronology-footer-nav {
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-start;
+    padding-block: 36px;
+  }
+}
