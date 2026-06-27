@@ -11,7 +11,7 @@ Static HTML
 CSS
 Minimal vanilla JavaScript
 ```
-
+ 
 Future migration target:
 
 ```text
