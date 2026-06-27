@@ -220,7 +220,7 @@
   display: grid;
   place-items: center;
   margin-bottom: 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
   color: var(--ux-theme);
 }
@@ -296,7 +296,7 @@
   display: grid;
   place-items: center;
   margin-bottom: 22px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   color: var(--ux-theme);
   background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
 }

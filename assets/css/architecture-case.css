@@ -22,7 +22,7 @@
 .arch-related-card span {
   margin: 0 0 14px;
   color: var(--theme-muted);
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   font-weight: 850;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -155,7 +155,7 @@
   align-items: center;
   padding: 0 12px;
   border: 1px solid color-mix(in srgb, var(--color-brand-secondary) 28%, var(--theme-border));
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--color-brand-secondary) 8%, var(--theme-surface));
   color: color-mix(in srgb, var(--color-brand-secondary) 48%, var(--theme-text));
   font-size: 0.84rem;
@@ -235,7 +235,7 @@
 .arch-figure img {
   width: 100%;
   display: block;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   border: 0;
   background: transparent;
   box-shadow: none;
@@ -646,7 +646,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   object-fit: contain;
 }
 
@@ -667,7 +667,7 @@
   align-items: center;
   justify-content: center;
   padding: 24px;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   background: #FFFFFF;
 }
 
@@ -692,11 +692,26 @@
 .arch-callout,
 .arch-finding-card,
 .arch-award-card,
-.arch-publication-block,
+.arch-publication-block {
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-md);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+
 .arch-related-card {
   border: 1px solid var(--theme-border-soft);
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.arch-related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
 }
 
 .arch-callout,
@@ -811,7 +826,7 @@
 .arch-video__copy p:first-child {
   margin: 0 0 14px;
   color: var(--theme-muted);
-  font-size: 0.78rem;
+  font-size: 0.8125rem;
   font-weight: 850;
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -833,7 +848,7 @@
 .arch-video__frame {
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   background: #000000;
 }
 
@@ -858,7 +873,7 @@
   align-items: center;
   padding: 5px 11px;
   border: 1px solid var(--theme-border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--theme-surface-soft);
   color: var(--theme-text-soft);
   font-size: 0.8rem;
@@ -885,7 +900,7 @@
   width: min(360px, calc(100vw - 32px));
   padding: 18px;
   border: 1px solid var(--theme-border);
-  border-radius: 16px;
+  border-radius: var(--radius-md);
   background: var(--theme-surface);
   box-shadow: var(--theme-shadow-card);
   display: none;
@@ -950,7 +965,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: 18px 18px 0 0;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   border-bottom: 1px solid var(--theme-border-soft);
 }
 

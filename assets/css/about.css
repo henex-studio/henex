@@ -159,7 +159,7 @@
   display: inline-grid;
   place-items: center;
   margin-bottom: 32px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--page-accent) 13%, var(--theme-surface));
   color: var(--page-accent);
 }
@@ -246,7 +246,7 @@
   align-items: center;
   padding: 5px 10px;
   border: 1px solid var(--theme-border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   color: var(--theme-text-soft);
   font-size: 0.76rem;
   font-weight: 750;
@@ -270,8 +270,8 @@
 }
 .thread-evidence {
   margin-top: 16px;
-  color: var(--theme-muted) !important;
-  font-size: 0.9rem !important;
+  color: var(--theme-muted);
+  font-size: 0.9rem;
   font-weight: 750;
 }
 .markers-layout {
@@ -315,7 +315,7 @@
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
   box-shadow: var(--theme-shadow-card);
 }
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
   .evidence-strip,
   .about-foundation-grid,
   .about-work-grid,
@@ -323,8 +323,6 @@
   .marker-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-@media (max-width: 900px) {
   .about-hero__inner,
   .about-profile-grid,
   .about-cta,
@@ -340,7 +338,7 @@
     gap: 10px;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 520px) {
   .evidence-strip,
   .about-foundation-grid,
   .about-work-grid,

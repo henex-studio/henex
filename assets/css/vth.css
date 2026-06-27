@@ -31,12 +31,12 @@
 .ux-case-page--victim-hub video.ux-video.vth-video {
   display:block;
   width:100%;
-  height:auto !important;
+  height:auto;
   max-width:100%;
-  aspect-ratio:auto !important;
-  object-fit:initial !important;
-  object-position:initial !important;
-  background:transparent !important;
+  aspect-ratio:auto;
+  object-fit:initial;
+  object-position:initial;
+  background:transparent;
 }
 
 .vth-problem { background: radial-gradient(circle at 88% 16%, color-mix(in srgb,var(--vth-cyan) 18%,transparent), transparent 28%), linear-gradient(145deg,color-mix(in srgb,var(--ux-theme) 7%,var(--theme-surface)),var(--theme-bg) 80%); }
@@ -45,7 +45,7 @@
 .vth-problem__copy p + p { margin-top:18px; }
 .ux-copy > .ux-card-grid, .ux-copy > .vth-component-chips, .ux-copy > .vth-process-chips, .ux-copy > .vth-flow, .ux-copy > .vth-section-image, .ux-copy > .vth-inline-image, .ux-copy > .vth-metrics, .ux-copy > .vth-scroll-preview { margin-top:32px; }
 .ux-card-grid + .vth-inline-influence, .vth-metrics + .vth-inline-influence, .vth-flow + .vth-inline-influence, .vth-process-chips + .vth-inline-influence, .vth-section-image + .vth-inline-influence, .vth-scroll-preview + .vth-inline-influence, .vth-hmw-statement + .vth-inline-influence { margin-top:30px; }
-.vth-hmw-statement { width:100%; max-width:none; margin:34px 0 0; padding:clamp(28px,4vw,48px); border:1px solid color-mix(in srgb,var(--ux-theme) 22%,var(--theme-border)); border-radius:var(--ux-radius-lg,28px); background:color-mix(in srgb,var(--ux-theme) 6%,var(--theme-surface)); color:var(--ux-theme); font-family:var(--font-heading); font-size:clamp(1.45rem,3vw,2.5rem); font-weight:750; line-height:1.2; letter-spacing:-.03em; }
+.vth-hmw-statement { width:100%; max-width:none; margin:34px 0 0; padding:clamp(28px,4vw,48px); border:1px solid color-mix(in srgb,var(--ux-theme) 22%,var(--theme-border)); border-radius:var(--radius-lg); background:color-mix(in srgb,var(--ux-theme) 6%,var(--theme-surface)); color:var(--ux-theme); font-family:var(--font-heading); font-size:clamp(1.45rem,3vw,2.5rem); font-weight:750; line-height:1.2; letter-spacing:-.03em; }
 .vth-problem-card, .vth-journey-card { display:grid; grid-template-columns:72px minmax(0,1fr); gap:18px; align-items:center; }
 .vth-problem-card img, .vth-journey-card img { width:64px; height:64px; object-fit:contain; }
 .vth-inline-influence { margin-top:32px; padding:22px; border:1px solid color-mix(in srgb,var(--ux-theme) 16%,var(--theme-border)); border-radius:var(--ux-radius); background:var(--theme-surface); }
@@ -62,7 +62,7 @@
 .vth-ia-image button { width:100%; display:block; margin:0; padding:0; border:0; background:transparent; cursor:zoom-in; }
 .ux-case-page--victim-hub figcaption, .ux-case-page--victim-hub .vth-section-image figcaption, .ux-case-page--victim-hub .vth-inline-image figcaption, .ux-case-page--victim-hub .vth-scroll-preview figcaption, .ux-case-page--victim-hub .vth-research-grid figcaption { margin-top:10px; color:color-mix(in srgb,var(--ux-theme) 68%,var(--theme-text-soft)); }
 .vth-process-chips, .vth-component-chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
-.vth-process-chips span, .vth-component-chips span { min-height:32px; display:inline-flex; align-items:center; padding:5px 11px; border:1px solid color-mix(in srgb,var(--ux-theme) 26%,var(--theme-border)); border-radius:999px; background:color-mix(in srgb,var(--ux-theme) 7%,var(--theme-surface)); color:var(--ux-dark); font-size:.8rem; font-weight:800; }
+.vth-process-chips span, .vth-component-chips span { min-height:32px; display:inline-flex; align-items:center; padding:5px 11px; border:1px solid color-mix(in srgb,var(--ux-theme) 26%,var(--theme-border)); border-radius: var(--radius-full); background:color-mix(in srgb,var(--ux-theme) 7%,var(--theme-surface)); color:var(--ux-dark); font-size:.8rem; font-weight:800; }
 .vth-subsection { margin-top:42px; }
 .vth-subsection h3 { margin-bottom:14px; }
 .vth-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
@@ -89,5 +89,5 @@
 [data-theme=dark] .vth-scroll-preview__frame { border-color:rgba(255,255,255,.16); background:#fff; }
 [data-theme=dark] .ux-case-page--victim-hub figcaption { color:rgba(223,237,247,.78); }
 @media (max-width:900px) { .vth-research-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .vth-research-grid img { height:170px; } .vth-principle-image-grid, .vth-handover-card-grid { grid-template-columns:1fr; } }
-@media (max-width:768px) { .vth-scroll-preview__frame { height:560px; border-radius:18px; } }
+@media (max-width:640px) { .vth-scroll-preview__frame { height:560px; border-radius:18px; } }
 @media (max-width:520px) { .vth-research-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .vth-research-grid img { height:150px; } .vth-problem-card, .vth-journey-card { grid-template-columns:1fr; } .vth-problem-card img, .vth-journey-card img { width:56px; height:56px; } .vth-metrics article { padding:18px; } .vth-scroll-preview__frame { height:480px; border-radius:14px; } }

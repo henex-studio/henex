@@ -149,7 +149,7 @@
 .wso-skill-tags span {
   padding: 5px 13px;
   border: 1px solid color-mix(in srgb, var(--ux-theme) 26%, var(--theme-border-soft));
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--ux-soft);
   color: var(--ux-theme);
   font-size: .82rem;

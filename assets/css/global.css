@@ -55,10 +55,11 @@
   --radius-md: 18px;
   --radius-lg: 30px;
   --radius-xl: 42px;
+  --radius-full: 999px;
 
   --container: 1320px;
   --gutter: 40px;
-  --section-pad: 92px;
+  --section-pad: 96px;
 }
 
 
@@ -284,7 +285,7 @@ p {
   right: 0;
   bottom: 2px;
   height: 2px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--theme-text);
   transform: scaleX(0);
   transform-origin: left;
@@ -296,12 +297,12 @@ p {
   transform: scaleX(1);
 }
 
-.site-nav__cta {
+.site-nav a.site-nav__cta {
   min-height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 14px !important;
+  padding: 0 14px;
   border: 1px solid var(--theme-text);
   border-radius: var(--radius-sm);
   background: var(--theme-text);
@@ -329,7 +330,7 @@ p {
   padding: 0;
   gap: 0;
   border: 1px solid var(--theme-border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--theme-surface);
   color: var(--theme-text);
   font: inherit;
@@ -379,7 +380,7 @@ p {
   width: 48px;
   height: 44px;
   border: 1px solid var(--theme-border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: var(--theme-surface);
   color: var(--theme-text);
   cursor: pointer;
@@ -390,7 +391,7 @@ p {
   left: 14px;
   width: 18px;
   height: 2px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: currentColor;
   transition: transform 180ms ease, top 180ms ease;
 }
@@ -443,7 +444,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   display: inline-flex;
   align-items: center;
   padding: 5px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-size: 0.72rem;
   font-weight: 760;
   line-height: 1;
@@ -538,7 +539,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .button--soft {
   background: var(--theme-surface-soft);
   color: var(--theme-text);
-  border-color: var(--theme-border);
+  border-color: color-mix(in srgb, var(--theme-text) 28%, transparent);
 }
 
 .button--hero-primary {
@@ -651,7 +652,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   display: grid;
   place-items: center;
   border: 1px solid var(--theme-border);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--theme-surface) 94%, transparent);
   color: var(--theme-text);
   box-shadow: var(--theme-shadow-card);
@@ -766,11 +767,11 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     max-width: 100%;
   }
 
-  .site-nav__cta {
+  .site-nav a.site-nav__cta {
     min-height: 52px;
     margin-top: 10px;
-    padding: 0 24px !important;
-    border-radius: 18px;
+    padding: 0 24px;
+    border-radius: var(--radius-md);
     font-size: 1.25rem;
     letter-spacing: 0;
   }

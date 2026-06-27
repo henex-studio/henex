@@ -1,7 +1,7 @@
 /* UX case study template styles. */
 
 :root {
-  --ux-radius: 16px;
+  --ux-radius: var(--radius-md);
 }
 
 body.ux-case-page {
@@ -16,7 +16,7 @@ body.ux-modal-open {
 .ux-intro p {
   margin: 0 0 16px;
   color: var(--theme-muted);
-  font-size: .78rem;
+  font-size: 0.8125rem;
   font-weight: 850;
   letter-spacing: .15em;
   text-transform: uppercase;
@@ -98,10 +98,10 @@ body.ux-modal-open {
   align-items: center;
   padding: 5px 11px;
   border: 1px solid color-mix(in srgb, var(--ux-theme) 24%, var(--theme-border));
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--ux-theme) 8%, var(--theme-surface));
   color: var(--ux-theme);
-  font-size: .78rem;
+  font-size: 0.8125rem;
   font-weight: 800;
 }
 
@@ -311,7 +311,7 @@ body.ux-modal-open {
   align-items: center;
   padding: 5px 10px;
   border: 1px solid color-mix(in srgb, var(--theme-text-soft) 28%, var(--theme-border));
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--theme-surface) 80%, var(--theme-surface-soft));
   color: var(--theme-text-soft);
   font-size: .76rem;
@@ -330,7 +330,7 @@ body.ux-modal-open {
   width: 100%;
   aspect-ratio: 16 / 9;
   display: block;
-  border-radius: 10px;
+  border-radius: var(--radius-sm);
   background: #151719;
   box-shadow: var(--theme-shadow-card);
 }
@@ -498,7 +498,7 @@ figcaption {
 .ux-process span {
   display: block;
   margin-bottom: 14px;
-  font-size: .78rem;
+  font-size: 0.8125rem;
   font-weight: 850;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -778,7 +778,7 @@ figcaption {
   display: inline-flex;
   align-items: center;
   padding: 5px 11px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   font-size: .8rem;
   font-weight: 850;
 }
@@ -930,7 +930,7 @@ figcaption {
   place-items: center;
   padding: 0;
   border: 0;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   background: #fff;
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
@@ -947,7 +947,7 @@ figcaption {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: var(--radius-md);
   cursor: grab;
   background: #fff;
   box-shadow: 0 24px 80px rgba(0, 0, 0, .34);
