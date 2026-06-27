@@ -4,7 +4,7 @@
 // Sets a secure HttpOnly cookie on success and redirects to the protected page.
 // On failure, redirects back to the password page with an error flag.
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.status(405).send('Method Not Allowed')
     return
