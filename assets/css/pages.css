@@ -238,6 +238,27 @@
   font-weight: 800;
 }
 
+/* Icon replaces the number index — linear SVG, coloured per capability */
+.capability-card__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.capability-card__icon svg {
+  width: 38px;
+  height: 38px;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.capability-card--human .capability-card__icon svg  { stroke: var(--color-human); }
+.capability-card--emotion .capability-card__icon svg { stroke: var(--color-emotion); }
+.capability-card--nature .capability-card__icon svg  { stroke: var(--color-nature); }
+
 .capability-card__text p,
 .capability-card p {
   margin-top: 8px;
@@ -695,6 +716,19 @@
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
+/* Per-category accent colours — label and hover border only, default border unchanged */
+.works-category-card--service {
+  --page-accent: var(--color-human);
+}
+
+.works-category-card--digital {
+  --page-accent: var(--color-emotion);
+}
+
+.works-category-card--spatial {
+  --page-accent: var(--color-nature);
+}
+
 .works-category-card:hover,
 .works-category-card:focus-visible {
   transform: translateY(-4px);
@@ -704,7 +738,7 @@
 
 .works-category-card__label {
   margin: 0;
-  color: color-mix(in srgb, var(--page-accent) 58%, var(--theme-muted));
+  color: var(--page-accent);
   font-size: 0.8rem;
   font-weight: 800;
   letter-spacing: 0.12em;

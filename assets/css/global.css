@@ -95,7 +95,7 @@
   --page-accent: var(--color-nature);
   --page-accent-border: rgba(49, 187, 142, 0.28);
   --page-nav-card-bg: #FFFFFF;
-  --page-nav-card-border: rgba(49, 187, 142, 0.26);
+  --page-nav-card-border: var(--theme-border-soft);
 }
 
 [data-theme="dark"] .page-works {
