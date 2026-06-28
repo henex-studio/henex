@@ -73,6 +73,7 @@
       window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
     });
   }
+
   /* ── Recipe library — fold/expand + hash-based auto-expansion ── */
   var recipeGrid = document.querySelector('.recipe-grid');
   var expandBtn  = document.querySelector('[data-recipe-expand]');
@@ -100,7 +101,7 @@
       }
     });
 
-    /* If hash targets r10–r27, auto-expand then scroll to the card. */
+    /* If URL hash targets r10-r27, auto-expand then scroll to that card. */
     function handleRecipeHash() {
       var hash = window.location.hash;
       if (!hash) return;
@@ -126,59 +127,3 @@
   }
 
 })();
-/* ── Recipe library — fold/expand + hash-based auto-expansion ── */
-(function () {
-  var recipeGrid = document.getElementById('recipe-grid-list');
-  var expandBtn  = document.querySelector('[data-recipe-expand]');
-
-  if (!recipeGrid || !expandBtn) return;
-
-  var reduceMotion = window.matchMedia &&
-    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function expandRecipes() {
-    recipeGrid.classList.add('is-expanded');
-    expandBtn.textContent = 'Show fewer recipes';
-    expandBtn.setAttribute('aria-expanded', 'true');
-  }
-
-  function collapseRecipes() {
-    recipeGrid.classList.remove('is-expanded');
-    expandBtn.textContent = 'Show all 27 recipes';
-    expandBtn.setAttribute('aria-expanded', 'false');
-  }
-
-  expandBtn.addEventListener('click', function () {
-    if (recipeGrid.classList.contains('is-expanded')) {
-      collapseRecipes();
-      document.querySelector('.recipe-library')
-        ?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
-    } else {
-      expandRecipes();
-    }
-  });
-
-  /* If URL hash targets r10–r27, auto-expand then scroll to that card. */
-  function handleRecipeHash() {
-    var hash = window.location.hash;
-    if (!hash) return;
-    var match = hash.match(/^#r(\d+)$/);
-    if (!match) return;
-    var num = parseInt(match[1], 10);
-    if (num >= 10 && num <= 27) {
-      expandRecipes();
-      setTimeout(function () {
-        var target = document.querySelector(hash);
-        if (target) {
-          target.scrollIntoView({
-            behavior: reduceMotion ? 'auto' : 'smooth',
-            block: 'center'
-          });
-        }
-      }, 80);
-    }
-  }
-
-  handleRecipeHash();
-  window.addEventListener('hashchange', handleRecipeHash);
-}());

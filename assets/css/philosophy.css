@@ -542,42 +542,17 @@
   }
 }
 
+
 /* ─── Recipe library folding ─────────────────────────────────────────────── */
 
-/* Show first 9 cards by default; hide the rest */
 .recipe-grid .recipe-card:nth-child(n+10) {
   display: none;
 }
 
-/* When expanded, show all */
-.recipe-grid.is-expanded .recipe-card:nth-child(n+10) {
-  display: block;
-}
-
-/* Expand button container */
-.recipe-library__footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-}
-
-.recipe-library__expand-btn {
-  min-width: 200px;
-}
-
-/* ─── Recipe library folding ─────────────────────────────────────────────── */
-
-/* Hide r10–r27 by default */
-.recipe-grid .recipe-card:nth-child(n+10) {
-  display: none;
-}
-
-/* Expand: restore using display:grid to match recipe-card's own layout */
 .recipe-grid.is-expanded .recipe-card:nth-child(n+10) {
   display: grid;
 }
 
-/* Expand button */
 .recipe-library__footer {
   display: flex;
   justify-content: center;
