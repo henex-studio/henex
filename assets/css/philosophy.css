@@ -541,3 +541,26 @@
     min-height: auto;
   }
 }
+
+/* ─── Recipe library folding ─────────────────────────────────────────────── */
+
+/* Show first 9 cards by default; hide the rest */
+.recipe-grid .recipe-card:nth-child(n+10) {
+  display: none;
+}
+
+/* When expanded, show all */
+.recipe-grid.is-expanded .recipe-card:nth-child(n+10) {
+  display: block;
+}
+
+/* Expand button container */
+.recipe-library__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.recipe-library__expand-btn {
+  min-width: 200px;
+}
