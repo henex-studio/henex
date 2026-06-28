@@ -487,7 +487,6 @@
   display: block;
   overflow: hidden;
   background: var(--theme-surface-soft);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .project-card--lead .project-card__media {
