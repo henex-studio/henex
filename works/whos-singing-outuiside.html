@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Who's Singing OuTūīside? UX data visualisation case study by HENEX.">
+  <meta name="description" content="Who's Singing OuTūīside? A data visualisation and interactive storybook UX case study by Cafe Yi.">
   <title>Who's Singing OuTūīside? | HENEX</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,28 +44,31 @@
 
   <main id="main-content">
 
-    <!-- Hero: full-bleed background, no right image -->
-    <section class="ux-hero" aria-labelledby="wso-hero-title">
+    <!-- ── Hero ──────────────────────────────────────────────────────── -->
+    <section class="ux-hero wso-hero" aria-labelledby="wso-hero-title">
       <div class="container ux-hero__inner">
         <div class="ux-hero__copy">
-          <div class="ux-tags" aria-label="Project categories">
-            <span>UX</span>
-            <span>Infographic</span>
-            <span>Data Visualisation</span>
-          </div>
-          <div class="ux-tags ux-tags--secondary" style="margin-top:8px;" aria-label="Project type">
-            <span>Course Work</span>
+          <div class="case-tag-row case-tag-row--overlay">
+            <div class="case-tags case-tags--primary" aria-label="Project categories">
+              <span class="case-tag">Data Visualisation</span>
+              <span class="case-tag">UX Design</span>
+              <span class="case-tag">Illustration</span>
+            </div>
+            <div class="case-tags case-tags--secondary" aria-label="Project type">
+              <span class="case-tag">Course Work</span>
+            </div>
           </div>
           <h1 id="wso-hero-title">Who's Singing OuTūīside?</h1>
-          <p class="wso-hero__subtitle">A journey from garden to the sky</p>
+          <p class="ux-hero__lead">A journey from garden to the sky</p>
           <div class="ux-actions">
-            <a class="ux-button ux-button--primary" href="https://www.figma.com/proto/VdjIieyRNkz7RcmPr6chRr/423A3_work_view?page-id=0%3A1&node-id=10-2&viewport=372%2C146%2C0.03&t=mPclTwt5Vwc3nH0Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2" target="_blank" rel="noopener">View Prototype</a>
+            <a class="button button--primary" href="https://www.figma.com/proto/VdjIieyRNkz7RcmPr6chRr/423A3_work_view?page-id=0%3A1&node-id=10-2&viewport=372%2C146%2C0.03&t=mPclTwt5Vwc3nH0Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2" target="_blank" rel="noopener">View Prototype</a>
+            <a class="button button--soft" href="#final-design">See Final Design</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Overview -->
+    <!-- ── Overview ──────────────────────────────────────────────────── -->
     <section class="ux-section" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
@@ -75,50 +78,69 @@
         <div class="ux-copy">
           <p>This project translates a focused research topic into an interactive data-visual storytelling experience. I chose the Tūī as the subject and designed a narrative prototype for audiences aged 5+, combining infographics, clear navigation, and multimodal interaction (visual, audio, and tactile-like click/drag affordances) to teach natural science concepts quickly and memorably.</p>
           <p>The work explores how data can become more readable and emotionally engaging when embedded in a child-led story structure, grounded in observation, accurate references, and iterative prototyping.</p>
-          <div class="wso-meta">
+          <div class="ux-meta" aria-label="Project facts">
             <div><span>Client</span><strong>MUXD</strong></div>
-            <div><span>Timeline</span><strong>5 Weeks</strong></div>
             <div><span>Role</span><strong>UX Researcher, UX Designer, Illustrator</strong></div>
-            <div><span>Tools</span><strong>Figma, Figjam, Procreate, Google Forms, Office365</strong></div>
             <div><span>Team</span><strong>Individual</strong></div>
+            <div><span>Timeline</span><strong>5 Weeks</strong></div>
+            <div><span>Tools</span><strong>Figma, FigJam, Procreate, Google Forms, Office 365</strong></div>
+            <div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r16">R16 · Why First Data Story</a><small>Perception × Meaning × Medium</small></div>
           </div>
           <div class="ux-skills">
             <p class="ux-kicker">Skills</p>
-            <div class="wso-skill-tags">
-              <span>Data Visualisation</span>
-              <span>Infographic</span>
-              <span>Comparative Usability Test</span>
-              <span>Storytelling</span>
-              <span>Illustration</span>
-              <span>Interaction</span>
-            </div>
+            <div><em>Data visualisation</em><em>Infographic design</em><em>Comparative usability testing</em><em>Storytelling</em><em>Illustration</em><em>Interaction design</em></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Problem + Solution: combined dark green block -->
-    <section class="ux-solution" aria-labelledby="solution-title">
-      <div class="container ux-solution__grid">
-        <div class="wso-problem">
-          <p class="ux-kicker">Problem</p>
-          <h2>Nature learning is often either "clear" or "fun" — rarely both.</h2>
-          <p>Children's nature education experiences can become either information-heavy (hard to follow) or entertainment-heavy (thin on learning). My challenge was to present a complex lifecycle (growth stages, predators, behaviour, sound, and cultural meaning) in a way that stays simple, navigable, and engaging, without overwhelming young learners or losing scientific clarity.</p>
-        </div>
-        <div class="wso-solution-card">
-          <p class="ux-kicker">Solution</p>
-          <h2 id="solution-title">A story-driven, progressive-discovery data experience.</h2>
-          <p>I designed an interactive storybook that frames learning through a young girl's perspective — a curiosity-driven narrative that guides users scene by scene — while using infographic visuals to anchor key facts (scale, time, proportions, and sound wave forms). The experience relies on progressive disclosure (revealing information through interaction), combines short text with clear visuals, and integrates sound/animation as sensory cues that support comprehension rather than distract from it.</p>
+    <!-- ── Prototype Video Placeholder ───────────────────────────────── -->
+    <section class="ux-section ux-section--tint wso-video-section" aria-labelledby="video-title">
+      <div class="container">
+        <p class="ux-kicker">Prototype Walkthrough</p>
+        <h2 id="video-title">Hear it. Discover it. Understand it.</h2>
+        <p>A short walkthrough of the hi-fi prototype, showing how birdsong, illustration, and progressive data reveal work together across the lifecycle journey.</p>
+        <!-- VIDEO PLACEHOLDER — replace src with R2 link when ready -->
+        <div class="wso-video-placeholder" aria-label="Video coming soon">
+          <span>Video coming soon</span>
         </div>
       </div>
     </section>
 
-    <!-- Outcome -->
-    <section class="ux-section" aria-labelledby="outcome-title">
+    <!-- ── Problem ────────────────────────────────────────────────────── -->
+    <section class="ux-section" aria-labelledby="problem-title">
+      <div class="container ux-wide-head">
+        <p class="ux-kicker">Problem</p>
+        <h2 id="problem-title">Nature learning is often either "clear" or "fun" — rarely both.</h2>
+        <p>Children's nature education experiences can become either information-heavy (hard to follow) or entertainment-heavy (thin on learning). My challenge was to present a complex lifecycle — growth stages, predators, behaviour, sound, and cultural meaning — in a way that stays simple, navigable, and engaging, without overwhelming young learners or losing scientific clarity.</p>
+      </div>
+      <div class="container">
+        <blockquote class="wso-hmw">
+          <p>How might we turn the Tūī's lifecycle into a short, story-led, interactive learning journey for ages 5+, so audiences can understand key concepts quickly without feeling overwhelmed?</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ── Solution ───────────────────────────────────────────────────── -->
+    <section class="ux-section wso-solution-section" aria-labelledby="solution-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>Solution</p>
+          <h2 id="solution-title">A story-driven, progressive-discovery data experience.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p>I designed an interactive storybook that frames learning through a young girl's perspective — a curiosity-driven narrative that guides users scene by scene — while using infographic visuals to anchor key facts (scale, time, proportions, and sound wave forms).</p>
+          <p>The experience relies on progressive disclosure, combines short text with clear visuals, and integrates sound and animation as sensory cues that support comprehension rather than distract from it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Outcome ────────────────────────────────────────────────────── -->
+    <section class="ux-section ux-section--tint" aria-labelledby="outcome-title">
       <div class="container ux-wide-head">
         <p class="ux-kicker">Outcome</p>
         <h2 id="outcome-title">A hi-fi prototype that makes data feel readable and alive.</h2>
-        <p>The final deliverable is a high-fidelity interactive prototype in Figma that packages the Tūī lifecycle into a cohesive journey — starting from hearing birdsong, discovering the bird, exploring life stages via tools (e.g., telescope/magnifier/headphones), and ending with a dreamlike "from garden to sky" closure. The project exceeded course expectation and received an A+, demonstrating a compelling method for presenting natural science knowledge through narrative data visualisation.</p>
+        <p>The final deliverable is a high-fidelity interactive prototype in Figma that packages the Tūī lifecycle into a cohesive journey — starting from hearing birdsong, discovering the bird, exploring life stages via tools (telescope, magnifier, headphones), and ending with a dreamlike "from garden to sky" closure. The project exceeded course expectation and received an A+.</p>
       </div>
       <div class="container">
         <figure class="ux-evidence ux-final">
@@ -128,41 +150,86 @@
       </div>
     </section>
 
-    <!-- Feedback -->
-    <section class="ux-section ux-section--tint" aria-labelledby="feedback-title">
-      <div class="container ux-wide-head">
-        <p class="ux-kicker">Feedback</p>
-        <h2 id="feedback-title">Instructor recognition and strengths to carry forward.</h2>
-        <p>The instructor feedback emphasised that this project exceeded assignment expectations through an ambitious, evidence-led process (museum visits, in-person observation, and children's book analysis), resulting in an immersive infographic storybook where illustration, interaction, and sound work together to guide learning.</p>
-      </div>
-      <div class="container wso-feedback-wall">
-        <blockquote>"The infographic experience was described as immersive, with storybook illustrations and interaction patterns reinforcing engagement."</blockquote>
-        <blockquote>"Went far beyond expected scope for the assignment; exploration was notably thorough and creative."</blockquote>
-        <blockquote>"Strong iterative process extending past desk research — specifically citing Te Papa inspiration, in-person Tūī observation, and children's book research as key drivers."</blockquote>
-        <blockquote>"Interactions such as the torch/spotlight mechanic and active sound cues effectively guided viewers through information and increased immersion."</blockquote>
-        <blockquote>"Reflection and production pragmatism help to shorten the timeline by testing styles and choosing the fastest viable visual approach."</blockquote>
-        <blockquote>"Report and presentation demonstrated strong concept development insight and clear articulation of your thinking and research journey."</blockquote>
-        <p class="wso-feedback-wall__label">Course Feedback</p>
+    <!-- ── Feedback ───────────────────────────────────────────────────── -->
+    <section class="ux-section" aria-labelledby="feedback-title">
+      <div class="container">
+        <div class="ux-feedback-grid" aria-label="Course feedback">
+          <div class="ux-wide-head">
+            <p class="ux-kicker">Course Feedback</p>
+            <h2 id="feedback-title">Feedback highlighted immersion, research depth and iterative craft.</h2>
+            <p>The instructor feedback emphasised that this project exceeded assignment expectations through an ambitious, evidence-led process resulting in an immersive infographic storybook where illustration, interaction, and sound work together to guide learning.</p>
+          </div>
+          <blockquote class="ux-feedback-card">
+            <span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span>
+            <p>"The infographic experience was described as immersive, with storybook illustrations and interaction patterns reinforcing engagement."</p>
+          </blockquote>
+          <blockquote class="ux-feedback-card">
+            <span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span>
+            <p>"Went far beyond expected scope for the assignment. Exploration was notably thorough and creative."</p>
+          </blockquote>
+          <blockquote class="ux-feedback-card">
+            <span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span>
+            <p>"Strong iterative process extending past desk research — citing Te Papa inspiration, in-person Tūī observation, and children's book research as key drivers."</p>
+          </blockquote>
+        </div>
       </div>
     </section>
 
-    <!-- Design Process -->
-    <section class="ux-section" aria-labelledby="process-title">
+    <!-- ── Design Process ─────────────────────────────────────────────── -->
+    <section class="ux-section ux-section--tint" aria-labelledby="process-title">
       <div class="container ux-wide-head">
         <p class="ux-kicker">Design Process</p>
         <h2 id="process-title">From early audience evidence to a validated, multisensory story experience.</h2>
-        <p>I began by using a short survey to set direction and shape an initial problem frame, then grounded the content through observation, museum reference, and research into Tūī biology, sound, predators, and cultural context. Next, I sketched and built three contrasting lo-fi narrative prototypes and ran comparative usability testing to identify what best supports clarity, engagement, and cultural comprehension. Those findings informed a hybrid direction and design principles, which guided refinement of the journey, IA, flows, and visual system before I delivered a polished hi-fi prototype with motion and sound.</p>
+        <p>I began by using a short survey to set direction and shape an initial problem frame, then grounded the content through observation, museum reference, and research into Tūī biology, sound, predators, and cultural context. I then sketched and built three contrasting lo-fi narrative prototypes and ran comparative usability testing. Those findings informed a hybrid direction and design principles before I delivered a polished hi-fi prototype with motion and sound.</p>
       </div>
       <div class="container">
-        <figure class="ux-evidence ux-evidence--controlled">
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/overview.png" alt="Design process diagram showing four phases: Discover, Define, Develop, Deliver with activities listed under each." loading="lazy">
-          <figcaption>Four-phase design process from early survey and observation through to hi-fi delivery.</figcaption>
-        </figure>
+        <div class="wso-process-steps">
+          <div class="wso-process-step">
+            <span class="wso-process-step__num">1</span>
+            <h3>Discover</h3>
+            <ul>
+              <li>Survey</li>
+              <li>Initial problem framing</li>
+              <li>Primary research</li>
+              <li>Secondary research</li>
+            </ul>
+          </div>
+          <div class="wso-process-step">
+            <span class="wso-process-step__num">2</span>
+            <h3>Define</h3>
+            <ul>
+              <li>Ideation</li>
+              <li>Lo-fi prototyping</li>
+              <li>Comparative usability test</li>
+              <li>HMW questions</li>
+              <li>Design principles</li>
+            </ul>
+          </div>
+          <div class="wso-process-step">
+            <span class="wso-process-step__num">3</span>
+            <h3>Develop</h3>
+            <ul>
+              <li>User journey</li>
+              <li>Information architecture</li>
+              <li>User flow</li>
+              <li>Design system</li>
+            </ul>
+          </div>
+          <div class="wso-process-step">
+            <span class="wso-process-step__num">4</span>
+            <h3>Deliver</h3>
+            <ul>
+              <li>High-fidelity design</li>
+              <li>Final prototype</li>
+              <li>Future plan</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Discover -->
-    <section class="ux-section ux-section--tint" aria-labelledby="discover-title">
+    <!-- ── Discover ───────────────────────────────────────────────────── -->
+    <section class="ux-section" aria-labelledby="discover-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>Discover</p>
@@ -174,56 +241,62 @@
           <p>I grew up in a city of concrete, fascinated by nature and wildlife. In New Zealand, birds live close to people, making nature feel approachable. The Tūī stands out with its striking plumage, diverse calls, and distinctive white throat tuft. This project lets me create an interactive Tūī experience for children aged five and above, while sharing creativity with my daughter.</p>
         </div>
       </div>
-      <!-- Primary research cards -->
-      <div class="container wso-research-pair">
-        <div class="wso-research-card">
-          <p class="ux-kicker">Observation</p>
-          <h3>Video and photo record</h3>
-          <p>I recorded a kōwhai tree frequented by tūī and captured walk-by photos/clips to inform accurate food and activity scenes in the hi-fi prototype.</p>
-          <figure>
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/observation.png" alt="Close-up photograph of a Tūī feeding on kōwhai flowers." loading="lazy">
-            <figcaption>Field observation: Tūī feeding at a kōwhai tree.</figcaption>
-          </figure>
-        </div>
-        <div class="wso-research-card">
-          <p class="ux-kicker">Field Survey</p>
-          <h3>Te Papa Museum</h3>
-          <p>Te Papa Museum showcases many native New Zealand species with different types of interactions, both physical and digital.</p>
-          <div class="wso-research-card__images">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/field-survey1.png" alt="Te Papa Museum interactive exhibit showing native New Zealand species displays." loading="lazy">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/field-survey2.png" alt="Te Papa Museum digital interactive exhibit." loading="lazy">
+
+      <!-- Primary Research -->
+      <div class="container">
+        <h3 class="wso-sub-heading">Primary Research</h3>
+        <div class="wso-research-pair">
+          <div class="wso-research-card">
+            <p class="ux-kicker">Observation</p>
+            <h4>Video and photo record</h4>
+            <p>I recorded a kōwhai tree frequented by tūī and captured walk-by photos and clips to inform accurate food and activity scenes in the hi-fi prototype.</p>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/observation.png" alt="Close-up photograph of a Tūī feeding on kōwhai flowers." loading="lazy">
+              <figcaption>Field observation: Tūī feeding at a kōwhai tree.</figcaption>
+            </figure>
+          </div>
+          <div class="wso-research-card">
+            <p class="ux-kicker">Field Survey</p>
+            <h4>Te Papa Museum</h4>
+            <p>Te Papa Museum showcases many native New Zealand species with different types of interactions, both physical and digital.</p>
+            <div class="wso-research-card__images">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/field-survey1.png" alt="Te Papa Museum interactive exhibit showing native New Zealand species displays." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/field-survey2.png" alt="Te Papa Museum digital interactive exhibit." loading="lazy">
+            </div>
           </div>
         </div>
       </div>
-      <!-- Secondary research cards -->
-      <div class="container wso-research-pair">
-        <div class="wso-research-card">
-          <p class="ux-kicker">Secondary Research</p>
-          <h3>Information</h3>
-          <p class="wso-research-subhead">Nature, Bird, Tūī and Māori Culture</p>
-          <p>I mainly used research on New Zealand's native species to decide which one to feature, then studied the chosen bird in detail to understand its appearance, habits, and cultural links with Māori.</p>
-          <div class="wso-info-grid">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info1.png" alt="Eyewitness Bird reference book." loading="lazy">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info2.png" alt="Animals of Aotearoa reference book." loading="lazy">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info3.png" alt="Children's nature book reference." loading="lazy">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info4.png" alt="Additional reference book for Māori cultural content." loading="lazy">
+
+      <!-- Secondary Research -->
+      <div class="container">
+        <h3 class="wso-sub-heading">Secondary Research</h3>
+        <div class="wso-research-pair">
+          <div class="wso-research-card">
+            <p class="ux-kicker">Information</p>
+            <h4>Nature, Bird, Tūī and Māori Culture</h4>
+            <p>I mainly used research on New Zealand's native species to decide which one to feature, then studied the chosen bird in detail to understand its appearance, habits, and cultural links with Māori.</p>
+            <div class="wso-info-grid">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info1.png" alt="Eyewitness Bird reference book." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info2.png" alt="Animals of Aotearoa reference book." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info3.png" alt="Children's nature book reference." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/info4.png" alt="Additional reference book for Māori cultural content." loading="lazy">
+            </div>
           </div>
-        </div>
-        <div class="wso-research-card">
-          <p class="ux-kicker">Secondary Research</p>
-          <h3>Visualisation</h3>
-          <p class="wso-research-subhead">Story, Color and Style</p>
-          <p>I explored Pinterest and children's books to study narrative logic, visual style, and color use in kids' literature. This helped guide the storytelling and visual design aspects of the project.</p>
-          <div class="wso-info-grid">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/visualization1.png" alt="Children's books studied for visual style and colour palette research." loading="lazy">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/visualization2.png" alt="Additional children's book references." loading="lazy">
+          <div class="wso-research-card">
+            <p class="ux-kicker">Visualisation</p>
+            <h4>Story, Colour and Style</h4>
+            <p>I explored Pinterest and children's books to study narrative logic, visual style, and colour use in kids' literature. This helped guide the storytelling and visual design aspects of the project.</p>
+            <div class="wso-info-grid wso-info-grid--two">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/visualization1.png" alt="Children's books studied for visual style and colour palette research." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/visualization2.png" alt="Additional children's book references." loading="lazy">
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Define -->
-    <section class="ux-section" aria-labelledby="define-title">
+    <!-- ── Define ─────────────────────────────────────────────────────── -->
+    <section class="ux-section ux-section--tint" aria-labelledby="define-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>Define</p>
@@ -233,104 +306,275 @@
           <p>I translated early framing into sketches and three lo-fi narrative prototypes (child story, timeline, learning-metaphor) and ran a 5-participant comparative usability test to evaluate clarity, navigation, engagement, interaction understanding, and cultural comprehension. Testing confirmed that story framing and progressive discovery increase engagement, but success depends on explicit navigation and clear labels — especially for predators and cultural symbolism.</p>
         </div>
       </div>
-      <div class="container wso-sketch-grid">
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch1.png" alt="Ideation sketches showing early concepts for bird protection, life journey, and data infographic scenes." loading="lazy">
-          <figcaption>Early sketches exploring infographic frames and lifecycle structure.</figcaption>
-        </figure>
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch2.png" alt="Storyboard sketches for the child perspective narrative prototype." loading="lazy">
-          <figcaption>Child perspective storyboard, scene-by-scene layout.</figcaption>
-        </figure>
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch3.png" alt="Concept mapping sketches for narrative structure." loading="lazy">
-          <figcaption>Concept mapping for narrative structure and content organisation.</figcaption>
-        </figure>
+
+      <!-- Sketches -->
+      <div class="container">
+        <h3 class="wso-sub-heading">Ideation Sketches</h3>
+        <div class="wso-sketch-grid">
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch1.png" alt="Ideation sketches showing early concepts for bird protection, life journey, and data infographic scenes." loading="lazy">
+            <figcaption>Early sketches exploring infographic frames and lifecycle structure.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch2.png" alt="Storyboard sketches for the child perspective narrative prototype." loading="lazy">
+            <figcaption>Child perspective storyboard, scene-by-scene layout.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/sketch3.png" alt="Concept mapping sketches for narrative structure." loading="lazy">
+            <figcaption>Concept mapping for narrative structure and content organisation.</figcaption>
+          </figure>
+        </div>
       </div>
-      <div class="container wso-lofi-grid">
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi1.png" alt="Lo-fi prototype 1 — child perspective narrative showing scene-based lifecycle journey." loading="lazy">
-          <figcaption>Lo-fi prototype 1. Child perspective narrative with scene-based lifecycle progression.</figcaption>
-        </figure>
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi2.png" alt="Lo-fi prototype 2 — Tūī perspective with timeline-style lifecycle stages." loading="lazy">
-          <figcaption>Lo-fi prototype 2. Tūī perspective with timeline-style stage navigation.</figcaption>
-        </figure>
-        <figure>
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi3.png" alt="Lo-fi prototype 3 — learning metaphor framing lifecycle stages as courses." loading="lazy">
-          <figcaption>Lo-fi prototype 3. Learning metaphor framing stages as a "Master of Messenger Studies."</figcaption>
-        </figure>
+
+      <!-- Lo-fi prototypes — full width -->
+      <div class="container">
+        <h3 class="wso-sub-heading">Lo-fi Prototypes</h3>
+        <div class="wso-lofi-stack">
+          <figure class="wso-lofi-item">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi1.png" alt="Lo-fi prototype 1 — child perspective narrative showing scene-based lifecycle journey." loading="lazy">
+            <figcaption>Prototype 1 · Child perspective narrative with scene-based lifecycle progression.</figcaption>
+          </figure>
+          <figure class="wso-lofi-item">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi2.png" alt="Lo-fi prototype 2 — Tūī perspective with timeline-style lifecycle stages." loading="lazy">
+            <figcaption>Prototype 2 · Tūī perspective with timeline-style stage navigation.</figcaption>
+          </figure>
+          <figure class="wso-lofi-item">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/lofi3.png" alt="Lo-fi prototype 3 — learning metaphor framing lifecycle stages as courses." loading="lazy">
+            <figcaption>Prototype 3 · Learning metaphor framing stages as a "Master of Messenger Studies."</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
 
-    <!-- Develop — orange warm background -->
-    <section class="wso-develop-section" aria-labelledby="develop-title">
+    <!-- ── Develop — Design System ────────────────────────────────────── -->
+    <section class="ux-section" aria-labelledby="develop-title">
       <div class="container ux-wide-head">
         <p class="ux-kicker">Develop</p>
         <h2 id="develop-title">Refining structure and craft into a cohesive experience.</h2>
-        <p>I merged the best elements into one cohesive experience and tightened the journey, IA, and key flows. In parallel, I established a lightweight visual system — type hierarchy for readability, a palette inspired by the Tūī and its habitat, simple icons, and WCAG-aware choices (including 16px minimum body text) — then deepened the hi-fi across story, navigation, illustration consistency, interaction clarity, and data-vis (scale/proportion/sound wave cues).</p>
+        <p>I merged the best elements into one cohesive experience and tightened the journey, IA, and key flows. In parallel, I established a lightweight visual system — type hierarchy for readability, a palette inspired by the Tūī and its habitat, simple icons, and WCAG-aware choices — then deepened the hi-fi across story, navigation, illustration consistency, interaction clarity, and data-vis cues.</p>
       </div>
-      <div class="container wso-ds-grid">
-        <div class="wso-ds-card">
+
+      <!-- Typography -->
+      <div class="container wso-ds-block">
+        <div class="wso-ds-block__text">
           <p class="ux-kicker">Typography</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-typograpy.png" alt="Typography system showing Kadwa and SF Pro." loading="lazy"></figure>
+          <h3>Balancing playfulness and readability.</h3>
+          <p>Kadwa for hand-drawn titles, SF Pro for body text. Bold subheadings maintain hierarchy. 16px minimum body size for accessibility.</p>
         </div>
-        <div class="wso-ds-card">
+        <figure class="wso-ds-block__figure">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-typograpy.png" alt="Typography system showing Kadwa display font and SF Pro body text with scale examples." loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Colour -->
+      <div class="container wso-ds-block wso-ds-block--reverse">
+        <div class="wso-ds-block__text">
           <p class="ux-kicker">Colour</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-color.png" alt="Colour palette inspired by Tūī feathers and habitat." loading="lazy"></figure>
+          <h3>Inspired by Tūī feathers, habitat and habitat.</h3>
+          <p>Deep greens from Tūī feathers and forest, orange-yellow for crown highlights and kōwhai flowers, blue for wings and sky. Greys maintain tone and legibility.</p>
         </div>
-        <div class="wso-ds-card">
+        <figure class="wso-ds-block__figure">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-color.png" alt="Colour palette showing primary deep green, secondary orange and tertiary blue swatches." loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Iconography -->
+      <div class="container wso-ds-block">
+        <div class="wso-ds-block__text">
           <p class="ux-kicker">Iconography</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-icon.png" alt="Icon set for lifecycle stages and navigation." loading="lazy"></figure>
+          <h3>Clear and simple, using minimal shapes for recognisability.</h3>
+          <p>Icons use minimal shapes aligned to lifecycle stages and navigation affordances. Each icon is immediately recognisable at small sizes for young audiences.</p>
         </div>
-        <div class="wso-ds-card">
-          <p class="ux-kicker">Accessibility</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-accessibility.png" alt="Accessibility contrast checks showing AAA compliance." loading="lazy"></figure>
-        </div>
-        <div class="wso-ds-card">
+        <figure class="wso-ds-block__figure">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-icon.png" alt="Icon set for lifecycle stages, navigation controls and audio affordances." loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Illustration -->
+      <div class="container wso-ds-block wso-ds-block--reverse">
+        <div class="wso-ds-block__text">
           <p class="ux-kicker">Illustration</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration1.png" alt="Hand-drawn illustration style showing predator animal portraits." loading="lazy"></figure>
+          <h3>Hand-drawn style to align with children's book sensibility.</h3>
+          <p>I selected a hand-drawn style using both outline-and-fill and layered colour techniques, unified through consistent linework to maintain visual coherence across predators, birds, and environments.</p>
         </div>
-        <div class="wso-ds-card">
-          <p class="ux-kicker">Illustration</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration2.png" alt="Detailed Tūī bird illustrations." loading="lazy"></figure>
+        <div class="wso-ds-block__figure">
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration1.png" alt="Hand-drawn illustration style showing predator animal portraits." loading="lazy">
+          </figure>
+          <div class="wso-illus-pair">
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration2.png" alt="Detailed Tūī bird illustrations showing nest and flying poses." loading="lazy">
+            </figure>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration3.png" alt="Background and environment illustrations for the storybook scenes." loading="lazy">
+            </figure>
+          </div>
         </div>
-        <div class="wso-ds-card">
-          <p class="ux-kicker">Illustration</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-illustration3.png" alt="Background and environment illustrations." loading="lazy"></figure>
-        </div>
-        <div class="wso-ds-card">
+      </div>
+
+      <!-- Interaction -->
+      <div class="container wso-ds-block">
+        <div class="wso-ds-block__text">
           <p class="ux-kicker">Interaction</p>
-          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-interaction.png" alt="Interaction pattern examples showing hover states and audio play affordances." loading="lazy"></figure>
+          <h3>Colour changes, hover enlargement, and subtle animations guide users.</h3>
+          <p>Interactive elements include buttons for navigation, calls-to-action, and audio playback. Affordances such as colour changes, hover enlargement, and subtle animations guide users toward interaction.</p>
         </div>
+        <figure class="wso-ds-block__figure">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-interaction.png" alt="Interaction pattern examples showing hover states and audio play affordances." loading="lazy">
+        </figure>
+      </div>
+
+      <!-- Accessibility -->
+      <div class="container wso-ds-block wso-ds-block--reverse">
+        <div class="wso-ds-block__text">
+          <p class="ux-kicker">Accessibility</p>
+          <h3>Colour tone variations and WCAG-aligned text sizing.</h3>
+          <p>Accessibility is ensured through colour tone variations and text sizes meeting WCAG AA standards, with a minimum body size of 16px throughout the experience.</p>
+        </div>
+        <figure class="wso-ds-block__figure">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/ds-accessibility.png" alt="Accessibility contrast checks showing AAA compliance for primary colour combinations." loading="lazy">
+        </figure>
       </div>
     </section>
 
-    <!-- Final Design -->
-    <section class="ux-section" aria-labelledby="final-title">
+    <!-- ── Final Design ────────────────────────────────────────────────── -->
+    <section class="ux-section ux-section--tint" id="final-design" aria-labelledby="final-title">
       <div class="container ux-wide-head">
         <p class="ux-kicker">Final Design</p>
         <h2 id="final-title">Child perspective storytelling, clear navigation, and multisensory cues.</h2>
-        <p>The final hi-fi experience commits to the child-led narrative: the story begins with hearing the call, opening a curtain, and discovering the Tūī, then uses a light sidebar and tool metaphors (telescope/magnifier/headphones) to guide learning. Data visuals support measurable facts (scale, time, quantity, sound waves), while animations and audio cues heighten immersion.</p>
+        <p>The final hi-fi experience commits to the child-led narrative: the story begins with hearing the call, opening a curtain, and discovering the Tūī, then uses a light sidebar and tool metaphors (telescope, magnifier, headphones) to guide learning. Data visuals support measurable facts, while animations and audio cues heighten immersion.</p>
       </div>
-      <div class="container wso-final-grid">
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final1.png" alt="Cover screen with the title Who's Singing OutTūīside and Let's Explore button." loading="lazy"><figcaption>Cover. The story opens with a hand-painted scene and an invitation to explore.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final2.png" alt="Morning Call scene showing Lin opening the curtain and hearing the Tūī birdsong." loading="lazy"><figcaption>Morning Call. Lin hears birdsong and opens the curtain to discover the Tūī.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final3.png" alt="Life Circle stage selection screen showing lifecycle stages from Egg to Culture." loading="lazy"><figcaption>Life Circle. A stage menu guides learners through the Tūī lifecycle.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final4.png" alt="Egg stage showing Tūī egg size comparison infographic." loading="lazy"><figcaption>Egg. Size comparison data visualisation anchors the lifecycle's starting point.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final5.png" alt="Chick stage showing diet proportion data and feeding scene." loading="lazy"><figcaption>Chick. Diet proportion data introduces the Tūī's early life.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final6.png" alt="Juvenile stage showing predator proportion data." loading="lazy"><figcaption>Juvenile. Predator proportion data introduces the risks young Tūī face.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final7.png" alt="Youth stage showing feather function infographic and flight learning scene." loading="lazy"><figcaption>Youth. Interactive feather labels explain how tail and wing feathers enable flight.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final8.png" alt="Adult stage showing bird call types with sound wave visualisation." loading="lazy"><figcaption>Adult. Sound wave visualisation and audio playback bring the Tūī's diverse calls to life.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final9.png" alt="Culture stage showing the Tūī's role in Māori storytelling." loading="lazy"><figcaption>Culture. The Tūī's role in Māori storytelling connects the lifecycle to its wider meaning.</figcaption></figure>
-        <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final10.png" alt="Dream ending screen showing Lin flying with the Tūī as a dreamlike closure." loading="lazy"><figcaption>Dream. A dreamlike ending reinforces memory and provides emotional closure.</figcaption></figure>
+
+      <!-- Visible by default: Cover, Morning Call, Life Circle -->
+      <div class="container">
+        <div class="wso-final-scene">
+          <figure class="wso-final-scene__figure">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final1.png" alt="Cover screen with the title Who's Singing OuTūīside and Let's Explore button." loading="lazy">
+          </figure>
+          <div class="wso-final-scene__text">
+            <p class="ux-kicker">Cover</p>
+            <h3>Who's Singing OuTūīside?</h3>
+            <p>The story opens with a hand-painted scene and an invitation to explore. Lin has just moved to Wellington. Each morning, a sweet unfamiliar song wakes her — she can't help wondering: who's singing outside?</p>
+          </div>
+        </div>
+
+        <div class="wso-final-scene wso-final-scene--reverse">
+          <figure class="wso-final-scene__figure">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final2.png" alt="Morning Call scene showing Lin opening the curtain and hearing the Tūī birdsong." loading="lazy">
+          </figure>
+          <div class="wso-final-scene__text">
+            <p class="ux-kicker">Morning Call</p>
+            <h3>The song that wakes Lin up.</h3>
+            <p>Lin wakes to a cheerful birdsong, opens the curtains, spots a singing Tūī family in the trees, and grabs her cardboard telescope to look closer.</p>
+          </div>
+        </div>
+
+        <div class="wso-final-scene">
+          <figure class="wso-final-scene__figure">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final3.png" alt="Life Circle stage selection screen showing lifecycle stages from Egg to Culture." loading="lazy">
+          </figure>
+          <div class="wso-final-scene__text">
+            <p class="ux-kicker">Life Circle</p>
+            <h3>From eggs to messengers.</h3>
+            <p>Every Tūī has a special journey through life. A stage menu guides learners through the lifecycle, from egg to adult to cultural messenger. Follow Lin as she explores each stage to discover how a Tūī changes and grows.</p>
+          </div>
+        </div>
       </div>
-      <div class="container wso-cta-row">
-        <a class="ux-button ux-button--primary" href="https://www.figma.com/proto/VdjIieyRNkz7RcmPr6chRr/423A3_work_view?page-id=0%3A1&node-id=10-2&viewport=372%2C146%2C0.03&t=mPclTwt5Vwc3nH0Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2" target="_blank" rel="noopener">View Prototype</a>
+
+      <!-- Expandable: Egg through Dream -->
+      <div class="container">
+        <div class="wso-final-more" id="wso-final-more" hidden>
+          <div class="wso-final-scene wso-final-scene--reverse">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final4.png" alt="Egg stage showing Tūī egg size comparison infographic." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Egg · Small Beginnings</p>
+              <h3>The life of a Tūī begins inside a small, speckled egg.</h3>
+              <p>Size comparison data visualisation anchors the lifecycle's starting point. Compared with many other birds, Tūī eggs are tiny and delicate — the data makes this immediately clear.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final5.png" alt="Chick stage showing diet proportion data and feeding scene." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Chick · Tiny Beaks, Big Appetites</p>
+              <h3>Young Tūī depend on parents for food and care.</h3>
+              <p>Diet proportion data introduces the Tūī's early life. Parents feed them frequently throughout the day, bringing a mix of soft and nutritious meals.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene wso-final-scene--reverse">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final6.png" alt="Juvenile stage showing predator proportion data." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Juvenile · Aware Predators in the Dark</p>
+              <h3>As young Tūī leave the nest, they face many dangers.</h3>
+              <p>Predator proportion data explains what threatens young Tūī survival. Only the most cautious ones grow into strong adults.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final7.png" alt="Youth stage showing feather function infographic and flight learning scene." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Youth · Spreading Wings, Learning to Fly</p>
+              <h3>Young Tūī begin to test their wings and practise short flights.</h3>
+              <p>Interactive feather labels explain how tail and wing feathers enable flight. Tail feathers help with balance, while wing feathers provide lift and control.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene wso-final-scene--reverse">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final8.png" alt="Adult stage showing bird call types with sound wave visualisation." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Adult · Voices of the Tūī</p>
+              <h3>Adult Tūī are famous for their powerful and varied song.</h3>
+              <p>Sound wave visualisation and audio playback bring the Tūī's diverse calls to life. Different call types serve different social purposes: courtship, mimicry, warning, and everyday communication.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final9.png" alt="Culture stage showing the Tūī's role in Māori storytelling." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Culture · Messenger Between Worlds</p>
+              <h3>The Tūī connects the living and the spiritual in Māori worldview.</h3>
+              <p>The Tūī's role in Māori storytelling connects the lifecycle to its wider meaning. Through its song and presence, the Tūī carries wishes, memories, and voices across generations.</p>
+            </div>
+          </div>
+
+          <div class="wso-final-scene wso-final-scene--reverse">
+            <figure class="wso-final-scene__figure">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/final10.png" alt="Dream ending screen showing Lin flying with the Tūī as a dreamlike closure." loading="lazy">
+            </figure>
+            <div class="wso-final-scene__text">
+              <p class="ux-kicker">Dream · The End</p>
+              <h3>Lin wakes up knowing the Tūī's story.</h3>
+              <p>A dreamlike ending reinforces memory and provides emotional closure. Lin realises the earlier "talking with birds" experience was a beautiful, fascinating dream that leaves her feeling inspired.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wso-final-expand">
+          <button type="button" class="button button--soft" id="wso-expand-btn" aria-expanded="false" aria-controls="wso-final-more">
+            Read more — Egg through Dream
+          </button>
+        </div>
+      </div>
+
+      <div class="container wso-final-cta">
+        <a class="button button--primary" href="https://www.figma.com/proto/VdjIieyRNkz7RcmPr6chRr/423A3_work_view?page-id=0%3A1&node-id=10-2&viewport=372%2C146%2C0.03&t=mPclTwt5Vwc3nH0Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2" target="_blank" rel="noopener">View Prototype</a>
       </div>
     </section>
 
-    <!-- Retrospective -->
+    <!-- ── Retrospective ──────────────────────────────────────────────── -->
     <section class="ux-retro" aria-labelledby="retro-title">
       <div class="container">
         <p class="ux-kicker">Retrospective</p>
@@ -342,7 +586,7 @@
           </article>
           <article class="ux-card">
             <h3>Learnings</h3>
-            <p>Ambiguity in labels (especially around predators and cultural symbolism) quickly erodes clarity. Future iterations would invest more in microcopy, contextual hints, and controllable audio. Hybridising prototypes — borrowing strengths rather than forcing one format — was the most productive design move of the project.</p>
+            <p>Ambiguity in labels — especially around predators and cultural symbolism — quickly erodes clarity. Future iterations would invest more in microcopy, contextual hints, and controllable audio. Hybridising prototypes by borrowing strengths rather than forcing one format was the most productive design move of the project.</p>
           </article>
           <article class="ux-card">
             <h3>Next Steps</h3>
@@ -356,7 +600,7 @@
       </div>
     </section>
 
-    <!-- HENEX Recipe -->
+    <!-- ── HENEX Recipe ────────────────────────────────────────────────── -->
     <section class="ux-section" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
@@ -369,22 +613,22 @@
             <a href="../philosophy.html#r16">R16 · Why First Data Story</a>
             <small>Perception × Meaning × Medium</small>
           </p>
-          <p>This project uses R16 because every design decision prioritised emotional and narrative meaning before presenting raw data. The birdsong hook, the child-led story perspective, and the dreamlike ending all establish meaning first — so when lifecycle facts (egg size, predator proportions, sound wave patterns) appear, learners already have a reason to care about them. Data became more readable precisely because it was embedded in a story that had already answered "why does this matter?"</p>
+          <p>This project uses R16 because every design decision prioritised emotional and narrative meaning before presenting raw data. The birdsong hook, the child-led story perspective, and the dreamlike ending all establish meaning first — so when lifecycle facts appear, learners already have a reason to care about them.</p>
           <div class="ux-recipe-tags">
             <span>Perception</span>
             <span>Meaning</span>
             <span>Medium</span>
           </div>
           <div class="ux-recipe-popovers">
-            <button type="button" class="ux-recipe-trigger" data-recipe-title="R10 · Attention Pacing Map" data-recipe-body="Guide attention through rhythm, contrast and breathing room." data-recipe-link="../philosophy.html#r10">R10</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R10 · Attention Pacing Map" data-recipe-body="Guide attention through rhythm, contrast and breathing room so users do not skim or drop off." data-recipe-link="../philosophy.html#r10">R10</button>
             <button type="button" class="ux-recipe-trigger" data-recipe-title="R13 · Multiple Viewpoint Story" data-recipe-body="Make different viewpoints visible and easier to discuss." data-recipe-link="../philosophy.html#r13">R13</button>
-            <button type="button" class="ux-recipe-trigger" data-recipe-title="R12 · Calm Clarity Tuning" data-recipe-body="Reduce cognitive load while keeping the experience calm." data-recipe-link="../philosophy.html#r12">R12</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R12 · Calm Clarity Tuning" data-recipe-body="Reduce cognitive load with hierarchy, contrast and feedback that stays legible under stress." data-recipe-link="../philosophy.html#r12">R12</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Related Projects -->
+    <!-- ── Related Projects ───────────────────────────────────────────── -->
     <section class="ux-section ux-related" aria-labelledby="related-title">
       <div class="container">
         <p class="ux-kicker">Related Projects</p>
@@ -408,15 +652,16 @@
             <strong>New World Design System</strong>
             <small>A design system case focused on reusable UI structure, accessibility and brand consistency.</small>
           </a>
-          <a class="ux-related-card" href="welnest.html">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/wst-home.webp" alt="Welnest project preview." loading="lazy">
+          <a class="ux-related-card" href="rekraft.html">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/rkt-home.webp" alt="ReKraft project preview." loading="lazy">
             <span>Digital Systems</span>
-            <strong>Welnest</strong>
-            <small>A real estate digital product case focused on onboarding, trust and community connection.</small>
+            <strong>ReKraft</strong>
+            <small>A sustainability-focused product design case combining Te Ao Māori values and UX research.</small>
           </a>
         </div>
         <div class="ux-related__actions">
-          <a class="ux-button ux-button--soft" href="../works.html">Back to Works</a>
+          <a class="button button--soft" href="../works.html">Back to Works</a>
+          <a class="button button--soft" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">To the Top</a>
         </div>
       </div>
     </section>
@@ -458,6 +703,23 @@
   <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
     <img src="../assets/icons/ui/icon-arrow-up.svg" alt="" aria-hidden="true">
   </button>
+
+  <script>
+    // Final Design expand/collapse
+    (function () {
+      var btn = document.getElementById('wso-expand-btn');
+      var more = document.getElementById('wso-final-more');
+      if (!btn || !more) return;
+      btn.addEventListener('click', function () {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', !expanded);
+        more.hidden = expanded;
+        btn.textContent = expanded
+          ? 'Read more — Egg through Dream'
+          : 'Show fewer scenes';
+      });
+    }());
+  </script>
 
 </body>
 </html>
