@@ -1,53 +1,98 @@
 /* ReKraft — project-scoped styles
    Scope: ux-case-page--rekraft only
-   Primary: #0A3429 (forest green)
-   Accent:  #C2FA7D (lime — dark backgrounds only, contrast 11:1 on #0A3429)
+   Primary (text/heading): #187A62 (deep teal green, 5.25:1 on white)
+   Decorative (kicker/icon/border): #3CBC9A (mid green, visual accent only)
+   Dark-bg accent: #C2FA7D (lime, 11:1 on #0A3429)
    Do not modify global.css or ux-case-study.css from this file.
 */
 
 .ux-case-page--rekraft {
-  --ux-theme: #0A3429;
-  --ux-dark: #061E18;
+  --ux-theme: #187A62;
+  --ux-dark: #0A3429;
+  --ux-accent: #3CBC9A;
   --ux-lime: #C2FA7D;
   --ux-soft: #EAF3EE;
   --ux-pale: #F3F9F5;
 }
 
-/* Hero background */
-.ux-case-page--rekraft .ux-hero {
-  background:
-    linear-gradient(145deg, color-mix(in srgb, #0A3429 12%, transparent), transparent 38%),
-    url('../img/projects/rkt/hero.png') center right / 480px auto no-repeat,
-    linear-gradient(135deg, #F3F9F5, color-mix(in srgb, #EAF3EE 72%, var(--theme-bg)) 54%, var(--theme-bg));
+/* ─── Hero — full-bleed background, no dark overlay, dark title for contrast ─── */
+.rkt-hero {
+  background: url('https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png') center / cover no-repeat;
 }
 
-[data-theme="dark"] .ux-case-page--rekraft .ux-hero {
-  background:
-    linear-gradient(145deg, rgba(10, 52, 41, 0.36), transparent 38%),
-    url('../img/projects/rkt/hero.png') center right / 480px auto no-repeat,
-    linear-gradient(135deg, #020D09 0%, #061E18 46%, #030F0B 100%);
+[data-theme="dark"] .rkt-hero {
+  background: url('https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png') center / cover no-repeat;
 }
 
-@media (max-width: 900px) {
-  .ux-case-page--rekraft .ux-hero {
-    background:
-      linear-gradient(145deg, color-mix(in srgb, #0A3429 10%, transparent), transparent 40%),
-      linear-gradient(135deg, #F3F9F5, color-mix(in srgb, #EAF3EE 72%, var(--theme-bg)) 54%, var(--theme-bg));
-  }
-
-  [data-theme="dark"] .ux-case-page--rekraft .ux-hero {
-    background:
-      linear-gradient(145deg, rgba(10, 52, 41, 0.28), transparent 40%),
-      linear-gradient(135deg, #020D09 0%, #061E18 46%, #030F0B 100%);
-  }
+.rkt-hero .ux-hero__copy h1 {
+  color: #0A3429;
 }
 
-/* Problem section */
-.rkt-problem-figure {
+.rkt-hero .ux-hero__copy p {
+  color: #243B33;
+}
+
+/* ─── Kicker — decorative accent colour in MAIN content sections only ─── */
+.ux-case-page--rekraft .ux-section:not(.ux-related) .ux-kicker,
+.ux-case-page--rekraft .ux-hero .ux-kicker,
+.ux-case-page--rekraft .ux-solution .ux-kicker,
+.ux-case-page--rekraft .ux-problem .ux-kicker,
+.ux-case-page--rekraft .ux-intro > p:first-child {
+  color: var(--ux-accent);
+}
+
+/* Related Projects kicker — use global neutral colour, not green */
+.ux-case-page--rekraft .ux-related .ux-kicker {
+  color: var(--theme-muted);
+}
+
+/* ─── Influence block spacing — match global ux-narrow standard ─── */
+.ux-case-page--rekraft .ux-copy .ux-influence,
+.ux-case-page--rekraft .ux-problem .ux-influence {
+  margin-top: 44px;
+}
+
+/* ─── Concept section — three images side by side ─── */
+.rkt-concept-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.rkt-concept-grid figure {
   margin: 0;
 }
 
-.rkt-problem-figure button {
+.rkt-concept-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-md);
+}
+
+.rkt-concept-grid figcaption {
+  margin-top: 10px;
+  color: var(--theme-text);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ─── Problem gallery — 2 visible + 6 behind Read more, full width below HMW ─── */
+.rkt-problem-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 720px;
+}
+
+.rkt-problem-gallery figure {
+  margin: 0;
+}
+
+.rkt-problem-gallery button {
   width: 100%;
   display: block;
   margin: 0;
@@ -57,14 +102,38 @@
   cursor: zoom-in;
 }
 
-.rkt-problem-figure img {
+.rkt-problem-gallery img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: var(--radius-sm);
 }
 
-/* Findings grid */
+.rkt-problem-gallery figcaption {
+  margin-top: 8px;
+  color: var(--theme-muted);
+  font-size: 0.82rem;
+}
+
+.rkt-problem-more {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.rkt-problem-more[hidden] {
+  display: none;
+}
+
+.rkt-problem-expand {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 8px;
+}
+
+/* ─── Findings grid ─── */
 .rkt-finding-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -73,7 +142,7 @@
 
 .rkt-finding {
   padding: 24px;
-  border: 1px solid color-mix(in srgb, #0A3429 20%, var(--theme-border-soft));
+  border: 1px solid color-mix(in srgb, var(--ux-accent) 24%, var(--theme-border-soft));
   border-radius: var(--radius-md);
   background: var(--theme-surface);
   transition: transform 0.18s ease, box-shadow 0.18s ease;
@@ -87,7 +156,7 @@
 .rkt-finding span {
   display: block;
   margin-bottom: 10px;
-  color: #0A3429;
+  color: var(--ux-theme);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.12em;
@@ -96,7 +165,7 @@
 
 .rkt-finding h3 {
   margin-bottom: 10px;
-  color: var(--ux-dark, var(--ux-dark));
+  color: var(--ux-dark);
   font-size: 1rem;
   line-height: 1.25;
 }
@@ -110,18 +179,22 @@
 .rkt-finding strong {
   display: block;
   margin: 14px 0 6px;
-  color: #0A3429;
+  color: var(--ux-theme);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Define scope grid */
+/* ─── Define — design principles, four across ─── */
 .rkt-scope-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
+}
+
+.rkt-scope-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .rkt-scope-grid figure {
@@ -145,10 +218,10 @@
   border-radius: var(--radius-sm);
 }
 
-/* Develop grid */
+/* ─── Develop grid — 2 visible + 2 behind Read more ─── */
 .rkt-develop-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -173,7 +246,21 @@
   border-radius: var(--radius-sm);
 }
 
-/* Design system stack */
+.rkt-develop-more {
+  display: contents;
+}
+
+.rkt-develop-more[hidden] {
+  display: none;
+}
+
+.rkt-develop-expand {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+
+/* ─── Design system stack ─── */
 .rkt-ds-stack {
   display: grid;
   gap: 56px;
@@ -189,6 +276,11 @@
   border-top: 1px solid var(--theme-border-soft);
 }
 
+.rkt-ds-stack article:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
 .rkt-ds-reverse {
   grid-template-columns: minmax(240px, 0.48fr) minmax(0, 0.52fr) !important;
 }
@@ -198,7 +290,7 @@
 }
 
 .rkt-ds-stack h3 {
-  color: var(--ux-dark, var(--ux-dark));
+  color: var(--ux-dark);
   font-size: clamp(1.2rem, 1.8vw, 1.6rem);
   margin-bottom: 14px;
 }
@@ -215,27 +307,111 @@
   border-radius: var(--radius-sm);
 }
 
-.rkt-ds-gallery {
+/* ─── Final Design — dark background, no internal divider lines ─── */
+.ux-case-page--rekraft section:has(#final-modules-title) {
+  background: var(--ux-dark);
+}
+
+.ux-case-page--rekraft section:has(#final-modules-title) .ux-kicker {
+  color: var(--ux-lime);
+}
+
+.ux-case-page--rekraft section:has(#final-modules-title) h2,
+.ux-case-page--rekraft section:has(#final-modules-title) h3 {
+  color: #ffffff;
+}
+
+.ux-case-page--rekraft section:has(#final-modules-title) p {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* Remove the divider line between ux-feature rows on this page only */
+.ux-case-page--rekraft section:has(#final-modules-title) .ux-feature {
+  border-top: none;
+  padding-top: 0;
+}
+
+.rkt-modules-expand {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 32px;
+}
+
+.ux-case-page--rekraft section:has(#final-modules-title) .rkt-modules-expand .button--soft {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.42);
+}
+
+.ux-case-page--rekraft section:has(#final-modules-title) .rkt-modules-expand .button--soft:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.62);
+}
+
+/* ─── Feedback cards (same pattern as VSK/WSO) ─── */
+.ux-case-page--rekraft .ux-feedback-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.ux-case-page--rekraft .ux-feedback-card {
+  min-height: 160px;
   margin: 0;
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
-.rkt-ds-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-sm);
+.ux-case-page--rekraft .ux-feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 
-/* Responsive */
+.ux-case-page--rekraft .ux-feedback-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+  color: var(--ux-theme);
+}
+
+.ux-case-page--rekraft .ux-feedback-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.ux-case-page--rekraft .ux-feedback-icon circle,
+.ux-case-page--rekraft .ux-feedback-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ux-case-page--rekraft .ux-feedback-card p {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 1rem;
+  line-height: 1.54;
+}
+
+/* ─── Responsive ─── */
 @media (max-width: 1180px) {
   .rkt-finding-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .rkt-develop-grid {
+  .rkt-scope-grid--four {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -254,7 +430,8 @@
     grid-template-columns: 1fr;
   }
 
-  .rkt-scope-grid {
+  .rkt-scope-grid,
+  .rkt-scope-grid--four {
     grid-template-columns: 1fr;
   }
 
@@ -262,7 +439,16 @@
     grid-template-columns: 1fr;
   }
 
-  .rkt-ds-gallery {
+  .rkt-concept-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .rkt-problem-gallery,
+  .rkt-problem-more {
+    grid-template-columns: 1fr;
+  }
+
+  .ux-case-page--rekraft .ux-feedback-grid {
     grid-template-columns: 1fr;
   }
 }
