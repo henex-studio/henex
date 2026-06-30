@@ -1,80 +1,39 @@
 /* Who's Singing OuTūīside? case page extension.
    Scope: works/whos-singing-outuiside.html only.
-   Primary: deep green #46564C  Secondary (dark-bg only): orange #F5B154
+   Primary: dark olive #30352E  Accent: orange #FF7701 (kickers + dark bg text)
    This file is additive and does not modify existing HENEX case study styles. */
 
 /* ─── Theme variables ─── */
 .ux-case-page--wso {
-  --ux-theme: #46564C;
-  --ux-dark: #2D3B32;
-  --ux-soft: #EDF1EE;
-  --ux-pale: #F5F7F5;
-  --wso-orange: #F5B154;
-  --wso-orange-soft: #FEF3E2;
+  --ux-theme: #30352E;
+  --ux-dark: #1A1E18;
+  --ux-soft: #EDEEE9;
+  --ux-pale: #F5F5F2;
+  --wso-orange: #FF7701;
+  --wso-orange-soft: #FFF3E8;
 }
 
 /* ─── Hero (full-bleed background, no right-side image) ─── */
 .ux-case-page--wso.ux-case-page--background-hero .ux-hero {
   background:
-    linear-gradient(100deg,
-      rgba(45,59,50,.80) 0%,
-      rgba(45,59,50,.58) 42%,
-      rgba(70,86,76,.22) 72%,
-      rgba(230,238,232,.04) 100%),
-    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png"),
-    linear-gradient(150deg, #EDF1EE, #F5F7F5 54%, var(--theme-bg));
-  background-size: cover, cover, cover;
-  background-position: center, center right, center;
-  background-repeat: no-repeat;
+    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png") center / cover no-repeat;
 }
 
 [data-theme="dark"] .ux-case-page--wso.ux-case-page--background-hero .ux-hero {
   background:
-    linear-gradient(100deg,
-      rgba(20,32,24,.88) 0%,
-      rgba(20,32,24,.68) 44%,
-      rgba(45,59,50,.32) 72%,
-      rgba(7,8,9,.18) 100%),
-    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png"),
-    linear-gradient(140deg, #0D120E 0%, #070809 100%);
-  background-size: cover, cover, cover;
-  background-position: center, center right, center;
-  background-repeat: no-repeat;
+    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/hero.png") center / cover no-repeat;
 }
 
-/* Hero text colours */
-.ux-case-page--wso .ux-hero h1,
-.ux-case-page--wso .wso-hero__subtitle {
-  color: #ffffff;
+/* Hero text — black title, deep grey subtitle for contrast on illustration bg */
+.ux-case-page--wso .ux-hero h1 {
+  color: #000000;
 }
 
-.ux-case-page--wso .wso-hero__subtitle {
-  margin-top: 8px;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-style: italic;
-  opacity: .86;
+.ux-case-page--wso .ux-hero p {
+  color: #2A2A2A;
 }
 
-/* Hero tags — use ux-tags, match VSK pattern */
-.ux-case-page--wso .ux-hero .ux-tags span {
-  border-color: rgba(255,255,255,.34);
-  background: rgba(255,255,255,.16);
-  color: #ffffff;
-}
-
-.ux-case-page--wso .ux-hero .ux-tags--secondary span {
-  background: rgba(245,177,84,.26);
-  border-color: rgba(245,177,84,.52);
-  color: #ffffff;
-}
-
-/* Hero CTA */
-.ux-case-page--wso .ux-hero .ux-button--primary {
-  background: var(--wso-orange);
-  color: #2D3B32;
-  border-color: var(--wso-orange);
-  font-weight: 800;
-}
+/* Hero tags — using global case-tag-row--overlay defaults (no override needed) */
 
 /* ─── Global heading colour (primary green, NO orange on light bg) ─── */
 .ux-case-page--wso .ux-intro h2,
@@ -86,10 +45,11 @@
   color: var(--ux-theme);
 }
 
-/* Kicker on light bg → green, not orange */
-.ux-case-page--wso .ux-kicker,
+/* Kicker orange in main sections only — not ux-related */
+.ux-case-page--wso .ux-section:not(.ux-related) .ux-kicker,
+.ux-case-page--wso .ux-hero .ux-kicker,
 .ux-case-page--wso .ux-intro > p:first-child {
-  color: var(--ux-theme);
+  color: var(--wso-orange);
 }
 
 /* figcaption tint */
@@ -161,7 +121,7 @@
 .ux-case-page--wso .ux-solution {
   background:
     radial-gradient(circle at 16% 22%, rgba(255,255,255,.10), transparent 32%),
-    linear-gradient(135deg, #2D3B32 0%, #3A4D3F 58%, #2D3B32 100%);
+    linear-gradient(135deg, #1A1E18 0%, #3A4D3F 58%, #1A1E18 100%);
 }
 
 .ux-case-page--wso .ux-solution__grid {
@@ -177,9 +137,8 @@
 .wso-problem h2 { color: #ffffff; }
 .wso-problem p { color: rgba(255,255,255,.78); }
 
-/* Kicker on dark bg → orange */
-.ux-case-page--wso .ux-solution .ux-kicker,
-.wso-solution-card .ux-kicker {
+/* DS block kicker — keep orange */
+.ux-case-page--wso .wso-ds-block .ux-kicker {
   color: var(--wso-orange);
 }
 
@@ -459,7 +418,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 1660 / 1080;
   background: var(--theme-surface);
   border: 2px dashed var(--theme-border);
   border-radius: var(--radius-lg);
@@ -475,7 +434,7 @@
   margin: 0;
   padding: 32px 40px;
   background: var(--ux-soft, #EAF3EE);
-  border-left: 4px solid var(--ux-theme, #46564C);
+  border-left: 4px solid var(--ux-theme, #30352E);
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
 }
 
@@ -484,7 +443,7 @@
   font-size: clamp(1.1rem, 1.6vw, 1.35rem);
   font-weight: 700;
   line-height: 1.4;
-  color: var(--ux-theme, #46564C);
+  color: var(--ux-theme, #30352E);
 }
 
 /* Process steps */
@@ -509,7 +468,7 @@
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background: var(--ux-theme, #46564C);
+  background: var(--ux-theme, #30352E);
   color: #ffffff;
   font-size: 0.9rem;
   font-weight: 800;
@@ -538,7 +497,7 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--theme-muted);
-  margin: 48px 0 20px;
+  margin: var(--section-pad) 0 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid var(--theme-border-soft);
 }
@@ -671,25 +630,28 @@
 /* Design system blocks — alternating text + image */
 .wso-ds-block {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: minmax(0, .34fr) minmax(0, .66fr);
   gap: 48px;
-  align-items: start;
-  padding: 40px 0;
+  align-items: center;
+  padding-top: 54px;
   border-top: 1px solid var(--theme-border-soft);
 }
 
-.wso-ds-block:first-of-type { border-top: none; }
+.wso-ds-block:first-of-type {
+  padding-top: 0;
+  border-top: none;
+}
 
 .wso-ds-block--reverse {
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: minmax(0, .66fr) minmax(0, .34fr);
 }
 
 .wso-ds-block--reverse .wso-ds-block__text {
-  order: 2;
+  order: 1;
 }
 
 .wso-ds-block--reverse .wso-ds-block__figure {
-  order: 1;
+  order: -1;
 }
 
 .wso-ds-block__text h3 {
@@ -742,30 +704,45 @@
 
 /* Final design scenes — full-width alternating layout */
 .wso-final-scene {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   align-items: center;
   padding: 48px 0;
   border-top: 1px solid var(--theme-border-soft);
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wso-final-scene:first-child { border-top: none; }
 
-.wso-final-scene--reverse {
-  grid-template-columns: 1fr 1.3fr;
+/* reverse has no effect in stacked layout — keep class for compat */
+.wso-final-scene--reverse { }
+
+.wso-final-scene__text {
+  text-align: center;
+  width: 100%;
 }
 
-.wso-final-scene--reverse .wso-final-scene__figure {
-  order: 2;
+.wso-final-scene__text h3 {
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--theme-text);
 }
 
-.wso-final-scene--reverse .wso-final-scene__text {
-  order: 1;
+.wso-final-scene__text p {
+  color: var(--theme-text-soft);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .wso-final-scene__figure {
   margin: 0;
+  width: 100%;
 }
 
 .wso-final-scene__figure img {
@@ -776,37 +753,20 @@
   box-shadow: var(--theme-shadow-card);
 }
 
-.wso-final-scene__text h3 {
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: var(--theme-text);
-}
-
-.wso-final-scene__text p {
-  color: var(--theme-text-soft);
-  font-size: 0.9rem;
-  line-height: 1.65;
-}
-
 /* Expand button row */
-.wso-final-expand {
+.wso-final-actions {
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 32px 0 0;
+  gap: 16px;
+  padding: 40px 0 0;
   border-top: 1px solid var(--theme-border-soft);
-  margin-top: 8px;
-}
-
-.wso-final-cta {
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
+  margin-top: 16px;
 }
 
 /* Solution section */
 .wso-solution-section {
-  background: color-mix(in srgb, var(--ux-theme, #46564C) 6%, var(--theme-bg));
+  background: color-mix(in srgb, var(--ux-theme, #30352E) 6%, var(--theme-bg));
 }
 
 /* ─── Responsive ────────────────────────────────────────────────────────── */
@@ -853,4 +813,120 @@
   .wso-illus-pair {
     grid-template-columns: 1fr;
   }
+}
+
+/* ─── Feedback cards (copied from vsk.css pattern) ─── */
+.ux-case-page--wso .ux-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 38px;
+}
+
+.ux-case-page--wso .ux-feedback-card {
+  min-height: 190px;
+  margin: 0;
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.ux-case-page--wso .ux-feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
+}
+
+.ux-case-page--wso .ux-feedback-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 20px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+  color: var(--ux-theme);
+}
+
+.ux-case-page--wso .ux-feedback-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.ux-case-page--wso .ux-feedback-icon circle,
+.ux-case-page--wso .ux-feedback-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ux-case-page--wso .ux-feedback-card p {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 1rem;
+  line-height: 1.54;
+}
+
+/* ─── Lo-fi expand button ─── */
+.wso-lofi-expand {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* ─── Problem grid (HMW) ─── */
+.ux-case-page--wso .ux-problem__grid {
+  display: block;
+}
+
+.ux-case-page--wso .ux-problem-note {
+  margin-top: 20px;
+  color: var(--theme-text-soft);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 780px;
+}
+
+/* ─── HMW question colour ─── */
+.ux-case-page--wso .ux-problem__grid strong {
+  color: var(--wso-orange);
+  font-weight: 800;
+}
+
+.ux-case-page--wso .ux-problem__grid em {
+  color: var(--wso-orange);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* ─── Field Survey — stacked vertical images ─── */
+.wso-research-card__images--stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.wso-research-card__images--stack img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Prototype walkthrough video ─── */
+.wso-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1660 / 1080;
+  border-radius: var(--radius-lg);
+  margin-top: 32px;
+  background: #000;
+  box-shadow: var(--theme-shadow-card);
+  overflow: hidden;
 }
