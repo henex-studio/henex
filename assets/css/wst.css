@@ -1,0 +1,539 @@
+/* Welnest (WST) case study page styles.
+   Dependencies: global.css, ux-case-study.css
+   Theme colours are scoped to .ux-case-page--welnest only. */
+.ux-case-page--welnest {
+  --ux-theme: #202124;      /* Headings use the global neutral dark, not a brand brown */
+  --ux-accent: #FB8A00;     /* Decorative accent, kicker/icon use only, not AA-safe for body text */
+  --ux-tint: #FFEFDE;       /* Section tint background */
+  --ux-dark: #202124;
+  --ux-soft: #FFEFDE;
+  --ux-pale: #FFF8F0;
+  --wst-hmw: #FFB200;       /* "How might we" lead-in colour */
+  --wst-hmw-strong: #FB8A00; /* Emphasised keyword colour inside the HMW question */
+}
+
+/* Theme colour mapping onto shared ux-case-study.css hooks: headings use the neutral dark */
+.ux-case-page--welnest .ux-intro h2,
+.ux-case-page--welnest .ux-wide-head h2,
+.ux-case-page--welnest .ux-copy h2,
+.ux-case-page--welnest .ux-copy h3,
+.ux-case-page--welnest .ux-video-grid h2,
+.ux-case-page--welnest .ux-feature h3,
+.ux-case-page--welnest .ux-ds-module h3,
+.ux-case-page--welnest .ux-retro h2,
+.ux-case-page--welnest .ux-retro h3 {
+  color: var(--ux-theme);
+}
+.ux-case-page--welnest .ux-lens a,
+.ux-case-page--welnest .ux-recipe-primary a {
+  color: color-mix(in srgb, var(--ux-accent) 82%, var(--ux-theme));
+}
+.ux-case-page--welnest figcaption {
+  color: var(--theme-text-soft);
+}
+
+/* Kicker accent: brighten to WST accent orange, decorative use only (AA does not apply,
+   kicker text is small-caps label text, not body copy). Related Projects kicker stays neutral. */
+.ux-case-page--welnest .ux-kicker,
+.ux-case-page--welnest .ux-intro > p:first-child,
+.ux-case-page--welnest .ux-copy .ux-kicker,
+.ux-case-page--welnest .ux-meta span,
+.ux-case-page--welnest .ux-skills > span,
+.ux-case-page--welnest .ux-lens span,
+.ux-case-page--welnest .ux-process span,
+.ux-case-page--welnest .ux-recipe-primary span,
+.ux-case-page--welnest .ux-card span,
+.ux-case-page--welnest .ux-influence strong,
+.ux-case-page--welnest .wst-finding-grid span {
+  color: var(--ux-accent);
+}
+.ux-case-page--welnest .ux-related .ux-kicker {
+  color: var(--theme-muted);
+}
+
+/* Hero: hero.png is the brand yellow background with the Welnest logo mark, used as-is.
+   Text sits directly on the yellow, so it needs the neutral dark for AA contrast, no shadow. */
+.ux-case-page--welnest .ux-hero {
+  background:
+    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/hero.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ux-case-page--welnest .ux-hero h1 {
+  color: var(--ux-dark);
+}
+.ux-case-page--welnest .ux-hero__copy p {
+  color: var(--ux-theme);
+}
+
+/* Preview image: replaces video, must show the full image without cropping. No background
+   fill behind the image, so transparent PNG areas stay transparent rather than picking up
+   a themed or neutral panel colour. */
+.ux-case-page--welnest .ux-video-grid img.ux-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Problem: image moves below the copy, full width, new row instead of sitting beside the text */
+.ux-case-page--welnest .ux-problem__grid {
+  grid-template-columns: 1fr;
+}
+.ux-case-page--welnest .ux-problem__grid figure {
+  margin-top: 8px;
+}
+.ux-case-page--welnest .ux-problem__grid figure img {
+  width: 100%;
+  display: block;
+}
+.ux-case-page--welnest .ux-problem h2 strong {
+  color: var(--wst-hmw);
+}
+.ux-case-page--welnest .ux-problem h2 em {
+  color: var(--wst-hmw-strong);
+  font-style: normal;
+}
+
+/* No background fill on any content image: transparent PNGs stay transparent. */
+.ux-case-page--welnest .ux-evidence img,
+.ux-case-page--welnest .wst-journey img,
+.ux-case-page--welnest .wst-flow-grid img,
+.ux-case-page--welnest .wst-final-stack img,
+.ux-case-page--welnest .ux-test-card img,
+.ux-case-page--welnest .wst-ds-typography img,
+.ux-case-page--welnest .wst-ds-brand img {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Feedback cards: copied .ux-feedback-icon/.ux-feedback-grid base rules from vsk.css
+   because this CSS lives in vsk.css, not the shared ux-case-study.css. Re-themed to WST colours. */
+.ux-feedback-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+.ux-feedback-card {
+  min-height: 190px;
+  margin: 0;
+  padding: 30px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.ux-feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, var(--ux-accent) 34%, var(--theme-border));
+}
+.ux-feedback-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+  color: var(--ux-accent);
+}
+.ux-feedback-icon svg {
+  width: 23px;
+  height: 23px;
+}
+.ux-feedback-icon circle,
+.ux-feedback-icon path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ux-feedback-card p {
+  margin: 0;
+  color: var(--theme-text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Discover: findings, journey and influence share one layout column so they read as a single
+   sequence rather than two disconnected blocks. Journey (image + copy + influence) comes first,
+   findings cards follow underneath. */
+.wst-discover-primary {
+  display: grid;
+  gap: 40px;
+  margin-top: 36px;
+}
+.wst-discover-primary figure {
+  margin: 0;
+}
+.wst-discover-primary img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+.wst-discover-primary .ux-influence {
+  margin-top: 4px;
+}
+.wst-findings-block {
+  margin-top: 64px;
+}
+.wst-findings-block > p {
+  margin-bottom: 28px;
+  color: var(--theme-text-soft);
+  line-height: 1.62;
+}
+.wst-finding-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.wst-finding-grid article {
+  padding: 30px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+.wst-finding-grid span {
+  display: block;
+  margin-bottom: 14px;
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.wst-finding-grid h3 {
+  margin-bottom: 14px;
+  color: var(--theme-text);
+  font-size: 1.1rem;
+  line-height: 1.35;
+}
+.wst-finding-grid p {
+  color: var(--theme-text-soft);
+  font-size: .96rem;
+  line-height: 1.62;
+}
+
+/* Design Principles grid (6 cards) */
+.wst-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 28px;
+  margin-top: 44px;
+}
+.wst-principle-card {
+  min-height: 190px;
+  padding: 32px;
+}
+.wst-principle-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 28px;
+  border-radius: var(--radius-full);
+  color: var(--ux-accent);
+  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+}
+.wst-principle-icon svg {
+  width: 23px;
+  height: 23px;
+}
+.wst-principle-icon path,
+.wst-principle-icon circle,
+.wst-principle-icon rect {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.wst-principle-card h3 {
+  margin-bottom: 10px;
+}
+.wst-principle-card p {
+  line-height: 1.6;
+}
+
+/* Develop: evidence images sit in the same right-hand column as the copy text above,
+   reusing the .ux-two-col grid with an empty first cell so both widths match exactly. */
+.wst-evidence-row {
+  margin-top: 32px;
+}
+.wst-evidence-row .ux-evidence {
+  margin: 0;
+}
+.wst-evidence-row img {
+  width: 100%;
+  display: block;
+}
+
+/* User flow: three images stacked vertically, same column width as the copy above. */
+.wst-flow-heading {
+  margin-bottom: 22px;
+  color: var(--ux-theme);
+  font-size: 1.2rem;
+}
+.wst-flow-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.wst-flow-grid figure {
+  margin: 0;
+}
+.wst-flow-grid img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+
+/* Usability Testing: heading/copy use the same two-column layout as other sections.
+   Influence sits above the card row, matching the copy column width. Cards keep the
+   description-on-top, image-below layout with a centred Read more button beneath. */
+.ux-case-page--welnest .ux-usability {
+  display: block;
+}
+.wst-ut-head {
+  display: grid;
+  grid-template-columns: minmax(220px, .34fr) minmax(0, 1fr);
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+.wst-ut-lead {
+  color: var(--theme-text-soft);
+  font-size: 1.05rem;
+  line-height: 1.62;
+}
+.wst-ut-influence {
+  margin-bottom: 40px;
+}
+.ux-test-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+.ux-test-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+}
+.ux-test-card h3 {
+  margin-bottom: 10px;
+  color: var(--ux-theme);
+  font-size: 1.05rem;
+}
+.ux-test-card p {
+  margin-bottom: 20px;
+  color: var(--theme-text-soft);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+.ux-test-card figure {
+  margin: auto 0 0;
+}
+.ux-test-card img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+.wst-ut-more {
+  margin-top: 32px;
+}
+.wst-ut-more[hidden] {
+  display: none;
+}
+.wst-ut-actions {
+  margin-top: 36px;
+  text-align: center;
+}
+
+/* Final design: two images stacked full width, each with heading + short copy above */
+.wst-final-stack {
+  display: grid;
+  gap: 60px;
+  margin-top: 8px;
+}
+.wst-final-stack article {
+  display: grid;
+  gap: 24px;
+}
+.wst-final-stack figure {
+  margin: 0;
+}
+.wst-final-stack img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+
+/* Design System: modules alternate left/right like the other case pages.
+   Typography: copy 1/3, image 2/3. Colour: swatches 1/2, copy 1/2, image side first (reversed).
+   Brand: copy first, image second. */
+.wst-ds-stack {
+  display: grid;
+  gap: 56px;
+}
+.wst-ds-stack > article {
+  padding-top: 44px;
+  border-top: 1px solid var(--theme-border-soft);
+}
+.wst-ds-stack > article:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+.wst-ds-typography {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 42px;
+  align-items: center;
+}
+.wst-ds-typography figure {
+  margin: 0;
+}
+.wst-ds-typography img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+.wst-ds-colour {
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) minmax(240px, .72fr);
+  gap: 42px;
+  align-items: center;
+}
+.wst-ds-colour .wst-swatch-grid {
+  margin-top: 0;
+}
+.wst-ds-brand {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(240px, .8fr);
+  gap: 42px;
+  align-items: center;
+}
+.wst-ds-brand figure {
+  margin: 0;
+}
+.wst-ds-brand img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+}
+
+/* Design System colour swatches, three Welnest product brand colours from the source PDF */
+.wst-swatch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 26px;
+}
+.wst-swatch {
+  min-height: 108px;
+  display: grid;
+  align-content: end;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, .08);
+  color: #2A1A06;
+}
+.wst-swatch b { font-size: .78rem; }
+.wst-swatch strong { color: inherit; font-size: .9rem; }
+.wst-swatch--yellow { background: #FFB200; }
+.wst-swatch--orange { background: #FB8A00; color: #2A1A06; }
+.wst-swatch--cream  { background: #FFEFDE; color: #2A1A06; }
+
+/* Influence blocks that follow a card grid directly (Define principles, other standalone
+   grids) need their own top spacing since they are not wrapped in a component that already
+   sets this gap, unlike .wst-discover-primary or .wst-ut-head. */
+.ux-case-page--welnest .wst-principle-grid + .ux-influence,
+.ux-case-page--welnest .ux-card-grid + .ux-influence {
+  margin-top: 36px;
+}
+
+/* Solution: overrides the shared teal .ux-solution background with the Welnest brand yellow,
+   text switches to the neutral dark for AA contrast on the lighter background. */
+.ux-case-page--welnest .ux-solution {
+  background: #FFB200;
+  color: #202124;
+}
+
+/* Retrospective: the shared .ux-retro background is derived from --ux-theme, which is now the
+   neutral dark grey used for headings. Restore the original warm cream tint here directly so
+   switching the heading colour does not change this section's background. */
+.ux-case-page--welnest .ux-retro {
+  background: linear-gradient(145deg, color-mix(in srgb, var(--ux-accent) 16%, var(--theme-surface)), var(--theme-bg) 82%);
+}
+.ux-case-page--welnest .ux-solution .ux-kicker,
+.ux-case-page--welnest .ux-solution h2 {
+  color: #202124;
+}
+.ux-case-page--welnest .ux-solution p {
+  color: color-mix(in srgb, #202124 82%, transparent);
+}
+
+/* Section rhythm: increase breathing room between major blocks inside sections */
+.ux-case-page--welnest .ux-section > .container + .container {
+  margin-top: 48px;
+}
+.ux-case-page--welnest .ux-two-col + .container {
+  margin-top: 48px;
+}
+
+/* Dark mode surfaces */
+[data-theme="dark"] .ux-feedback-card,
+[data-theme="dark"] .wst-finding-grid article,
+[data-theme="dark"] .ux-test-card {
+  background: var(--theme-surface);
+}
+[data-theme="dark"] .ux-case-page--welnest .ux-solution {
+  color: #202124;
+}
+
+/* Responsive: 1180px */
+@media (max-width: 1180px) {
+  .ux-feedback-grid,
+  .wst-finding-grid,
+  .ux-test-row {
+    grid-template-columns: 1fr;
+  }
+  .wst-principle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .wst-swatch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .wst-ds-typography,
+  .wst-ds-colour,
+  .wst-ds-brand {
+    grid-template-columns: 1fr;
+  }
+  .wst-ut-head {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Responsive: 640px */
+@media (max-width: 640px) {
+  .wst-principle-grid {
+    grid-template-columns: 1fr;
+  }
+  .wst-swatch-grid {
+    grid-template-columns: 1fr;
+  }
+}
