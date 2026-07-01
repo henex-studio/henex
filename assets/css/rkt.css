@@ -46,6 +46,9 @@
   color: var(--theme-muted);
 }
 
+/* No .ux-solution override needed: the shared rule in ux-case-study.css now derives its
+   background from --ux-dark, which is already defined above as ReKraft's deep teal-green. */
+
 /* ─── Influence block spacing — match global ux-narrow standard ─── */
 .ux-case-page--rekraft .ux-copy .ux-influence,
 .ux-case-page--rekraft .ux-problem .ux-influence,

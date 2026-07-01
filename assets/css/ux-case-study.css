@@ -395,9 +395,19 @@ figcaption {
   font-style: normal;
 }
 
+/* Background is derived from each project's own --ux-dark variable (set in the
+   project-scoped CSS file, e.g. ash.css, rkt.css). Do not hardcode a project colour
+   here: every case study project must define --ux-dark. The fallback below uses
+   the site's own neutral --theme-text, not any project's brand colour, so a missing
+   variable reads as a plain neutral grey instead of borrowing another project's look. */
 .ux-solution {
   padding: 86px 0;
-  background: linear-gradient(135deg, #074E53, #0B6469 58%, #073B3F);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--ux-dark, var(--theme-text)) 88%, white 6%),
+    var(--ux-dark, var(--theme-text)) 58%,
+    color-mix(in srgb, var(--ux-dark, var(--theme-text)) 88%, black 10%)
+  );
   color: #fff;
 }
 

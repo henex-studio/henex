@@ -699,21 +699,6 @@
   box-shadow: var(--theme-shadow-card);
 }
 
-.arch-related-card {
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-md);
-  background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
-  overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
-}
-
-.arch-related-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--theme-shadow-card-hover);
-  border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
-}
-
 .arch-callout,
 .arch-finding-card,
 .arch-award-card,
@@ -768,7 +753,7 @@
 .arch-award-card:focus-within {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--arch-award-gold-strong) 58%, var(--theme-border));
-  box-shadow: 0 18px 42px rgba(17, 24, 39, 0.08);
+  box-shadow: var(--theme-shadow-card-hover);
   background: color-mix(in srgb, var(--arch-award-gold-tint) 88%, var(--theme-surface));
 }
 
@@ -954,6 +939,8 @@
   grid-template-rows: auto auto auto 1fr;
   gap: 8px;
   padding: 0 0 22px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--theme-surface-soft);
   color: var(--theme-text);
@@ -965,7 +952,7 @@
   width: 100%;
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   border-bottom: 1px solid var(--theme-border-soft);
 }
 
@@ -984,8 +971,8 @@
 
 .arch-related-card:hover,
 .arch-related-card:focus-visible {
-  transform: translateY(-3px);
-  border-color: var(--theme-border);
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--theme-text) 16%, var(--theme-border));
   box-shadow: var(--theme-shadow-card);
 }
 
@@ -1005,6 +992,6 @@
 
 [data-theme="dark"] .arch-award-card:hover,
 [data-theme="dark"] .arch-award-card:focus-within {
-  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.26);
+  box-shadow: var(--theme-shadow-card-hover);
   background: color-mix(in srgb, var(--arch-award-gold) 14%, var(--theme-surface));
 }
