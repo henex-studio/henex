@@ -111,7 +111,7 @@
 
 .evidence-item:hover,
 .evidence-item:focus-within {
-  border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
+  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
 }
 
 .about-profile-card:hover,
