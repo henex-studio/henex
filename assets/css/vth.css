@@ -66,7 +66,8 @@
 .vth-subsection { margin-top:42px; }
 .vth-subsection h3 { margin-bottom:14px; }
 .vth-metrics { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; }
-.vth-metrics article { padding:22px; border:1px solid color-mix(in srgb,var(--ux-theme) 20%,var(--theme-border-soft)); border-radius:var(--ux-radius); background:var(--theme-surface); }
+/* C1 base (border, radius, shadow) is in global.css. */
+.vth-metrics article { padding:22px; border-color:color-mix(in srgb,var(--ux-theme) 20%,var(--theme-border-soft)); background:var(--theme-surface); }
 .vth-metrics span { display:block; margin-bottom:10px; color:color-mix(in srgb,var(--ux-theme) 70%,var(--theme-text-soft)); font-size:.72rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
 .vth-metrics strong { display:flex; align-items:baseline; gap:8px; color:var(--theme-text); font-family:var(--font-heading); font-size:clamp(1.55rem,2.3vw,2.4rem); line-height:1.05; }
 .vth-metric-arrow { color:var(--ux-theme); font-style:normal; font-size:.9em; font-weight:900; line-height:1; }

@@ -90,12 +90,11 @@
 .studier-impact-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+/* C1 base (border, radius, shadow) is in global.css. */
 .studier-impact-grid article {
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 .studier-impact-grid span,
 .studier-timeline span,
@@ -182,25 +181,23 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
+/* C1 base (border, radius, shadow) is in global.css. */
 .studier-timeline article {
   position: relative;
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 .studier-metrics {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
+/* C1 base (border, radius, shadow) is in global.css. */
 .studier-metrics article {
   padding: 28px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-soft) 54%, var(--theme-surface)), var(--theme-surface));
-  box-shadow: var(--theme-shadow-card);
 }
 .studier-metrics span {
   display: block;

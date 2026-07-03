@@ -39,7 +39,7 @@
 .about-hero__inner {
   display: grid;
   grid-template-columns: 1.05fr 0.78fr;
-  gap: 72px;
+  gap: var(--space-2xl);
   align-items: center;
 }
 .about-portrait {
@@ -67,7 +67,7 @@
   filter: drop-shadow(0 26px 44px rgba(60, 140, 244, 0.28));
 }
 .evidence-section {
-  padding-block: 72px 32px;
+  padding-block: var(--space-2xl) var(--space-lg);
 }
 .blue-wash {
   position: relative;
@@ -91,22 +91,21 @@
 .about-capability-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--space-md);
 }
 .evidence-strip {
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
+/* C1 base (border, shadow, radius, transition) is in global.css.
+   background kept here — about cards use --theme-card. */
 .evidence-item,
 .about-profile-card,
 .about-foundation-card,
 .about-work-card,
 .about-capability-card,
 .marker-card {
-  border: 1px solid var(--theme-border-soft);
   background: var(--theme-card);
-  box-shadow: var(--theme-shadow-card);
-  transition: border-color 180ms ease;
 }
 
 .evidence-item:hover,
@@ -131,7 +130,7 @@
 }
 .evidence-item {
   min-height: 150px;
-  padding: 24px;
+  padding: var(--space-md);
   border-radius: var(--radius-lg);
 }
 .evidence-item strong {
@@ -153,7 +152,7 @@
   align-items: start;
 }
 .about-profile-card {
-  padding: 32px;
+  padding: var(--space-lg);
   border-color: var(--page-accent-border);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--page-accent) 7%, var(--theme-card));
@@ -216,7 +215,7 @@
 }
 .about-work-card {
   min-height: 260px;
-  padding: 24px;
+  padding: var(--space-md);
   border-radius: var(--radius-md);
 }
 .about-work-card span,
@@ -253,7 +252,7 @@
 .about-skill-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: 20px;
 }
 .about-skill-list span {
@@ -306,7 +305,7 @@
 }
 .marker-card {
   min-height: 182px;
-  padding: 24px;
+  padding: var(--space-md);
   border-radius: var(--radius-md);
 }
 .marker-card strong {
@@ -322,10 +321,8 @@
   gap: 64px;
   align-items: center;
   padding: 42px;
-  border: 1px solid var(--page-accent-border);
-  border-radius: var(--radius-lg);
+  border-color: var(--page-accent-border);
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
-  box-shadow: var(--theme-shadow-card);
 }
 @media (max-width: 900px) {
   .evidence-strip,
@@ -359,6 +356,6 @@
     grid-template-columns: 1fr;
   }
   .about-cta {
-    padding: 24px;
+    padding: var(--space-md);
   }
 }

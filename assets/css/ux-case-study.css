@@ -14,7 +14,7 @@ body.ux-modal-open {
 
 .ux-kicker,
 .ux-intro p {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-sm);
   color: var(--theme-muted);
   font-size: 0.8125rem;
   font-weight: 850;
@@ -259,7 +259,7 @@ body.ux-modal-open {
 .ux-meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-lg) 72px;
+  gap: var(--space-lg) var(--space-2xl);
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
 }
@@ -297,13 +297,13 @@ body.ux-modal-open {
 }
 
 .ux-skills {
-  margin-top: 32px;
+  margin-top: var(--space-lg);
 }
 
 .ux-skills div {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: 12px;
 }
 
@@ -459,14 +459,12 @@ figcaption {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* C1 base (shadow, transition) is in global.css; radius overridden to --ux-radius there too. */
 .ux-card,
 .ux-influence {
-  padding: 24px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
-  border-radius: var(--ux-radius);
+  padding: var(--space-md);
+  border-color: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 /* Display cards (not navigable — informational only): subtle border change
@@ -557,7 +555,7 @@ figcaption {
 .ux-evaluative {
   display: grid;
   grid-template-columns: minmax(220px, .27fr) minmax(0, .36fr) minmax(360px, .37fr);
-  gap: 48px;
+  gap: var(--space-xl);
   align-items: start;
 }
 
@@ -617,14 +615,14 @@ figcaption {
 .ux-usability {
   display: grid;
   grid-template-columns: minmax(220px, .32fr) minmax(0, .68fr);
-  gap: 72px;
+  gap: var(--space-2xl);
   align-items: start;
 }
 
 .ux-test-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 72px;
+  gap: var(--space-2xl);
   margin-top: 42px;
 }
 
@@ -738,7 +736,7 @@ figcaption {
   display: grid;
   align-content: center;
   justify-items: center;
-  gap: 8px;
+  gap: var(--space-xs);
   padding: 18px;
   border-radius: var(--ux-radius);
   text-align: center;
@@ -772,7 +770,7 @@ figcaption {
 .ux-recipe-primary {
   display: grid;
   gap: 5px;
-  margin: 0 0 32px;
+  margin: 0 0 var(--space-lg);
 }
 
 .ux-recipe-primary a {
@@ -791,7 +789,7 @@ figcaption {
 .ux-recipe-popovers {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: 28px;
 }
 
@@ -828,15 +826,14 @@ figcaption {
 
 /* Popover */
 
+/* C1 base (shadow) is in global.css; radius overridden to --ux-radius there too. */
 .ux-popover {
   position: fixed;
   z-index: 120;
   width: min(360px, calc(100vw - 32px));
   padding: 18px;
-  border: 1px solid var(--theme-border);
-  border-radius: var(--ux-radius);
+  border-color: var(--theme-border);
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
   display: none;
 }
 
@@ -861,19 +858,16 @@ figcaption {
 /* D05/C4: .ux-related-card is this template's C4 Nav Card (project/related
    variant). Navigable — it links to another case study — so hover uses the
    -4px lift, not the -3px display lift used by .ux-card above. */
+/* C3 base (border, radius, shadow, overflow, transition) is in global.css. */
 .ux-related-card {
   min-height: 290px;
   display: grid;
   grid-template-rows: auto auto auto 1fr;
-  gap: 8px;
+  gap: var(--space-xs);
   padding: 0 0 22px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
   background: var(--theme-surface-soft);
   color: var(--theme-text);
   text-decoration: none;
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 .ux-related-card img {
@@ -899,11 +893,10 @@ figcaption {
   text-transform: uppercase;
 }
 
+/* C3 hover (lift + shadow) is in global.css; only border-color kept here. */
 .ux-related-card:hover,
 .ux-related-card:focus-visible {
-  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--theme-text) 16%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card);
 }
 
 .ux-related__actions {
@@ -920,7 +913,7 @@ figcaption {
   inset: 0;
   z-index: 200;
   display: none;
-  padding: 24px;
+  padding: var(--space-md);
   background: rgba(0, 0, 0, 0.84);
 }
 
@@ -1087,7 +1080,7 @@ figcaption {
      --space-xl on top of the existing 94px baseline (not a replacement —
      replacing it previously caused tag/title overlap in testing). */
   .ux-hero__inner {
-    padding: calc(94px + var(--space-xl)) 0 72px;
+    padding: calc(94px + var(--space-xl)) 0 var(--space-2xl);
   }
   .ux-hero h1 {
     font-size: clamp(2.65rem, 12vw, 4.2rem);

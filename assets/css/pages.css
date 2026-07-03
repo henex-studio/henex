@@ -15,7 +15,7 @@
   overflow: hidden;
   isolation: isolate;
   margin-inline: calc((100vw - min(var(--container), calc(100vw - var(--gutter)))) / -2);
-  padding-block: 72px;
+  padding-block: var(--space-2xl);
   color: var(--hero-text);
 }
 
@@ -55,7 +55,7 @@
   align-items: flex-start;
   justify-content: center;
   padding-top: 44px;
-  padding-bottom: 72px;
+  padding-bottom: var(--space-2xl);
 }
 
 .home-hero h1 {
@@ -208,7 +208,7 @@
 .works-category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--space-md);
 }
 
 
@@ -219,13 +219,11 @@
    Card project variant. All three already carry the default-state
    --theme-shadow-card here — this satisfies D05 ("all cards get a default
    shadow, not just on hover"). */
+/* C1/C3 base (border, shadow, radius) is in global.css. */
 .capability-card,
 .dimension-card,
 .project-card {
   background: var(--theme-card);
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--theme-shadow-card);
 }
 
 .capability-card {
@@ -234,8 +232,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 32px;
-  transition: border-color 180ms ease;
+  padding: var(--space-lg);
 }
 
 .capability-card--human  { --card-accent: var(--color-human); }
@@ -274,7 +271,7 @@
 
 .capability-card__text p,
 .capability-card p {
-  margin-top: 8px;
+  margin-top: var(--space-xs);
   color: var(--theme-text-soft);
   font-size: 1.05rem;
   line-height: 1.62;
@@ -306,19 +303,16 @@
   margin-top: 22px;
 }
 
+/* C3 base (overflow, transition, hover lift) is in global.css. */
 .dimension-card {
   min-height: 470px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   color: currentColor;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .dimension-card:hover,
 .dimension-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, currentColor 34%, var(--theme-border));
 }
 
@@ -431,7 +425,7 @@
 .node-chip-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: 20px;
 }
 
@@ -470,17 +464,14 @@
   text-transform: uppercase;
 }
 
+/* C3 base (overflow, transition, hover lift+shadow) is in global.css. */
 .project-card {
   min-height: 420px;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
 }
 
@@ -569,7 +560,7 @@
 .project-card__media--contain {
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: var(--space-md);
 }
 
 .project-card__media--contain img {
@@ -610,7 +601,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: var(--space-md);
 }
 
 .project-card__meta {
@@ -661,7 +652,7 @@
   min-height: inherit;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: var(--space-md);
   color: var(--theme-muted);
   font-size: 0.85rem;
   font-weight: 800;
@@ -715,7 +706,7 @@
 .works-hero__inner {
   display: grid;
   grid-template-columns: 1.05fr 0.82fr;
-  gap: 72px;
+  gap: var(--space-2xl);
   align-items: center;
 }
 
@@ -735,9 +726,10 @@
 .works-category-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--space-md);
 }
 
+/* C3 base (radius, shadow, transition, overflow) is in global.css. */
 .works-category-card {
   min-height: 310px;
   display: flex;
@@ -746,12 +738,9 @@
   align-items: center;
   text-align: center;
   padding: 30px;
-  border: 1px solid var(--page-nav-card-border);
-  border-radius: var(--radius-lg);
+  border-color: var(--page-nav-card-border);
   background: var(--page-nav-card-bg);
   color: var(--theme-text);
-  box-shadow: var(--theme-shadow-card);
-  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 /* Per-category accent colours — label and hover border only, default border unchanged */
@@ -767,10 +756,9 @@
   --page-accent: var(--color-nature);
 }
 
+/* C3 hover (lift + shadow) is in global.css; only border-color accent kept here. */
 .works-category-card:hover,
 .works-category-card:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, var(--page-accent) 54%, var(--theme-border));
 }
 
@@ -830,12 +818,10 @@
   opacity: 0.92;
 }
 
+/* C3 base (border, radius, shadow, transition, overflow) is in global.css. */
 .works-archive-card {
   padding: 42px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-lg);
   background: var(--theme-bg);
-  box-shadow: var(--theme-shadow-card);
 }
 
 
@@ -850,7 +836,7 @@
   .home-hero__content {
     width: min(var(--container), calc(100vw - 48px));
     padding-top: 112px;
-    padding-bottom: 72px;
+    padding-bottom: var(--space-2xl);
   }
 
   .home-hero h1 {
@@ -940,14 +926,14 @@
 
   .works-category-card {
     min-height: 240px;
-    padding: 24px;
+    padding: var(--space-md);
   }
 
   .works-category-card__cta {
-    margin-top: 24px;
+    margin-top: var(--space-md);
   }
 
   .works-archive-card {
-    padding: 24px;
+    padding: var(--space-md);
   }
 }

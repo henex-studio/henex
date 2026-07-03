@@ -249,16 +249,14 @@
   gap: 22px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .system-feedback-card {
   min-height: 190px;
   padding: 30px;
-  border: 1px solid color-mix(in srgb, var(--case-red) 22%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--case-red) 22%, var(--theme-border-soft));
   background:
     radial-gradient(circle at 12% 12%, rgba(225, 26, 44, .08), transparent 34%),
     color-mix(in srgb, var(--case-red-soft) 50%, var(--theme-surface));
-  box-shadow: var(--theme-shadow-card);
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 .system-feedback-card:hover,
@@ -317,10 +315,9 @@
   margin: 42px 0 52px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .system-findings-grid article {
   padding: 20px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-md);
   background: var(--theme-surface);
 }
 
@@ -355,14 +352,13 @@
   margin-top: 48px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .system-principle-card,
 .system-foundation-card,
 .system-component-demo,
 .system-component-scope {
-  border: 1px solid color-mix(in srgb, var(--case-red) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--case-red) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 
 .system-theme-ds .system-foundation-card,
@@ -373,7 +369,6 @@
 
 .system-principle-card {
   padding: 28px;
-  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
 .system-principle-card:hover,
@@ -488,12 +483,11 @@
   margin: 46px 0;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .system-microsite-card {
   padding: 18px;
-  border: 1px solid color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 
 .system-microsite-card h3 {

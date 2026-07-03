@@ -206,10 +206,10 @@
   align-items: start;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .wso-research-card {
   padding: 28px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 14%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 14%, var(--theme-border-soft));
   background: var(--ux-soft);
 }
 
@@ -453,10 +453,9 @@
   margin-top: 8px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .wso-process-step {
   padding: 28px 24px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-md);
   background: var(--theme-surface);
 }
 
@@ -509,8 +508,6 @@
 
 .wso-research-card {
   padding: 28px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-md);
   background: var(--theme-surface);
 }
 
@@ -811,15 +808,13 @@
   margin-top: 38px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .ux-case-page--wso .ux-feedback-card {
   min-height: 190px;
   margin: 0;
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
 .ux-case-page--wso .ux-feedback-card:hover {

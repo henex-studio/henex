@@ -66,11 +66,13 @@
   --radius-full: 999px;
 
   /* D16: global spacing token scale. */
+  --space-2xs: 4px;
   --space-xs: 8px;
   --space-sm: 16px;
   --space-md: 24px;
   --space-lg: 32px;
   --space-xl: 48px;
+  --space-2xl: 72px;
 
   --container: 1320px;
   --gutter: 40px;
@@ -290,7 +292,7 @@ p {
 
 .site-nav a {
   position: relative;
-  padding: 8px 0;
+  padding: var(--space-xs) 0;
 }
 
 .site-nav a:not(.site-nav__cta)::after {
@@ -430,17 +432,145 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 
 
 
+/* ────────────────────────────────────────────────────────────────
+   Card base classes (C1–C5)
+   C1  .card-display      Display/info cards, hover changes border only
+   C2  .card-display--md   C1 variant with radius-md
+   C3  .card-nav           Navigation cards, hover lifts + shadow upgrade
+   C4  .card-brand         Brand cards (Philosophy), hover swaps bg to accent
+   C5  .card-media         C3 + media/body structure with img scale
+   Individual card CSS keeps: background, padding, min-height, layout, accent borders.
+   ──────────────────────────────────────────────────────────────── */
+
+/* C1: Display cards — border-color-only hover */
+.capability-card,
+.evidence-item,
+.about-profile-card,
+.about-foundation-card,
+.about-capability-card,
+.about-work-card,
+.marker-card,
+.about-cta,
+.ux-card,
+.ux-influence,
+.ux-popover,
+.ux-feedback-card,
+.ux-test-card,
+.password-card,
+.arch-callout,
+.arch-finding-card,
+.arch-award-card,
+.arch-publication-block,
+.arch-popover,
+.system-feedback-card,
+.system-principle-card,
+.system-foundation-card,
+.system-component-demo,
+.system-component-scope,
+.system-microsite-card,
+.system-findings-grid article,
+.rkt-finding,
+.studier-impact-grid article,
+.studier-timeline article,
+.studier-metrics article,
+.wst-finding-grid article,
+.wso-research-card,
+.wso-process-step,
+.vsk-finding-grid article,
+.vsk-social-feature,
+.vth-metrics article {
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--theme-shadow-card);
+  transition: border-color 180ms ease;
+}
+
+/* C2: Display cards with radius-md */
+.about-work-card,
+.marker-card,
+.rkt-finding,
+.system-findings-grid article,
+.wso-process-step {
+  border-radius: var(--radius-md);
+}
+
+/* C1 cards using --ux-radius inside case study template */
+.ux-card,
+.ux-influence,
+.ux-popover,
+.ux-feedback-card,
+.ux-test-card,
+.vth-metrics article {
+  border-radius: var(--ux-radius);
+}
+
+/* C3: Navigation cards — lift + shadow-hover */
+.project-card,
+.dimension-card,
+.works-category-card,
+.works-archive-card,
+.ux-related-card,
+.arch-related-card,
+.practice-card--recipe-link {
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--theme-shadow-card);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover, .project-card:focus-within,
+.dimension-card:hover, .dimension-card:focus-within,
+.works-category-card:hover, .works-category-card:focus-within,
+.works-archive-card:hover, .works-archive-card:focus-within,
+.ux-related-card:hover, .ux-related-card:focus-within,
+.arch-related-card:hover, .arch-related-card:focus-within,
+.practice-card--recipe-link:hover, .practice-card--recipe-link:focus-within {
+  transform: translateY(-4px);
+  box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, var(--card-accent, var(--page-accent, var(--theme-text))) 28%, var(--theme-border));
+}
+
+/* C4: Brand cards (Philosophy) — hover swaps bg to accent, text turns white */
+.core-card,
+.philosophy-dimension-card,
+.node-card,
+.recipe-card,
+.featured-recipe--static,
+.recipe-equation__node {
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--theme-shadow-card);
+  transition: background 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+/* C5: Media cards — img scale on hover (inherits C3 lift behavior) */
+.project-card .project-card__media img,
+.ux-related-card img,
+.arch-related-card img,
+.practice-card--recipe-link .practice-card__media img {
+  transition: transform 280ms ease;
+}
+
+.project-card:hover .project-card__media img,
+.ux-related-card:hover img,
+.arch-related-card:hover img,
+.practice-card--recipe-link:hover .practice-card__media img {
+  transform: scale(1.03);
+}
+
+
 /* Case tag system */
 .case-tag-row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--space-md);
 }
 .case-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
 }
 .case-tags--secondary {
   flex-shrink: 0;
@@ -639,7 +769,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 }
 
 .footer-bottom {
-  margin-top: 72px;
+  margin-top: var(--space-2xl);
   padding-top: 18px;
   border-top: 1px solid var(--footer-border-strong);
   color: var(--footer-text-soft);
@@ -777,7 +907,7 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   .site-nav a.site-nav__cta {
     min-height: 52px;
     margin-top: 10px;
-    padding: 0 24px;
+    padding: 0 var(--space-md);
     border-radius: var(--radius-md);
     font-size: 1.25rem;
     letter-spacing: 0;

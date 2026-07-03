@@ -686,14 +686,12 @@
   align-items: start;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .arch-callout,
 .arch-finding-card,
 .arch-award-card,
 .arch-publication-block {
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-md);
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 
 .arch-callout,
@@ -740,6 +738,7 @@
   align-content: start;
   transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
 }
+/* Note: .arch-award-card transition kept as it adds background-color beyond the C1 base. */
 
 .arch-award-card span,
 .arch-publication-block span {
@@ -874,15 +873,14 @@
   border-color: #151719;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .arch-popover {
   position: fixed;
   z-index: 120;
   width: min(360px, calc(100vw - 32px));
   padding: 18px;
-  border: 1px solid var(--theme-border);
-  border-radius: var(--radius-md);
+  border-color: var(--theme-border);
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
   display: none;
 }
 
@@ -928,19 +926,16 @@
   margin-top: 36px;
 }
 
+/* C3 base (border, radius, shadow, overflow, hover transform) is in global.css. */
 .arch-related-card {
   min-height: 290px;
   display: grid;
   grid-template-rows: auto auto auto 1fr;
   gap: 8px;
   padding: 0 0 22px;
-  border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
   background: var(--theme-surface-soft);
   color: var(--theme-text);
   text-decoration: none;
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .arch-related-card img {
@@ -966,9 +961,7 @@
 
 .arch-related-card:hover,
 .arch-related-card:focus-visible {
-  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--theme-text) 16%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card);
 }
 
 .arch-related__actions {

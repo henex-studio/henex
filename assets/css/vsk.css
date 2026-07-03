@@ -202,15 +202,13 @@
   gap: 22px;
   margin-top: 38px;
 }
+/* C1 base (border, radius, shadow) is in global.css. */
 .ux-feedback-card {
   min-height: 190px;
   margin: 0;
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .ux-feedback-card:hover {
   border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
@@ -250,12 +248,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
+/* C1 base (border, radius, shadow) is in global.css. */
 .vsk-finding-grid article {
   padding: 24px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
 }
 .vsk-finding-grid span,
 .vsk-finding-grid strong {
@@ -361,6 +358,7 @@
 }
 
 /* Social feature */
+/* C1 base (border, radius, shadow) is in global.css. */
 .vsk-social-feature {
   display: grid;
   grid-template-columns: minmax(260px, .34fr) minmax(0, .66fr);
@@ -368,10 +366,8 @@
   align-items: center;
   margin-bottom: 70px;
   padding: clamp(28px, 4vw, 44px);
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: color-mix(in srgb, var(--ux-soft) 42%, var(--theme-surface));
-  box-shadow: var(--theme-shadow-card);
 }
 .vsk-social-feature h3 {
   color: var(--ux-theme);

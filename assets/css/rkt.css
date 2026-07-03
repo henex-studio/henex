@@ -155,12 +155,11 @@
   gap: 20px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .rkt-finding {
   padding: 24px;
-  border: 1px solid color-mix(in srgb, var(--ux-accent) 24%, var(--theme-border-soft));
-  border-radius: var(--radius-md);
+  border-color: color-mix(in srgb, var(--ux-accent) 24%, var(--theme-border-soft));
   background: var(--theme-surface);
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .rkt-finding:hover {
@@ -371,15 +370,13 @@
   margin-top: 38px;
 }
 
+/* C1 base (border, radius, shadow) is in global.css. */
 .ux-case-page--rekraft .ux-feedback-card {
   min-height: 160px;
   margin: 0;
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  border-radius: var(--radius-lg);
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   background: var(--theme-surface);
-  box-shadow: var(--theme-shadow-card);
-  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 
 .ux-case-page--rekraft .ux-feedback-card:hover {
