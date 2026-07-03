@@ -158,7 +158,7 @@ Opens with a lightweight card group and summary paragraph.
 | Design | Design decisions and system creation. | IA, interaction, visual design, design system, component decisions. Subsumes all design activities including DS documentation. Use Read More for detailed content. |
 | Validation | Testing and iteration. | Usability testing, A/B testing, expert review, metrics. Use Read More for detailed test rounds. |
 | Delivery | Final deliverables in detail. | High-fidelity screenshots, prototype embeds, detailed feature walkthroughs. Complements Outcome (which shows the headline result) with the full picture. |
-| Reflection | What was learned. | Value delivered, limitations acknowledged, next steps identified. Three-card format (Value, Limitation, Next). |
+| Reflection | What was learned. | Three-card format with fixed labels: **Value** (core contribution), **Learned** (constraints, trade-offs, what would be done differently), **Next** (forward direction). Labels are DS-level; content is project-specific. |
 | Recipe | HENEX Method Recipe connection. | Primary recipe link, explanation, recipe tags, secondary recipe popovers. |
 | Related | Related project recommendations. | 4 project cards. Global component. |
 
