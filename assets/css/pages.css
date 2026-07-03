@@ -229,11 +229,22 @@
 }
 
 .capability-card {
+  --card-accent: var(--theme-text);
   min-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 32px;
+  transition: border-color 180ms ease;
+}
+
+.capability-card--human  { --card-accent: var(--color-human); }
+.capability-card--emotion { --card-accent: var(--color-emotion); }
+.capability-card--nature  { --card-accent: var(--color-nature); }
+
+.capability-card:hover,
+.capability-card:focus-within {
+  border-color: color-mix(in srgb, var(--card-accent) 34%, var(--theme-border));
 }
 
 .capability-card__index {
@@ -255,18 +266,11 @@
   align-items: center;
 }
 
-.capability-card__icon svg {
-  width: 38px;
-  height: 38px;
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.capability-card__icon .ti {
+  font-size: 38px;
+  line-height: 1;
+  color: var(--card-accent);
 }
-
-.capability-card--human .capability-card__icon svg  { stroke: var(--color-human); }
-.capability-card--emotion .capability-card__icon svg { stroke: var(--color-emotion); }
-.capability-card--nature .capability-card__icon svg  { stroke: var(--color-nature); }
 
 .capability-card__text p,
 .capability-card p {
@@ -308,13 +312,14 @@
   flex-direction: column;
   overflow: hidden;
   color: currentColor;
-  transition: transform 180ms ease, box-shadow 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .dimension-card:hover,
 .dimension-card:focus-visible {
   transform: translateY(-4px);
   box-shadow: var(--theme-shadow-card-hover);
+  border-color: color-mix(in srgb, currentColor 34%, var(--theme-border));
 }
 
 .dimension-card--human { color: var(--color-human); }

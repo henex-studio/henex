@@ -106,6 +106,26 @@
   border: 1px solid var(--theme-border-soft);
   background: var(--theme-card);
   box-shadow: var(--theme-shadow-card);
+  transition: border-color 180ms ease;
+}
+
+.evidence-item:hover,
+.evidence-item:focus-within {
+  border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
+}
+
+.about-foundation-card:hover,
+.about-foundation-card:focus-within,
+.about-capability-card:hover,
+.about-capability-card:focus-within,
+.about-work-card:hover,
+.about-work-card:focus-within {
+  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
+}
+
+.marker-card:hover,
+.marker-card:focus-within {
+  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
 }
 .evidence-item {
   min-height: 150px;
@@ -163,17 +183,13 @@
   background: color-mix(in srgb, var(--page-accent) 13%, var(--theme-surface));
   color: var(--page-accent);
 }
-.about-icon-badge img {
-  width: 23px;
-  height: 23px;
+.about-icon-badge .ti {
+  font-size: 23px;
+  line-height: 1;
 }
 [data-theme="dark"] .about-icon-badge {
   border: 1px solid rgba(60, 140, 244, 0.28);
   background: rgba(60, 140, 244, 0.22);
-}
-[data-theme="dark"] .about-icon-badge img {
-  filter: invert(1);
-  opacity: 0.92;
 }
 .about-foundation-card {
   min-height: 330px;
