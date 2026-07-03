@@ -164,8 +164,7 @@
 }
 
 .rkt-finding:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--theme-shadow-card);
+  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 
 .rkt-finding span {
@@ -295,12 +294,6 @@
   gap: 52px;
   align-items: center;
   padding-top: 40px;
-  border-top: 1px solid var(--theme-border-soft);
-}
-
-.rkt-ds-stack article:first-child {
-  padding-top: 0;
-  border-top: none;
 }
 
 .rkt-ds-reverse {
@@ -390,8 +383,6 @@
 }
 
 .ux-case-page--rekraft .ux-feedback-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 

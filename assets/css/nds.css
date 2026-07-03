@@ -263,9 +263,7 @@
 
 .system-feedback-card:hover,
 .system-feedback-card:focus-within {
-  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--case-red) 42%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card-hover);
 }
 
 .system-feedback-icon {
@@ -380,9 +378,7 @@
 
 .system-principle-card:hover,
 .system-principle-card:focus-within {
-  transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--case-red) 34%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card-hover);
 }
 
 .system-principle-icon {
@@ -474,7 +470,6 @@
   max-width: 880px;
   margin-top: 58px;
   padding: 26px 0 0;
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .system-scope-note p {
@@ -662,7 +657,6 @@
   gap: 56px;
   align-items: start;
   padding-top: 58px;
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .system-component-demo {

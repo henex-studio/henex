@@ -316,7 +316,7 @@
     </div>
     <div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div>
   </footer>
-  <button aria-label="Back to top" class="back-to-top" data-back-to-top="" type="button"><i class="ti ti-chevron-up" aria-hidden="true"></i></button>
+  <button aria-label="Back to top" class="back-to-top" data-back-to-top="" type="button"><img alt="" aria-hidden="true" src="../assets/icons/ui/icon-arrow-up.svg"/></button>
   <div class="arch-popover" data-arch-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

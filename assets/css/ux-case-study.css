@@ -46,7 +46,6 @@ body.ux-modal-open {
     radial-gradient(circle at 12% 24%, color-mix(in srgb, var(--ux-theme) 18%, transparent), transparent 34%),
     radial-gradient(circle at 86% 12%, rgba(255, 255, 255, .78), transparent 28%),
     linear-gradient(140deg, var(--ux-pale), color-mix(in srgb, var(--ux-soft) 76%, var(--theme-bg)) 54%, var(--theme-bg));
-  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 [data-theme=dark] .ux-hero {
@@ -206,7 +205,6 @@ body.ux-modal-open {
 
 .ux-section {
   padding: var(--section-pad) 0;
-  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 .ux-section--tint {
@@ -264,7 +262,6 @@ body.ux-modal-open {
   gap: var(--space-lg) 72px;
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .ux-meta span,
@@ -472,15 +469,13 @@ figcaption {
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
-/* Display cards (not navigable — these are informational, not links): -3px
-   lift, matching C1/hover-target.display in the DS reference. */
+/* Display cards (not navigable — informational only): subtle border change
+   on hover, no lift. Per DS decision A1. */
 .ux-card:hover,
 .ux-card:focus-within,
 .ux-influence:hover,
 .ux-influence:focus-within {
-  transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card-hover);
 }
 
 .ux-card span,
@@ -515,8 +510,6 @@ figcaption {
 .ux-process {
   margin-top: var(--space-xl);
   padding: var(--space-lg) 0;
-  border-top: 1px solid var(--theme-border-soft);
-  border-bottom: 1px solid var(--theme-border-soft);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
@@ -687,7 +680,6 @@ figcaption {
   gap: 56px;
   align-items: center;
   padding-top: 56px;
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .ux-feature--reverse {
@@ -725,7 +717,6 @@ figcaption {
   gap: 36px;
   align-items: center;
   padding-top: 36px;
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .ux-ds-module--reverse {
@@ -764,7 +755,6 @@ figcaption {
 .ux-retro {
   padding: var(--section-pad) 0;
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 16%, var(--theme-surface)), var(--theme-bg) 82%);
-  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 .ux-retro h2,
@@ -972,9 +962,10 @@ figcaption {
   box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
 }
 
-.ux-modal__close img {
-  width: 18px;
-  height: 18px;
+.ux-modal__close .ti {
+  font-size: 18px;
+  line-height: 1;
+  color: #111827;
 }
 
 .ux-modal__canvas {

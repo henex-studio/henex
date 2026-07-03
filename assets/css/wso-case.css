@@ -77,7 +77,6 @@
   gap: 16px 28px;
   margin-top: 32px;
   padding-top: 28px;
-  border-top: 1px solid var(--theme-border-soft);
 }
 
 .wso-meta div { display: flex; flex-direction: column; gap: 4px; }
@@ -499,7 +498,6 @@
   color: var(--theme-muted);
   margin: var(--section-pad) 0 20px;
   padding-bottom: 12px;
-  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 /* Research pair */
@@ -634,12 +632,6 @@
   gap: 48px;
   align-items: center;
   padding-top: 54px;
-  border-top: 1px solid var(--theme-border-soft);
-}
-
-.wso-ds-block:first-of-type {
-  padding-top: 0;
-  border-top: none;
 }
 
 .wso-ds-block--reverse {
@@ -709,13 +701,10 @@
   gap: 20px;
   align-items: center;
   padding: 48px 0;
-  border-top: 1px solid var(--theme-border-soft);
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
 }
-
-.wso-final-scene:first-child { border-top: none; }
 
 /* reverse has no effect in stacked layout — keep class for compat */
 .wso-final-scene--reverse { }
@@ -760,7 +749,6 @@
   justify-content: center;
   gap: 16px;
   padding: 40px 0 0;
-  border-top: 1px solid var(--theme-border-soft);
   margin-top: 16px;
 }
 
@@ -835,8 +823,6 @@
 }
 
 .ux-case-page--wso .ux-feedback-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 

@@ -130,8 +130,6 @@
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
 .ux-feedback-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--theme-shadow-card-hover);
   border-color: color-mix(in srgb, var(--ux-accent) 34%, var(--theme-border));
 }
 .ux-feedback-icon {
@@ -390,11 +388,6 @@
 }
 .wst-ds-stack > article {
   padding-top: 44px;
-  border-top: 1px solid var(--theme-border-soft);
-}
-.wst-ds-stack > article:first-child {
-  padding-top: 0;
-  border-top: 0;
 }
 .wst-ds-typography {
   display: grid;

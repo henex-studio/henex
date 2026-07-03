@@ -87,12 +87,7 @@
   grid-template-columns: 120px 1fr;
   gap: 0 56px;
   padding-block: 48px;
-  border-top: 1px solid var(--theme-border-soft);
   align-items: start;
-}
-
-.chronology-row:last-of-type {
-  border-bottom: 1px solid var(--theme-border-soft);
 }
 
 
