@@ -114,6 +114,8 @@
   border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
 }
 
+.about-profile-card:hover,
+.about-profile-card:focus-within,
 .about-foundation-card:hover,
 .about-foundation-card:focus-within,
 .about-capability-card:hover,
