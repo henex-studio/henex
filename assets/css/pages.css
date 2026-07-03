@@ -512,8 +512,8 @@
   content: "Under Construction";
   position: absolute;
   inset: 0;
-  background: rgba(17, 24, 39, 0.68);
-  color: #ffffff;
+  background: color-mix(in srgb, var(--color-brand-primary) 68%, transparent);
+  color: var(--footer-text);
   display: flex;
   align-items: center;
   justify-content: center;

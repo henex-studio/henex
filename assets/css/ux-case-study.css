@@ -333,7 +333,7 @@ body.ux-modal-open {
   aspect-ratio: 16 / 9;
   display: block;
   border-radius: var(--radius-sm);
-  background: #151719;
+  background: var(--color-brand-primary);
   box-shadow: var(--theme-shadow-card);
 }
 
@@ -364,7 +364,7 @@ body.ux-modal-open {
 
 figcaption {
   margin-top: 12px;
-  color: #7A9E97;
+  color: var(--theme-muted);
   font-size: .82rem;
   line-height: 1.45;
 }
@@ -820,9 +820,9 @@ figcaption {
 }
 
 .ux-recipe-trigger[aria-expanded=true] {
-  background: #151719;
-  color: #fff;
-  border-color: #151719;
+  background: var(--color-brand-primary);
+  color: var(--theme-card);
+  border-color: var(--color-brand-primary);
 }
 
 
@@ -921,7 +921,7 @@ figcaption {
   z-index: 200;
   display: none;
   padding: 24px;
-  background: rgba(0, 0, 0, .84);
+  background: rgba(0, 0, 0, 0.84);
 }
 
 .ux-modal.is-open {
@@ -957,7 +957,7 @@ figcaption {
   padding: 0;
   border: 0;
   border-radius: var(--radius-full);
-  background: #fff;
+  background: var(--theme-surface);
   cursor: pointer;
   box-shadow: 0 8px 24px rgba(0, 0, 0, .28);
 }
@@ -965,7 +965,7 @@ figcaption {
 .ux-modal__close .ti {
   font-size: 18px;
   line-height: 1;
-  color: #111827;
+  color: var(--color-brand-primary);
 }
 
 .ux-modal__canvas {
@@ -976,7 +976,7 @@ figcaption {
   overflow: hidden;
   border-radius: var(--radius-md);
   cursor: grab;
-  background: #fff;
+  background: var(--theme-surface);
   box-shadow: 0 24px 80px rgba(0, 0, 0, .34);
 }
 
@@ -994,14 +994,14 @@ figcaption {
   user-select: none;
   pointer-events: none;
   will-change: transform;
-  background: #fff;
+  background: var(--theme-surface);
 }
 
 .ux-modal__panel p {
   max-width: 980px;
   justify-self: center;
   margin-top: 12px;
-  color: rgba(255, 255, 255, .76);
+  color: rgba(255, 255, 255, 0.76);
   font-size: .86rem;
   text-align: center;
 }

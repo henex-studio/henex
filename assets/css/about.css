@@ -5,7 +5,7 @@
   --page-accent-border: rgba(60, 140, 244, 0.24);
 }
 .page-hero--about {
-  min-height: 760px;
+  min-height: 720px;
   background: #FAFBFC;
 }
 .page-hero--about::before {
@@ -154,7 +154,7 @@
 }
 .about-profile-card {
   padding: 32px;
-  border-color: rgba(60, 140, 244, 0.20);
+  border-color: var(--page-accent-border);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--page-accent) 7%, var(--theme-card));
 }
@@ -322,7 +322,7 @@
   gap: 64px;
   align-items: center;
   padding: 42px;
-  border: 1px solid rgba(60, 140, 244, 0.20);
+  border: 1px solid var(--page-accent-border);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
   box-shadow: var(--theme-shadow-card);

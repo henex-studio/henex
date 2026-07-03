@@ -15,7 +15,7 @@
 .philosophy-hero {
   position: relative;
   overflow: hidden;
-  min-height: min(780px, calc(100vh - 80px));
+  min-height: min(720px, calc(100vh - 80px));
   display: grid;
   align-items: center;
   background:
@@ -519,17 +519,17 @@
 
 .practice-card__cta:hover,
 .practice-card__cta:focus-visible {
-  background: #151719;
-  border-color: #151719;
-  color: #fff;
+  background: var(--hero-button-text);
+  border-color: var(--hero-button-text);
+  color: var(--hero-button-bg);
   outline: none;
 }
 
 [data-theme="dark"] .practice-card__cta:hover,
 [data-theme="dark"] .practice-card__cta:focus-visible {
-  background: #fff;
-  border-color: #fff;
-  color: #070809;
+  background: var(--hero-button-bg);
+  border-color: var(--hero-button-bg);
+  color: var(--theme-bg);
 }
 
 @media(max-width:1100px) {
