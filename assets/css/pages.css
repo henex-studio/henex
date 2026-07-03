@@ -107,8 +107,11 @@
     linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.18));
 }
 
+/* D08: global hero height is 720px for all global pages, matching Home —
+   confirmed by Cafe, superseding the earlier 560px reading of this
+   decision's rollback-path text. */
 .page-hero--works {
-  min-height: 560px;
+  min-height: 720px;
   background: #FAFBFC;
   border-bottom: 0;
 }
@@ -146,8 +149,9 @@
   background: rgba(0, 0, 0, 0.16);
 }
 
+/* D08: global hero height is 720px for all global pages, matching Home. */
 .page-hero--lab {
-  min-height: 560px;
+  min-height: 720px;
   background: #FFF7FA;
   border-bottom: 0;
 }

@@ -323,7 +323,7 @@ All decisions trace to audit findings documented in HENEX_IA_Content_Workbook_v2
 | D05 | All cards default shadow | Two contradictory shadow logics found | Reduce opacity from .08 to .05 |
 | D06 | 18px standard radius, 30px large | 3 radius values for cards, xl used once | Increase to 20px globally |
 | D07 | UX hero: fixed dark gradient default, independent of site light/dark theme | Light tint gradient not satisfactory after multiple attempts; Cafe confirmed (Phase 1 preview round) that hero should not flip with the site theme toggle — one dark treatment always, so per-project colour identity stays legible in both modes without doubling the design/maintenance work | Add --ux-hero-intensity variable; or switch to per-theme hero variants if theme-linked hero consistency becomes a stronger priority than the maintenance saving |
-| D08 | Global hero height 720px | User preference for visual consistency | Reduce to 560px for non-Home |
+| D08 | Global hero height 720px for all global pages (Home, Works, Lab, Chronology) | User preference for visual consistency; confirmed again after a 560px/400px misreading was caught in Phase 2 implementation | Reduce to 560px for non-Home if 720px proves too tall on Chronology's list layout |
 | D09 | L1 as primary layout for case study sections | Reference page pattern is more flexible than ux-two-col | Alternate L1/L2 if monotonous |
 | D10 | Tabler Icons SVG per-icon download | Reference page used Tabler webfont, SVG gives more control | Switch to webfont if management is burdensome |
 | D11 | text-stage hover: Philosophy only | Unique interaction pattern, 4 components use it | Remove if Philosophy is redesigned |

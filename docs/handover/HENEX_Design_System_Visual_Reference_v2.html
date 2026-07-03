@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HENEX Design System Visual Reference v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TOKENS — mirrors assets/css/global.css token names exactly.
+   This file is the DS convergence reference. Token names here
+   are the source of truth to carry into production CSS.
+   ============================================================ */
+:root {
+  --font-heading: "IBM Plex Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --color-brand-primary: #111827;
+  --color-brand-secondary: #374151;
+  --color-human: #3C8CF4;
+  --color-emotion: #FF5688;
+  --color-nature: #31BB8E;
+  --color-essay: #6B7280;
+
+  --color-human-tint: #EAF3FF;
+  --color-emotion-tint: #FFEAF1;
+  --color-nature-tint: #EAF8F3;
+
+  --theme-bg: #F6F7F8;
+  --theme-surface: #FFFFFF;
+  --theme-surface-soft: #F0F3F5;
+  --theme-border: #DDE3E7;
+  --theme-border-soft: #EEF2F4;
+  --theme-text: #202124;
+  --theme-text-soft: #4E5661;
+  --theme-muted: #737B86;
+  --theme-card: #FFFFFF;
+  --theme-card-soft: #F8FAFC;
+
+  --theme-shadow-card: 0 16px 48px rgba(17, 24, 39, 0.08);
+  --theme-shadow-card-hover: 0 22px 60px rgba(17, 24, 39, 0.13);
+
+  --hero-text: #111827;
+  --hero-text-soft: rgba(17, 24, 39, 0.72);
+  --hero-kicker: rgba(17, 24, 39, 0.62);
+  --footer-bg: #151719;
+
+  /* NOTE per D06: --radius-xl removed at DS level. Retained here only
+     as a struck-through reference for comparison, not for use. */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 30px;
+  --radius-full: 999px;
+
+  /* D16: global spacing token scale, confirmed by Cafe (Phase 1, spacing audit). */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+
+  --container: 1320px;
+  --gutter: 40px;
+}
+
+[data-theme="dark"] {
+  --theme-bg: #070809;
+  --theme-surface: #0B0C0D;
+  --theme-surface-soft: #121314;
+  --theme-border: rgba(255, 255, 255, 0.13);
+  --theme-border-soft: rgba(255, 255, 255, 0.09);
+  --theme-text: #FFFFFF;
+  --theme-text-soft: rgba(255, 255, 255, 0.74);
+  --theme-muted: rgba(255, 255, 255, 0.58);
+  --theme-card: #0D0E10;
+  --theme-card-soft: #141516;
+
+  --theme-shadow-card: 0 18px 54px rgba(0, 0, 0, 0.36);
+  --theme-shadow-card-hover: 0 24px 70px rgba(0, 0, 0, 0.48);
+
+  --hero-text: #FFFFFF;
+  --hero-text-soft: rgba(255, 255, 255, 0.76);
+  --hero-kicker: rgba(255, 255, 255, 0.72);
+  --footer-bg: #181A1D;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--theme-bg); color: var(--theme-text); font-family: var(--font-body); line-height: 1.58; transition: background-color 180ms ease, color 180ms ease; }
+a { color: inherit; text-decoration: none; }
+p, h1, h2, h3, h4 { margin: 0; }
+svg, img { max-width: 100%; height: auto; }
+
+/* Layout shell */
+.ds-shell { display: grid; grid-template-columns: 264px 1fr; min-height: 100vh; }
+.ds-sidebar { position: sticky; top: 0; height: 100vh; overflow: auto; padding: 24px; background: var(--footer-bg); color: #fff; border-right: 1px solid rgba(255,255,255,.08); }
+.ds-brand-word { font-family: var(--font-heading); font-weight: 800; letter-spacing: .34em; font-size: .95rem; }
+.ds-brand-meta { margin-top: 8px; color: rgba(255,255,255,.55); font-size: .78rem; }
+.nav-group { margin: 22px 0 8px; color: rgba(255,255,255,.4); font-size: .7rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.ds-sidebar a { display: block; padding: 6px 9px; border-radius: 8px; color: rgba(255,255,255,.76); font-size: .85rem; }
+.ds-sidebar a:hover { background: rgba(255,255,255,.1); color: #fff; }
+
+.ds-main { max-width: 1520px; padding: 28px 48px 96px; }
+.topbar { position: sticky; top: 0; z-index: 30; display: flex; justify-content: space-between; align-items: center; gap: 20px; margin: -28px -48px 52px; padding: 20px 48px; background: color-mix(in srgb, var(--theme-bg) 88%, transparent); border-bottom: 1px solid var(--theme-border); backdrop-filter: blur(18px); }
+.topbar h1 { font-family: var(--font-heading); font-size: clamp(1.6rem, 2.6vw, 2.4rem); letter-spacing: -.03em; }
+.topbar .lead { margin-top: 6px; color: var(--theme-text-soft); font-size: .92rem; max-width: 640px; }
+.theme-toggle { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--theme-border); border-radius: 999px; background: var(--theme-surface); color: var(--theme-text); cursor: pointer; flex-shrink: 0; }
+.theme-toggle svg { display: none; width: 19px; height: 19px; stroke: currentColor; }
+[data-theme="light"] .icon-sun, [data-theme="dark"] .icon-moon { display: block; }
+
+.section { scroll-margin-top: 100px; margin-bottom: 80px; }
+.section-head { margin-bottom: 26px; }
+.kicker { margin: 0 0 10px; color: var(--theme-muted); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+h2.section-title { font-family: var(--font-heading); font-size: clamp(1.7rem, 2.6vw, 2.6rem); letter-spacing: -.03em; }
+.section-note { margin-top: 10px; color: var(--theme-text-soft); font-size: .95rem; max-width: 780px; }
+.subhead { margin: 34px 0 16px; font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--theme-text); }
+.subhead-note { margin: -10px 0 16px; color: var(--theme-muted); font-size: .82rem; }
+
+/* ============================================================
+   C1 STANDARD CARD — base + variants (numbered, icon, dimension, compact)
+   ============================================================ */
+.demo-row { display: grid; gap: 18px; }
+.demo-row.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.demo-row.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.demo-row.cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+.pair-label { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 8px; }
+.pair-label span { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--theme-muted); }
+
+.c1-card {
+  padding: 26px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--radius-md);
+  background: var(--theme-card);
+  box-shadow: var(--theme-shadow-card);
+  cursor: default;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+.c1-card:hover, .c1-card.state-hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--theme-text) 20%, var(--theme-border));
+  box-shadow: var(--theme-shadow-card-hover);
+}
+.c1-card h3 { font-family: var(--font-heading); font-size: 1.15rem; margin-bottom: 10px; }
+.c1-card p { color: var(--theme-text-soft); font-size: .92rem; line-height: 1.55; }
+
+.c1-card--numbered .c1-number { font-family: var(--font-heading); font-size: 2.1rem; font-weight: 700; color: var(--theme-muted); margin-bottom: 14px; }
+
+.c1-card--icon .c1-icon { width: 44px; height: 44px; display: grid; place-items: center; border-radius: var(--radius-sm); background: var(--color-human-tint); color: var(--color-human); margin-bottom: 16px; }
+[data-theme="dark"] .c1-card--icon .c1-icon { background: color-mix(in srgb, var(--color-human) 22%, transparent); }
+.c1-card--icon .c1-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; }
+
+.c1-card--dimension { position: relative; overflow: hidden; padding-left: 30px; }
+.c1-card--dimension::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--dim-color, var(--color-human)); }
+.c1-card--dimension .c1-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: var(--radius-sm); background: color-mix(in srgb, var(--dim-color, var(--color-human)) 14%, var(--theme-surface)); color: var(--dim-color, var(--color-human)); margin-bottom: 14px; }
+.c1-card--dimension .c1-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+.c1-card--dimension .c1-label { display: block; margin-bottom: 8px; font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--dim-color, var(--color-human)); }
+.c1-card--dimension .c1-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+.c1-card--dimension .c1-chips span { padding: 4px 10px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--dim-color, var(--color-human)) 26%, var(--theme-border)); font-size: .72rem; font-weight: 700; color: var(--dim-color, var(--color-human)); background: color-mix(in srgb, var(--dim-color, var(--color-human)) 8%, var(--theme-surface)); }
+
+.c1-card--compact { padding: 18px 20px; display: grid; gap: 8px; }
+.c1-compact-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.c1-compact-id { font-family: var(--font-heading); font-size: .72rem; font-weight: 800; letter-spacing: .08em; color: var(--theme-muted); }
+.c1-compact-tags { display: flex; gap: 6px; }
+.c1-compact-tags span { width: 8px; height: 8px; border-radius: 999px; }
+.c1-card--compact h3 { font-size: 1rem; margin-bottom: 4px; }
+.c1-card--compact p { font-size: .84rem; }
+
+/* ============================================================
+   C2 MEDIA CARD
+   ============================================================ */
+.c2-card { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center; padding: 8px; border-radius: var(--radius-lg); transition: transform 180ms ease; }
+.c2-card:hover, .c2-card.state-hover { transform: translateY(-3px); }
+.c2-card--reverse { grid-template-columns: 1fr 1fr; }
+.c2-card--reverse .c2-media { order: 2; }
+.c2-media { aspect-ratio: 4/3; border-radius: var(--radius-md); background: repeating-linear-gradient(135deg, var(--theme-surface-soft), var(--theme-surface-soft) 10px, var(--theme-border-soft) 10px, var(--theme-border-soft) 20px); display: grid; place-items: center; color: var(--theme-muted); font-size: .78rem; font-weight: 700; overflow: hidden; }
+.c2-card:hover .c2-media, .c2-card.state-hover .c2-media { transform: scale(1.03); }
+.c2-media { transition: transform 220ms ease; }
+.c2-card h3 { font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: 10px; }
+.c2-card p { color: var(--theme-text-soft); font-size: .92rem; }
+
+/* ============================================================
+   C3 QUOTE CARD
+   ============================================================ */
+.c3-card { padding: 30px; border: 1px solid var(--theme-border-soft); border-radius: var(--radius-lg); background: var(--theme-card); box-shadow: var(--theme-shadow-card); transition: transform 180ms ease, box-shadow 180ms ease; }
+.c3-card:hover, .c3-card.state-hover { transform: translateY(-3px); box-shadow: var(--theme-shadow-card-hover); }
+.c3-quote-icon { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 999px; background: var(--theme-surface-soft); color: var(--theme-muted); margin-bottom: 16px; }
+.c3-quote-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.c3-card blockquote { margin: 0 0 14px; font-family: var(--font-heading); font-size: 1.05rem; line-height: 1.5; color: var(--theme-text); }
+.c3-card cite { font-style: normal; color: var(--theme-muted); font-size: .82rem; font-weight: 700; }
+
+/* ============================================================
+   C4 NAV CARD — project / related / category
+   ============================================================ */
+.c4-card { border: 1px solid var(--theme-border-soft); border-radius: var(--radius-lg); overflow: hidden; background: var(--theme-surface-soft); cursor: pointer; transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.c4-card:hover, .c4-card.state-hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--theme-text) 16%, var(--theme-border)); box-shadow: var(--theme-shadow-card); }
+.c4-card--project .c4-cover, .c4-card--related .c4-cover { aspect-ratio: 16/10; background: repeating-linear-gradient(135deg, var(--theme-border-soft), var(--theme-border-soft) 10px, var(--theme-surface) 10px, var(--theme-surface) 20px); display: grid; place-items: center; color: var(--theme-muted); font-size: .78rem; font-weight: 700; overflow: hidden; transition: transform 220ms ease; }
+.c4-card:hover .c4-cover, .c4-card.state-hover .c4-cover { transform: scale(1.03); }
+.c4-card-body { padding: 18px 20px 22px; }
+.c4-card-body span.c4-meta { display: block; margin-bottom: 6px; color: var(--theme-muted); font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.c4-card-body h3 { font-family: var(--font-heading); font-size: 1.05rem; }
+.c4-card--related .c4-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.c4-card--related .c4-tags span { padding: 3px 9px; border-radius: 999px; border: 1px solid var(--theme-border); font-size: .68rem; font-weight: 700; color: var(--theme-text-soft); }
+.c4-card--category { display: flex; align-items: center; gap: 14px; padding: 18px 20px; background: var(--theme-surface); }
+.c4-card--category .c4-icon { width: 40px; height: 40px; flex-shrink: 0; display: grid; place-items: center; border-radius: var(--radius-sm); background: var(--theme-surface-soft); color: var(--theme-text); }
+.c4-card--category .c4-icon svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; }
+.c4-card--category h3 { flex: 1; font-size: .98rem; }
+.c4-card--category .c4-arrow { color: var(--theme-muted); transition: transform 180ms ease; }
+.c4-card--category:hover .c4-arrow, .c4-card--category.state-hover .c4-arrow { transform: translateX(4px); color: var(--theme-text); }
+
+/* ============================================================
+   C5 CALLOUT BLOCK
+   ============================================================ */
+.c5-callout { padding: 22px 26px; border-left: 4px solid var(--color-human); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; background: var(--color-human-tint); }
+[data-theme="dark"] .c5-callout { background: color-mix(in srgb, var(--color-human) 14%, var(--theme-surface)); }
+.c5-callout strong { display: block; margin-bottom: 8px; font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--color-human); }
+.c5-callout p { color: var(--theme-text); font-size: .92rem; line-height: 1.55; }
+.c5-callout--emotion { border-left-color: var(--color-emotion); background: var(--color-emotion-tint); }
+[data-theme="dark"] .c5-callout--emotion { background: color-mix(in srgb, var(--color-emotion) 14%, var(--theme-surface)); }
+.c5-callout--emotion strong { color: var(--color-emotion); }
+.c5-callout--nature { border-left-color: var(--color-nature); background: var(--color-nature-tint); }
+[data-theme="dark"] .c5-callout--nature { background: color-mix(in srgb, var(--color-nature) 14%, var(--theme-surface)); }
+.c5-callout--nature strong { color: var(--color-nature); }
+
+/* ============================================================
+   SECTION B — hover behaviour interactive demo
+   ============================================================ */
+.hover-demo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.hover-demo-panel { padding: 24px; border: 1px solid var(--theme-border-soft); border-radius: var(--radius-lg); background: var(--theme-card-soft); }
+.hover-demo-panel h4 { font-family: var(--font-heading); font-size: .95rem; margin-bottom: 4px; }
+.hover-demo-panel .spec-line { color: var(--theme-muted); font-size: .8rem; margin-bottom: 18px; }
+.hover-target { padding: 22px; border: 1px solid var(--theme-border-soft); border-radius: var(--radius-md); background: var(--theme-card); box-shadow: var(--theme-shadow-card); transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease; }
+.hover-target.navigable { cursor: pointer; }
+.hover-target.navigable:hover { transform: translateY(-4px); border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border)); box-shadow: var(--theme-shadow-card-hover); }
+.hover-target.display { cursor: default; }
+.hover-target.display:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border)); box-shadow: var(--theme-shadow-card-hover); }
+.hover-target h3 { font-family: var(--font-heading); font-size: 1rem; margin-bottom: 6px; }
+.hover-target p { color: var(--theme-text-soft); font-size: .86rem; }
+
+/* ============================================================
+   SECTION C — shadow / radius comparison
+   ============================================================ */
+.compare-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.compare-box { padding: 30px; border-radius: var(--radius-md); background: var(--theme-card); text-align: center; }
+.compare-box.shadow-default { box-shadow: var(--theme-shadow-card); }
+.compare-box.shadow-hover { box-shadow: var(--theme-shadow-card-hover); }
+.compare-box strong { display: block; font-family: var(--font-heading); font-size: .95rem; margin-bottom: 4px; }
+.compare-box span { color: var(--theme-muted); font-size: .78rem; }
+.radius-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 18px; }
+.radius-box { aspect-ratio: 2/1; display: grid; place-items: center; background: var(--theme-surface-soft); border: 1px solid var(--theme-border-soft); color: var(--theme-text-soft); font-size: .82rem; font-weight: 700; }
+.radius-box.r-md { border-radius: var(--radius-md); }
+.radius-box.r-lg { border-radius: var(--radius-lg); }
+
+/* ============================================================
+   SECTION D — hero variants (reduced scale)
+   ============================================================ */
+.hero-demo { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--theme-border-soft); margin-bottom: 20px; }
+.hero-demo-inner { min-height: 220px; display: flex; align-items: center; padding: 36px; color: #fff; }
+.hero-demo-inner h4 { font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 8px; letter-spacing: -.02em; }
+.hero-demo-inner p { color: rgba(255,255,255,.82); font-size: .88rem; max-width: 420px; }
+.hero-demo-label { padding: 10px 16px; background: var(--theme-surface-soft); color: var(--theme-text-soft); font-size: .76rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+
+.hero--global-home { background: linear-gradient(142deg, rgba(60,140,244,.85), transparent 40%), linear-gradient(20deg, transparent 20%, rgba(255,86,136,.8) 50%, transparent 78%), radial-gradient(circle at 84% 16%, rgba(49,187,142,.5), transparent 30%), #0A0C10; }
+.hero--global-standard { background: var(--color-human); }
+.hero--global-image { background: linear-gradient(90deg, #151719 46%, transparent 46%), #151719; position: relative; }
+.hero--global-image::after { content: "IMAGE"; position: absolute; right: 0; top: 0; bottom: 0; width: 54%; background: repeating-linear-gradient(135deg, #2a2d31, #2a2d31 10px, #202225 10px, #202225 20px); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); font-size: .74rem; font-weight: 800; letter-spacing: .1em; }
+.hero--ux-dark { background: radial-gradient(circle at 12% 24%, rgba(60,140,244,.22), transparent 34%), radial-gradient(circle at 86% 12%, rgba(255,255,255,.1), transparent 28%), linear-gradient(140deg, #0B1F3F, #071129 60%, #05070D); }
+.hero--ux-image { background: linear-gradient(120deg, rgba(0,10,30,.82), rgba(0,10,30,.5) 60%, transparent), repeating-linear-gradient(135deg, #2a2d31, #2a2d31 10px, #202225 10px, #202225 20px); }
+.hero--arch { background: linear-gradient(120deg, rgba(20,20,20,.7), rgba(20,20,20,.2) 55%, transparent), repeating-linear-gradient(135deg, #3a3a3a, #3a3a3a 10px, #2c2c2c 10px, #2c2c2c 20px); }
+
+/* ============================================================
+   SECTION E — layout modes L1-L4
+   ============================================================ */
+.layout-demo { border: 1px dashed color-mix(in srgb, var(--theme-text) 24%, var(--theme-border)); border-radius: var(--radius-md); padding: 22px; background: var(--theme-card-soft); }
+.l1-demo { display: grid; grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); gap: 40px; }
+.l1-demo-stack { display: grid; gap: 18px; margin-top: 18px; }
+.l2-demo { display: grid; grid-template-columns: minmax(200px, .3fr) minmax(0, 1fr); gap: 32px; align-items: start; }
+.l2-demo .ph-block:first-child { align-self: start; position: sticky; top: 100px; }
+.l3-demo { display: grid; grid-template-columns: minmax(0, .55fr) minmax(240px, .45fr); gap: 32px; align-items: center; }
+.ph-block { padding: 16px; border-radius: var(--radius-sm); background: var(--theme-surface-soft); color: var(--theme-muted); font-size: .8rem; font-weight: 700; text-align: center; display: grid; place-items: center; min-height: 70px; }
+.ph-media { min-height: 130px; }
+.l4-grid { display: grid; gap: 14px; margin-top: 12px; }
+.l4-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.l4-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.l4-grid.cols-4 { grid-template-columns: repeat(4, 1fr); }
+.l4-grid .ph-block { min-height: 90px; }
+
+/* ============================================================
+   SECTION G — spacing scale (D16)
+   ============================================================ */
+.spacing-row { display: grid; grid-template-columns: 140px 1fr 220px; gap: 20px; align-items: center; margin-bottom: 16px; }
+.spacing-row-label { font-family: var(--font-heading); font-size: .95rem; font-weight: 700; }
+.spacing-row-label small { display: block; margin-top: 2px; color: var(--theme-muted); font-size: .78rem; font-weight: 600; }
+.spacing-bar-track { display: flex; align-items: center; height: 48px; }
+.spacing-bar { height: 12px; border-radius: 999px; background: var(--color-human); }
+.spacing-row-usage { color: var(--theme-text-soft); font-size: .82rem; line-height: 1.4; }
+.spacing-demo-block { padding: 24px; border: 1px solid var(--theme-border-soft); border-radius: var(--radius-lg); background: var(--theme-card); box-shadow: var(--theme-shadow-card); }
+.spacing-demo-block .kicker { margin-bottom: var(--space-md); }
+.spacing-demo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: var(--space-xl); }
+.spacing-demo-grid .ph-block { padding: 18px; border-radius: var(--radius-md); background: var(--theme-surface-soft); color: var(--theme-muted); font-size: .82rem; font-weight: 700; text-align: center; }
+.spacing-demo-cta { display: inline-flex; padding: 10px 18px; border-radius: var(--radius-sm); background: var(--theme-text); color: var(--theme-bg); font-weight: 800; font-size: .85rem; }
+
+/* ============================================================
+   Utility grids for section wrappers
+   ============================================================ */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+@media (max-width: 1180px) {
+  .ds-shell { grid-template-columns: 1fr; }
+  .ds-sidebar { position: relative; height: auto; }
+  .grid-4, .grid-3, .grid-2, .demo-row.cols-2, .demo-row.cols-3, .demo-row.cols-4,
+  .hover-demo-grid, .compare-row, .radius-row, .l1-demo, .l2-demo, .l3-demo, .l4-grid.cols-4, .l4-grid.cols-3, .l4-grid.cols-2,
+  .c2-card, .pair-label { grid-template-columns: 1fr; }
+  .spacing-row { grid-template-columns: 1fr; }
+  .spacing-demo-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="ds-shell">
+<aside class="ds-sidebar">
+<div class="ds-brand-word">HENEX</div>
+<div class="ds-brand-meta">Design System Visual Reference v2<br>DS &amp; IA Convergence — Phase 1</div>
+<nav aria-label="Design system sections">
+<div class="nav-group">Section A</div>
+<a href="#c1">C1 Standard Card</a>
+<a href="#c2">C2 Media Card</a>
+<a href="#c3">C3 Quote Card</a>
+<a href="#c4">C4 Nav Card</a>
+<a href="#c5">C5 Callout Block</a>
+<div class="nav-group">Section B</div>
+<a href="#hover">Hover Behaviour</a>
+<div class="nav-group">Section C</div>
+<a href="#shadow-radius">Shadow &amp; Radius</a>
+<div class="nav-group">Section D</div>
+<a href="#hero">Hero Variants</a>
+<div class="nav-group">Section E</div>
+<a href="#layout">Layout Modes</a>
+<div class="nav-group">Section G</div>
+<a href="#spacing">Spacing Scale</a>
+</nav>
+</aside>
+<main class="ds-main">
+<div class="topbar">
+<div><h1>DS Visual Reference v2</h1><p class="lead">Converged card system, hover behaviour, shadow/radius, hero and layout tokens. DS-level only — no VTH, Philosophy text-stage, or recipe equation content.</p></div>
+<button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
+<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2"/></svg>
+<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.9 12.5A9 9 0 1 1 11.5 3a6 6 0 0 0 9.4 9.5z"/></svg>
+</button>
+</div>
+
+<!-- ============ SECTION A: CARD SYSTEM ============ -->
+
+<section id="c1" class="section">
+<div class="section-head"><div class="kicker">Section A — Card System</div><h2 class="section-title">C1 Standard Card</h2><p class="section-note">Base card plus four variants: numbered, icon, dimension, compact. Each shown default and hover side by side.</p></div>
+
+<div class="subhead">Base (title + description)</div>
+<div class="pair-label"><span>Default</span><span>Hover</span></div>
+<div class="demo-row cols-2">
+<div class="c1-card"><h3>Card title</h3><p>Standard body copy describing the card content in one to two lines.</p></div>
+<div class="c1-card state-hover"><h3>Card title</h3><p>Standard body copy describing the card content in one to two lines.</p></div>
+</div>
+
+<div class="subhead">Numbered (number + title + description)</div>
+<div class="pair-label"><span>Default</span><span>Hover</span></div>
+<div class="demo-row cols-2">
+<div class="c1-card c1-card--numbered"><div class="c1-number">01</div><h3>Process step</h3><p>Used for sequential steps such as methodology or process summaries.</p></div>
+<div class="c1-card c1-card--numbered state-hover"><div class="c1-number">01</div><h3>Process step</h3><p>Used for sequential steps such as methodology or process summaries.</p></div>
+</div>
+
+<div class="subhead">Icon (icon container + title + description)</div>
+<div class="pair-label"><span>Default</span><span>Hover</span></div>
+<div class="demo-row cols-2">
+<div class="c1-card c1-card--icon"><div class="c1-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Capability</h3><p>Icon container uses tinted background matching the active HENEX dimension.</p></div>
+<div class="c1-card c1-card--icon state-hover"><div class="c1-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><h3>Capability</h3><p>Icon container uses tinted background matching the active HENEX dimension.</p></div>
+</div>
+
+<div class="subhead">Dimension (colour block + icon + label + title + chips)</div>
+<div class="subhead-note">Shown in all three HENEX dimension colours.</div>
+<div class="demo-row cols-3">
+<div class="c1-card c1-card--dimension" style="--dim-color:var(--color-human)"><div class="c1-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><span class="c1-label">Human</span><h3>Identity, Perception, Agency</h3><div class="c1-chips"><span>Identity</span><span>Perception</span><span>Agency</span></div></div>
+<div class="c1-card c1-card--dimension" style="--dim-color:var(--color-emotion)"><div class="c1-icon"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.2 5.5 3 2-1.8 3.5-3 5.5-3 3.5 0 6 3.5 4 7.5C19 16.65 12 21 12 21z"/></svg></div><span class="c1-label">Emotion</span><h3>Affect, Empathy, Meaning</h3><div class="c1-chips"><span>Affect</span><span>Empathy</span><span>Meaning</span></div></div>
+<div class="c1-card c1-card--dimension" style="--dim-color:var(--color-nature)"><div class="c1-icon"><svg viewBox="0 0 24 24"><path d="M12 3c4 3 6 6 6 10a6 6 0 0 1-12 0c0-4 2-7 6-10z"/></svg></div><span class="c1-label">Nature</span><h3>Medium, Matter, Interface</h3><div class="c1-chips"><span>Medium</span><span>Matter</span><span>Interface</span></div></div>
+</div>
+
+<div class="subhead">Compact (ID + triad tags + title + description, for recipe cards)</div>
+<div class="pair-label"><span>Default</span><span>Hover</span></div>
+<div class="demo-row cols-2">
+<div class="c1-card c1-card--compact"><div class="c1-compact-top"><span class="c1-compact-id">M-014</span><div class="c1-compact-tags"><span style="background:var(--color-human)"></span><span style="background:var(--color-emotion)"></span><span style="background:var(--color-nature)"></span></div></div><h3>Recipe name</h3><p>Compact form used inside the 27-combination matrix grid.</p></div>
+<div class="c1-card c1-card--compact state-hover"><div class="c1-compact-top"><span class="c1-compact-id">M-014</span><div class="c1-compact-tags"><span style="background:var(--color-human)"></span><span style="background:var(--color-emotion)"></span><span style="background:var(--color-nature)"></span></div></div><h3>Recipe name</h3><p>Compact form used inside the 27-combination matrix grid.</p></div>
+</div>
+</section>
+
+<section id="c2" class="section">
+<div class="section-head"><div class="kicker">Section A — Card System</div><h2 class="section-title">C2 Media Card</h2><p class="section-note">Image and text pairing, both orientations.</p></div>
+<div class="subhead">Image left / text right</div>
+<div class="c2-card"><div class="c2-media">IMAGE</div><div><h3>Feature title</h3><p>Media card used in feature lists and design system module rows. Media scales 1.03 on hover.</p></div></div>
+<div class="subhead">Text left / image right</div>
+<div class="c2-card c2-card--reverse"><div class="c2-media">IMAGE</div><div><h3>Feature title</h3><p>Reversed orientation for alternating rhythm down the page.</p></div></div>
+</section>
+
+<section id="c3" class="section">
+<div class="section-head"><div class="kicker">Section A — Card System</div><h2 class="section-title">C3 Quote Card</h2><p class="section-note">Stakeholder or user quotes, with and without the person icon.</p></div>
+<div class="demo-row cols-2">
+<div class="c3-card"><div class="c3-quote-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><blockquote>"This made the process significantly easier to follow."</blockquote><cite>Participant, usability session</cite></div>
+<div class="c3-card"><blockquote>"A clear improvement over the previous version."</blockquote><cite>Stakeholder feedback</cite></div>
+</div>
+</section>
+
+<section id="c4" class="section">
+<div class="section-head"><div class="kicker">Section A — Card System</div><h2 class="section-title">C4 Nav Card</h2><p class="section-note">Project, related and category variants.</p></div>
+<div class="subhead">Project (cover image + metadata + title)</div>
+<div class="demo-row cols-3">
+<div class="c4-card c4-card--project"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><span class="c4-meta">UX Case Study</span><h3>Project title</h3></div></div>
+<div class="c4-card c4-card--project state-hover"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><span class="c4-meta">UX Case Study</span><h3>Project title (hover)</h3></div></div>
+<div class="c4-card c4-card--project"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><span class="c4-meta">Architecture</span><h3>Project title</h3></div></div>
+</div>
+<div class="subhead">Related (cover image + project title + tags)</div>
+<div class="demo-row cols-3">
+<div class="c4-card c4-card--related"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><h3>Related project</h3><div class="c4-tags"><span>Service Design</span><span>Research</span></div></div></div>
+<div class="c4-card c4-card--related state-hover"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><h3>Related project (hover)</h3><div class="c4-tags"><span>Service Design</span><span>Research</span></div></div></div>
+<div class="c4-card c4-card--related"><div class="c4-cover">IMAGE</div><div class="c4-card-body"><h3>Related project</h3><div class="c4-tags"><span>Team</span><span>Validation</span></div></div></div>
+</div>
+<div class="subhead">Category (icon + title + arrow)</div>
+<div class="demo-row cols-3">
+<div class="c4-card c4-card--category"><div class="c4-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div><h3>Category name</h3><span class="c4-arrow">&rarr;</span></div>
+<div class="c4-card c4-card--category state-hover"><div class="c4-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/></svg></div><h3>Category name (hover)</h3><span class="c4-arrow">&rarr;</span></div>
+<div class="c4-card c4-card--category"><div class="c4-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg></div><h3>Category name</h3><span class="c4-arrow">&rarr;</span></div>
+</div>
+</section>
+
+<section id="c5" class="section">
+<div class="section-head"><div class="kicker">Section A — Card System</div><h2 class="section-title">C5 Callout Block</h2><p class="section-note">Left accent bar, in each HENEX dimension colour.</p></div>
+<div class="demo-row cols-3">
+<div class="c5-callout"><strong>Note</strong><p>Default callout uses the Human accent colour and tint background.</p></div>
+<div class="c5-callout c5-callout--emotion"><strong>Note</strong><p>Emotion variant for empathy or feeling-related context.</p></div>
+<div class="c5-callout c5-callout--nature"><strong>Note</strong><p>Nature variant for context or environment-related notes.</p></div>
+</div>
+</section>
+
+<!-- ============ SECTION B: HOVER BEHAVIOUR ============ -->
+<section id="hover" class="section">
+<div class="section-head"><div class="kicker">Section B</div><h2 class="section-title">Hover Behaviour</h2><p class="section-note">Hover the cards below directly. Two behaviour classes: Navigable (clickable, larger lift) and Display (non-clickable, smaller lift). Both get shadow upgrade and border darken.</p></div>
+<div class="hover-demo-grid">
+<div class="hover-demo-panel">
+<h4>Navigable card</h4>
+<p class="spec-line">pointer cursor · translateY(-4px) · shadow upgrade · border darken · image scale(1.03) if present</p>
+<div class="hover-target navigable"><h3>Hover me — I'm clickable</h3><p>Used for project cards, related cards, category cards.</p></div>
+</div>
+<div class="hover-demo-panel">
+<h4>Display card</h4>
+<p class="spec-line">default cursor · translateY(-3px) · shadow upgrade · border darken</p>
+<div class="hover-target display"><h3>Hover me — informational only</h3><p>Used for standard cards, media cards, quote cards.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ============ SECTION C: SHADOW AND RADIUS ============ -->
+<section id="shadow-radius" class="section">
+<div class="section-head"><div class="kicker">Section C</div><h2 class="section-title">Shadow &amp; Radius</h2><p class="section-note">All cards get the default shadow (D05). Radius is 18px standard, 30px large (D06). --radius-xl is removed at the DS level.</p></div>
+<div class="subhead">Shadow comparison</div>
+<div class="compare-row">
+<div class="compare-box shadow-default"><strong>shadow-card</strong><span>Default state, all cards</span></div>
+<div class="compare-box shadow-hover"><strong>shadow-card-hover</strong><span>Hover state, all cards</span></div>
+</div>
+<div class="subhead">Radius comparison</div>
+<div class="radius-row">
+<div class="radius-box r-md">18px — standard card</div>
+<div class="radius-box r-lg">30px — large card / hero / nav card</div>
+</div>
+</section>
+
+<!-- ============ SECTION D: HERO VARIANTS ============ -->
+<section id="hero" class="section">
+<div class="section-head"><div class="kicker">Section D</div><h2 class="section-title">Hero Variants</h2><p class="section-note">Reduced-scale preview of each hero type. Global hero height 720px in production (D08); UX case hero defaults to dark gradient (D07).</p></div>
+
+<div class="subhead">Global — Home (gradient)</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--global-home"><div><h4>Designing from space.</h4><p>Mixed HENEX gradient combining Human, Emotion and Nature.</p></div></div><div class="hero-demo-label">Global / Home</div></div>
+
+<div class="subhead">Global — Standard (single colour)</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--global-standard"><div><h4>Page title</h4><p>Single accent colour per page (Works = Nature, Lab = Emotion, etc).</p></div></div><div class="hero-demo-label">Global / Standard</div></div>
+
+<div class="subhead">Global — With Image (right-side visual)</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--global-image"><div><h4>Page title</h4><p>Text-left layout with visual on the right half.</p></div></div><div class="hero-demo-label">Global / With Image</div></div>
+
+<div class="subhead">UX Case — Dark gradient (default, D07)</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--ux-dark"><div><h4>Project name</h4><p>Dark gradient default replacing the light-tint gradient previously used.</p></div></div><div class="hero-demo-label">UX Case / Dark Gradient</div></div>
+
+<div class="subhead">UX Case — Background image</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--ux-image"><div><h4>Project name</h4><p>Used where a strong hero photograph exists (e.g. ASH).</p></div></div><div class="hero-demo-label">UX Case / Background Image</div></div>
+
+<div class="subhead">Architecture — Project image</div>
+<div class="hero-demo"><div class="hero-demo-inner hero--arch"><div><h4>Project name</h4><p>Architecture case hero uses the project's own image directly.</p></div></div><div class="hero-demo-label">Architecture / Project Image</div></div>
+</section>
+
+<!-- ============ SECTION E: LAYOUT MODES ============ -->
+<section id="layout" class="section">
+<div class="section-head"><div class="kicker">Section E</div><h2 class="section-title">Layout Modes</h2><p class="section-note">Schematic demonstration of L1 through L4 with placeholder content. L1 is the primary layout for case study sections (D09).</p></div>
+
+<div class="subhead">L1 — Section Header + Content</div>
+<div class="subhead-note">Title column and lead-copy column sit near 1:1 width, side by side, as one header row. The section's real content (cards, image, list) sits BELOW this header row as a separate block — header and content do not run alongside each other. This is the reference-page pattern: kicker+title on the left, lead paragraph on the right, one line, then content underneath.</div>
+<div class="layout-demo">
+<div class="l1-demo"><div class="ph-block">Kicker + Title</div><div class="ph-block">Lead copy, one short paragraph</div></div>
+<div class="l1-demo-stack"><div class="ph-block">Content below the header row (cards, image, or list — spans full width)</div></div>
+</div>
+
+<div class="subhead">L2 — Aside + Content</div>
+<div class="subhead-note">A narrow aside column (kicker/label + heading, e.g. "Overview", "Background") stays beside a wider content column for the FULL HEIGHT of the section — they run side by side, not stacked. This is the current dominant pattern in UX case studies (ux-two-col).</div>
+<div class="layout-demo l2-demo"><div class="ph-block">Aside<br>(kicker + heading,<br>stays put)</div><div class="ph-block">Content column — copy, cards, images can run long here while the aside stays fixed alongside it</div></div>
+
+<div class="subhead">L3 — Content + Media</div>
+<div class="layout-demo l3-demo"><div class="ph-block">Content</div><div class="ph-block ph-media">Media</div></div>
+
+<div class="subhead">L4 — Card Grid</div>
+<div class="subhead-note">2, 3 and 4 column variants</div>
+<div class="layout-demo">
+<div class="l4-grid cols-2"><div class="ph-block">Card</div><div class="ph-block">Card</div></div>
+<div class="l4-grid cols-3" style="margin-top:14px"><div class="ph-block">Card</div><div class="ph-block">Card</div><div class="ph-block">Card</div></div>
+<div class="l4-grid cols-4" style="margin-top:14px"><div class="ph-block">Card</div><div class="ph-block">Card</div><div class="ph-block">Card</div><div class="ph-block">Card</div></div>
+</div>
+</section>
+
+<section id="spacing" class="section">
+<div class="section-head"><div class="kicker">Section G</div><h2 class="section-title">Spacing Scale</h2><p class="section-note">Five-step token scale (D16). Confirmed after a full-site audit found the same "label sits too close to the content below it" problem recurring in 7 places, ranging 0-40px with no shared rule. Replaces ad hoc per-selector values.</p></div>
+
+<div class="subhead">The five tokens</div>
+<div class="panel" style="margin-bottom:32px">
+<div class="spacing-row"><div class="spacing-row-label">--space-xs<small>8px</small></div><div class="spacing-bar-track"><div class="spacing-bar" style="width:8px"></div></div><div class="spacing-row-usage">Icon-to-label, tightest inline gaps, card-to-inner-text top offset.</div></div>
+<div class="spacing-row"><div class="spacing-row-label">--space-sm<small>16px</small></div><div class="spacing-bar-track"><div class="spacing-bar" style="width:16px"></div></div><div class="spacing-row-usage">Card-internal title-to-body, meta-label-to-heading.</div></div>
+<div class="spacing-row"><div class="spacing-row-label">--space-md<small>24px</small></div><div class="spacing-bar-track"><div class="spacing-bar" style="width:24px"></div></div><div class="spacing-row-usage">Label/kicker-to-grid gap, standard card padding.</div></div>
+<div class="spacing-row"><div class="spacing-row-label">--space-lg<small>32px</small></div><div class="spacing-bar-track"><div class="spacing-bar" style="width:32px"></div></div><div class="spacing-row-usage">Sibling-container gap within the same section.</div></div>
+<div class="spacing-row"><div class="spacing-row-label">--space-xl<small>48px</small></div><div class="spacing-bar-track"><div class="spacing-bar" style="width:48px"></div></div><div class="spacing-row-usage">Grid-to-CTA gap, grid-to-next-block gap.</div></div>
+</div>
+
+<div class="subhead">Applied example — label, grid, CTA rhythm</div>
+<div class="subhead-note">Before: 14px label-to-grid, 12px grid-to-CTA (audit finding). After: --space-md then --space-xl.</div>
+<div class="spacing-demo-block">
+<div class="kicker">Spatial Systems</div>
+<div class="spacing-demo-grid"><div class="ph-block">Card</div><div class="ph-block">Card</div><div class="ph-block">Card</div></div>
+<div class="spacing-demo-cta">View all Works</div>
+</div>
+</section>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var stored = null;
+  try { stored = window.__dsTheme || null; } catch(e) {}
+  btn.addEventListener('click', function(){
+    var current = root.getAttribute('data-theme');
+    root.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>
