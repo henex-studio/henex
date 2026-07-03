@@ -820,9 +820,9 @@ figcaption {
 }
 
 .ux-recipe-trigger[aria-expanded=true] {
-  background: var(--color-brand-primary);
-  color: var(--theme-card);
-  border-color: var(--color-brand-primary);
+  background: var(--theme-text);
+  color: var(--theme-bg);
+  border-color: var(--theme-text);
 }
 
 
