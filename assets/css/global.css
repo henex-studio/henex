@@ -485,6 +485,43 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   transition: border-color 180ms ease;
 }
 
+/* C1 default hover — pages override with their own accent if needed */
+.capability-card:hover, .capability-card:focus-within,
+.evidence-item:hover, .evidence-item:focus-within,
+.about-profile-card:hover, .about-profile-card:focus-within,
+.about-foundation-card:hover, .about-foundation-card:focus-within,
+.about-capability-card:hover, .about-capability-card:focus-within,
+.about-work-card:hover, .about-work-card:focus-within,
+.marker-card:hover, .marker-card:focus-within,
+.ux-card:hover, .ux-card:focus-within,
+.ux-influence:hover, .ux-influence:focus-within,
+.ux-feedback-card:hover, .ux-feedback-card:focus-within,
+.ux-test-card:hover, .ux-test-card:focus-within,
+.password-card:hover, .password-card:focus-within,
+.arch-callout:hover, .arch-callout:focus-within,
+.arch-finding-card:hover, .arch-finding-card:focus-within,
+.arch-award-card:hover, .arch-award-card:focus-within,
+.arch-publication-block:hover, .arch-publication-block:focus-within,
+.system-feedback-card:hover, .system-feedback-card:focus-within,
+.system-principle-card:hover, .system-principle-card:focus-within,
+.system-foundation-card:hover, .system-foundation-card:focus-within,
+.system-component-demo:hover, .system-component-demo:focus-within,
+.system-component-scope:hover, .system-component-scope:focus-within,
+.system-microsite-card:hover, .system-microsite-card:focus-within,
+.system-findings-grid article:hover, .system-findings-grid article:focus-within,
+.rkt-finding:hover, .rkt-finding:focus-within,
+.studier-impact-grid article:hover, .studier-impact-grid article:focus-within,
+.studier-timeline article:hover, .studier-timeline article:focus-within,
+.studier-metrics article:hover, .studier-metrics article:focus-within,
+.wst-finding-grid article:hover, .wst-finding-grid article:focus-within,
+.wso-research-card:hover, .wso-research-card:focus-within,
+.wso-process-step:hover, .wso-process-step:focus-within,
+.vsk-finding-grid article:hover, .vsk-finding-grid article:focus-within,
+.vsk-social-feature:hover, .vsk-social-feature:focus-within,
+.vth-metrics article:hover, .vth-metrics article:focus-within {
+  border-color: color-mix(in srgb, var(--ux-theme, var(--page-accent, var(--theme-text))) 28%, var(--theme-border));
+}
+
 /* C2: Display cards with radius-md */
 .about-work-card,
 .marker-card,
