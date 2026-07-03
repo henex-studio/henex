@@ -14,6 +14,14 @@
 
 /* Hero */
 
+/* D-note: checked against pages.css — .page-hero--home is 720px, but
+   .page-hero--works and .page-hero--lab are both 560px, not 720px. So
+   "720px for all global pages" in the Spec's pages.css row only ever
+   described Home (already true, no change needed there); it was not a
+   universal mandate across every page. Chronology is a compact list/nav
+   page, same tier as Works/Lab conceptually but shorter still — 400px is
+   kept as its own intentional variant, consistent with the graduated
+   height pattern (Home > Works/Lab > Chronology), not changed to 720px. */
 .page-hero--chronology {
   min-height: 400px;
   background: #FAFBFC;

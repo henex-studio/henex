@@ -54,8 +54,14 @@
   --radius-sm: 12px;
   --radius-md: 18px;
   --radius-lg: 30px;
-  --radius-xl: 42px;
   --radius-full: 999px;
+
+  /* D16: global spacing token scale. */
+  --space-xs: 8px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
 
   --container: 1320px;
   --gutter: 40px;
@@ -579,6 +585,33 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 
 [data-theme="dark"] .button--hero-outline:hover,
 [data-theme="dark"] .button--hero-outline:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+/* D07/D17: the UX case study hero (.ux-hero, defined in ux-case-study.css)
+   is a fixed dark gradient regardless of site light/dark theme — it does
+   not flip with [data-theme]. So .button--hero-primary/.button--hero-outline
+   need their dark-hero-safe colours applied unconditionally inside .ux-hero,
+   not only under [data-theme="dark"]. The Home hero (.page-hero--home) is
+   unaffected — it still only gets the dark treatment when the site itself
+   is in dark mode, exactly as before. */
+.ux-hero .button--hero-primary {
+  background: #ffffff;
+  color: #070809;
+  border-color: #ffffff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+}
+
+.ux-hero .button--hero-outline {
+  background: rgba(255, 255, 255, 0.10);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+.ux-hero .button--hero-outline:hover,
+.ux-hero .button--hero-outline:focus-visible {
   background: rgba(255, 255, 255, 0.14);
   border-color: rgba(255, 255, 255, 0.34);
 }

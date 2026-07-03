@@ -36,6 +36,16 @@ body.ux-modal-open {
 
 /* Hero */
 
+/* D07/D17: UX case hero is now a fixed dark gradient in BOTH light and dark
+   site theme — it no longer flips with [data-theme]. Rationale: doubling
+   every project's hero into light+dark variants doesn't match the point
+   of a convergence pass (reduce per-project maintenance), confirmed after
+   reviewing a light-tint version against the reference case study page.
+   The former light-mode gradient and the separate [data-theme=dark] block
+   are merged into one rule that always applies. Each project still sets
+   its own --ux-theme/--ux-dark/--ux-soft/--ux-pale in its own CSS file
+   (vth.css, ash.css, etc.), so the hero colour still varies by project —
+   only the light/dark theme split is removed. */
 .ux-hero {
   position: relative;
   min-height: 610px;
@@ -43,17 +53,10 @@ body.ux-modal-open {
   align-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 24%, color-mix(in srgb, var(--ux-theme) 18%, transparent), transparent 34%),
-    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, .78), transparent 28%),
-    linear-gradient(140deg, var(--ux-pale), color-mix(in srgb, var(--ux-soft) 76%, var(--theme-bg)) 54%, var(--theme-bg));
+    radial-gradient(circle at 12% 24%, color-mix(in srgb, var(--ux-theme) 22%, transparent), transparent 34%),
+    radial-gradient(circle at 88% 20%, color-mix(in srgb, var(--ux-theme) 12%, transparent), transparent 34%),
+    linear-gradient(140deg, color-mix(in srgb, var(--ux-dark, var(--ux-theme)) 88%, black 8%) 0%, color-mix(in srgb, var(--ux-dark, var(--ux-theme)) 92%, black 30%) 55%, color-mix(in srgb, var(--ux-dark, var(--ux-theme)) 88%, black 46%) 100%);
   border-bottom: 1px solid var(--theme-border-soft);
-}
-
-[data-theme=dark] .ux-hero {
-  background:
-    radial-gradient(circle at 18% 18%, rgba(19, 131, 138, .26), transparent 38%),
-    radial-gradient(circle at 88% 20%, rgba(19, 131, 138, .14), transparent 34%),
-    linear-gradient(135deg, #071211 0%, #0B2424 46%, #081010 100%);
 }
 
 
@@ -88,31 +91,29 @@ body.ux-modal-open {
 .ux-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 32px;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-lg);
 }
 
+/* D07/D17: hero text/tags/mark are now always styled for a dark background
+   (formerly the [data-theme=dark] treatment only). The light-mode-only
+   versions of these rules are removed since the hero background itself
+   no longer has a light-mode variant. */
 .ux-tags span {
   min-height: 30px;
   display: inline-flex;
   align-items: center;
   padding: 5px 11px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 24%, var(--theme-border));
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 40%, rgba(255, 255, 255, .3));
   border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--ux-theme) 8%, var(--theme-surface));
-  color: var(--ux-theme);
+  background: rgba(255, 255, 255, .10);
+  color: #FFFFFF;
   font-size: 0.8125rem;
   font-weight: 800;
 }
 
-[data-theme=dark] .ux-tags span {
-  background: rgba(244, 251, 250, .08);
-  border-color: rgba(244, 251, 250, .2);
-  color: #8FD4D0;
-}
-
 .ux-hero h1 {
-  color: var(--ux-dark);
+  color: #FFFFFF;
   font-size: clamp(3.4rem, 5.2vw, 6rem);
   line-height: 1;
   letter-spacing: -.045em;
@@ -122,7 +123,7 @@ body.ux-modal-open {
 .ux-hero__copy p {
   max-width: 760px;
   margin-top: 28px;
-  color: var(--theme-text-soft);
+  color: rgba(255, 255, 255, .82);
   font-size: clamp(1.1rem, 1.7vw, 1.42rem);
   line-height: 1.48;
 }
@@ -142,16 +143,8 @@ body.ux-modal-open {
   width: clamp(460px, 34vw, 660px);
   max-width: none;
   transform: translateY(-48%);
-  opacity: .78;
-  filter: drop-shadow(0 20px 38px rgba(19, 131, 138, .16));
-}
-
-[data-theme=dark] .ux-hero h1 {
-  color: #F4FBFA;
-}
-
-[data-theme=dark] .ux-hero__copy p {
-  color: rgba(244, 251, 250, .78);
+  opacity: .34;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
 }
 
 [data-theme=dark] .ux-hero__mark {
@@ -161,15 +154,12 @@ body.ux-modal-open {
 
 
 
-/* Accessibility Support Hub image hero */
+/* Accessibility Support Hub image hero — kept as a D07 exception, same as
+   VTH (D17): a strong project-specific illustration is preserved instead
+   of forcing the shared dark gradient. Unlike the old logic, this no longer
+   varies by [data-theme] — the image and its text treatment are now fixed,
+   matching the "hero doesn't flip with site theme" rule applied everywhere. */
 .ux-case-page--support-hub .ux-hero {
-  background: url("../img/projects/ash/hero-bg.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero {
   background: url("../img/projects/ash/hero-bg.png");
   background-size: cover;
   background-position: center right;
@@ -181,19 +171,11 @@ body.ux-modal-open {
 }
 
 .ux-case-page--support-hub .ux-hero__copy p {
-  color: color-mix(in srgb, var(--ux-dark) 70%, var(--theme-text-soft));
+  color: color-mix(in srgb, var(--ux-dark) 72%, #FFFFFF);
 }
 
 .ux-case-page--support-hub .ux-hero__mark {
   display: none;
-}
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero h1 {
-  color: var(--ux-dark);
-}
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero__copy p {
-  color: color-mix(in srgb, var(--ux-dark) 72%, #FFFFFF);
 }
 
 @media (max-width: 640px) {
@@ -213,6 +195,8 @@ body.ux-modal-open {
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 5%, var(--theme-surface)), var(--theme-bg) 78%);
 }
 
+/* L2 layout mode: persistent narrow aside + wide content column, running
+   side-by-side for the full section (DS Visual Reference v2, Section E). */
 .ux-two-col {
   display: grid;
   grid-template-columns: minmax(220px, .34fr) minmax(0, 1fr);
@@ -248,17 +232,20 @@ body.ux-modal-open {
   margin-top: 22px;
 }
 
+/* L1 layout mode: title + lead copy near 1:1 side by side, with content
+   below (DS Visual Reference v2 Section E; D09 — L1 is the primary layout
+   for case study sections). .ux-wide-head is the section-head half of L1. */
 .ux-wide-head {
   max-width: 900px;
-  margin-bottom: 48px;
+  margin-bottom: var(--space-xl);
 }
 
 .ux-meta {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 32px 72px;
-  margin-top: 44px;
-  padding-top: 32px;
+  gap: var(--space-lg) 72px;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
   border-top: 1px solid var(--theme-border-soft);
 }
 
@@ -374,11 +361,14 @@ figcaption {
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 7%, var(--theme-surface)), var(--theme-bg) 80%);
 }
 
+/* L3 layout mode: content + media, running side-by-side (DS Visual
+   Reference v2, Section E). */
 .ux-problem__grid {
   display: grid;
   grid-template-columns: minmax(0, .67fr) minmax(280px, .33fr);
   gap: clamp(34px, 6vw, 84px);
   align-items: center;
+  margin-bottom: var(--space-xl);
 }
 
 .ux-problem h2 {
@@ -434,14 +424,20 @@ figcaption {
 
 /* Cards */
 
+/* D05/C1: .ux-card and .ux-influence are this template's implementation of the
+   DS C1 Standard Card (see DS Visual Reference v2, Section A). They keep their
+   own class names because the markup is already in production across 8 pages,
+   but the box model, shadow logic and hover behaviour now match C1 exactly:
+   a default-state shadow (--theme-shadow-card) plus a stronger hover shadow
+   (--theme-shadow-card-hover), not the same token reused for both states. */
 .ux-card-grid {
   display: grid;
-  gap: 20px;
+  gap: var(--space-md);
 }
 
 .ux-card-grid--two {
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  margin-top: 34px;
+  margin-top: var(--space-xl);
 }
 
 .ux-card-grid--three {
@@ -454,22 +450,25 @@ figcaption {
   border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
   transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
 }
 
+/* Display cards (not navigable — these are informational, not links): -3px
+   lift, matching C1/hover-target.display in the DS reference. */
 .ux-card:hover,
 .ux-card:focus-within,
 .ux-influence:hover,
 .ux-influence:focus-within {
   transform: translateY(-3px);
   border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
-  box-shadow: var(--theme-shadow-card);
+  box-shadow: var(--theme-shadow-card-hover);
 }
 
 .ux-card span,
 .ux-influence strong {
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: var(--space-sm);
   font-size: .72rem;
   font-weight: 850;
   letter-spacing: .12em;
@@ -477,7 +476,7 @@ figcaption {
 }
 
 .ux-card h3 {
-  margin-bottom: 16px;
+  margin-bottom: var(--space-sm);
   font-size: 1.08rem;
 }
 
@@ -489,20 +488,20 @@ figcaption {
 }
 
 .ux-narrow .ux-influence {
-  margin-top: 44px;
+  margin-top: var(--space-xl);
 }
 
 
 /* Process */
 
 .ux-process {
-  margin-top: 44px;
-  padding: 32px 0;
+  margin-top: var(--space-xl);
+  padding: var(--space-lg) 0;
   border-top: 1px solid var(--theme-border-soft);
   border-bottom: 1px solid var(--theme-border-soft);
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+  gap: var(--space-md);
 }
 
 .ux-process span {
@@ -518,7 +517,7 @@ figcaption {
 /* Evidence and evaluation */
 
 .ux-evidence {
-  margin-top: 46px;
+  margin-top: var(--space-xl);
 }
 
 .ux-evidence button,
@@ -538,6 +537,12 @@ figcaption {
   object-fit: contain;
 }
 
+/* NOTE: .ux-evaluative / .ux-ia / .ux-usability / .ux-media-row below are
+   one-off layouts predating the L1-L4 system (used by welnest.html and
+   accessibility-support-hub.html). Per Spec Section 3.4, project-specific
+   HTML/CSS retrofits happen in their own phases (Phase 6 ASH, and a future
+   Welnest retrofit), not Phase 2 — so these stay in place as-is rather than
+   being replaced with L1-L4 markup now. Flagged here for that future pass. */
 .ux-evaluative {
   display: grid;
   grid-template-columns: minmax(220px, .27fr) minmax(0, .36fr) minmax(360px, .37fr);
@@ -688,7 +693,7 @@ figcaption {
 /* Design system */
 
 .ux-ds-brand {
-  margin-bottom: 46px;
+  margin-bottom: var(--space-xl);
 }
 
 .ux-ds-list {
@@ -845,6 +850,9 @@ figcaption {
   margin-top: 36px;
 }
 
+/* D05/C4: .ux-related-card is this template's C4 Nav Card (project/related
+   variant). Navigable — it links to another case study — so hover uses the
+   -4px lift, not the -3px display lift used by .ux-card above. */
 .ux-related-card {
   min-height: 290px;
   display: grid;
@@ -1065,8 +1073,12 @@ figcaption {
   .ux-hero__inner {
     min-height: auto;
   }
+  /* D16: the absolutely-positioned .ux-hero__top tag row can overlap the
+     H1 on narrow screens if the top padding here is too tight. Add
+     --space-xl on top of the existing 94px baseline (not a replacement —
+     replacing it previously caused tag/title overlap in testing). */
   .ux-hero__inner {
-    padding: 94px 0 72px;
+    padding: calc(94px + var(--space-xl)) 0 72px;
   }
   .ux-hero h1 {
     font-size: clamp(2.65rem, 12vw, 4.2rem);

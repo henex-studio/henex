@@ -311,7 +311,7 @@
   align-items: center;
   padding: 42px;
   border: 1px solid rgba(60, 140, 244, 0.20);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
   box-shadow: var(--theme-shadow-card);
 }

@@ -210,6 +210,11 @@
 
 /* Cards */
 
+/* D05/C1/C4: .capability-card and .dimension-card are C1 Standard Card
+   variants (icon and dimension respectively); .project-card is the C4 Nav
+   Card project variant. All three already carry the default-state
+   --theme-shadow-card here — this satisfies D05 ("all cards get a default
+   shadow, not just on hover"). */
 .capability-card,
 .dimension-card,
 .project-card {
@@ -335,7 +340,7 @@
 }
 
 .dimension-card__label {
-  margin-bottom: 12px;
+  margin-bottom: var(--space-sm);
   color: currentColor;
   font-size: 0.8rem;
   font-weight: 800;
@@ -442,12 +447,12 @@
 
 .works-layout {
   display: grid;
-  gap: 20px;
+  gap: var(--space-md);
 }
 
 .work-group {
   display: grid;
-  gap: 14px;
+  gap: var(--space-sm);
 }
 
 .mini-section-title {
@@ -602,7 +607,7 @@
 }
 
 .project-card__meta {
-  margin-bottom: 14px;
+  margin-bottom: var(--space-sm);
   color: var(--theme-muted);
   font-size: 0.75rem;
   font-weight: 800;
@@ -611,16 +616,16 @@
 }
 
 .project-card__body p:not(.project-card__meta) {
-  margin-top: 12px;
+  margin-top: var(--space-sm);
   color: var(--theme-text-soft);
 }
 
 .tag-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--space-xs);
   margin-top: auto;
-  padding-top: 22px;
+  padding-top: var(--space-lg);
 }
 
 .tag {
@@ -638,8 +643,11 @@
 .tag-dot--emotion { background: var(--color-emotion); }
 .tag-dot--nature  { background: var(--color-nature); }
 
+/* D16: this CTA sits directly below a card grid — spec called out cards
+   sitting too close to the CTA below them, so this needs a full step up
+   from the DS spacing scale, not a small nudge. */
 .section-cta {
-  margin-top: 12px;
+  margin-top: var(--space-xl);
 }
 
 .img-placeholder {
@@ -816,7 +824,7 @@
 .works-archive-card {
   padding: 42px;
   border: 1px solid var(--theme-border-soft);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-lg);
   background: var(--theme-bg);
   box-shadow: var(--theme-shadow-card);
 }
