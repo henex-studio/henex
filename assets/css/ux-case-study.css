@@ -197,7 +197,25 @@ body.ux-modal-open {
 }
 
 
-/* Accessibility Support Hub — gradient mode (no cover image) */
+/* Accessibility Support Hub — gradient mode, stronger tint */
+.ux-case-page--support-hub .ux-hero {
+  background:
+    radial-gradient(circle at 12% 24%, color-mix(in srgb, var(--ux-theme) 36%, transparent), transparent 38%),
+    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, .54), transparent 30%),
+    linear-gradient(140deg,
+      color-mix(in srgb, var(--ux-soft) 90%, white),
+      color-mix(in srgb, var(--ux-soft) 60%, var(--theme-bg)) 54%,
+      var(--theme-bg));
+}
+[data-theme=dark] .ux-case-page--support-hub .ux-hero {
+  background:
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--ux-theme) 44%, transparent), transparent 42%),
+    radial-gradient(circle at 88% 20%, color-mix(in srgb, var(--ux-theme) 28%, transparent), transparent 38%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--ux-dark) 92%, black),
+      var(--ux-dark) 58%,
+      color-mix(in srgb, var(--ux-dark) 88%, black));
+}
 .ux-case-page--support-hub .ux-hero__mark {
   display: none;
 }
