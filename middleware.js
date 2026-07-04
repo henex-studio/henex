@@ -5,6 +5,9 @@
 // IMPORTANT: must be a default export for Vercel to detect this as middleware.
 
 export default function middleware(request) {
+  // Skip password protection on Preview deployments (Hobby plan cannot set Preview env vars)
+  if (process.env.VERCEL_ENV === 'preview') return
+
   const url = new URL(request.url)
   const cookieHeader = request.headers.get('cookie') || ''
 
