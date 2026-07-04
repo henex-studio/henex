@@ -48,11 +48,16 @@ body.ux-modal-open {
     linear-gradient(140deg, var(--ux-pale), color-mix(in srgb, var(--ux-soft) 76%, var(--theme-bg)) 54%, var(--theme-bg));
 }
 
+/* D17: dark hero uses --ux-theme / --ux-dark so each project automatically
+   gets its own branded dark gradient without per-case overrides. */
 [data-theme=dark] .ux-hero {
   background:
-    radial-gradient(circle at 18% 18%, rgba(19, 131, 138, .26), transparent 38%),
-    radial-gradient(circle at 88% 20%, rgba(19, 131, 138, .14), transparent 34%),
-    linear-gradient(135deg, #071211 0%, #0B2424 46%, #081010 100%);
+    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--ux-theme) 26%, transparent), transparent 38%),
+    radial-gradient(circle at 88% 20%, color-mix(in srgb, var(--ux-theme) 14%, transparent), transparent 34%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--ux-dark, var(--theme-text)) 92%, black),
+      var(--ux-dark, var(--theme-text)) 58%,
+      color-mix(in srgb, var(--ux-dark, var(--theme-text)) 88%, black));
 }
 
 
@@ -105,9 +110,9 @@ body.ux-modal-open {
 }
 
 [data-theme=dark] .ux-tags span {
-  background: rgba(244, 251, 250, .08);
-  border-color: rgba(244, 251, 250, .2);
-  color: #8FD4D0;
+  background: color-mix(in srgb, var(--ux-theme) 10%, transparent);
+  border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border));
+  color: color-mix(in srgb, var(--ux-theme) 62%, white);
 }
 
 .ux-hero h1 {
@@ -142,15 +147,15 @@ body.ux-modal-open {
   max-width: none;
   transform: translateY(-48%);
   opacity: .78;
-  filter: drop-shadow(0 20px 38px rgba(19, 131, 138, .16));
+  filter: drop-shadow(0 20px 38px color-mix(in srgb, var(--ux-theme) 16%, transparent));
 }
 
 [data-theme=dark] .ux-hero h1 {
-  color: #F4FBFA;
+  color: var(--hero-text);
 }
 
 [data-theme=dark] .ux-hero__copy p {
-  color: rgba(244, 251, 250, .78);
+  color: var(--hero-text-soft);
 }
 
 [data-theme=dark] .ux-hero__mark {
