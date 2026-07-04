@@ -202,7 +202,7 @@ body.ux-modal-open {
   --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/hero-bg.png");
 }
 .ux-case-page--support-hub .ux-hero {
-  background-position: center right;
+  background: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/hero-bg.png") center right / cover no-repeat;
 }
 .ux-case-page--support-hub .ux-hero__mark {
   display: none;
