@@ -211,6 +211,31 @@ body.ux-modal-open {
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 5%, var(--theme-surface)), var(--theme-bg) 78%);
 }
 
+/* L1 editorial section header: kicker + title on the left, description on
+   the right. Full-width content flows below. This is the primary section
+   layout from the VTH reference page (Spec B2). The header row is a grid;
+   the content area below is normal document flow within .ux-section. */
+.ux-section-head {
+  display: grid;
+  grid-template-columns: minmax(200px, .36fr) minmax(0, .64fr);
+  gap: var(--space-lg) var(--space-xl);
+  align-items: start;
+  margin-bottom: var(--space-xl);
+}
+
+.ux-section-head__title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.ux-section-head__desc {
+  padding-top: 6px;
+  color: var(--theme-text-soft);
+  font-size: clamp(1.02rem, 1.35vw, 1.18rem);
+  line-height: 1.6;
+}
+
 /* L2 layout mode: persistent narrow aside + wide content column, running
    side-by-side for the full section (DS Visual Reference v2, Section E). */
 .ux-two-col {
@@ -321,11 +346,22 @@ body.ux-modal-open {
   font-weight: 650;
 }
 
-.ux-video-grid {
+/* L3 base: two-column content + media layout. All L3 classes share
+   display, alignment, and collapse to single column at 1180px.
+   Individual classes define their own column ratio, gap, and spacing. */
+.ux-video-grid,
+.ux-media-row,
+.ux-problem__grid,
+.ux-solution__grid,
+.ux-feature,
+.ux-ds-module {
   display: grid;
+  align-items: center;
+}
+
+.ux-video-grid {
   grid-template-columns: minmax(260px, .32fr) minmax(0, 1fr);
   gap: 42px;
-  align-items: center;
 }
 
 .ux-video {
@@ -338,10 +374,8 @@ body.ux-modal-open {
 }
 
 .ux-media-row {
-  display: grid;
   grid-template-columns: minmax(0, .66fr) minmax(280px, .34fr);
   gap: 64px;
-  align-items: center;
 }
 
 .ux-media-row img,
@@ -377,12 +411,10 @@ figcaption {
 }
 
 /* L3 layout mode: content + media, running side-by-side (DS Visual
-   Reference v2, Section E). */
+   Reference v2, Section E). Base shared properties defined above. */
 .ux-problem__grid {
-  display: grid;
   grid-template-columns: minmax(0, .67fr) minmax(280px, .33fr);
   gap: clamp(34px, 6vw, 84px);
-  align-items: center;
   margin-bottom: var(--space-xl);
 }
 
@@ -430,10 +462,8 @@ figcaption {
 }
 
 .ux-solution__grid {
-  display: grid;
   grid-template-columns: minmax(0, .78fr) minmax(320px, 1fr);
   gap: clamp(34px, 7vw, 90px);
-  align-items: center;
 }
 
 
@@ -673,10 +703,8 @@ figcaption {
 }
 
 .ux-feature {
-  display: grid;
   grid-template-columns: minmax(0, .38fr) minmax(420px, .62fr);
   gap: 56px;
-  align-items: center;
   padding-top: 56px;
 }
 
@@ -710,10 +738,8 @@ figcaption {
 }
 
 .ux-ds-module {
-  display: grid;
   grid-template-columns: minmax(0, .64fr) minmax(240px, .36fr);
   gap: 36px;
-  align-items: center;
   padding-top: 36px;
 }
 
@@ -1012,6 +1038,7 @@ figcaption {
   .ux-hero__mark {
     width: clamp(360px, 38vw, 520px);
   }
+  .ux-section-head,
   .ux-two-col,
   .ux-media-row,
   .ux-problem__grid,

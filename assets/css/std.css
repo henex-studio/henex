@@ -158,6 +158,12 @@
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, .12);
   box-shadow: 0 20px 54px rgba(12, 23, 94, .18);
+  transition: border-color 180ms ease;
+}
+
+.studier-solution-cards article:hover,
+.studier-solution-cards article:focus-within {
+  border-color: rgba(255, 255, 255, .52);
 }
 .studier-feature-stack {
   display: grid;
