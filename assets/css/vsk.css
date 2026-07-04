@@ -9,27 +9,7 @@
   --vsk-navy: #242947;
 }
 
-/* Hero */
-.ux-case-page--background-hero .ux-hero {
-  min-height: auto;
-  display: block;
-  overflow: hidden;
-  padding-top: clamp(128px, 14vw, 190px);
-  padding-bottom: clamp(88px, 10vw, 140px);
-}
-.ux-case-page--background-hero .ux-hero__inner {
-  display: block;
-  position: relative;
-  z-index: 1;
-  min-height: auto;
-  padding: 0;
-}
-.ux-case-page--background-hero .ux-hero__copy {
-  max-width: min(900px, 60vw);
-}
-.ux-case-page--background-hero .ux-hero h1 {
-  white-space: normal;
-}
+/* Hero — layout modifier now in ux-case-study.css */
 .ux-case-page--voting-starter-kit.ux-case-page--background-hero .ux-hero {
   background:
     linear-gradient(90deg, rgba(255, 96, 0, .72) 0%, rgba(255, 96, 0, .54) 38%, rgba(255, 208, 170, .28) 68%, rgba(255, 248, 242, .08) 100%),
@@ -474,9 +454,6 @@
 
 /* Responsive: 1180px */
 @media (max-width: 1180px) {
-  .ux-case-page--background-hero .ux-hero__copy {
-    max-width: 100%;
-  }
   .vsk-problem-grid,
   .ux-case-page--voting-starter-kit .ux-solution__grid,
   .vsk-concept-stack article,
@@ -501,10 +478,6 @@
 
 /* Responsive: 640px */
 @media (max-width: 640px) {
-  .ux-case-page--background-hero .ux-hero {
-    padding-top: clamp(96px, 16vw, 128px);
-    padding-bottom: clamp(72px, 12vw, 104px);
-  }
   .ux-principle-grid {
     grid-template-columns: 1fr;
   }

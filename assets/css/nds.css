@@ -79,9 +79,6 @@
   color: var(--case-red);
 }
 
-.ux-case-page--new-world .ux-hero h1 {
-  white-space: normal;
-}
 
 .ux-case-page--new-world .ux-kicker,
 .ux-case-page--new-world .ux-intro p,

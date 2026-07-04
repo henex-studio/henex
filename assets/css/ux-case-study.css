@@ -116,17 +116,16 @@ body.ux-modal-open {
 }
 
 .ux-hero h1 {
-  color: var(--ux-dark);
+  color: var(--hero-title, var(--ux-dark));
   font-size: clamp(3.4rem, 5.2vw, 6rem);
   line-height: 1;
   letter-spacing: -.045em;
-  white-space: nowrap;
 }
 
 .ux-hero__copy p {
   max-width: 760px;
   margin-top: 28px;
-  color: var(--theme-text-soft);
+  color: var(--hero-desc, var(--theme-text-soft));
   font-size: clamp(1.1rem, 1.7vw, 1.42rem);
   line-height: 1.48;
 }
@@ -151,11 +150,11 @@ body.ux-modal-open {
 }
 
 [data-theme=dark] .ux-hero h1 {
-  color: var(--hero-text);
+  color: var(--hero-title, var(--hero-text));
 }
 
 [data-theme=dark] .ux-hero__copy p {
-  color: var(--hero-text-soft);
+  color: var(--hero-desc, var(--hero-text-soft));
 }
 
 [data-theme=dark] .ux-hero__mark {
@@ -163,6 +162,37 @@ body.ux-modal-open {
   filter: drop-shadow(0 24px 48px rgba(0, 0, 0, .28));
 }
 
+
+/* Cover mode: pure background image, no gradient overlay.
+   Set --hero-img on the page wrapper to use. Light and dark share the
+   same image. Text colour comes from --hero-title / --hero-desc. */
+.ux-hero--cover {
+  background: var(--hero-img) center / cover no-repeat;
+}
+[data-theme=dark] .ux-hero--cover {
+  background: var(--hero-img) center / cover no-repeat;
+}
+
+/* Background-hero layout modifier: switches hero from flex to block,
+   uses padding instead of min-height for vertical sizing. Used by projects
+   whose hero is a full-bleed background image with text overlay (VSK, WSO). */
+.ux-case-page--background-hero .ux-hero {
+  min-height: auto;
+  display: block;
+  overflow: hidden;
+  padding-top: clamp(128px, 14vw, 190px);
+  padding-bottom: clamp(88px, 10vw, 140px);
+}
+.ux-case-page--background-hero .ux-hero__inner {
+  display: block;
+  position: relative;
+  z-index: 1;
+  min-height: auto;
+  padding: 0;
+}
+.ux-case-page--background-hero .ux-hero__copy {
+  max-width: min(900px, 60vw);
+}
 
 
 /* Accessibility Support Hub image hero */
@@ -1034,11 +1064,11 @@ figcaption {
 /* Responsive: 1180px — wide layout collapse */
 
 @media (max-width: 1180px) {
-  .ux-hero h1 {
-    white-space: normal;
-  }
   .ux-hero__copy {
     max-width: 720px;
+  }
+  .ux-case-page--background-hero .ux-hero__copy {
+    max-width: 100%;
   }
   .ux-hero__mark {
     width: clamp(360px, 38vw, 520px);
@@ -1106,6 +1136,10 @@ figcaption {
   .ux-hero,
   .ux-hero__inner {
     min-height: auto;
+  }
+  .ux-case-page--background-hero .ux-hero {
+    padding-top: clamp(96px, 16vw, 128px);
+    padding-bottom: clamp(72px, 12vw, 104px);
   }
   /* D16: the absolutely-positioned .ux-hero__top tag row can overlap the
      H1 on narrow screens if the top padding here is too tight. Add
