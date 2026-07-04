@@ -51,20 +51,9 @@
   color: var(--theme-muted);
 }
 
-/* Hero: hero.png is the brand yellow background with the Welnest logo mark, used as-is.
-   Text sits directly on the yellow, so it needs the neutral dark for AA contrast, no shadow. */
-.ux-case-page--welnest .ux-hero {
-  background:
-    url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/hero.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.ux-case-page--welnest .ux-hero h1 {
-  color: var(--ux-dark);
-}
-.ux-case-page--welnest .ux-hero__copy p {
-  color: var(--ux-theme);
+/* Hero */
+.ux-case-page--welnest {
+  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/hero.png");
 }
 
 /* Preview image: replaces video, must show the full image without cropping. No background

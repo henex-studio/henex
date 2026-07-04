@@ -15,21 +15,9 @@
   --ux-pale: #F3F9F5;
 }
 
-/* ─── Hero — full-bleed background, no dark overlay, dark title for contrast ─── */
-.rkt-hero {
-  background: url('https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png') center / cover no-repeat;
-}
-
-[data-theme="dark"] .rkt-hero {
-  background: url('https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png') center / cover no-repeat;
-}
-
-.rkt-hero .ux-hero__copy h1 {
-  color: #0A3429;
-}
-
-.rkt-hero .ux-hero__copy p {
-  color: #243B33;
+/* ─── Hero ─── */
+.ux-case-page--rekraft {
+  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png");
 }
 
 /* ─── Kicker — decorative accent colour in MAIN content sections only ─── */

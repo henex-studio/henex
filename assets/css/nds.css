@@ -19,27 +19,11 @@
 
 
 /* Hero */
-
-.ux-case-page--new-world .ux-hero {
-  background:
-    linear-gradient(90deg, rgba(255, 247, 247, .98) 0%, rgba(255, 247, 247, .94) 38%, rgba(255, 247, 247, .72) 58%, rgba(255, 247, 247, .20) 100%),
-    url("../img/projects/nds/hero-bg.webp"),
-    radial-gradient(circle at 12% 24%, rgba(225, 26, 44, .16), transparent 34%),
-    linear-gradient(142deg, #FFF7F7, #FFF0F1 52%, var(--theme-bg));
-  background-size: cover, cover, auto, auto;
-  background-position: center center, center right, center, center;
-  background-repeat: no-repeat;
+.ux-case-page--new-world {
+  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/hero-bg.webp");
 }
-
-[data-theme="dark"] .ux-case-page--new-world .ux-hero {
-  background:
-    linear-gradient(90deg, rgba(23, 7, 10, .96) 0%, rgba(23, 7, 10, .90) 42%, rgba(23, 7, 10, .58) 68%, rgba(23, 7, 10, .24) 100%),
-    url("../img/projects/nds/hero-bg.webp"),
-    radial-gradient(circle at 18% 18%, rgba(225, 26, 44, .26), transparent 38%),
-    linear-gradient(135deg, #17070A 0%, #2A070D 48%, #100609 100%);
-  background-size: cover, cover, auto, auto;
-  background-position: center center, center right, center, center;
-  background-repeat: no-repeat;
+.ux-case-page--new-world .ux-hero {
+  background-position: center right;
 }
 
 .ux-case-page--new-world .system-hero {
@@ -69,7 +53,6 @@
 
 /* Theme overrides */
 
-.ux-case-page--new-world .ux-hero h1,
 .ux-case-page--new-world .ux-intro h2,
 .ux-case-page--new-world .ux-wide-head h2,
 .ux-case-page--new-world .ux-copy h2,

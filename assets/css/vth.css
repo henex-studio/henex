@@ -9,24 +9,12 @@
   --vth-cyan: #00BDF2;
   --vth-red: #B30D0D;
 }
-.vth-hero {
-  background: url("../img/projects/vth/hero-bg.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
+.ux-case-page--victim-hub {
+  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/hero-bg.png");
 }
-[data-theme=dark] .vth-hero {
-  background: url("../img/projects/vth/hero-bg.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
+.vth-hero { background-position: center right; }
 .vth-hero__inner { grid-template-columns:1fr; }
 .vth-hero__copy { max-width:960px; }
-.vth-hero .ux-hero__copy h1 { color:#00164B; }
-.vth-hero .ux-hero__copy p { max-width:760px; color:color-mix(in srgb,#00164B 72%,var(--theme-text-soft)); }
-[data-theme=dark] .vth-hero .ux-hero__copy h1 { color:#00164B; }
-[data-theme=dark] .vth-hero .ux-hero__copy p { color:color-mix(in srgb,#00164B 72%,#FFFFFF); }
 /* Keep the browser video element at its intrinsic height. Do not force a frame ratio, because the source video already has the correct ratio and forcing aspect-ratio creates letterboxing in the native player. */
 .ux-case-page--victim-hub video.ux-video.vth-video {
   display:block;

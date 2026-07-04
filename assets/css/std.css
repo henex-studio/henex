@@ -16,33 +16,15 @@
 [data-theme="dark"] .ux-case-page--studier figcaption {
   color: color-mix(in srgb, #9DB4FF 70%, var(--theme-text-soft));
 }
+/* Hero — gradient background mode (no cover image) */
 .studier-hero {
-  background:
-    linear-gradient(145deg, #EFF5FF 0%, #E4ECFF 52%, #F1EEFF 100%);
+  background: linear-gradient(135deg, #D6DEFF 0%, #E0DAFF 52%, #EDE5FF 100%);
 }
 [data-theme="dark"] .studier-hero {
   background: linear-gradient(145deg, #060A1F 0%, #0B1237 58%, #111042 100%);
 }
-.studier-hero__inner {
-  display: flex;
-  align-items: center;
-  min-height: 610px;
-}
 .studier-hero__copy {
   max-width: min(960px, 76vw);
-}
-.studier-hero__copy h1 {
-  width: fit-content;
-  background: var(--std-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.studier-hero__copy p {
-  color: color-mix(in srgb, var(--std-ink) 72%, var(--theme-text-soft));
-}
-[data-theme="dark"] .studier-hero__copy p {
-  color: rgba(238, 244, 255, .82);
 }
 .studier-problem {
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 7%, var(--theme-surface)), var(--theme-bg) 80%);

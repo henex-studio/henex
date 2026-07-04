@@ -116,7 +116,7 @@ body.ux-modal-open {
 }
 
 .ux-hero h1 {
-  color: var(--hero-title, var(--ux-dark));
+  color: var(--theme-text);
   font-size: clamp(3.4rem, 5.2vw, 6rem);
   line-height: 1;
   letter-spacing: -.045em;
@@ -125,7 +125,7 @@ body.ux-modal-open {
 .ux-hero__copy p {
   max-width: 760px;
   margin-top: 28px;
-  color: var(--hero-desc, var(--theme-text-soft));
+  color: var(--theme-text-soft);
   font-size: clamp(1.1rem, 1.7vw, 1.42rem);
   line-height: 1.48;
 }
@@ -150,11 +150,11 @@ body.ux-modal-open {
 }
 
 [data-theme=dark] .ux-hero h1 {
-  color: var(--hero-title, var(--hero-text));
+  color: var(--hero-text);
 }
 
 [data-theme=dark] .ux-hero__copy p {
-  color: var(--hero-desc, var(--hero-text-soft));
+  color: var(--hero-text-soft);
 }
 
 [data-theme=dark] .ux-hero__mark {
@@ -165,12 +165,13 @@ body.ux-modal-open {
 
 /* Cover mode: pure background image, no gradient overlay.
    Set --hero-img on the page wrapper to use. Light and dark share the
-   same image. Text colour comes from --hero-title / --hero-desc. */
-.ux-hero--cover {
-  background: var(--hero-img) center / cover no-repeat;
-}
+   same image. Override background-position per project if needed. */
+.ux-hero--cover,
 [data-theme=dark] .ux-hero--cover {
-  background: var(--hero-img) center / cover no-repeat;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Background-hero layout modifier: switches hero from flex to block,
@@ -195,39 +196,15 @@ body.ux-modal-open {
 }
 
 
-/* Accessibility Support Hub image hero */
+/* Accessibility Support Hub */
+.ux-case-page--support-hub {
+  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/hero-bg.png");
+}
 .ux-case-page--support-hub .ux-hero {
-  background: url("../img/projects/ash/hero-bg.png");
-  background-size: cover;
   background-position: center right;
-  background-repeat: no-repeat;
 }
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero {
-  background: url("../img/projects/ash/hero-bg.png");
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
-}
-
-.ux-case-page--support-hub .ux-hero h1 {
-  color: var(--ux-dark);
-}
-
-.ux-case-page--support-hub .ux-hero__copy p {
-  color: color-mix(in srgb, var(--ux-dark) 70%, var(--theme-text-soft));
-}
-
 .ux-case-page--support-hub .ux-hero__mark {
   display: none;
-}
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero h1 {
-  color: var(--ux-dark);
-}
-
-[data-theme=dark] .ux-case-page--support-hub .ux-hero__copy p {
-  color: color-mix(in srgb, var(--ux-dark) 72%, #FFFFFF);
 }
 
 @media (max-width: 640px) {
