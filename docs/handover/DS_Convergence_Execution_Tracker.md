@@ -81,7 +81,7 @@ Gate: User approved.
 
 | # | Item | Spec Ref | Priority | Dependency |
 |---|------|----------|----------|------------|
-| R1 | Section component audit | Template Spec Part C step 2 | HIGH — blocks R2 | None |
+| R1 | Section component audit | Template Spec Part C step 2 | HIGH — blocks R2 | **DONE 2026-07-05** |
 | R2 | Per-project CSS cleanup | Template Spec Part C step 5 | HIGH | R1 |
 | R3 | Master doc update (`HENEX_Master_v1.4.md`) | — | MEDIUM | R1, R2 |
 | R4 | Architecture pages (BT2 + 4 new arch pages) | — | LOW | None (independent track) |
@@ -93,7 +93,12 @@ Gate: User approved.
 3. R3: Master doc update → record all DS convergence changes
 4. R4: Architecture pages → DS adapt BT2 and new arch pages
 
-R1 is in progress as of 2026-07-05.
+R1 completed 2026-07-05. Deliverables:
+- `docs/specs/DS_Section_Component_Audit_v1.md` — audit findings + shared pattern catalog
+- `assets/css/ux-case-study.css` — 18 shared component classes added (section tiers, feedback grid, icon card, gallery, swatch, card stack, component row, scroll viewport, scope block, chip flow, showcase figure) with responsive rules at 1180/640/520px
+- All additions are additive-only; no existing classes modified
+
+R2 (per-project CSS cleanup) is next.
 
 ---
 
