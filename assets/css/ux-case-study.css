@@ -168,7 +168,11 @@ body.ux-modal-open {
    same image. Override background-position per project if needed. */
 .ux-hero--cover,
 [data-theme=dark] .ux-hero--cover {
-  background: var(--hero-img) center / cover no-repeat;
+  background: none;
+  background-image: var(--hero-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Background-hero layout modifier: switches hero from flex to block,
