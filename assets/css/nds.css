@@ -1,5 +1,11 @@
 /* New World Design System case styles.
-   Dependencies: global.css, ux-case-study.css */
+   Dependencies: global.css, ux-case-study.css
+
+   Shared layout classes (ux-feedback-grid, ux-icon-card, ux-gallery,
+   ux-swatch-grid, ux-component-row, ux-scope-block, ux-chip-flow,
+   ux-scroll-viewport, ux-card-stack, ux-showcase-figure) are defined
+   in ux-case-study.css. This file contains only NDS-specific theming
+   and unique section layouts. */
 
 .ux-case-page--new-world {
   --case-red: #E11A2C;
@@ -51,7 +57,7 @@
 }
 
 
-/* Theme overrides */
+/* Theme colour overrides */
 
 .ux-case-page--new-world .ux-intro h2,
 .ux-case-page--new-world .ux-wide-head h2,
@@ -61,7 +67,6 @@
 .ux-case-page--new-world .ux-retro h3 {
   color: var(--case-red);
 }
-
 
 .ux-case-page--new-world .ux-kicker,
 .ux-case-page--new-world .ux-intro p,
@@ -88,12 +93,12 @@
 }
 
 
-/* DS theme */
+/* DS purple theme — overrides --ux-theme so all shared classes inherit purple */
 
 .system-theme-ds {
-  --section-theme: var(--nds-purple);
-  --section-theme-hover: var(--nds-purple-hover);
-  --section-theme-soft: var(--nds-purple-soft);
+  --ux-theme: var(--nds-purple);
+  --ux-dark: var(--nds-purple-hover);
+  --ux-soft: var(--nds-purple-soft);
 }
 
 .system-theme-ds .ux-wide-head h2,
@@ -103,11 +108,15 @@
 .system-theme-ds .system-foundation-card h3,
 .system-theme-ds .system-component-demo h3,
 .system-theme-ds .system-spec-tile b {
-  color: var(--section-theme);
+  color: var(--ux-theme);
+}
+
+.system-theme-ds .ux-scope-block h3 {
+  color: var(--ux-theme);
 }
 
 .system-theme-ds figcaption {
-  color: color-mix(in srgb, var(--section-theme) 58%, var(--theme-text-soft));
+  color: color-mix(in srgb, var(--ux-theme) 58%, var(--theme-text-soft));
 }
 
 .system-video .ux-video {
@@ -144,8 +153,7 @@
 }
 
 .system-problem-cards .ux-card h3,
-.system-audit-section .ux-card h3,
-.system-principle-card h3 {
+.system-audit-section .ux-card h3 {
   color: var(--case-red);
 }
 
@@ -191,11 +199,10 @@
 }
 
 .system-solution__figure img,
-.system-showcase__figure img,
+.ux-showcase-figure img,
 .system-component-media img,
 .system-evidence-image img,
-.system-detail-gallery img,
-.system-typography-image-grid img {
+.ux-gallery img {
   width: 100%;
   height: auto;
   display: block;
@@ -204,78 +211,6 @@
 
 .system-showcase .ux-wide-head {
   margin-bottom: 40px;
-}
-
-.system-showcase__figure {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.system-showcase__figure img {
-  border-radius: var(--radius-lg);
-  box-shadow: var(--theme-shadow-card);
-}
-
-
-/* Feedback */
-
-.system-feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-}
-
-/* C1 base (border, radius, shadow) is in global.css. */
-.system-feedback-card {
-  min-height: 190px;
-  padding: 30px;
-  border-color: color-mix(in srgb, var(--case-red) 22%, var(--theme-border-soft));
-  background:
-    radial-gradient(circle at 12% 12%, rgba(225, 26, 44, .08), transparent 34%),
-    color-mix(in srgb, var(--case-red-soft) 50%, var(--theme-surface));
-}
-
-.system-feedback-card:hover,
-.system-feedback-card:focus-within {
-  border-color: color-mix(in srgb, var(--case-red) 42%, var(--theme-border));
-}
-
-.system-feedback-icon {
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--case-red-soft) 72%, var(--theme-surface));
-  color: var(--case-red);
-}
-
-.system-feedback-icon svg {
-  width: 25px;
-  height: 25px;
-  display: block;
-}
-
-.system-feedback-icon circle,
-.system-feedback-icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.system-feedback-card p {
-  margin: 0;
-  color: var(--theme-text);
-  font-family: var(--font-heading);
-  font-size: clamp(1.04rem, 1.36vw, 1.24rem);
-  line-height: 1.38;
 }
 
 
@@ -295,7 +230,6 @@
   margin: 42px 0 52px;
 }
 
-/* C1 base (border, radius, shadow) is in global.css. */
 .system-findings-grid article {
   padding: 20px;
   background: var(--theme-surface);
@@ -323,119 +257,13 @@
 }
 
 
-/* Principles */
+/* Principle grid — 3-col layout for icon cards */
 
 .system-principle-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   margin-top: 48px;
-}
-
-/* C1 base (border, radius, shadow) is in global.css. */
-.system-principle-card,
-.system-foundation-card,
-.system-component-demo,
-.system-component-scope {
-  border-color: color-mix(in srgb, var(--case-red) 18%, var(--theme-border-soft));
-  background: var(--theme-surface);
-}
-
-.system-theme-ds .system-foundation-card,
-.system-theme-ds .system-component-demo,
-.system-theme-ds .system-component-scope {
-  border-color: color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
-}
-
-.system-principle-card {
-  padding: 28px;
-}
-
-.system-principle-card:hover,
-.system-principle-card:focus-within {
-  border-color: color-mix(in srgb, var(--case-red) 34%, var(--theme-border));
-}
-
-.system-principle-icon {
-  position: relative;
-  overflow: hidden;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: var(--radius-full);
-  color: var(--case-red);
-  background: color-mix(in srgb, var(--case-red-soft) 72%, var(--theme-surface));
-}
-
-.system-principle-icon svg {
-  display: none;
-  width: 22px;
-  height: 22px;
-}
-
-.system-principle-icon path,
-.system-principle-icon circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.system-principle-icon::before {
-  content: "";
-  width: 24px;
-  height: 24px;
-  display: block;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 24px 24px;
-}
-
-.system-principle-card:nth-child(1) .system-principle-icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='4.5' y='5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='14' y='5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='4.5' y='14.5' width='5.5' height='4.5' rx='1.1'/%3E%3Crect x='14' y='14.5' width='5.5' height='4.5' rx='1.1'/%3E%3Cpath d='M4.5 12h15'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.system-principle-card:nth-child(2) .system-principle-icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='6.5'/%3E%3Ccircle cx='12' cy='12' r='1.7' fill='%23E11A2C' stroke='none'/%3E%3Cpath d='M12 3v3M12 18v3M3 12h3M18 12h3'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.system-principle-card:nth-child(3) .system-principle-icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='5' r='2'/%3E%3Cpath d='M5.5 9h13M12 9v5.2M8.2 20l3.8-5.8L15.8 20'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.system-principle-card:nth-child(4) .system-principle-icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='7' cy='8' r='2.5'/%3E%3Ccircle cx='17' cy='8' r='2.5'/%3E%3Ccircle cx='12' cy='17' r='2.5'/%3E%3Cpath d='M9.2 9.4l2 5.2M14.8 9.4l-2 5.2M9.5 8h5'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.system-principle-card:nth-child(5) .system-principle-icon::before {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23E11A2C' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='5' cy='12' r='2'/%3E%3Ccircle cx='19' cy='12' r='2'/%3E%3Cpath d='M7 12h10'/%3E%3Cpath d='M12 8l4 4-4 4'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.system-principle-card:nth-child(6) .system-principle-icon svg {
-  display: block;
-}
-
-.system-principle-card:nth-child(6) .system-principle-icon::before {
-  display: none;
-}
-
-.system-principle-card h3,
-.system-foundation-card h3,
-.system-component-demo h3,
-.system-microsite-card h3 {
-  margin-bottom: 14px;
-  font-size: 1.16rem;
-}
-
-.system-principle-card p,
-.system-foundation-card p,
-.system-component-demo p {
-  color: var(--theme-text-soft);
-  font-size: .94rem;
-  line-height: 1.58;
 }
 
 
@@ -463,7 +291,6 @@
   margin: 46px 0;
 }
 
-/* C1 base (border, radius, shadow) is in global.css. */
 .system-microsite-card {
   padding: 18px;
   border-color: color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
@@ -474,29 +301,31 @@
   color: var(--nds-purple);
 }
 
-.system-microsite-viewport {
-  max-height: 520px;
-  overflow-y: auto;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--theme-border-soft);
-  background: var(--theme-surface-soft);
-}
 
-.system-microsite-viewport img {
-  width: 100%;
-  display: block;
-}
+/* Foundation and component cards — NDS-specific padded variants */
 
-
-/* Foundation */
-
-.system-foundation-stack {
-  display: grid;
-  gap: 38px;
+.system-foundation-card,
+.system-component-demo {
+  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  background: var(--theme-surface);
 }
 
 .system-foundation-card {
   padding: clamp(30px, 4vw, 46px);
+}
+
+.system-foundation-card h3,
+.system-component-demo h3,
+.system-microsite-card h3 {
+  margin-bottom: 14px;
+  font-size: 1.16rem;
+}
+
+.system-foundation-card p,
+.system-component-demo p {
+  color: var(--theme-text-soft);
+  font-size: .94rem;
+  line-height: 1.58;
 }
 
 .system-swatch-section {
@@ -509,30 +338,9 @@
   font-size: 1rem;
 }
 
-.system-swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
-}
 
-.system-swatch-grid--four {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
+/* Swatch colour values — unique to NDS */
 
-.system-swatch {
-  min-height: 116px;
-  display: grid;
-  align-content: end;
-  gap: 6px;
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, .08);
-  color: #fff;
-}
-
-.system-swatch b     { font-size: .8rem; }
-.system-swatch strong { color: inherit; font-size: .9rem; }
-.system-swatch small  { font-size: .72rem; opacity: .82; }
 .system-swatch--red           { background: #E11A2C; }
 .system-swatch--red-light     { background: #FCD7D7; color: #231F20; }
 .system-swatch--red-dark      { background: #CB1728; }
@@ -547,91 +355,7 @@
 .system-swatch--error         { background: #721C24; }
 
 
-/* Typography and gallery */
-
-.system-typography-image-grid,
-.system-detail-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 30px;
-}
-
-.system-typography-image-grid,
-.system-detail-gallery--two {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.system-typography-image-grid figure,
-.system-detail-gallery figure,
-.system-evidence-image {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-}
-
-.system-detail-gallery--stacked {
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-
-/* Component scope */
-
-.system-component-scope {
-  padding: clamp(24px, 3.5vw, 36px);
-  margin: 0 0 64px;
-}
-
-.system-component-scope h3 {
-  color: var(--nds-purple);
-  margin-bottom: 14px;
-}
-
-.system-component-scope p {
-  max-width: 980px;
-  color: var(--theme-text-soft);
-  font-size: 1.02rem;
-  line-height: 1.66;
-}
-
-.system-scope-flow {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.system-scope-flow span {
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 15px;
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--nds-purple-soft) 72%, var(--theme-surface));
-  border: 1px solid color-mix(in srgb, var(--nds-purple) 22%, var(--theme-border));
-  color: var(--nds-purple);
-  font-weight: 850;
-  font-size: .88rem;
-}
-
-
-/* Component stack */
-
-.system-component-stack {
-  display: grid;
-  gap: 86px;
-}
-
-.system-component-row {
-  display: grid;
-  grid-template-columns: minmax(260px, .34fr) minmax(0, .66fr);
-  gap: 56px;
-  align-items: start;
-  padding-top: 58px;
-}
+/* Component demo variants */
 
 .system-component-demo {
   padding: clamp(24px, 3vw, 36px);
@@ -679,11 +403,8 @@
 [data-theme="dark"] .system-solution__figure,
 [data-theme="dark"] .system-foundation-card,
 [data-theme="dark"] .system-component-demo,
-[data-theme="dark"] .system-principle-card,
-[data-theme="dark"] .system-feedback-card,
 [data-theme="dark"] .system-microsite-card,
-[data-theme="dark"] .system-findings-grid article,
-[data-theme="dark"] .system-component-scope {
+[data-theme="dark"] .system-findings-grid article {
   background: var(--theme-surface);
 }
 
@@ -691,18 +412,10 @@
 /* Responsive: 1180px */
 
 @media (max-width: 1180px) {
-  .system-feedback-grid,
-  .system-principle-grid,
   .system-findings-grid,
   .system-microsite-grid,
-  .system-component-row,
-  .system-detail-gallery,
-  .system-typography-image-grid {
+  .system-principle-grid {
     grid-template-columns: 1fr;
-  }
-  .system-swatch-grid,
-  .system-swatch-grid--four {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -718,17 +431,11 @@
     max-width: 100%;
   }
   .system-foundation-card,
-  .system-component-demo,
-  .system-feedback-card,
-  .system-principle-card {
+  .system-component-demo {
     padding: 22px;
   }
-  .system-microsite-viewport {
+  .system-microsite-card .ux-scroll-viewport {
     max-height: 440px;
-  }
-  .system-swatch-grid,
-  .system-swatch-grid--four {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -736,7 +443,7 @@
 /* Responsive: 520px */
 
 @media (max-width: 520px) {
-  .system-microsite-viewport {
+  .system-microsite-card .ux-scroll-viewport {
     max-height: 360px;
   }
 }

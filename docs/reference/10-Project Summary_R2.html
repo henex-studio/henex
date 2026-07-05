@@ -1,0 +1,939 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>NZ Police Victims Hub, Project Page</title><link rel="preconnect" href="https://cdn.jsdelivr.net"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"><style>
+:root{--navy:#00164B;--footer-navy:#001744;--blue:#223D92;--blue-mid:#0E488D;--blue-light:#DFEDF7;--blue-tint:#EEF5FB;--red:#B30D0D;--red-dark:#8F0A0A;--red-light:#FDE8E8;--bg:#F4F4F4;--surface:#fff;--surface-alt:#fff;--border:#E6E6E6;--text:#1A1A1A;--meta:#555;--font:"Source Sans Pro",Arial,sans-serif;--max:1120px;--shadow:0 4px 12px rgba(0,0,0,.1);--focus:0 0 0 3px rgba(0,189,242,.32)}
+html[data-theme="dark"]{--bg:#081126;--surface:#0E1730;--surface-alt:#101A34;--border:#2F4678;--text:#F5F7FB;--meta:#C8D0E0;--blue-tint:#132447;--blue-light:#2F4678;--footer-navy:#050B1C;--shadow:0 4px 14px rgba(0,0,0,.38)}
+@media(prefers-color-scheme:dark){html:not([data-theme="light"]){--bg:#081126;--surface:#0E1730;--surface-alt:#101A34;--border:#2F4678;--text:#F5F7FB;--meta:#C8D0E0;--blue-tint:#132447;--blue-light:#2F4678;--footer-navy:#050B1C;--shadow:0 4px 14px rgba(0,0,0,.38)}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);font-family:var(--font);font-size:16px;line-height:1.5;color:var(--text)}.container{width:min(100% - 48px,var(--max));margin:0 auto}a{color:var(--blue-mid)}a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--focus);border-radius:3px}.skip-link{position:absolute;left:-999px;top:16px;z-index:100;background:var(--surface);border:1px solid var(--border);padding:10px 14px;font-weight:700}.skip-link:focus{left:16px}.site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--surface) 96%,transparent);border-bottom:1px solid var(--border);backdrop-filter:blur(10px)}.site-header__inner{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:16px;padding:14px 0}.brand{font-weight:700;color:var(--navy);white-space:nowrap}.site-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;font-size:14px;font-weight:700}.site-nav a{text-decoration:none;color:var(--blue-mid)}.site-nav a:hover{text-decoration:underline}.theme-toggle{display:inline-flex;align-items:center;border:1px solid var(--border);background:var(--surface-alt);color:var(--navy);border-radius:20px;padding:6px 10px;cursor:pointer}.theme-toggle .ti{font-size:18px}.theme-toggle .moon{display:none}html[data-theme="dark"] .theme-toggle .sun{display:none}html[data-theme="dark"] .theme-toggle .moon{display:inline-block}.phase-pill{background:var(--red-light);border:1px solid #f5c6c6;color:var(--red-dark);border-radius:20px;padding:5px 12px;font-size:14px;font-weight:700;white-space:nowrap}.hero{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:76px 0}.hero-content{max-width:920px}.tag-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}.tag{border:1px solid rgba(255,255,255,.35);border-radius:20px;padding:7px 12px;font-size:14px;font-weight:700}h1,h2,h3{margin:0;line-height:1.15}h1{font-size:clamp(42px,7vw,76px);letter-spacing:-.04em}.hero__summary{max-width:780px;color:rgba(255,255,255,.88);font-size:21px;margin:20px 0 0}.cta-row{display:flex;gap:12px;margin-top:32px}.btn{font-weight:700;padding:10px 18px;border-radius:3px;border:2px solid transparent;text-decoration:none}.btn.primary{background:#fff;color:var(--navy)}.btn.secondary{color:#fff;border-color:#fff}.case-section{padding:58px 0}.case-section:nth-of-type(even){background:var(--surface)}.section-head,.overview-layout{display:grid;grid-template-columns:minmax(0,.48fr) minmax(0,.52fr);gap:40px;align-items:start;margin-bottom:32px}.kicker{margin:0 0 12px;color:var(--red);font-weight:700}.section-title{font-size:clamp(30px,4vw,48px);letter-spacing:-.025em}.section-lead,.overview-copy{color:var(--meta);font-size:22px;line-height:1.4}.overview-title{font-size:clamp(34px,5vw,60px);letter-spacing:-.04em}.meta-row,.grid-2,.grid-3,.grid-4,.metric-row{display:grid;gap:16px}.meta-row{grid-template-columns:repeat(4,1fr);margin-top:32px}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3,.metric-row{grid-template-columns:repeat(3,1fr)}.grid-4{grid-template-columns:repeat(4,1fr)}.meta-card,.card,.method-card,.visual-card,.principle-card,.metric,.influence,.ia-diagram-wrap,.video-embed-shell{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px;padding:24px}.meta-card strong{display:block;color:var(--meta);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.card h3,.visual-card h3,.principle-card h3{color:var(--navy);font-size:22px;margin-bottom:12px}.card p,.visual-card p{margin:0;color:var(--meta)}.media-img{display:block;width:100%;height:auto;border:1px solid var(--border);border-radius:6px;box-shadow:var(--shadow);background:#fff}.method-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}.method-card{min-height:132px;padding:14px}.method-card strong{display:block;color:var(--navy);font-size:32px;line-height:1;margin-bottom:8px}.method-card span{display:block;color:var(--text);font-size:13px;line-height:1.25}.icon{height:46px;display:flex;align-items:center;margin-bottom:12px}.icon .ti{font-size:42px;color:var(--navy)}.visual-card .icon{height:126px;align-items:center;justify-content:center;background:var(--blue-tint);border-radius:3px;margin-bottom:0}.visual-card .icon .ti{font-size:72px}.ia-card .icon{height:190px}.ia-card .icon .ti{font-size:88px}.principle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.principle-card{min-height:220px}.principle-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}.principle-card .icon{height:auto;margin:0}.principle-card .icon .ti{font-size:38px}.principle-top span{font-size:34px;font-weight:700;color:var(--navy)}.principle-card p{margin:0;color:var(--meta);font-size:14px}.ia-diagram-wrap{margin-top:20px;overflow-x:auto}.ia-diagram-wrap svg{min-width:980px;width:100%;height:auto;display:block}.influence{background:var(--blue-tint);border-left:4px solid var(--blue-mid);border-radius:0 3px 3px 0;font-size:14px;margin-top:20px}.influence strong{display:block;color:var(--navy);font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.influence p{margin:0;color:var(--text)}.metric-row{margin-top:16px}.metric strong{display:block;color:var(--navy);font-size:40px;line-height:1;margin-bottom:8px}.metric span{display:block;color:var(--meta)}.metric.validation{background:var(--blue-tint);border-color:var(--blue-light)}.metric-change{display:inline-block;margin-top:16px;border-radius:20px;padding:5px 10px;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;background:var(--surface-alt);border:1px solid var(--blue-light);color:var(--navy)}.video-embed-shell{padding:0;overflow:hidden;margin-bottom:16px}.video-embed-ratio{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;background:#000}.video-embed-ratio iframe{border:0;position:absolute;inset:0;width:100%;height:100%;max-width:100%}.video-fallback{padding:18px 20px;border-top:1px solid var(--border);background:var(--surface-alt)}.video-fallback h3{color:var(--navy);margin:0 0 8px;font-size:22px}.video-fallback p{color:var(--meta);margin:0 0 14px}.video-fallback a{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:10px 18px;border-radius:3px;border:2px solid var(--navy);background:var(--navy);color:#fff;text-decoration:none}.footer{background:var(--footer-navy);color:#fff;padding:40px 0}.footer h2{font-size:22px;color:#fff;margin-bottom:12px}.footer p{margin:0 0 4px;color:rgba(255,255,255,.86)}
+html[data-theme="dark"] .site-header{background:#0B142B;border-bottom-color:#2F4678}html[data-theme="dark"] .brand{color:#FFFFFF}html[data-theme="dark"] .site-nav a{color:#DDE7FF}html[data-theme="dark"] .site-nav a:hover,html[data-theme="dark"] .site-nav a:focus-visible{color:#FFFFFF;text-decoration:underline}html[data-theme="dark"] .theme-toggle{color:#DDE7FF;border-color:#4B64A0;background:#101A34}html[data-theme="dark"] .phase-pill{background:#FFE3E3;border-color:#FFD0D0;color:#8F0A0A}html[data-theme="dark"] .card h3,html[data-theme="dark"] .visual-card h3,html[data-theme="dark"] .principle-card h3,html[data-theme="dark"] .metric strong,html[data-theme="dark"] .principle-top span,html[data-theme="dark"] .icon .ti,html[data-theme="dark"] .method-card strong,html[data-theme="dark"] .influence strong,html[data-theme="dark"] .video-fallback h3{color:#DDE7FF}html[data-theme="dark"] .ia-diagram-wrap{background:#0F1B36;border-color:#3D5790}html[data-theme="dark"] .ia-svg .ia-root,html[data-theme="dark"] .ia-svg .ia-top{fill:#245AA3}html[data-theme="dark"] .ia-svg .ia-line{stroke:#BFD2F2}html[data-theme="dark"] .ia-svg .ia-dot{fill:#76B8FF}html[data-theme="dark"] .ia-svg .ia-sub{fill:#DDE7FF;stroke:#BFD2F2}html[data-theme="dark"] .ia-svg .ia-subtext{fill:#00164B}html[data-theme="dark"] .ia-svg .ia-white{fill:#FFFFFF}
+@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .site-header{background:#0B142B;border-bottom-color:#2F4678}html:not([data-theme="light"]) .brand{color:#FFFFFF}html:not([data-theme="light"]) .site-nav a{color:#DDE7FF}html:not([data-theme="light"]) .site-nav a:hover,html:not([data-theme="light"]) .site-nav a:focus-visible{color:#FFFFFF;text-decoration:underline}html:not([data-theme="light"]) .theme-toggle{color:#DDE7FF;border-color:#4B64A0;background:#101A34}html:not([data-theme="light"]) .phase-pill{background:#FFE3E3;border-color:#FFD0D0;color:#8F0A0A}html:not([data-theme="light"]) .card h3,html:not([data-theme="light"]) .visual-card h3,html:not([data-theme="light"]) .principle-card h3,html:not([data-theme="light"]) .metric strong,html:not([data-theme="light"]) .principle-top span,html:not([data-theme="light"]) .icon .ti,html:not([data-theme="light"]) .method-card strong,html:not([data-theme="light"]) .influence strong,html:not([data-theme="light"]) .video-fallback h3{color:#DDE7FF}html:not([data-theme="light"]) .ia-diagram-wrap{background:#0F1B36;border-color:#3D5790}html:not([data-theme="light"]) .ia-svg .ia-root,html:not([data-theme="light"]) .ia-svg .ia-top{fill:#245AA3}html:not([data-theme="light"]) .ia-svg .ia-line{stroke:#BFD2F2}html:not([data-theme="light"]) .ia-svg .ia-dot{fill:#76B8FF}html:not([data-theme="light"]) .ia-svg .ia-sub{fill:#DDE7FF;stroke:#BFD2F2}html:not([data-theme="light"]) .ia-svg .ia-subtext{fill:#00164B}html:not([data-theme="light"]) .ia-svg .ia-white{fill:#FFFFFF}}
+@media(max-width:1180px){.method-grid{grid-template-columns:repeat(4,1fr);gap:16px}.method-card{padding:20px;min-height:150px}.method-card strong{font-size:36px}.method-card span{font-size:16px}}@media(max-width:900px){.container{width:min(100% - 32px,var(--max))}.site-header__inner{grid-template-columns:1fr;align-items:flex-start}.site-nav{justify-content:flex-start}.overview-layout,.section-head,.grid-2,.grid-3,.grid-4,.metric-row,.meta-row,.principle-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}.hero{padding:40px 0}.case-section{padding:40px 0}.section-lead,.overview-copy{font-size:18px}.ia-diagram-wrap svg{min-width:840px}}@media(max-width:520px){.method-grid{grid-template-columns:1fr}.hero__summary{font-size:18px}.tag{font-size:13px}}
+
+
+/* Enhancement only, active section state for top navigation. */
+.site-nav a.is-active{
+  color:var(--red);
+  text-decoration:none;
+}
+.site-nav a.is-active:hover,
+.site-nav a.is-active:focus-visible{
+  color:var(--red);
+  text-decoration:underline;
+}
+html[data-theme="dark"] .site-nav a.is-active{
+  color:#FFB4B4;
+}
+html[data-theme="dark"] .site-nav a.is-active:hover,
+html[data-theme="dark"] .site-nav a.is-active:focus-visible{
+  color:#FFD0D0;
+  text-decoration:underline;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .site-nav a.is-active{
+    color:#FFB4B4;
+  }
+  html:not([data-theme="light"]) .site-nav a.is-active:hover,
+  html:not([data-theme="light"]) .site-nav a.is-active:focus-visible{
+    color:#FFD0D0;
+    text-decoration:underline;
+  }
+}
+
+/* Enhancement only, floating back-to-top control. */
+.back-to-top{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:80;
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:2px solid var(--navy);
+  background:var(--navy);
+  color:#fff;
+  display:grid;
+  place-items:center;
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:opacity .2s ease,visibility .2s ease,transform .2s ease,background .2s ease,color .2s ease;
+}
+.back-to-top.is-visible{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+.back-to-top:hover{
+  background:#fff;
+  color:var(--navy);
+}
+.back-to-top .ti{
+  font-size:24px;
+}
+html[data-theme="dark"] .back-to-top{
+  border-color:#DDE7FF;
+  background:#DDE7FF;
+  color:#00164B;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .back-to-top{
+    border-color:#DDE7FF;
+    background:#DDE7FF;
+    color:#00164B;
+  }
+}
+@media(max-width:520px){
+  .back-to-top{
+    right:16px;
+    bottom:16px;
+  }
+}
+
+
+/* Delivery 05 layout rules retained, with Delivery 06 Option B motion refinement. */
+html{scroll-behavior:auto;scroll-padding-top:96px}.site-header__inner{grid-template-columns:auto minmax(0,1fr) auto auto;gap:12px}.site-nav{gap:14px;font-size:14px}.site-nav a{white-space:nowrap}.site-nav a:hover{text-decoration:underline}.site-nav a.is-active{color:var(--red);text-decoration:none}.site-nav a.is-active:hover,.site-nav a.is-active:focus-visible{text-decoration:underline}
+
+/* Option B arrival cue, intentionally subtle for a government case study page. */
+.case-section.is-arriving .kicker,.case-section.is-arriving .section-title,.case-section.is-arriving .overview-title{animation:sectionArrivalCue 900ms cubic-bezier(.22,1,.36,1)}@keyframes sectionArrivalCue{0%{transform:translateY(6px);opacity:.82;text-shadow:0 0 0 rgba(179,13,13,0)}38%{transform:translateY(0);opacity:1;text-shadow:0 0 14px rgba(179,13,13,.22)}100%{transform:translateY(0);opacity:1;text-shadow:0 0 0 rgba(179,13,13,0)}}@media(prefers-reduced-motion:reduce){.case-section.is-arriving .kicker,.case-section.is-arriving .section-title,.case-section.is-arriving .overview-title{animation:none}}
+
+/* Overview cards now follow the same information-card hierarchy used elsewhere. */
+.meta-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px;padding:24px;color:var(--text)}.meta-card strong{display:block;color:var(--navy);font-size:22px;line-height:1.15;font-weight:700;letter-spacing:0;text-transform:none;margin-bottom:12px}
+
+/* Default icon cards on white sections stay light and unfilled. Grey-section cards receive white fill and stroke. Problem cards receive stroke only to stop blending into the white background. */
+.visual-card{border:0;background:transparent;box-shadow:none;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:28px 24px 30px}.visual-card .icon,.visual-card .tabler-icon{width:100%;height:118px;display:flex;align-items:center;justify-content:center;background:transparent;border-radius:6px;margin:0 0 6px;padding:0}.visual-card .icon .ti,.visual-card .tabler-icon .ti{font-size:72px;color:var(--navy)}.visual-card h3{text-align:center;color:var(--navy);margin:0 0 18px;font-size:24px}.visual-card p{text-align:left;align-self:stretch;color:var(--meta);margin:0}.ia-card .icon,.ia-card .tabler-icon{height:140px}.ia-card .icon .ti,.ia-card .tabler-icon .ti{font-size:84px}
+#problem .visual-card{background:transparent;border:1px solid var(--border);border-radius:6px}#ia-content .visual-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px}.case-section:nth-of-type(odd):not(#outcome):not(#glossary):not(#problem) .visual-card{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px}
+
+/* Deep-blue emphasis for Final Outcome and Handover, while leaving the hifi fallback to use the v8 component styling. */
+#outcome{background:#00164B;color:#FFFFFF}#outcome .kicker{color:var(--red)}#outcome .section-title,#outcome .section-lead{color:#FFFFFF}#outcome>.container>.grid-4 .card,#outcome .video-embed-shell,#outcome .video-fallback{background:#071F55;border-color:#5F78B8;color:#FFFFFF}#outcome>.container>.grid-4 .card h3,#outcome .video-fallback h3{color:#FFFFFF}#outcome>.container>.grid-4 .card p,#outcome .video-fallback p{color:#E6EEFF}#outcome .video-fallback{border-top-color:#5F78B8}#outcome .video-fallback a{background:#FFFFFF;border-color:#FFFFFF;color:#00164B}#outcome .video-fallback a:hover,#outcome .video-fallback a:focus-visible{background:#DDE7FF;border-color:#DDE7FF;color:#00164B}
+
+/* V8 aligned hifi fallback component, with spacing before the following outcome cards. */
+.hifi-shell{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px;padding:0;overflow:hidden;margin-top:24px;margin-bottom:18px}.hifi-head{padding:20px 22px;border-bottom:1px solid var(--border)}.hifi-head h3{color:var(--navy);font-size:24px;margin-bottom:8px}.hifi-head p{color:var(--meta);margin:0}.hifi-tabs{display:flex;gap:8px;padding:14px 22px;background:var(--blue-tint);border-bottom:1px solid var(--border)}.hifi-tab{appearance:none;border:2px solid var(--navy);background:var(--surface-alt);color:var(--navy);border-radius:3px;padding:9px 16px;font:700 15px/1.2 var(--font);cursor:pointer}.hifi-tab[aria-selected="true"]{background:var(--navy);color:#fff}.hifi-frame-wrap{height:760px;background:#fff}.hifi-frame-wrap iframe{display:block;width:100%;height:100%;border:0;background:#fff}
+
+/* Restored IA diagram contrast, including dark mode support. */
+.ia-diagram-wrap{background:var(--surface-alt);border:1px solid var(--border);border-radius:6px}.ia-diagram-wrap svg .root,.ia-diagram-wrap svg .top-card{fill:var(--navy)}.ia-diagram-wrap svg .connector{stroke:#8EA6C8}.ia-diagram-wrap svg .dot{fill:var(--blue-mid)}.ia-diagram-wrap svg .second-card{fill:#F4FAFF;stroke:#A9C2E2;stroke-width:2}.ia-diagram-wrap svg .root-text,.ia-diagram-wrap svg .top-text{fill:#FFFFFF}.ia-diagram-wrap svg .second-title{fill:#00164B}.ia-diagram-wrap svg .second-meta{fill:#333333}
+
+.glossary-section{background:var(--surface)}.glossary-table-wrap{margin-top:16px;overflow-x:auto}.glossary-table{width:100%;border-collapse:collapse;font-size:16px}.glossary-table th,.glossary-table td{padding:12px 0;vertical-align:top;border:0;border-bottom:1px solid var(--border)}.glossary-table th{width:30%;padding-right:24px;text-align:left;color:var(--navy);font-weight:700}.glossary-table td{color:var(--meta)}
+
+html[data-theme="dark"] .meta-card strong{color:#DDE7FF}html[data-theme="dark"] .visual-card{background:transparent;border:0}html[data-theme="dark"] #problem .visual-card{background:transparent;border:1px solid var(--border)}html[data-theme="dark"] #ia-content .visual-card,html[data-theme="dark"] .case-section:nth-of-type(odd):not(#outcome):not(#glossary):not(#problem) .visual-card{background:#101A34;border:1px solid var(--border)}html[data-theme="dark"] .visual-card h3,html[data-theme="dark"] .visual-card .icon .ti,html[data-theme="dark"] .visual-card .tabler-icon .ti{color:#DDE7FF}html[data-theme="dark"] .visual-card p{color:#E6EEFF}html[data-theme="dark"] #outcome{background:#00164B}html[data-theme="dark"] #outcome .kicker{color:var(--red)}html[data-theme="dark"] #outcome>.container>.grid-4 .card,html[data-theme="dark"] #outcome .video-embed-shell,html[data-theme="dark"] #outcome .video-fallback{background:#071F55;border-color:#5F78B8}html[data-theme="dark"] #outcome .section-title,html[data-theme="dark"] #outcome .section-lead,html[data-theme="dark"] #outcome>.container>.grid-4 .card h3,html[data-theme="dark"] #outcome .video-fallback h3{color:#FFFFFF}html[data-theme="dark"] #outcome>.container>.grid-4 .card p,html[data-theme="dark"] #outcome .video-fallback p{color:#E6EEFF}html[data-theme="dark"] .hifi-shell{background:var(--surface-alt);border-color:var(--border)}html[data-theme="dark"] .hifi-head{border-bottom-color:var(--border)}html[data-theme="dark"] .hifi-head h3{color:#DDE7FF}html[data-theme="dark"] .hifi-head p{color:var(--meta)}html[data-theme="dark"] .hifi-tabs{background:var(--blue-tint);border-bottom-color:var(--border)}html[data-theme="dark"] .hifi-tab{border-color:#DDE7FF;background:var(--surface-alt);color:#DDE7FF}html[data-theme="dark"] .hifi-tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#FFFFFF}html[data-theme="dark"] .ia-diagram-wrap{background:#101A34;border-color:#5F78B8}html[data-theme="dark"] .ia-diagram-wrap svg .root,html[data-theme="dark"] .ia-diagram-wrap svg .top-card{fill:#001F66}html[data-theme="dark"] .ia-diagram-wrap svg .connector{stroke:#DDE7FF}html[data-theme="dark"] .ia-diagram-wrap svg .dot{fill:#76B8FF}html[data-theme="dark"] .ia-diagram-wrap svg .second-card{fill:#DDE7FF;stroke:#FFFFFF;stroke-width:2}html[data-theme="dark"] .ia-diagram-wrap svg .second-title{fill:#00164B}html[data-theme="dark"] .ia-diagram-wrap svg .second-meta{fill:#1A1A1A}html[data-theme="dark"] .site-nav a.is-active{color:#FFB4B4}html[data-theme="dark"] .site-nav a.is-active:hover,html[data-theme="dark"] .site-nav a.is-active:focus-visible{color:#FFD0D0;text-decoration:underline}html[data-theme="dark"] .glossary-table th{color:#DDE7FF}html[data-theme="dark"] .glossary-table td{color:#C8D0E0}
+
+@media(prefers-color-scheme:dark){html:not([data-theme="light"]) .meta-card strong{color:#DDE7FF}html:not([data-theme="light"]) .visual-card{background:transparent;border:0}html:not([data-theme="light"]) #problem .visual-card{background:transparent;border:1px solid var(--border)}html:not([data-theme="light"]) #ia-content .visual-card,html:not([data-theme="light"]) .case-section:nth-of-type(odd):not(#outcome):not(#glossary):not(#problem) .visual-card{background:#101A34;border:1px solid var(--border)}html:not([data-theme="light"]) .visual-card h3,html:not([data-theme="light"]) .visual-card .icon .ti,html:not([data-theme="light"]) .visual-card .tabler-icon .ti{color:#DDE7FF}html:not([data-theme="light"]) .visual-card p{color:#E6EEFF}html:not([data-theme="light"]) #outcome{background:#00164B}html:not([data-theme="light"]) #outcome .kicker{color:var(--red)}html:not([data-theme="light"]) #outcome>.container>.grid-4 .card,html:not([data-theme="light"]) #outcome .video-embed-shell,html:not([data-theme="light"]) #outcome .video-fallback{background:#071F55;border-color:#5F78B8}html:not([data-theme="light"]) #outcome .section-title,html:not([data-theme="light"]) #outcome .section-lead,html:not([data-theme="light"]) #outcome>.container>.grid-4 .card h3,html:not([data-theme="light"]) #outcome .video-fallback h3{color:#FFFFFF}html:not([data-theme="light"]) #outcome>.container>.grid-4 .card p,html:not([data-theme="light"]) #outcome .video-fallback p{color:#E6EEFF}html:not([data-theme="light"]) .hifi-shell{background:var(--surface-alt);border-color:var(--border)}html:not([data-theme="light"]) .hifi-head{border-bottom-color:var(--border)}html:not([data-theme="light"]) .hifi-head h3{color:#DDE7FF}html:not([data-theme="light"]) .hifi-head p{color:var(--meta)}html:not([data-theme="light"]) .hifi-tabs{background:var(--blue-tint);border-bottom-color:var(--border)}html:not([data-theme="light"]) .hifi-tab{border-color:#DDE7FF;background:var(--surface-alt);color:#DDE7FF}html:not([data-theme="light"]) .hifi-tab[aria-selected="true"]{background:var(--red);border-color:var(--red);color:#FFFFFF}html:not([data-theme="light"]) .ia-diagram-wrap{background:#101A34;border-color:#5F78B8}html:not([data-theme="light"]) .ia-diagram-wrap svg .root,html:not([data-theme="light"]) .ia-diagram-wrap svg .top-card{fill:#001F66}html:not([data-theme="light"]) .ia-diagram-wrap svg .connector{stroke:#DDE7FF}html:not([data-theme="light"]) .ia-diagram-wrap svg .dot{fill:#76B8FF}html:not([data-theme="light"]) .ia-diagram-wrap svg .second-card{fill:#DDE7FF;stroke:#FFFFFF;stroke-width:2}html:not([data-theme="light"]) .ia-diagram-wrap svg .second-title{fill:#00164B}html:not([data-theme="light"]) .ia-diagram-wrap svg .second-meta{fill:#1A1A1A}html:not([data-theme="light"]) .site-nav a.is-active{color:#FFB4B4}html:not([data-theme="light"]) .site-nav a.is-active:hover,html:not([data-theme="light"]) .site-nav a.is-active:focus-visible{color:#FFD0D0;text-decoration:underline}html:not([data-theme="light"]) .glossary-table th{color:#DDE7FF}html:not([data-theme="light"]) .glossary-table td{color:#C8D0E0}}
+
+@media(max-width:1180px){.site-nav{gap:10px;font-size:13px}.site-header__inner{gap:10px}}@media(max-width:900px){html{scroll-padding-top:24px}.site-header__inner{grid-template-columns:1fr}.site-nav{justify-content:flex-start}.visual-card .icon,.visual-card .tabler-icon{height:110px}.visual-card p{text-align:center}.hifi-frame-wrap{height:620px}.hifi-tabs{flex-direction:column}.hifi-tab{width:100%}.glossary-table th,.glossary-table td{display:block;width:100%;padding-right:0}.glossary-table th{padding-bottom:2px}.glossary-table td{padding-top:0}}
+
+
+
+/* Premium minimal editorial mode, layout-only update. Content, theme colours and typography are preserved. */
+:root{
+  --max:1160px;
+  --shadow:none;
+  --hairline:rgba(0,22,75,.14);
+  --quiet-blue:rgba(34,61,146,.055);
+  --section-space:112px;
+}
+html[data-theme="dark"]{
+  --hairline:rgba(221,231,255,.22);
+  --quiet-blue:rgba(221,231,255,.06);
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]){
+    --hairline:rgba(221,231,255,.22);
+    --quiet-blue:rgba(221,231,255,.06);
+  }
+}
+body{
+  background:var(--surface);
+}
+.container{
+  width:min(100% - 88px,var(--max));
+}
+.site-header{
+  position:sticky;
+  background:color-mix(in srgb,var(--surface) 92%,transparent);
+  border-bottom:1px solid var(--hairline);
+  backdrop-filter:blur(18px);
+}
+.site-header__inner{
+  grid-template-columns:auto minmax(0,1fr) auto auto;
+  padding:16px 0;
+  gap:22px;
+}
+.brand{
+  letter-spacing:.01em;
+}
+.site-nav{
+  justify-content:flex-end;
+  gap:22px;
+  font-size:13px;
+}
+.site-nav a{
+  color:var(--meta);
+  position:relative;
+}
+.site-nav a.is-active,
+.site-nav a:hover{
+  color:var(--navy);
+}
+.site-nav a.is-active::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-18px;
+  height:2px;
+  background:var(--red);
+}
+.theme-toggle,
+.phase-pill{
+  border-radius:999px;
+}
+.hero{
+  min-height:76vh;
+  display:flex;
+  align-items:center;
+  padding:112px 0 104px;
+  background:
+    radial-gradient(circle at 78% 28%, rgba(255,255,255,.14) 0, rgba(255,255,255,0) 34%),
+    linear-gradient(135deg, var(--navy) 0%, var(--navy) 58%, var(--blue) 100%);
+  color:#fff;
+}
+.hero .container{
+  position:relative;
+}
+.hero .container::after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:50%;
+  width:min(34vw,420px);
+  height:min(34vw,420px);
+  transform:translateY(-48%);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-content{
+  max-width:820px;
+  position:relative;
+  z-index:1;
+}
+.tag-row{
+  gap:10px;
+  margin-bottom:30px;
+}
+.tag{
+  border-color:rgba(255,255,255,.24);
+  background:rgba(255,255,255,.075);
+  padding:6px 11px;
+}
+h1{
+  max-width:760px;
+}
+.hero__summary{
+  max-width:690px;
+  margin-top:24px;
+}
+.cta-row{
+  margin-top:40px;
+}
+.btn{
+  border-radius:0;
+  padding:12px 20px;
+}
+.btn.secondary{
+  background:rgba(255,255,255,.06);
+}
+.case-section{
+  padding:var(--section-space) 0;
+  border-top:1px solid var(--hairline);
+}
+.case-section:nth-of-type(even),
+.case-section:nth-of-type(odd),
+.glossary-section{
+  background:var(--surface);
+}
+.case-section:nth-of-type(3n+1):not(#outcome):not(#glossary){
+  background:linear-gradient(180deg,var(--surface) 0%,var(--blue-tint) 100%);
+}
+.section-head,
+.overview-layout{
+  grid-template-columns:minmax(260px,.34fr) minmax(0,.66fr);
+  gap:88px;
+  margin-bottom:54px;
+}
+.kicker{
+  margin-bottom:18px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-size:13px;
+}
+.section-title,
+.overview-title{
+  max-width:620px;
+}
+.section-lead,
+.overview-copy{
+  max-width:720px;
+}
+.overview-copy p:first-child,
+.section-lead{
+  border-left:3px solid var(--red);
+  padding-left:22px;
+}
+.meta-row,
+.grid-2,
+.grid-3,
+.grid-4,
+.metric-row,
+.principle-grid{
+  gap:1px;
+  background:var(--hairline);
+  border:1px solid var(--hairline);
+}
+.meta-row{
+  grid-template-columns:repeat(4,1fr);
+  margin-top:42px;
+}
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
+.grid-3,
+.metric-row,
+.principle-grid{
+  grid-template-columns:repeat(3,1fr);
+}
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
+}
+.meta-card,
+.card,
+.method-card,
+.visual-card,
+.principle-card,
+.metric{
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:var(--surface-alt) !important;
+}
+.meta-card,
+.card,
+.principle-card,
+.metric{
+  padding:30px;
+}
+.meta-card strong{
+  margin-bottom:14px;
+}
+.card h3,
+.visual-card h3,
+.principle-card h3{
+  margin-bottom:16px;
+}
+.visual-card{
+  padding:34px 30px 36px;
+  text-align:left;
+  align-items:flex-start;
+}
+.visual-card .icon,
+.visual-card .tabler-icon{
+  width:auto;
+  height:72px;
+  justify-content:flex-start;
+  margin-bottom:18px;
+  background:transparent;
+}
+.visual-card .icon .ti,
+.visual-card .tabler-icon .ti{
+  font-size:54px;
+}
+.visual-card h3{
+  text-align:left;
+}
+.visual-card p{
+  text-align:left;
+}
+.ia-card .icon,
+.ia-card .tabler-icon{
+  height:88px;
+}
+.ia-card .icon .ti,
+.ia-card .tabler-icon .ti{
+  font-size:66px;
+}
+.method-grid{
+  display:grid;
+  grid-template-columns:repeat(7,minmax(0,1fr));
+  gap:1px;
+  background:var(--hairline);
+  border:1px solid var(--hairline);
+}
+.method-card{
+  min-height:150px;
+  padding:22px;
+}
+.method-card strong{
+  font-size:34px;
+}
+.principle-card{
+  min-height:250px;
+}
+.principle-top{
+  margin-bottom:28px;
+}
+.influence{
+  max-width:760px;
+  margin:34px 0 0 auto;
+  padding:24px 28px;
+  background:var(--quiet-blue);
+  border:0;
+  border-left:3px solid var(--red);
+  border-radius:0;
+  box-shadow:none;
+}
+.metric strong{
+  font-size:46px;
+}
+.metric.validation{
+  background:var(--blue-tint) !important;
+}
+.media-img,
+.ia-diagram-wrap,
+.video-embed-shell,
+.hifi-shell{
+  border-radius:0;
+  box-shadow:none;
+}
+.media-img{
+  border:1px solid var(--hairline);
+}
+.ia-diagram-wrap{
+  margin-top:34px;
+  padding:28px;
+  border-color:var(--hairline);
+}
+#outcome{
+  background:
+    radial-gradient(circle at 82% 12%, rgba(255,255,255,.16) 0, rgba(255,255,255,0) 30%),
+    var(--navy);
+  border-top:0;
+}
+#outcome .section-head{
+  border-bottom:1px solid rgba(255,255,255,.22);
+  padding-bottom:48px;
+}
+#outcome > .container > .grid-4{
+  background:rgba(255,255,255,.22);
+  border-color:rgba(255,255,255,.22);
+}
+#outcome > .container > .grid-4 .card,
+#outcome .video-embed-shell,
+#outcome .video-fallback{
+  background:#071F55 !important;
+  border-radius:0;
+  box-shadow:none;
+}
+.hifi-shell{
+  margin-top:34px;
+  margin-bottom:28px;
+  border-color:var(--hairline);
+}
+.hifi-head{
+  padding:28px 30px;
+}
+.hifi-tabs{
+  padding:18px 30px;
+}
+.hifi-frame-wrap{
+  height:720px;
+}
+.glossary-table th,
+.glossary-table td{
+  padding:16px 0;
+}
+.footer{
+  padding:62px 0;
+}
+.back-to-top{
+  border-radius:0;
+  box-shadow:none;
+}
+html[data-theme="dark"] .site-nav a.is-active,
+html[data-theme="dark"] .site-nav a:hover{
+  color:#FFFFFF;
+}
+html[data-theme="dark"] .meta-card,
+html[data-theme="dark"] .card,
+html[data-theme="dark"] .method-card,
+html[data-theme="dark"] .visual-card,
+html[data-theme="dark"] .principle-card,
+html[data-theme="dark"] .metric{
+  background:var(--surface-alt) !important;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .site-nav a.is-active,
+  html:not([data-theme="light"]) .site-nav a:hover{
+    color:#FFFFFF;
+  }
+  html:not([data-theme="light"]) .meta-card,
+  html:not([data-theme="light"]) .card,
+  html:not([data-theme="light"]) .method-card,
+  html:not([data-theme="light"]) .visual-card,
+  html:not([data-theme="light"]) .principle-card,
+  html:not([data-theme="light"]) .metric{
+    background:var(--surface-alt) !important;
+  }
+}
+@media(max-width:1180px){
+  .container{
+    width:min(100% - 64px,var(--max));
+  }
+  .site-nav{
+    gap:12px;
+  }
+  .method-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+  .meta-row,
+  .grid-4{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+@media(max-width:900px){
+  :root{
+    --section-space:64px;
+  }
+  .container{
+    width:min(100% - 36px,var(--max));
+  }
+  .site-header__inner{
+    grid-template-columns:1fr;
+  }
+  .site-nav{
+    justify-content:flex-start;
+    gap:12px 16px;
+  }
+  .site-nav a.is-active::after{
+    display:none;
+  }
+  .hero{
+    min-height:auto;
+    padding:70px 0 62px;
+  }
+  .hero .container::after{
+    display:none;
+  }
+  .overview-layout,
+  .section-head,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .metric-row,
+  .meta-row,
+  .principle-grid{
+    grid-template-columns:1fr;
+  }
+  .section-head,
+  .overview-layout{
+    gap:24px;
+    margin-bottom:34px;
+  }
+  .method-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+  .meta-card,
+  .card,
+  .principle-card,
+  .metric,
+  .visual-card{
+    padding:24px;
+  }
+  .hifi-frame-wrap{
+    height:620px;
+  }
+}
+@media(max-width:520px){
+  .container{
+    width:min(100% - 28px,var(--max));
+  }
+  .method-grid{
+    grid-template-columns:1fr;
+  }
+  .cta-row{
+    flex-direction:column;
+  }
+  .btn{
+    text-align:center;
+  }
+}
+
+
+
+/* Premium minimal targeted patch 03, based on the uploaded premium-minimal version.
+   Scope: remove the hero circle, extend the overview red rule to the full copy block, and align influence cards to the full content width. */
+.hero .container::after{
+  content:none !important;
+  display:none !important;
+}
+.overview-copy{
+  border-left:3px solid var(--red);
+  padding-left:22px;
+}
+.overview-copy p:first-child{
+  border-left:0 !important;
+  padding-left:0 !important;
+}
+.influence{
+  width:100%;
+  max-width:100% !important;
+  margin:34px 0 0 0 !important;
+}
+@media(max-width:900px){
+  .overview-copy{
+    padding-left:18px;
+  }
+}
+
+
+
+/* Premium minimal hero title marker trial 04.
+   Scope: add a vertical red marker before the hero title only. */
+.hero-content h1{
+  position:relative;
+  padding-left:28px;
+}
+.hero-content h1::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:.12em;
+  width:3px;
+  height:.82em;
+  background:var(--red);
+}
+html[data-theme="dark"] .hero-content h1::before{
+  background:#FFB4B4;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .hero-content h1::before{
+    background:#FFB4B4;
+  }
+}
+@media(max-width:900px){
+  .hero-content h1{
+    padding-left:22px;
+  }
+  .hero-content h1::before{
+    width:3px;
+    height:.78em;
+  }
+}
+
+
+/* R2-hosted post-plan evidence for the Go-live and BAU Planning section. */
+.post-plan-gallery,
+.post-plan-more{
+  display:grid;
+  gap:88px;
+  margin:0 0 34px;
+}
+.post-plan-more[hidden],
+.post-plan-toggle[hidden]{
+  display:none !important;
+}
+.post-plan-figure{
+  margin:0;
+}
+.post-plan-image{
+  margin:0;
+}
+.post-plan-caption{
+  display:grid;
+  grid-template-columns:minmax(220px,.32fr) minmax(0,.68fr);
+  gap:28px;
+  padding-top:18px;
+}
+.post-plan-caption strong{
+  color:var(--navy);
+  font-size:22px;
+  line-height:1.2;
+}
+.post-plan-caption span{
+  color:var(--meta);
+  font-size:18px;
+  line-height:1.42;
+}
+.post-plan-actions{
+  margin:4px 0 54px;
+}
+.post-plan-actions-bottom{
+  margin-top:-34px;
+  margin-bottom:0;
+}
+.post-plan-toggle,
+.post-plan-collapse{
+  appearance:none;
+  background:var(--navy);
+  border-color:var(--navy);
+  color:#fff;
+  cursor:pointer;
+}
+.post-plan-toggle:hover,
+.post-plan-toggle:focus-visible,
+.post-plan-collapse:hover,
+.post-plan-collapse:focus-visible{
+  background:#fff;
+  color:var(--navy);
+}
+html[data-theme="dark"] .post-plan-caption strong{
+  color:#DDE7FF;
+}
+@media(prefers-color-scheme:dark){
+  html:not([data-theme="light"]) .post-plan-caption strong{
+    color:#DDE7FF;
+  }
+}
+@media(max-width:900px){
+  .post-plan-gallery,
+  .post-plan-more{
+    gap:64px;
+  }
+  .post-plan-caption{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+  .post-plan-caption span{
+    font-size:16px;
+  }
+}
+</style></head><body><a class="skip-link" href="#main-content">Skip to main content</a><header class="site-header"><div class="site-header__inner container"><div class="brand">Victims Hub Project</div><nav class="site-nav" aria-label="Project page sections"><a href="#overview" data-nav-group="overview">Overview</a><a href="#background" data-nav-group="context">Context</a><a href="#approach" data-nav-group="approach">Approach</a><a href="#research" data-nav-group="research">Research</a><a href="#principles" data-nav-group="design">Design</a><a href="#validation" data-nav-group="validation">Validation</a><a href="#outcome" data-nav-group="outcome">Outcome</a><a href="#bau" data-nav-group="next">Next</a></nav><button class="theme-toggle" type="button" aria-label="Toggle light and dark mode"><i class="ti ti-sun sun"></i><i class="ti ti-moon moon"></i></button><div class="phase-pill">Prototype Phase</div></div></header><main id="main-content"><section class="hero"><div class="container"><div class="hero-content"><div class="tag-row"><span class="tag">Public service</span><span class="tag">Information architecture</span><span class="tag">Content strategy</span><span class="tag">Prototype and delivery planning</span></div><h1>NZ Police Victims Hub</h1><p class="hero__summary">Creating clearer pathways for people looking for victim information, reporting options, support, safety information and what happens next.</p><div class="cta-row"><a class="btn primary" href="#overview">View project overview</a><a class="btn secondary" href="#outcome">See final outcome</a></div></div></div></section><section class="case-section" id="overview"><div class="container"><div class="overview-layout"><div><p class="kicker">01 Overview</p><h2 class="overview-title">A clearer victim information pathway.</h2></div><div class="overview-copy"><p>The Victims Hub work brought together research, information architecture, content strategy and delivery planning to improve how victim information is structured on the Police website.</p><p>The work focused on clearer pathways for people looking for reporting options, support, safety information and what happens next. It also created a more stable reference package for review, handover and future go-live planning.</p></div></div><div class="meta-row"><div class="meta-card"><strong>Project context</strong>Justice Sector Victims Work Programme</div><div class="meta-card"><strong>Focus</strong>Victim information, reporting, support, safety and next steps</div><div class="meta-card"><strong>Outputs</strong>Evidence base, IA direction, prototype evidence, content model, handover package and go-live planning</div><div class="meta-card"><strong>Stage</strong>Prototype, validation and delivery planning</div></div></div></section><section class="case-section" id="background"><div class="container"><div class="section-head"><div><p class="kicker">02 Background</p><h2 class="section-title">Useful information existed, but the journey was fragmented.</h2></div><p class="section-lead">Useful victim information already existed on the Police website, but it was spread across pages, FAQs and internal structures.</p></div><img class="media-img" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/current-site.png" alt="Current state webpage screenshot showing advice for victims pages and the information for victims of crime page." loading="lazy" decoding="async" style="margin-bottom:20px"><div class="grid-3"><article class="card"><h3>Fragmented content</h3><p>Useful information existed across pages and FAQs, but the pathway through that information was not clear enough.</p></article><article class="card"><h3>Internal structure</h3><p>Some content reflected organisational categories more than the way people look for help.</p></article><article class="card"><h3>Unclear next steps</h3><p>People needed clearer routes for reporting, support, safety information and what happens next.</p></article></div></div></section><section class="case-section" id="problem"><div class="container"><div class="section-head"><div><p class="kicker">03 Problem</p><h2 class="section-title">The problem was guidance, resonance and confidence.</h2></div><p class="section-lead">The core challenge was not only to refresh pages. The work needed to clarify guidance, improve language resonance and build confidence in the next step.</p></div><div class="grid-3"><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-sign-right"></i></div><h3>Guidance</h3><p>Help people recognise the right path and next step.</p></article><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-message"></i></div><h3>Resonance</h3><p>Use language and labels that match how people describe their needs.</p></article><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-sparkles"></i></div><h3>Confidence</h3><p>Set honest expectations and make support pathways visible.</p></article></div><aside class="influence"><strong>Influence</strong><p>This reframed the work from a page refresh into an information architecture, language and confidence problem.</p></aside></div></section><section class="case-section" id="approach"><div class="container"><div class="section-head"><div><p class="kicker">04 Project Approach and Governance</p><h2 class="section-title">Evidence, design and governance needed to move together.</h2></div><p class="section-lead">The project approach combined evidence gathering, IA design, content strategy, prototype testing and governance planning.</p></div><div class="grid-3"><article class="card"><h3>Research and evidence</h3><p>Build and connect the evidence base.</p></article><article class="card"><h3>IA and content</h3><p>Translate findings into page structures, content hierarchy and reusable patterns.</p></article><article class="card"><h3>Governance</h3><p>Support review cycles, decision pathways and formal handover readiness.</p></article><article class="card"><h3>Stakeholder alignment</h3><p>Work across business, communications, web and programme governance needs.</p></article><article class="card"><h3>Prototype direction</h3><p>Use the prototype as a shared artefact for testing and review.</p></article><article class="card"><h3>BAU planning</h3><p>Prepare the path from prototype completion to build, launch and operation.</p></article></div><aside class="influence"><strong>Influence</strong><p>This approach reduced ambiguity around review, approval, ownership and what needed to be stable before build planning.</p></aside></div></section><section class="case-section" id="research"><div class="container"><div class="section-head"><div><p class="kicker">05 Research and Evidence</p><h2 class="section-title">The redesign was grounded in mixed evidence.</h2></div><p class="section-lead">Research, testing, content review, web data and team scoring were combined to create a stronger basis for IA and content decisions.</p></div><div class="method-grid"><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-users"></i></div><strong>3</strong><span>Interviews</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-device-desktop"></i></div><strong>6</strong><span>Usability tests</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-file-text"></i></div><strong>26</strong><span>Best practices analysed</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-database"></i></div><strong>200+</strong><span>Content items inventoried</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-chart-bar"></i></div><strong>5</strong><span>Pages of data analysed</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-layout-grid"></i></div><strong>30</strong><span>Cards sorted</span></article><article class="method-card"><div class="icon" aria-hidden="true"><i class="ti ti-trending-up"></i></div><strong>10</strong><span>Directions scored</span></article></div><aside class="influence"><strong>Influence</strong><p>The evidence gave stronger justification for prioritising structure, language and action pathways rather than relying only on internal assumptions or preference.</p></aside></div></section><section class="case-section" id="findings"><div class="container"><div class="section-head"><div><p class="kicker">06 Findings and Design Response</p><h2 class="section-title">Three findings shaped the design response.</h2></div><p class="section-lead">The evidence pointed to three connected design needs: clearer guidance, language that matched people’s situations, and visible next steps.</p></div><div class="grid-3"><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-sitemap"></i></div><h3>Structure</h3><p>Organise content around clear pathways, consistent page patterns and information people can scan.</p></article><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-message-circle"></i></div><h3>Tone</h3><p>Use language that is warm, plain, honest and written from the person’s point of view.</p></article><article class="visual-card"><div class="icon" aria-hidden="true"><i class="ti ti-route"></i></div><h3>Behaviour</h3><p>Make next steps visible so people know what they can do, where they can go and what to expect.</p></article></div></div></section><section class="case-section" id="principles"><div class="container"><div class="section-head"><div><p class="kicker">07 Design Principles</p><h2 class="section-title">Nine principles kept decisions grounded in evidence.</h2></div><p class="section-lead">The principles helped keep design conversations focused on evidence, rather than personal preference or internal structure.</p></div><div class="principle-grid"><article class="principle-card"><div class="principle-top"><span>01</span><div class="icon" aria-hidden="true"><i class="ti ti-sign-right"></i></div></div><h3>Signal Direction</h3><p>Show victims where to go, not what exists.</p></article><article class="principle-card"><div class="principle-top"><span>02</span><div class="icon" aria-hidden="true"><i class="ti ti-message"></i></div></div><h3>Speak Victim</h3><p>Write every label the way a victim would describe their need.</p></article><article class="principle-card"><div class="principle-top"><span>03</span><div class="icon" aria-hidden="true"><i class="ti ti-sitemap"></i></div></div><h3>Reveal Paths</h3><p>Keep expected pathways visible even when the route leads elsewhere.</p></article><article class="principle-card"><div class="principle-top"><span>04</span><div class="icon" aria-hidden="true"><i class="ti ti-users"></i></div></div><h3>Greet First</h3><p>Acknowledge the person before explaining the process.</p></article><article class="principle-card"><div class="principle-top"><span>05</span><div class="icon" aria-hidden="true"><i class="ti ti-message-check"></i></div></div><h3>Set Expectations</h3><p>Tell people what comes next without making promises.</p></article><article class="principle-card"><div class="principle-top"><span>06</span><div class="icon" aria-hidden="true"><i class="ti ti-shield-check"></i></div></div><h3>Define Boundaries</h3><p>Say what Police does and where its responsibility ends.</p></article><article class="principle-card"><div class="principle-top"><span>07</span><div class="icon" aria-hidden="true"><i class="ti ti-scan"></i></div></div><h3>Enable Scanning</h3><p>Design for scanning, not reading.</p></article><article class="principle-card"><div class="principle-top"><span>08</span><div class="icon" aria-hidden="true"><i class="ti ti-layout-grid"></i></div></div><h3>Build Familiarity</h3><p>Give every page a consistent shape so nothing needs relearning.</p></article><article class="principle-card"><div class="principle-top"><span>09</span><div class="icon" aria-hidden="true"><i class="ti ti-send"></i></div></div><h3>Invite Action</h3><p>Turn support information into a reason to act.</p></article></div><aside class="influence"><strong>Influence</strong><p>The principles shaped pathways, labels, page templates, Police boundaries and support actions.</p></aside></div></section><section class="case-section" id="ia-content"><div class="container"><div class="section-head"><div><p class="kicker">08 IA and Content Strategy</p><h2 class="section-title">The IA shifted from organisational categories to victim pathways.</h2></div><p class="section-lead">Content was grouped around what people need to understand, what people need to do, and what people may need to follow up on.</p></div><div class="grid-3"><article class="visual-card ia-card"><div class="icon" aria-hidden="true"><i class="ti ti-help-circle"></i></div><h3>Understand</h3><p>Information for victims</p></article><article class="visual-card ia-card"><div class="icon" aria-hidden="true"><i class="ti ti-send"></i></div><h3>Act</h3><p>Report a crime and Support for victims</p></article><article class="visual-card ia-card"><div class="icon" aria-hidden="true"><i class="ti ti-shield-check"></i></div><h3>Stay informed and safe</h3><p>What happens next, Keeping safe and Give feedback</p></article></div><div class="ia-diagram-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="ia-title ia-desc">
+  <title id="ia-title">Simplified Victims Hub information architecture</title>
+  <desc id="ia-desc">A simplified hierarchy diagram for Advice for victims, showing six top-level pathways and light-blue second-level content groups.</desc>
+  <style>
+    :root { --navy:#00164B; --blue-mid:#0E488D; --blue-light:#DFEDF7; --blue-tint:#EEF5FB; --line:#C8D8E8; --meta:#555555; --white:#FFFFFF; }
+    .root,.top-card{fill:var(--navy)} .second-card{fill:var(--blue-tint);stroke:var(--blue-light);stroke-width:2}.connector{stroke:var(--line);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}.dot{fill:var(--blue-mid)}
+    .root-text,.top-text,.second-title,.second-meta{font-family:"Source Sans Pro",Arial,Helvetica,sans-serif}.root-text,.top-text{fill:var(--white);font-weight:700}.root-text{font-size:24px}.top-text{font-size:18px}.second-title{fill:var(--navy);font-size:14px;font-weight:700}.second-meta{fill:var(--meta);font-size:12px}
+  </style>
+  <rect class="root" x="40" y="24" width="1200" height="54" rx="8"/><text class="root-text" x="640" y="58" text-anchor="middle">Advice for victims</text>
+  <path class="connector" d="M640 78 V112"/><path class="connector" d="M128 112 H1088"/>
+  <path class="connector" d="M128 112 V140"/><path class="connector" d="M320 112 V140"/><path class="connector" d="M512 112 V140"/><path class="connector" d="M704 112 V140"/><path class="connector" d="M896 112 V140"/><path class="connector" d="M1088 112 V140"/>
+  <g transform="translate(48 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T1 Information</text></g>
+  <g transform="translate(240 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T2 Report</text></g>
+  <g transform="translate(432 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T3 Support</text></g>
+  <g transform="translate(624 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T4 Next</text></g>
+  <g transform="translate(816 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T5 Keeping safe</text></g>
+  <g transform="translate(1008 140)"><rect class="top-card" width="160" height="58" rx="8"/><text class="top-text" x="80" y="35" text-anchor="middle">T6 Feedback</text></g>
+  <path class="connector" d="M128 198 V226"/><path class="connector" d="M320 198 V226"/><path class="connector" d="M512 198 V226"/><path class="connector" d="M704 198 V226"/><path class="connector" d="M896 198 V226"/><path class="connector" d="M1088 198 V226"/>
+  <circle class="dot" cx="128" cy="226" r="5"/><circle class="dot" cx="320" cy="226" r="5"/><circle class="dot" cx="512" cy="226" r="5"/><circle class="dot" cx="704" cy="226" r="5"/><circle class="dot" cx="896" cy="226" r="5"/><circle class="dot" cx="1088" cy="226" r="5"/>
+  <g transform="translate(36 252)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Who is a victim?</text></g>
+  <g transform="translate(36 308)"><rect class="second-card" width="184" height="62" rx="8"/><text class="second-title" x="16" y="25">After a crime</text><text class="second-meta" x="16" y="44">report, support, updates</text></g>
+  <g transform="translate(36 382)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Victims’ rights</text></g>
+  <g transform="translate(36 438)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Role of Police</text></g>
+  <g transform="translate(228 252)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Emergencies</text></g>
+  <g transform="translate(228 308)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Non-emergency</text></g>
+  <g transform="translate(228 364)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Anonymous reporting</text></g>
+  <g transform="translate(420 252)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Core support</text></g>
+  <g transform="translate(420 308)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Family harm</text></g>
+  <g transform="translate(420 364)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Sexual harm</text></g>
+  <g transform="translate(420 420)"><rect class="second-card" width="184" height="62" rx="8"/><text class="second-title" x="16" y="25">Specialist support</text><text class="second-meta" x="16" y="44">child, youth, legal, cultural</text></g>
+  <g transform="translate(612 252)"><rect class="second-card" width="184" height="62" rx="8"/><text class="second-title" x="16" y="25">After contact</text><text class="second-meta" x="16" y="44">request to file</text></g>
+  <g transform="translate(612 326)"><rect class="second-card" width="184" height="62" rx="8"/><text class="second-title" x="16" y="25">After reporting</text><text class="second-meta" x="16" y="44">progress, evidence, feedback</text></g>
+  <g transform="translate(612 400)"><rect class="second-card" width="184" height="62" rx="8"/><text class="second-title" x="16" y="25">Court process</text><text class="second-meta" x="16" y="44">court, sentencing, appeals</text></g>
+  <g transform="translate(804 252)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Family harm safety</text></g>
+  <g transform="translate(804 308)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Personal safety</text></g>
+  <g transform="translate(804 364)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Digital safety</text></g>
+  <g transform="translate(804 420)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Property and road safety</text></g>
+  <g transform="translate(996 252)"><rect class="second-card" width="184" height="44" rx="8"/><text class="second-title" x="16" y="27">Give feedback</text></g>
+</svg></div><aside class="influence"><strong>Influence</strong><p>The pathway model made the hub easier to explain, prototype, test and extend into later delivery stages.</p></aside></div></section><section class="case-section" id="validation"><div class="container"><div class="section-head"><div><p class="kicker">09 Prototype and Validation</p><h2 class="section-title">Testing showed the new direction was easier to use.</h2></div><p class="section-lead">The prototype was used as a practical testing and alignment artefact before moving further into hi-fi design and build planning.</p></div><img class="media-img" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ease-score.png" alt="Ease score comparison chart showing baseline and new hub results for support information, what next expectation and reporting pathway." loading="lazy" decoding="async"><div class="metric-row"><article class="metric validation"><strong>88.9% ↑</strong><span>Success rate, from 66.7%</span><span class="metric-change">Improved</span></article><article class="metric validation"><strong>4.17/5 ↑</strong><span>Ease score, from 2.67/5</span><span class="metric-change">Improved</span></article><article class="metric validation"><strong>82s ↓</strong><span>Median task time, from 140s</span><span class="metric-change">Reduced time</span></article></div><aside class="influence"><strong>Influence</strong><p>The results moved the conversation from opinion to evidence-based iteration, while showing where signposting still needed improvement.</p></aside></div></section><section class="case-section" id="outcome"><div class="container"><div class="section-head"><div><p class="kicker">10 Final Outcome and Handover</p><h2 class="section-title">A review-ready hub package and hi-fi direction.</h2></div><p class="section-lead">The outcome was a review-ready hub package that could support the next delivery phase.</p></div><div class="video-embed-shell"><div class="video-embed-ratio"><iframe src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth.mp4" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="05-Screencast_9_June_2026.mp4"></iframe></div><div class="video-fallback"><h3>Prototype walkthrough video</h3><p>If the embedded video does not load, open the video directly.</p><a href="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth.mp4" target="_blank" rel="noopener noreferrer">Open Video</a></div></div><section class="hifi-shell" aria-labelledby="hifi-title"><div class="hifi-head"><h3 id="hifi-title">Scrollable hi-fi prototype fallback</h3><p>If the video is unavailable, review the landing page and information page directly in this frame.</p></div><div class="hifi-tabs" role="tablist" aria-label="Hi-fi prototype pages"><button class="hifi-tab" type="button" role="tab" aria-controls="hifiFrame" aria-selected="true" data-target="#hub-page">Landing page</button><button class="hifi-tab" type="button" role="tab" aria-controls="hifiFrame" aria-selected="false" data-target="#info-page">Information page</button></div><div class="hifi-frame-wrap"><iframe id="hifiFrame" title="Scrollable hi-fi prototype frame" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/08-High-fidelity%20prototype_v4.0.html#hub-page" loading="lazy" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe></div></section><div class="grid-4"><article class="card"><h3>Hi-fi direction</h3><p>Landing page direction and reusable section template direction.</p></article><article class="card"><h3>IA and content model</h3><p>Pathway structure, page hierarchy and reusable content patterns.</p></article><article class="card"><h3>Handover package</h3><p>Content inventory, open items and recommended next steps.</p></article><article class="card"><h3>Delivery readiness</h3><p>Inputs for build planning, QA, accessibility and go-live preparation.</p></article></div></div></section><section class="case-section" id="bau"><div class="container"><div class="section-head"><div><p class="kicker">11 Go-live and BAU Planning</p><h2 class="section-title">The prototype became an operational planning asset.</h2></div><p class="section-lead">The plan set out how the hub could move from prototype to build, launch readiness and BAU. It clarified the delivery streams, likely timing, key decision variables, resource needs and the operating rhythm after launch.</p></div><div class="post-plan-gallery" aria-label="Post-June go-live and BAU planning diagrams"><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-pathway.png" alt="Diagram showing complete the full hub package and prepare for go-live workstreams." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Post-June pathway to go-live</strong><span>Two linked streams move the work from the remaining hub package into build, QA and launch preparation.</span></figcaption></figure><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-timeline.png" alt="Timeline scenario comparison showing fast, recommended managed and conservative delivery pathways." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Timeline scenario comparison</strong><span>The recommended managed pathway is the planning case, with fast and conservative paths used to frame opportunity and risk.</span></figcaption></figure></div><div class="post-plan-actions"><button class="btn post-plan-toggle" type="button" aria-expanded="false" aria-controls="postPlanMore">Read more</button></div><div class="post-plan-more" id="postPlanMore" hidden><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-roadmap.png" alt="Indicative roadmap timeline showing go-live workstreams and dependencies." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Indicative roadmap to go-live</strong><span>The roadmap sequences setup, content, build, testing, accessibility, approvals and launch readiness across the managed pathway.</span></figcaption></figure><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-variables.png" alt="Impact and certainty matrix showing key timing variables for delivery planning." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Key variables that affect timing</strong><span>High-impact and lower-certainty items should be confirmed first because they can reshape the delivery path.</span></figcaption></figure><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-resource.png" alt="Resource view chart showing relative workload across roles over time." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Resource view</strong><span>Go-live needs coordinated effort across business ownership, content, communications, web, vendor and governance roles.</span></figcaption></figure><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-after-golive.png" alt="Post-launch operation timeline showing hypercare, stabilisation, BAU rhythm and improvement backlog." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>After go-live operation</strong><span>After launch, the hub should move through hypercare, stabilisation and a BAU operating rhythm before the first improvement backlog.</span></figcaption></figure><figure class="post-plan-figure"><img class="media-img post-plan-image" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-long-term.png" alt="Future improvement roadmap showing long-term improvement areas after first launch." loading="lazy" decoding="async"><figcaption class="post-plan-caption"><strong>Long-term improvement areas</strong><span>Future work can address legacy content, FAQs, search relevance, VictimInfo alignment and broader service integration.</span></figcaption></figure><div class="post-plan-actions post-plan-actions-bottom"><button class="btn post-plan-collapse" type="button" aria-expanded="true" aria-controls="postPlanMore">Show less</button></div></div><div class="grid-3"><article class="card"><h3>Complete the full hub package</h3><p>Remaining hi-fi pages, draft content, user testing, content inventory updates and handover package.</p></article><article class="card"><h3>Prepare for go-live</h3><p>CMS build model, web team and vendor engagement, quick exit, accessibility, QA and publishing preparation.</p></article><article class="card"><h3>Post-launch operation</h3><p>Hypercare, stabilisation, BAU rhythm and improvement backlog.</p></article></div><aside class="influence"><strong>Influence</strong><p>The plan helped clarify what needed to be stable before build, what teams needed to be involved, and how the hub would move from launch into hypercare, stabilisation and BAU.</p></aside></div></section><section class="case-section" id="reflection"><div class="container"><div class="section-head"><div><p class="kicker">12 Project Reflection and Next Steps</p><h2 class="section-title">What should continue after the prototype phase.</h2></div><p class="section-lead">The project showed that sensitive public service content needs evidence, structure, governance, ownership and enough time to test the proposed experience in practice.</p></div><div class="grid-2"><article class="card"><h3>Further validation</h3><p>Use tree testing and user testing to check whether the IA, labels and pathways work in practice.</p></article><article class="card"><h3>Tone refinement</h3><p>Use frontline input to better understand how support, expectations and next steps are explained to victims.</p></article><article class="card"><h3>Delivery visibility</h3><p>Use a shared tracker dashboard to show progress, blockers, decisions, workflow and ownership.</p></article><article class="card"><h3>Sustainable operation</h3><p>Keep governance, ownership and BAU planning visible beyond prototype and launch.</p></article></div></div></section><section class="case-section glossary-section" id="glossary" aria-labelledby="glossary-kicker"><div class="container"><p class="kicker" id="glossary-kicker">Glossary</p><div class="glossary-table-wrap"><table class="glossary-table" aria-label="Plain language UX glossary"><tbody><tr><th scope="row">Accessibility</th><td>Designing content and interaction so people with different needs can use it.</td></tr><tr><th scope="row">BAU</th><td>Business as usual. The normal operating process after launch.</td></tr><tr><th scope="row">Card sorting</th><td>A research method where people group topics in ways that make sense to them.</td></tr><tr><th scope="row">Content model</th><td>A reusable pattern for page types, content sections, labels and relationships.</td></tr><tr><th scope="row">Content strategy</th><td>A plan for what content is needed, where it should sit, how it should sound and how it will be maintained.</td></tr><tr><th scope="row">Contrast</th><td>The difference between text and background colours. Good contrast makes content easier to read.</td></tr><tr><th scope="row">Dark mode</th><td>A colour setting that uses dark backgrounds and lighter text.</td></tr><tr><th scope="row">Fallback</th><td>A backup option shown when the main experience, such as an embedded video, does not work.</td></tr><tr><th scope="row">Go-live</th><td>The point when a page or service is published for use.</td></tr><tr><th scope="row">Governance</th><td>The decision-making and ownership process that keeps content accurate, approved and maintained.</td></tr><tr><th scope="row">Handover package</th><td>The set of files, decisions, open items and next steps given to the team that will continue the work.</td></tr><tr><th scope="row">Hi-fi prototype</th><td>A detailed prototype that looks and behaves close to the final design.</td></tr><tr><th scope="row">Hypercare</th><td>A short period after launch when the team watches closely for issues and fixes them quickly.</td></tr><tr><th scope="row">Information architecture</th><td>How information is grouped, named and connected so people can find what they need.</td></tr><tr><th scope="row">Prototype</th><td>A draft version of a page or service used to test structure, content and interaction before build.</td></tr><tr><th scope="row">Reusable template</th><td>A page or section layout that can be used again for similar content.</td></tr><tr><th scope="row">Signposting</th><td>Clear labels, links and prompts that show people where to go next.</td></tr><tr><th scope="row">Tree testing</th><td>A method for checking whether people can find information in a proposed menu or content structure.</td></tr><tr><th scope="row">Usability testing</th><td>Watching people try realistic tasks so the team can see what works and what needs to improve.</td></tr><tr><th scope="row">User journey</th><td>The steps a person takes when trying to complete a task or find information.</td></tr><tr><th scope="row">Validation</th><td>Checking a design direction with evidence before committing to build or launch.</td></tr></tbody></table></div></div></section></main><footer class="footer"><div class="container"><h2>NZ Police Victims Hub</h2><p>Justice Sector Victims Work Programme</p><p>Prepared by Cafe, Principal Advisor, Victims Information (Digital Channels) / Justice Sector Directorate</p><p>For internal project discussion.</p></div></footer><script>const root=document.documentElement,btn=document.querySelector('.theme-toggle'),saved=localStorage.getItem('victimHubTheme');if(saved)root.setAttribute('data-theme',saved);function label(){const mode=root.getAttribute('data-theme')||'system';btn.setAttribute('aria-label',mode==='dark'?'Switch to light mode':'Switch to dark mode')}label();btn.addEventListener('click',()=>{const next=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',next);localStorage.setItem('victimHubTheme',next);label()});</script><button class="back-to-top" type="button" aria-label="Back to top"><i class="ti ti-arrow-up" aria-hidden="true"></i></button>
+
+
+<script>
+(function(){
+  const navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+  const sectionGroupMap = {
+    overview:'overview',
+    background:'context',
+    problem:'context',
+    approach:'approach',
+    research:'research',
+    findings:'research',
+    principles:'design',
+    'ia-content':'design',
+    validation:'validation',
+    outcome:'outcome',
+    bau:'next',
+    reflection:'next'
+  };
+  const sections = Object.keys(sectionGroupMap)
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let isProgrammaticScroll = false;
+  let programmaticScrollTimer = null;
+
+  function setActiveGroup(group){
+    navLinks.forEach(link => {
+      const isActive = link.dataset.navGroup === group;
+      link.classList.toggle('is-active', isActive);
+      if(isActive){
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  }
+
+  function headerOffset(){
+    const header = document.querySelector('.site-header');
+    return header ? header.offsetHeight + 16 : 16;
+  }
+
+  function easeInOutQuint(t){
+    return t < 0.5 ? 16 * t * t * t * t * t : 1 - Math.pow(-2 * t + 2, 5) / 2;
+  }
+
+  function durationForDistance(distance){
+    const absoluteDistance = Math.abs(distance);
+    return Math.min(2400, Math.max(900, 700 + absoluteDistance * 0.28));
+  }
+
+  function clearArrivalCue(){
+    document.querySelectorAll('.case-section.is-arriving').forEach(section => section.classList.remove('is-arriving'));
+  }
+
+  function showArrivalCue(section){
+    if(!section || prefersReducedMotion.matches) return;
+    clearArrivalCue();
+    section.classList.add('is-arriving');
+    window.setTimeout(() => section.classList.remove('is-arriving'), 950);
+  }
+
+  function animateScrollTo(targetTop, targetSection){
+    const startTop = window.pageYOffset;
+    const distance = targetTop - startTop;
+    if(prefersReducedMotion.matches){
+      window.scrollTo(0, targetTop);
+      showArrivalCue(targetSection);
+      return;
+    }
+    const duration = durationForDistance(distance);
+    const startTime = performance.now();
+    isProgrammaticScroll = true;
+    window.clearTimeout(programmaticScrollTimer);
+
+    function step(now){
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeInOutQuint(progress);
+      window.scrollTo(0, startTop + distance * eased);
+      if(progress < 1){
+        requestAnimationFrame(step);
+      } else {
+        isProgrammaticScroll = false;
+        showArrivalCue(targetSection);
+        chooseActiveSection();
+      }
+    }
+
+    programmaticScrollTimer = window.setTimeout(() => { isProgrammaticScroll = false; }, duration + 120);
+    requestAnimationFrame(step);
+  }
+
+  function chooseActiveSection(){
+    if(!sections.length || isProgrammaticScroll) return;
+    const marker = headerOffset() + Math.min(220, window.innerHeight * 0.28);
+    let active = sections[0];
+
+    sections.forEach(section => {
+      if(section.getBoundingClientRect().top <= marker){
+        active = section;
+      }
+    });
+
+    if((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 8){
+      active = sections[sections.length - 1];
+    }
+
+    setActiveGroup(sectionGroupMap[active.id]);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+      const targetId = link.getAttribute('href').slice(1);
+      const target = document.getElementById(targetId);
+      if(!target) return;
+      event.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset();
+      window.history.pushState(null, '', '#' + targetId);
+      if(sectionGroupMap[targetId]){
+        setActiveGroup(sectionGroupMap[targetId]);
+      }
+      animateScrollTo(top, target.classList.contains('case-section') ? target : target.closest('.case-section'));
+    });
+  });
+
+  chooseActiveSection();
+  window.addEventListener('scroll', chooseActiveSection, {passive:true});
+  window.addEventListener('resize', chooseActiveSection);
+
+  const backTop = document.querySelector('.back-to-top');
+  function updateBackTop(){
+    if(!backTop) return;
+    if(window.scrollY > 520){
+      backTop.classList.add('is-visible');
+    } else {
+      backTop.classList.remove('is-visible');
+    }
+  }
+  if(backTop){
+    window.addEventListener('scroll', updateBackTop, {passive:true});
+    updateBackTop();
+    backTop.addEventListener('click', () => animateScrollTo(0, document.getElementById('overview')));
+  }
+})();
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const more = document.getElementById('postPlanMore');
+  const openButton = document.querySelector('.post-plan-toggle');
+  const closeButton = document.querySelector('.post-plan-collapse');
+  if(!more || !openButton || !closeButton) return;
+
+  openButton.addEventListener('click', function(){
+    more.hidden = false;
+    openButton.hidden = true;
+    openButton.setAttribute('aria-expanded', 'true');
+    closeButton.setAttribute('aria-expanded', 'true');
+  });
+
+  closeButton.addEventListener('click', function(){
+    more.hidden = true;
+    openButton.hidden = false;
+    openButton.setAttribute('aria-expanded', 'false');
+    closeButton.setAttribute('aria-expanded', 'false');
+    openButton.focus();
+  });
+});
+</script><script>
+document.addEventListener('DOMContentLoaded', function(){
+  const hifiFrame = document.getElementById('hifiFrame');
+  const hifiTabs = Array.from(document.querySelectorAll('.hifi-tab'));
+  const hifiBaseUrl = 'https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/08-High-fidelity%20prototype_v4.0.html';
+  if(!hifiFrame || !hifiTabs.length) return;
+
+  function setHifiPage(targetHash){
+    const target = targetHash === '#info-page' ? '#info-page' : '#hub-page';
+    hifiFrame.src = hifiBaseUrl + target;
+    hifiTabs.forEach(function(tab){
+      tab.setAttribute('aria-selected', tab.dataset.target === target ? 'true' : 'false');
+    });
+  }
+
+  hifiTabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      setHifiPage(tab.dataset.target);
+    });
+  });
+
+  setHifiPage('#hub-page');
+});
+</script></body></html>
