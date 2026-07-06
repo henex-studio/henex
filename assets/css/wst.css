@@ -101,8 +101,18 @@
 }
 
 /* Feedback — uses shared ux-feedback-* from ux-case-study.css.
-   WEL accent overrides: icon and hover use --ux-accent (orange) instead of --ux-theme (dark). */
+   WEL accent overrides: --ux-theme is a neutral dark (#202124) for headings,
+   so the shared card gradient/icon/hover (which derive from --ux-theme) read
+   as dirty gray on this page. Override background, icon and hover to use
+   --ux-accent (orange) instead, matching WEL's warm brand colour. */
+.ux-case-page--welnest .ux-feedback-card {
+  background:
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--ux-accent) 8%, transparent), transparent 34%),
+    color-mix(in srgb, var(--ux-soft) 50%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-accent) 22%, var(--theme-border-soft));
+}
 .ux-case-page--welnest .ux-feedback-icon {
+  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
   color: var(--ux-accent);
 }
 .ux-case-page--welnest .ux-feedback-card:hover {

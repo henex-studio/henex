@@ -785,7 +785,23 @@
   }
 }
 
-/* ─── Feedback — uses shared ux-feedback-* from ux-case-study.css ─── */
+/* ─── Feedback — uses shared ux-feedback-* from ux-case-study.css.
+   WSO's --ux-theme is a dark neutral (#30352E) used for headings, so the
+   shared card's --ux-theme-derived gradient/icon tint reads muddy. Override
+   to use --wso-orange (the real brand accent) instead, same fix as WEL. ─── */
+.ux-case-page--wso .ux-feedback-card {
+  background:
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--wso-orange) 8%, transparent), transparent 34%),
+    color-mix(in srgb, var(--wso-orange-soft) 50%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--wso-orange) 22%, var(--theme-border-soft));
+}
+.ux-case-page--wso .ux-feedback-icon {
+  background: color-mix(in srgb, var(--wso-orange-soft) 72%, var(--theme-surface));
+  color: var(--wso-orange);
+}
+.ux-case-page--wso .ux-feedback-card:hover {
+  border-color: color-mix(in srgb, var(--wso-orange) 34%, var(--theme-border));
+}
 
 /* ─── Lo-fi expand button ─── */
 .wso-lofi-expand {

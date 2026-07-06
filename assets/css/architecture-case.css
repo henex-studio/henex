@@ -933,7 +933,7 @@
   grid-template-rows: auto auto auto 1fr;
   gap: 8px;
   padding: 0 0 22px;
-  background: var(--theme-surface-soft);
+  background: var(--theme-surface);
   color: var(--theme-text);
   text-decoration: none;
 }

@@ -853,8 +853,8 @@ figcaption {
 }
 
 .ux-feedback-card {
-  min-height: 190px;
-  padding: 30px;
+  min-height: 150px;
+  padding: 26px;
   border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
   background:
     radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--ux-theme) 8%, transparent), transparent 34%),
@@ -867,19 +867,19 @@ figcaption {
 }
 
 .ux-feedback-icon {
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  margin-bottom: 22px;
+  margin-bottom: 16px;
   border-radius: var(--radius-full);
   background: color-mix(in srgb, var(--ux-soft, var(--theme-surface-soft)) 72%, var(--theme-surface));
   color: var(--ux-theme);
 }
 
 .ux-feedback-icon svg {
-  width: 25px;
-  height: 25px;
+  width: 21px;
+  height: 21px;
   display: block;
 }
 
@@ -896,8 +896,8 @@ figcaption {
   margin: 0;
   color: var(--theme-text);
   font-family: var(--font-heading);
-  font-size: clamp(1.04rem, 1.36vw, 1.24rem);
-  line-height: 1.38;
+  font-size: clamp(1.02rem, 1.3vw, 1.18rem);
+  line-height: 1.36;
 }
 
 
@@ -1246,9 +1246,16 @@ figcaption {
   grid-template-rows: auto auto auto 1fr;
   gap: var(--space-xs);
   padding: 0 0 22px;
-  background: var(--theme-surface-soft);
+  background: var(--theme-surface);
   color: var(--theme-text);
   text-decoration: none;
+}
+
+/* Related section heading — matches architecture pages (Spec: unify across
+   ux-case-study.css and architecture-case.css, sized per architecture-case.css) */
+.ux-related h2 {
+  font-size: clamp(2rem, 3.5vw, 3.5rem);
+  line-height: 1.03;
 }
 
 .ux-related-card img {
