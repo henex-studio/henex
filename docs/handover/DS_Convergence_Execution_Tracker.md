@@ -10,7 +10,7 @@
 | Phase | Task | Status | Completion | Notes |
 |-------|------|--------|------------|-------|
 | 1 | DS Visual Reference v2 | COMPLETE | 100% | Approved. File: `docs/visual-reference/HENEX_Design_System_Visual_Reference_v2.html` |
-| 2 | DS Implementation | IN PROGRESS | ~75% | Core tokens, hero system, card system done. Section components and per-project cleanup remain. |
+| 2 | DS Implementation | COMPLETE | 100% | Core tokens, hero system, card system, section components, per-project cleanup, and architecture page consistency all done (R1-R4). |
 | 3 | VTH Content Mapping | DRAFT READY | Document exists | `docs/ia/VTH_Content_Mapping_v1.md` awaiting user review. Can parallel Phase 2 tail. |
 | 4 | VTH v2 Preview | NOT STARTED | 0% | Blocked by Phase 2 + 3 |
 | 5 | VTH v2 Integration | NOT STARTED | 0% | Blocked by Phase 4 |
@@ -83,8 +83,8 @@ Gate: User approved.
 |---|------|----------|----------|------------|
 | R1 | Section component audit | Template Spec Part C step 2 | HIGH — blocks R2 | **DONE 2026-07-05** |
 | R2 | Per-project CSS cleanup | Template Spec Part C step 5 | HIGH | **DONE 2026-07-06** |
-| R3 | Master doc update (`HENEX_Master_v1.4.md`) | — | MEDIUM | R1, R2 |
-| R4 | Architecture pages (BT2 + 4 new arch pages) | — | LOW | None (independent track) |
+| R3 | Master doc update (`HENEX_Master_v1.5.md`) | — | MEDIUM | **DONE 2026-07-06** |
+| R4 | Architecture pages (BT2 + 4 new arch pages) | — | LOW | **DONE 2026-07-06** |
 
 ### Execution Order (confirmed 2026-07-05)
 
@@ -106,7 +106,18 @@ R2 completed 2026-07-06. Per-project CSS cleanup:
 - WEL: removed duplicate ux-feedback-* definitions (kept accent color override).
 - STD/ASH: already clean, no changes needed.
 
-R3 (master doc update) is next.
+R3 completed 2026-07-06. Master doc updated to v1.5 (`docs/specs/HENEX_Master_2026-07-06_v1.5.md`).
+Includes: Section 4a shared pattern catalog, R1/R2 cleanup log, bug fixes, gotchas, updated phase status/decisions/QA checklist.
+
+R4 completed 2026-07-06. Architecture pages DS adapt:
+- Audit finding: architecture pages had no per-project CSS files and no inline styles (unlike UX pages pre-R2), so no structural duplication cleanup was needed. Scope shifted to a deep DS consistency check against global.css and ux-case-study.css.
+- Fixed dark mode bug: `.arch-recipe-trigger[aria-expanded="true"]` hardcoded `#151719`/`#FFFFFF` instead of `var(--theme-text)`/`var(--theme-bg)`.
+- Unified related-card label typography (font-size, letter-spacing, inline spacing) between `.ux-related-card span` and `.arch-related-card span`, using the architecture value as baseline.
+- Added missing 1180px and 640px breakpoints to `architecture-case.css`. `.arch-two-col`, `.arch-media-row`, `.arch-henex`, `.arch-title-grid`, `.arch-callout-row`, `.arch-interface-grid`, `.arch-related__grid`, `.arch-findings` previously had no collapse rule at any breakpoint.
+- Confirmed the separate neutral tag system on architecture pages (vs UX pages' branded `.ux-tags`) is intentional, not a defect.
+- Flagged unresolved item: a report of oversized related-heading text on RKT and possibly other pages could not be reproduced in source — `.ux-related h2` and `.arch-related h2` are identical in the ds-convergence branch. Likely a stale production/cache view rather than a source bug. Needs Cafe confirmation of environment before further action.
+
+Phase 2 is now fully complete (R1-R4 all DONE).
 
 ---
 

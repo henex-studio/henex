@@ -1274,15 +1274,15 @@ figcaption {
 .ux-related-card span,
 .ux-related-card strong,
 .ux-related-card small {
-  margin-inline: 22px;
+  margin-inline: 18px;
 }
 
 .ux-related-card span {
   margin-top: 14px;
   color: var(--theme-muted);
-  font-size: .72rem;
+  font-size: 0.8125rem;
   font-weight: 850;
-  letter-spacing: .12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 

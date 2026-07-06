@@ -868,9 +868,9 @@
 }
 
 .arch-recipe-trigger[aria-expanded="true"] {
-  background: #151719;
-  color: #FFFFFF;
-  border-color: #151719;
+  background: var(--theme-text);
+  color: var(--theme-bg);
+  border-color: var(--theme-text);
 }
 
 /* C1 base (border, radius, shadow) is in global.css. */
@@ -982,4 +982,46 @@
 [data-theme="dark"] .arch-award-card:focus-within {
   box-shadow: var(--theme-shadow-card-hover);
   background: color-mix(in srgb, var(--arch-award-gold) 14%, var(--theme-surface));
+}
+
+
+/* Responsive: 1180px — wide-layout collapse (matches ux-case-study.css).
+   These layouts previously had no collapse rule at any breakpoint and
+   stayed two/four-column down to mobile widths. */
+
+@media (max-width: 1180px) {
+  .arch-title-grid,
+  .arch-two-col,
+  .arch-media-row,
+  .arch-henex,
+  .arch-media-row--context,
+  .arch-callout-row {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-interface-grid,
+  .arch-related__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .arch-findings {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Responsive: 640px — small tablet and phone (matches ux-case-study.css) */
+
+@media (max-width: 640px) {
+  .arch-image-pair,
+  .arch-award-grid,
+  .arch-interface-grid,
+  .arch-related__grid,
+  .arch-findings {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-meta-grid {
+    grid-template-columns: 1fr;
+  }
 }
