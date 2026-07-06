@@ -18,11 +18,9 @@ This plan covers the entire HENEX portfolio website lifecycle, from initial buil
 
 ## Current Focus
 
-**Active workstream:** Phase 2 R4 complete. Next candidate: Phase 3 gate review (VTH Content Mapping), or resolve the related-heading font-size report on production before proceeding.
+**Active workstream:** Phase 2 (R1-R4) fully complete. Next candidate: Phase 3 gate review (VTH Content Mapping).
 
-**Next action:**
-1. Confirm with Cafe whether the "oversized related heading on RKT" report was seen on production (main branch) or the ds-convergence Vercel preview. Source code on ds-convergence is already consistent; this may simply require merging/deploying, not a further CSS fix.
-2. Once resolved, move to Phase 3 formal review (VTH Content Mapping) to unblock Phases 4 and 5.
+**Next action:** Move to Phase 3 formal review (VTH Content Mapping) to unblock Phases 4 and 5.
 
 ---
 
@@ -113,9 +111,9 @@ This project unifies the design system across all case study pages, then rebuild
 **File:** `docs/visual-reference/HENEX_Design_System_Visual_Reference_v2.html`
 **Gate:** User previewed and approved.
 
-### Phase 2: DS Implementation — IN PROGRESS (~85% complete)
+### Phase 2: DS Implementation — DONE (2026-07-06)
 
-**Branch:** `ds-convergence` (45 files changed, +4091 / -709 vs main)
+**Branch:** `ds-convergence`
 
 **R1: Section Component Audit — DONE (2026-07-05)**
 Deliverables:
@@ -146,7 +144,7 @@ Priority: LOW. Independent of the VTH rebuild track.
 4. Unified related-card label typography: `.ux-related-card span` used `0.72rem`/`0.12em` letter-spacing while `.arch-related-card span` used `0.8125rem`/`0.15em` for the same UI role. Standardised to the architecture value across both templates. Also aligned `margin-inline`/`padding-inline` on related-card content from 22px (UX) to 18px (architecture baseline). DONE.
 5. Added missing 1180px and 640px breakpoints to `architecture-case.css`. Finding: `.arch-two-col`, `.arch-media-row`, `.arch-henex`, `.arch-title-grid`, `.arch-callout-row`, `.arch-interface-grid`, `.arch-related__grid`, and `.arch-findings` had no collapse rule at any breakpoint and stayed multi-column down to mobile widths. Now collapse at 1180px (wide-layout, matching the same breakpoint's role in `ux-case-study.css`) and 640px. DONE.
 6. Confirmed architecture pages' neutral tag system (`.case-tag-row`/`.case-tags` from `global.css`) is intentionally separate from UX pages' branded `.ux-tags` (themed via `--ux-theme`). Not a defect — architecture projects have no per-project brand colour. No change needed.
-7. Investigated a separate report of oversized related-section heading text (rendering large on RKT and possibly others). Finding: `.ux-related h2` and `.arch-related h2` are byte-identical in source (`clamp(2rem, 3.5vw, 3.5rem)`), and no per-project CSS override exists on any of the 15 case study pages. The discrepancy is not present in the ds-convergence branch source. Needs Cafe to confirm which URL/environment was viewed (production main branch vs Vercel ds-convergence preview) before further action, since production has not yet received the 2026-07-06 related-heading unification fix.
+7. Investigated a separate report of oversized related-section heading text on RKT. Confirmed via DevTools that the CSS rule and computed font-size were correct and identical to other pages, clamp working as designed. Root cause was not CSS but content: RKT ("...digital and community systems.") and Studier ("...service, research and digital systems.") had non-standard related-heading copy, different from the other 13 pages' standard line ("More work across service, digital and spatial systems."), which reads as visually different due to different text length. Fixed both to the standard copy. All 15 case study pages now share identical related-heading text. DONE.
 
 **Visual QA (R1/R2 verification) — DONE (2026-07-06)**
 1. Related-card background unified to pure white. DONE.
@@ -250,4 +248,5 @@ Full WCAG AA audit across all pages. QA checklist exists in Master doc Section 1
 | Date | Change |
 |------|--------|
 | 2026-07-06 | v1.0 created. Consolidated full project history from Master v1.5, Execution Tracker, and Convergence Spec v1.1. |
-| 2026-07-06 | Phase 2 R4 marked DONE. Architecture pages audited; found no per-project CSS duplication (unlike UX pages), so cleanup scope shifted to a deep DS consistency check. Fixed dark mode hardcoded colours in recipe trigger, unified related-card label typography, added missing 1180px/640px breakpoints (several layouts had no collapse rule at all). Flagged a possible stale-production issue on the related-heading font-size report, pending Cafe confirmation. |
+| 2026-07-06 | Phase 2 R4 marked DONE. Architecture pages audited; found no per-project CSS duplication (unlike UX pages), so cleanup scope shifted to a deep DS consistency check. Fixed dark mode hardcoded colours in recipe trigger, unified related-card label typography, added missing 1180px/640px breakpoints (several layouts had no collapse rule at all). |
+| 2026-07-06 | Sitewide content fix: Studier and ReKraft had non-standard related-section heading copy, differing from the other 13 pages. Unified all 15 case study pages to the standard line "More work across service, digital and spatial systems." |
