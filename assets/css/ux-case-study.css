@@ -853,6 +853,11 @@ figcaption {
 }
 
 .ux-feedback-card {
+  /* Reset browser default blockquote margin (1em 40px) — without this the
+     card visually indents ~40px on each side inside its grid cell, making
+     the whole row look narrower and more gapped than sibling grids like
+     .vsk-finding-grid (which uses <article>, no default margin). */
+  margin: 0;
   min-height: 0;
   padding: 22px 24px;
   border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
