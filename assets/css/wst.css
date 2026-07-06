@@ -100,51 +100,13 @@
   box-shadow: none;
 }
 
-/* Feedback cards: copied .ux-feedback-icon/.ux-feedback-grid base rules from vsk.css
-   because this CSS lives in vsk.css, not the shared ux-case-study.css. Re-themed to WST colours. */
-.ux-feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-/* C1 base (border, radius, shadow) is in global.css. */
-.ux-feedback-card {
-  min-height: 190px;
-  margin: 0;
-  padding: 30px;
-  background: var(--theme-surface);
-}
-.ux-feedback-card:hover {
-  border-color: color-mix(in srgb, var(--ux-accent) 34%, var(--theme-border));
-}
-.ux-feedback-icon {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+/* Feedback — uses shared ux-feedback-* from ux-case-study.css.
+   WEL accent overrides: icon and hover use --ux-accent (orange) instead of --ux-theme (dark). */
+.ux-case-page--welnest .ux-feedback-icon {
   color: var(--ux-accent);
 }
-.ux-feedback-icon svg {
-  width: 23px;
-  height: 23px;
-}
-.ux-feedback-icon circle,
-.ux-feedback-icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.ux-feedback-card p {
-  margin: 0;
-  color: var(--theme-text);
-  font-size: 1rem;
-  line-height: 1.6;
+.ux-case-page--welnest .ux-feedback-card:hover {
+  border-color: color-mix(in srgb, var(--ux-accent) 34%, var(--theme-border));
 }
 
 /* Discover: findings, journey and influence share one layout column so they read as a single

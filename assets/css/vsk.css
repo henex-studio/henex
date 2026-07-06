@@ -149,52 +149,7 @@
   aspect-ratio: 1920 / 1080;
 }
 
-/* Feedback */
-.ux-feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 38px;
-}
-/* C1 base (border, radius, shadow) is in global.css. */
-.ux-feedback-card {
-  min-height: 190px;
-  margin: 0;
-  padding: 26px;
-  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  background: var(--theme-surface);
-}
-.ux-feedback-card:hover {
-  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
-}
-.ux-feedback-icon {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 20px;
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
-  color: var(--ux-theme);
-}
-.ux-feedback-icon svg {
-  width: 23px;
-  height: 23px;
-}
-.ux-feedback-icon circle,
-.ux-feedback-icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.ux-feedback-card p {
-  margin: 0;
-  color: var(--theme-text);
-  font-size: 1rem;
-  line-height: 1.54;
-}
+/* Feedback — uses shared ux-feedback-grid/card/icon from ux-case-study.css */
 
 /* Findings */
 .vsk-finding-grid {
@@ -233,37 +188,11 @@
   color: var(--vsk-blue);
 }
 
-/* Principles */
+/* Principles — uses shared ux-icon-card from ux-case-study.css */
 .ux-principle-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
-}
-.vsk-principle-card {
-  padding: 24px;
-}
-.vsk-principle-icon {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border-radius: var(--radius-full);
-  color: var(--ux-theme);
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
-}
-.vsk-principle-icon svg {
-  width: 23px;
-  height: 23px;
-}
-.vsk-principle-icon path,
-.vsk-principle-icon rect,
-.vsk-principle-icon circle {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
 }
 
 /* Concept stack */
@@ -346,25 +275,10 @@
   margin-top: 18px;
 }
 
-/* Swatches */
-.ux-swatch-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 10px;
+/* Swatches — uses shared ux-swatch-grid/swatch from ux-case-study.css */
+.ux-case-page--voting-starter-kit .ux-swatch-grid {
   margin-bottom: 52px;
 }
-.ux-swatch {
-  min-height: 116px;
-  display: grid;
-  align-content: end;
-  gap: 6px;
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid rgba(0, 0, 0, .08);
-  color: #fff;
-}
-.ux-swatch b { font-size: .78rem; }
-.ux-swatch strong { color: inherit; font-size: .9rem; }
 .ux-swatch--orange       { background: #FF6000; }
 .ux-swatch--orange-light { background: #FFD0AA; color: #242947; }
 .ux-swatch--orange-pale  { background: #FEF0E4; color: #242947; }
@@ -419,7 +333,6 @@
 }
 
 /* Dark mode */
-[data-theme="dark"] .ux-feedback-card,
 [data-theme="dark"] .vsk-finding-grid article,
 [data-theme="dark"] .vsk-social-feature,
 [data-theme="dark"] .vsk-ds-stack img:not(.vsk-ds-gallery img) {
@@ -437,7 +350,6 @@
     grid-template-columns: 1fr;
   }
   .ux-touchpoint-grid,
-  .ux-feedback-grid,
   .vsk-finding-grid,
   .vsk-ds-gallery {
     grid-template-columns: 1fr;
@@ -445,24 +357,11 @@
   .ux-principle-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .ux-swatch-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 }
 
 /* Responsive: 640px */
 @media (max-width: 640px) {
   .ux-principle-grid {
-    grid-template-columns: 1fr;
-  }
-  .ux-swatch-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-/* Responsive: 520px */
-@media (max-width: 520px) {
-  .ux-swatch-grid {
     grid-template-columns: 1fr;
   }
 }

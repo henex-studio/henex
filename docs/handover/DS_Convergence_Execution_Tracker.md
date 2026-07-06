@@ -82,7 +82,7 @@ Gate: User approved.
 | # | Item | Spec Ref | Priority | Dependency |
 |---|------|----------|----------|------------|
 | R1 | Section component audit | Template Spec Part C step 2 | HIGH — blocks R2 | **DONE 2026-07-05** |
-| R2 | Per-project CSS cleanup | Template Spec Part C step 5 | HIGH | R1 |
+| R2 | Per-project CSS cleanup | Template Spec Part C step 5 | HIGH | **DONE 2026-07-06** |
 | R3 | Master doc update (`HENEX_Master_v1.4.md`) | — | MEDIUM | R1, R2 |
 | R4 | Architecture pages (BT2 + 4 new arch pages) | — | LOW | None (independent track) |
 
@@ -98,7 +98,15 @@ R1 completed 2026-07-05. Deliverables:
 - `assets/css/ux-case-study.css` — 18 shared component classes added (section tiers, feedback grid, icon card, gallery, swatch, card stack, component row, scroll viewport, scope block, chip flow, showcase figure) with responsive rules at 1180/640/520px
 - All additions are additive-only; no existing classes modified
 
-R2 (per-project CSS cleanup) is next.
+R2 completed 2026-07-06. Per-project CSS cleanup:
+- NDS: 741→449 lines. 19 system-* classes migrated to shared ux-* equivalents. system-theme-ds now overrides --ux-theme for purple sections.
+- VSK: removed duplicate ux-feedback-*/ux-swatch-* definitions. Migrated vsk-principle-card→ux-icon-card.
+- RKT: removed duplicate ux-feedback-* definitions (kept 2-col grid override).
+- WSO: removed duplicate ux-feedback-* definitions.
+- WEL: removed duplicate ux-feedback-* definitions (kept accent color override).
+- STD/ASH: already clean, no changes needed.
+
+R3 (master doc update) is next.
 
 ---
 

@@ -785,58 +785,7 @@
   }
 }
 
-/* ─── Feedback cards (copied from vsk.css pattern) ─── */
-.ux-case-page--wso .ux-feedback-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 38px;
-}
-
-/* C1 base (border, radius, shadow) is in global.css. */
-.ux-case-page--wso .ux-feedback-card {
-  min-height: 190px;
-  margin: 0;
-  padding: 26px;
-  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
-  background: var(--theme-surface);
-}
-
-.ux-case-page--wso .ux-feedback-card:hover {
-  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
-}
-
-.ux-case-page--wso .ux-feedback-icon {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 20px;
-  border-radius: var(--radius-full);
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
-  color: var(--ux-theme);
-}
-
-.ux-case-page--wso .ux-feedback-icon svg {
-  width: 23px;
-  height: 23px;
-}
-
-.ux-case-page--wso .ux-feedback-icon circle,
-.ux-case-page--wso .ux-feedback-icon path {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.ux-case-page--wso .ux-feedback-card p {
-  margin: 0;
-  color: var(--theme-text);
-  font-size: 1rem;
-  line-height: 1.54;
-}
+/* ─── Feedback — uses shared ux-feedback-* from ux-case-study.css ─── */
 
 /* ─── Lo-fi expand button ─── */
 .wso-lofi-expand {
