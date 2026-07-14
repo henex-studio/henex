@@ -70,8 +70,8 @@
 
   <main id="main-content">
 
-    <!-- Hero -->
-    <section class="ux-hero" aria-labelledby="case-title">
+    <!-- 1. Hero — frosted dual-bloom (Master Spec 7.1) -->
+    <section class="ux-hero ash-hero" aria-labelledby="case-title">
       <div class="container ux-hero__top">
         <div class="case-tag-row case-tag-row--overlay">
           <div class="case-tags case-tags--primary" aria-label="Project categories">
@@ -85,25 +85,19 @@
       </div>
       <div class="container ux-hero__inner">
         <div class="ux-hero__copy">
-<h1 id="case-title">Accessibility Support Hub</h1>
+          <h1 id="case-title">Accessibility Support Hub</h1>
           <p>Make court assistance easy to find, understand and intuitive to access for inclusive users.</p>
           <div class="ux-actions">
-            <a class="button button--primary"
-              href="https://www.figma.com/proto/N0sDQDbQ7aJO8p2a2qFmCO/Mojito-Figma-for-PF?page-id=402%3A2029&node-id=4258-14700&viewport=-540%2C672%2C0.08&t=J9M60bgx7SklM7B6-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=4258%3A14700&show-proto-sidebar=1"
-              target="_blank" rel="noopener noreferrer">View Prototype</a>
-            <a class="button button--soft" href="../works.html">Back to Works</a>
+            <a class="button button--primary" href="#outcome">View outcome</a>
+            <a class="button button--soft" href="#delivery">View final design</a>
           </div>
         </div>
-        <img class="ux-hero__mark"
-          src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/cabbage-tree.png"
-          alt="Cabbage tree illustration used as part of the visual identity."
-          loading="eager">
       </div>
     </section>
 
 
-    <!-- Overview -->
-    <section class="ux-section" aria-labelledby="overview-title">
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>Overview</p>
@@ -141,30 +135,13 @@
     </section>
 
 
-    <!-- Screencast -->
-    <section class="ux-section ux-section--tint" aria-labelledby="video-title">
-      <div class="container ux-video-grid">
-        <div>
-          <p class="ux-kicker">Screencast</p>
-          <h2 id="video-title">Prototype walkthrough.</h2>
-          <p>A short walkthrough of the Accessibility Support Hub prototype and support pathway experience.</p>
-        </div>
-        <video class="ux-video" controls preload="metadata" playsinline>
-          <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-      </div>
-    </section>
-
-
-    <!-- Background -->
-    <section class="ux-section" aria-labelledby="background-title">
-      <div class="container ux-media-row">
-        <div class="ux-copy">
+    <!-- 3. Background -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
+      <div class="container">
+        <div class="ux-chapter-head">
           <p class="ux-kicker">Background</p>
           <h2 id="background-title">Serving the NZ Disabilities Strategy.</h2>
-          <p>In support of the New Zealand Government's Disabilities Strategy, this project worked with the Ministry of Justice to create an Accessibility Support Hub.</p>
-          <p>The goal was to take scattered accessibility information and turn it into a clear, inclusive digital experience that helps users find and request court support services easily.</p>
+          <p>In support of the New Zealand Government's Disabilities Strategy, this project worked with the Ministry of Justice to create an Accessibility Support Hub. The goal was to take scattered accessibility information and turn it into a clear, inclusive digital experience that helps users find and request court support services easily.</p>
         </div>
         <figure>
           <img
@@ -177,15 +154,14 @@
     </section>
 
 
-    <!-- Problem -->
-    <section class="ux-section ux-problem" aria-labelledby="problem-title">
+    <!-- 4. Problem -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
       <div class="container ux-problem__grid">
         <div>
           <p class="ux-kicker">Problem</p>
           <h2 id="problem-title">
-            <strong>How might we</strong> create a <em>reusable and scalable pattern</em> which offers
-            an intuitive and supportive experience that makes it easy for people to
-            <em>find, understand, and request</em> court assistance across the website?
+            Fragmented accessibility information leaves people unsure how to
+            <em>find, understand, and request</em> court assistance across the website.
           </h2>
         </div>
         <figure>
@@ -198,10 +174,23 @@
     </section>
 
 
-    <!-- Solution -->
-    <section class="ux-solution" aria-labelledby="solution-title">
-      <div class="container ux-solution__grid">
-        <div>
+    <!-- 5. HMW interlude (Master Spec 4.8) — copy per Cafe: use the
+         existing HMW text already on the ASH page. -->
+    <section class="ux-section ux-tier-d ux-hmw-section" aria-labelledby="hmw-title">
+      <div class="container">
+        <h2 id="hmw-title" class="ux-hmw-statement">
+          <strong>How might we</strong> create a <strong>reusable and scalable pattern</strong> which offers
+          an intuitive and supportive experience that makes it easy for people to
+          <strong>find, understand, and request</strong> court assistance across the website?
+        </h2>
+      </div>
+    </section>
+
+
+    <!-- 6. Solution -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
+      <div class="container">
+        <div class="ux-chapter-head">
           <p class="ux-kicker">Solution</p>
           <h2 id="solution-title">A central landing page for all accessibility services.</h2>
           <p>The solution centralises accessibility services and uses "finding information" and "requesting services" as repeatable templates. The hub sits within the court area of the main site while keeping a clear connection to related pages.</p>
@@ -216,75 +205,44 @@
     </section>
 
 
-    <!-- Contribution -->
-    <section class="ux-section ux-section--tint" aria-labelledby="contribution-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Contribution</p>
+    <!-- 7. Outcome — absorbs the former standalone Screencast section -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container ux-video-grid">
+        <div>
+          <p class="ux-kicker">Outcome</p>
+          <h2 id="outcome-title">Prototype walkthrough.</h2>
+          <p>A short walkthrough of the Accessibility Support Hub prototype and support pathway experience.</p>
+        </div>
+        <video class="ux-video" controls preload="metadata" playsinline>
+          <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+
+    <!-- 8. Contribution — merges the former standalone Impacts section
+         (rule 4.6: consolidated role impact belongs in Contribution) -->
+    <section class="ux-section ux-tier-s" id="contribution" aria-labelledby="contribution-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Contribution</p>
           <h2 id="contribution-title">Wearing two hats across the project lifecycle.</h2>
-        </aside>
-        <div class="ux-copy">
           <p>In this project, I wore two hats: Project Manager and UX Designer.</p>
-          <div class="ux-card-grid ux-card-grid--two">
-            <article class="ux-card">
-              <span>Project Manager</span>
-              <h3>Keeping the project moving</h3>
-              <p>I managed the schedule, led weekly meetings with the Ministry of Justice, and facilitated workshops to keep the project aligned.</p>
-            </article>
-            <article class="ux-card">
-              <span>UX Designer and Researcher</span>
-              <h3>From research to high-fidelity</h3>
-              <p>I built the roadmap, contributed to research, developed the interpreter service blueprint, designed the information architecture, and created prototypes for the wheelchair access flow.</p>
-            </article>
-          </div>
         </div>
-      </div>
-    </section>
-
-
-    <!-- Design Process -->
-    <section class="ux-section" aria-labelledby="process-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Design Process</p>
-          <h2 id="process-title">A fluid and adaptable design journey.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>The project used the Double Diamond framework as a base, while keeping the roadmap flexible enough to respond to research findings and stakeholder feedback.</p>
-          <div class="ux-process">
-            <div><span>Discover</span><p>Research, workshops and field survey.</p></div>
-            <div><span>Define</span><p>Evaluation, prioritisation and scope alignment.</p></div>
-            <div><span>Develop</span><p>Information architecture, prototype flows and design system work.</p></div>
-            <div><span>Deliver</span><p>High-fidelity prototype and documentation.</p></div>
-          </div>
+        <div class="ux-card-grid ux-card-grid--two">
+          <article class="ux-card">
+            <span>Project Manager</span>
+            <h3>Keeping the project moving</h3>
+            <p>I managed the schedule, led weekly meetings with the Ministry of Justice, and facilitated workshops to keep the project aligned.</p>
+          </article>
+          <article class="ux-card">
+            <span>UX Designer and Researcher</span>
+            <h3>From research to high-fidelity</h3>
+            <p>I built the roadmap, contributed to research, developed the interpreter service blueprint, designed the information architecture, and created prototypes for the wheelchair access flow.</p>
+          </article>
         </div>
-      </div>
-      <div class="container">
-        <figure class="ux-evidence ux-evidence--controlled">
-          <button
-  type="button"
-  data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
-  data-modal-title="Project roadmap"
-  data-modal-caption="Roadmap showing four overlapping waves of discovery, design and validation.">
-  <img
-    src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
-    alt="Project roadmap showing overlapping waves of discovery, design and validation."
-    loading="lazy">
-</button>
-          <figcaption>The final process looked like four overlapping waves, reflecting how discovery, design and validation happened in parallel rather than in a strict order.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-
-    <!-- Impacts -->
-    <section class="ux-section ux-section--tint" aria-labelledby="impact-title">
-      <div class="container">
-        <div class="ux-wide-head">
-          <p class="ux-kicker">Impacts</p>
-          <h2 id="impact-title">My key role across the project lifecycle.</h2>
-        </div>
-        <div class="ux-card-grid ux-card-grid--three">
+        <div class="ux-card-grid ux-card-grid--three" style="margin-top: 32px;">
           <article class="ux-card"><span>01</span><h3>Service Blueprint Workshop</h3><p>Led the development of the service blueprint and facilitated the workshop.</p></article>
           <article class="ux-card"><span>02</span><h3>Evaluative Workshop</h3><p>Designed the evaluation framework, led the workshop, and aligned the project scope.</p></article>
           <article class="ux-card"><span>03</span><h3>Information Architecture</h3><p>Restructured the relationship between new and existing accessibility content.</p></article>
@@ -296,23 +254,51 @@
     </section>
 
 
-    <!-- Service Blueprint -->
-    <section class="ux-section" aria-labelledby="blueprint-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Service Blueprint Workshop</p>
-          <h2 id="blueprint-title">Revealing internal processes through collaboration.</h2>
-        </aside>
-        <div class="ux-copy ux-narrow">
-          <p>I mapped out the Ministry's current service flow for interpreter requests, covering both internal staff processes and the external website experience.</p>
-          <p>To ensure accuracy, I co-facilitated a workshop with Ministry of Justice staff to validate the service flow and identify real-world pain points.</p>
-          <div class="ux-influence">
-            <strong>Influence</strong>
-            <p>This filled a blank in the Ministry's documentation. It also helped us see the service as a whole system, where changing a small visible touchpoint affects everything beneath it.</p>
-          </div>
+    <!-- 9. Process — chapter-2 gateway with 4 nav cards -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
+          <h2 id="process-title">A fluid and adaptable design journey.</h2>
+          <p>The project used the Double Diamond framework as a base, while keeping the roadmap flexible enough to respond to research findings and stakeholder feedback.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card" href="#research">
+            <h3>Research</h3>
+            <p>Service blueprint workshop, evaluative workshop.</p>
+          </a>
+          <a class="ux-card" href="#design">
+            <h3>Design</h3>
+            <p>Information architecture, design system.</p>
+          </a>
+          <a class="ux-card" href="#validation">
+            <h3>Validation</h3>
+            <p>Severity rating, MS Clarity analysis.</p>
+          </a>
+          <a class="ux-card" href="#delivery">
+            <h3>Delivery</h3>
+            <p>Final design, key features.</p>
+          </a>
         </div>
       </div>
+    </section>
+
+
+    <!-- 10. Research — Service Blueprint Workshop + Evaluative Workshop -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="research-title">
       <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
+          <h2 id="research-title">Mapping the system before redesigning it.</h2>
+        </div>
+
+        <div class="ux-section-head">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Service Blueprint Workshop</p>
+            <h3>Revealing internal processes through collaboration.</h3>
+          </div>
+          <p class="ux-section-head__desc">I mapped out the Ministry's current service flow for interpreter requests, covering both internal staff processes and the external website experience. To ensure accuracy, I co-facilitated a workshop with Ministry of Justice staff to validate the service flow and identify real-world pain points.</p>
+        </div>
         <figure class="ux-evidence ux-evidence--controlled">
           <button
             type="button"
@@ -326,22 +312,19 @@
           </button>
           <figcaption>Digital service blueprint covering user actions, frontstage touchpoints, backstage operations and support processes.</figcaption>
         </figure>
-      </div>
-    </section>
-
-
-    <!-- Evaluative Workshop -->
-    <section class="ux-section ux-section--tint" aria-labelledby="evaluation-title">
-      <div class="container ux-evaluative">
-        <aside class="ux-intro">
-          <p>Evaluative Workshop</p>
-          <h2 id="evaluation-title">Aligning priorities through shared evaluation.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>After research, the team realised the problems were connected across the whole system. With limited time and resources, the project needed a clear way to prioritise.</p>
-          <p>I designed a scoring framework based on control, capability, impact, and value. Both teams scored and merged results, placing problems on a feasibility-benefit quadrant.</p>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>This filled a blank in the Ministry's documentation. It also helped us see the service as a whole system, where changing a small visible touchpoint affects everything beneath it.</p>
         </div>
-        <figure class="ux-evaluative__table">
+
+        <div class="ux-section-head" style="margin-top: 96px;">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Evaluative Workshop</p>
+            <h3>Aligning priorities through shared evaluation.</h3>
+          </div>
+          <p class="ux-section-head__desc">After research, the team realised the problems were connected across the whole system. With limited time and resources, the project needed a clear way to prioritise. I designed a scoring framework based on control, capability, impact, and value. Both teams scored and merged results, placing problems on a feasibility-benefit quadrant.</p>
+        </div>
+        <figure class="ux-evidence ux-evidence--controlled">
           <button
             type="button"
             data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluative-table-big.png"
@@ -353,7 +336,7 @@
               loading="lazy">
           </button>
         </figure>
-        <figure class="ux-evaluative__pathway">
+        <figure class="ux-evidence ux-evidence--controlled" style="margin-top: 32px;">
           <button
             type="button"
             data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluation-pathway.png"
@@ -366,39 +349,53 @@
           </button>
           <figcaption>Evaluation pathway: Summary of Insights → 4-Dimension Evaluation → Score Result → 4-Quadrant Grid.</figcaption>
         </figure>
-        <div class="ux-influence ux-evaluative__influence">
+        <div class="ux-influence">
           <strong>Influence</strong>
           <p>This workshop narrowed the focus, improved how resources were used, and gave the Ministry a repeatable decision-making method.</p>
+        </div>
+
+        <div class="ux-scope-block" style="margin-top: 96px;">
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button
+              type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
+              data-modal-title="Project roadmap"
+              data-modal-caption="Roadmap showing four overlapping waves of discovery, design and validation.">
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
+                alt="Project roadmap showing overlapping waves of discovery, design and validation."
+                loading="lazy">
+            </button>
+            <figcaption>The final process looked like four overlapping waves, reflecting how discovery, design and validation happened in parallel rather than in a strict order.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
 
-    <!-- Information Architecture -->
-    <section class="ux-section" aria-labelledby="ia-title">
-      <div class="container ux-ia">
-        <aside class="ux-intro">
-          <p>Information Architecture</p>
-          <h2 id="ia-title">Creating clear, connected pathways within an evolving system.</h2>
-        </aside>
-        <div class="ux-copy ux-ia__copy">
-          <p>The challenge was to link new pages with old ones without breaking the existing site.</p>
-          <p>It is like adding a modern bathroom centre to an old apartment building. People still enter through the old building, but each room now has a path into the new centre. Over time, both systems can merge.</p>
+    <!-- 11. Design — Information Architecture + Design System folded in -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="design-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
+          <h2 id="design-title">Connected pathways built for reuse and growth.</h2>
         </div>
-        <figure class="ux-ia__sketch">
+
+        <div class="ux-section-head">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Information Architecture</p>
+            <h3>Creating clear, connected pathways within an evolving system.</h3>
+          </div>
+          <p class="ux-section-head__desc">The challenge was to link new pages with old ones without breaking the existing site. It is like adding a modern bathroom centre to an old apartment building. People still enter through the old building, but each room now has a path into the new centre. Over time, both systems can merge.</p>
+        </div>
+        <figure>
           <img
             src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ia-concept.png"
             alt="Hand-drawn concept diagram explaining the relationship between existing Ministry pages and the Accessibility Support Hub."
             loading="lazy">
           <figcaption>Concept sketch for the relationship between existing Ministry content and the new hub structure.</figcaption>
         </figure>
-        <div class="ux-influence ux-ia__influence">
-          <strong>Influence</strong>
-          <p>This solved the problem of old and new pages existing at the same time and created a path for the website's long-term growth. It also supported high-fidelity prototyping.</p>
-        </div>
-      </div>
-      <div class="container">
-        <figure class="ux-evidence ux-evidence--controlled">
+        <figure class="ux-evidence ux-evidence--controlled" style="margin-top: 32px;">
           <button
             type="button"
             data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ia.png"
@@ -411,16 +408,74 @@
           </button>
           <figcaption>Information architecture diagram showing how the hub sits within the existing site structure while creating a path for future integration.</figcaption>
         </figure>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>This solved the problem of old and new pages existing at the same time and created a path for the website's long-term growth. It also supported high-fidelity prototyping.</p>
+        </div>
+
+        <div class="ux-section-head" style="margin-top: 96px;">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Design System</p>
+            <h3>A consistent, accessible system built for reuse and growth.</h3>
+          </div>
+          <p class="ux-section-head__desc">Based on the Care of Children system, I led the creation of the design system, including brand direction, colour guidance, map legends, icon sets, and accessibility compliance.</p>
+        </div>
+        <figure class="ux-ds-brand">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-hero.png" alt="Design system brand header." loading="lazy">
+        </figure>
+        <div class="ux-ds-list">
+          <article class="ux-ds-module">
+            <div>
+              <h3>Colour</h3>
+              <p>Cabbage Green signals guidance and navigation. Care Pink expresses warmth and support. MoJ Blue is maintained for universal components.</p>
+            </div>
+            <div class="ux-colours">
+              <div class="ux-colour ux-colour--green">
+                <strong>Cabbage Green</strong><span>#13838A</span><small>Guidance and navigation</small>
+              </div>
+              <div class="ux-colour ux-colour--pink">
+                <strong>Care Pink</strong><span>#A5205F</span><small>Warmth and support</small>
+              </div>
+              <div class="ux-colour ux-colour--blue">
+                <strong>MoJ Blue</strong><span>#09397C</span><small>Universal components</small>
+              </div>
+            </div>
+          </article>
+          <article class="ux-ds-module">
+            <div>
+              <h3>Iconset</h3>
+              <p>I designed a comprehensive set of icons for accessibility services, court facilities, and map legends.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-icon.png"
+                alt="Icon set for accessibility services, court facilities and map legends."
+                loading="lazy">
+            </figure>
+          </article>
+          <article class="ux-ds-module ux-ds-module--reverse">
+            <div>
+              <h3>Accessibility</h3>
+              <p>Main body text meets AAA contrast standards, while supporting text meets at least AA standards.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-accessibility.png"
+                alt="Accessibility guidance and contrast notes."
+                loading="lazy">
+            </figure>
+          </article>
+        </div>
       </div>
     </section>
 
 
-    <!-- Usability Test -->
-    <section class="ux-section ux-section--tint" aria-labelledby="testing-title">
+    <!-- 12. Validation — Usability Test -->
+    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
       <div class="container ux-usability">
         <aside class="ux-intro">
-          <p>Usability Test</p>
-          <h2 id="testing-title">Mixed-method usability tests helped get specific design direction.</h2>
+          <p>Validation</p>
+          <h2 id="validation-title">Mixed-method usability tests helped get specific design direction.</h2>
         </aside>
         <div class="ux-copy">
           <p>To turn test results into clear actions, I introduced NN/g's severity rating method and Microsoft Clarity for behavioural analysis.</p>
@@ -463,14 +518,14 @@
     </section>
 
 
-    <!-- Final Design -->
-    <section class="ux-section" aria-labelledby="final-title">
-      <div class="container ux-wide-head">
-        <p class="ux-kicker">Final Design</p>
-        <h2 id="final-title">Clear and confident access to court support information.</h2>
-        <p>The final design focused on making users feel supported and confident, reducing the mental effort required to find help through familiar patterns and clear guidance.</p>
-      </div>
+    <!-- 13. Delivery — Final Design content -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="delivery-title">
       <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Delivery</p>
+          <h2 id="delivery-title">Clear and confident access to court support information.</h2>
+          <p>The final design focused on making users feel supported and confident, reducing the mental effort required to find help through familiar patterns and clear guidance.</p>
+        </div>
         <figure class="ux-evidence ux-final">
           <img
             src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/final-design.png"
@@ -478,130 +533,72 @@
             loading="lazy">
           <figcaption>Final design direction for clear and confident access to court support information.</figcaption>
         </figure>
-      </div>
-      <div class="container ux-feature-list">
-        <article class="ux-feature">
-          <div>
-            <p class="ux-kicker">Key Feature</p>
-            <h3>Always Have a Choice</h3>
-            <p>Users should never feel stuck on a page. Related accessibility content is linked using lightweight tiles, clear text, and consistent button styles.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/always-have-choice.png"
-              alt="Accessibility Support Hub page showing clear pathways across accessibility support pages."
-              loading="lazy">
-            <figcaption>Clear pathways across both new hub pages and existing Ministry pages.</figcaption>
-          </figure>
-        </article>
-        <article class="ux-feature ux-feature--reverse">
-          <div>
-            <p class="ux-kicker">Key Feature</p>
-            <h3>Search Result Optimisation</h3>
-            <p>Most users start with search on public service sites. The search result pattern helps common keywords lead to structured, easy-to-read results.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/search-optimasation.png"
-              alt="Optimised search results page for court accessibility queries."
-              loading="lazy">
-            <figcaption>Helping users find court accessibility information faster.</figcaption>
-          </figure>
-        </article>
-        <article class="ux-feature">
-          <div>
-            <p class="ux-kicker">Key Feature</p>
-            <h3>Just Enough Information</h3>
-            <p>The interface uses progressive disclosure, starting with simple titles and icons, then adding detail as user intent becomes clearer.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/just-enough-info.png"
-              alt="Interface showing progressive disclosure of court support information."
-              loading="lazy">
-            <figcaption>Progressive disclosure to reduce cognitive load.</figcaption>
-          </figure>
-        </article>
-        <article class="ux-feature ux-feature--reverse">
-          <div>
-            <p class="ux-kicker">Key Feature</p>
-            <h3>Intuitive Guide</h3>
-            <p>Court visit information follows a time-based journey, from site maps to floor plans, matching real-world expectations before a court visit.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/intuitive-guide.png"
-              alt="Interface showing court visit guidance with visual information."
-              loading="lazy">
-            <figcaption>Navigation that matches real-world expectations before a court visit.</figcaption>
-          </figure>
-        </article>
+        <div class="ux-feature-list">
+          <article class="ux-feature">
+            <div>
+              <p class="ux-kicker">Key Feature</p>
+              <h3>Always Have a Choice</h3>
+              <p>Users should never feel stuck on a page. Related accessibility content is linked using lightweight tiles, clear text, and consistent button styles.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/always-have-choice.png"
+                alt="Accessibility Support Hub page showing clear pathways across accessibility support pages."
+                loading="lazy">
+              <figcaption>Clear pathways across both new hub pages and existing Ministry pages.</figcaption>
+            </figure>
+          </article>
+          <article class="ux-feature ux-feature--reverse">
+            <div>
+              <p class="ux-kicker">Key Feature</p>
+              <h3>Search Result Optimisation</h3>
+              <p>Most users start with search on public service sites. The search result pattern helps common keywords lead to structured, easy-to-read results.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/search-optimasation.png"
+                alt="Optimised search results page for court accessibility queries."
+                loading="lazy">
+              <figcaption>Helping users find court accessibility information faster.</figcaption>
+            </figure>
+          </article>
+          <article class="ux-feature">
+            <div>
+              <p class="ux-kicker">Key Feature</p>
+              <h3>Just Enough Information</h3>
+              <p>The interface uses progressive disclosure, starting with simple titles and icons, then adding detail as user intent becomes clearer.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/just-enough-info.png"
+                alt="Interface showing progressive disclosure of court support information."
+                loading="lazy">
+              <figcaption>Progressive disclosure to reduce cognitive load.</figcaption>
+            </figure>
+          </article>
+          <article class="ux-feature ux-feature--reverse">
+            <div>
+              <p class="ux-kicker">Key Feature</p>
+              <h3>Intuitive Guide</h3>
+              <p>Court visit information follows a time-based journey, from site maps to floor plans, matching real-world expectations before a court visit.</p>
+            </div>
+            <figure>
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/intuitive-guide.png"
+                alt="Interface showing court visit guidance with visual information."
+                loading="lazy">
+              <figcaption>Navigation that matches real-world expectations before a court visit.</figcaption>
+            </figure>
+          </article>
+        </div>
       </div>
     </section>
 
 
-    <!-- Design System -->
-    <section class="ux-section ux-section--tint" aria-labelledby="ds-title">
-      <div class="container ux-wide-head">
-        <p class="ux-kicker">Design System</p>
-        <h2 id="ds-title">A consistent, accessible system built for reuse and growth.</h2>
-        <p>Based on the Care of Children system, I led the creation of the design system, including brand direction, colour guidance, map legends, icon sets, and accessibility compliance.</p>
-      </div>
+    <!-- 14. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
       <div class="container">
-        <figure class="ux-ds-brand">
-          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-hero.png" alt="Design system brand header." loading="lazy">
-        </figure>
-      </div>
-      <div class="container ux-ds-list">
-        <article class="ux-ds-module">
-          <div>
-            <h3>Colour</h3>
-            <p>Cabbage Green signals guidance and navigation. Care Pink expresses warmth and support. MoJ Blue is maintained for universal components.</p>
-          </div>
-          <div class="ux-colours">
-            <div class="ux-colour ux-colour--green">
-              <strong>Cabbage Green</strong><span>#13838A</span><small>Guidance and navigation</small>
-            </div>
-            <div class="ux-colour ux-colour--pink">
-              <strong>Care Pink</strong><span>#A5205F</span><small>Warmth and support</small>
-            </div>
-            <div class="ux-colour ux-colour--blue">
-              <strong>MoJ Blue</strong><span>#09397C</span><small>Universal components</small>
-            </div>
-          </div>
-        </article>
-        <article class="ux-ds-module">
-          <div>
-            <h3>Iconset</h3>
-            <p>I designed a comprehensive set of icons for accessibility services, court facilities, and map legends.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-icon.png"
-              alt="Icon set for accessibility services, court facilities and map legends."
-              loading="lazy">
-          </figure>
-        </article>
-        <article class="ux-ds-module ux-ds-module--reverse">
-          <div>
-            <h3>Accessibility</h3>
-            <p>Main body text meets AAA contrast standards, while supporting text meets at least AA standards.</p>
-          </div>
-          <figure>
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-accessibility.png"
-              alt="Accessibility guidance and contrast notes."
-              loading="lazy">
-          </figure>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Retrospective -->
-    <section class="ux-retro" aria-labelledby="retro-title">
-      <div class="container">
-        <p class="ux-kicker">Retrospective</p>
+        <p class="ux-kicker">Reflection</p>
         <h2 id="retro-title">Looking back, looking forward.</h2>
         <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
           <article class="ux-card">
@@ -625,8 +622,8 @@
     </section>
 
 
-    <!-- HENEX Method Recipe -->
-    <section class="ux-section" aria-labelledby="recipe-title">
+    <!-- 15. HENEX Method Recipe -->
+    <section class="ux-section ux-tier-l vth2-recipe" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>HENEX Method Recipe</p>
@@ -644,6 +641,9 @@
             <span>Empathy</span>
             <span>Interface</span>
           </div>
+          <p class="ux-recipe-primary" style="margin-top: 28px;">
+            <span>Secondary recipe</span>
+          </p>
           <div class="ux-recipe-popovers">
             <button type="button" class="ux-recipe-trigger"
               data-recipe-title="R14 · Accessibility Walkthrough"
@@ -667,7 +667,7 @@
     </section>
 
 
-    <!-- Related Projects -->
+    <!-- 16. Related Projects -->
     <section class="ux-section ux-related" aria-labelledby="related-title">
       <div class="container">
         <p class="ux-kicker">Related Projects</p>

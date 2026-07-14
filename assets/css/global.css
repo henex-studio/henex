@@ -1,3 +1,4 @@
+/* [MODIFIED G1 2026-07-12] Audit-2 Batch G-1: removed confirmed-dead selectors (case-tag-row--surface rules; theme-toggle__dot, system-feedback-card, system-principle-card, system-component-scope, wso-process-step trimmed from shared lists). See docs/audits/Global_Site_Audit.md S2. */
 /* HENEX Global CSS v1.7
    Scope: design tokens, light/dark theme, base reset, global navigation, buttons, footer, Back to Top and responsive menu.
 
@@ -375,8 +376,6 @@ p {
 [data-theme="dark"] .theme-icon--moon {
   display: block;
 }
-
-.theme-toggle__dot,
 .theme-toggle [data-theme-label] {
   display: none;
 }
@@ -462,11 +461,8 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .arch-award-card,
 .arch-publication-block,
 .arch-popover,
-.system-feedback-card,
-.system-principle-card,
 .system-foundation-card,
 .system-component-demo,
-.system-component-scope,
 .system-microsite-card,
 .system-findings-grid article,
 .rkt-finding,
@@ -475,17 +471,28 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .studier-metrics article,
 .wst-finding-grid article,
 .wso-research-card,
-.wso-process-step,
 .vsk-finding-grid article,
 .vsk-social-feature,
 .vth-metrics article {
-  border: 1px solid var(--theme-border-soft);
+  /* [MODIFIED E19/C1] Border-colour custom-property contract. This base
+     rule and the shared hover rule below are the ONLY two places that
+     declare border-color for display cards. Tier/mode/page overrides must
+     assign --card-border / --card-border-hover (custom properties inherit,
+     so assignments can sit on a section wrapper) and must NOT declare
+     border-color directly — direct declarations at higher specificity are
+     what silently killed hover three times (C4, D2, E9). */
+  border: 1px solid var(--card-border, var(--theme-border-soft));
   border-radius: var(--radius-lg);
   box-shadow: var(--theme-shadow-card);
   transition: border-color 180ms ease;
 }
 
-/* C1 default hover — pages override with their own accent if needed */
+/* C1 default hover — pages override with their own accent if needed.
+   [MODIFIED D1] Reverted to --ux-theme (primary). C3 had switched this
+   whole shared list to prefer --ux-secondary (red), which incorrectly
+   made every display card (including .vth2-method-card/.vth2-principle-card)
+   go red on hover, not just Influence. Only .ux-influence should use the
+   secondary colour; see the separate rule below. */
 .capability-card:hover, .capability-card:focus-within,
 .evidence-item:hover, .evidence-item:focus-within,
 .about-profile-card:hover, .about-profile-card:focus-within,
@@ -502,11 +509,8 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .arch-finding-card:hover, .arch-finding-card:focus-within,
 .arch-award-card:hover, .arch-award-card:focus-within,
 .arch-publication-block:hover, .arch-publication-block:focus-within,
-.system-feedback-card:hover, .system-feedback-card:focus-within,
-.system-principle-card:hover, .system-principle-card:focus-within,
 .system-foundation-card:hover, .system-foundation-card:focus-within,
 .system-component-demo:hover, .system-component-demo:focus-within,
-.system-component-scope:hover, .system-component-scope:focus-within,
 .system-microsite-card:hover, .system-microsite-card:focus-within,
 .system-findings-grid article:hover, .system-findings-grid article:focus-within,
 .rkt-finding:hover, .rkt-finding:focus-within,
@@ -515,19 +519,32 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .studier-metrics article:hover, .studier-metrics article:focus-within,
 .wst-finding-grid article:hover, .wst-finding-grid article:focus-within,
 .wso-research-card:hover, .wso-research-card:focus-within,
-.wso-process-step:hover, .wso-process-step:focus-within,
 .vsk-finding-grid article:hover, .vsk-finding-grid article:focus-within,
 .vsk-social-feature:hover, .vsk-social-feature:focus-within,
-.vth-metrics article:hover, .vth-metrics article:focus-within {
-  border-color: color-mix(in srgb, var(--ux-theme, var(--page-accent, var(--theme-text))) 28%, var(--theme-border));
+.vth-metrics article:hover, .vth-metrics article:focus-within,
+.vth2-method-card:hover, .vth2-method-card:focus-within,
+.vth2-principle-card:hover, .vth2-principle-card:focus-within {
+  /* [MODIFIED E19/C1] Reads the contract variable; the old 28% formula
+     stays as the fallback for components that assign nothing. */
+  border-color: var(--card-border-hover, color-mix(in srgb, var(--ux-theme, var(--page-accent, var(--theme-text))) 28%, var(--theme-border)));
+}
+
+/* [MODIFIED D1/E1] Influence-only red hover: prefers --ux-secondary at 78%
+   (a clearly red frame, per Cafe), falling back to --ux-theme for pages
+   without a secondary colour.
+   [MODIFIED E19/C1] Converted from a :hover rule to a variable assignment
+   on the resting element — the shared hover rule above applies it. This
+   removes the last direct hover border-color declaration outside the
+   contract. */
+.ux-influence {
+  --card-border-hover: color-mix(in srgb, var(--ux-secondary, var(--ux-theme, var(--page-accent, var(--theme-text)))) 78%, var(--theme-border));
 }
 
 /* C2: Display cards with radius-md */
 .about-work-card,
 .marker-card,
 .rkt-finding,
-.system-findings-grid article,
-.wso-process-step {
+.system-findings-grid article{
   border-radius: var(--radius-md);
 }
 
@@ -623,16 +640,6 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   line-height: 1;
   letter-spacing: 0.02em;
 }
-.case-tag-row--surface .case-tags--primary .case-tag {
-  border: 1px solid color-mix(in srgb, var(--theme-text) 14%, var(--theme-border));
-  background: color-mix(in srgb, var(--theme-surface) 92%, transparent);
-  color: var(--theme-text);
-}
-.case-tag-row--surface .case-tags--secondary .case-tag {
-  border: 1px solid color-mix(in srgb, var(--theme-text) 24%, var(--theme-border));
-  background: var(--theme-text);
-  color: var(--theme-bg);
-}
 .case-tag-row--overlay .case-tag {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -645,16 +652,6 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .case-tag-row--overlay .case-tags--secondary .case-tag {
   border: 1px solid color-mix(in srgb, var(--theme-surface) 34%, transparent);
   background: color-mix(in srgb, var(--theme-text) 68%, transparent);
-  color: var(--theme-bg);
-}
-[data-theme="dark"] .case-tag-row--surface .case-tags--primary .case-tag {
-  border-color: color-mix(in srgb, var(--theme-surface) 18%, var(--theme-border));
-  background: color-mix(in srgb, var(--theme-surface-soft) 88%, transparent);
-  color: var(--theme-text);
-}
-[data-theme="dark"] .case-tag-row--surface .case-tags--secondary .case-tag {
-  border-color: color-mix(in srgb, var(--theme-surface) 26%, var(--theme-border));
-  background: var(--theme-text);
   color: var(--theme-bg);
 }
 [data-theme="dark"] .case-tag-row--overlay .case-tags--primary .case-tag {

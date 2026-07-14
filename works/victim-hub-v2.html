@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Victims Hub public sector service design case study by HENEX.">
+  <title>Victims Hub v2 (Preview) | HENEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+  <link rel="icon" href="../assets/icons/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="../assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/ux-case-study.css">
+  <link rel="stylesheet" href="../assets/css/vth.css">
+  <link rel="stylesheet" href="../assets/css/vth-v2.css">
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/case-interactions.js" defer></script>
+  <meta name="robots" content="noindex">
+</head>
+<body class="ux-case-page ux-case-page--victim-hub ux-case-page--victim-hub-v2">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-brand" href="../index.html" aria-label="Cafe Yi home">HENEX</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__line"></span><span class="nav-toggle__line"></span><span class="nav-toggle__label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html" aria-current="page">Works</a><a href="../lab.html">Lab</a><a class="site-nav__cta" href="mailto:cafeyee@gmail.com">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme"><i class="ti ti-sun theme-icon theme-icon--sun" aria-hidden="true"></i><i class="ti ti-moon theme-icon theme-icon--moon" aria-hidden="true"></i></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ Section 0: Hero — [MODIFIED A3] gradient bg, no image, dark mode aware ============ -->
+    <section class="ux-hero vth-hero vth2-hero" aria-labelledby="case-title">
+      <div class="container ux-hero__top">
+        <div class="case-tag-row case-tag-row--overlay">
+          <div class="case-tags case-tags--primary" aria-label="Project categories">
+            <span class="case-tag">UX</span>
+            <span class="case-tag">Service Design</span>
+            <span class="case-tag">Content Strategy</span>
+          </div>
+          <div class="case-tags case-tags--secondary" aria-label="Project type">
+            <span class="case-tag">Professional Work</span>
+          </div>
+        </div>
+      </div>
+      <div class="container ux-hero__inner vth-hero__inner">
+        <div class="ux-hero__copy vth-hero__copy">
+          <h1 id="case-title">Victims Hub</h1>
+          <p>Creating clearer pathways for people looking for victim information, reporting options, support, safety information and what happens next.</p>
+          <div class="ux-actions"><a class="button button--primary" href="#outcome">View outcome</a><a class="button button--soft" href="#delivery">View prototype</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 1: Overview + Meta (Tier N) — [MODIFIED A4] meta label colour ============ -->
+    <section class="ux-section ux-tier-n" aria-labelledby="overview-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro"><p>Overview</p><h2 id="overview-title">A clearer victim information pathway.</h2></aside>
+        <div class="ux-copy">
+          <p>The Victims Hub work brought together research, information architecture, content strategy and delivery planning to improve how victim information is structured on the Police website.</p>
+          <p>The work focused on clearer pathways for people looking for reporting options, support, safety information and what happens next. It also created a more stable reference package for review, handover and future go-live planning.</p>
+          <div class="ux-meta" aria-label="Project facts">
+            <div><span>Client</span><strong>NZ Police, Justice Sector Victims Work Programme</strong></div>
+            <div><span>Role</span><strong>Principal Advisor, Service Design Lead</strong></div>
+            <div><span>Team</span><strong>Principal Advisor and 1 Advisor</strong></div>
+            <div><span>Timeline</span><strong>March to June 2026</strong></div>
+            <div><span>Tools</span><strong>Figma, FigJam, Excel, Studier</strong></div>
+            <div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r24">R24 · Trust &amp; Cooperation Rules</a><small>Agency × Empathy × Interface</small></div>
+          </div>
+          <div class="ux-skills"><span>Skills</span><div><em>Public sector advisory</em><em>Project management</em><em>Stakeholder alignment</em><em>Evidence strategy</em><em>Service design</em><em>Information architecture</em><em>Content strategy</em><em>Usability testing</em><em>Delivery planning</em><em>Handover planning</em></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 2: Background (Tier P) — [MODIFIED A5] Tier A stacked layout, was ux-two-col ============ -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Background</p><h2 id="background-title">Useful information existed, but the journey was fragmented.</h2><p>Useful victim information already existed on the Police website, but it was spread across pages, FAQs and internal structures.</p></div>
+        <figure class="vth-section-image">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/current-site.png" alt="Current state webpage screenshot showing advice for victims pages and the information for victims of crime page." loading="lazy" decoding="async">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ Section 3: Problem (Tier L) — [MODIFIED A6] font size, HMW rework ============ -->
+    <section class="ux-section ux-tier-l ux-problem vth-problem vth2-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Problem</p>
+          <!-- [MODIFIED C1] Previous H2 borrowed Solution's answer framing
+               ("guidance, resonance and confidence" are Solution's 3 card
+               titles). Rewritten to describe the problem itself, echoing
+               Problem's own 3 cards (Fragmented content / Internal
+               structure / Unclear next steps) instead. -->
+          <h2 id="problem-title">The real problem wasn&#x2019;t the pages. It was whether people knew where those pages could take them.</h2>
+          <p>The project was initially framed around improving victim information pages, but the research showed that the challenge was larger than a visual refresh. The real problem was whether people could quickly understand where to go, recognise that the content was written for them, and move forward with confidence.</p>
+        </div>
+
+        <div class="ux-card-grid ux-card-grid--three vth-no-image-grid">
+          <article class="ux-card"><h3>Fragmented content</h3><p>Useful information existed across pages and FAQs, but the pathway through that information was not clear enough.</p></article>
+          <article class="ux-card"><h3>Internal structure</h3><p>Some content reflected organisational categories more than the way people look for help.</p></article>
+          <article class="ux-card"><h3>Unclear next steps</h3><p>People needed clearer routes for reporting, support, safety information and what happens next.</p></article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- [MODIFIED E14] HMW promoted from a card-style band nested inside
+         Problem (C2) to its own standalone full-width emphasis section.
+         Uses the shared tier-d emphasis background, so it matches Outcome
+         and Delivery instead of being the page's only large dark card.
+         Cases without an HMW statement simply omit this whole section.
+         Tier sequence stays valid: Problem(L) -> HMW(D) -> Solution(S). -->
+    <section class="ux-section ux-tier-d vth2-hmw-section" id="hmw" aria-label="How might we statement">
+      <div class="container">
+        <p class="vth2-hmw-statement"><strong>How might we</strong> redesign the NZ Police victim pages so that someone who may or has experienced a crime can quickly <strong>understand where to go</strong>, feel that the <strong>pages were written for them</strong>, and <strong>move forward with confidence</strong>?</p>
+      </div>
+    </section>
+
+    <!-- ============ Section 4: Solution (Tier N) ============ -->
+    <section class="ux-section ux-tier-n" id="solution" aria-labelledby="solution-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Solution</p><h2 id="solution-title">A strategy built on guidance, resonance and confidence.</h2><p>The core challenge was not only to refresh pages. The work needed to clarify guidance, improve language resonance and build confidence in the next step.</p></div>
+        <!-- [MODIFIED A7] icon cards: larger, no background frame -->
+        <div class="ux-card-grid ux-card-grid--three vth2-icon-grid">
+          <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-sign-right"></i></div><h3>Guidance</h3><p>Help people recognise the right path and next step.</p></article>
+          <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-message"></i></div><h3>Resonance</h3><p>Use language and labels that match how people describe their needs.</p></article>
+          <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-sparkles"></i></div><h3>Confidence</h3><p>Set honest expectations and make support pathways visible.</p></article>
+        </div>
+        <div class="ux-influence"><strong>Influence</strong><p>The strategy was distilled from research and workshop findings, laying the groundwork for design principles and the information architecture that followed.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Section 5: Outcome (Tier D) — [MODIFIED A11] kicker colour fix ============ -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker vth2-kicker-force-red">Outcome</p><h2 id="outcome-title">A review-ready hub package and high-fidelity direction.</h2><p>The outcome was a review-ready hub package that could support the next delivery phase.</p></div>
+        <video class="ux-video vth-video" controls preload="metadata" playsinline>
+          <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
+
+    <!-- ============ Section 6: Contribution (Tier N) ============ -->
+    <section class="ux-section ux-tier-n" id="contribution" aria-labelledby="contribution-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Contribution</p><h2 id="contribution-title">Leading research, IA, content strategy and governance.</h2><p>The project approach combined evidence gathering, IA design, content strategy, prototype testing and governance planning.</p></div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><h3>Research and evidence</h3><p>Build and connect the evidence base.</p></article>
+          <article class="ux-card"><h3>IA and content</h3><p>Translate findings into page structures, content hierarchy and reusable patterns.</p></article>
+          <article class="ux-card"><h3>Governance</h3><p>Support review cycles, decision pathways and formal handover readiness.</p></article>
+          <article class="ux-card"><h3>Stakeholder alignment</h3><p>Work across business, communications, web and programme governance needs.</p></article>
+          <article class="ux-card"><h3>Prototype direction</h3><p>Use the prototype as a shared artefact for testing and review.</p></article>
+          <article class="ux-card"><h3>BAU planning</h3><p>Prepare the path from prototype completion to build, launch and operation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 7: Process (Chapter 2 opener) — [MODIFIED A10] arrow icon on nav cards. [MODIFIED E18] tier-p → tier-d: as the second-act gateway and in-page navigation it now uses the emphasis background, joining the page's "dark = punctuation" language (HMW / Outcome / Delivery). ============ -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Process</p><h2 id="process-title">From evidence to delivery.</h2></div>
+        <div class="ux-card-grid ux-card-grid--four vth2-process-nav">
+          <a class="ux-card vth2-nav-card" href="#research"><h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3><p>Mixed evidence, findings and design principles</p></a>
+          <a class="ux-card vth2-nav-card" href="#design"><h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3><p>IA, content strategy, low-fidelity prototype and design system</p></a>
+          <a class="ux-card vth2-nav-card" href="#validation"><h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3><p>Usability testing results and metrics</p></a>
+          <a class="ux-card vth2-nav-card" href="#delivery"><h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3><p>High-fidelity prototype, key decisions and go-live planning</p></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 8: Research (Tier N) — [MODIFIED A1] chapter description rewritten, sub-block Tier B heading added for method grid ============ -->
+    <section class="ux-section ux-tier-n" id="research" aria-labelledby="research-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Research</p><h2 id="research-title">The redesign was grounded in mixed evidence.</h2><p>Research, testing, content review, web data and team scoring were combined to build a stronger, evidence-led basis for IA structure, language choices and action pathway design, rather than relying on internal assumption.</p></div>
+
+        <!-- Sub-block A: Method grid — [MODIFIED A1] Tier B heading added -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">Mixed Method Research</p><h3>Seven methods built the evidence base.</h3></div>
+            <p class="ux-section-head__desc">Interviews, usability testing, best practice review, content inventory, web data analysis, card sorting and evaluative scoring were combined to reduce reliance on assumption.</p>
+          </div>
+          <div class="vth2-method-grid" aria-label="Research evidence methods">
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-users"></i></div><strong>3</strong><span>Interviews</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-device-desktop"></i></div><strong>6</strong><span>Usability tests</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-file-text"></i></div><strong>26</strong><span>Best practices analysed</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-database"></i></div><strong>200+</strong><span>Content items inventoried</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-chart-bar"></i></div><strong>5</strong><span>Pages of data analysed</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-layout-grid"></i></div><strong>30</strong><span>Cards sorted</span></article>
+            <article class="vth2-method-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-trending-up"></i></div><strong>10</strong><span>Directions scored</span></article>
+          </div>
+        </div>
+
+        <!-- Sub-block B: Findings -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">Findings</p><h3>Three findings shaped the design response.</h3></div>
+            <p class="ux-section-head__desc">The evidence pointed to three connected design needs: clearer guidance, language that matched people's situations, and visible next steps.</p>
+          </div>
+          <div class="ux-card-grid ux-card-grid--three vth2-icon-grid">
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-sitemap"></i></div><h3>Structure</h3><p>Organise content around clear pathways, consistent page patterns and information people can scan.</p></article>
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-message-circle"></i></div><h3>Tone</h3><p>Use language that is warm, plain, honest and written from the person's point of view.</p></article>
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-route"></i></div><h3>Behaviour</h3><p>Make next steps visible so people know what they can do, where they can go and what to expect.</p></article>
+          </div>
+        </div>
+
+        <!-- Sub-block C: Design Principles -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">Design Principles</p><h3>Nine principles kept decisions grounded in evidence.</h3></div>
+            <p class="ux-section-head__desc">The principles helped keep design conversations focused on evidence, rather than personal preference or internal structure.</p>
+          </div>
+          <div class="vth2-principle-grid">
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>01</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-sign-right"></i></div></div><h3>Signal Direction</h3><p>Show victims where to go, not what exists.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>02</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-message"></i></div></div><h3>Speak Victim</h3><p>Write every label the way a victim would describe their need.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>03</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-sitemap"></i></div></div><h3>Reveal Paths</h3><p>Keep expected pathways visible even when the route leads elsewhere.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>04</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-users"></i></div></div><h3>Greet First</h3><p>Acknowledge the person before explaining the process.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>05</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-message-check"></i></div></div><h3>Set Expectations</h3><p>Tell people what comes next without making promises.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>06</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-shield-check"></i></div></div><h3>Define Boundaries</h3><p>Say what Police does and where its responsibility ends.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>07</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-scan"></i></div></div><h3>Enable Scanning</h3><p>Design for scanning, not reading.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>08</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-layout-grid"></i></div></div><h3>Build Familiarity</h3><p>Give every page a consistent shape so nothing needs relearning.</p></article>
+            <article class="vth2-principle-card"><div class="vth2-principle-top"><span>09</span><div class="vth2-icon" aria-hidden="true"><i class="ti ti-send"></i></div></div><h3>Invite Action</h3><p>Turn support information into a reason to act.</p></article>
+          </div>
+        </div>
+
+        <div class="ux-influence"><strong>Influence</strong><p>The principles shaped pathways, labels, page templates, Police boundaries and support actions.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Section 9: Design (Tier L) — [MODIFIED A1/A9/A13] chapter desc rewritten, sub-block headings, IA inline SVG, DS rework ============ -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="design-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Design</p><h2 id="design-title">The IA shifted from organisational categories to victim pathways.</h2><p>Design translated research findings into a pathway-based information architecture, a low-fidelity prototype and a reverse-engineered design system, giving the team a shared, testable structure to react to.</p></div>
+
+        <!-- Sub-block A: IA categories — [MODIFIED A1] Tier B heading added -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">IA Categories</p><h3>Content grouped around victim intent.</h3></div>
+            <p class="ux-section-head__desc">Understand, Act, and Stay informed and safe replaced organisational categories as the top-level grouping.</p>
+          </div>
+          <div class="ux-card-grid ux-card-grid--three vth2-icon-grid">
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-help-circle"></i></div><h3>Understand</h3><p>Information for victims</p></article>
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-send"></i></div><h3>Act</h3><p>Report a crime and Support for victims</p></article>
+            <article class="ux-card vth2-icon-card"><div class="vth2-icon" aria-hidden="true"><i class="ti ti-shield-check"></i></div><h3>Stay informed and safe</h3><p>What happens next, Keeping safe and Give feedback</p></article>
+          </div>
+        </div>
+
+        <!-- Sub-block B: IA diagram — [MODIFIED A13] inline SVG replacing blurry PNG, matches reference page exactly -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">IA Structure</p><h3>A pathway model connecting every section.</h3></div>
+            <p class="ux-section-head__desc">The structure diagram maps how victim pathways connect page sections and supporting content.</p>
+          </div>
+          <figure class="vth-section-image vth-ia-image">
+            <!-- [MODIFIED B4] Enlarge now opens the standard image modal showing
+                 the R2 ia-structure reference image, not a clone of this inline
+                 SVG. The inline SVG below still renders as the default on-page
+                 diagram (kept for its crisp vector rendering, per A13); only the
+                 click-to-enlarge target changed. -->
+            <button type="button" class="vth2-ia-svg-trigger"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ia-structure.png"
+              data-modal-title="Information architecture structure"
+              data-modal-caption="Information architecture structure used to connect victim pathways, page sections and supporting content."
+              aria-label="Enlarge information architecture diagram">
+              <svg class="ia-svg" xmlns="http://www.w3.org/2000/svg" width="1280" height="520" viewBox="0 0 1280 520" role="img" aria-labelledby="ia-title ia-desc">
+                <title id="ia-title">Simplified Victims Hub information architecture</title>
+                <desc id="ia-desc">A simplified hierarchy diagram for Advice for victims, showing six top-level pathways and light-blue second-level content groups.</desc>
+                <rect class="ia-root" x="40" y="24" width="1200" height="54" rx="8"/><text class="ia-root-text" x="640" y="58" text-anchor="middle">Advice for victims</text>
+                <path class="ia-line" d="M640 78 V112"/><path class="ia-line" d="M128 112 H1088"/>
+                <path class="ia-line" d="M128 112 V140"/><path class="ia-line" d="M320 112 V140"/><path class="ia-line" d="M512 112 V140"/><path class="ia-line" d="M704 112 V140"/><path class="ia-line" d="M896 112 V140"/><path class="ia-line" d="M1088 112 V140"/>
+                <g transform="translate(48 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T1 Information</text></g>
+                <g transform="translate(240 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T2 Report</text></g>
+                <g transform="translate(432 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T3 Support</text></g>
+                <g transform="translate(624 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T4 Next</text></g>
+                <g transform="translate(816 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T5 Keeping safe</text></g>
+                <g transform="translate(1008 140)"><rect class="ia-top" width="160" height="58" rx="8"/><text class="ia-top-text" x="80" y="35" text-anchor="middle">T6 Feedback</text></g>
+                <path class="ia-line" d="M128 198 V226"/><path class="ia-line" d="M320 198 V226"/><path class="ia-line" d="M512 198 V226"/><path class="ia-line" d="M704 198 V226"/><path class="ia-line" d="M896 198 V226"/><path class="ia-line" d="M1088 198 V226"/>
+                <circle class="ia-dot" cx="128" cy="226" r="5"/><circle class="ia-dot" cx="320" cy="226" r="5"/><circle class="ia-dot" cx="512" cy="226" r="5"/><circle class="ia-dot" cx="704" cy="226" r="5"/><circle class="ia-dot" cx="896" cy="226" r="5"/><circle class="ia-dot" cx="1088" cy="226" r="5"/>
+                <g transform="translate(36 252)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Who is a victim?</text></g>
+                <g transform="translate(36 308)"><rect class="ia-sub" width="184" height="62" rx="8"/><text class="ia-subtext" x="16" y="25">After a crime</text><text class="ia-submeta" x="16" y="44">report, support, updates</text></g>
+                <g transform="translate(36 382)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Victims&#x2019; rights</text></g>
+                <g transform="translate(36 438)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Role of Police</text></g>
+                <g transform="translate(228 252)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Emergencies</text></g>
+                <g transform="translate(228 308)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Non-emergency</text></g>
+                <g transform="translate(228 364)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Anonymous reporting</text></g>
+                <g transform="translate(420 252)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Core support</text></g>
+                <g transform="translate(420 308)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Family harm</text></g>
+                <g transform="translate(420 364)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Sexual harm</text></g>
+                <g transform="translate(420 420)"><rect class="ia-sub" width="184" height="62" rx="8"/><text class="ia-subtext" x="16" y="25">Specialist support</text><text class="ia-submeta" x="16" y="44">child, youth, legal, cultural</text></g>
+                <g transform="translate(612 252)"><rect class="ia-sub" width="184" height="62" rx="8"/><text class="ia-subtext" x="16" y="25">After contact</text><text class="ia-submeta" x="16" y="44">request to file</text></g>
+                <g transform="translate(612 326)"><rect class="ia-sub" width="184" height="62" rx="8"/><text class="ia-subtext" x="16" y="25">After reporting</text><text class="ia-submeta" x="16" y="44">progress, evidence, feedback</text></g>
+                <g transform="translate(612 400)"><rect class="ia-sub" width="184" height="62" rx="8"/><text class="ia-subtext" x="16" y="25">Court process</text><text class="ia-submeta" x="16" y="44">court, sentencing, appeals</text></g>
+                <g transform="translate(804 252)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Family harm safety</text></g>
+                <g transform="translate(804 308)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Personal safety</text></g>
+                <g transform="translate(804 364)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Digital safety</text></g>
+                <g transform="translate(804 420)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Property and road safety</text></g>
+                <g transform="translate(996 252)"><rect class="ia-sub" width="184" height="44" rx="8"/><text class="ia-subtext" x="16" y="27">Give feedback</text></g>
+              </svg>
+            </button>
+            <figcaption>Information architecture structure used to connect victim pathways, page sections and supporting content. Select to enlarge.</figcaption>
+          </figure>
+        </div>
+
+        <!-- Sub-block C: Lo-fi prototype — [MODIFIED A8] independent sub-block, new image, embedded prototype behind read more -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">Low-Fidelity Prototype</p><h3>A single prototype to test structure before build.</h3></div>
+            <p class="ux-section-head__desc">All functionality and content feedback was folded into one complete prototype, used to test information architecture, user flow and usability, then iterated on testing feedback.</p>
+          </div>
+          <figure class="vth-section-image">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/lofi-info.png" alt="Low fidelity information page prototype used to test structure and pathways." loading="lazy" decoding="async">
+            <figcaption>Low-fidelity information page prototype used to make structure visible before build.</figcaption>
+          </figure>
+          <div class="vth2-ds-actions">
+            <button type="button" class="button button--soft" id="vth2-lofi-btn" data-expand-trigger aria-expanded="false" aria-controls="vth2-lofi-more">Read more</button>
+          </div>
+          <div class="vth2-lofi-more vth2-embed-more" id="vth2-lofi-more" hidden>
+            <section class="hifi-shell vth2-hifi-shell vth2-embed-dark" aria-labelledby="lofi-embed-title">
+              <div class="hifi-head"><h4 id="lofi-embed-title">Full low-fidelity prototype</h4><p>Explore the complete low-fidelity prototype used for early structure and usability testing.</p></div>
+              <div class="hifi-frame-wrap vth2-embed-frame-1610">
+                <iframe title="Victims Hub low-fidelity prototype" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-lofi.html" loading="lazy" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <!-- Sub-block D: Design System — [MODIFIED A9] complete rework, alternating text/image feature blocks, no more cards -->
+        <div class="vth2-subsection">
+          <div class="ux-section-head">
+            <div class="ux-section-head__title"><p class="ux-kicker">Design System</p><h3>A working design system reverse-engineered from the existing Police site.</h3></div>
+            <p class="ux-section-head__desc">The Police website had no documented design system. Core elements, including colour, typography and navigation patterns, were reverse-engineered from the live site. New components were then created to fill gaps the existing pages could not address: accordion panels, information popovers, quick exit controls and warning cards.</p>
+          </div>
+
+          <!-- Feature 1: Accordion — [MODIFIED C10/C11] image left, text right
+               (direction flipped per C11); title structure reworked per C10:
+               component name is now the real title (h4, ASH Key Feature
+               style) instead of a small kicker, the two previous sentences
+               merged into one description. -->
+          <div class="vth2-ds-feature vth2-ds-feature--reverse">
+            <div class="vth2-ds-feature__text">
+              <h4>Accordion</h4>
+              <p>Long-form victim information collapses into grouped, scannable panels, so people only expand the section relevant to their situation.</p>
+            </div>
+            <div class="vth2-ds-feature__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ds-accordion.png" alt="Accordion component from the Victims Hub design system, showing collapsed and expanded disclosure panels." loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <!-- Feature 2: Quick Exit — [MODIFIED C10/C11] text left, image
+               right (direction flipped, reverse removed per C11); title
+               structure reworked per C10. -->
+          <div class="vth2-ds-feature">
+            <div class="vth2-ds-feature__text">
+              <h4>Quick Exit</h4>
+              <p>A persistent safety control lets someone leave the page instantly if their situation requires it, replacing the current tab with an unrelated site.</p>
+            </div>
+            <div class="vth2-ds-feature__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ds-quick-exit.png" alt="Quick Exit component from the Victims Hub design system." loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <!-- Feature 3: Glossary Popover — [MODIFIED C10/C11] image left,
+               text right (direction flipped per C11); title structure
+               reworked per C10. -->
+          <div class="vth2-ds-feature vth2-ds-feature--reverse">
+            <div class="vth2-ds-feature__text">
+              <h4>Glossary Popover</h4>
+              <p>Unfamiliar terms are underlined inline. Selecting one opens a short, plain-language definition without navigating away from the current page.</p>
+            </div>
+            <div class="vth2-ds-feature__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ds-glossary-popover.png" alt="Glossary Popover component from the Victims Hub design system." loading="lazy" decoding="async">
+            </div>
+          </div>
+
+          <div class="vth2-ds-actions">
+            <button type="button" class="button button--soft" id="vth2-ds-btn" data-expand-trigger aria-expanded="false" aria-controls="vth2-ds-more">Read more</button>
+          </div>
+          <div class="vth2-ds-more vth2-embed-more" id="vth2-ds-more" hidden>
+            <section class="hifi-shell vth2-hifi-shell vth2-embed-dark" aria-labelledby="ds-hifi-title">
+              <div class="hifi-head"><h4 id="ds-hifi-title">Full design system reference</h4><p>Review the complete component library, tokens and usage guidance in the embedded frame below.</p></div>
+              <div class="hifi-frame-wrap vth2-embed-frame-1610">
+                <iframe title="Victims Hub design system reference" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-ds.html" loading="lazy" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="ux-influence"><strong>Influence</strong><p>The pathway model made the hub easier to explain, prototype, test and extend into later delivery stages.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Section 10: Validation (Tier N) — [MODIFIED A1] chapter desc rewritten ============ -->
+    <section class="ux-section ux-tier-n" id="validation" aria-labelledby="validation-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker">Validation</p><h2 id="validation-title">Testing showed the new direction was easier to use.</h2><p>The low-fidelity prototype was tested against the current site to measure whether the new structure improved task success, ease and speed, moving the conversation from opinion to evidence.</p></div>
+
+        <figure class="vth-section-image">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ease-score.png" alt="Ease score comparison chart showing baseline and new hub results for support information, what next expectation and reporting pathway." loading="lazy" decoding="async">
+        </figure>
+
+        <div class="vth-metrics" aria-label="Testing outcome metrics">
+          <article><span>Success rate</span><strong>22.2% <em class="vth-metric-arrow" aria-hidden="true">↗</em></strong><small>From 66.7% to 88.9%</small></article>
+          <article><span>Ease score</span><strong>+56.3% <em class="vth-metric-arrow" aria-hidden="true">↗</em></strong><small>From 2.67/5 to 4.17/5</small></article>
+          <article><span>Median task time</span><strong>-41.4% <em class="vth-metric-arrow vth-metric-arrow--down" aria-hidden="true">↘</em></strong><small>From 140s to 82s</small></article>
+        </div>
+
+        <div class="ux-influence"><strong>Influence</strong><p>The results moved the conversation from opinion to evidence-based iteration, while showing where signposting still needed improvement.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Section 11: Delivery — [MODIFIED A1/A14] chapter desc rewritten, confirmed independent chapter, kicker red ============ -->
+
+    <!-- Sub-block A: Hi-fi and Handover (Tier D) -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="delivery-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-chapter-head"><p class="ux-kicker vth2-kicker-force-red">Delivery</p><h2 id="delivery-title">From tested direction to review-ready package.</h2><p>Delivery consolidated the tested direction into a high-fidelity prototype, a set of key delivery decisions, and a go-live and BAU plan, so the project could hand over a review-ready package rather than a set of disconnected artefacts.</p></div>
+
+        <div class="ux-section-head">
+          <div class="ux-section-head__title"><p class="ux-kicker vth2-kicker-force-red">High-Fidelity Prototype</p><h3>Scrollable high-fidelity prototype</h3></div>
+          <p class="ux-section-head__desc">Review the landing page and information page directly in this frame.</p>
+        </div>
+        <!-- [MODIFIED A9] container: deep blue gradient + 16:10 ratio, matches DS/lofi embed spec -->
+        <section class="hifi-shell vth2-hifi-shell vth2-embed-dark" aria-labelledby="hifi-title">
+          <h3 id="hifi-title" class="visually-hidden">Scrollable high-fidelity prototype</h3>
+          <div class="hifi-tabs" role="tablist" aria-label="High-fidelity prototype pages">
+            <button class="hifi-tab" type="button" role="tab" aria-controls="vth2HifiFrame" aria-selected="true" data-target="#hub-page">Landing page</button>
+            <button class="hifi-tab" type="button" role="tab" aria-controls="vth2HifiFrame" aria-selected="false" data-target="#info-page">Information page</button>
+          </div>
+          <div class="hifi-frame-wrap vth2-embed-frame-1610">
+            <iframe id="vth2HifiFrame" title="Scrollable high-fidelity prototype frame" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/08-High-fidelity%20prototype_v4.0.html#hub-page" loading="lazy" sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+          </div>
+        </section>
+
+        <div class="ux-card-grid ux-card-grid--four">
+          <article class="ux-card"><h3>High-fidelity direction</h3><p>Landing page direction and reusable section template direction.</p></article>
+          <article class="ux-card"><h3>IA and content model</h3><p>Pathway structure, page hierarchy and reusable content patterns.</p></article>
+          <article class="ux-card"><h3>Handover package</h3><p>Content inventory, open items and recommended next steps.</p></article>
+          <article class="ux-card"><h3>Delivery readiness</h3><p>Inputs for build planning, QA, accessibility and go-live preparation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-block B: Key Decisions — [MODIFIED A15] "Decision" label removed. [MODIFIED E7] tier-l → tier-d so the whole Delivery chapter reads as one deep emphasis background. -->
+    <section class="ux-section ux-tier-d" aria-labelledby="decisions-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-section-head">
+          <div class="ux-section-head__title"><p class="ux-kicker vth2-kicker-force-red">Key Decisions and Trade-offs</p><h3>The project required trade-offs across UX, governance and delivery.</h3></div>
+          <p class="ux-section-head__desc">Several decisions shaped the project direction and helped keep the work focused on user pathways, realistic delivery and sustainable service ownership.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><h3>Treat the work as structure change, not visual refresh</h3><p>Research showed that the deeper issue was information hierarchy, navigation flow and language.</p></article>
+          <article class="ux-card"><h3>Organise around victim tasks</h3><p>The hub needed to reflect what people needed to do, not how internal services were organised.</p></article>
+          <article class="ux-card"><h3>Define Police boundaries clearly</h3><p>The hub needed to explain what Police can do, where responsibility ends and when another agency may be better placed to help.</p></article>
+          <article class="ux-card"><h3>Use the prototype as an alignment tool</h3><p>Keeping the prototype low-fidelity for longer helped surface structure, signposting and wording issues.</p></article>
+          <article class="ux-card"><h3>Do not lock build too early</h3><p>CMS build model, vendor work, content approval, quick exit, accessibility and QA all depended on a reliable build reference.</p></article>
+          <article class="ux-card"><h3>Plan for operation, not only launch</h3><p>The hub needed hypercare, stabilisation, ownership and BAU rhythm after go-live.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sub-block C: Go-live and BAU — [MODIFIED A16] single-column image gallery, fixed broken read-more binding. [MODIFIED E7] tier-n → tier-d so it joins the unified deep Delivery chapter. -->
+    <section class="ux-section ux-tier-d" id="bau" aria-labelledby="bau-title">
+      <div class="container ux-layout-stack">
+        <div class="ux-section-head">
+          <div class="ux-section-head__title"><p class="ux-kicker vth2-kicker-force-red">Go-live and BAU Planning</p><h3>The prototype became an operational planning asset.</h3></div>
+          <p class="ux-section-head__desc">The plan set out how the hub could move from prototype to build, launch readiness and BAU. It clarified the delivery streams, likely timing, key decision variables, resource needs and the operating rhythm after launch.</p>
+        </div>
+
+        <!-- [MODIFIED C12] Was a stacked full-width image gallery with a
+             caption underneath each image. Now each diagram is its own
+             1/3-text + 2/3-image feature block, reusing the DS module's
+             layout (.vth2-ds-feature) via the .vth2-golive-feature
+             modifier, which scales the type down one notch so this reads
+             as subordinate to the Design System section rather than an
+             equal, per Cafe's explicit visual-hierarchy note. Visible/
+             hidden split unchanged: 2 always visible, 5 behind Read More. -->
+        <div class="vth2-golive-feature-stack">
+          <div class="vth2-ds-feature vth2-golive-feature">
+            <div class="vth2-ds-feature__text">
+              <h5>Post-June pathway to go-live</h5>
+              <p>Two linked streams move the work from the remaining hub package into build, QA and launch preparation.</p>
+            </div>
+            <div class="vth2-ds-feature__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-pathway.png" alt="Diagram showing complete the full hub package and prepare for go-live workstreams." loading="lazy" decoding="async">
+            </div>
+          </div>
+          <div class="vth2-ds-feature vth2-golive-feature">
+            <div class="vth2-ds-feature__text">
+              <h5>Timeline scenario comparison</h5>
+              <p>The recommended managed pathway is the planning case, with fast and conservative paths used to frame opportunity and risk.</p>
+            </div>
+            <div class="vth2-ds-feature__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-timeline.png" alt="Timeline scenario comparison showing fast, recommended managed and conservative delivery pathways." loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+
+        <div class="vth2-golive-actions">
+          <button class="button button--soft" type="button" id="vth2-golive-btn" data-expand-trigger data-label-more="Read more" data-label-less="Show less" aria-expanded="false" aria-controls="vth2-golive-more">Read more</button>
+        </div>
+
+        <!-- [MODIFIED A16/C12] everything below, including the 3 text cards, stays nested inside the hidden panel -->
+        <div class="vth2-golive-more" id="vth2-golive-more" hidden>
+          <div class="vth2-golive-feature-stack">
+            <div class="vth2-ds-feature vth2-golive-feature">
+              <div class="vth2-ds-feature__text">
+                <h5>Indicative roadmap to go-live</h5>
+                <p>The roadmap sequences setup, content, build, testing, accessibility, approvals and launch readiness across the managed pathway.</p>
+              </div>
+              <div class="vth2-ds-feature__media">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-roadmap.png" alt="Indicative roadmap timeline showing go-live workstreams and dependencies." loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="vth2-ds-feature vth2-golive-feature">
+              <div class="vth2-ds-feature__text">
+                <h5>Key variables that affect timing</h5>
+                <p>High-impact and lower-certainty items should be confirmed first because they can reshape the delivery path.</p>
+              </div>
+              <div class="vth2-ds-feature__media">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-variables.png" alt="Impact and certainty matrix showing key timing variables for delivery planning." loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="vth2-ds-feature vth2-golive-feature">
+              <div class="vth2-ds-feature__text">
+                <h5>Resource view</h5>
+                <p>Go-live needs coordinated effort across business ownership, content, communications, web, vendor and governance roles.</p>
+              </div>
+              <div class="vth2-ds-feature__media">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-resource.png" alt="Resource view chart showing relative workload across roles over time." loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="vth2-ds-feature vth2-golive-feature">
+              <div class="vth2-ds-feature__text">
+                <h5>After go-live operation</h5>
+                <p>After launch, the hub should move through hypercare, stabilisation and a BAU operating rhythm before the first improvement backlog.</p>
+              </div>
+              <div class="vth2-ds-feature__media">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-after-golive.png" alt="Post-launch operation timeline showing hypercare, stabilisation, BAU rhythm and improvement backlog." loading="lazy" decoding="async">
+              </div>
+            </div>
+            <div class="vth2-ds-feature vth2-golive-feature">
+              <div class="vth2-ds-feature__text">
+                <h5>Long-term improvement areas</h5>
+                <p>Future work can address legacy content, FAQs, search relevance, VictimInfo alignment and broader service integration.</p>
+              </div>
+              <div class="vth2-ds-feature__media">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/post-long-term.png" alt="Future improvement roadmap showing long-term improvement areas after first launch." loading="lazy" decoding="async">
+              </div>
+            </div>
+          </div>
+
+          <div class="ux-card-grid ux-card-grid--three">
+            <article class="ux-card"><h3>Complete the full hub package</h3><p>Remaining high-fidelity pages, draft content, user testing, content inventory updates and handover package.</p></article>
+            <article class="ux-card"><h3>Prepare for go-live</h3><p>CMS build model, web team and vendor engagement, quick exit, accessibility, QA and publishing preparation.</p></article>
+            <article class="ux-card"><h3>Post-launch operation</h3><p>Hypercare, stabilisation, BAU rhythm and improvement backlog.</p></article>
+          </div>
+        </div>
+
+        <div class="ux-influence"><strong>Influence</strong><p>The plan helped clarify what needed to be stable before build, what teams needed to be involved, and how the hub would move from launch into hypercare, stabilisation and BAU.</p></div>
+      </div>
+    </section>
+
+    <!-- ============ Section 12: Reflection (Tier P) — [MODIFIED A17] kicker/title swapped ============ -->
+    <section class="ux-retro ux-tier-p" id="reflection" aria-labelledby="reflection-title">
+      <div class="container">
+        <p class="ux-kicker">Reflection</p>
+        <h2 id="reflection-title">Looking back, looking forward.</h2>
+        <p class="vth-retro-lead">The project showed that sensitive public service content needs evidence, structure, governance, ownership and enough time to test the proposed experience in practice.</p>
+        <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
+          <article class="ux-card"><h3>Value</h3><p>The work demonstrated that evidence-led structure, clear governance and tested pathways can reshape how public services present sensitive information.</p></article>
+          <article class="ux-card"><h3>Learned</h3><p>Further tree testing and user testing would strengthen IA confidence. Frontline input could refine how support, expectations and next steps are explained to victims.</p></article>
+          <article class="ux-card"><h3>Next</h3><p>A shared tracker dashboard for delivery visibility, and sustained governance and BAU planning beyond prototype and launch, would support long-term operation.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 13: HENEX Recipe (special bg) — [MODIFIED A18] node pills removed, dimension tags moved under R24, secondary label matches primary style ============ -->
+    <section class="ux-section vth2-recipe" aria-labelledby="recipe-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro"><p>HENEX Method Recipe</p><h2 id="recipe-title">R24 explains how the Victims Hub turns trust, cooperation and safe action into service structure.</h2></aside>
+        <div class="ux-copy">
+          <p class="ux-recipe-primary"><span>Primary recipe</span><a href="../philosophy.html#r24">R24 · Trust &amp; Cooperation Rules</a></p>
+          <!-- [MODIFIED A18] dimension-coloured tags moved here, directly under the R24 name, replacing the old plain-text "Agency × Empathy × Interface" line -->
+          <div class="ux-recipe-tags vth2-recipe-tags">
+            <span class="vth2-recipe-pill vth2-recipe-pill--human">Agency</span>
+            <span class="vth2-recipe-pill vth2-recipe-pill--emotion">Empathy</span>
+            <span class="vth2-recipe-pill vth2-recipe-pill--nature">Interface</span>
+          </div>
+          <p>Victim Hubs uses R24 because the project was about helping people act with more confidence inside a public support system. The design needed trust, clear responsibilities, safe next steps, reliable navigation, plain language and cooperation across agencies.</p>
+          <!-- [MODIFIED A18] Secondary Recipe label now reuses .ux-recipe-primary span styling exactly, no separate class -->
+          <p class="ux-recipe-primary vth2-secondary-recipe"><span>Secondary Recipe</span></p>
+          <div class="ux-recipe-popovers">
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R18 · Step by Step Path Design" data-recipe-body="Arrange tasks in the order people think and decide." data-recipe-link="../philosophy.html#r18">R18</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R15 · Clarity &amp; Accessibility Audit" data-recipe-body="Turn repeated usability issues into concrete fixes." data-recipe-link="../philosophy.html#r15">R15</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R04 · Lived Story Capture" data-recipe-body="Represent people through real stories rather than assumptions." data-recipe-link="../philosophy.html#r04">R04</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R09 · Mission First Navigation" data-recipe-body="Structure navigation around real goals and identity needs." data-recipe-link="../philosophy.html#r09">R09</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Section 14: Related Projects (Tier N) ============ -->
+    <section class="ux-section ux-related" aria-labelledby="related-title">
+      <div class="container">
+        <p class="ux-kicker">Related Projects</p>
+        <h2 id="related-title">More work across service, digital and spatial systems.</h2>
+        <div class="ux-related__grid">
+          <a class="ux-related-card" href="studier.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp" alt="Studier project preview." loading="lazy"><span>Digital Systems</span><strong>Studier</strong><small>A lightweight research testing platform created to protect the IA testing timeline.</small></a>
+          <a class="ux-related-card" href="accessibility-support-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A service design case focused on accessible public service pathways.</small></a>
+          <a class="ux-related-card" href="new-world-design-system.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds-home.webp" alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New World Design System</strong><small>A design system case focused on reusable interface structure.</small></a>
+          <a class="ux-related-card" href="voting-starter-kit.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/vsk-home.webp" alt="Voting Starter Kit project preview." loading="lazy"><span>Service Systems</span><strong>Voting Starter Kit</strong><small>A civic service case focused on motivation and action.</small></a>
+        </div>
+        <div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-intro"><h2>Cafe Yi</h2><p>Creating evidence-informed design work across public services, digital products and built environments.</p><a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a></div><div class="footer-column"><h3>Social</h3><a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a><a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a></div><div class="footer-column"><h3>Explore</h3><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html">Works</a><a href="../lab.html">Lab</a></div></div><div class="container footer-bottom">Copyright &copy; 2026 Cafe Yi. All rights reserved.</div></footer>
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top"><i class="ti ti-chevron-up" aria-hidden="true"></i></button>
+
+  <!-- [MODIFIED B4] Standard image modal, now used by the IA diagram's enlarge
+       button (data-modal-src points at the R2 ia-structure reference image).
+       The previous page-specific .vth2-svg-modal (SVG clone) was removed since
+       enlarge no longer shows a clone of the inline SVG. -->
+  <div class="ux-modal" data-ux-modal role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-caption"><div class="ux-modal__panel"><button class="ux-modal__close" type="button" data-modal-close aria-label="Close image preview"><i class="ti ti-x" aria-hidden="true"></i></button><h2 id="modal-title">Image preview</h2><div class="ux-modal__canvas"><img data-modal-image alt=""></div><p id="modal-caption" data-modal-caption></p></div></div>
+
+  <div class="ux-popover" data-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      // Hi-fi shell tab switching (Delivery + Design System embeds)
+      document.querySelectorAll('.vth2-hifi-shell').forEach(function (shell) {
+        var tabs = shell.querySelectorAll('.hifi-tab');
+        var frame = shell.querySelector('iframe');
+        if (!tabs.length || !frame) return;
+        tabs.forEach(function (tab) {
+          tab.addEventListener('click', function () {
+            tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+            tab.setAttribute('aria-selected', 'true');
+            var target = tab.getAttribute('data-target');
+            var base = frame.src.split('#')[0];
+            frame.src = base + target;
+          });
+        });
+      });
+
+    }());
+  </script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+/* [MODIFIED G1 2026-07-12] Audit-2 Batch G-1: removed 14 confirmed-dead selectors (project-card--lead/media modifiers, tag-dot family, works-layout, capability-card__index, img-placeholder, project-grid--two). See docs/audits/Global_Site_Audit.md S2. */
 /* HENEX Pages CSS v1.3
    Scope: page hero system, Home sections, HENEX cards, project cards and Works page components.
 
@@ -244,17 +245,6 @@
   border-color: color-mix(in srgb, var(--card-accent) 34%, var(--theme-border));
 }
 
-.capability-card__index {
-  display: inline-grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-full);
-  background: var(--theme-surface-soft);
-  color: var(--theme-text);
-  font-weight: 800;
-}
-
 /* Icon replaces the number index — linear SVG, coloured per capability */
 .capability-card__icon {
   width: 44px;
@@ -443,14 +433,6 @@
   font-weight: 750;
 }
 
-
-/* Works layout */
-
-.works-layout {
-  display: grid;
-  gap: var(--space-md);
-}
-
 .work-group {
   display: grid;
   gap: var(--space-sm);
@@ -473,12 +455,6 @@
 
 .project-card:hover {
   border-color: color-mix(in srgb, var(--theme-text) 18%, var(--theme-border));
-}
-
-.project-card--lead {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  min-height: 430px;
 }
 
 .project-card--compact {
@@ -526,22 +502,12 @@
   gap: 18px;
 }
 
-.project-grid--two {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 .project-card__media {
   position: relative;
   aspect-ratio: 16 / 10;
   display: block;
   overflow: hidden;
   background: var(--theme-surface-soft);
-}
-
-.project-card--lead .project-card__media {
-  min-height: 430px;
-  aspect-ratio: unset;
-  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 }
 
 .project-card__media img {
@@ -555,42 +521,6 @@
 .project-card__media--cover img {
   object-fit: cover;
   object-position: center;
-}
-
-.project-card__media--contain {
-  display: grid;
-  place-items: center;
-  padding: var(--space-md);
-}
-
-.project-card__media--contain img {
-  object-fit: contain;
-  object-position: center;
-}
-
-.project-card__media--focal-left img {
-  object-fit: cover;
-  object-position: left center;
-}
-
-.project-card__media--focal-right img {
-  object-fit: cover;
-  object-position: right center;
-}
-
-.project-card__media--focal-top img {
-  object-fit: cover;
-  object-position: center top;
-}
-
-.project-card__media--placeholder {
-  display: grid;
-  place-items: center;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(60, 140, 244, 0.24), transparent 34%),
-    radial-gradient(circle at 82% 28%, rgba(255, 86, 136, 0.22), transparent 34%),
-    radial-gradient(circle at 50% 84%, rgba(49, 187, 142, 0.20), transparent 38%),
-    var(--theme-surface-soft);
 }
 
 .project-card:hover .project-card__media img {
@@ -631,32 +561,11 @@
   font-size: 0.75rem;
 }
 
-.tag-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: var(--radius-full);
-}
-
-.tag-dot--human   { background: var(--color-human); }
-.tag-dot--emotion { background: var(--color-emotion); }
-.tag-dot--nature  { background: var(--color-nature); }
-
 /* D16: this CTA sits directly below a card grid — spec called out cards
    sitting too close to the CTA below them, so this needs a full step up
    from the DS spacing scale, not a small nudge. */
 .section-cta {
   margin-top: var(--space-xl);
-}
-
-.img-placeholder {
-  min-height: inherit;
-  display: grid;
-  place-items: center;
-  padding: var(--space-md);
-  color: var(--theme-muted);
-  font-size: 0.85rem;
-  font-weight: 800;
-  text-align: center;
 }
 
 .project-status {
@@ -850,7 +759,6 @@
   .capability-grid,
   .henex-dimension-grid,
   .project-grid--three,
-  .project-grid--two,
   .about-preview,
   .lab-entry,
   .works-hero__inner,
@@ -864,14 +772,6 @@
   .lab-entry__body,
   .works-archive-card__body {
     justify-self: start;
-  }
-
-  .project-card--lead {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card--lead .project-card__media {
-    min-height: 340px;
   }
 }
 
@@ -914,14 +814,6 @@
   .dimension-card__icon img {
     width: min(70%, 210px);
     transform: translateY(8px);
-  }
-
-  .project-card--lead .project-card__media {
-    min-height: 250px;
-  }
-
-  .project-card__media--contain {
-    padding: 18px;
   }
 
   .works-category-card {

@@ -329,7 +329,7 @@
             </figure>
           </div>
           <div class="wso-lofi-expand">
-            <button type="button" class="button button--soft" id="wso-lofi-btn" aria-expanded="false" aria-controls="wso-lofi-more">
+            <button type="button" class="button button--soft" id="wso-lofi-btn" data-expand-trigger aria-expanded="false" aria-controls="wso-lofi-more">
               Read more
             </button>
           </div>
@@ -549,7 +549,7 @@
         </div>
 
         <div class="wso-final-actions">
-          <button type="button" class="button button--soft" id="wso-expand-btn" aria-expanded="false" aria-controls="wso-final-more">
+          <button type="button" class="button button--soft" id="wso-expand-btn" data-expand-trigger aria-expanded="false" aria-controls="wso-final-more">
             Read more
           </button>
           <a class="button button--primary" href="https://www.figma.com/proto/VdjIieyRNkz7RcmPr6chRr/423A3_work_view?page-id=0%3A1&node-id=10-2&viewport=372%2C146%2C0.03&t=mPclTwt5Vwc3nH0Q-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=10%3A2" target="_blank" rel="noopener">View Prototype</a>
@@ -685,33 +685,6 @@
   <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
     <i class="ti ti-chevron-up" aria-hidden="true"></i>
   </button>
-
-  <script>
-    (function () {
-      // Final design expand
-      var finalBtn = document.getElementById('wso-expand-btn');
-      var finalMore = document.getElementById('wso-final-more');
-      if (finalBtn && finalMore) {
-        finalBtn.addEventListener('click', function () {
-          var expanded = finalBtn.getAttribute('aria-expanded') === 'true';
-          finalBtn.setAttribute('aria-expanded', String(!expanded));
-          finalMore.hidden = expanded;
-          finalBtn.textContent = expanded ? 'Read more' : 'Show fewer';
-        });
-      }
-      // Lo-fi expand
-      var lofiBtn = document.getElementById('wso-lofi-btn');
-      var lofiMore = document.getElementById('wso-lofi-more');
-      if (lofiBtn && lofiMore) {
-        lofiBtn.addEventListener('click', function () {
-          var expanded = lofiBtn.getAttribute('aria-expanded') === 'true';
-          lofiBtn.setAttribute('aria-expanded', String(!expanded));
-          lofiMore.hidden = expanded;
-          lofiBtn.textContent = expanded ? 'Read more' : 'Show fewer';
-        });
-      }
-    }());
-  </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

@@ -1,3 +1,4 @@
+/* [MODIFIED G1 2026-07-12] Audit-2 Batch G-1: removed 11 confirmed-dead selectors (arch-concept-note, arch-diamond-row, arch-tech-cluster, arch-portrait-feature, arch-figure--wide families) plus 2 emptied media blocks. See docs/audits/Global_Site_Audit.md S2. */
 /* HENEX Architecture Case CSS v0.4
    Scope: architecture case study pages only.
    Dependencies: global.css */
@@ -394,26 +395,8 @@
   object-fit: cover;
 }
 
-.arch-portrait-feature {
-  display: grid;
-  grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-  gap: 18px;
-  align-items: start;
-}
-
-.arch-portrait-feature .arch-figure--photo img {
-  height: 620px;
-  object-fit: cover;
-}
-
-.arch-portrait-feature .arch-figure--wide img {
-  height: 300px;
-  object-fit: cover;
-}
-
 @media (max-width: 900px) {
-  .arch-image-pair--portrait,
-  .arch-portrait-feature {
+  .arch-image-pair--portrait{
     grid-template-columns: 1fr;
   }
 
@@ -422,8 +405,7 @@
   }
 
   .arch-image-pair--portrait .arch-figure--photo img,
-  .arch-portrait-trio .arch-figure--photo img,
-  .arch-portrait-feature .arch-figure--photo img {
+  .arch-portrait-trio .arch-figure--photo img{
     height: 420px;
   }
 }
@@ -434,21 +416,6 @@
   }
 }
 
-
-/* Technical drawing cluster (small unframed line drawings paired with a large photo) */
-
-.arch-tech-cluster {
-  display: grid;
-  grid-template-columns: minmax(180px, 0.26fr) minmax(0, 0.74fr);
-  gap: 28px;
-  align-items: start;
-}
-
-.arch-tech-cluster__drawings {
-  display: grid;
-  gap: 28px;
-}
-
 .arch-figure--line-plain img {
   width: 100%;
   max-width: 280px;
@@ -457,33 +424,10 @@
   padding: 0;
 }
 
-.arch-tech-cluster__photo {
-  margin: 0;
-}
-
-.arch-tech-cluster__photo img {
-  width: 100%;
-  height: 480px;
-  object-fit: cover;
-}
-
 @media (max-width: 900px) {
-  .arch-tech-cluster {
-    grid-template-columns: 1fr;
-  }
-
-  .arch-tech-cluster__drawings {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   .arch-figure--line-plain img {
     max-width: 100%;
-  }
-}
-
-@media (max-width: 520px) {
-  .arch-tech-cluster__drawings {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -494,58 +438,13 @@
   margin-top: 64px;
 }
 
-.arch-concept-note {
-  margin-top: 48px;
-  display: flex;
-  justify-content: center;
-}
 
-.arch-concept-note .arch-figure {
-  max-width: 520px;
-  text-align: center;
-}
-
-.arch-concept-note .arch-figure--line-plain img {
-  max-width: 420px;
-  margin-inline: auto;
-}
-
-.arch-concept-note--tight {
-  margin-top: 36px;
-  margin-bottom: 12px;
-}
-
-
-/* Diamond row: two small line-drawing groups placed side by side, same visual weight */
-
-.arch-diamond-row {
+/* Diamond row: two small line-drawing groups placed side by side{
   display: grid;
   grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
   gap: 24px;
   align-items: center;
   margin-top: 48px;
-}
-
-.arch-diamond-row__diamond img,
-.arch-diamond-row__masterplan img {
-  width: 100%;
-  object-fit: contain;
-  background: transparent;
-  padding: 0;
-}
-
-.arch-diamond-row__caption {
-  width: min(var(--container), calc(100% - var(--gutter)));
-  margin: 14px auto 0;
-  color: var(--theme-muted);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
-@media (max-width: 900px) {
-  .arch-diamond-row {
-    grid-template-columns: 1fr;
-  }
 }
 
 

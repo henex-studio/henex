@@ -202,6 +202,31 @@
   }
 
 
+  /* ── Expand/Collapse ──
+     Generic "Read more / Show fewer" toggle. Opt a button in with
+     [data-expand-trigger]; the button's existing aria-controls attribute
+     points at the panel to show/hide (panel starts with the `hidden`
+     attribute in markup). Button label text is swapped between the
+     collapsed and expanded labels found in data-label-more /
+     data-label-less (defaults: "Read more" / "Show fewer"). */
+
+  document.querySelectorAll('[data-expand-trigger]').forEach(function (trigger) {
+    const panelId = trigger.getAttribute('aria-controls');
+    const panel = panelId ? document.getElementById(panelId) : null;
+    if (!panel) return;
+
+    const labelMore = trigger.getAttribute('data-label-more') || 'Read more';
+    const labelLess = trigger.getAttribute('data-label-less') || 'Show fewer';
+
+    trigger.addEventListener('click', function () {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', String(!expanded));
+      panel.hidden = expanded;
+      trigger.textContent = expanded ? labelMore : labelLess;
+    });
+  });
+
+
   /* ── Shared Escape key handler ── */
 
   document.addEventListener('keydown', function (event) {

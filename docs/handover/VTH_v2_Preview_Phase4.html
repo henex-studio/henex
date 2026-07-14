@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Victims Hub v2 (Phase 4 Preview) | HENEX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+<style>
+/* ============================================================
+   VTH v2 — Phase 4 self-contained preview.
+   This file embeds all styling needed to review the master
+   template structure. It is NOT the production file. Phase 5
+   will port the approved structure back into works/victim-hub.html,
+   vth.css and (where the rules are sitewide) ux-case-study.css.
+   ============================================================ */
+
+:root{
+  /* Global neutral tokens, copied from global.css for preview portability */
+  --theme-bg:#F6F7F8;
+  --theme-surface:#FFFFFF;
+  --theme-surface-soft:#F0F3F5;
+  --theme-border:#E3E6EA;
+  --theme-border-soft:#ECEEF1;
+  --theme-text:#15171A;
+  --theme-text-soft:#4B5259;
+  --theme-muted:#7A828B;
+  --font-body:"Inter",Arial,sans-serif;
+  --font-heading:"IBM Plex Sans",Arial,sans-serif;
+  --space-2xs:4px; --space-xs:8px; --space-sm:16px; --space-md:24px; --space-lg:32px; --space-xl:48px; --space-2xl:72px;
+  --shadow-card:0 2px 10px rgba(20,24,30,.06);
+
+  /* New corner-radius tokens confirmed in Phase 3A (Section 5 of the Master Template Spec) */
+  --radius-pill:99px;
+  --radius-card:12px;
+  --radius-media:8px;
+  --radius-button:4px;
+
+  /* VTH dual theme tokens confirmed in Phase 3A (Section 2.2) */
+  --ux-primary:#00164B;
+  --ux-secondary:#B30D0D;
+  --ux-primary-dark:#000B2E;
+  --ux-primary-soft:#4A6BB0;
+  --ux-primary-pale:#EEF5FB;
+}
+[data-theme="dark"]{
+  --theme-bg:#0B0C0D;
+  --theme-surface:#131518;
+  --theme-surface-soft:#1A1D21;
+  --theme-border:#2A2E33;
+  --theme-border-soft:#22262B;
+  --theme-text:#F3F4F6;
+  --theme-text-soft:#C4C9CF;
+  --theme-muted:#8A9098;
+  --ux-primary-soft:#7C93C9;
+  --ux-primary-pale:#132447;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--theme-bg);color:var(--theme-text);font-family:var(--font-body);font-size:16px;line-height:1.55}
+h1,h2,h3{font-family:var(--font-heading);margin:0;line-height:1.12;color:var(--theme-text)}
+p{margin:0}
+a{color:inherit}
+.container{width:min(100% - 48px,1180px);margin:0 auto}
+img{max-width:100%;display:block}
+
+/* Preview-only banner, remove in Phase 5 */
+.preview-banner{background:#151719;color:#fff;text-align:center;padding:10px 16px;font-size:.85rem;font-weight:600;letter-spacing:.01em}
+.preview-banner strong{color:#FFD166}
+
+/* Header (simplified, matches site nav visually) */
+.site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--theme-surface) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--theme-border)}
+.site-header__inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+.site-brand{font-weight:800;text-decoration:none;font-size:1.1rem}
+.site-nav{display:flex;gap:22px;align-items:center;font-size:.92rem;font-weight:600}
+.site-nav a{text-decoration:none;color:var(--theme-text-soft)}
+.theme-toggle{border:1px solid var(--theme-border);background:var(--theme-surface);border-radius:var(--radius-pill);width:36px;height:36px;display:grid;place-items:center;cursor:pointer}
+.theme-toggle .ti-moon{display:none}
+[data-theme="dark"] .theme-toggle .ti-sun{display:none}
+[data-theme="dark"] .theme-toggle .ti-moon{display:inline-block}
+
+/* Hero */
+.ux-hero{position:relative;padding:96px 0 88px;color:#fff;background:linear-gradient(135deg,var(--ux-primary) 0%,var(--ux-primary) 60%,var(--ux-primary-soft) 100%)}
+[data-theme="dark"] .ux-hero{background:linear-gradient(135deg,var(--ux-primary-dark) 0%,var(--ux-primary) 100%)}
+.case-tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.case-tag{border:1px solid rgba(255,255,255,.38);border-radius:var(--radius-pill);padding:6px 14px;font-size:.82rem;font-weight:700;background:rgba(255,255,255,.08)}
+.ux-hero h1{font-size:clamp(2.4rem,6vw,4.2rem);letter-spacing:-.03em;max-width:820px}
+.ux-hero__copy > p{margin-top:18px;max-width:680px;font-size:1.2rem;color:rgba(255,255,255,.9)}
+.ux-actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.button{min-height:46px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:var(--radius-button);font-weight:700;font-size:.95rem;text-decoration:none;border:2px solid transparent;cursor:pointer}
+.button--primary{background:#fff;color:var(--ux-primary)}
+.button--soft{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5);color:#fff}
+
+/* Section shell + 4-tier background system (Phase 3A Section 3) */
+.ux-section{padding:var(--space-2xl) 0}
+.tier-n{background:var(--theme-surface)}
+.tier-l{background:var(--ux-primary-pale)}
+.tier-p{background:linear-gradient(180deg,var(--theme-surface) 0%,var(--ux-primary-pale) 100%)}
+.tier-d{background:linear-gradient(135deg,var(--ux-primary-dark) 0%,var(--ux-primary) 100%);color:#fff}
+.tier-d h2,.tier-d h3{color:#fff}
+.tier-d p{color:rgba(255,255,255,.82)}
+.tier-d .ux-kicker{color:#FF9E9E}
+.tier-special{background:var(--theme-surface-soft)}
+
+.ux-kicker{margin:0 0 10px;color:var(--ux-secondary);font-weight:800;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase}
+.ux-two-col{display:grid;grid-template-columns:minmax(240px,.36fr) minmax(0,.64fr);gap:var(--space-xl)}
+.ux-intro h2{font-size:clamp(1.7rem,3.2vw,2.6rem);letter-spacing:-.02em}
+.ux-copy > p{color:var(--theme-text-soft);margin-top:14px}
+.ux-copy > p:first-child{margin-top:0}
+.ux-wide-head{max-width:900px;margin-bottom:var(--space-lg)}
+.ux-wide-head h2{font-size:clamp(1.7rem,3.2vw,2.6rem);margin:10px 0 14px}
+.ux-wide-head p{color:var(--theme-text-soft)}
+
+/* Cards */
+.ux-card-grid{display:grid;gap:16px;margin-top:0}
+.ux-card-grid--two{grid-template-columns:repeat(2,1fr)}
+.ux-card-grid--three{grid-template-columns:repeat(3,1fr)}
+.ux-card-grid--four{grid-template-columns:repeat(4,1fr)}
+.ux-card{border:1px solid var(--theme-border);border-radius:var(--radius-card);padding:22px;background:var(--theme-surface);box-shadow:var(--shadow-card)}
+.tier-d .ux-card,.tier-d .vth-metrics article{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.28)}
+.tier-d .ux-card h3{color:#fff}
+.tier-d .ux-card p{color:rgba(255,255,255,.82)}
+.ux-card h3{font-size:1.15rem;margin-bottom:8px}
+.ux-card p{color:var(--theme-text-soft);margin:0;font-size:.95rem}
+.vth-problem-card{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:center}
+.vth-problem-card img{width:56px;height:56px;object-fit:contain;border-radius:var(--radius-media)}
+.vth-journey-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius-media);margin-bottom:12px}
+
+/* Influence block */
+.ux-influence{margin-top:28px;padding:20px 24px;border-left:3px solid var(--ux-secondary);background:color-mix(in srgb,var(--ux-primary-pale) 70%,transparent);border-radius:0 var(--radius-card) var(--radius-card) 0}
+.ux-influence strong{display:block;margin-bottom:6px;color:var(--ux-primary)}
+.tier-d .ux-influence{background:rgba(255,255,255,.08);border-left-color:#FF9E9E}
+.tier-d .ux-influence strong{color:#fff}
+.tier-d .ux-influence p{color:rgba(255,255,255,.85)}
+
+/* HMW */
+.vth-hmw-statement{margin:30px 0 0;padding:clamp(24px,4vw,42px);border:1px solid color-mix(in srgb,var(--ux-primary) 22%,var(--theme-border));border-radius:var(--radius-card);background:color-mix(in srgb,var(--ux-primary) 6%,var(--theme-surface));color:var(--ux-primary);font-family:var(--font-heading);font-size:clamp(1.3rem,2.6vw,2rem);font-weight:750;line-height:1.25;letter-spacing:-.02em}
+
+/* Media */
+.ux-media, .ux-media img, .ux-media video{border-radius:var(--radius-media);width:100%;display:block;box-shadow:none;border:1px solid var(--theme-border-soft)}
+figcaption{margin-top:10px;color:var(--theme-muted);font-size:.88rem}
+.vth-research-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:12px;margin-top:32px}
+.vth-research-grid img{width:100%;height:130px;object-fit:contain;padding:10px;border:1px solid var(--theme-border-soft);border-radius:var(--radius-media);background:var(--theme-surface)}
+.vth-research-grid figcaption{grid-column:1/-1}
+.vth-principle-image-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:32px}
+.vth-principle-image-grid figure{margin:0;padding:12px;border:1px solid var(--theme-border-soft);border-radius:var(--radius-card);background:var(--theme-surface-soft)}
+.vth-principle-image-grid img{border-radius:var(--radius-media)}
+
+/* Process nav cards (Chapter 2 opener) */
+.ux-process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:8px}
+.ux-process-card{display:block;text-decoration:none;padding:24px;border:1px solid color-mix(in srgb,var(--ux-primary) 30%,var(--theme-border));border-radius:var(--radius-card);background:color-mix(in srgb,var(--ux-primary) 5%,var(--theme-surface));transition:transform .18s ease,box-shadow .18s ease}
+.ux-process-card:hover,.ux-process-card:focus-visible{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,22,75,.14)}
+.ux-process-card span{display:block;color:var(--ux-secondary);font-weight:800;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.ux-process-card h3{font-size:1.15rem;color:var(--ux-primary);margin-bottom:8px}
+.ux-process-card p{color:var(--theme-text-soft);font-size:.9rem;margin:0}
+
+/* Contribution role cards */
+.ux-role-card{border:1px solid var(--theme-border);border-radius:var(--radius-card);padding:26px;background:var(--theme-surface)}
+.ux-role-card span{display:inline-block;margin-bottom:10px;padding:4px 12px;border-radius:var(--radius-pill);background:color-mix(in srgb,var(--ux-primary) 10%,transparent);color:var(--ux-primary);font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+.ux-role-card h3{font-size:1.25rem;margin-bottom:10px}
+.ux-role-card p{color:var(--theme-text-soft)}
+
+/* Chips */
+.vth-process-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.vth-process-chips span{padding:6px 12px;border:1px solid color-mix(in srgb,var(--ux-primary) 26%,var(--theme-border));border-radius:var(--radius-pill);background:color-mix(in srgb,var(--ux-primary) 6%,var(--theme-surface));color:var(--ux-primary);font-size:.8rem;font-weight:800}
+
+/* Metrics */
+.vth-metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+.vth-metrics article{padding:20px;border:1px solid var(--theme-border-soft);border-radius:var(--radius-card);background:var(--theme-surface)}
+.vth-metrics span{display:block;margin-bottom:8px;font-size:.72rem;font-weight:850;letter-spacing:.1em;text-transform:uppercase;color:var(--ux-primary)}
+.vth-metrics strong{display:flex;gap:8px;align-items:baseline;font-family:var(--font-heading);font-size:clamp(1.5rem,2.2vw,2.2rem)}
+.vth-metrics small{display:block;margin-top:6px;color:var(--theme-text-soft)}
+
+/* Delivery read-more */
+.ux-readmore-toggle{display:block;margin:32px auto 0;min-height:44px;padding:0 26px;border-radius:var(--radius-button);border:2px solid var(--ux-primary);background:var(--ux-primary);color:#fff;font-weight:700;cursor:pointer}
+.tier-d .ux-readmore-toggle{border-color:#fff;background:#fff;color:var(--ux-primary)}
+[hidden]{display:none !important}
+.ux-subhead{margin:44px 0 18px}
+.ux-subhead:first-child{margin-top:0}
+.ux-subhead h3{font-size:1.35rem}
+
+/* Recipe */
+.ux-recipe-primary{display:grid;gap:6px;margin:0 0 20px}
+.ux-recipe-primary a{color:var(--ux-primary);font-family:var(--font-heading);font-size:1.3rem;font-weight:750;text-decoration:none}
+.ux-recipe-primary small{color:var(--theme-text-soft)}
+.ux-recipe-tags,.ux-recipe-popovers{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.ux-recipe-tags span,.ux-recipe-trigger{min-height:32px;display:inline-flex;align-items:center;padding:5px 12px;border-radius:var(--radius-pill);font-weight:850;font-size:.82rem}
+.ux-recipe-tags span{border:1px solid color-mix(in srgb,var(--ux-primary) 30%,var(--theme-border));color:var(--ux-primary);background:color-mix(in srgb,var(--ux-primary) 8%,var(--theme-surface))}
+.ux-recipe-trigger{border:1px solid var(--theme-border);background:var(--theme-surface-soft);color:var(--theme-text-soft);cursor:pointer}
+.ux-recipe-label{display:block;margin:22px 0 8px;font-weight:800;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;color:var(--theme-muted)}
+
+/* Related */
+.ux-related__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:32px}
+.ux-related-card{display:grid;grid-template-rows:auto auto auto 1fr;border:1px solid var(--theme-border);border-radius:var(--radius-card);overflow:hidden;text-decoration:none;background:var(--theme-surface);transition:transform .18s ease,box-shadow .18s ease}
+.ux-related-card:hover,.ux-related-card:focus-visible{transform:translateY(-4px);box-shadow:0 10px 24px rgba(0,0,0,.1)}
+.ux-related-card img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:0;border-bottom:1px solid var(--theme-border-soft)}
+.ux-related-card span,.ux-related-card strong,.ux-related-card small{margin-inline:18px}
+.ux-related-card span{margin-top:14px;color:var(--theme-muted);font-size:.8125rem;font-weight:850;letter-spacing:.15em;text-transform:uppercase}
+.ux-related-card strong{margin-top:6px;font-size:1.15rem}
+.ux-related-card small{margin:8px 18px 18px;color:var(--theme-text-soft)}
+.ux-related__actions{display:flex;justify-content:flex-end;margin-top:28px}
+
+.site-footer{background:#0E1013;color:#fff;padding:48px 0}
+.site-footer a{color:#fff}
+
+@media (max-width:1180px){
+  .ux-card-grid--three,.ux-card-grid--four,.ux-process-grid,.ux-related__grid{grid-template-columns:repeat(2,1fr)}
+  .vth-research-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:900px){
+  .ux-two-col,.ux-card-grid--two,.ux-card-grid--three,.ux-card-grid--four,.ux-process-grid,.ux-related__grid,.vth-principle-image-grid{grid-template-columns:1fr}
+  .container{width:min(100% - 32px,1180px)}
+  .ux-hero{padding:64px 0 56px}
+  .ux-section{padding:56px 0}
+}
+@media (max-width:640px){
+  .vth-research-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body class="ux-case-page--victim-hub">
+
+<div class="preview-banner">Phase 4 preview — <strong>not production</strong>. Structure follows Master Template Spec v1 + approved Content Mapping Table (VTH section).</div>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-brand" href="#">HENEX</a>
+    <nav class="site-nav">
+      <a href="#">About</a><a href="#">Philosophy</a><a href="#" aria-current="page">Works</a><a href="#">Lab</a>
+      <button class="theme-toggle" type="button" id="themeToggle" aria-label="Switch theme"><i class="ti ti-sun" aria-hidden="true"></i><i class="ti ti-moon" aria-hidden="true"></i></button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- Chapter 0: Entry -->
+  <section class="ux-hero" aria-labelledby="case-title">
+    <div class="container">
+      <div class="case-tag-row">
+        <span class="case-tag">Public Sector Advisory</span>
+        <span class="case-tag">Service Design</span>
+        <span class="case-tag">Content Strategy</span>
+      </div>
+      <div class="ux-hero__copy">
+        <h1 id="case-title">Victims Hub</h1>
+        <p>Evidence led service improvement for a victim centred public sector digital touchpoint.</p>
+        <div class="ux-actions">
+          <a class="button button--primary" href="#outcome">View Outcome</a>
+          <a class="button button--soft" href="#delivery">View Final Design</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" aria-labelledby="overview-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Overview</p><h2 id="overview-title">A clearer first point of contact for victim information.</h2></aside>
+      <div class="ux-copy">
+        <p>The Victims Hub project sat within the Justice Sector Victims Work Programme and focused on improving how victim information works on the NZ Police website. The existing content was substantial, but it was fragmented across pages, difficult to navigate and shaped around internal operations rather than the needs of people looking for help.</p>
+        <p>As Principal Advisor, I led the work from project framing and evidence strategy through to service structure, prototype direction, content design, testing and handover planning. The outcome was a tested hub direction, a reusable page pattern and a handover pathway that could support future implementation.</p>
+        <div class="ux-card-grid ux-card-grid--four" style="margin-top:32px">
+          <div class="ux-card"><p class="ux-kicker" style="margin-bottom:6px">Client</p><strong>NZ Police, Justice Sector Victims Work Programme</strong></div>
+          <div class="ux-card"><p class="ux-kicker" style="margin-bottom:6px">Role</p><strong>Principal Advisor, Service Design Lead</strong></div>
+          <div class="ux-card"><p class="ux-kicker" style="margin-bottom:6px">Team</p><strong>Principal Advisor and 1 Advisor</strong></div>
+          <div class="ux-card"><p class="ux-kicker" style="margin-bottom:6px">Timeline</p><strong>March to June 2026</strong></div>
+        </div>
+        <p style="margin-top:20px"><strong>HENEX Lens:</strong> <a href="#recipe" style="color:var(--ux-secondary);font-weight:700">R24 · Trust &amp; Cooperation Rules</a> <small style="color:var(--theme-muted)">Agency × Empathy × Interface</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 1: Story -->
+  <section class="ux-section tier-p" aria-labelledby="background-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Background</p><h2 id="background-title">Useful information existed, but the journey was fragmented.</h2></aside>
+      <div class="ux-copy">
+        <p>The starting point was not a blank page. Useful victim information already existed on the NZ Police website, but the entry point did not lead to a clear enough journey.</p>
+        <p>Content was spread across pages, FAQs and different parts of the site. The deeper issue was structural. Content often reflected how Police works internally rather than how someone affected by crime might search for help.</p>
+        <figure class="ux-media" style="margin-top:28px">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/current-site.png" alt="Current state webpage screenshot showing advice for victims pages and the information for victims of crime page." loading="lazy">
+          <figcaption>The existing Advice for Victims pages, spread across multiple entry points before this project.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-l ux-problem" aria-labelledby="problem-title">
+    <div class="container ux-two-col">
+      <div><p class="ux-kicker">Problem</p><h2 id="problem-title">Fragmented content left people to find their own way through it.</h2></div>
+      <div class="ux-copy">
+        <p>The project was initially framed around improving victim information pages, but the research showed that the challenge was larger than a visual refresh.</p>
+        <p>The real problem was whether people could quickly understand where to go, recognise that the content was written for them, and move forward with confidence.</p>
+      </div>
+    </div>
+    <div class="container">
+      <blockquote class="vth-hmw-statement">How might we redesign the NZ Police victim pages so that someone who may or has experienced a crime can quickly understand where to go, feel that the pages were written for them, and move forward with confidence?</blockquote>
+      <div class="ux-card-grid ux-card-grid--three" style="margin-top:26px">
+        <article class="ux-card"><h3>Fragmented content</h3><p>Victim information was spread across pages, FAQs and support references.</p></article>
+        <article class="ux-card"><h3>Internal structure</h3><p>Content often reflected organisational categories rather than how people search for help.</p></article>
+        <article class="ux-card"><h3>Unclear next steps</h3><p>People needed clearer paths for reporting, support, safety and what happens next.</p></article>
+      </div>
+      <div class="ux-influence"><strong>Influence</strong><p>The problem framing gave the project a practical decision filter. Each design direction could be assessed against whether it helped people find the right path, recognise the language as relevant to them and move forward with more confidence.</p></div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" aria-labelledby="solution-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Solution</p><h2 id="solution-title">A strategy built on guidance, resonance and confidence.</h2></aside>
+      <div class="ux-copy">
+        <p>The response translated the research into three connected shifts: give people clearer guidance to the right path, use language that resonates with how they describe their own situation, and build visible confidence at every step.</p>
+        <div class="ux-card-grid ux-card-grid--three" style="margin-top:28px">
+          <article class="ux-card vth-problem-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/problem-guidance.png" alt="" loading="lazy"><div><h3>Guidance</h3><p>Help people recognise the right path and next step.</p></div></article>
+          <article class="ux-card vth-problem-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/problem-resonance.png" alt="" loading="lazy"><div><h3>Resonance</h3><p>Use language and labels that match how people describe their needs.</p></div></article>
+          <article class="ux-card vth-problem-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/problem-confidence.png" alt="" loading="lazy"><div><h3>Confidence</h3><p>Set honest expectations and make support pathways visible.</p></div></article>
+        </div>
+        <div class="ux-influence"><strong>Influence</strong><p><em>[Draft, to be finalised during build]</em> This became the practical filter for every later decision: does this direction improve guidance, resonance or confidence for someone who needs help.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-d" id="outcome" aria-labelledby="outcome-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Outcome</p><h2 id="outcome-title">A prototype walkthrough of the Victims Hub direction.</h2></aside>
+      <div class="ux-copy">
+        <p>A short walkthrough of the Victims Hub prototype, showing the hub entry page, supporting information page pattern and key pathways for people looking for victim information.</p>
+        <video class="ux-media" style="margin-top:26px" controls preload="metadata" playsinline>
+          <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth.mp4" type="video/mp4">Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" id="contribution" aria-labelledby="contribution-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Contribution</p><h2 id="contribution-title">Leading research, IA, content strategy and governance.</h2></aside>
+      <div class="ux-copy">
+        <p>My role was to lead the work across research, information architecture, content strategy, stakeholder alignment and governance. I helped the team move from a broad problem space into a structured delivery path, while keeping user needs, Police responsibilities and future maintainability visible.</p>
+        <div class="ux-card-grid ux-card-grid--two" style="margin-top:28px">
+          <article class="ux-role-card">
+            <span>Research, IA &amp; Content</span>
+            <h3>Building the evidence base and translating it into structure.</h3>
+            <p>Planned and connected research, evidence and prototype direction, then translated findings into information architecture, content hierarchy and reusable content patterns.</p>
+          </article>
+          <article class="ux-role-card">
+            <span>Governance &amp; Delivery</span>
+            <h3>Keeping decisions moving across a sensitive public service.</h3>
+            <p>Supported review cycles, stakeholder alignment and handover readiness, and shaped the BAU plan that carries the work from prototype into build, launch and operation.</p>
+          </article>
+        </div>
+        <div class="ux-influence"><strong>Influence</strong><p>This governance approach reduced ambiguity about who needed to review what, when decisions could progress and how working-level feedback connected to formal approval.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chapter 2: Process -->
+  <section class="ux-section tier-p" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <div class="ux-wide-head">
+        <p class="ux-kicker">Process</p>
+        <h2 id="process-title">A journey from evidence to a tested, handover-ready hub.</h2>
+        <p>The work moved through four connected stages: building a shared evidence base, translating that evidence into structure and content, testing the direction, and preparing a review-ready package for delivery.</p>
+      </div>
+      <div class="ux-process-grid">
+        <a class="ux-process-card" href="#research"><span>01 Research</span><h3>Research and evidence</h3><p>Interviews, testing, content inventory, card sorting.</p></a>
+        <a class="ux-process-card" href="#design"><span>02 Design</span><h3>IA and content strategy</h3><p>Victim pathways, page patterns, content model.</p></a>
+        <a class="ux-process-card" href="#validation"><span>03 Validation</span><h3>Prototype and testing</h3><p>Low-fi structure testing and usability results.</p></a>
+        <a class="ux-process-card" href="#delivery"><span>04 Delivery</span><h3>Final design and handover</h3><p>Hi-fi direction, decisions, go-live planning.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" id="research" aria-labelledby="research-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Research</p><h2 id="research-title">The redesign was grounded in mixed evidence.</h2></aside>
+      <div class="ux-copy">
+        <p>To avoid redesigning from assumptions, the project built a mixed evidence base across research, testing, content review and stakeholder input. Interviews gave depth on stakeholder knowledge and content needs. Baseline usability testing showed where users got stuck. Best practice review brought in comparable models. Content inventory created a structured baseline of what already existed. Web data revealed user behaviour at scale. Card sorting explored how people naturally grouped information. Evaluative workshops helped the team compare design directions against desirability, feasibility and manageability.</p>
+        <figure class="vth-research-grid" aria-label="Research evidence methods">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-interviews.png" alt="Interviews research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-usability-test.png" alt="Usability testing research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-best-practice.png" alt="Best practice analysis research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-content-inventoried.png" alt="Content inventory research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-page-analysis.png" alt="Web data analysis research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-card-sorting.png" alt="Card sorting research method." loading="lazy">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/research-evaluative.png" alt="Evaluative scoring research method." loading="lazy">
+          <figcaption>Evidence methods used to build a shared view of user needs, content structure and delivery priorities.</figcaption>
+        </figure>
+
+        <div class="ux-subhead"><p class="ux-kicker">Synthesis</p><h3>Research became a shared decision framework.</h3><p style="color:var(--theme-text-soft)">The evidence was translated into three practical design lenses: structure, tone and behaviour. These lenses helped the team move from research findings into practical decisions about IA, content and prototype direction.</p></div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><h3>Structure</h3><p>Organise content around clear pathways, consistent page patterns and information people can scan.</p></article>
+          <article class="ux-card"><h3>Tone</h3><p>Use language that is warm, plain, honest and written from the victim's point of view.</p></article>
+          <article class="ux-card"><h3>Behaviour</h3><p>Make next steps visible so people know what they can do, where they can go and what to expect.</p></article>
+        </div>
+        <figure class="vth-principle-image-grid" aria-label="Nine evidence based principles">
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-signal.png" alt="Signal Direction principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-speak-victim.png" alt="Speak Victim principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-reveal-paths.png" alt="Reveal Paths principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-greet-first.png" alt="Greet First principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-set-expectation.png" alt="Set Expectations principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-define-boundary.png" alt="Define Boundaries principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-enable-scaning.png" alt="Enable Scanning principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-build-familiarity.png" alt="Build Familiarity principle." loading="lazy"></figure>
+          <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/principle-invite-action.png" alt="Invite Action principle." loading="lazy"></figure>
+        </figure>
+        <div class="ux-influence"><strong>Influence</strong><p>The principles helped turn research into practical design decisions. They shaped pathways, labels, Police boundaries, page templates and support actions, while keeping design conversations grounded in evidence.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-p" id="design" aria-labelledby="design-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Design</p><h2 id="design-title">The IA shifted from organisational categories to victim pathways.</h2></aside>
+      <div class="ux-copy">
+        <p>Instead of asking people to understand Police, justice and agency structures, the hub organised information around what victims need to understand, do, follow up on and stay safe from.</p>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/journey-understand.png" alt="" loading="lazy"><h3>Understand</h3><p>Information for victims.</p></article>
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/journey-act.png" alt="" loading="lazy"><h3>Act</h3><p>Report a crime. Support for victims.</p></article>
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/journey-stay-informed.png" alt="" loading="lazy"><h3>Stay informed and safe</h3><p>What happens next. Keeping safe. Give feedback.</p></article>
+        </div>
+        <p style="margin-top:24px;color:var(--theme-text-soft)">The content strategy supported this structure with consistent page shapes, plain-language descriptions, visible next actions, clearer Police boundaries and reusable content patterns that could be extended beyond the first prototype.</p>
+        <figure class="ux-media" style="margin-top:24px">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ia-structure.png" alt="Information architecture structure showing the Victims Hub content pathway." loading="lazy">
+          <figcaption>Information architecture structure used to connect victim pathways, page sections and supporting content.</figcaption>
+        </figure>
+        <div class="ux-influence"><strong>Influence</strong><p>The pathway model gave the project a structure that could support both immediate user needs and future content maintenance.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" id="validation" aria-labelledby="validation-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Validation</p><h2 id="validation-title">The prototype made structure visible before build.</h2></aside>
+      <div class="ux-copy">
+        <p>The low-fidelity prototype was not treated as final design. It was a practical tool for testing structure before high-fidelity design and build decisions. The prototype helped check whether the main pathways made sense, test movement from the landing page into section content, identify wording and signposting improvements, and focus the next iteration.</p>
+        <div class="vth-process-chips" aria-label="Prototype iteration stages">
+          <span>Research findings</span><span>IA draft</span><span>Low-fi prototype</span><span>Testing and review</span><span>Hi-fi direction</span><span>Handover package</span>
+        </div>
+        <figure class="ux-media" style="margin-top:26px">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/lofi-hub.png" alt="Low fidelity hub prototype used to test structure and pathways." loading="lazy">
+          <figcaption>Low-fidelity hub prototype used to make structure visible before build.</figcaption>
+        </figure>
+        <div class="ux-subhead"><p class="ux-kicker">Testing</p><h3>Testing showed the new direction was easier to use.</h3><p style="color:var(--theme-text-soft)">The latest testing showed that the redesigned hub was easier to use across matched tasks compared with the baseline. These are testing results, not live-service analytics.</p></div>
+        <figure class="ux-media">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/ease-score.png" alt="Testing results showing improvements in success, ease and median task time." loading="lazy">
+          <figcaption>Testing result summary comparing the redesigned hub direction with the baseline.</figcaption>
+        </figure>
+        <div class="vth-metrics" aria-label="Testing outcome metrics">
+          <article><span>Success rate</span><strong>88.9% ↗</strong><small>From 66.7%</small></article>
+          <article><span>Ease score</span><strong>+56.3% ↗</strong><small>2.67/5 → 4.17/5</small></article>
+          <article><span>Median task time</span><strong>-41.4% ↘</strong><small>140s → 82s, faster</small></article>
+        </div>
+        <div class="ux-influence"><strong>Influence</strong><p>The results gave stakeholders evidence that the new direction was working, while still identifying where further refinement was needed.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-d" id="delivery" aria-labelledby="delivery-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker">Delivery</p><h2 id="delivery-title">A review-ready hub package and a plan for go-live.</h2></aside>
+      <div class="ux-copy">
+        <p>Delivery brought together three things: the decisions that shaped the direction, the review-ready design package, and the plan for moving from prototype to a live service.</p>
+
+        <div class="ux-subhead"><p class="ux-kicker" style="color:#FF9E9E">Key decisions</p><h3>The project required trade-offs across UX, governance and delivery.</h3></div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><h3>Treat the work as structure change, not visual refresh</h3><p>Research showed that the deeper issue was information hierarchy, navigation flow and language.</p></article>
+          <article class="ux-card"><h3>Organise around victim tasks</h3><p>The hub needed to reflect what people needed to do, not how internal services were organised.</p></article>
+          <article class="ux-card"><h3>Define Police boundaries clearly</h3><p>The hub needed to explain what Police can do, where responsibility ends and when another agency may be better placed to help.</p></article>
+        </div>
+
+        <div class="ux-subhead"><p class="ux-kicker" style="color:#FF9E9E">Final design package</p><h3>A high-fidelity direction and a reusable page pattern.</h3></div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/handover-package.png" alt="Handover package visual." loading="lazy"></article>
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/handover-content-inventory.png" alt="Content inventory visual." loading="lazy"></article>
+          <article class="ux-card"><img class="vth-journey-card" src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/handover-template.png" alt="Reusable handover template visual." loading="lazy"></article>
+        </div>
+        <figure class="ux-media" style="margin-top:24px">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/info-page.png" alt="Scrollable high fidelity information page prototype." loading="lazy">
+          <figcaption>Scrollable high-fidelity information page, showing how the reusable template works across a full page.</figcaption>
+        </figure>
+
+        <button class="ux-readmore-toggle" type="button" aria-expanded="false" aria-controls="deliveryMore" id="deliveryToggle">Read more: go-live and BAU planning</button>
+        <div id="deliveryMore" hidden>
+          <div class="ux-subhead"><p class="ux-kicker" style="color:#FF9E9E">Go-live and BAU planning</p><h3>The prototype became an operational planning asset.</h3><p style="color:rgba(255,255,255,.82)">The plan separated the next phase into two overlapping workstreams: completing the full hub package and preparing for go-live.</p></div>
+          <figure class="ux-media">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/go-live-map.png" alt="Go-live pathway map from prototype completion to build, launch and operation." loading="lazy">
+            <figcaption>Go-live pathway map showing how the work moves from prototype completion toward build, launch and operation.</figcaption>
+          </figure>
+          <div class="ux-card-grid ux-card-grid--two" style="margin-top:20px">
+            <article class="ux-card"><h3>Complete the full hub package</h3><p>Remaining high-fidelity pages, draft content, user testing, content inventory updates and handover package.</p></article>
+            <article class="ux-card"><h3>Prepare for go-live</h3><p>CMS build model confirmation, web team and vendor engagement, quick exit, content and communications review, accessibility, QA and publishing preparation.</p></article>
+          </div>
+          <div class="ux-card-grid ux-card-grid--three" style="margin-top:16px">
+            <article class="ux-card"><h3>Hypercare</h3><p>Monitor user behaviour, feedback and urgent issues after launch.</p></article>
+            <article class="ux-card"><h3>Stabilisation</h3><p>Fix issues, confirm ownership and adjust support arrangements.</p></article>
+            <article class="ux-card"><h3>BAU rhythm</h3><p>Set up ongoing monitoring, feedback review and improvement backlog.</p></article>
+          </div>
+        </div>
+        <div class="ux-influence"><strong>Influence</strong><p>The post-plan clarified what needed to be stable before build, what teams needed to be involved and how launch would transition into sustainable operation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ending -->
+  <section class="ux-section tier-p" aria-labelledby="reflection-title">
+    <div class="container">
+      <p class="ux-kicker">Reflection</p>
+      <h2 id="reflection-title">Looking back, looking forward.</h2>
+      <p style="max-width:820px;color:var(--theme-text-soft);margin-top:14px">This project reinforced that sensitive public service content needs more than empathy and plain language. The strongest parts of the work came from connecting research to decisions.</p>
+      <div class="ux-card-grid ux-card-grid--three" style="margin-top:28px">
+        <article class="ux-card"><h3>Value</h3><p>Research helped move the team beyond assumptions and preference, and gave sensitive content a stronger basis for review and sign-off.</p></article>
+        <article class="ux-card"><h3>Learned</h3><p>Decision rules and review pathways made sensitive content easier to progress, and are worth setting up earlier next time.</p></article>
+        <article class="ux-card"><h3>Next</h3><p>A prototype with clear ownership and a BAU path is more likely to become a durable, sustainable service.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-special" id="recipe" aria-labelledby="recipe-title">
+    <div class="container ux-two-col">
+      <aside class="ux-intro"><p class="ux-kicker" style="color:var(--theme-muted)">HENEX Method Recipe</p><h2 id="recipe-title">R24 explains how the Victims Hub turns trust, cooperation and safe action into service structure.</h2></aside>
+      <div class="ux-copy">
+        <p class="ux-recipe-primary"><span style="display:block;color:var(--theme-muted);font-size:.8rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em">Primary Recipe</span><a href="#">R24 · Trust &amp; Cooperation Rules</a><small>Agency × Empathy × Interface</small></p>
+        <p>Victim Hubs uses R24 because the project was about helping people act with more confidence inside a public support system. The design needed trust, clear responsibilities, safe next steps, reliable navigation, plain language and cooperation across agencies.</p>
+        <div class="ux-recipe-tags"><span>Agency</span><span>Empathy</span><span>Interface</span></div>
+        <p class="ux-recipe-label">Secondary Recipe</p>
+        <div class="ux-recipe-popovers">
+          <button type="button" class="ux-recipe-trigger">R18</button>
+          <button type="button" class="ux-recipe-trigger">R15</button>
+          <button type="button" class="ux-recipe-trigger">R04</button>
+          <button type="button" class="ux-recipe-trigger">R09</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ux-section tier-n" aria-labelledby="related-title">
+    <div class="container">
+      <p class="ux-kicker">Related Projects</p>
+      <h2 id="related-title">More work across service, digital and spatial systems.</h2>
+      <div class="ux-related__grid">
+        <a class="ux-related-card" href="#"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp" alt="Studier project preview." loading="lazy"><span>Digital Systems</span><strong>Studier</strong><small>A lightweight research testing platform created to protect the IA testing timeline.</small></a>
+        <a class="ux-related-card" href="#"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A service design case focused on accessible public service pathways.</small></a>
+        <a class="ux-related-card" href="#"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds-home.webp" alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New World Design System</strong><small>A design system case focused on reusable interface structure.</small></a>
+        <a class="ux-related-card" href="#"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/vsk-home.webp" alt="Voting Starter Kit project preview." loading="lazy"><span>Service Systems</span><strong>Voting Starter Kit</strong><small>A civic service case focused on motivation and action.</small></a>
+      </div>
+      <div class="ux-related__actions"><a class="button" style="border:2px solid var(--theme-border);color:var(--theme-text)" href="#">Back to Works</a></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>Cafe Yi — Creating evidence-informed design work across public services, digital products and built environments.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('themeToggle').addEventListener('click', function(){
+  var root = document.documentElement;
+  root.setAttribute('data-theme', root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+});
+var toggle = document.getElementById('deliveryToggle');
+var more = document.getElementById('deliveryMore');
+toggle.addEventListener('click', function(){
+  var expanded = toggle.getAttribute('aria-expanded') === 'true';
+  toggle.setAttribute('aria-expanded', String(!expanded));
+  more.hidden = expanded;
+  toggle.textContent = expanded ? 'Read more: go-live and BAU planning' : 'Show less';
+});
+</script>
+</body>
+</html>

@@ -105,10 +105,15 @@
 
 
 /* Bottom navigation */
-
+/* [MODIFIED 2026-07-10] Was justify-content: space-between, which relied on
+   a second "To the Top" button on the right to balance "Back to Works" on
+   the left. That button was removed (duplicated the global circular
+   back-to-top button), so this now matches the site-wide pattern used by
+   .ux-related__actions (e.g. studier.html): a single action pinned to the
+   right with flex-end. */
 .chronology-footer-nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   padding-block: var(--space-xl);
   border-top: 1px solid var(--theme-border-soft);

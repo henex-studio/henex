@@ -197,28 +197,11 @@ body.ux-modal-open {
 }
 
 
-/* Accessibility Support Hub — gradient mode, stronger tint */
-.ux-case-page--support-hub .ux-hero {
-  background:
-    radial-gradient(circle at 12% 24%, color-mix(in srgb, var(--ux-theme) 36%, transparent), transparent 38%),
-    radial-gradient(circle at 86% 12%, rgba(255, 255, 255, .54), transparent 30%),
-    linear-gradient(140deg,
-      color-mix(in srgb, var(--ux-soft) 90%, white),
-      color-mix(in srgb, var(--ux-soft) 60%, var(--theme-bg)) 54%,
-      var(--theme-bg));
-}
-[data-theme=dark] .ux-case-page--support-hub .ux-hero {
-  background:
-    radial-gradient(circle at 18% 18%, color-mix(in srgb, var(--ux-theme) 44%, transparent), transparent 42%),
-    radial-gradient(circle at 88% 20%, color-mix(in srgb, var(--ux-theme) 28%, transparent), transparent 38%),
-    linear-gradient(135deg,
-      color-mix(in srgb, var(--ux-dark) 92%, black),
-      var(--ux-dark) 58%,
-      color-mix(in srgb, var(--ux-dark) 88%, black));
-}
-.ux-case-page--support-hub .ux-hero__mark {
-  display: none;
-}
+/* [MODIFIED M1 2026-07-13] Accessibility Support Hub gradient-mode hero
+   override removed. ASH migrates onto the shared frosted dual-bloom hero
+   (Master Spec 7.1, same as every other UX case) as part of the M1
+   migration; the page-specific hero block is no longer needed. See
+   M1_ASH_STD_Migration_Spec.md, Section 3, item 1. */
 
 /* ═══════════════════════════════════════════════════════════════════════
    SECTION SYSTEM
@@ -238,6 +221,118 @@ body.ux-modal-open {
 
 .ux-section {
   padding: var(--section-pad) 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FIVE-TONE BACKGROUND SYSTEM (Master Spec v2.0, Section 3)
+   [MODIFIED M1 2026-07-13] New shared tier classes for the unified UX case
+   build. Structure only — the actual colour values come from each page's
+   own token set (Section 2.4 palette recipe: --ux-tone-s, --ux-primary-pale,
+   --ux-tone-p, --ux-emphasis), defined in the per-project CSS file and
+   redefined under [data-theme=dark] there, following the vth-v2.css E19
+   pattern exactly. This mirrors VTH's pilot-phase .ux-tier-n override
+   pattern, but as real, correctly-named classes from the start — VTH itself
+   renames onto these in batch M-5.
+
+   S (Soft)    .ux-tier-s  — quietest tinted tone, default content tone
+   L (Light)   .ux-tier-l  — flat pale, also HENEX Recipe background
+   P (Primary) .ux-tier-p  — tinted gradient, transition chapters
+   D (Emphasis).ux-tier-d  — deep gradient, white text, punctuation moments
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.ux-tier-s {
+  background: var(--ux-tone-s, var(--theme-surface));
+}
+
+.ux-tier-l {
+  background: var(--ux-primary-pale, var(--theme-surface-soft));
+}
+
+.ux-tier-p {
+  background: var(--ux-tone-p, var(--theme-surface));
+}
+
+.ux-tier-d {
+  background: var(--ux-emphasis, var(--theme-text));
+  color: #fff;
+}
+
+.ux-tier-d h2,
+.ux-tier-d h3,
+.ux-tier-d p {
+  color: #fff;
+}
+
+.ux-tier-d .ux-chapter-head p,
+.ux-tier-d .ux-section-head__desc {
+  color: rgba(255, 255, 255, .8);
+}
+
+.ux-tier-d .ux-kicker {
+  color: var(--ux-alert-ink, #fff);
+}
+
+/* [MODIFIED M1 2026-07-13] Tier-d card treatment, generalised from VTH's
+   E19-contract pattern (vth-v2.css Section 2). Every migrated page's cards
+   inside a tier-d section get this visible-on-dark treatment automatically;
+   Influence blocks additionally get the alert-ink hover per the E20 rule. */
+.ux-tier-d .ux-card,
+.ux-tier-d .ux-influence {
+  background: rgba(255, 255, 255, .08);
+  --card-border: rgba(255, 255, 255, .22);
+  --card-border-hover: rgba(255, 255, 255, .5);
+}
+
+.ux-tier-d .ux-influence {
+  --card-border-hover: var(--ux-alert-ink, rgba(255, 255, 255, .5));
+}
+
+.ux-tier-d .ux-card h3 {
+  color: #fff;
+}
+
+.ux-tier-d .ux-card p,
+.ux-tier-d .ux-card span {
+  color: rgba(255, 255, 255, .82);
+}
+
+.ux-tier-d .ux-influence strong {
+  color: var(--ux-alert-ink, #fff);
+}
+
+.ux-tier-d .ux-influence p {
+  color: rgba(255, 255, 255, .9);
+}
+
+/* HMW interlude section (Master Spec 4.8, graduated E14): standalone
+   full-width .ux-tier-d band with tighter punctuation padding. */
+.ux-hmw-section {
+  padding: 96px 0;
+}
+
+@media (max-width: 900px) {
+  .ux-hmw-section {
+    padding: 64px 0;
+  }
+}
+
+.ux-hmw-statement {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+  font-weight: 750;
+  line-height: 1.18;
+  letter-spacing: -.03em;
+}
+
+.ux-hmw-statement strong {
+  color: var(--ux-alert-ink, #fff);
+  font-weight: inherit;
 }
 
 /* Tier 3 — Neutral tint: light theme-color gradient for alternating sections */
@@ -341,6 +436,41 @@ body.ux-modal-open {
 .ux-wide-head {
   max-width: 900px;
   margin-bottom: var(--space-xl);
+}
+
+/* [MODIFIED 2026-07-10] Master Spec Section 4.1 — Two-Tier Heading Rule.
+   Tier A: chapter-opening heading. Kicker, H2, description stacked full
+   width within a container capped at ~2/3 width. Global class, used by
+   every case study page's chapter-level section openers (Background,
+   Problem, Solution, Outcome, Contribution, Process, Research, Design,
+   Validation, Delivery, Reflection). Distinct from .ux-section-head
+   (Tier B, sub-block headings, left 1/3 + right 2/3 side-by-side). */
+.ux-chapter-head {
+  max-width: 66%;
+  margin-bottom: var(--space-xl);
+}
+
+.ux-chapter-head .ux-kicker {
+  margin-bottom: var(--space-sm);
+}
+
+.ux-chapter-head h2 {
+  color: var(--ux-dark, var(--theme-text));
+  font-size: clamp(1.7rem, 2.6vw, 2.6rem);
+  line-height: 1.14;
+  margin-bottom: var(--space-sm);
+}
+
+.ux-chapter-head p {
+  color: var(--theme-text-soft);
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.62;
+}
+
+@media (max-width: 900px) {
+  .ux-chapter-head {
+    max-width: 100%;
+  }
 }
 
 .ux-meta {
@@ -551,21 +681,23 @@ figcaption {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* C1 base (shadow, transition) is in global.css; radius overridden to --ux-radius there too. */
+/* C1 base (shadow, transition) is in global.css; radius overridden to --ux-radius there too.
+   [MODIFIED E19/C1] Converted to the border custom-property contract:
+   resting and hover colours are assigned as --card-border /
+   --card-border-hover; the only border-color declarations live in
+   global.css (base + shared hover rule). The old standalone
+   .ux-card:hover rule here (34% mix) is gone — its value moved into the
+   --card-border-hover assignment below. This also permanently removes the
+   E2 class of bug (same-specificity hover rules fighting across files). */
 .ux-card,
 .ux-influence {
   padding: var(--space-md);
-  border-color: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   background: var(--theme-surface);
 }
 
-/* Display cards (not navigable — informational only): subtle border change
-   on hover, no lift. Per DS decision A1. */
-.ux-card:hover,
-.ux-card:focus-within,
-.ux-influence:hover,
-.ux-influence:focus-within {
-  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
+.ux-card {
+  --card-border-hover: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 
 .ux-card span,

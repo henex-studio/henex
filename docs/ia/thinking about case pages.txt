@@ -1,0 +1,92 @@
+下面是我对ia的补充意见，这个属于ux项目的母版ia架构更新。
+
+全局的样式的思考
+
+每个case有两个主题色，一个primary，一个secondary。例如vth，primary是蓝色，secondary是红色。其他的背景色，在这两个色的明度，纯度或透明度，渐变上变化。
+
+每个章节的kicker用secondary主题色，例如vth是红色。
+全局的文字用全局规则的中性色，例如hero标题，related project文字，各章节的标题文字和描述文字。
+在正文部分的小kicker用primary主题色，例如CLIENT，ROLE，skills这类。skills的文字颜色和外边框颜色用primary主题色。
+meta部分的henex lens 下的具体item用secondary色。例如R24 · Trust & Cooperation Rules。
+
+Hero部分，Light模式下浅色渐变主题色，dark模式用深主题色渐变。全局规则需调整两个模式下标签，标题，副标题，按钮的样式适配。
+
+页面的背景色系统，分三个层次。0.全局的，包括nav和footer，还有related projects，这些部分沿用全局的中性色系统。1.成果章节，例如outcome和最终的delivery部分的prototype背景色用深primary主题色渐变强调，类似vth的final outcome and handover。2.重点章节，用淡primary主题色渐变强调。例如nds目前的problem部分的背景色。母版中，主要是background,process，solution，ia，prototype，reflection等涉及到重大决策的节。其他的节可以根据需要来进行节奏变化，但要注意相邻两个节不能用同一层次的背景色规则。例如不能两个相邻章节都应用浅渐变primary主题色。目前看来，3.非重点章节，用中性色背景，即目前大量在现有页面能看到的灰色。例如nds的principles and scope。3.有个特殊的节是henex method recipe，这个部分即是全局的联系，又有case的联系。所以颜色系统上，其背景是中性色；标题，primary具体的recipe标题是primary主题色；三个nodes的标签应该对应philosophy里对应的红绿蓝颜色。可以是这个case的主题色。kicker是中性灰色，描述文字等也是中性灰色。secondary recipe可以考虑保持现状的灰色体系，但是要增加Secondary recipe标题，不然用户不知道什么意思。具体内容案例详内容规划部分。
+
+Case study的卡片样式（边框，粗细，填充，文字样式）跟全局卡片样式。但卡片内容，跟具体case的内容来，每个卡片的标准内容格式由icon+标题+描述文字构成。重点卡片会有icon，例如principles，部分已经有icon的内容卡片可以直接用的，例如vth的参考页面。普通卡片以标题+描述文字为主，部分可能会有序号或者kicker。在具体case的卡片，颜色继承case主题色，也分可点击和不可点击，互动原则跟全局规则走，主要区别在有导航功能的卡片hover后会有lift和阴影变化，无导航的只有边框变化。
+
+我们把不同目的的片段称为章，其中具体的内容，称为节。例如hero+overview部分是一个章，主要是高度概括整个项目解决了个什么问题，达成了什么成果和亮点。及项目基本meta信息。
+Background到outcome部分是第二章，主要稍微扩展一下把项目的成果亮点给展示出来，是一个简短的故事。从process到最后henex method recipe是第三章，是稍微详细的把整体项目给用户介绍一遍，但只放重要步骤和亮点，内容多的，用readmore按钮方式展开或隐藏。整体相当于分三个层次进行铺陈。最后是全局系统的related projects。
+
+各章节，详细的成果类图片，要有点击放大的功能，如ash的roadmap。但小的手绘抽象概念图，design system里面的那些组件、outcome的效果图等图片不需要点击放大。部分不好展示或无法内嵌的prototype，可以考虑用长图滚动的方式展示。
+
+Ux项目图片的圆角，需要全站统一，包括插入的图片与视频还有prototype，我希望与卡片进行区分，图片类的应该要统一更小的圆角半径。分成tag，card，media，button几个圆角层次，让用户有直观的视觉体验。tag最大，button最小。另外就是图片类媒体，不应该有阴影。卡片，按钮等组件，可以有目前样式的阴影。
+
+内容布局。所有内容要保持全局spacing的设定，不能太近。
+Casestudy内容的布局，我觉得分几个类别。
+1大类是上下布局，基本形式是内容容器分为上下三个，上容器页面宽度分为三份，左边1/3是kicker+标题，右边2/3是描述。中部是具体内容，图片，或者卡片。最下部是influence（如果有）。这种布局应用到大部分的章节，例如包括但不限于problem（没有hmw questions的），solution，background等。这个布局有另外一个变体，这个变体的区别是标题和描述文字分成了两个全宽容器上下放置，然后在下面是展示的内容。三个容器上下布置。最下面还是influence（如果有）。
+2大类是左右布局，左边1/3是kicker+标题，右边2/3是描述+具体内容，这个布局左右是两个分开的容器，右侧的所有内容不会侵入到左侧。这个布局用于右侧表达内容较多的章节，可能有详细图片，需要放大展示图片等重要节。左右布局还有2个变体。1是左边1/2是标题和文字内容，右边1/2是图片或图表。这种常用语文字不多，图片重要而且是抽象的图表形式的图。2是左边1/3是标题和文字，右边2/3是图片，或者反过来右边1/3是标题和文字，左边2/3是图片，这个方式多见于小内容比较多的design system的具体color，font的设计。左右交替变化，让页面不至于太呆板。
+
+各布局，如果有多的内容，有一个居中的read more按钮可以展开更多的内容阅读。这个按钮在总结的内容之前，例如influence前面。
+
+
+
+以下是各个章节的内容规划。
+
+0. Hero
+Hero的标题，一行排完，除非需要responsive，自动换行。hero的按钮，一个可以是view outcome，跳到第二部分的视频或成果章节，一个可以是view看prototype（内嵌，如果有），项目没有prototype的话，可以去到delivery章节，看最终设计。取消原来的back to works，我不希望用户这么快走掉。
+
+1. Overview + Meta
+这部分是一句简短的总结和总体描述文字。然后是项目的各类基本信息。
+
+2. Background
+有些项目简单的话，可能background与problem合并。大部分项目都有background，让用户快速知道项目背景，为什么会有这个项目。
+
+3. Problem
+问题部分，不一定全是hmw问题，有的会有，有的不一定。主要是把项目遇到的问题说清楚。例如vth项目。或者是经过研究后定义出来的项目核心问题，例如hmw question，这类问题会把hmw的文字做成比较显眼的模式，各案例字号要统一，hmw三个文字和下面的其他重点单词可以换primary色，然后这个部分的背景可以强调一点，例如淡色渐变，如nds项目。有问题清单卡片的话，并排横排一列放在hmw问题下面。不需要再在hmw问题下再加描述文字了，就是干净的一个问题。
+
+4. Solution
+这部分一般是抽象的图形或手绘的概念图，或者概念卡片。是策略层面的解决方案。可以是左右布局，文字和图片各1/2。也可以是上下布局，都是全宽。
+
+5. Outcome (video)
+有视频的放视频，没视频的放效果图。
+是最终具体设计结果的呈现，但是是抓眼球的内容，更多媒体的内容。带场景的效果图内容。
+
+6. Contribution
+这个部分只有集体项目有，例如ash，rkt，vsk或未来的建筑项目（到做建筑项目模版时再考虑），但vth例外，这个项目角色多，会有这个部分。主要描述个人在这个项目中的角色和起的作用，以一个标题+总述，配套卡片（角色+具体贡献的功能）来表达。
+
+7.Process
+这个部分是第二章的起点节，有一个凝练的标题与文字概括整体的设计过程。下部是四个可点击的卡片，卡片标题是research/design/validation/delivery对应下面四个节，内容是对应节里条目的标题。卡片点击可以导航到相应的节。卡片样式跟全局可点击卡片样式，但边框和底色，用本case的primary主题色。
+
+8. Research
+这个部分主要集中把研究中的discover和define两个部分给总结进来，是evidence的构建过程，所以会有不同的过程，例如primary research，secondary research或者workshop，通过各个研究和总结形成证据基础，最后形成insights和principles。各部分的结构会放最重要的图和精炼文字。interviews或usability test或observation形成的findings，insights，principles都以卡片的形式来表达。格式上采用标题+描述的方式，principles的卡片考虑配icon。内容上不用放所有的finding/insights，但如果都重要的话，可以用read more按钮隐藏多余的那些内容。
+
+9. Design
+这部分一般会有ideation或手稿, wireframe, ia，user journey/flow， content strategy, lofi prototype, design system(UI), interaction等设计内容。
+Ideation，wireframe等会以图片或草图的方式呈现，user journey，flow，ia等，以胶囊步骤加箭头和icon的形式呈现。策略式的内容以卡片形式呈现，原型以图片的方式呈现，ds以描述+具体ds内容的方式呈现。interaction与ds的呈现方式类似。
+
+10. Validation
+这部分主要是prototype的用户测试，或者critic，及测试结果。表达内容以文字，图片和卡片的形式表达。
+
+11. Delivery
+这部分是最终的设计成果，包括交付成果的策略化概括，可能是卡片的形式，一般会带icon。还有hifi-prototype，以图片或者可互动的交互prototype内嵌，或者内嵌prototype的可滚动的图片为主。项目下一步计划，例如Go-live and BAU Planning。各部分内容如果比较多，例如wso项目最后hifi会有很多页面，可能就只显示前两个，其他的都read more隐藏了。
+
+12. Reflection
+这部分主要是三个内容，value，项目的价值，做的价值和对客户的价值。learned，这部分主要说有什么可改善的，再做一次会怎么做等。next，这部分是下一步会要做什么。各个case，这部分的kicker和标题要统一，有的标题是Looking back, looking forward，有的是What I would carry forward. 统一成Looking back, looking forward。
+
+
+13. henex method recipe
+这部分的内容，目前页面基本ok有些调整，例如重复的nodes需要删掉，secondary需要补充标题。举个例子，nds项目这部分的右侧内容构成应该改成：
+Primary recipe
+R17 · Make It Tangible Model
+（Perception）（ Meaning）（ Matter）（这里是三个胶囊tag）
+
+I used this method to turn interface evidence into tangible assets: colour rules, typography, icon grids, responsive layout, component anatomy and documentation guidelines.
+
+Secondary recipe
+R15 R03 R09 R18
+
+14. Related projects
+这部分是放相关的全站项目，给用户看更多，需要判断每个项目应该放什么内容，我的case分成了三个类型，service system，digital system，spatial system。每个case的下面，应该根据其类型，推荐相关的项目，优先放同类型的项目，例如vth项目，优先放ash，然后再是digital的项目，实在没其他项目了，再放spatial，其他的case以此类推。同一类型，以重点项目排前。
+
+在related projects右下方，有全局的back to works的按钮，帮助用户回去。

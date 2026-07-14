@@ -478,7 +478,7 @@
         </div>
 
         <div class="wst-ut-actions">
-          <button type="button" class="button button--soft" id="wst-ut-btn" aria-expanded="false" aria-controls="wst-ut-more">Read more</button>
+          <button type="button" class="button button--soft" id="wst-ut-btn" data-expand-trigger aria-expanded="false" aria-controls="wst-ut-more">Read more</button>
         </div>
       </div>
     </section>
@@ -716,23 +716,6 @@
   </div>
 
   <div class="ux-popover" data-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
-
-  <script>
-    (function () {
-      function wireExpand(btnId, panelId) {
-        var btn = document.getElementById(btnId);
-        var panel = document.getElementById(panelId);
-        if (!btn || !panel) return;
-        btn.addEventListener('click', function () {
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          panel.hidden = expanded;
-          btn.textContent = expanded ? 'Read more' : 'Show fewer';
-        });
-      }
-      wireExpand('wst-ut-btn', 'wst-ut-more');
-    }());
-  </script>
 
 <script defer src="/_vercel/insights/script.js"></script>
 </body>

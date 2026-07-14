@@ -1,3 +1,4 @@
+/* [MODIFIED G1 2026-07-12] Audit-2 Batch G-1: breakpoint aligned to the sitewide ladder (1100->1180). Dead-class cleanup for this file deliberately deferred to its Audit-3 migration (S1). */
 /* Who's Singing OuTūīside? case page extension.
    Scope: works/whos-singing-outuiside.html only.
    Primary: dark olive #30352E  Accent: orange #FF7701 (kickers + dark bg text)
@@ -372,7 +373,7 @@
 }
 
 /* ─── Responsive ─── */
-@media (max-width: 1100px) {
+@media (max-width: 1180px) {
   .wso-ds-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .ux-case-page--wso .ux-solution__grid { grid-template-columns: 1fr; }
 }

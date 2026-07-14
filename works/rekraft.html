@@ -174,7 +174,7 @@
             </figure>
           </div>
           <div class="rkt-problem-expand">
-            <button type="button" class="button button--soft" id="rkt-problem-btn" aria-expanded="false" aria-controls="rkt-problem-more">
+            <button type="button" class="button button--soft" id="rkt-problem-btn" data-expand-trigger aria-expanded="false" aria-controls="rkt-problem-more">
               Read more
             </button>
           </div>
@@ -438,7 +438,7 @@
             </div>
           </div>
           <div class="rkt-develop-expand">
-            <button type="button" class="button button--soft" id="rkt-develop-btn" aria-expanded="false" aria-controls="rkt-develop-more">
+            <button type="button" class="button button--soft" id="rkt-develop-btn" data-expand-trigger aria-expanded="false" aria-controls="rkt-develop-more">
               Read more
             </button>
           </div>
@@ -567,7 +567,7 @@
           </div>
 
           <div class="rkt-modules-expand">
-            <button type="button" class="button button--soft" id="rkt-modules-btn" aria-expanded="false" aria-controls="rkt-modules-more">
+            <button type="button" class="button button--soft" id="rkt-modules-btn" data-expand-trigger aria-expanded="false" aria-controls="rkt-modules-more">
               Read more
             </button>
           </div>
@@ -718,25 +718,6 @@
   </div>
 
   <div class="ux-popover" data-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
-
-  <script>
-    (function () {
-      function wireExpand(btnId, panelId) {
-        var btn = document.getElementById(btnId);
-        var panel = document.getElementById(panelId);
-        if (!btn || !panel) return;
-        btn.addEventListener('click', function () {
-          var expanded = btn.getAttribute('aria-expanded') === 'true';
-          btn.setAttribute('aria-expanded', String(!expanded));
-          panel.hidden = expanded;
-          btn.textContent = expanded ? 'Read more' : 'Show fewer';
-        });
-      }
-      wireExpand('rkt-problem-btn', 'rkt-problem-more');
-      wireExpand('rkt-develop-btn', 'rkt-develop-more');
-      wireExpand('rkt-modules-btn', 'rkt-modules-more');
-    }());
-  </script>
 
 </body>
 </html>
