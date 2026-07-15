@@ -132,3 +132,42 @@ E2. Icons. Replace the 6 Principles icons per A1.
 5. WST Solution yellow (E1). Resolved. Bright yellow background needed because the illustration merges into the pale amber and the image cannot be adjusted.
 
 No open blockers. The build is deterministic and can run on Sonnet without extended thinking.
+
+---
+
+## Part G. Follow-up round 1 (post-build visual corrections)
+
+After the Part A to E build, Cafe reviewed the live pages and flagged further issues.
+
+G1. NDS Insight icons too small. Enlarged `.nds-insight-card__icon` from 1.5rem (30px box) to 1.9rem, matching VTH v2 sizing.
+
+G2. NDS Principle icons centred instead of left-aligned. `.system-principle-grid .ux-icon-card__icon` changed from `justify-content: center` to `flex-start`.
+
+G3. NDS Components block had three leftover chip buttons (Search to Find, Cards to Compare, Buttons to Act) that should have been removed in B3. Deleted the `.ux-chip-flow` markup.
+
+G4. NDS Delivery expanded frames need a 16:10 aspect ratio with a scrollable image, not the fixed-height scroll box from B6. Changed `.nds-delivery-frame` and `.nds-delivery-more .nds-delivery-frame` to `aspect-ratio: 16/10; overflow-y: auto`, figcaption pinned with `position: sticky; bottom: 0`.
+
+G5. NDS Recipe tags still touching the following paragraph. Root cause: `.ux-copy p + p` only matches two adjacent `<p>` elements, so the gap after the tags `<div>` never applied. Added `.ux-recipe-tags + p { margin-top: 22px }`.
+
+G6. RKT Develop block not right-aligned or width-matched to the section text above it. Rebuilt `.rkt-develop-media` as a grid matching `.ux-section-head`'s column template (`minmax(200px, .36fr) minmax(0, .64fr)`), with all Develop content placed in the second column.
+
+G7. WST Principle icons too small, need to match VTH v2 sizing. Enlarged `.wst-principle-icon` from 1.9rem to 2.75rem, matching the 3-column icon-card pattern (not the 9-up dense grid, which uses 1.9rem).
+
+## Part H. Follow-up round 2: shared-rule specificity root cause
+
+After G1 to G7 shipped, Cafe's own DevTools inspection showed the NDS icon still computing at 11px font-size, proving the G1/G2/G7 sizing changes had no real effect. Root cause: `.ux-card span { font-size: .72rem; ... }` in `ux-case-study.css` is a rule meant for small card labels, but every icon wrapper is also a bare `<span>` nested inside a `.ux-card`-classed element. That rule ties or nearly ties the page-specific icon rule on specificity, and `ux-case-study.css` loads before the page CSS, so it wins on source order. This silently overrode all four icon-size fixes: NDS Insight, NDS Principle, VSK Principle, and WST Principle.
+
+Fix. Added higher-specificity selectors routed through the actual `.ux-card` parent class, rather than raising the original rule's specificity:
+
+```css
+.ux-card.nds-insight-card .nds-insight-card__icon { font-size: 1.9rem; }
+.system-principle-grid .ux-card .ux-icon-card__icon { font-size: 1.9rem; }
+.ux-principle-grid .ux-card .ux-icon-card__icon { font-size: 1.9rem; }
+.ux-card.wst-principle-card .wst-principle-icon { font-size: 2.75rem; }
+```
+
+Lesson for future audits: any icon-size or text-size rule scoped to a bare `<span>`/`<p>` selector should be checked against `.ux-card`'s own shared rules before being trusted, since the shared rule loads first and ties on specificity.
+
+## Part I. Open item, paused
+
+WST Develop block: the "Read more" button (`.wst-develop-expand button`, id `wst-develop-btn`) should align under the image column above it, matching the homepage position. Three rounds of fixes did not resolve it. DevTools confirmed both the parent grid declaration and the button's `grid-column: 2; justify-self: start` are active and not overridden, yet the button still rendered at the far left in Cafe's browser. Cafe paused this investigation on 2026-07-15 to avoid further token spend. One unverified lead: `.wst-develop-expand` switches to `display: block` under a `max-width: 1180px` media query; if the DevTools panel itself narrowed the viewport below that breakpoint during inspection, the grid rules would be inert without appearing struck through. Not yet confirmed with Cafe. Resume by checking actual viewport width or the Computed tab's `display` value for `.wst-develop-expand` before any further CSS changes.
