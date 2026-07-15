@@ -22,6 +22,28 @@ body.ux-modal-open {
   text-transform: uppercase;
 }
 
+/* [ADDED F30 2026-07-14] Chapter-level kicker sizing, applied directly to
+   the <p> via a dedicated class instead of relying on a .ux-chapter-head
+   container. F22/F29 fixed .ux-chapter-head .ux-kicker and
+   .ux-wide-head .ux-kicker, but several chapter kickers across ASH/STD/
+   VTH v2 (Overview, Reflection, Related Projects, and a few more —
+   see M1_F_Series_Fix_Spec.md F30) sit in older bare containers
+   (.ux-intro, .ux-copy, .ux-problem__grid, .ux-video-grid, plain
+   .container) that were never wrapped in .ux-chapter-head, so those two
+   selectors never matched them and they stayed at the 13px base size.
+   Wrapping them in .ux-chapter-head was rejected — it carries
+   max-width:66% and margin-bottom that would change layout on containers
+   that don't expect it. This class carries no layout, only the intended
+   ~17px chapter-kicker size. Written as .ux-kicker.ux-kicker--chapter
+   (0,2,0) so it structurally outranks .ux-intro p (0,1,1) rather than
+   relying on a same-specificity tie resolved by source order — this
+   project has repeatedly been bitten by that exact bug class (E2/E21/F1/
+   F22/F23), so ties are avoided outright here instead of managed. Usage:
+   add both classes, e.g. <p class="ux-kicker ux-kicker--chapter">. */
+.ux-kicker.ux-kicker--chapter {
+  font-size: 1.0625rem;
+}
+
 .ux-copy .ux-kicker,
 .ux-card span,
 .ux-influence strong,
@@ -223,118 +245,6 @@ body.ux-modal-open {
   padding: var(--section-pad) 0;
 }
 
-/* ═══════════════════════════════════════════════════════════════════════
-   FIVE-TONE BACKGROUND SYSTEM (Master Spec v2.0, Section 3)
-   [MODIFIED M1 2026-07-13] New shared tier classes for the unified UX case
-   build. Structure only — the actual colour values come from each page's
-   own token set (Section 2.4 palette recipe: --ux-tone-s, --ux-primary-pale,
-   --ux-tone-p, --ux-emphasis), defined in the per-project CSS file and
-   redefined under [data-theme=dark] there, following the vth-v2.css E19
-   pattern exactly. This mirrors VTH's pilot-phase .ux-tier-n override
-   pattern, but as real, correctly-named classes from the start — VTH itself
-   renames onto these in batch M-5.
-
-   S (Soft)    .ux-tier-s  — quietest tinted tone, default content tone
-   L (Light)   .ux-tier-l  — flat pale, also HENEX Recipe background
-   P (Primary) .ux-tier-p  — tinted gradient, transition chapters
-   D (Emphasis).ux-tier-d  — deep gradient, white text, punctuation moments
-   ═══════════════════════════════════════════════════════════════════════ */
-
-.ux-tier-s {
-  background: var(--ux-tone-s, var(--theme-surface));
-}
-
-.ux-tier-l {
-  background: var(--ux-primary-pale, var(--theme-surface-soft));
-}
-
-.ux-tier-p {
-  background: var(--ux-tone-p, var(--theme-surface));
-}
-
-.ux-tier-d {
-  background: var(--ux-emphasis, var(--theme-text));
-  color: #fff;
-}
-
-.ux-tier-d h2,
-.ux-tier-d h3,
-.ux-tier-d p {
-  color: #fff;
-}
-
-.ux-tier-d .ux-chapter-head p,
-.ux-tier-d .ux-section-head__desc {
-  color: rgba(255, 255, 255, .8);
-}
-
-.ux-tier-d .ux-kicker {
-  color: var(--ux-alert-ink, #fff);
-}
-
-/* [MODIFIED M1 2026-07-13] Tier-d card treatment, generalised from VTH's
-   E19-contract pattern (vth-v2.css Section 2). Every migrated page's cards
-   inside a tier-d section get this visible-on-dark treatment automatically;
-   Influence blocks additionally get the alert-ink hover per the E20 rule. */
-.ux-tier-d .ux-card,
-.ux-tier-d .ux-influence {
-  background: rgba(255, 255, 255, .08);
-  --card-border: rgba(255, 255, 255, .22);
-  --card-border-hover: rgba(255, 255, 255, .5);
-}
-
-.ux-tier-d .ux-influence {
-  --card-border-hover: var(--ux-alert-ink, rgba(255, 255, 255, .5));
-}
-
-.ux-tier-d .ux-card h3 {
-  color: #fff;
-}
-
-.ux-tier-d .ux-card p,
-.ux-tier-d .ux-card span {
-  color: rgba(255, 255, 255, .82);
-}
-
-.ux-tier-d .ux-influence strong {
-  color: var(--ux-alert-ink, #fff);
-}
-
-.ux-tier-d .ux-influence p {
-  color: rgba(255, 255, 255, .9);
-}
-
-/* HMW interlude section (Master Spec 4.8, graduated E14): standalone
-   full-width .ux-tier-d band with tighter punctuation padding. */
-.ux-hmw-section {
-  padding: 96px 0;
-}
-
-@media (max-width: 900px) {
-  .ux-hmw-section {
-    padding: 64px 0;
-  }
-}
-
-.ux-hmw-statement {
-  max-width: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: #fff;
-  font-family: var(--font-heading);
-  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
-  font-weight: 750;
-  line-height: 1.18;
-  letter-spacing: -.03em;
-}
-
-.ux-hmw-statement strong {
-  color: var(--ux-alert-ink, #fff);
-  font-weight: inherit;
-}
-
 /* Tier 3 — Neutral tint: light theme-color gradient for alternating sections */
 .ux-section--tint {
   background: linear-gradient(145deg, color-mix(in srgb, var(--ux-theme) 5%, var(--theme-surface)), var(--theme-bg) 78%);
@@ -424,6 +334,16 @@ body.ux-modal-open {
   line-height: 1.62;
 }
 
+/* [MODIFIED F22 2026-07-14, corrected F29 2026-07-14] Same cascade-tie
+   protection as .ux-chapter-head .ux-kicker above: .ux-wide-head p (0,1,1)
+   would otherwise beat .ux-kicker (0,1,0) whenever a kicker sits inside
+   .ux-wide-head (confirmed live on NDS, e.g. Outcome/Course Feedback/
+   System Audit sections) — same bug class, same corrected target size
+   (chapter-level kickers render at ~17px, not the 13px base size). */
+.ux-wide-head .ux-kicker {
+  font-size: 1.0625rem;
+}
+
 .ux-copy p + p,
 .ux-copy h3 + p,
 .ux-copy p + h3 {
@@ -450,8 +370,23 @@ body.ux-modal-open {
   margin-bottom: var(--space-xl);
 }
 
+/* [MODIFIED F22 2026-07-14, corrected F29 2026-07-14] Cascade-tie bug,
+   fifth occurrence of the E2/E21/F1 class, pre-existing in this file (not
+   introduced by the M-1 build, confirmed present on VTH too via Cafe's
+   DevTools captures). .ux-chapter-head p (0,1,1) was beating .ux-kicker's
+   own font-size (0,1,0) on every chapter kicker, since the kicker is a
+   <p class="ux-kicker"> inside .ux-chapter-head — it rendered at the
+   description paragraph's clamp(1rem, 1.3vw, 1.12rem) (~17px). F22 fixed
+   the tie but set the target to 0.8125rem (13px, the base .ux-kicker
+   size) — Cafe confirmed the tie-beaten ~17px look was actually correct
+   for chapter-level kickers (Overview through Contribution, and
+   Process/Design/Delivery-type chapters); section-level kickers
+   (.ux-section-head .ux-kicker, e.g. Evaluative Workshop) stay small at
+   0.72rem, unchanged. Explicit font-size here still raises specificity to
+   0,2,0 so the tie cannot be lost either direction. */
 .ux-chapter-head .ux-kicker {
   margin-bottom: var(--space-sm);
+  font-size: 1.0625rem;
 }
 
 .ux-chapter-head h2 {
@@ -852,7 +787,11 @@ figcaption {
 
 .ux-test-block {
   display: grid;
-  grid-template-rows: auto 330px auto;
+  /* [MODIFIED F24 2026-07-14, corrected] Row 2 was a fixed 330px, sized
+     for the old object-fit:contain image. Now that the image renders at
+     its natural aspect ratio (height:auto), the row must size to content
+     instead of forcing a fixed box the image would letterbox inside. */
+  grid-template-rows: auto auto auto;
   padding: 0;
   border: 0;
   background: transparent;
@@ -872,11 +811,16 @@ figcaption {
   margin: 0;
 }
 
+/* [MODIFIED F24 2026-07-14, corrected] Was width:100%/height:300px with
+   object-fit:contain — the fixed 300px box let the chart image (which is
+   not a 300px-tall aspect ratio) shrink to fit inside with side padding,
+   so it visually rendered narrower than the text column above it even
+   though the container itself was full width (confirmed via Cafe's
+   screenshot). Switched to height:auto so the image renders at its full
+   natural width, matching the text block exactly, with no letterboxing. */
 .ux-test-block img {
   width: 100%;
-  height: 300px;
-  object-fit: contain;
-  object-position: center;
+  height: auto;
 }
 
 .ux-test-block figcaption {
@@ -941,7 +885,13 @@ figcaption {
   grid-template-columns: minmax(240px, .36fr) minmax(0, .64fr);
 }
 
-.ux-ds-module--reverse > div {
+/* [MODIFIED F28 2026-07-14] Was `> div`, which matches every div child —
+   on the Colour module both the text div AND .ux-colours are divs, so
+   both got order:2 and kept their original relative order (text stayed
+   left). Scoped to :first-child so only the text block reorders; modules
+   whose second child is a <figure> (Iconset/Accessibility) already
+   worked because `div` never matched the figure. */
+.ux-ds-module--reverse > div:first-child {
   order: 2;
 }
 
@@ -1078,6 +1028,15 @@ figcaption {
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* [ADDED M2 2026-07-14] Some .ux-icon-card icons (NDS Principles grid)
+   use filled shapes alongside stroked lines — e.g. a rect grid with
+   connecting paths. Without this rule the rect falls back to the SVG
+   default fill (black), wrong in both themes and especially dark mode. */
+.ux-icon-card__icon__fill {
+  fill: currentColor;
+  stroke: none;
 }
 
 .ux-icon-card h3 {
@@ -1309,6 +1268,34 @@ figcaption {
   flex-wrap: wrap;
   gap: var(--space-xs);
   margin-top: 28px;
+}
+
+/* [MODIFIED F25 2026-07-14, corrected M23 Bug2 A2] .ux-recipe-primary
+   carries its own 32px (--space-lg) bottom margin. The F25 fix only set
+   margin-top: 8px on the tags row, but adjacent vertical margins collapse
+   to the LARGER value, so the real gap stayed at 32px and the F25 change
+   had no visible effect — this is why Cafe kept seeing the same gap after
+   that fix shipped. The corrected approach removes the name's own bottom
+   margin when tags immediately follow it (:has selector), so there is
+   nothing left to collapse against, and the tags' margin-top becomes the
+   only value in effect. .ux-recipe-popovers (Secondary Recipe row, which
+   follows a paragraph, not .ux-recipe-primary) is unaffected and keeps the
+   original 28px. */
+.ux-recipe-primary:has(+ .ux-recipe-tags) {
+  margin-bottom: 8px;
+}
+
+.ux-recipe-primary + .ux-recipe-tags {
+  margin-top: 0;
+}
+
+/* [ADDED Bug2-followup] The tags row had no bottom margin, and the
+   description paragraph that follows it is a plain <p> with no
+   margin-top of its own (the shared .ux-copy p + p rule only fires
+   between two <p> elements, not after a <div>), so the tags sat flush
+   against the description text with no visible gap. */
+.ux-recipe-tags + p {
+  margin-top: 22px;
 }
 
 .ux-recipe-tags span,
@@ -1684,5 +1671,278 @@ figcaption {
   }
   .ux-modal__panel {
     height: calc(100vh - 20px);
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FIVE-TONE BACKGROUND SYSTEM (Master Spec v2.0, Section 3)
+   [MODIFIED M1 2026-07-13, relocated + fixed F1 2026-07-14] Shared tier
+   classes for the unified UX case build. Structure only — the actual colour
+   values come from each page's own token set (Section 2.4 palette recipe:
+   --ux-tone-s, --ux-primary-pale, --ux-tone-p, --ux-emphasis), defined in
+   the per-project CSS file and redefined under [data-theme=dark] there,
+   following the vth-v2.css E19 pattern exactly. This mirrors VTH's
+   pilot-phase .ux-tier-n override pattern, but as real, correctly-named
+   classes from the start — VTH itself renames onto these in batch M-5.
+
+   [MODIFIED F1 2026-07-14] This block was originally placed mid-file at
+   specificity (0,1,1), which lost cascade ties to later same-file rules:
+   .ux-video-grid h2 (unreadable dark-on-dark ASH Outcome heading) and
+   .ux-retro (silently defeated tier-p on Reflection sections) both won
+   ties against it. Moved to end of file (last-loaded wins remaining ties)
+   AND every tier-d text rule raised to .ux-section.ux-tier-d (0,2,0) so it
+   structurally cannot lose a tie to a single-class rule again. This is the
+   fourth occurrence of the E2/E21 cascade-tie bug class.
+
+   S (Soft)    .ux-tier-s  — quietest tinted tone, default content tone
+   L (Light)   .ux-tier-l  — flat pale, also HENEX Recipe background
+   P (Primary) .ux-tier-p  — tinted gradient, transition chapters
+   D (Emphasis).ux-tier-d  — deep gradient, white text, punctuation moments
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.ux-tier-s {
+  background: var(--ux-tone-s, var(--theme-surface));
+}
+
+.ux-tier-l {
+  background: var(--ux-primary-pale, var(--theme-surface-soft));
+}
+
+.ux-tier-p {
+  background: var(--ux-tone-p, var(--theme-surface));
+}
+
+.ux-section.ux-tier-d {
+  background: var(--ux-emphasis, var(--theme-text));
+  color: #fff;
+}
+
+.ux-section.ux-tier-d h2,
+.ux-section.ux-tier-d h3,
+.ux-section.ux-tier-d p {
+  color: #fff;
+}
+
+.ux-section.ux-tier-d .ux-chapter-head p,
+.ux-section.ux-tier-d .ux-section-head__desc,
+.ux-section.ux-tier-d figcaption {
+  color: rgba(255, 255, 255, .8);
+}
+
+.ux-section.ux-tier-d .ux-kicker {
+  color: var(--ux-alert-ink, #fff);
+}
+
+/* [MODIFIED M1 2026-07-13] Tier-d card treatment, generalised from VTH's
+   E19-contract pattern (vth-v2.css Section 2). Every migrated page's cards
+   inside a tier-d section get this visible-on-dark treatment automatically;
+   Influence blocks additionally get the alert-ink hover per the E20 rule. */
+.ux-tier-d .ux-card,
+.ux-tier-d .ux-influence {
+  background: rgba(255, 255, 255, .08);
+  --card-border: rgba(255, 255, 255, .22);
+  --card-border-hover: rgba(255, 255, 255, .5);
+}
+
+.ux-tier-d .ux-influence {
+  --card-border-hover: var(--ux-alert-ink, rgba(255, 255, 255, .5));
+}
+
+.ux-tier-d .ux-card h3 {
+  color: #fff;
+}
+
+.ux-tier-d .ux-card p,
+.ux-tier-d .ux-card span {
+  color: rgba(255, 255, 255, .82);
+}
+
+.ux-tier-d .ux-influence strong {
+  color: var(--ux-alert-ink, #fff);
+}
+
+.ux-tier-d .ux-influence p {
+  color: rgba(255, 255, 255, .9);
+}
+
+/* HMW interlude section (Master Spec 4.8, graduated E14): standalone
+   full-width .ux-tier-d band with tighter punctuation padding. */
+.ux-hmw-section {
+  padding: 96px 0;
+}
+
+@media (max-width: 900px) {
+  .ux-hmw-section {
+    padding: 64px 0;
+  }
+}
+
+.ux-hmw-statement {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #fff;
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+  font-weight: 750;
+  line-height: 1.18;
+  letter-spacing: -.03em;
+}
+
+.ux-hmw-statement strong {
+  color: var(--ux-alert-ink, #fff);
+  font-weight: inherit;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PROCESS GATEWAY NAV CARDS (NEW F2 2026-07-14)
+   Generalised verbatim from vth-v2.css's .vth2-nav-card / .vth2-process-nav
+   pattern — VTH renames onto these shared classes in batch M-5. Every
+   Process gateway across the UX case pages uses this pattern: 4 horizontal
+   cards, each with an h3 title + downward arrow icon + supporting text.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.ux-card-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.ux-nav-card {
+  display: block;
+  padding: var(--space-md);
+  border: 1px solid var(--card-border, color-mix(in srgb, var(--ux-primary, var(--ux-theme)) 30%, var(--theme-border)));
+  border-radius: var(--ux-radius);
+  background: color-mix(in srgb, var(--ux-primary, var(--ux-theme)) 6%, var(--theme-surface));
+  text-decoration: none;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.ux-nav-card:hover,
+.ux-nav-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: var(--theme-shadow-card-hover, 0 12px 28px rgba(0, 0, 0, .12));
+}
+
+.ux-nav-card h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  color: var(--ux-primary, var(--ux-theme));
+}
+
+.ux-nav-card h3 .ti-arrow-down {
+  font-size: 1.05rem;
+  color: color-mix(in srgb, var(--ux-primary, var(--ux-theme)) 60%, var(--theme-text-soft));
+}
+
+.ux-section.ux-tier-d .ux-nav-card h3 .ti-arrow-down {
+  color: rgba(255, 255, 255, .72);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RECIPE, KICKER HIERARCHY, LAYOUT AND SPACING UTILITIES (NEW F3/F4/F5 2026-07-14)
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* F3: Secondary Recipe label — reuses .ux-recipe-primary's layout, this
+   class only adds the separating top margin (VTH's .vth2-secondary-recipe
+   pattern, generalised). */
+.ux-secondary-recipe {
+  margin-top: 28px;
+}
+
+/* F4: Kicker hierarchy. Chapter-level kickers keep the base 0.8125rem
+   (set on .ux-kicker/.ux-intro p); sub-block (Tier B) kickers step down. */
+.ux-section-head .ux-kicker {
+  font-size: .72rem;
+}
+
+/* F5: Figure aligned under a .ux-section-head's right (description) column,
+   for images that must not upscale to full container width (small diagrams,
+   sketches, tall screenshots — Master Spec 13.8 item 9). */
+.ux-desc-aligned {
+  display: grid;
+  grid-template-columns: minmax(260px, .34fr) minmax(0, .66fr);
+  gap: 0 var(--space-xl);
+}
+
+.ux-desc-aligned > figure,
+.ux-desc-aligned > div {
+  grid-column: 2;
+}
+
+@media (max-width: 1180px) {
+  .ux-desc-aligned {
+    grid-template-columns: 1fr;
+  }
+  .ux-desc-aligned > figure,
+  .ux-desc-aligned > div {
+    grid-column: auto;
+  }
+}
+
+/* F5/F13: Sub-block rhythm utilities (Master Spec 6.5), replacing all
+   inline style="margin-top" attributes: 96px between Tier B blocks, 56px
+   before first content element, 32px between stacked media/figures. */
+.ux-subsection {
+  margin-top: 96px;
+}
+
+.ux-content-gap {
+  margin-top: 56px;
+}
+
+.ux-media-gap {
+  margin-top: 32px;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   GLYPH ICON CARD (NEW F19 2026-07-14)
+   Generalised verbatim from vth-v2.css's .vth2-icon-card / .vth2-icon —
+   unframed glyph icon, centred title and description. Used where a card
+   grid needs an icon instead of a sequence number (e.g. STD Solution).
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.ux-glyph-card {
+  text-align: center;
+}
+
+.ux-glyph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  color: var(--ux-primary, var(--ux-theme));
+  font-size: 2.75rem;
+  line-height: 1;
+}
+
+.ux-glyph-card h3 {
+  text-align: center;
+  font-size: 1.22rem;
+  margin-bottom: var(--space-sm);
+}
+
+.ux-glyph-card p {
+  text-align: center;
+}
+
+
+/* Responsive additions for the F2/F19 shared classes above */
+
+@media (max-width: 1180px) {
+  .ux-card-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .ux-card-grid--four {
+    grid-template-columns: 1fr;
   }
 }

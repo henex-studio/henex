@@ -13,6 +13,9 @@
   --ux-dark: #172554;
   --ux-primary-soft: #7392F9;
   --ux-primary-pale: #EEF2FE;
+  /* [MODIFIED F6 2026-07-14] --ux-primary-dark added — the deep-primary
+     base the dark-mode --ux-emphasis mixes into (Master Spec 2.4). */
+  --ux-primary-dark: color-mix(in srgb, var(--ux-primary) 55%, black);
   --ux-tone-s: linear-gradient(150deg, #D9E3FE, #E3EAFE 58%, #EDF2FE);
   --ux-tone-p: linear-gradient(145deg, #F3F6FF, #CFDCFC 82%);
   --ux-emphasis: linear-gradient(135deg, #1E38A8, #2848C7 60%, #2039AE);
@@ -28,16 +31,24 @@
   }
 }
 
+/* [MODIFIED F6 2026-07-14] Two defects fixed in this block:
+   (1) --ux-primary-pale had no dark override, so dark tier-l (Design,
+   Recipe) rendered the near-white light value — added below.
+   (2) --ux-emphasis mixed soft into the raw mid-tone --ux-primary, which
+   only reads correctly for a near-black primary like VTH's; STD's blue is
+   mid-tone, so dark tier-d (Outcome, Process, Delivery) came out too
+   bright. Repointed to mix into --ux-primary-dark instead. */
 [data-theme=dark] .ux-case-page--studier {
   --ux-accent-ink: color-mix(in srgb, var(--ux-secondary) 55%, white);
   --ux-strong-ink: color-mix(in srgb, var(--ux-primary) 62%, white);
   --ux-dark: var(--theme-text);
+  --ux-primary-pale: color-mix(in srgb, var(--ux-primary-soft) 46%, var(--theme-bg));
   --ux-tone-s: linear-gradient(150deg, color-mix(in srgb, var(--ux-primary-soft) 28%, var(--theme-bg)), color-mix(in srgb, var(--ux-primary-soft) 16%, var(--theme-bg)) 72%);
   --ux-tone-p: linear-gradient(145deg, var(--theme-bg), color-mix(in srgb, var(--ux-primary-soft) 30%, var(--theme-bg)) 82%);
   --ux-emphasis: linear-gradient(135deg,
-    color-mix(in srgb, var(--ux-primary-soft) 22%, var(--ux-primary)),
-    color-mix(in srgb, var(--ux-primary-soft) 34%, var(--ux-primary)) 60%,
-    color-mix(in srgb, var(--ux-primary-soft) 20%, var(--ux-primary)));
+    color-mix(in srgb, var(--ux-primary-soft) 22%, var(--ux-primary-dark)),
+    color-mix(in srgb, var(--ux-primary-soft) 34%, var(--ux-primary-dark)) 60%,
+    color-mix(in srgb, var(--ux-primary-soft) 20%, var(--ux-primary-dark)));
 }
 
 .ux-case-page--studier figcaption {
@@ -181,6 +192,16 @@
   margin: 0;
 }
 
+/* [MODIFIED F23 2026-07-14] Cascade-tie fix (E2/E21/F1/F22 bug class,
+   sixth occurrence). .studier-product-frame's margin:0 (this file, loads
+   after ux-case-study.css) was beating .ux-content-gap's margin-top:56px
+   (ux-case-study.css) on the Outcome showcase figure — same specificity,
+   later file wins, so the spacing utility was silently defeated. Scoped
+   override here, in the later-loading file, restores the intended gap. */
+.studier-product-frame.ux-content-gap {
+  margin-top: 56px;
+}
+
 .studier-product-frame button {
   width: 100%;
   display: block;
@@ -250,9 +271,11 @@
   order: 2;
 }
 
-.studier-timeline {
+/* [MODIFIED F27 2026-07-14] Develop's 6 cards, unified format, 3+3 grid.
+   Replaces the retired .studier-timeline (was 4-col, numbered-only). */
+.studier-develop-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 
@@ -301,6 +324,18 @@
   line-height: 1.5;
 }
 
+/* [MODIFIED F18 2026-07-14] Outcome's platform CTA note needs white-soft
+   text on tier-d (assigns colour only, no border-color — E19 contract). */
+.ux-section.ux-tier-d .studier-platform-cta p {
+  color: rgba(255, 255, 255, .78);
+}
+
+/* [MODIFIED F19 2026-07-14] Glyph icon dark-mode tint, VTH's E-series
+   pattern: bare --ux-primary reads too dark against a lifted dark card. */
+[data-theme=dark] .ux-case-page--studier .ux-glyph {
+  color: color-mix(in srgb, var(--ux-primary) 40%, #DDE7FF);
+}
+
 .ux-tier-d .studier-solution-cards article {
   min-height: 220px;
   padding: 24px;
@@ -317,7 +352,7 @@
     order: 0;
   }
   .studier-role-grid,
-  .studier-timeline,
+  .studier-develop-grid,
   .studier-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -329,7 +364,7 @@
 
 @media (max-width: 640px) {
   .studier-role-grid,
-  .studier-timeline,
+  .studier-develop-grid,
   .studier-metrics {
     grid-template-columns: 1fr;
   }

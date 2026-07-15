@@ -1,227 +1,208 @@
 /* New World Design System case styles.
    Dependencies: global.css, ux-case-study.css
-
-   Shared layout classes (ux-feedback-grid, ux-icon-card, ux-gallery,
-   ux-swatch-grid, ux-component-row, ux-scope-block, ux-chip-flow,
-   ux-scroll-viewport, ux-card-stack, ux-showcase-figure) are defined
-   in ux-case-study.css. This file contains only NDS-specific theming
-   and unique section layouts. */
+   [MODIFIED M2 2026-07-14] Rebuilt onto the VTH v2 token pattern (E19) for
+   the unified UX case build. See docs/specs/M2_NDS_RKT_Migration_Spec.md.
+   Palette approved by Cafe 2026-07-12 (strengthened dark-hero blooms,
+   dark-hero option A pattern per std.css): primary #E11A2C (red),
+   secondary #571060 (purple). Legacy system-* theming CSS retired
+   wholesale; this file follows the ash.css/std.css token derivation
+   exactly, with F6/F22/F29/F30 lessons applied from the outset. The
+   system-* CLASS NAMES in the HTML for DS-internal swatches and layout
+   (system-findings-grid, system-principle-grid, system-foundation-card,
+   system-component-demo, system-swatch--*) are kept — see the layout
+   block below — since they carry unique NDS-only structure not worth
+   generalising into ux-case-study.css. The legacy system-microsite-grid
+   (3-image scrollable Colour/Typography/Iconography gallery) was removed
+   from both this file and the HTML during the M2 build (Cafe,
+   2026-07-14) — the Delivery section's live Figma embed replaced it. */
 
 .ux-case-page--new-world {
-  --case-red: #E11A2C;
-  --case-red-hover: #CB1728;
-  --case-red-muted: #CB1728;
-  --case-red-strong: #B71524;
-  --case-red-soft: #FFF0F1;
-  --nds-purple: #571060;
-  --nds-purple-hover: #460D4D;
-  --nds-purple-soft: #EEE7EF;
-  --nds-ink: #231F20;
-  --ux-theme: var(--case-red);
-  --ux-dark: var(--case-red-strong);
-  --ux-soft: var(--case-red-soft);
-  --ux-pale: #FFF7F7;
+  --ux-primary: #E11A2C;
+  --ux-secondary: #571060;
+  --ux-theme: var(--ux-primary);
+  --ux-dark: #7A0F1B;
+  --ux-primary-soft: #F0616E;
+  --ux-primary-pale: #FDEFF0;
+  /* --ux-primary-dark — the deep-primary base the dark-mode --ux-emphasis
+     mixes into (Master Spec 2.4). Mandatory for mid-tone primaries. */
+  --ux-primary-dark: color-mix(in srgb, var(--ux-primary) 55%, black);
+  --ux-tone-s: linear-gradient(150deg, #FAD9DC, #FBE4E6 58%, #FDEEEF);
+  --ux-tone-p: linear-gradient(145deg, #FEF4F5, #F6CCD0 82%);
+  --ux-emphasis: linear-gradient(135deg, #8C1220, #A31626 60%, #93131F);
+  /* [MODIFIED M23 N3/N5] alert-ink moved from the purple-pink #D875E8 to a
+     light tint of the primary red. This ink paints the tier-d kicker
+     (Outcome, Delivery) and the HMW band's emphasised words, both on a
+     dark red background — the old purple-pink clashed with that red per
+     Cafe's Bug1 review; the same red family reads clean at high contrast. */
+  --ux-alert-ink: #F7B8BE;
+  /* [MODIFIED M23 N1] Kicker/label ink moved off the purple secondary onto
+     the primary red per Cafe's Bug1 review (purple clashed with the page
+     and made the red read dirty next to it). Heading ink uses the deeper
+     red Cafe tuned by eye. Dark-mode purple pairing was confirmed
+     acceptable and stays as the dark override below. */
+  --ux-accent-ink: var(--ux-primary);
+  --ux-strong-ink: #B60416;
+  --section-pad: 144px;
 }
 
-
-/* Hero */
-.ux-case-page--new-world {
-  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/hero-bg.webp");
-}
-.ux-case-page--new-world .ux-hero {
-  background-position: center right;
+@media (max-width: 900px) {
+  .ux-case-page--new-world {
+    --section-pad: 80px;
+  }
 }
 
-.ux-case-page--new-world .system-hero {
-  min-height: auto;
-  display: block;
-  overflow: hidden;
-  padding-top: clamp(128px, 14vw, 190px);
-  padding-bottom: clamp(88px, 10vw, 140px);
+/* Dark-mode block redefines ALL of --ux-primary-pale / --ux-tone-s /
+   --ux-tone-p / --ux-emphasis (Master Spec 13.8 item 1), and
+   --ux-emphasis mixes into --ux-primary-dark, not the raw mid-tone
+   primary (item 2). Applied from the outset per the F6 lesson. */
+[data-theme=dark] .ux-case-page--new-world {
+  --ux-accent-ink: color-mix(in srgb, var(--ux-secondary) 55%, white);
+  --ux-strong-ink: color-mix(in srgb, var(--ux-primary) 62%, white);
+  --ux-dark: var(--theme-text);
+  --ux-primary-pale: color-mix(in srgb, var(--ux-primary-soft) 46%, var(--theme-bg));
+  --ux-tone-s: linear-gradient(150deg, color-mix(in srgb, var(--ux-primary-soft) 28%, var(--theme-bg)), color-mix(in srgb, var(--ux-primary-soft) 16%, var(--theme-bg)) 72%);
+  --ux-tone-p: linear-gradient(145deg, var(--theme-bg), color-mix(in srgb, var(--ux-primary-soft) 30%, var(--theme-bg)) 82%);
+  --ux-emphasis: linear-gradient(135deg,
+    color-mix(in srgb, var(--ux-primary-soft) 22%, var(--ux-primary-dark)),
+    color-mix(in srgb, var(--ux-primary-soft) 34%, var(--ux-primary-dark)) 60%,
+    color-mix(in srgb, var(--ux-primary-soft) 20%, var(--ux-primary-dark)));
 }
 
-.ux-case-page--new-world .system-hero__inner {
-  display: block;
-  position: relative;
-  z-index: 1;
+.ux-case-page--new-world figcaption {
+  color: color-mix(in srgb, var(--ux-theme) 70%, var(--theme-text-soft));
 }
 
-.ux-case-page--new-world .system-hero__copy {
-  max-width: min(900px, 60vw);
-  margin: 0;
-  padding-top: 0;
+[data-theme=dark] .ux-case-page--new-world figcaption {
+  color: color-mix(in srgb, var(--ux-primary-soft) 70%, var(--theme-text-soft));
 }
 
-.ux-case-page--new-world .system-hero-art {
-  display: none;
-}
-
-
-/* Theme colour overrides */
-
-.ux-case-page--new-world .ux-intro h2,
-.ux-case-page--new-world .ux-wide-head h2,
-.ux-case-page--new-world .ux-copy h2,
-.ux-case-page--new-world .ux-copy h3,
-.ux-case-page--new-world .ux-retro h2,
-.ux-case-page--new-world .ux-retro h3 {
-  color: var(--case-red);
-}
-
+/* Kickers and ink-token routing (Master Spec 6.1/10.4).
+   [F30 lesson applied] .ux-kicker--chapter is listed here too — the
+   shared compound selector (.ux-kicker.ux-kicker--chapter) in
+   ux-case-study.css only sets font-size, colour routing still needs to
+   be declared per page same as the plain .ux-kicker class. */
 .ux-case-page--new-world .ux-kicker,
 .ux-case-page--new-world .ux-intro p,
-.ux-case-page--new-world .ux-recipe-primary span,
-.ux-case-page--new-world .ux-related-card span,
-.ux-case-page--new-world .system-foundation-card > span,
-.ux-case-page--new-world .system-component-demo > span {
+.ux-case-page--new-world .ux-chapter-head .ux-kicker,
+.ux-case-page--new-world .ux-section-head .ux-kicker {
+  color: var(--ux-accent-ink);
+}
+
+.ux-case-page--new-world .ux-related .ux-kicker {
   color: var(--theme-muted);
 }
 
 .ux-case-page--new-world .ux-meta span,
-.ux-case-page--new-world .ux-skills > span,
+.ux-case-page--new-world .ux-skills > span {
+  color: var(--ux-accent-ink);
+}
+
+.ux-case-page--new-world .ux-skills em {
+  border-color: var(--ux-strong-ink);
+  color: var(--ux-strong-ink);
+}
+
 .ux-case-page--new-world .ux-lens span {
-  color: var(--case-red);
+  color: var(--ux-accent-ink);
 }
 
-.ux-case-page--new-world figcaption {
-  color: color-mix(in srgb, var(--case-red) 58%, var(--theme-text-soft));
+.ux-case-page--new-world .ux-lens a {
+  color: var(--ux-strong-ink);
 }
 
-.ux-case-page--new-world .ux-copy h2 + p,
-.ux-case-page--new-world .ux-wide-head h2 + p {
-  margin-top: 34px;
+.ux-case-page--new-world .ux-recipe-primary span {
+  color: var(--ux-accent-ink);
 }
 
-
-/* DS purple theme — overrides --ux-theme so all shared classes inherit purple */
-
-.system-theme-ds {
-  --ux-theme: var(--nds-purple);
-  --ux-dark: var(--nds-purple-hover);
-  --ux-soft: var(--nds-purple-soft);
+/* Tier-d kicker override (matches vth-v2.css Section 2 pattern) */
+.ux-case-page--new-world .ux-tier-d .ux-kicker {
+  color: var(--ux-alert-ink) !important;
 }
 
-.system-theme-ds .ux-wide-head h2,
-.system-theme-ds .ux-intro h2,
-.system-theme-ds .ux-copy h2,
-.system-theme-ds .ux-copy h3,
-.system-theme-ds .system-foundation-card h3,
-.system-theme-ds .system-component-demo h3,
-.system-theme-ds .system-spec-tile b {
-  color: var(--ux-theme);
+.ux-case-page--new-world .ux-tier-d .ux-influence strong {
+  color: var(--ux-alert-ink);
 }
 
-.system-theme-ds .ux-scope-block h3 {
-  color: var(--ux-theme);
+/* Dark-mode card lift across S/L/P tiers (vth-v2.css C4/E1 pattern) */
+[data-theme=dark] .ux-case-page--new-world .ux-tier-s .ux-card,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-l .ux-card,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-p .ux-card,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-p .ux-influence {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border-hover: var(--ux-strong-ink);
 }
 
-.system-theme-ds figcaption {
-  color: color-mix(in srgb, var(--ux-theme) 58%, var(--theme-text-soft));
+[data-theme=dark] .ux-case-page--new-world .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--new-world .ux-tier-p .ux-influence {
+  --card-border-hover: var(--ux-alert-ink);
 }
 
-.system-video .ux-video {
-  background: var(--nds-ink);
+.ux-case-page--new-world .ux-influence {
+  margin-top: 56px;
 }
 
-.system-video .ux-video-grid > div p:not(.ux-kicker) {
-  margin-top: 34px;
+.ux-case-page--new-world .ux-influence strong {
+  color: var(--ux-strong-ink);
 }
 
+/* ═══════════════════════════════════════════════════════════════════════
+   Hero — frosted dual-bloom (Master Spec 7.1), strengthened dark-hero
+   (option A pattern, matches std.css — approved by Cafe 2026-07-12)
+   ═══════════════════════════════════════════════════════════════════════ */
 
-/* HMW */
+.nds-hero {
+  background-image: none;
+  background: linear-gradient(140deg, #FBECED, #FEF7F7);
+}
 
-.system-hmw {
+.nds-hero::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  z-index: 0;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 18% 24%, rgba(225, 26, 44, .10), transparent 34%),
-    linear-gradient(145deg, var(--case-red-soft), var(--theme-bg) 82%);
+    radial-gradient(ellipse 58% 54% at 14% 16%, rgba(225, 26, 44, 0.36), transparent 74%),
+    radial-gradient(ellipse 52% 46% at 90% 18%, rgba(87, 16, 96, 0.30), transparent 74%);
+  filter: blur(34px);
 }
 
-.system-hmw__note {
-  max-width: 760px;
-  margin-top: 30px;
-  color: var(--theme-text-soft);
-  font-size: clamp(1.02rem, 1.4vw, 1.22rem);
-  line-height: 1.56;
+[data-theme=dark] .nds-hero {
+  background: #0A0304;
 }
 
-
-/* Problem and audit cards */
-
-.system-problem-cards .ux-card span,
-.system-audit-section .ux-card span {
-  color: var(--case-red-muted);
+[data-theme=dark] .nds-hero::before {
+  background:
+    radial-gradient(ellipse 64% 60% at 15% 16%, rgba(240, 97, 110, 0.74), transparent 70%),
+    radial-gradient(ellipse 58% 52% at 88% 20%, rgba(216, 117, 232, 0.55), transparent 70%);
+  filter: blur(36px);
 }
 
-.system-problem-cards .ux-card h3,
-.system-audit-section .ux-card h3 {
-  color: var(--case-red);
+[data-theme=dark] .nds-hero .ux-hero__copy h1 {
+  color: #fff;
 }
 
-
-/* Solution */
-
-.system-solution {
-  background: linear-gradient(145deg, var(--case-red-soft), var(--theme-bg) 86%);
+[data-theme=dark] .nds-hero .ux-hero__copy p {
+  color: rgba(255, 255, 255, .82);
 }
 
-.system-solution__head {
-  max-width: 920px;
+.nds-hero__copy {
+  max-width: min(960px, 76vw);
 }
 
-.system-solution__head h2 {
-  color: var(--case-red);
+/* HMW statement colour accent (uses the page's alert-ink) */
+.ux-case-page--new-world .ux-hmw-statement strong {
+  color: var(--ux-alert-ink);
 }
 
-.system-solution__head h2 + p {
-  margin-top: 40px;
-}
-
-.system-solution__head p:not(.ux-kicker) {
-  color: var(--theme-text-soft);
-  font-size: clamp(1rem, 1.35vw, 1.18rem);
-  line-height: 1.62;
-}
-
-.system-solution__head p + p {
-  margin-top: 18px;
-}
-
-.system-solution__wide {
-  margin-top: 52px;
-}
-
-.system-solution__figure {
-  width: 100%;
-  margin: 0;
-  padding: clamp(18px, 3vw, 38px);
-  border-radius: var(--radius-lg);
-  background: color-mix(in srgb, var(--case-red-soft) 78%, var(--theme-surface));
-}
-
-.system-solution__figure img,
-.ux-showcase-figure img,
-.system-component-media img,
-.system-evidence-image img,
-.ux-gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: transparent;
-}
-
-.system-showcase .ux-wide-head {
-  margin-bottom: 40px;
-}
-
-
-/* Process */
-
-.system-process-section .ux-process span {
-  color: var(--case-red);
-}
-
-
-/* Findings */
+/* ═══════════════════════════════════════════════════════════════════════
+   Research — Findings grid (System Audit content, folded in) and
+   Principle grid (Principles and Scope, folded in)
+   ═══════════════════════════════════════════════════════════════════════ */
 
 .system-findings-grid {
   display: grid;
@@ -232,13 +213,15 @@
 
 .system-findings-grid article {
   padding: 20px;
+  border: 1px solid var(--theme-border-soft);
+  border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
 
 .system-findings-grid span {
   display: block;
   margin-bottom: 10px;
-  color: var(--nds-purple);
+  color: var(--ux-accent-ink);
   font-size: .72rem;
   font-weight: 850;
   letter-spacing: .1em;
@@ -252,13 +235,6 @@
   line-height: 1.55;
 }
 
-.system-insights-grid .ux-card span {
-  color: var(--case-red-muted);
-}
-
-
-/* Principle grid — 3-col layout for icon cards */
-
 .system-principle-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -266,13 +242,107 @@
   margin-top: 48px;
 }
 
+/* [MODIFIED M23 N2-follow-up] Problem section restructured from the shared
+   side-by-side .ux-problem__grid (text left, 3-card column right) to a
+   stacked layout: text block on top, the 01/02/03 cards below in an even
+   horizontal row. Cafe flagged the cards were still crowded into a narrow
+   vertical stack beside the text; this fix moves .ux-card-grid--three
+   (already a 3-column grid) below the text with spacing to match. */
+.nds-problem-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
 
-/* Scope note */
+.nds-problem-stack .ux-card-grid--three {
+  margin-top: 0;
+}
 
+/* [MODIFIED M23 N6] Insight cards (System Audit) gain an icon on the right
+   expressing the theme, in the same unframed enlarged style as N7 below.
+   Text and icon sit side by side inside the card. */
+.nds-insight-card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+/* [MODIFIED M23 Bug2 A1, resized Bug2-followup, fixed Bug2-followup-2]
+   Icon markup switched from bespoke inline SVG to Tabler webfont icons
+   (<i class="ti ti-name">), matching VTH v2. Wrapper changed from <i> to
+   <span> (the glyph itself is now the <i>), sized with font-size/
+   line-height instead of width/height + SVG rules. Size raised from
+   1.5rem (boxed at a fixed 30px) to 1.9rem, matching VTH v2's dense-grid
+   icon reference (.vth2-method-card .vth2-icon) — Cafe flagged the
+   original size as too small. width/height switched to auto so the glyph
+   is not clipped by a fixed 30px box.
+   ROOT CAUSE of the size not applying: the global rule ".ux-card span"
+   (ux-case-study.css) sets font-size: .72rem (~11px) on any bare <span>
+   inside a .ux-card, and it outranks .nds-insight-card__icon (1 class),
+   so the 1.9rem here never took effect and the icon rendered at 11px
+   regardless of this rule — confirmed via inspector by Cafe. Fixed with a
+   higher-specificity selector below that targets the same span through
+   its actual parent chain, so it wins outright instead of relying on
+   this single-class rule. */
+.nds-insight-card__icon {
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  color: var(--ux-strong-ink);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.ux-card.nds-insight-card .nds-insight-card__icon {
+  font-size: 1.9rem;
+}
+
+/* [MODIFIED M23 N7, updated Bug2 A1, realigned Bug2-followup, fixed
+   Bug2-followup-2] Principles cards: icon unframed and enlarged to match
+   the VTH v2 principle-card reference (vth-v2.css .vth2-principle-top
+   .vth2-icon — no chip background, left-aligned, ~1.9rem). The shared
+   .ux-icon-card__icon ships with a circular chip background and centred
+   layout for other pages; NDS overrides it here rather than changing the
+   shared class so those other pages keep their framed, centred look.
+   This also removes the stray divider line Cafe saw, which was the
+   chip's own background edge meeting the card padding. justify-content/
+   margin switched from centre to left-aligned per Cafe's screenshot of
+   the VTH reference, where the icon sits flush left above the card
+   title, not centred. Same ".ux-card span" specificity conflict as
+   .nds-insight-card__icon above — .system-principle-grid .ux-icon-card__
+   icon (2 classes) ties with ".ux-card span" (2 classes) on specificity,
+   and loses on source order since ux-case-study.css loads before
+   nds.css, so the 1.9rem here was silently overridden to 11px too.
+   Fixed the same way below, routing through the actual .ux-card parent
+   so the selector wins outright. */
+.system-principle-grid .ux-icon-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  height: auto;
+  margin: 0 0 18px;
+  background: none;
+  border-radius: 0;
+  color: var(--ux-strong-ink);
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.system-principle-grid .ux-card .ux-icon-card__icon {
+  font-size: 1.9rem;
+}
+
+/* [MODIFIED M23 Bug2 B2] border-top removed — Cafe flagged a stray
+   divider line above this paragraph that had no structural purpose. */
 .system-scope-note {
   max-width: 880px;
   margin-top: 58px;
-  padding: 26px 0 0;
+  padding: 0;
 }
 
 .system-scope-note p {
@@ -281,44 +351,43 @@
   line-height: 1.62;
 }
 
-
-/* Microsite */
-
-.system-microsite-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin: 46px 0;
+[data-theme=dark] .system-findings-grid article {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
-.system-microsite-card {
-  padding: 18px;
-  border-color: color-mix(in srgb, var(--nds-purple) 18%, var(--theme-border-soft));
-  background: var(--theme-surface);
-}
-
-.system-microsite-card h3 {
-  color: var(--nds-purple);
-}
-
-
-/* Foundation and component cards — NDS-specific padded variants */
+/* ═══════════════════════════════════════════════════════════════════════
+   Design — Foundations (colour/typography/icon evidence) and Component
+   evidence rows. The scrollable 3-image microsite gallery (Colour/
+   Typography/Iconography) from the legacy build was removed at Cafe's
+   request 2026-07-14, since the Delivery section's live Figma embed now
+   covers that ground directly.
+   ═══════════════════════════════════════════════════════════════════════ */
 
 .system-foundation-card,
 .system-component-demo {
-  border-color: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  padding: clamp(30px, 4vw, 46px);
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
 
-.system-foundation-card {
-  padding: clamp(30px, 4vw, 46px);
-}
-
 .system-foundation-card h3,
-.system-component-demo h3,
-.system-microsite-card h3 {
+.system-component-demo h3 {
   margin-bottom: 14px;
   font-size: 1.16rem;
+  color: var(--ux-dark, var(--theme-text));
+}
+
+.system-foundation-card > span,
+.system-component-demo > span {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--ux-accent-ink);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 .system-foundation-card p,
@@ -338,28 +407,29 @@
   font-size: 1rem;
 }
 
-
-/* Swatch colour values — unique to NDS */
-
-.system-swatch--red           { background: #E11A2C; }
-.system-swatch--red-light     { background: #FCD7D7; color: #231F20; }
-.system-swatch--red-dark      { background: #CB1728; }
-.system-swatch--purple        { background: #571060; }
-.system-swatch--purple-light  { background: #EEE7EF; color: #231F20; }
-.system-swatch--purple-dark   { background: #460D4D; }
-.system-swatch--ink           { background: #231F20; }
-.system-swatch--white         { background: #fff; color: #231F20; }
-.system-swatch--info          { background: #004085; }
-.system-swatch--success       { background: #155724; }
-.system-swatch--warning       { background: #856404; }
-.system-swatch--error         { background: #721C24; }
-
-
-/* Component demo variants */
-
-.system-component-demo {
-  padding: clamp(24px, 3vw, 36px);
+[data-theme=dark] .system-foundation-card,
+[data-theme=dark] .system-component-demo {
+  background: color-mix(in srgb, var(--ux-primary-soft) 22%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-primary-soft) 20%, var(--theme-border));
 }
+
+/* DS-internal colour swatch values — a separate content-level system from
+   the page theme tokens (M2 spec §1 note 7): do not conflate. */
+.system-swatch--red          { background: #E11A2C; }
+.system-swatch--purple       { background: #571060; }
+.system-swatch--ink          { background: #231F20; }
+/* [MODIFIED M23 N8] .ux-swatch defaults text to white for dark swatch
+   backgrounds; this white swatch never overrode it, so its label text was
+   invisible against the white fill. Root cause of Cafe's Bug1 report. */
+.system-swatch--white        { background: #fff; border: 1px solid var(--theme-border); color: #231F20; }
+.system-swatch--red-light    { background: #FCD7D7; color: #231F20; }
+.system-swatch--red-dark     { background: #CB1728; }
+.system-swatch--purple-light { background: #EEE7EF; color: #231F20; }
+.system-swatch--purple-dark  { background: #460D4D; }
+.system-swatch--info         { background: #004085; }
+.system-swatch--success      { background: #155724; }
+.system-swatch--warning      { background: #856404; }
+.system-swatch--error        { background: #721C24; }
 
 .system-image-demo {
   padding: 0;
@@ -374,76 +444,142 @@
   display: block;
 }
 
-.system-evidence-image {
-  margin-top: 34px;
+/* ═══════════════════════════════════════════════════════════════════════
+   Design — IA and component-scope diagrams
+   [MODIFIED M23 Bug2 B4] The native HTML IA tree and flow diagram (N9)
+   are replaced with Cafe's uploaded ia.png and journey.png images. The
+   .nds-ia-tree*/.nds-flow-diagram* rules that drew those diagrams are
+   removed; .nds-ia-block's own heading/paragraph styling stays since the
+   two figure blocks still use that wrapper class.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.nds-ia-block h3 {
+  margin-bottom: 14px;
+  font-size: 1.28rem;
+  color: var(--ux-dark, var(--theme-text));
 }
 
-.system-evidence-image button {
+.nds-ia-block > p {
+  max-width: 760px;
+  margin-bottom: 30px;
+  color: var(--theme-text-soft);
+  font-size: .98rem;
+  line-height: 1.62;
+}
+
+.nds-ia-block figure {
+  margin: 0;
+}
+
+.nds-ia-block img {
   width: 100%;
   display: block;
+  border-radius: var(--ux-radius);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Delivery — [MODIFIED M23 N10, reworked Bug2 B6, refined Bug2-followup]
+   microsite page images replacing the live Figma iframe embed (which did
+   not load reliably for visitors). Order: 1 basic (always visible, full
+   width), 2-7 icon/colour/font/button/card/search behind Read more,
+   shown two per row. Each frame keeps a fixed 16:10 aspect ratio and
+   scrolls internally (overflow-y: auto) so the full tall microsite page
+   is still reachable without the frame itself growing to match the image.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.nds-delivery-pages {
+  display: grid;
+  gap: 20px;
+  margin-top: 42px;
+}
+
+.nds-delivery-more {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.nds-delivery-more[hidden] {
+  display: none;
+}
+
+.nds-delivery-frame {
   margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: zoom-in;
-}
-
-.system-evidence-image figcaption {
-  margin-top: 16px;
-}
-
-
-/* Dark mode */
-
-[data-theme="dark"] .system-solution,
-[data-theme="dark"] .system-hmw {
-  background: linear-gradient(145deg, rgba(225, 26, 44, .12), var(--theme-bg) 84%);
-}
-
-[data-theme="dark"] .system-solution__figure,
-[data-theme="dark"] .system-foundation-card,
-[data-theme="dark"] .system-component-demo,
-[data-theme="dark"] .system-microsite-card,
-[data-theme="dark"] .system-findings-grid article {
+  border-radius: var(--ux-radius);
+  overflow: hidden;
+  border: 1px solid var(--theme-border);
+  box-shadow: var(--theme-shadow-card);
   background: var(--theme-surface);
 }
 
+/* [MODIFIED Bug2-followup] Frame restored to a fixed 16:10 viewport
+   (Cafe's preferred proportions for this grid) but the image inside
+   keeps its natural full height and the frame scrolls internally, so the
+   whole tall microsite page is still reachable — this replaces the
+   previous "no crop, natural height" version, which read as too large
+   and inconsistent between the lead image and the grid. */
+.nds-delivery-frame--lead {
+  aspect-ratio: 16 / 10;
+  overflow-y: auto;
+}
 
-/* Responsive: 1180px */
+.nds-delivery-frame--lead img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nds-delivery-more .nds-delivery-frame {
+  aspect-ratio: 16 / 10;
+  overflow-y: auto;
+}
+
+.nds-delivery-more .nds-delivery-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.nds-delivery-frame figcaption {
+  padding: 12px 18px;
+  border-top: 1px solid var(--theme-border-soft);
+  font-family: var(--font-heading);
+  font-size: .84rem;
+  font-weight: 700;
+  color: var(--ux-dark, var(--theme-text));
+  position: sticky;
+  bottom: 0;
+  background: var(--theme-surface);
+}
+
+.nds-delivery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1180px) {
   .system-findings-grid,
-  .system-microsite-grid,
   .system-principle-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-
-/* Responsive: 640px */
-
 @media (max-width: 640px) {
-  .ux-case-page--new-world .system-hero {
-    padding-top: clamp(96px, 16vw, 128px);
-    padding-bottom: clamp(72px, 12vw, 104px);
-  }
-  .ux-case-page--new-world .system-hero__copy {
-    max-width: 100%;
+  .system-findings-grid,
+  .system-principle-grid {
+    grid-template-columns: 1fr;
   }
   .system-foundation-card,
   .system-component-demo {
     padding: 22px;
   }
-  .system-microsite-card .ux-scroll-viewport {
-    max-height: 440px;
-  }
-}
-
-
-/* Responsive: 520px */
-
-@media (max-width: 520px) {
-  .system-microsite-card .ux-scroll-viewport {
-    max-height: 360px;
+  .nds-delivery-more {
+    grid-template-columns: 1fr;
   }
 }

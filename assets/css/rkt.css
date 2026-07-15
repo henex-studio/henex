@@ -1,50 +1,184 @@
-/* ReKraft — project-scoped styles
-   Scope: ux-case-page--rekraft only
-   Primary (text/heading): #187A62 (deep teal green, 5.25:1 on white)
-   Decorative (kicker/icon/border): #3CBC9A (mid green, visual accent only)
-   Dark-bg accent: #C2FA7D (lime, 11:1 on #0A3429)
-   Do not modify global.css or ux-case-study.css from this file.
-*/
+/* ReKraft case styles.
+   Dependencies: global.css, ux-case-study.css
+   [MODIFIED M2 2026-07-14] Rebuilt onto the VTH v2 token pattern (E19) for
+   the unified UX case build. See docs/specs/M2_NDS_RKT_Migration_Spec.md.
+   Palette confirmed unchanged from the original M2 proposal 2026-07-12:
+   primary #187A62 (deep teal green), secondary #3CBC9A (mint). Legacy
+   flat-token CSS (--ux-soft/--ux-pale/--ux-accent/--ux-lime and the
+   :has()-based Final Design dark override) retired wholesale; this file
+   follows the ash.css/std.css/nds.css token derivation exactly, with
+   F6/F22/F29/F30 lessons applied from the outset. Page-unique layout
+   classes (rkt-problem-gallery, rkt-finding-grid, rkt-develop-stack,
+   rkt-ds-stack) are kept — they carry structure not worth generalising
+   into ux-case-study.css. */
 
 .ux-case-page--rekraft {
-  --ux-theme: #187A62;
-  --ux-dark: #0A3429;
-  --ux-accent: #3CBC9A;
-  --ux-lime: #C2FA7D;
-  --ux-soft: #EAF3EE;
-  --ux-pale: #F3F9F5;
+  --ux-primary: #187A62;
+  --ux-secondary: #3CBC9A;
+  --ux-theme: var(--ux-primary);
+  --ux-dark: #0F4C3D;
+  --ux-primary-soft: #4BAE96;
+  --ux-primary-pale: #ECF7F4;
+  /* --ux-primary-dark — the deep-primary base the dark-mode --ux-emphasis
+     mixes into (Master Spec 2.4). Mandatory for mid-tone primaries. */
+  --ux-primary-dark: color-mix(in srgb, var(--ux-primary) 55%, black);
+  --ux-tone-s: linear-gradient(150deg, #D5EEE8, #E1F3EE 58%, #EAF6F3);
+  --ux-tone-p: linear-gradient(145deg, #F2FBF8, #CBEAE1 82%);
+  --ux-emphasis: linear-gradient(135deg, #0D3F33, #114E40 60%, #0F473A);
+  --ux-alert-ink: #6FE9C6;
+  --ux-accent-ink: var(--ux-secondary);
+  --ux-strong-ink: var(--ux-primary);
+  --section-pad: 144px;
 }
 
-/* ─── Hero ─── */
-.ux-case-page--rekraft {
-  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/hero.png");
+@media (max-width: 900px) {
+  .ux-case-page--rekraft {
+    --section-pad: 80px;
+  }
 }
 
-/* ─── Kicker — decorative accent colour in MAIN content sections only ─── */
-.ux-case-page--rekraft .ux-section:not(.ux-related) .ux-kicker,
-.ux-case-page--rekraft .ux-hero .ux-kicker,
-.ux-case-page--rekraft .ux-solution .ux-kicker,
-.ux-case-page--rekraft .ux-problem .ux-kicker,
-.ux-case-page--rekraft .ux-intro > p:first-child {
-  color: var(--ux-accent);
+/* Dark-mode block redefines ALL of --ux-primary-pale / --ux-tone-s /
+   --ux-tone-p / --ux-emphasis (Master Spec 13.8 item 1), and
+   --ux-emphasis mixes into --ux-primary-dark, not the raw mid-tone
+   primary (item 2). Applied from the outset per the F6 lesson. */
+[data-theme=dark] .ux-case-page--rekraft {
+  --ux-accent-ink: color-mix(in srgb, var(--ux-secondary) 55%, white);
+  --ux-strong-ink: color-mix(in srgb, var(--ux-primary) 62%, white);
+  --ux-dark: var(--theme-text);
+  --ux-primary-pale: color-mix(in srgb, var(--ux-primary-soft) 46%, var(--theme-bg));
+  --ux-tone-s: linear-gradient(150deg, color-mix(in srgb, var(--ux-primary-soft) 28%, var(--theme-bg)), color-mix(in srgb, var(--ux-primary-soft) 16%, var(--theme-bg)) 72%);
+  --ux-tone-p: linear-gradient(145deg, var(--theme-bg), color-mix(in srgb, var(--ux-primary-soft) 30%, var(--theme-bg)) 82%);
+  --ux-emphasis: linear-gradient(135deg,
+    color-mix(in srgb, var(--ux-primary-soft) 22%, var(--ux-primary-dark)),
+    color-mix(in srgb, var(--ux-primary-soft) 34%, var(--ux-primary-dark)) 60%,
+    color-mix(in srgb, var(--ux-primary-soft) 20%, var(--ux-primary-dark)));
 }
 
-/* Related Projects kicker — use global neutral colour, not green */
+.ux-case-page--rekraft figcaption {
+  color: color-mix(in srgb, var(--ux-theme) 70%, var(--theme-text-soft));
+}
+
+[data-theme=dark] .ux-case-page--rekraft figcaption {
+  color: color-mix(in srgb, var(--ux-primary-soft) 70%, var(--theme-text-soft));
+}
+
+/* Kickers and ink-token routing (Master Spec 6.1/10.4).
+   [F30 lesson applied] .ux-kicker--chapter listed here too — the shared
+   compound selector only sets font-size, colour routing is still
+   declared per page same as the plain .ux-kicker class. */
+.ux-case-page--rekraft .ux-kicker,
+.ux-case-page--rekraft .ux-intro p,
+.ux-case-page--rekraft .ux-chapter-head .ux-kicker,
+.ux-case-page--rekraft .ux-section-head .ux-kicker {
+  color: var(--ux-accent-ink);
+}
+
 .ux-case-page--rekraft .ux-related .ux-kicker {
   color: var(--theme-muted);
 }
 
-/* No .ux-solution override needed: the shared rule in ux-case-study.css now derives its
-   background from --ux-dark, which is already defined above as ReKraft's deep teal-green. */
-
-/* ─── Influence block spacing — match global ux-narrow standard ─── */
-.ux-case-page--rekraft .ux-copy .ux-influence,
-.ux-case-page--rekraft .ux-problem .ux-influence,
-.ux-case-page--rekraft .ux-wide-head .ux-influence {
-  margin-top: 44px;
+.ux-case-page--rekraft .ux-meta span,
+.ux-case-page--rekraft .ux-skills > span {
+  color: var(--ux-accent-ink);
 }
 
-/* ─── Concept section — three images side by side ─── */
+.ux-case-page--rekraft .ux-skills em {
+  border-color: var(--ux-strong-ink);
+  color: var(--ux-strong-ink);
+}
+
+.ux-case-page--rekraft .ux-lens span {
+  color: var(--ux-accent-ink);
+}
+
+.ux-case-page--rekraft .ux-lens a {
+  color: var(--ux-strong-ink);
+}
+
+.ux-case-page--rekraft .ux-recipe-primary span {
+  color: var(--ux-accent-ink);
+}
+
+/* Tier-d kicker override (matches vth-v2.css Section 2 pattern) */
+.ux-case-page--rekraft .ux-tier-d .ux-kicker {
+  color: var(--ux-alert-ink) !important;
+}
+
+.ux-case-page--rekraft .ux-tier-d .ux-influence strong {
+  color: var(--ux-alert-ink);
+}
+
+/* Dark-mode card lift across S/L/P tiers (vth-v2.css C4/E1 pattern) */
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-s .ux-card,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-l .ux-card,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-p .ux-card,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-p .ux-influence {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border-hover: var(--ux-strong-ink);
+}
+
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--rekraft .ux-tier-p .ux-influence {
+  --card-border-hover: var(--ux-alert-ink);
+}
+
+.ux-case-page--rekraft .ux-influence {
+  margin-top: 56px;
+}
+
+.ux-case-page--rekraft .ux-influence strong {
+  color: var(--ux-strong-ink);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Hero — frosted dual-bloom (Master Spec 7.1), replaces the old
+   cover-image rkt-hero
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.rkt-hero {
+  background-image: none;
+  background: linear-gradient(140deg, #EDF7F4, #F7FCFA);
+}
+
+.rkt-hero::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 58% 54% at 14% 16%, rgba(24, 122, 98, 0.40), transparent 74%),
+    radial-gradient(ellipse 52% 46% at 90% 18%, rgba(60, 188, 154, 0.34), transparent 74%);
+  filter: blur(34px);
+}
+
+[data-theme=dark] .rkt-hero {
+  background: #020806;
+}
+
+[data-theme=dark] .rkt-hero::before {
+  background:
+    radial-gradient(ellipse 60% 56% at 15% 16%, rgba(75, 174, 150, 0.55), transparent 72%),
+    radial-gradient(ellipse 54% 48% at 88% 20%, rgba(111, 233, 198, 0.34), transparent 72%);
+  filter: blur(36px);
+}
+
+[data-theme=dark] .rkt-hero .ux-hero__copy h1 {
+  color: #fff;
+}
+
+[data-theme=dark] .rkt-hero .ux-hero__copy p {
+  color: rgba(255, 255, 255, .82);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Background — Concept content moved here (M2 spec §2)
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-concept-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -60,7 +194,7 @@
   height: 100%;
 }
 
-.rkt-concept-grid .rkt-concept-grid__media {
+.rkt-concept-grid__media {
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -83,7 +217,10 @@
   text-align: center;
 }
 
-/* ─── Problem gallery — 2 visible + 6 behind Read more, full width below HMW ─── */
+/* ═══════════════════════════════════════════════════════════════════════
+   Problem — gallery, 2 visible rows + expandable overflow
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-problem-gallery {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -109,7 +246,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: var(--ux-radius);
 }
 
 .rkt-problem-gallery figcaption {
@@ -136,17 +273,21 @@
   margin-top: 8px;
 }
 
-/* ─── Findings grid ─── */
+/* ═══════════════════════════════════════════════════════════════════════
+   Research (Discover content) — findings grid
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-finding-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+  margin-top: 52px;
 }
 
-/* C1 base (border, radius, shadow) is in global.css. */
 .rkt-finding {
   padding: 24px;
-  border-color: color-mix(in srgb, var(--ux-accent) 24%, var(--theme-border-soft));
+  border: 1px solid color-mix(in srgb, var(--ux-secondary) 24%, var(--theme-border-soft));
+  border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
 
@@ -157,7 +298,7 @@
 .rkt-finding span {
   display: block;
   margin-bottom: 10px;
-  color: var(--ux-theme);
+  color: var(--ux-accent-ink);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.12em;
@@ -180,14 +321,49 @@
 .rkt-finding strong {
   display: block;
   margin: 14px 0 6px;
-  color: var(--ux-theme);
+  color: var(--ux-strong-ink);
   font-size: 0.72rem;
   font-weight: 850;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* ─── Define — design principles, four across ─── */
+/* [MODIFIED M23 R5] Implication row, paired underneath the Finding row so
+   Implication 01 sits directly below Finding 01, showing the pairing
+   without a combined card. Shares the .rkt-finding card look at a lighter
+   weight since it carries one line, not a full finding. */
+.rkt-finding-grid--implication {
+  margin-top: 14px;
+}
+
+.rkt-finding--implication {
+  padding: 16px 24px;
+  background: var(--ux-primary-pale);
+  border-color: color-mix(in srgb, var(--ux-secondary) 30%, var(--theme-border-soft));
+}
+
+.rkt-finding--implication span {
+  margin-bottom: 6px;
+}
+
+.rkt-finding--implication p {
+  color: var(--ux-dark, var(--theme-text));
+  font-weight: 600;
+}
+
+[data-theme=dark] .rkt-finding--implication {
+  background: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-surface));
+}
+
+[data-theme=dark] .rkt-finding {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Design (Define principles content) — 4-across image grid
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-scope-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -216,10 +392,44 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: var(--ux-radius);
 }
 
-/* ─── Develop — wireframe + lo-fi stacked vertically, width follows ux-copy ─── */
+/* [MODIFIED M23 Bug2 D1] The .rkt-journey__* matrix CSS (R7, native HTML
+   Stage × Before/During/After grid) is removed — the journey map is now
+   Cafe's uploaded journey.png image, using the shared .ux-evidence figure
+   styling, so no page-specific journey CSS is needed. */
+
+/* [MODIFIED M23 Bug2 D2, corrected Bug2-followup] Every Develop media
+   item (concept diagram, journey map, wireframe/lo-fi stack, Read more
+   button) sits inside a grid using the EXACT same column template as
+   .ux-section-head above it (minmax(200px,.36fr) minmax(0,.64fr)), placed
+   in column 2. This guarantees the media's left edge lines up with the
+   "The concept diagram anchors..." description text, which lives in that
+   same section-head's column 2. The previous max-width: 66% had no left
+   offset, so the block hugged the container's left edge instead —
+   that's why Cafe saw the media appear shifted left of the text above
+   it. The Read More button is centred within this same aligned column,
+   not the full container width. */
+.rkt-develop-media {
+  display: grid;
+  grid-template-columns: minmax(200px, .36fr) minmax(0, .64fr);
+}
+
+.rkt-develop-media > * {
+  grid-column: 2;
+}
+
+@media (max-width: 900px) {
+  .rkt-develop-media {
+    display: block;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Design (Develop's design half) — wireframe + lo-fi stack
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-develop-stack {
   display: flex;
   flex-direction: column;
@@ -245,7 +455,7 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: var(--ux-radius);
 }
 
 .rkt-develop-stack figcaption {
@@ -268,7 +478,10 @@
   margin-top: 24px;
 }
 
-/* ─── Design system stack ─── */
+/* ═══════════════════════════════════════════════════════════════════════
+   Design (Design System folded in) — alternating image/text stack
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .rkt-ds-stack {
   display: grid;
   gap: 56px;
@@ -306,32 +519,16 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: var(--ux-radius);
 }
 
-/* ─── Final Design — dark background, no internal divider lines ─── */
-.ux-case-page--rekraft section:has(#final-modules-title) {
-  background: var(--ux-dark);
-}
-
-.ux-case-page--rekraft section:has(#final-modules-title) .ux-kicker {
-  color: var(--ux-lime);
-}
-
-.ux-case-page--rekraft section:has(#final-modules-title) h2,
-.ux-case-page--rekraft section:has(#final-modules-title) h3 {
-  color: #ffffff;
-}
-
-.ux-case-page--rekraft section:has(#final-modules-title) p {
-  color: rgba(255, 255, 255, 0.78);
-}
-
-/* Remove the divider line between ux-feature rows on this page only */
-.ux-case-page--rekraft section:has(#final-modules-title) .ux-feature {
-  border-top: none;
-  padding-top: 0;
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   Delivery (Final Design) — dark tier-d, expandable modules.
+   [MODIFIED M2 2026-07-14] The legacy :has()-selector dark override is
+   retired; the section now uses the standard .ux-tier-d shared rules
+   from ux-case-study.css, same as every other case page's Delivery.
+   Only the expand-button styling (page-unique interaction) stays here.
+   ═══════════════════════════════════════════════════════════════════════ */
 
 .rkt-modules-expand {
   display: flex;
@@ -339,23 +536,35 @@
   margin-top: 32px;
 }
 
-.ux-case-page--rekraft section:has(#final-modules-title) .rkt-modules-expand .button--soft {
+.ux-case-page--rekraft .ux-tier-d .rkt-modules-expand .button--soft {
   background: transparent;
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.42);
 }
 
-.ux-case-page--rekraft section:has(#final-modules-title) .rkt-modules-expand .button--soft:hover {
+.ux-case-page--rekraft .ux-tier-d .rkt-modules-expand .button--soft:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.62);
 }
 
-/* ─── Feedback — shared ux-feedback-* from ux-case-study.css, 2-col override ─── */
+/* Remove the divider line between ux-feature rows on this page only */
+.ux-case-page--rekraft .ux-tier-d .ux-feature {
+  border-top: none;
+  padding-top: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Feedback — 2-quote override (shared grid defaults to 3)
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .ux-case-page--rekraft .ux-feedback-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-/* ─── Responsive ─── */
+/* ═══════════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════════ */
+
 @media (max-width: 1180px) {
   .rkt-problem-gallery,
   .rkt-problem-more {

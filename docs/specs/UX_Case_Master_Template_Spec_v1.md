@@ -107,6 +107,9 @@ Every page derives its full token set from the Section 2.2 pair the same way. Va
 | `--ux-emphasis` | Light: mid-deep trio of the primary hue carrying white text comfortably. Dark: soft 22/34/20% mixed into the deep primary |
 | `--ux-alert-ink` | Vivid brightened secondary for text/borders on emphasis surfaces. Must stay saturated (E20 rule: desaturated white-mixes are unreadable as 1px borders on dark) and reach ~4.5:1 on the emphasis background |
 | `--ux-accent-ink` / `--ux-strong-ink` | Per Section 10.4 (unchanged) |
+| `--ux-primary-dark` | `color-mix(in srgb, var(--ux-primary) 55%, black)` — the deep primary used as the dark-mode emphasis base. **[MODIFIED F6 2026-07-14]** Mandatory for every page; the dark `--ux-emphasis` mixes soft into THIS token, never into the raw primary (mid-tone primaries produce a too-bright emphasis, the M-1 dark-mode defect). |
+
+**Mandatory dark overrides (F6 rule, 2026-07-14):** the `[data-theme=dark]` page block must redefine all of `--ux-primary-pale` (`color-mix(in srgb, var(--ux-primary-soft) 46%, var(--theme-bg))`), `--ux-tone-s`, `--ux-tone-p`, and `--ux-emphasis`. A missing override silently renders the light value on dark (M-1 shipped this on tier L).
 
 **Clean-colour rule (E16 lesson):** never build light tones by color-mixing a desaturated primary into grey-whites — the result is muddy grey-violet. Light-tone stops are hand-picked with a whiter base and a clear hue. Dark tones may use color-mix because `--ux-primary-soft` is defined as a genuinely saturated mid-tone.
 
@@ -287,6 +290,14 @@ Four levels create a visual hierarchy from most rounded (tags) to least rounded 
 ### 6.1 Section Kicker
 
 All in-case section kickers (Background, Problem, Solution, Outcome, Feedback, Contribution, Process, Research, Design, Validation, Delivery, Reflection) use `var(--ux-secondary)` color, uppercase, letter-spacing 0.1em, font-size 13px, font-weight 700.
+
+**Kicker hierarchy sizing (F4 2026-07-14, corrected F22/F29/F30 2026-07-14):** two sizes exist, and only two.
+
+- **Chapter-level kickers** (Overview, Background, Problem, Solution, Outcome, Contribution, Process, Research, Design, Develop, Validation, Delivery, Reflection): **1.0625rem (~17px)**. Applies regardless of which container the kicker physically sits in — `.ux-chapter-head .ux-kicker`, `.ux-wide-head .ux-kicker`, and the container-independent `.ux-kicker.ux-kicker--chapter` modifier (added F30, for kickers in `.ux-intro` or other bare containers not wrapped in `.ux-chapter-head`) all resolve to this size.
+- **Sub-block kickers** (`.ux-section-head .ux-kicker`, e.g. Evaluative Workshop, Service Blueprint Workshop, Mixed Method Research, IA Categories): **0.72rem**.
+- **Exception, small regardless of position:** Related Projects and the HENEX Method Recipe kicker stay at the base 0.8125rem (13px) — confirmed by Cafe as intentionally small, not chapter-level (2026-07-14).
+
+**Build rule (graduated from F30):** do not assume a chapter kicker's container is `.ux-chapter-head`. Several pages have chapter kickers sitting in `.ux-intro`, bare `.ux-copy`, bare `.ux-problem__grid`, or plain `.container` — historical drift, not a documented exception. When building or auditing a page, check the actual container of every chapter kicker and apply `class="ux-kicker ux-kicker--chapter"` explicitly wherever `.ux-chapter-head`/`.ux-wide-head` isn't already the ancestor. Do not retrofit `.ux-chapter-head` onto a container that doesn't already have it — it carries `max-width: 66%` and `margin-bottom` that will change layout.
 
 **Exceptions, confirmed 2026-07-08:**
 
@@ -503,6 +514,23 @@ State-change colours on dark surfaces (hover borders, active indicators) must re
 
 ### 13.7 Source convention (audit-2 G3)
 Readable, pretty-printed source for any file touched from 2026-07-12 onward. No new minified single-line files.
+
+### 13.8 Per-page build self-audit checklist (NEW 2026-07-14, graduated M-1 F-series)
+
+Run after building or modifying any UX case page, before handing to Cafe. Every item failed here shipped as a real defect in the M-1 first build.
+
+1. **Dark token completeness.** The `[data-theme=dark]` page block redefines ALL of: `--ux-primary-pale` (soft 46% into theme-bg), `--ux-tone-s`, `--ux-tone-p`, `--ux-emphasis`. A missing one silently renders its light value on dark.
+2. **Emphasis depth.** Dark `--ux-emphasis` mixes into `--ux-primary-dark` (55% black derivation, Section 2.4), never into a raw mid-tone primary. Only near-black primaries (VTH) tolerate direct mixing.
+3. **Contrast pass, per tier, both modes.** Check headings, body, kickers, figcaptions on every tier — especially any heading class that also appears in a later shared rule (cascade ties: the E2/E21/F1 bug class). New shared rules must beat later same-file rules by specificity, not position.
+4. **Shared-class existence.** Every class referenced in the markup exists in a stylesheet that page actually loads. No vth2-* or other page-scoped classes (the E21 sweep includes classes borrowed from newer pages, not just legacy production classes).
+5. **Process gateway format.** `ux-card-grid--four` + `ux-nav-card` + `ti-arrow-down` in every h3; cards horizontal on desktop.
+6. **Recipe format.** Theme-coloured node tags placed directly under the primary recipe name (before the description), no `<small>` triad line, Secondary Recipe label present via `.ux-recipe-primary` + `.ux-secondary-recipe`.
+7. **Reflection naming.** Cards are exactly Value / Learned / Next, prose only, no bullet lists inside cards.
+8. **Kicker hierarchy.** Chapter kickers 1.0625rem (~17px), sub-block (`.ux-section-head`) kickers 0.72rem, Related Projects / HENEX Method Recipe kickers 0.8125rem (Section 6.1). For every chapter kicker on the page, confirm its actual parent container — do not assume `.ux-chapter-head`. If the container is `.ux-intro`, bare `.ux-copy`, bare `.ux-problem__grid`, bare `.ux-video-grid`, or plain `.container`, the kicker needs `class="ux-kicker ux-kicker--chapter"` explicitly, or it silently renders at the wrong size (F30).
+9. **Image placement by enlargement suitability.** Wide, detail-rich images may run full width (modal-linked). Small diagrams, sketches and tall screenshots must not upscale: use side-by-side layout or `.ux-desc-aligned` width.
+10. **No inline styles.** Zero `style=""` attributes; spacing via the shared utilities (`ux-subsection` 96 / `ux-content-gap` 56 / `ux-media-gap` 32).
+11. **Tier ladder re-verified** after any structural change (adjacency rule), and the page's M-spec table updated to match.
+12. **Shared-selector fix verified against every instance, not just the reported one.** When fixing a "should be consistent" bug via a shared CSS selector, grep every literal occurrence of the affected element across every affected page first, and note each one's actual parent container. Do not declare the fix complete until every instance in that inventory renders correctly — a selector that looks structurally correct can still miss instances sitting in a different container than assumed (F30).
 
 ---
 

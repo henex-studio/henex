@@ -472,7 +472,6 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .wst-finding-grid article,
 .wso-research-card,
 .vsk-finding-grid article,
-.vsk-social-feature,
 .vth-metrics article {
   /* [MODIFIED E19/C1] Border-colour custom-property contract. This base
      rule and the shared hover rule below are the ONLY two places that
@@ -520,7 +519,6 @@ body.nav-open .nav-toggle__line:nth-child(2) {
 .wst-finding-grid article:hover, .wst-finding-grid article:focus-within,
 .wso-research-card:hover, .wso-research-card:focus-within,
 .vsk-finding-grid article:hover, .vsk-finding-grid article:focus-within,
-.vsk-social-feature:hover, .vsk-social-feature:focus-within,
 .vth-metrics article:hover, .vth-metrics article:focus-within,
 .vth2-method-card:hover, .vth2-method-card:focus-within,
 .vth2-principle-card:hover, .vth2-principle-card:focus-within {

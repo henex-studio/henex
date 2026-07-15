@@ -13,7 +13,7 @@
   <link rel="icon" href="../assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
   <link rel="stylesheet" href="../assets/css/global.css">
   <link rel="stylesheet" href="../assets/css/ux-case-study.css">
-  <link href="../assets/css/vsk.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/css/vsk.css">
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/case-interactions.js" defer></script>
   <!-- Open Graph -->
@@ -31,7 +31,7 @@
     })(window, document, "clarity", "script", "xf0x448n7k");
 </script>
 </head>
-<body class="ux-case-page ux-case-page--voting-starter-kit ux-case-page--background-hero">
+<body class="ux-case-page ux-case-page--voting-starter-kit">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="site-header" data-site-header>
     <div class="container site-header__inner">
@@ -45,7 +45,8 @@
   </header>
 
   <main id="main-content">
-    <section class="ux-hero ux-hero--cover" aria-labelledby="case-title">
+    <!-- 1. Hero — frosted dual-bloom (Master Spec 7.1), replaces the old cover-image hero -->
+    <section class="ux-hero vsk-hero" aria-labelledby="case-title">
       <div class="container ux-hero__top">
         <div class="case-tag-row case-tag-row--overlay">
           <div class="case-tags case-tags--primary" aria-label="Project categories">
@@ -57,56 +58,462 @@
           </div>
         </div>
       </div>
-      <div class="container ux-hero__inner"><div class="ux-hero__copy"><h1 id="case-title">Voting Starter Kit</h1><p>A multi-channel starter kit that helps new immigrants understand why local elections matter, trust the information and take the next step.</p><div class="ux-actions"><a class="button button--primary" href="https://www.figma.com/proto/GAANfByh9mv7CrHK4KreJN/416_3_Cafe--Charles--Emma--Vicky--Copy-?page-id=1148%3A1451&amp;node-id=1148-1452&amp;viewport=241%2C207%2C0.3&amp;t=imNPlyBtc5HVtKrO-1&amp;scaling=min-zoom&amp;content-scaling=fixed&amp;starting-point-node-id=1148%3A1452" target="_blank" rel="noopener noreferrer">View Prototype</a><a class="button button--soft" href="../works.html">Back to Works</a></div></div></div>
+      <div class="container ux-hero__inner">
+        <div class="ux-hero__copy">
+          <h1 id="case-title">Voting Starter Kit</h1>
+          <p>A multi-channel starter kit that helps new immigrants understand why local elections matter, trust the information and take the next step.</p>
+          <div class="ux-actions"><a class="button button--primary" href="https://www.figma.com/proto/GAANfByh9mv7CrHK4KreJN/416_3_Cafe--Charles--Emma--Vicky--Copy-?page-id=1148%3A1451&node-id=1148-1452&viewport=241%2C207%2C0.3&t=imNPlyBtc5HVtKrO-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1148%3A1452" target="_blank" rel="noopener noreferrer">View Prototype</a><a class="button button--soft" href="../works.html">Back to Works</a></div>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="overview-title">
-      <div class="container ux-two-col"><aside class="ux-intro"><p>Overview</p><h2 id="overview-title">A starter kit for clearer civic participation.</h2></aside><div class="ux-copy"><p>This project responds to low participation in New Zealand local elections by designing a short, multi-channel starter kit for new immigrants. The kit combines social media swipe cards, a folded brochure and a voting information website. Each touchpoint has a different job: attract attention, explain the basics and guide people toward action.</p><p>The main design decision was to treat voting as a motivation problem before an information problem. If people cannot see why local elections affect daily life, people are unlikely to search for how to vote. I focused on turning civic information into a clearer story, then reducing the effort needed to continue.</p><div class="ux-meta" aria-label="Project facts"><div><span>Client</span><strong>MUXD</strong></div><div><span>Role</span><strong>Research and Analysis, UX/UI Design, Usability Testing</strong></div><div><span>Team</span><strong>4 UX Designers</strong></div><div><span>Timeline</span><strong>6 Weeks</strong></div><div><span>Tools</span><strong>Figma, Miro</strong></div><div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r19">R19 · Quick Motivation Prompts</a><small>Agency × Affect × Medium</small></div></div><div class="ux-skills"><span>Skills</span><div><em>Mixed methods research</em><em>Information architecture</em><em>UI design</em><em>Illustration</em><em>Storytelling</em><em>Workshop</em><em>Usability testing</em></div></div></div></div>
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
+          <h2 id="overview-title">A starter kit for clearer civic participation.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p>This project responds to low participation in New Zealand local elections by designing a short, multi-channel starter kit for new immigrants. The kit combines social media swipe cards, a folded brochure and a voting information website. Each touchpoint has a different job: attract attention, explain the basics and guide people toward action.</p>
+          <p>The main design decision was to treat voting as a motivation problem before an information problem. If people cannot see why local elections affect daily life, people are unlikely to search for how to vote. I focused on turning civic information into a clearer story, then reducing the effort needed to continue.</p>
+          <div class="ux-meta" aria-label="Project facts">
+            <div><span>Client</span><strong>MUXD</strong></div>
+            <div><span>Role</span><strong>Research and Analysis, UX/UI Design, Usability Testing</strong></div>
+            <div><span>Team</span><strong>4 UX Designers</strong></div>
+            <div><span>Timeline</span><strong>6 Weeks</strong></div>
+            <div><span>Tools</span><strong>Figma, Miro</strong></div>
+            <div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r19">R19 · Quick Motivation Prompts</a><small>Agency × Affect × Medium</small></div>
+          </div>
+          <div class="ux-skills"><span>Skills</span><div><em>Mixed methods research</em><em>Information architecture</em><em>UI design</em><em>Illustration</em><em>Storytelling</em><em>Workshop</em><em>Usability testing</em></div></div>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section ux-problem" aria-labelledby="problem-title">
-      <div class="container ux-problem__grid vsk-problem-grid"><div><p class="ux-kicker">Problem</p><h2 id="problem-title"><strong>How might we</strong> help new immigrants break the cycle of <em>“don’t know, don’t care, don’t vote”</em> by making local election information clearer, more engaging and easier to share?</h2><p class="ux-problem-note">Local government affects transport, housing, public spaces, libraries and community services. The issue was not that information did not exist. The issue was that information felt scattered, abstract and easy to ignore. Participation data showed a much sharper gap for recent migrants, so the project moved from a general turnout problem to a focused communication challenge.</p></div><figure class="vsk-problem-chart"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/problem-table.png" data-modal-title="Voting participation data" data-modal-caption="Voting participation comparison by election type and migrant status, used to frame the target group."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/problem-table.png" alt="Voting participation comparison by election type and migrant status." loading="lazy"></button><figcaption>The data helped narrow the audience and made the project less generic.</figcaption></figure></div>
+    <!-- 3. Problem — no Background slot on this page (mapping §4) -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container ux-problem__grid vsk-problem-grid">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">Problem</p>
+          <h2 id="problem-title"><strong>How might we</strong> help new immigrants break the cycle of <em>"don't know, don't care, don't vote"</em> by making local election information clearer, more engaging and easier to share?</h2>
+        </div>
+        <!-- [MODIFIED M23 V2] Description paragraph removed (redundant with
+             the H2), and the image no longer has an enlarge control or
+             frame — plain figure, matching Cafe's request. -->
+        <figure class="vsk-problem-chart vsk-problem-chart--plain">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/problem-table.png" alt="Voting participation comparison by election type and migrant status." loading="lazy">
+          <figcaption>The data helped narrow the audience and made the project less generic.</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="ux-solution" aria-labelledby="solution-title">
-      <div class="container ux-solution__grid"><div><p class="ux-kicker">Solution Strategy</p><h2 id="solution-title">Motivate first, then lower effort across three touchpoints.</h2><p>The final strategy used a short, mid and long-term path. Social cards and a brochure support election-season outreach. The website gives people a central place to continue. A future settlement support portal was noted as a longer-term opportunity, but kept outside the final delivery scope.</p></div><div class="ux-touchpoint-grid" aria-label="Voting Starter Kit touchpoints"><article class="ux-touchpoint-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/swipe-card.png" alt="Social media swipe card concept for the Voting Starter Kit." loading="lazy"><span>Voting Season</span><h3>Social media swipe cards</h3><p>Hook attention with short stories and direct calls to action.</p></article><article class="ux-touchpoint-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/folder-brochure.png" alt="Folded brochure concept for the Voting Starter Kit." loading="lazy"><span>Start Point</span><h3>Folded brochure</h3><p>Support family reading, community settings and offline sharing.</p></article><article class="ux-touchpoint-card"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/website.png" alt="Website concept for the Voting Starter Kit." loading="lazy"><span>Longer Support</span><h3>Voting information website</h3><p>Centralise voting basics, process steps, support and official links.</p></article></div></div>
+    <!-- 4. Solution — [MODIFIED M23 V3] Removed the ux-solution class. Root
+         cause: this section carried both ux-tier-s (light background) and
+         ux-solution (forces white text), so white text rendered on a light
+         background, unreadable. NDS and RKT's Solution sections carry only
+         ux-tier-s and render correctly; this now matches. -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
+      <div class="container ux-solution__grid">
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
+          <h2 id="solution-title">Motivate first, then lower effort across three touchpoints.</h2>
+          <p>The final strategy used a short, mid and long-term path. Social cards and a brochure support election-season outreach. The website gives people a central place to continue. A future settlement support portal was noted as a longer-term opportunity, but kept outside the final delivery scope.</p>
+        </div>
+        <div class="ux-touchpoint-grid" aria-label="Voting Starter Kit touchpoints">
+          <article class="ux-touchpoint-card">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/swipe-card.png" alt="Social media swipe card concept for the Voting Starter Kit." loading="lazy">
+            <span>Voting Season</span>
+            <h3>Social media swipe cards</h3>
+            <p>Hook attention with short stories and direct calls to action.</p>
+          </article>
+          <article class="ux-touchpoint-card">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/folder-brochure.png" alt="Folded brochure concept for the Voting Starter Kit." loading="lazy">
+            <span>Start Point</span>
+            <h3>Folded brochure</h3>
+            <p>Support family reading, community settings and offline sharing.</p>
+          </article>
+          <article class="ux-touchpoint-card">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/website.png" alt="Website concept for the Voting Starter Kit." loading="lazy">
+            <span>Longer Support</span>
+            <h3>Voting information website</h3>
+            <p>Centralise voting basics, process steps, support and official links.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="outcome-title">
-      <div class="container"><div class="ux-wide-head"><p class="ux-kicker">Outcome</p><h2 id="outcome-title">High-fidelity deliverables ready for outreach testing.</h2><p>The final outcome was a multi-channel starter kit with refined principles, social cards, a folded brochure, responsive website screens and a future evaluation plan. I would not describe it as public impact yet. The next evidence should come from comprehension testing, engagement tracking and follow-up interviews.</p></div><figure class="ux-evidence"><video class="ux-video ux-video--outcome" controls preload="metadata" playsinline poster="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/outcome.png"><source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/vsk.mp4" type="video/mp4">Your browser does not support the video tag.</video><figcaption>The final kit connects attention, explanation and action across physical and digital touchpoints.</figcaption></figure></div>
+    <!-- 5. Outcome -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
+          <h2 id="outcome-title">High-fidelity deliverables ready for outreach testing.</h2>
+          <p>The final outcome was a multi-channel starter kit with refined principles, social cards, a folded brochure, responsive website screens and a future evaluation plan. I would not describe it as public impact yet. The next evidence should come from comprehension testing, engagement tracking and follow-up interviews.</p>
+        </div>
+        <figure class="ux-evidence">
+          <video class="ux-video ux-video--outcome" controls preload="metadata" playsinline poster="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/outcome.png">
+            <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/vsk.mp4" type="video/mp4">Your browser does not support the video tag.
+          </video>
+          <figcaption>The final kit connects attention, explanation and action across physical and digital touchpoints.</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="feedback-title">
-      <div class="container"><div class="ux-wide-head"><p class="ux-kicker">Course Feedback</p><h2 id="feedback-title">Feedback highlighted structure, testing and inclusive communication.</h2><p>The course feedback supported the main value of the project: a clear research-led structure, a tested multi-channel direction and visual communication that made local voting easier to discuss.</p></div><div class="ux-feedback-grid" aria-label="Course feedback"><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“Final design outcomes are rigorous and reflect a solid research and design process. The three media work together across the journey.”</p></blockquote><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“Accessibility considerations and implementation plans show care for diverse users.”</p></blockquote><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“Social card illustrations and colours are well chosen. The card narrative uses visual storytelling effectively.”</p></blockquote></div></div>
+    <!-- 6. Feedback -->
+    <section class="ux-section ux-tier-l" aria-labelledby="feedback-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Feedback</p>
+          <h2 id="feedback-title">Feedback highlighted structure, testing and inclusive communication.</h2>
+          <p>The course feedback supported the main value of the project: a clear research-led structure, a tested multi-channel direction and visual communication that made local voting easier to discuss.</p>
+        </div>
+        <div class="ux-feedback-grid" aria-label="Course feedback">
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"Final design outcomes are rigorous and reflect a solid research and design process. The three media work together across the journey."</p></blockquote>
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"Accessibility considerations and implementation plans show care for diverse users."</p></blockquote>
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"Social card illustrations and colours are well chosen. The card narrative uses visual storytelling effectively."</p></blockquote>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="process-title">
-      <div class="container ux-two-col"><aside class="ux-intro"><p>Design Process</p><h2 id="process-title">From civic evidence to tested communication.</h2></aside><div class="ux-copy"><p>The following process explains how the team moved from civic participation evidence to a tested multi-channel starter kit. The work did not move in a perfect line, but each phase sharpened the relationship between motivation, trust and action.</p><div class="ux-process"><div><span>Discover</span><p>Narrow the problem, audience and addressable design scope.</p></div><div><span>Define</span><p>Turn research findings into communication principles.</p></div><div><span>Develop</span><p>Explore narrative styles and test trust cues.</p></div><div><span>Deliver</span><p>Refine final touchpoints and future validation paths.</p></div></div></div></div>
+    <!-- 7. Contribution — NEW, two-hats pattern from ASH (mapping §4, sourced from vsk.pdf) -->
+    <section class="ux-section ux-tier-s" id="contribution" aria-labelledby="contribution-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Contribution</p>
+          <h2 id="contribution-title">Wearing two hats across the project lifecycle.</h2>
+          <p>In this project, I wore two hats: Research and Analysis Lead, and UX/UI Designer.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--two">
+          <article class="ux-card">
+            <span>Research and Analysis Lead</span>
+            <h3>Framing the problem with data</h3>
+            <p>I led the mixed-methods research planning, gathered and analysed participation data, and used it to frame the problem and narrow the target audience.</p>
+          </article>
+          <article class="ux-card">
+            <span>UX/UI Designer</span>
+            <h3>From strategy to tested prototypes</h3>
+            <p>I helped shape the test-backed content strategy, contributed to the visual and information design across all three touchpoints, and ran usability testing on the narrative styles.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="scope-title">
-      <div class="container"><div class="ux-wide-head"><p class="ux-kicker">Scope and Findings</p><h2 id="scope-title">Education was the most addressable lever.</h2><p>Early workshop mapping grouped barriers into outreach, understanding and action. Some barriers were system-level, such as voting logistics and access to candidate information. Those problems mattered, but they were too large for a six-week student project, so the project focused on education as the most practical lever.</p></div><div class="vsk-finding-grid"><article><span>Context finding</span><h3>Local elections affect daily services.</h3><p>Transport, housing, public spaces and libraries made the topic meaningful, but this link was not always visible.</p><strong>Implication</strong><p>Start from daily life before asking people to care about voting procedures.</p></article><article><span>Audience finding</span><h3>Recent migrants showed lower participation.</h3><p>The data helped narrow the audience from everyone who does not vote to new immigrants and young families.</p><strong>Implication</strong><p>Design for confidence, relevance and first-step learning, not only for general awareness.</p></article><article><span>Communication finding</span><h3>Information exists, but does not become action.</h3><p>Users may notice election information, yet still avoid the next step when eligibility, value and process are unclear.</p><strong>Implication</strong><p>Use a motivation-first journey before sending people into detailed information.</p></article></div></div>
+    <!-- 8. Process — chapter-2 gateway with 4 nav cards -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
+          <h2 id="process-title">From civic evidence to tested communication.</h2>
+          <p>The following process explains how the team moved from civic participation evidence to a tested multi-channel starter kit. The work did not move in a perfect line, but each phase sharpened the relationship between motivation, trust and action.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Scope and findings, research synthesis and principles.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Visual system: colour, typography, icons, illustration.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Narrative style testing across three concept directions.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Final social cards, brochure and website screens.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="principles-title">
-      <div class="container"><div class="ux-wide-head"><p class="ux-kicker">Research Synthesis and Principles</p><h2 id="principles-title">Research became four communication rules.</h2><p>Interviews and research showed that interest was present, but the path from curiosity to action was weak. The principles worked as filters for deciding what to simplify, what to keep and which medium should carry each message.</p></div><div class="ux-principle-grid"><article class="ux-card ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="7" height="5" rx="1.3"></rect><rect x="13" y="5" width="7" height="5" rx="1.3"></rect><rect x="7" y="14" width="10" height="5" rx="1.3"></rect><path d="M11 7.5h2M12 10v4"></path></svg></i><h3>Fit the medium</h3><p>Social content needed to be fast, visual and sequenced for scrolling behaviour, not written like a brochure.</p></article><article class="ux-card ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 12s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"></path><circle cx="12" cy="12" r="2"></circle><path d="M5 19h14"></path></svg></i><h3>Use plain visual language</h3><p>Short text, icons and everyday examples helped reduce language and cognitive load.</p></article><article class="ux-card ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4l7 3v5c0 4.2-2.8 6.9-7 8-4.2-1.1-7-3.8-7-8V7l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg></i><h3>Build trust through evidence</h3><p>Official links, clear data and neutral tone helped avoid the feeling of advertising.</p></article><article class="ux-card ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 3l7 4v10l-7 4-7-4V7l7-4z"></path><path d="M5 7l7 4 7-4M12 11v10"></path></svg></i><h3>Make policies tangible</h3><p>Local policy was connected to daily life so voting felt less abstract.</p></article></div></div>
+    <!-- 9. Research — Scope and Findings + Research Synthesis and Principles folded in -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
+          <h2 id="research-title">Education was the most addressable lever.</h2>
+          <p>Early workshop mapping grouped barriers into outreach, understanding and action. Some barriers were system-level, such as voting logistics and access to candidate information. Those problems mattered, but they were too large for a six-week student project, so the project focused on education as the most practical lever.</p>
+        </div>
+        <!-- [MODIFIED M23 V5] Finding and Implication split into two
+             aligned card rows, same pattern as RKT R5. -->
+        <div class="vsk-finding-grid">
+          <article>
+            <span>Context finding</span>
+            <h3>Local elections affect daily services.</h3>
+            <p>Transport, housing, public spaces and libraries made the topic meaningful, but this link was not always visible.</p>
+          </article>
+          <article>
+            <span>Audience finding</span>
+            <h3>Recent migrants showed lower participation.</h3>
+            <p>The data helped narrow the audience from everyone who does not vote to new immigrants and young families.</p>
+          </article>
+          <article>
+            <span>Communication finding</span>
+            <h3>Information exists, but does not become action.</h3>
+            <p>Users may notice election information, yet still avoid the next step when eligibility, value and process are unclear.</p>
+          </article>
+        </div>
+        <div class="vsk-finding-grid vsk-finding-grid--implication">
+          <article class="vsk-finding--implication">
+            <span>Implication</span>
+            <p>Start from daily life before asking people to care about voting procedures.</p>
+          </article>
+          <article class="vsk-finding--implication">
+            <span>Implication</span>
+            <p>Design for confidence, relevance and first-step learning, not only for general awareness.</p>
+          </article>
+          <article class="vsk-finding--implication">
+            <span>Implication</span>
+            <p>Use a motivation-first journey before sending people into detailed information.</p>
+          </article>
+        </div>
+
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Research Synthesis and Principles</p>
+            <h3>Research became four communication rules.</h3>
+          </div>
+          <p>Interviews and research showed that interest was present, but the path from curiosity to action was weak. The principles worked as filters for deciding what to simplify, what to keep and which medium should carry each message.</p>
+        </div>
+        <div class="ux-principle-grid">
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-devices"></i></span><h3>Fit the medium</h3><p>Social content needed to be fast, visual and sequenced for scrolling behaviour, not written like a brochure.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-photo"></i></span><h3>Use plain visual language</h3><p>Short text, icons and everyday examples helped reduce language and cognitive load.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-shield-check"></i></span><h3>Build trust through evidence</h3><p>Official links, clear data and neutral tone helped avoid the feeling of advertising.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-box"></i></span><h3>Make policies tangible</h3><p>Local policy was connected to daily life so voting felt less abstract.</p></article>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="concept-title">
-      <div class="container"><div class="ux-wide-head"><p class="ux-kicker">Concept Exploration and Testing</p><h2 id="concept-title">Testing narrative styles clarified the tone.</h2><p>The team tested three narrative directions. The goal was not to pick a visual style only, but to understand what balance of warmth, credibility and action support would work best.</p></div><div class="vsk-concept-stack"><article><div><span>Comic style</span><h3>Approachable, but too light.</h3><p>The comic style made the topic friendly and quick to enter. Testing showed that it needed stronger evidence to avoid making civic information feel too casual.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/comic-style.png" alt="Comic style prototype for explaining local voting." loading="lazy"></figure></article><article><div><span>News style</span><h3>Credible, but distant.</h3><p>The news style made the information feel reliable. It was less effective at creating emotional relevance for users who were not already interested.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/news-style.png" alt="News style prototype for explaining local voting." loading="lazy"></figure></article><article><div><span>Neighbour style</span><h3>Relatable, but needed clearer proof.</h3><p>The neighbour style connected voting with everyday conversation. The final direction kept this human tone, then added data and direct calls to action.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/neighbour-style.png" alt="Neighbour style prototype for explaining local voting." loading="lazy"></figure></article></div><div class="ux-influence vsk-develop-influence"><strong>Influence</strong><p>The final tone combined short visual storytelling, credible data and a clear CTA. Social cards were broken into smaller chapters, and a QR pathway was added to move users toward the website.</p></div></div>
+    <!-- 10. Design — Visual System, moved before Delivery (fixes the reversed order flagged in the mapping table) -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="visual-system-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
+          <h2 id="visual-system-title">A visual system built around clarity, trust and action.</h2>
+          <p>The visual system uses the original orange as the main action colour and blue as the secondary support colour. Orange carries urgency and visibility. Blue supports website and information cues where the page needs a calmer system tone.</p>
+        </div>
+        <div class="ux-swatch-grid" aria-label="Voting Starter Kit colour palette">
+          <div class="ux-swatch ux-swatch--orange"><b>Primary Orange</b><strong>#FF6000</strong></div>
+          <div class="ux-swatch ux-swatch--orange-light"><b>Orange Light</b><strong>#FFD0AA</strong></div>
+          <div class="ux-swatch ux-swatch--orange-pale"><b>Orange Pale</b><strong>#FEF0E4</strong></div>
+          <div class="ux-swatch ux-swatch--blue-soft"><b>Soft Blue</b><strong>#B6D3E7</strong></div>
+          <div class="ux-swatch ux-swatch--blue"><b>Secondary Blue</b><strong>#207DC6</strong></div>
+          <div class="ux-swatch ux-swatch--navy"><b>Navy</b><strong>#242947</strong></div>
+        </div>
+        <!-- [MODIFIED M23 Bug2 A3/C2] Sub-blocks unified to the VTH v2
+             vth2-ds-feature__text pattern (short h3 + one description, no
+             kicker), matching RKT's rkt-ds-stack. Each block previously had
+             a kicker plus a long h3 plus a paragraph, which read as two
+             stacked titles. -->
+        <div class="vsk-ds-stack">
+          <article>
+            <div>
+              <h3>Typography</h3>
+              <p>The type system supports short headlines, compact captions and clear reading order across social cards, brochure and website screens.</p>
+            </div>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/typography.png" alt="Typography system for the Voting Starter Kit." loading="lazy">
+            </figure>
+          </article>
+          <article>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/icon.png" alt="Icon system for the Voting Starter Kit." loading="lazy">
+            </figure>
+            <div>
+              <h3>Icon System</h3>
+              <p>Simple icons translate repeated actions and information categories into quick visual cues, reducing reading load across the kit.</p>
+            </div>
+          </article>
+          <article>
+            <div>
+              <h3>Illustration and Accessibility</h3>
+              <p>Social illustrations use solid blocks for stronger recognition, while other materials use lighter line support. Accessibility checks kept contrast and hierarchy legible.</p>
+            </div>
+            <figure class="vsk-ds-gallery">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/illustration-social.png" alt="Illustration style for social media cards." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/illustration-other.png" alt="Illustration style for other Voting Starter Kit materials." loading="lazy">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/accessibility.png" alt="Accessibility and contrast notes for the Voting Starter Kit visual system." loading="lazy">
+            </figure>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="final-title">
-      <div class="container ux-wide-head"><p class="ux-kicker">Final Design Decisions</p><h2 id="final-title">A starter kit that connects attention, explanation and action.</h2><p>Each final touchpoint carries a different part of the journey. The cards create the first spark. The brochure supports family and community learning. The website reduces effort when users are ready to check details.</p></div><div class="container"><article class="vsk-social-feature"><div><p class="ux-kicker">Social Media Swipe Cards</p><h3>A suspenseful story, unfolding one swipe at a time.</h3><p>The card sequence uses a familiar public facility as an everyday anchor, then reveals how local decisions connect to lived experience. The final card uses a QR code to move users from attention to action.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/social-card-6.png" alt="High-fidelity social media card sequence for the Voting Starter Kit." loading="lazy"><figcaption>Each card anchors an abstract policy to lived experience. Cards 3 and 4 include credible data to boost trust. Card 6 carries a QR code driving traffic to the voting information website.</figcaption></figure></article><div class="ux-feature-list"><article class="ux-feature ux-feature--reverse"><div><p class="ux-kicker">Folded Brochure</p><h3>A printed guide for why and how to vote.</h3><p>The brochure gives the kit a physical support point for households, public offices and community settings. It keeps the tone educational and uses plain language for quick scanning.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/brochure1.png" alt="Folded brochure design for the Voting Starter Kit." loading="lazy"><figcaption>The brochure supports offline and family learning contexts.</figcaption></figure></article><article class="ux-feature"><div><p class="ux-kicker">Responsive Website</p><h3>A central place for voting basics and support.</h3><p>The website uses a shallow IA around About Voting, How to Vote and Support. This structure avoids internal government logic and matches what users need to understand, decide and act.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/mobile.png" alt="Responsive mobile website screens for the Voting Starter Kit." loading="lazy"><figcaption>The responsive website lowers effort by centralising key information.</figcaption></figure></article></div></div>
+    <!-- 11. Validation — Concept Exploration and Testing, relabelled (mapping §4) -->
+    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="concept-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Validation</p>
+          <h2 id="concept-title">Testing narrative styles clarified the tone.</h2>
+          <p>The team tested three narrative directions. The goal was not to pick a visual style only, but to understand what balance of warmth, credibility and action support would work best.</p>
+        </div>
+        <!-- [MODIFIED M23 V7] Neighbour style stays visible (the final
+             chosen direction); Comic and News move behind Read more. -->
+        <div class="vsk-concept-stack">
+          <article>
+            <div>
+              <span>Neighbour style</span>
+              <h3>Relatable, but needed clearer proof.</h3>
+              <p>The neighbour style connected voting with everyday conversation. The final direction kept this human tone, then added data and direct calls to action.</p>
+            </div>
+            <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/neighbour-style.png" alt="Neighbour style prototype for explaining local voting." loading="lazy"></figure>
+          </article>
+        </div>
+        <div class="vsk-concept-more" id="vsk-concept-more" hidden>
+          <div class="vsk-concept-stack">
+            <article>
+              <div>
+                <span>Comic style</span>
+                <h3>Approachable, but too light.</h3>
+                <p>The comic style made the topic friendly and quick to enter. Testing showed that it needed stronger evidence to avoid making civic information feel too casual.</p>
+              </div>
+              <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/comic-style.png" alt="Comic style prototype for explaining local voting." loading="lazy"></figure>
+            </article>
+            <article>
+              <div>
+                <span>News style</span>
+                <h3>Credible, but distant.</h3>
+                <p>The news style made the information feel reliable. It was less effective at creating emotional relevance for users who were not already interested.</p>
+              </div>
+              <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/news-style.png" alt="News style prototype for explaining local voting." loading="lazy"></figure>
+            </article>
+          </div>
+        </div>
+        <div class="vsk-concept-expand">
+          <button type="button" class="button button--soft" id="vsk-concept-btn" data-expand-trigger aria-expanded="false" aria-controls="vsk-concept-more">Read more</button>
+        </div>
+
+        <!-- [MODIFIED M23 V7] Influence spans full width now, not
+             constrained to the 3-column card grid width. -->
+        <div class="ux-influence vsk-develop-influence vsk-influence--full">
+          <strong>Influence</strong>
+          <p>The final tone combined short visual storytelling, credible data and a clear CTA. Social cards were broken into smaller chapters, and a QR pathway was added to move users toward the website.</p>
+        </div>
+      </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="visual-system-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Visual System</p><h2 id="visual-system-title">A visual system built around clarity, trust and action.</h2><p>The visual system uses the original orange as the main action colour and blue as the secondary support colour. Orange carries urgency and visibility. Blue supports website and information cues where the page needs a calmer system tone.</p></div><div class="ux-swatch-grid" aria-label="Voting Starter Kit colour palette"><div class="ux-swatch ux-swatch--orange"><b>Primary Orange</b><strong>#FF6000</strong></div><div class="ux-swatch ux-swatch--orange-light"><b>Orange Light</b><strong>#FFD0AA</strong></div><div class="ux-swatch ux-swatch--orange-pale"><b>Orange Pale</b><strong>#FEF0E4</strong></div><div class="ux-swatch ux-swatch--blue-soft"><b>Soft Blue</b><strong>#B6D3E7</strong></div><div class="ux-swatch ux-swatch--blue"><b>Secondary Blue</b><strong>#207DC6</strong></div><div class="ux-swatch ux-swatch--navy"><b>Navy</b><strong>#242947</strong></div></div><div class="vsk-ds-stack"><article><div><p class="ux-kicker">Typography</p><h3>Readable hierarchy for fast civic information.</h3><p>The type system supports short headlines, compact captions and clear reading order across social cards, brochure and website screens.</p></div><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/typography.png" alt="Typography system for the Voting Starter Kit." loading="lazy"></figure></article><article><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/icon.png" alt="Icon system for the Voting Starter Kit." loading="lazy"></figure><div><p class="ux-kicker">Icon System</p><h3>Simple icons for repeatable voting guidance.</h3><p>The icons translate repeated actions and information categories into quick visual cues, reducing reading load across the kit.</p></div></article><article><div><p class="ux-kicker">Illustration and Accessibility</p><h3>Visual warmth with checked readability.</h3><p>Social illustrations use solid blocks for stronger recognition, while other materials use lighter line support. Accessibility checks kept contrast and hierarchy legible.</p></div><figure class="vsk-ds-gallery"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/illustration-social.png" alt="Illustration style for social media cards." loading="lazy"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/illustration-other.png" alt="Illustration style for other Voting Starter Kit materials." loading="lazy"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/accessibility.png" alt="Accessibility and contrast notes for the Voting Starter Kit visual system." loading="lazy"></figure></article></div></div></section>
+    <!-- 12. Delivery — Final Design Decisions -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="final-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Delivery</p>
+          <h2 id="final-title">A starter kit that connects attention, explanation and action.</h2>
+          <p>Each final touchpoint carries a different part of the journey. The cards create the first spark. The brochure supports family and community learning. The website reduces effort when users are ready to check details.</p>
+        </div>
+        <article class="vsk-social-feature">
+          <div>
+            <p class="ux-kicker">Social Media Swipe Cards</p>
+            <h3>A suspenseful story, unfolding one swipe at a time.</h3>
+            <p>The card sequence uses a familiar public facility as an everyday anchor, then reveals how local decisions connect to lived experience. The final card uses a QR code to move users from attention to action.</p>
+          </div>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/social-card-6.png" alt="High-fidelity social media card sequence for the Voting Starter Kit." loading="lazy">
+            <figcaption>Each card anchors an abstract policy to lived experience. Cards 3 and 4 include credible data to boost trust. Card 6 carries a QR code driving traffic to the voting information website.</figcaption>
+          </figure>
+        </article>
 
-    <section class="ux-retro" aria-labelledby="retro-title"><div class="container"><p class="ux-kicker">Retrospective</p><h2 id="retro-title">What I would carry forward.</h2><div class="ux-card-grid ux-card-grid--three ux-retro__grid"><article class="ux-card"><h3>Value</h3><p>The project connected civic information, visual storytelling and service access into one practical starter kit.</p></article><article class="ux-card"><h3>Limitation</h3><p>The research sample was narrow, and cultural variation needs deeper testing before real public rollout.</p></article><article class="ux-card"><h3>Next</h3><p>The next step would be wider cultural testing, A/B testing, tree testing and post-launch engagement review.</p></article></div></div></section>
+        <!-- [MODIFIED M23 V8] Everything below Social Media Swipe Cards
+             moved behind Read more, per Cafe's instruction. -->
+        <div id="vsk-delivery-more" hidden>
+          <div class="ux-feature-list">
+            <article class="ux-feature ux-feature--reverse">
+              <div>
+                <p class="ux-kicker">Folded Brochure</p>
+                <h3>A printed guide for why and how to vote.</h3>
+                <p>The brochure gives the kit a physical support point for households, public offices and community settings. It keeps the tone educational and uses plain language for quick scanning.</p>
+              </div>
+              <figure>
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/brochure1.png" alt="Folded brochure design for the Voting Starter Kit." loading="lazy">
+                <figcaption>The brochure supports offline and family learning contexts.</figcaption>
+              </figure>
+            </article>
+            <article class="ux-feature">
+              <div>
+                <p class="ux-kicker">Responsive Website</p>
+                <h3>A central place for voting basics and support.</h3>
+                <p>The website uses a shallow IA around About Voting, How to Vote and Support. This structure avoids internal government logic and matches what users need to understand, decide and act.</p>
+              </div>
+              <figure>
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vsk/mobile.png" alt="Responsive mobile website screens for the Voting Starter Kit." loading="lazy">
+                <figcaption>The responsive website lowers effort by centralising key information.</figcaption>
+              </figure>
+            </article>
+          </div>
+        </div>
+        <div class="vsk-delivery-expand">
+          <button type="button" class="button button--soft" id="vsk-delivery-btn" data-expand-trigger aria-expanded="false" aria-controls="vsk-delivery-more">Read more</button>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section" aria-labelledby="recipe-title"><div class="container ux-two-col"><aside class="ux-intro"><p>HENEX Method Recipe</p><h2 id="recipe-title">R19 explains how the project turns timely prompts into civic action.</h2></aside><div class="ux-copy"><p class="ux-recipe-primary"><span>Primary recipe</span><a href="../philosophy.html#r19">R19 · Quick Motivation Prompts</a><small>Agency × Affect × Medium</small></p><p>This project uses R19 because the core challenge was not only to explain voting information. The work needed to trigger attention, build motivation and help people take a small next step through the right communication medium.</p><div class="ux-recipe-tags"><span>Agency</span><span>Affect</span><span>Medium</span></div><div class="ux-recipe-popovers"><button type="button" class="ux-recipe-trigger" data-recipe-title="R21 · Small Step Actions" data-recipe-body="Break complex action into manageable interface steps." data-recipe-link="../philosophy.html#r21">R21</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R16 · Why First Data Story" data-recipe-body="Lead with meaning before showing supporting data." data-recipe-link="../philosophy.html#r16">R16</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R25 · Impact Story Chain" data-recipe-body="Connect personal action to wider purpose and long-term value." data-recipe-link="../philosophy.html#r25">R25</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R06 · Inclusive Onboarding Paths" data-recipe-body="Reduce exclusion in entry, forms and guidance flows." data-recipe-link="../philosophy.html#r06">R06</button></div></div></div></section>
+    <!-- 13. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
+      <div class="container">
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
+        <h2 id="retro-title">Looking back, looking forward.</h2>
+        <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
+          <article class="ux-card">
+            <h3>Value</h3>
+            <p>The project connected civic information, visual storytelling and service access into one practical starter kit.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Learned</h3>
+            <p>The research sample was narrow, and cultural variation needs deeper testing before real public rollout.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Next</h3>
+            <p>The next step would be wider cultural testing, A/B testing, tree testing and post-launch engagement review.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-related" aria-labelledby="related-title"><div class="container"><p class="ux-kicker">Related Projects</p><h2 id="related-title">More work across service, digital and spatial systems.</h2><div class="ux-related__grid"><a class="ux-related-card" href="accessibility-support-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support pathway case focused on clearer access to court assistance.</small></a><a class="ux-related-card" href="new-world-design-system.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds-home.webp" alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New World Design System</strong><small>A design system case focused on reusable UI structure.</small></a><a class="ux-related-card" href="victim-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-home.webp" alt="Victim Hub project preview." loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service improvement case.</small></a><a class="ux-related-card" href="whos-singing-outuiside.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/wso-home.webp" alt="Who’s Singing OuTūīside project preview." loading="lazy"><span>Digital Systems</span><strong>Who’s Singing OuTūīside?</strong><small>A public communication case using data, ecology and visual storytelling.</small></a></div><div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div></div></section>
+    <!-- 14. HENEX Method Recipe -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>HENEX Method Recipe</p>
+          <h2 id="recipe-title">R19 explains how the project turns timely prompts into civic action.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p class="ux-recipe-primary">
+            <span>Primary recipe</span>
+            <a href="../philosophy.html#r19">R19 · Quick Motivation Prompts</a>
+          </p>
+          <div class="ux-recipe-tags">
+            <span>Agency</span>
+            <span>Affect</span>
+            <span>Medium</span>
+          </div>
+          <p>This project uses R19 because the core challenge was not only to explain voting information. The work needed to trigger attention, build motivation and help people take a small next step through the right communication medium.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
+            <span>Secondary recipe</span>
+          </p>
+          <div class="ux-recipe-popovers">
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R21 · Small Step Actions" data-recipe-body="Break complex action into manageable interface steps." data-recipe-link="../philosophy.html#r21">R21</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R16 · Why First Data Story" data-recipe-body="Lead with meaning before showing supporting data." data-recipe-link="../philosophy.html#r16">R16</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R25 · Impact Story Chain" data-recipe-body="Connect personal action to wider purpose and long-term value." data-recipe-link="../philosophy.html#r25">R25</button>
+            <button type="button" class="ux-recipe-trigger" data-recipe-title="R06 · Inclusive Onboarding Paths" data-recipe-body="Reduce exclusion in entry, forms and guidance flows." data-recipe-link="../philosophy.html#r06">R06</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Related Projects -->
+    <section class="ux-section ux-related" aria-labelledby="related-title">
+      <div class="container">
+        <p class="ux-kicker">Related Projects</p>
+        <h2 id="related-title">More work across service, digital and spatial systems.</h2>
+        <div class="ux-related__grid">
+          <a class="ux-related-card" href="accessibility-support-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support pathway case focused on clearer access to court assistance.</small></a>
+          <a class="ux-related-card" href="new-world-design-system.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds-home.webp" alt="New World Design System project preview." loading="lazy"><span>Digital Systems</span><strong>New World Design System</strong><small>A design system case focused on reusable UI structure.</small></a>
+          <a class="ux-related-card" href="victim-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-home.webp" alt="Victim Hub project preview." loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service improvement case.</small></a>
+          <a class="ux-related-card" href="whos-singing-outuiside.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wso/wso-home.webp" alt="Who's Singing OuTūīside project preview." loading="lazy"><span>Digital Systems</span><strong>Who's Singing OuTūīside?</strong><small>A public communication case using data, ecology and visual storytelling.</small></a>
+        </div>
+        <div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer"><div class="container footer-grid"><div class="footer-intro"><h2>Cafe Yi</h2><p>Creating evidence-informed design work across public services, digital products and built environments.</p><a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a></div><div class="footer-column"><h3>Social</h3><a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a><a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a></div><div class="footer-column"><h3>Explore</h3><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html">Works</a><a href="../lab.html">Lab</a></div></div><div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div></footer>

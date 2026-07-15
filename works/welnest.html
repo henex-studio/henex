@@ -58,8 +58,8 @@
 
   <main id="main-content">
 
-    <!-- Hero -->
-    <section class="ux-hero ux-hero--cover" aria-labelledby="case-title">
+    <!-- 1. Hero — frosted dual-bloom (Master Spec 7.1), replaces the old cover-image hero -->
+    <section class="ux-hero wst-hero" aria-labelledby="case-title">
       <div class="container ux-hero__top">
         <div class="case-tag-row case-tag-row--overlay">
           <div class="case-tags case-tags--primary" aria-label="Project categories">
@@ -85,12 +85,11 @@
       </div>
     </section>
 
-
-    <!-- Overview -->
-    <section class="ux-section" aria-labelledby="overview-title">
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
-          <p>Overview</p>
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
           <h2 id="overview-title">A clearer way to search for a first home.</h2>
         </aside>
         <div class="ux-copy">
@@ -104,8 +103,8 @@
             <div><span>Tools</span><strong>Figma, Miro, Office365</strong></div>
             <div class="ux-lens">
               <span>HENEX Lens</span>
-              <a href="../philosophy.html#r24">R24 · Trust &amp; Cooperation Rules</a>
-              <small>Agency × Empathy × Interface</small>
+              <a href="../philosophy.html#r06">R06 · Inclusive Onboarding Paths</a>
+              <small>Identity × Empathy × Interface</small>
             </div>
           </div>
           <div class="ux-skills">
@@ -122,28 +121,23 @@
       </div>
     </section>
 
-
-    <!-- Preview (static image replaces video) -->
-    <section class="ux-section ux-section--tint" aria-labelledby="preview-title">
-      <div class="container ux-video-grid">
-        <div>
-          <p class="ux-kicker">Preview</p>
-          <h2 id="preview-title">A look at the final experience.</h2>
-          <p>An overview of the Welnest search flow, from browsing listings to requesting an inspection.</p>
+    <!-- 3. Background — NEW, confirmed draft, no changes requested (mapping §7) -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Background</p>
+          <h2 id="background-title">Renting in a new country starts with a trust problem, not a search problem.</h2>
+          <p>Newcomer families arriving in Wellington face a housing market shaped by unfamiliar policies, inconsistent listing quality, and processes that assume local knowledge. Existing rental platforms and guidance resources are fragmented across government sites, agent listings and word-of-mouth advice, leaving little support for someone navigating all of it for the first time.</p>
         </div>
-        <img class="ux-video"
-          src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/overview.png"
-          alt="Overview of the Welnest property search experience across key screens."
-          loading="lazy">
       </div>
     </section>
 
-
-    <!-- Problem -->
-    <section class="ux-section ux-problem" aria-labelledby="problem-title">
-      <div class="container ux-problem__grid">
+    <!-- 4. Problem — [MODIFIED M23 W2] Right image moved below the text,
+         top-to-bottom layout, matching NDS Solution's N4 stacked pattern. -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container wst-problem-stack">
         <div>
-          <p class="ux-kicker">Problem</p>
+          <p class="ux-kicker ux-kicker--chapter">Problem</p>
           <h2 id="problem-title">
             <strong>How might we</strong> help newcomers <em>understand, compare and trust</em>
             property listings, so finding a first home feels manageable rather than overwhelming?
@@ -158,12 +152,17 @@
       </div>
     </section>
 
-
-    <!-- Solution -->
-    <section class="ux-solution" aria-labelledby="solution-title">
+    <!-- 5. Solution — [MODIFIED M23 W3b] Removed the ux-solution class and
+         the page's yellow background override. Root cause was the same
+         class collision as VSK (V3): this section carried both ux-tier-s
+         and ux-solution, and a page rule painted the Welnest product
+         yellow behind white text. Folding into the amber theme per Cafe's
+         instruction, so this reads as a normal tone-s section like NDS
+         and RKT's Solution sections. -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
       <div class="container ux-solution__grid">
-        <div>
-          <p class="ux-kicker">Solution</p>
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
           <h2 id="solution-title">Plain language, clear comparison, transparent next steps.</h2>
           <p>The solution rewrites listing terminology into plain language, adds a side-by-side comparison tool and makes contacting an agent or booking an inspection a visible, low-friction action rather than a hidden form.</p>
         </div>
@@ -176,31 +175,28 @@
       </div>
     </section>
 
-
-    <!-- Outcome -->
-    <section class="ux-section" aria-labelledby="outcome-title">
-      <div class="container">
-        <div class="ux-wide-head">
-          <p class="ux-kicker">Outcome</p>
+    <!-- 6. Outcome — [MODIFIED M23 W3] Removed the top overview.png image;
+         the outcome.png image (previously the lower, full-width evidence
+         shot) is now the single image, placed to the right of the text. -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container ux-video-grid">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
           <h2 id="outcome-title">A search experience built around confidence, not just listings.</h2>
           <p>The final outcome is a high-fidelity prototype covering search, comparison and inspection booking, refined through six rounds of usability testing. I would describe this as a strong course deliverable rather than a validated product. The next evidence needs to come from real newcomer testing outside a classroom setting.</p>
         </div>
-        <figure class="ux-evidence">
-          <img
-            src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/outcome.png"
-            alt="Final Welnest outcome shown across key screens."
-            loading="lazy">
-          <figcaption>The final prototype connects search, comparison and direct agent contact into one guided path.</figcaption>
-        </figure>
+        <img class="ux-video"
+          src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/outcome.png"
+          alt="Final Welnest outcome shown across key screens."
+          loading="lazy">
       </div>
     </section>
 
-
-    <!-- Feedback -->
-    <section class="ux-section ux-section--tint" aria-labelledby="feedback-title">
+    <!-- 7. Feedback -->
+    <section class="ux-section ux-tier-l" aria-labelledby="feedback-title">
       <div class="container">
         <div class="ux-wide-head">
-          <p class="ux-kicker">Course Feedback</p>
+          <p class="ux-kicker">Feedback</p>
           <h2 id="feedback-title">Feedback pointed to clarity and a well-tested flow.</h2>
           <p>Reviewers responded most to the plain-language approach and the visible usability testing trail behind the final design decisions.</p>
         </div>
@@ -221,114 +217,118 @@
       </div>
     </section>
 
-
-    <!-- Design Process -->
-    <section class="ux-section" aria-labelledby="process-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Design Process</p>
+    <!-- 8. Process — chapter-2 gateway with 4 nav cards -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
           <h2 id="process-title">From newcomer research to a tested prototype.</h2>
-        </aside>
-        <div class="ux-copy">
           <p>The project followed the Double Diamond framework, moving from open research on newcomer pain points to a tightly scoped, usability-tested prototype.</p>
-          <div class="ux-process">
-            <div><span>Discover</span><p>Research and findings on newcomer search behaviour.</p></div>
-            <div><span>Define</span><p>Design principles and problem reframing.</p></div>
-            <div><span>Develop</span><p>Ideation, information architecture, flows and testing.</p></div>
-            <div><span>Deliver</span><p>Design system and final high-fidelity prototype.</p></div>
-          </div>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Newcomer search behaviour, journey mapping, findings.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Principles, IA, user flows, design system.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Six rounds of usability testing.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Comparison view, contact and inspection flow.</p>
+          </a>
         </div>
       </div>
     </section>
 
-
-    <!-- Discover -->
-    <section class="ux-section ux-section--tint" aria-labelledby="discover-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Discover</p>
+    <!-- 9. Research (formerly Discover) -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="discover-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
           <h2 id="discover-title">Newcomers face a trust gap, not just an information gap.</h2>
-        </aside>
-        <div class="ux-copy">
           <p>Research combined interviews with recent newcomers and a review of existing property platforms. The goal was to separate confusion caused by unfamiliar terminology from confusion caused by genuinely unclear interface design.</p>
-          <p>The user journey traced four stages: an early, cautious search; a confusing middle phase of comparing unfamiliar listings; a more confident shortlist once terms became clear; and a final step of reaching out, which only felt safe once the listing already felt understood.</p>
-          <div class="wst-discover-primary">
-            <figure>
-              <img
-                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-journey.png"
-                alt="User journey map showing newcomer stages from cautious search to confident contact."
-                loading="lazy">
-            </figure>
-            <div class="ux-influence">
-              <strong>Influence</strong>
-              <p>The journey map showed that trust had to be built before the comparison or contact steps, not after. This moved plain-language listings from a nice-to-have to the starting point of the whole design.</p>
-            </div>
+        </div>
+        <p>The user journey traced four stages: an early, cautious search; a confusing middle phase of comparing unfamiliar listings; a more confident shortlist once terms became clear; and a final step of reaching out, which only felt safe once the listing already felt understood.</p>
+        <div class="wst-discover-primary">
+          <figure>
+            <img
+              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-journey.png"
+              alt="User journey map showing newcomer stages from cautious search to confident contact."
+              loading="lazy">
+          </figure>
+        </div>
+        <div class="wst-findings-block">
+          <p>Three findings stood out as the most useful for shaping scope.</p>
+          <div class="wst-finding-grid">
+            <article>
+              <span>Terminology</span>
+              <h3>Listing terms assume local knowledge.</h3>
+              <p>Words like "freehold" or "body corporate" were unfamiliar to most newcomers, who avoided listings rather than ask what the terms meant.</p>
+            </article>
+            <article>
+              <span>Comparison</span>
+              <h3>Users compare listings in their head, not on screen.</h3>
+              <p>Without a built-in way to compare options side by side, people lost track of details across tabs and screenshots.</p>
+            </article>
+            <article>
+              <span>Trust</span>
+              <h3>Contacting an agent felt like a risk, not a next step.</h3>
+              <p>Unclear contact flows made users hesitate, worried about looking uninformed or committing too early.</p>
+            </article>
           </div>
         </div>
-      </div>
-      <div class="container wst-findings-block">
-        <p>Three findings stood out as the most useful for shaping scope.</p>
-        <div class="wst-finding-grid">
-          <article>
-            <span>Terminology</span>
-            <h3>Listing terms assume local knowledge.</h3>
-            <p>Words like "freehold" or "body corporate" were unfamiliar to most newcomers, who avoided listings rather than ask what the terms meant.</p>
-          </article>
-          <article>
-            <span>Comparison</span>
-            <h3>Users compare listings in their head, not on screen.</h3>
-            <p>Without a built-in way to compare options side by side, people lost track of details across tabs and screenshots.</p>
-          </article>
-          <article>
-            <span>Trust</span>
-            <h3>Contacting an agent felt like a risk, not a next step.</h3>
-            <p>Unclear contact flows made users hesitate, worried about looking uninformed or committing too early.</p>
-          </article>
+
+        <!-- [MODIFIED M23 CA3] Influence moved to the end of the Research
+             sub-section, after the findings it comments on. -->
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>The journey map showed that trust had to be built before the comparison or contact steps, not after. This moved plain-language listings from a nice-to-have to the starting point of the whole design.</p>
         </div>
       </div>
     </section>
 
-
-    <!-- Define -->
-    <section class="ux-section" aria-labelledby="define-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Define</p>
+    <!-- 10. Design — Define principles + Develop's design half + Design System folded in -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="define-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
           <h2 id="define-title">Six principles guided every design decision.</h2>
-        </aside>
-        <div class="ux-copy">
           <p>The findings were translated into six design principles. These worked as filters for deciding what to simplify, what to keep and what needed clearer explanation on screen.</p>
         </div>
-      </div>
-      <div class="container">
         <div class="wst-principle-grid">
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 12s3-5 8-5 8 5 8 5-3 5-8 5-8-5-8-5z"></path><circle cx="12" cy="12" r="2"></circle></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-eye"></i></span>
             <h3>Transparency</h3>
             <p>Show what a listing means and where information comes from.</p>
           </article>
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 4l7 3v5c0 4.2-2.8 6.9-7 8-4.2-1.1-7-3.8-7-8V7l7-3z"></path><path d="M9 12l2 2 4-4"></path></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-focus-2"></i></span>
             <h3>Clarity</h3>
             <p>Replace jargon with language a first-time buyer or renter understands.</p>
           </article>
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect x="4" y="5" width="7" height="5" rx="1.3"></rect><rect x="13" y="5" width="7" height="5" rx="1.3"></rect><rect x="7" y="14" width="10" height="5" rx="1.3"></rect></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-bolt"></i></span>
             <h3>Efficiency</h3>
             <p>Reduce the steps and screenshots needed to compare listings.</p>
           </article>
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="8"></circle><path d="M12 8v4l3 2"></path></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-accessible"></i></span>
             <h3>Accessibility</h3>
             <p>Keep contrast, hierarchy and reading order usable for all newcomers.</p>
           </article>
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-heart-handshake"></i></span>
             <h3>Supportiveness</h3>
             <p>Make the next step, like contacting an agent, feel safe to take.</p>
           </article>
           <article class="ux-card wst-principle-card">
-            <i class="wst-principle-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M4 7l8-4 8 4-8 4-8-4z"></path><path d="M4 7v10l8 4 8-4V7"></path></svg></i>
+            <span class="wst-principle-icon" aria-hidden="true"><i class="ti ti-users"></i></span>
             <h3>Inclusiveness</h3>
             <p>Design for users with different language backgrounds and confidence levels.</p>
           </article>
@@ -337,96 +337,129 @@
           <strong>Influence</strong>
           <p>These principles directly shaped the develop phase. Clarity and transparency drove the plain-language glossary, while supportiveness shaped how the contact and inspection actions were surfaced rather than buried in a form.</p>
         </div>
+
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Develop</p>
+            <h3>From early sketches to a tested high-fidelity flow.</h3>
+          </div>
+          <p>Development moved through ideation, information architecture, user flows and low-fidelity prototyping.</p>
+        </div>
+        <div class="wst-evidence-row ux-two-col">
+          <div></div>
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ideation.png"
+              data-modal-title="Ideation"
+              data-modal-caption="Early ideation exploring how to simplify listing comparison and contact flows.">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ideation.png"
+                alt="Ideation sketches exploring listing comparison and contact flow concepts." loading="lazy">
+            </button>
+            <figcaption>Ideation explored several ways to surface comparison and contact actions earlier in the flow.</figcaption>
+          </figure>
+        </div>
+        <div class="wst-evidence-row ux-two-col">
+          <div></div>
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ia.png"
+              data-modal-title="Information architecture"
+              data-modal-caption="Information architecture for the Welnest search, comparison and inspection flow.">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ia.png"
+                alt="Information architecture diagram for the Welnest search and comparison flow." loading="lazy">
+            </button>
+            <figcaption>The IA kept search, comparison and contact within a shallow, predictable structure.</figcaption>
+          </figure>
+        </div>
+        <!-- [MODIFIED M23 W6] User flows and low-fidelity prototype moved
+             behind Read more; Ideation and IA above stay visible. -->
+        <div class="wst-develop-more" id="wst-develop-more" hidden>
+        <div class="wst-evidence-row ux-two-col">
+          <div></div>
+          <div class="wst-flow-block">
+            <h3 class="wst-flow-heading">Three user flows shaped the core journey.</h3>
+            <div class="wst-flow-grid">
+              <figure>
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow1.png" alt="User flow for browsing and filtering property listings." loading="lazy">
+              </figure>
+              <figure>
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow2.png" alt="User flow for comparing shortlisted listings." loading="lazy">
+              </figure>
+              <figure>
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow3.png" alt="User flow for contacting an agent and booking an inspection." loading="lazy">
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="wst-evidence-row ux-two-col">
+          <div></div>
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/lofi-prototype.png"
+              data-modal-title="Low-fidelity prototype"
+              data-modal-caption="Low-fidelity prototype used for the first three rounds of usability testing.">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/lofi-prototype.png"
+                alt="Low-fidelity prototype screens used in early usability testing." loading="lazy">
+            </button>
+            <figcaption>The low-fidelity prototype validated the core flow before visual design began.</figcaption>
+          </figure>
+        </div>
+        </div>
+        <div class="wst-develop-expand">
+          <button type="button" class="button button--soft" id="wst-develop-btn" data-expand-trigger aria-expanded="false" aria-controls="wst-develop-more">Read more</button>
+        </div>
+
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Design System</p>
+            <h3>A token-ready foundation built for one product, not a full system.</h3>
+          </div>
+          <p>The design system covers typography, colour and brand foundations. This is a token-ready foundation built for a single course project, not a complete production-ready design system.</p>
+        </div>
+        <div class="wst-ds-stack ux-content-gap">
+          <article class="wst-ds-typography">
+            <div>
+              <h3>Typography</h3>
+              <p>Noticia Text carries headings for warmth and personality, while SF Pro handles body text for fast, comfortable reading across listing detail.</p>
+            </div>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ds-font.png" alt="Typography system showing Noticia Text headings and SF Pro body text." loading="lazy">
+            </figure>
+          </article>
+
+          <article class="wst-ds-colour">
+            <div class="wst-swatch-grid">
+              <div class="wst-swatch wst-swatch--yellow"><b>Welnest Yellow</b><strong>#FFB200</strong></div>
+              <div class="wst-swatch wst-swatch--orange"><b>Welnest Orange</b><strong>#FB8A00</strong></div>
+              <div class="wst-swatch wst-swatch--cream"><b>Welnest Cream</b><strong>#FFEFDE</strong></div>
+            </div>
+            <div>
+              <h3>Colour</h3>
+              <p>The Welnest product palette uses warm yellow and orange tones with a soft cream background. These are the product's own brand colours, separate from the amber and gold used to present this case study on the HENEX site.</p>
+            </div>
+          </article>
+
+          <article class="wst-ds-brand">
+            <div>
+              <h3>Brand</h3>
+              <p>The logo combines a nest, birds and a house outline, representing newcomers building a sense of home and settling somewhere new.</p>
+            </div>
+            <figure>
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ds-brand.png" alt="Welnest brand mark combining a nest, birds and a house outline." loading="lazy">
+            </figure>
+          </article>
+        </div>
       </div>
     </section>
 
-
-    <!-- Develop -->
-    <section class="ux-section ux-section--tint" aria-labelledby="develop-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Develop</p>
-          <h2 id="develop-title">From early sketches to a tested high-fidelity flow.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>Development moved through ideation, information architecture, user flows, low-fidelity prototyping and six rounds of usability testing.</p>
+    <!-- 11. Validation — extracted from Develop's usability-testing sub-block (M3 spec §2, mapping §7) -->
+    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Validation</p>
+          <h2 id="validation-title">Six rounds of testing turned vague friction into specific fixes.</h2>
+          <p>Each round of testing surfaced a specific usability issue, which was then translated into a targeted interface change.</p>
         </div>
-      </div>
-
-      <div class="container ux-two-col wst-evidence-row">
-        <div></div>
-        <figure class="ux-evidence ux-evidence--controlled">
-          <button type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ideation.png"
-            data-modal-title="Ideation"
-            data-modal-caption="Early ideation exploring how to simplify listing comparison and contact flows.">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ideation.png"
-              alt="Ideation sketches exploring listing comparison and contact flow concepts." loading="lazy">
-          </button>
-          <figcaption>Ideation explored several ways to surface comparison and contact actions earlier in the flow.</figcaption>
-        </figure>
-      </div>
-
-      <div class="container ux-two-col wst-evidence-row">
-        <div></div>
-        <figure class="ux-evidence ux-evidence--controlled">
-          <button type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ia.png"
-            data-modal-title="Information architecture"
-            data-modal-caption="Information architecture for the Welnest search, comparison and inspection flow.">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ia.png"
-              alt="Information architecture diagram for the Welnest search and comparison flow." loading="lazy">
-          </button>
-          <figcaption>The IA kept search, comparison and contact within a shallow, predictable structure.</figcaption>
-        </figure>
-      </div>
-
-      <div class="container ux-two-col wst-evidence-row">
-        <div></div>
-        <div class="wst-flow-block">
-          <h3 class="wst-flow-heading">Three user flows shaped the core journey.</h3>
-          <div class="wst-flow-grid">
-            <figure>
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow1.png" alt="User flow for browsing and filtering property listings." loading="lazy">
-            </figure>
-            <figure>
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow2.png" alt="User flow for comparing shortlisted listings." loading="lazy">
-            </figure>
-            <figure>
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/user-flow3.png" alt="User flow for contacting an agent and booking an inspection." loading="lazy">
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div class="container ux-two-col wst-evidence-row">
-        <div></div>
-        <figure class="ux-evidence ux-evidence--controlled">
-          <button type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/lofi-prototype.png"
-            data-modal-title="Low-fidelity prototype"
-            data-modal-caption="Low-fidelity prototype used for the first three rounds of usability testing.">
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/lofi-prototype.png"
-              alt="Low-fidelity prototype screens used in early usability testing." loading="lazy">
-          </button>
-          <figcaption>The low-fidelity prototype validated the core flow before visual design began.</figcaption>
-        </figure>
-      </div>
-
-      <div class="container ux-usability">
-        <div class="wst-ut-head">
-          <aside class="ux-intro">
-            <p>Usability Testing</p>
-            <h2>Six rounds of testing turned vague friction into specific fixes.</h2>
-          </aside>
-          <p class="wst-ut-lead">Each round of testing surfaced a specific usability issue, which was then translated into a targeted interface change.</p>
-        </div>
-
-        <div class="ux-influence wst-ut-influence">
-          <strong>Influence</strong>
-          <p>Usability testing moved the project from a single round of polish to a genuinely iterative process. Each fix was scoped narrowly, which kept the prototype focused instead of trying to solve every possible issue at once.</p>
-        </div>
-
         <div class="ux-test-row">
           <article class="ux-test-card">
             <h3>Navigation Feedback</h3>
@@ -477,63 +510,34 @@
           </div>
         </div>
 
+        <!-- [MODIFIED M23 CA3] Influence moved to the end of the
+             Validation sub-section, after all six test cards, instead of
+             sitting before the visible three. -->
+        <div class="ux-influence wst-ut-influence">
+          <strong>Influence</strong>
+          <p>Usability testing moved the project from a single round of polish to a genuinely iterative process. Each fix was scoped narrowly, which kept the prototype focused instead of trying to solve every possible issue at once.</p>
+        </div>
+
         <div class="wst-ut-actions">
           <button type="button" class="button button--soft" id="wst-ut-btn" data-expand-trigger aria-expanded="false" aria-controls="wst-ut-more">Read more</button>
         </div>
       </div>
     </section>
 
-
-    <!-- Deliver -->
-    <section class="ux-section" aria-labelledby="deliver-title">
-      <div class="container ux-wide-head">
-        <p class="ux-kicker">Design System</p>
-        <h2 id="deliver-title">A token-ready foundation built for one product, not a full system.</h2>
-        <p>The design system covers typography, colour and brand foundations. This is a token-ready foundation built for a single course project, not a complete production-ready design system.</p>
-      </div>
-
-      <div class="container wst-ds-stack">
-        <article class="wst-ds-typography">
-          <div>
-            <h3>Typography</h3>
-            <p>Noticia Text carries headings for warmth and personality, while SF Pro handles body text for fast, comfortable reading across listing detail.</p>
-          </div>
-          <figure>
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ds-font.png" alt="Typography system showing Noticia Text headings and SF Pro body text." loading="lazy">
-          </figure>
-        </article>
-
-        <article class="wst-ds-colour">
-          <div class="wst-swatch-grid">
-            <div class="wst-swatch wst-swatch--yellow"><b>Welnest Yellow</b><strong>#FFB200</strong></div>
-            <div class="wst-swatch wst-swatch--orange"><b>Welnest Orange</b><strong>#FB8A00</strong></div>
-            <div class="wst-swatch wst-swatch--cream"><b>Welnest Cream</b><strong>#FFEFDE</strong></div>
-          </div>
-          <div>
-            <h3>Colour</h3>
-            <p>The Welnest product palette uses warm yellow and orange tones with a soft cream background. These are the product's own brand colours, separate from the deeper amber used to present this case study on the HENEX site.</p>
-          </div>
-        </article>
-
-        <article class="wst-ds-brand">
-          <div>
-            <h3>Brand</h3>
-            <p>The logo combines a nest, birds and a house outline, representing newcomers building a sense of home and settling somewhere new.</p>
-          </div>
-          <figure>
-            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/ds-brand.png" alt="Welnest brand mark combining a nest, birds and a house outline." loading="lazy">
-          </figure>
-        </article>
-      </div>
-    </section>
-
-
-    <!-- Final Design -->
-    <section class="ux-section ux-section--tint" aria-labelledby="final-title">
-      <div class="container ux-wide-head">
-        <p class="ux-kicker">Final Design</p>
-        <h2 id="final-title">A search flow that explains itself as you go.</h2>
-        <p>The final design carries the plain-language and supportiveness principles through two key moments: the listing comparison view and the agent contact step.</p>
+    <!-- 12. Delivery — [MODIFIED M23 W9] Wrapped ux-wide-head inside
+         .container instead of applying both classes to the same element.
+         Root cause: ux-wide-head sat directly on .container, so it
+         inherited the container's own centring and 900px max-width,
+         making the whole heading render centred. RKT and VSK nest
+         ux-wide-head inside .container and render left-aligned; this now
+         matches that pattern. -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="final-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Delivery</p>
+          <h2 id="final-title">A search flow that explains itself as you go.</h2>
+          <p>The final design carries the plain-language and supportiveness principles through two key moments: the listing comparison view and the agent contact step.</p>
+        </div>
       </div>
       <div class="container wst-final-stack">
         <article>
@@ -561,19 +565,18 @@
       </div>
     </section>
 
-
-    <!-- Retrospective -->
-    <section class="ux-retro" aria-labelledby="retro-title">
+    <!-- 13. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
       <div class="container">
-        <p class="ux-kicker">Retrospective</p>
-        <h2 id="retro-title">What worked, and what would need to change for the real world.</h2>
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
+        <h2 id="retro-title">Looking back, looking forward.</h2>
         <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
           <article class="ux-card">
             <h3>Value</h3>
             <p>Reframing the problem around trust, not just information, drove every later decision. The design principles kept scope focused, and usability-driven fixes made the final flow genuinely tested rather than assumed.</p>
           </article>
           <article class="ux-card">
-            <h3>Limitation</h3>
+            <h3>Learned</h3>
             <p>Personalisation depth is shallow, and the prototype has not been validated with real newcomers outside a classroom testing setting.</p>
           </article>
           <article class="ux-card">
@@ -584,27 +587,32 @@
       </div>
     </section>
 
-
-    <!-- HENEX Method Recipe -->
-    <section class="ux-section" aria-labelledby="recipe-title">
+    <!-- 14. HENEX Method Recipe — R06 primary (changed from R24, resolved conflict with VTH; mapping §7) -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>HENEX Method Recipe</p>
-          <h2 id="recipe-title">R24 explains how Welnest turns an unfamiliar market into a trusted next step.</h2>
+          <h2 id="recipe-title">R06 explains how Welnest turns an unfamiliar market into an inclusive first step.</h2>
         </aside>
         <div class="ux-copy">
           <p class="ux-recipe-primary">
             <span>Primary recipe</span>
-            <a href="../philosophy.html#r24">R24 · Trust &amp; Cooperation Rules</a>
-            <small>Agency × Empathy × Interface</small>
+            <a href="../philosophy.html#r06">R06 · Inclusive Onboarding Paths</a>
           </p>
-          <p>Newcomers need trust mechanisms, guided steps, low-friction actions and supportive interface rules before they will commit to contacting an agent or booking an inspection. R24 connects these needs directly: plain-language listings build understanding, the comparison tool supports confident decisions, and the visible contact flow turns a hesitant click into a safe next step.</p>
           <div class="ux-recipe-tags">
-            <span>Agency</span>
+            <span>Identity</span>
             <span>Empathy</span>
             <span>Interface</span>
           </div>
+          <p>Newcomers arrive with different language backgrounds, confidence levels and local knowledge, so the entry experience has to adapt rather than assume. R06 connects these needs directly: plain-language listings reduce the barrier to understanding, the comparison tool supports confident decisions regardless of prior market knowledge, and the visible contact flow turns a hesitant click into a safe next step.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
+            <span>Secondary recipe</span>
+          </p>
           <div class="ux-recipe-popovers">
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R24 · Trust &amp; Cooperation Rules"
+              data-recipe-body="Build trust mechanisms and collaboration norms for safe, reliable exchange and participation."
+              data-recipe-link="../philosophy.html#r24">R24</button>
             <button type="button" class="ux-recipe-trigger"
               data-recipe-title="R18 · Step by Step Path Design"
               data-recipe-body="Arrange tasks in the order people think and decide."
@@ -614,10 +622,6 @@
               data-recipe-body="Break complex action into manageable interface steps."
               data-recipe-link="../philosophy.html#r21">R21</button>
             <button type="button" class="ux-recipe-trigger"
-              data-recipe-title="R06 · Inclusive Onboarding Paths"
-              data-recipe-body="Reduce exclusion in entry, forms and guidance flows."
-              data-recipe-link="../philosophy.html#r06">R06</button>
-            <button type="button" class="ux-recipe-trigger"
               data-recipe-title="R12 · Calm Clarity Tuning"
               data-recipe-body="Reduce cognitive load while keeping the experience calm."
               data-recipe-link="../philosophy.html#r12">R12</button>
@@ -626,8 +630,7 @@
       </div>
     </section>
 
-
-    <!-- Related Projects -->
+    <!-- 15. Related Projects -->
     <section class="ux-section ux-related" aria-labelledby="related-title">
       <div class="container">
         <p class="ux-kicker">Related Projects</p>

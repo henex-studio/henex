@@ -15,7 +15,8 @@
   <link rel="stylesheet" href="../assets/css/ux-case-study.css">
   <link rel="stylesheet" href="../assets/css/nds.css">
   <script src="../assets/js/main.js" defer></script>
-  <script src="../assets/js/case-interactions.js" defer></script><!-- Open Graph -->
+  <script src="../assets/js/case-interactions.js" defer></script>
+  <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HENEX">
 <meta property="og:title" content="New World Design System | HENEX">
@@ -44,7 +45,8 @@
   </header>
 
   <main id="main-content">
-    <section class="ux-hero ux-hero--cover system-hero" aria-labelledby="case-title">
+    <!-- 1. Hero — frosted dual-bloom (Master Spec 7.1), replaces the old cover-image hero -->
+    <section class="ux-hero nds-hero" aria-labelledby="case-title">
       <div class="container ux-hero__top">
         <div class="case-tag-row case-tag-row--overlay">
           <div class="case-tags case-tags--primary" aria-label="Project categories">
@@ -56,44 +58,508 @@
           </div>
         </div>
       </div>
-      <div class="container system-hero__inner">
-        <div class="ux-hero__copy system-hero__copy">
-<h1 id="case-title">New World Design System</h1>
-          <p>An inverse journey to Atomic Design, built by reverse engineering New World’s digital shopping platforms into a clearer design system microsite.</p>
+      <div class="container ux-hero__inner">
+        <div class="ux-hero__copy nds-hero__copy">
+          <h1 id="case-title">New World Design System</h1>
+          <p>An inverse journey to Atomic Design, built by reverse engineering New World's digital shopping platforms into a clearer design system microsite.</p>
           <div class="ux-actions"><a class="button button--primary" href="https://www.figma.com/proto/uUqc1UT6giYsWw1QMbVDyX/NWDS-for-portfolio?page-id=12%3A2&node-id=13-56&viewport=202%2C241%2C0.04&t=eYa9nBzqNH2TujpU-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=13%3A56" target="_blank" rel="noopener noreferrer">View Prototype</a><a class="button button--soft" href="../works.html">Back to Works</a></div>
         </div>
       </div>
     </section>
 
-    <section class="ux-section" aria-labelledby="overview-title"><div class="container ux-two-col"><aside class="ux-intro"><p>Overview</p><h2 id="overview-title">A system reconstruction task, not a visual redesign.</h2></aside><div class="ux-copy"><p>I chose New World because its website and app showed a common problem in mature digital products. Different design periods were living together. Navigation, type scale, search patterns and component styling were not always consistent across desktop and mobile.</p><p>I treated the project as a system reconstruction task. The focus was to understand why the interface felt fragmented, which decisions were repeated without clear rules, and how those decisions could become a more usable design system.</p><div class="ux-meta" aria-label="Project facts"><div><span>Client</span><strong>MUXD Course Work</strong></div><div><span>Role</span><strong>UX Researcher, Design System Designer, Microsite Designer</strong></div><div><span>Team</span><strong>Individual</strong></div><div><span>Timeline</span><strong>4 weeks</strong></div><div><span>Tools</span><strong>Figma, Miro, Office 365</strong></div><div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r17">R17 · Make It Tangible Model</a><small>Perception × Meaning × Matter</small></div></div><div class="ux-skills"><span>Skills</span><div><em>Design system</em><em>Atomic Design</em><em>Reverse engineering</em><em>Component documentation</em><em>Accessibility compliance</em></div></div></div></div></section>
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
+          <h2 id="overview-title">A system reconstruction task, not a visual redesign.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p>I chose New World because its website and app showed a common problem in mature digital products. Different design periods were living together. Navigation, type scale, search patterns and component styling were not always consistent across desktop and mobile.</p>
+          <p>I treated the project as a system reconstruction task. The focus was to understand why the interface felt fragmented, which decisions were repeated without clear rules, and how those decisions could become a more usable design system.</p>
+          <div class="ux-meta" aria-label="Project facts">
+            <div><span>Client</span><strong>MUXD Course Work</strong></div>
+            <div><span>Role</span><strong>UX Researcher, Design System Designer, Microsite Designer</strong></div>
+            <div><span>Team</span><strong>Individual</strong></div>
+            <div><span>Timeline</span><strong>4 weeks</strong></div>
+            <div><span>Tools</span><strong>Figma, Miro, Office 365</strong></div>
+            <div class="ux-lens"><span>HENEX Lens</span><a href="../philosophy.html#r17">R17 · Make It Tangible Model</a><small>Perception × Meaning × Matter</small></div>
+          </div>
+          <div class="ux-skills"><span>Skills</span><div><em>Design system</em><em>Atomic Design</em><em>Reverse engineering</em><em>Component documentation</em><em>Accessibility compliance</em></div></div>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-section--tint system-video" aria-labelledby="video-title"><div class="container ux-video-grid"><div><p class="ux-kicker">Screencast</p><h2 id="video-title">Design system microsite walkthrough.</h2><p>The prototype shows the structure of the Figma microsite, including introduction, foundations and design elements.</p></div><video class="ux-video" controls preload="metadata" playsinline><source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds.mp4" type="video/mp4">Your browser does not support the video tag.</video></div></section>
+    <!-- 3. Background — NEW, source: Cafe's course reflection PDF (mapping table §3) -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Background</p>
+          <h2 id="background-title">A familiar site, deconstructed for real this time.</h2>
+          <p>New World's website was already familiar ground, a site visited often enough to notice its quirks. An earlier course assignment only skimmed its surface with an overview analysis. This project went further, pulling the interface apart like a scattered jigsaw puzzle, since no real design system files existed to reference. What emerged was a site caught between two eras, a newer dropdown-driven experience layered awkwardly over older breadcrumb navigation, with typography, colour and component patterns drifting out of sync across desktop and mobile.</p>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-problem system-hmw" aria-labelledby="problem-title"><div class="container ux-problem__grid"><div><p class="ux-kicker">Problem</p><h2 id="problem-title"><strong>How might we</strong> create a unified, scalable design system that helps teams work efficiently, while improving <em>clarity, accessibility and brand consistency</em> across digital platforms?</h2><p class="system-hmw__note">The main problem was not only that some UI elements looked inconsistent. The deeper issue was that New World’s digital platforms lacked shared decision rules.</p></div><div class="ux-card-grid system-problem-cards"><article class="ux-card"><span>01</span><h3>Mixed navigation</h3><p>New and old patterns appeared together, making the design logic harder to follow.</p></article><article class="ux-card"><span>02</span><h3>Complex type scale</h3><p>Many similar sizes made hierarchy harder to apply consistently.</p></article><article class="ux-card"><span>03</span><h3>Repeated search styles</h3><p>Search patterns changed across product and store contexts.</p></article></div></div></section>
+    <!-- 4. Problem -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container nds-problem-stack">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">Problem</p>
+          <h2 id="problem-title">Two eras of design decisions, living side by side with no shared rules.</h2>
+          <p>The main problem was not only that some UI elements looked inconsistent. The deeper issue was that New World's digital platforms lacked shared decision rules, so the same kind of choice, a navigation pattern, a type size, a search layout, was made differently every time it came up.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card"><span>01</span><h3>Mixed navigation</h3><p>New and old patterns appeared together, making the design logic harder to follow.</p></article>
+          <article class="ux-card"><span>02</span><h3>Complex type scale</h3><p>Many similar sizes made hierarchy harder to apply consistently.</p></article>
+          <article class="ux-card"><span>03</span><h3>Repeated search styles</h3><p>Search patterns changed across product and store contexts.</p></article>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section system-solution" aria-labelledby="solution-title"><div class="container system-solution__head"><p class="ux-kicker">Solution</p><h2 id="solution-title">Rebuilding from experience.</h2><p>I used a reverse system approach. Existing interfaces were audited, recurring patterns were identified, and the system was rebuilt into foundations and core design elements.</p><p>This approach first moved backwards from complete pages, then moved forward again into reusable foundations, components and documentation.</p></div><div class="container system-solution__wide"><figure class="system-solution__figure"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/solution.png" alt="Diagram showing the reverse system approach from finished interfaces to foundations, elements and documentation." loading="lazy"></figure></div></section>
+    <!-- 5. HMW interlude (Master Spec 4.8) -->
+    <section class="ux-section ux-tier-d ux-hmw-section" aria-labelledby="hmw-title">
+      <div class="container">
+        <h2 id="hmw-title" class="ux-hmw-statement">
+          <strong>How might we</strong> create a <strong>unified, scalable design system</strong> that helps teams work efficiently, while improving
+          <strong>clarity, accessibility and brand consistency</strong> across digital platforms?
+        </h2>
+      </div>
+    </section>
 
-    <section class="ux-section system-showcase" aria-labelledby="outcome-title"><div class="container ux-wide-head"><p class="ux-kicker">Outcome</p><h2 id="outcome-title">A structured Figma microsite for a clearer shopping system.</h2><p>The final outcome was a structured design system microsite in Figma. The value was not only the visual result, but the process of analysing an existing product, abstracting repeated patterns and translating them into clearer design rules.</p></div><div class="container"><figure class="ux-showcase-figure"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/outcome.png" alt="Final Figma microsite outcome for the New World Design System." loading="lazy"><figcaption>The final microsite worked as a visual showcase and a practical reference for system documentation.</figcaption></figure></div></section>
+    <!-- 6. Solution -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
+      <div class="container nds-solution-stack">
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
+          <h2 id="solution-title">Rebuilding from experience.</h2>
+          <p>I used a reverse system approach. Existing interfaces were audited, recurring patterns were identified, and the system was rebuilt into foundations and core design elements.</p>
+          <p>This approach first moved backwards from complete pages, then moved forward again into reusable foundations, components and documentation.</p>
+        </div>
+        <figure>
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/solution.png" alt="Diagram showing the reverse system approach from finished interfaces to foundations, elements and documentation." loading="lazy">
+        </figure>
+      </div>
+    </section>
 
-    <section class="ux-section ux-section--tint" aria-labelledby="feedback-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Course Feedback</p><h2 id="feedback-title">Feedback confirmed that the system was clear enough to be read and applied.</h2></div><div class="ux-feedback-grid"><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“Your UX writing is clear and succinct, making complex ideas easy to understand.”</p></blockquote><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“The Foundations section is detailed and well-considered.”</p></blockquote><blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>“Tackling complex components like cards and search is impressive.”</p></blockquote></div></div></section>
+    <!-- 7. Outcome — absorbs the former standalone Screencast section -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container ux-video-grid">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
+          <h2 id="outcome-title">A structured Figma microsite for a clearer shopping system.</h2>
+          <p>The final outcome was a structured design system microsite in Figma. The value was not only the visual result, but the process of analysing an existing product, abstracting repeated patterns and translating them into clearer design rules.</p>
+        </div>
+        <video class="ux-video" controls preload="metadata" playsinline>
+          <source src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds.mp4" type="video/mp4">Your browser does not support the video tag.
+        </video>
+      </div>
+    </section>
 
-    <section class="ux-section system-process-section" aria-labelledby="process-title"><div class="container ux-two-col"><aside class="ux-intro"><p>Design Process</p><h2 id="process-title">From existing pages to system rules.</h2></aside><div class="ux-copy"><p>The process followed four phases. Each phase moved the project from visual evidence toward clearer design decisions.</p><div class="ux-process"><div><span>Discover</span><p>I audited screenshots and inspected CSS across the website and app.</p></div><div><span>Define</span><p>The findings became stakeholder needs, a problem statement and six principles.</p></div><div><span>Develop</span><p>I organised the microsite structure and limited the component scope.</p></div><div><span>Deliver</span><p>The system became a Figma microsite with foundations and component guidance.</p></div></div></div></div></section>
+    <!-- 8. Feedback -->
+    <section class="ux-section ux-tier-l" aria-labelledby="feedback-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Feedback</p>
+          <h2 id="feedback-title">Feedback confirmed that the system was clear enough to be read and applied.</h2>
+        </div>
+        <div class="ux-feedback-grid">
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"Your UX writing is clear and succinct, making complex ideas easy to understand."</p></blockquote>
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"The Foundations section is detailed and well-considered."</p></blockquote>
+          <blockquote class="ux-feedback-card"><span class="ux-feedback-icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="8" r="3"></circle><path d="M5.5 19c1.1-3.7 3.3-5.5 6.5-5.5s5.4 1.8 6.5 5.5"></path></svg></span><p>"Tackling complex components like cards and search is impressive."</p></blockquote>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section ux-section--tint system-audit-section" aria-labelledby="audit-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">System Audit</p><h2 id="audit-title">The audit changed the question from visual inconsistency to missing decision rules.</h2><p>I used findings to separate visible inconsistencies from deeper system problems.</p></div><div class="system-findings-grid" aria-label="Audit findings"><article><span>Finding 01</span><p>Navigation patterns were mixed across website and app screens.</p></article><article><span>Finding 02</span><p>Typography sizes had overlapping roles and unclear hierarchy.</p></article><article><span>Finding 03</span><p>Brand colours were used without a consistent hierarchy.</p></article><article><span>Finding 04</span><p>Search changed across product, store and mobile contexts.</p></article><article><span>Finding 05</span><p>CSS styles showed redundancy and repeated decisions.</p></article><article><span>Finding 06</span><p>Some mobile patterns appeared inherited rather than refined.</p></article></div><div class="ux-card-grid ux-card-grid--three system-insights-grid"><article class="ux-card"><span>Insight 01</span><h3>Inconsistency</h3><p>Navigation, typography and search patterns did not always share the same rules.</p></article><article class="ux-card"><span>Insight 02</span><h3>Redundancy</h3><p>Overlapping styles and unused CSS colours made the system harder to maintain.</p></article><article class="ux-card"><span>Insight 03</span><h3>Divergence</h3><p>Some interface elements moved across platforms without enough refinement for their context.</p></article></div></div></section>
+    <!-- 9. Process — chapter-2 gateway with 3 nav cards.
+         [MODIFIED M2 2026-07-14] Third card changed from Validation to
+         Delivery per Cafe's build decision: the Figma microsite prototype
+         moved into its own Delivery section instead of a separate
+         "live verification" Validation write-up. -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
+          <h2 id="process-title">From existing pages to system rules.</h2>
+          <p>The process followed four phases. Each phase moved the project from visual evidence toward clearer design decisions.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>System audit findings, principles and scope.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Foundations, core components, documentation.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Live Figma design-system microsite.</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section system-principles-section" aria-labelledby="principles-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Principles and Scope</p><h2 id="principles-title">A focused system needed clear filters.</h2><p>The six principles helped decide what to simplify, what to keep and what needed clearer documentation.</p></div><div class="system-principle-grid"><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><rect class="ux-icon-card__icon__fill" x="4.5" y="5" width="5.5" height="4.5" rx="1.1"></rect><rect class="ux-icon-card__icon__fill" x="14" y="5" width="5.5" height="4.5" rx="1.1"></rect><rect class="ux-icon-card__icon__fill" x="4.5" y="14.5" width="5.5" height="4.5" rx="1.1"></rect><rect class="ux-icon-card__icon__fill" x="14" y="14.5" width="5.5" height="4.5" rx="1.1"></rect><path d="M4.5 12h15"></path></svg></i><h3>Consistency</h3><p>Maintain uniform styles and behaviours across components.</p></article><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="12" r="1.7" class="ux-icon-card__icon__fill"></circle><path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path></svg></i><h3>Clarity</h3><p>Present information and actions in a straightforward way.</p></article><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="5" r="2"></circle><path d="M5.5 9h13M12 9v5.2M8.2 20l3.8-5.8L15.8 20"></path></svg></i><h3>Accessibility</h3><p>Support people of all abilities and assistive technologies.</p></article><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="7" cy="8" r="2.5"></circle><circle cx="17" cy="8" r="2.5"></circle><circle cx="12" cy="17" r="2.5"></circle><path d="M9.2 9.4l2 5.2M14.8 9.4l-2 5.2M9.5 8h5"></path></svg></i><h3>Inclusivity</h3><p>Consider diverse user needs, backgrounds and contexts.</p></article><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><path d="M7 12h10M12 8l4 4-4 4"></path></svg></i><h3>Simplicity</h3><p>Keep interactions minimal without losing functionality.</p></article><article class="ux-icon-card"><i class="ux-icon-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M3 12s3-6 9-6 9 6 9 6-3 6-9 6-9-6-9-6z"></path><circle cx="12" cy="12" r="2"></circle></svg></i><h3>Visibility</h3><p>Make key information and actions easy to notice.</p></article></div><div class="system-scope-note"><p>I made a deliberate scope decision. Instead of documenting every possible component, I focused on Search, Cards and Buttons because they carry the core online grocery flow.</p></div></div></section>
+    <!-- 10. Research — System Audit + Principles and Scope folded in -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
+          <h2 id="research-title">The audit changed the question from visual inconsistency to missing decision rules.</h2>
+          <p>I used findings to separate visible inconsistencies from deeper system problems.</p>
+        </div>
+        <div class="system-findings-grid" aria-label="Audit findings">
+          <article><span>Finding 01</span><p>Navigation patterns were mixed across website and app screens.</p></article>
+          <article><span>Finding 02</span><p>Typography sizes had overlapping roles and unclear hierarchy.</p></article>
+          <article><span>Finding 03</span><p>Brand colours were used without a consistent hierarchy.</p></article>
+          <article><span>Finding 04</span><p>Search changed across product, store and mobile contexts.</p></article>
+          <article><span>Finding 05</span><p>CSS styles showed redundancy and repeated decisions.</p></article>
+          <article><span>Finding 06</span><p>Some mobile patterns appeared inherited rather than refined.</p></article>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card nds-insight-card">
+            <div class="nds-insight-card__text"><span>Insight 01</span><h3>Inconsistency</h3><p>Navigation, typography and search patterns did not always share the same rules.</p></div>
+            <span class="nds-insight-card__icon" aria-hidden="true"><i class="ti ti-arrows-shuffle"></i></span>
+          </article>
+          <article class="ux-card nds-insight-card">
+            <div class="nds-insight-card__text"><span>Insight 02</span><h3>Redundancy</h3><p>Overlapping styles and unused CSS colours made the system harder to maintain.</p></div>
+            <span class="nds-insight-card__icon" aria-hidden="true"><i class="ti ti-copy"></i></span>
+          </article>
+          <article class="ux-card nds-insight-card">
+            <div class="nds-insight-card__text"><span>Insight 03</span><h3>Divergence</h3><p>Some interface elements moved across platforms without enough refinement for their context.</p></div>
+            <span class="nds-insight-card__icon" aria-hidden="true"><i class="ti ti-git-fork"></i></span>
+          </article>
+        </div>
 
-    <section class="ux-section ux-section--tint system-theme-ds" aria-labelledby="foundations-title"><div class="container"><div class="ux-wide-head"><p class="ux-kicker">Token Ready Foundations</p><h2 id="foundations-title">Foundations that could become a clearer token structure.</h2><p>The original assignment did not produce a complete production token library. For this portfolio case study, I describe the work as a token ready foundation, supported by later thinking around primitive, semantic, element and responsive token structures.</p></div><div class="system-microsite-grid"><article class="system-microsite-card"><h3>Colour</h3><div class="ux-scroll-viewport"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/colour.png" alt="Scrollable colour page from the New World Design System microsite." loading="lazy"></div></article><article class="system-microsite-card"><h3>Typography</h3><div class="ux-scroll-viewport"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/typography.png" alt="Scrollable typography page from the New World Design System microsite." loading="lazy"></div></article><article class="system-microsite-card"><h3>Iconography</h3><div class="ux-scroll-viewport"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/iconography.png" alt="Scrollable iconography page from the New World Design System microsite." loading="lazy"></div></article></div><div class="ux-card-stack"><article class="system-foundation-card"><span>Colour System</span><h3>Primary red, secondary purple and neutral support.</h3><p>The colour system preserved New World’s primary red and secondary purple. The full colour page is shown above, while this summary extracts the colours most relevant to the system story.</p><div class="system-swatch-section"><h4>Brand anchors</h4><div class="ux-swatch-grid ux-swatch-grid--four"><div class="ux-swatch system-swatch--red"><b>Primary Red</b><strong>#E11A2C</strong><small>rgb(225,26,44)</small></div><div class="ux-swatch system-swatch--purple"><b>Secondary Purple</b><strong>#571060</strong><small>rgb(87,16,96)</small></div><div class="ux-swatch system-swatch--ink"><b>Ink</b><strong>#231F20</strong><small>rgb(35,31,32)</small></div><div class="ux-swatch system-swatch--white"><b>White</b><strong>#FFFFFF</strong><small>rgb(255,255,255)</small></div></div></div><div class="system-swatch-section"><h4>Core scales</h4><div class="ux-swatch-grid"><div class="ux-swatch system-swatch--red-light"><b>Red Light</b><strong>#FCD7D7</strong></div><div class="ux-swatch system-swatch--red"><b>Red Base</b><strong>#E11A2C</strong></div><div class="ux-swatch system-swatch--red-dark"><b>Red Dark</b><strong>#CB1728</strong></div><div class="ux-swatch system-swatch--purple-light"><b>Purple Light</b><strong>#EEE7EF</strong></div><div class="ux-swatch system-swatch--purple"><b>Purple Base</b><strong>#571060</strong></div><div class="ux-swatch system-swatch--purple-dark"><b>Purple Dark</b><strong>#460D4D</strong></div></div></div><div class="system-swatch-section"><h4>Feedback samples</h4><div class="ux-swatch-grid ux-swatch-grid--four"><div class="ux-swatch system-swatch--info"><b>Information</b><strong>#004085</strong></div><div class="ux-swatch system-swatch--success"><b>Success</b><strong>#155724</strong></div><div class="ux-swatch system-swatch--warning"><b>Warning</b><strong>#856404</strong></div><div class="ux-swatch system-swatch--error"><b>Error</b><strong>#721C24</strong></div></div></div></article><article class="system-foundation-card"><span>Typography</span><h3>Desktop and mobile scales documented as design evidence.</h3><p>The microsite preview shows the full typography page. The supporting images below focus only on the desktop and mobile scale decisions.</p><div class="ux-gallery ux-gallery--two"><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/typography-desktop.png" alt="Desktop typography scale from the New World Design System." loading="lazy"></figure><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/typography-mobile.png" alt="Mobile typography scale from the New World Design System." loading="lazy"></figure></div></article><article class="system-foundation-card"><span>Icon System</span><h3>Grid rules for consistent icon drawing.</h3><p>The detail focuses on grid, padding and stroke rules. The full icon library remains visible in the microsite preview above.</p><div class="ux-gallery ux-gallery--single"><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/icon-grid.png" alt="Icon grid rules for desktop and mobile icon drawing." loading="lazy"></figure></div></article></div></div></section>
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Principles and Scope</p>
+            <h3>A focused system needed clear filters.</h3>
+          </div>
+          <p>The six principles helped decide what to simplify, what to keep and what needed clearer documentation.</p>
+        </div>
+        <div class="system-principle-grid">
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-layout-grid"></i></span><h3>Consistency</h3><p>Maintain uniform styles and behaviours across components.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-focus-2"></i></span><h3>Clarity</h3><p>Present information and actions in a straightforward way.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-accessible"></i></span><h3>Accessibility</h3><p>Support people of all abilities and assistive technologies.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-users"></i></span><h3>Inclusivity</h3><p>Consider diverse user needs, backgrounds and contexts.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-square-rounded"></i></span><h3>Simplicity</h3><p>Keep interactions minimal without losing functionality.</p></article>
+          <article class="ux-card ux-icon-card"><span class="ux-icon-card__icon" aria-hidden="true"><i class="ti ti-eye"></i></span><h3>Visibility</h3><p>Make key information and actions easy to notice.</p></article>
+        </div>
+        <div class="system-scope-note">
+          <p>I made a deliberate scope decision. Instead of documenting every possible component, I focused on Search, Cards and Buttons because they carry the core online grocery flow.</p>
+        </div>
+      </div>
+    </section>
 
-    <section class="ux-section system-theme-ds" aria-labelledby="components-title"><div class="container ux-wide-head"><p class="ux-kicker">Core Components</p><h2 id="components-title">Component evidence for the main shopping journey.</h2><p>These components carry the core online grocery journey: finding products, comparing product information and taking action.</p></div><div class="container"><aside class="ux-scope-block" aria-label="Component selection rationale"><h3>Why Search, Cards and Buttons?</h3><p>I did not try to document every interface element. I focused on three components that carry the core online grocery journey: finding products, comparing product information and taking action to add or purchase items.</p><div class="ux-chip-flow"><span>Search → Find</span><span>Cards → Compare</span><span>Buttons → Act</span></div></aside></div><div class="container ux-component-stack"><article class="ux-component-row"><div class="ux-copy"><p class="ux-kicker">Search System</p><h2>The entry point for product discovery.</h2><p>Search needed to support product discovery, store finding and responsive use cases. The documentation focused on anatomy and result behaviour.</p></div><div class="system-component-demo system-image-demo"><span>Component details</span><h3>Search evidence</h3><div class="ux-gallery ux-gallery--single"><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/search-anatomy.png" alt="Search anatomy documentation from the New World Design System." loading="lazy"></figure><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/search-view.png" alt="Search view documentation from the New World Design System." loading="lazy"></figure></div></div></article><article class="ux-component-row"><div class="ux-copy"><p class="ux-kicker">Card System</p><h2>A repeatable structure for product decisions.</h2><p>The card system clarified how product image, price, unit detail and actions should work together in a dense grocery interface.</p></div><div class="system-component-demo system-image-demo"><span>Component details</span><h3>Card evidence</h3><div class="ux-gallery ux-gallery--single"><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/card-container.png" alt="Card container documentation from the New World Design System." loading="lazy"></figure><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/card-action.png" alt="Card action documentation from the New World Design System." loading="lazy"></figure></div></div></article><article class="ux-component-row"><div class="ux-copy"><p class="ux-kicker">Button System</p><h2>States and hierarchy.</h2><p>Button documentation covered hierarchy, variants, states and platform behaviour. The evidence images show how the system defined action emphasis.</p></div><div class="system-component-demo system-image-demo"><span>Component details</span><h3>Button evidence</h3><div class="ux-gallery ux-gallery--single"><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/button-state.png" alt="Button state documentation from the New World Design System." loading="lazy"></figure><figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/button-hierarchy.png" alt="Button hierarchy documentation from the New World Design System." loading="lazy"></figure></div></div></article></div></section>
+    <!-- 11. Design — Foundations + Core Components + Documentation and
+         Variables folded in.
+         [MODIFIED M2 2026-07-14] The 3 scrollable microsite screenshots
+         (Colour/Typography/Iconography) removed at Cafe's request, since
+         the Delivery section's live Figma embed now covers that ground. -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="design-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
+          <h2 id="design-title">Foundations that could become a clearer token structure.</h2>
+          <p>The original assignment did not produce a complete production token library. For this portfolio case study, I describe the work as a token ready foundation, supported by later thinking around primitive, semantic, element and responsive token structures.</p>
+        </div>
 
-    <section class="ux-section ux-section--tint system-theme-ds" aria-labelledby="documentation-title"><div class="container ux-two-col"><aside class="ux-intro"><p>Documentation and Variables</p><h2 id="documentation-title">A microsite designed as a handoff tool.</h2></aside><div class="ux-copy"><p>Each component page included anatomy, usage guidance, responsive behaviour, interaction states and accessibility considerations. I wanted the microsite to work as a handoff tool, not only a visual presentation.</p><p>Figma Variables were an important learning direction. They helped frame how colour, typography and spacing could become more parameterised, although Variables were not fully applied for page control in the original assignment.</p><figure class="system-evidence-image"><button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/variables.png" data-modal-title="Variables exploration" data-modal-caption="Figma variables exploration used as evidence for token-ready thinking."><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/variables.png" alt="Figma variables exploration for colour, typography and spacing logic." loading="lazy"></button><figcaption>Variables were explored as a future direction for making colour, type and spacing more parameterised.</figcaption></figure></div></div></section>
+        <!-- [MODIFIED M23 N9] IA and component scope reasoning moved to the
+             front of Design, ahead of the Foundations content, per Cafe's
+             Bug1 review: the section previously jumped straight to "why
+             Search, Cards and Buttons" with no lead-in. This restores the
+             original NDS reference page's structure, IA first, then the
+             component-selection rationale, then the design content. -->
+        <!-- [MODIFIED M23 Bug2 B4] The native HTML IA tree and flow
+             diagram (Bug1 N9) replaced with Cafe's uploaded images, plain
+             figures, no clickable frame. -->
+        <div class="nds-ia-block ux-content-gap">
+          <h3>Information Architecture</h3>
+          <p>The design system microsite was structured to provide clarity and logical flow. Based on the IA shown in the diagram below, the system is divided into three main sections. This hierarchy ensures users can easily navigate from conceptual understanding to practical implementation.</p>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/ia.png" alt="Information architecture diagram for the New World Design System microsite." loading="lazy">
+          </figure>
+        </div>
 
-    <section class="ux-retro" aria-labelledby="retro-title"><div class="container"><p class="ux-kicker">Retrospective</p><h2 id="retro-title">What I would carry forward.</h2><div class="ux-card-grid ux-card-grid--three ux-retro__grid"><article class="ux-card"><h3>Value</h3><p>This project strengthened my understanding of design systems as living documents and improved my ability to analyse complex interface environments.</p></article><article class="ux-card"><h3>Learning</h3><p>The main improvement would be time management. The core documentation needed focus before deeper technical experiments with Variables.</p></article><article class="ux-card"><h3>Next</h3><p>If continued, I would refine the Variables structure, unify remaining visual styles and expand the component library through clearer governance rules.</p></article></div></div></section>
+        <div class="nds-ia-block ux-content-gap">
+          <h3>Component scope</h3>
+          <p>The selected components, Search, Cards and Buttons, were chosen because they represent the core interactions in New World's online shopping flow: searching for products, browsing and selecting items, and taking action to purchase. By focusing on these high-impact elements, the system addresses the most critical user journeys while creating a scalable foundation for future components.</p>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/journey.png" alt="Online grocery shopping flow diagram showing how Search, Cards and Buttons map to the core journey." loading="lazy">
+          </figure>
+        </div>
 
-    <section class="ux-section" aria-labelledby="recipe-title"><div class="container ux-two-col"><aside class="ux-intro"><p>HENEX Method Recipe</p><h2 id="recipe-title">R17 explains how scattered interface evidence became tangible system assets.</h2></aside><div class="ux-copy"><p class="ux-recipe-primary"><span>Primary recipe</span><a href="../philosophy.html#r17">R17 · Make It Tangible Model</a><small>Perception × Meaning × Matter</small></p><p>I used this method to turn interface evidence into tangible assets: colour rules, typography, icon grids, responsive layout, component anatomy and documentation guidelines.</p><div class="ux-recipe-tags"><span>Perception</span><span>Meaning</span><span>Matter</span></div><div class="ux-recipe-popovers"><button type="button" class="ux-recipe-trigger" data-recipe-title="R15 · Clarity & Accessibility Audit" data-recipe-body="Use clarity and accessibility checks to reduce cognitive load and improve component quality." data-recipe-link="../philosophy.html#r15">R15</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R03 · Brand Personality UI" data-recipe-body="Translate brand personality into consistent UI behaviour, colour and microcopy." data-recipe-link="../philosophy.html#r03">R03</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R09 · Mission First Navigation" data-recipe-body="Structure information around user and team goals rather than scattered content." data-recipe-link="../philosophy.html#r09">R09</button><button type="button" class="ux-recipe-trigger" data-recipe-title="R18 · Step by Step Path Design" data-recipe-body="Arrange interaction states and component behaviour in the order people understand and act." data-recipe-link="../philosophy.html#r18">R18</button></div></div></div></section>
+        <div class="ux-card-stack">
+          <article class="system-foundation-card">
+            <span>Colour System</span>
+            <h3>Primary red, secondary purple and neutral support.</h3>
+            <p>The colour system preserved New World's primary red and secondary purple, extracted here as the colours most relevant to the system story.</p>
+            <div class="system-swatch-section">
+              <h4>Brand anchors</h4>
+              <div class="ux-swatch-grid ux-swatch-grid--four">
+                <div class="ux-swatch system-swatch--red"><b>Primary Red</b><strong>#E11A2C</strong><small>rgb(225,26,44)</small></div>
+                <div class="ux-swatch system-swatch--purple"><b>Secondary Purple</b><strong>#571060</strong><small>rgb(87,16,96)</small></div>
+                <div class="ux-swatch system-swatch--ink"><b>Ink</b><strong>#231F20</strong><small>rgb(35,31,32)</small></div>
+                <div class="ux-swatch system-swatch--white"><b>White</b><strong>#FFFFFF</strong><small>rgb(255,255,255)</small></div>
+              </div>
+            </div>
+            <div class="system-swatch-section">
+              <h4>Core scales</h4>
+              <div class="ux-swatch-grid">
+                <div class="ux-swatch system-swatch--red-light"><b>Red Light</b><strong>#FCD7D7</strong></div>
+                <div class="ux-swatch system-swatch--red"><b>Red Base</b><strong>#E11A2C</strong></div>
+                <div class="ux-swatch system-swatch--red-dark"><b>Red Dark</b><strong>#CB1728</strong></div>
+                <div class="ux-swatch system-swatch--purple-light"><b>Purple Light</b><strong>#EEE7EF</strong></div>
+                <div class="ux-swatch system-swatch--purple"><b>Purple Base</b><strong>#571060</strong></div>
+                <div class="ux-swatch system-swatch--purple-dark"><b>Purple Dark</b><strong>#460D4D</strong></div>
+              </div>
+            </div>
+            <div class="system-swatch-section">
+              <h4>Feedback samples</h4>
+              <div class="ux-swatch-grid ux-swatch-grid--four">
+                <div class="ux-swatch system-swatch--info"><b>Information</b><strong>#004085</strong></div>
+                <div class="ux-swatch system-swatch--success"><b>Success</b><strong>#155724</strong></div>
+                <div class="ux-swatch system-swatch--warning"><b>Warning</b><strong>#856404</strong></div>
+                <div class="ux-swatch system-swatch--error"><b>Error</b><strong>#721C24</strong></div>
+              </div>
+            </div>
+          </article>
+          <article class="system-foundation-card">
+            <span>Typography</span>
+            <h3>Desktop and mobile scales documented as design evidence.</h3>
+            <p>The supporting images below focus on the desktop and mobile scale decisions.</p>
+            <div class="ux-gallery ux-gallery--two">
+              <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/typography-desktop.png" alt="Desktop typography scale from the New World Design System." loading="lazy"></figure>
+              <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/typography-mobile.png" alt="Mobile typography scale from the New World Design System." loading="lazy"></figure>
+            </div>
+          </article>
+          <article class="system-foundation-card">
+            <span>Icon System</span>
+            <h3>Grid rules for consistent icon drawing.</h3>
+            <p>The detail focuses on grid, padding and stroke rules.</p>
+            <div class="ux-gallery ux-gallery--single">
+              <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/icon-grid.png" alt="Icon grid rules for desktop and mobile icon drawing." loading="lazy"></figure>
+            </div>
+          </article>
+        </div>
 
-    <section class="ux-section ux-related" aria-labelledby="related-title"><div class="container"><p class="ux-kicker">Related Projects</p><h2 id="related-title">More work across service, digital and spatial systems.</h2><div class="ux-related__grid"><a class="ux-related-card" href="accessibility-support-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support pathway case focused on clearer access to court assistance.</small></a><a class="ux-related-card" href="victim-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-home.webp" alt="Victim Hub project preview." loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service improvement case.</small></a><a class="ux-related-card" href="studier.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp" alt="Studier dashboard project preview." loading="lazy"><span>Digital Systems</span><strong>Studier</strong><small>A dashboard project for research task and response management.</small></a><a class="ux-related-card" href="guangzhou-baiyun-t2.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/bt2/bt2-home.webp" alt="Guangzhou Baiyun T2 project preview." loading="lazy"><span>Spatial Systems</span><strong>Guangzhou Baiyun T2</strong><small>An architecture case for complex spatial delivery.</small></a></div><div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div></div></section>
+        <!-- [MODIFIED M23 Bug2 B3] Core Components and the former Component
+             Scope aside said the same thing twice (both explained the
+             Search/Cards/Buttons focus). Merged into one section-head
+             block: the kicker and title stay, the rationale folds into a
+             single paragraph, and the three chips move here directly. -->
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Core Components</p>
+            <h3>Component evidence for the main shopping journey.</h3>
+          </div>
+          <p>I did not try to document every interface element. I focused on three components that carry the core online grocery journey: finding products, comparing product information and taking action to add or purchase items.</p>
+        </div>
+        <div class="ux-component-stack ux-content-gap">
+          <article class="ux-component-row">
+            <div class="ux-copy">
+              <p class="ux-kicker">Search System</p>
+              <h2>The entry point for product discovery.</h2>
+              <p>Search needed to support product discovery, store finding and responsive use cases. The documentation focused on anatomy and result behaviour.</p>
+            </div>
+            <div class="system-component-demo system-image-demo">
+              <span>Component details</span>
+              <h3>Search evidence</h3>
+              <div class="ux-gallery ux-gallery--single">
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/search-anatomy.png" alt="Search anatomy documentation from the New World Design System." loading="lazy"></figure>
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/search-view.png" alt="Search view documentation from the New World Design System." loading="lazy"></figure>
+              </div>
+            </div>
+          </article>
+          <article class="ux-component-row">
+            <div class="ux-copy">
+              <p class="ux-kicker">Card System</p>
+              <h2>A repeatable structure for product decisions.</h2>
+              <p>The card system clarified how product image, price, unit detail and actions should work together in a dense grocery interface.</p>
+            </div>
+            <div class="system-component-demo system-image-demo">
+              <span>Component details</span>
+              <h3>Card evidence</h3>
+              <div class="ux-gallery ux-gallery--single">
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/card-container.png" alt="Card container documentation from the New World Design System." loading="lazy"></figure>
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/card-action.png" alt="Card action documentation from the New World Design System." loading="lazy"></figure>
+              </div>
+            </div>
+          </article>
+          <article class="ux-component-row">
+            <div class="ux-copy">
+              <p class="ux-kicker">Button System</p>
+              <h2>States and hierarchy.</h2>
+              <p>Button documentation covered hierarchy, variants, states and platform behaviour. The evidence images show how the system defined action emphasis.</p>
+            </div>
+            <div class="system-component-demo system-image-demo">
+              <span>Component details</span>
+              <h3>Button evidence</h3>
+              <div class="ux-gallery ux-gallery--single">
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/button-state.png" alt="Button state documentation from the New World Design System." loading="lazy"></figure>
+                <figure><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/button-hierarchy.png" alt="Button hierarchy documentation from the New World Design System." loading="lazy"></figure>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Documentation and Variables</p>
+            <h3>A microsite designed as a handoff tool.</h3>
+          </div>
+          <p>Each component page included anatomy, usage guidance, responsive behaviour, interaction states and accessibility considerations. I wanted the microsite to work as a handoff tool, not only a visual presentation.</p>
+        </div>
+        <!-- [MODIFIED M23 Bug2 B5] Modal-trigger button removed — Cafe
+             wants a plain, non-clickable image here since the content is
+             already legible at full width. -->
+        <div class="ux-desc-aligned ux-content-gap">
+          <p>Figma Variables were an important learning direction. They helped frame how colour, typography and spacing could become more parameterised, although Variables were not fully applied for page control in the original assignment.</p>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/variables.png" alt="Figma variables exploration for colour, typography and spacing logic." loading="lazy">
+            <figcaption>Variables were explored as a future direction for making colour, type and spacing more parameterised.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. Delivery — [MODIFIED M23 N10] The embedded Figma iframe did not
+         load reliably (Figma proto embeds require the viewer to be signed
+         in / same-origin in many browsers). Replaced with the 7 microsite
+         pages Cafe uploaded to R2, shown as scrollable long images at a
+         16:10 frame. One page visible, the other 6 behind Read more. -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Delivery</p>
+          <h2 id="delivery-title">See it working, not just read about it.</h2>
+          <p>Rather than a formal usability study, this design system was validated through direct self-testing: checking that navigation stays clear, links resolve correctly, and content reads well across the microsite's pages. The seven pages below are the actual microsite, scroll through each to judge the system's clarity for yourself.</p>
+        </div>
+        <!-- [MODIFIED M23 Bug2 B6] Reordered to Cafe's target sequence
+             (basic, icon, colour, font, button, card, search). Image 1
+             (basic) is the full-width lead and always visible; images 2-7
+             sit behind Read more as a two-column grid. The expanded frame
+             is now scrollable (fixed height, overflow-y auto) instead of
+             a fixed top-crop, so the full tall page image can be read. -->
+        <div class="nds-delivery-pages">
+          <figure class="nds-delivery-frame nds-delivery-frame--lead">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_basic.png" alt="New World Design System microsite, Basic/About page." loading="lazy">
+            <figcaption>About</figcaption>
+          </figure>
+          <div class="nds-delivery-more" id="nds-delivery-more" hidden>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_icon.png" alt="New World Design System microsite, Icon page." loading="lazy">
+              <figcaption>Iconography</figcaption>
+            </figure>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_color.png" alt="New World Design System microsite, Colour page." loading="lazy">
+              <figcaption>Colour</figcaption>
+            </figure>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_font.png" alt="New World Design System microsite, Typography page." loading="lazy">
+              <figcaption>Typography</figcaption>
+            </figure>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_button.png" alt="New World Design System microsite, Button page." loading="lazy">
+              <figcaption>Buttons</figcaption>
+            </figure>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_card.png" alt="New World Design System microsite, Card page." loading="lazy">
+              <figcaption>Cards</figcaption>
+            </figure>
+            <figure class="nds-delivery-frame">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/nds/nds_Page_search.png" alt="New World Design System microsite, Search page." loading="lazy">
+              <figcaption>Search</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="ux-actions nds-delivery-actions">
+          <button type="button" class="button button--soft" id="nds-delivery-btn" data-expand-trigger aria-expanded="false" aria-controls="nds-delivery-more">Read more</button>
+          <a class="button button--primary" href="https://www.figma.com/proto/uUqc1UT6giYsWw1QMbVDyX/NWDS-for-portfolio?page-id=12%3A2&node-id=13-56&viewport=202%2C241%2C0.04&t=eYa9nBzqNH2TujpU-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=13%3A56" target="_blank" rel="noopener noreferrer">Open Full Prototype</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
+      <div class="container">
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
+        <h2 id="retro-title">Looking back, looking forward.</h2>
+        <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
+          <article class="ux-card">
+            <h3>Value</h3>
+            <p>This project strengthened my understanding of design systems as living documents and improved my ability to analyse complex interface environments.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Learned</h3>
+            <p>The main improvement would be time management. The core documentation needed focus before deeper technical experiments with Variables.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Next</h3>
+            <p>If continued, I would refine the Variables structure, unify remaining visual styles and expand the component library through clearer governance rules.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. HENEX Method Recipe — R17 primary, Secondary label added (M2 spec §2) -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>HENEX Method Recipe</p>
+          <h2 id="recipe-title">R17 explains how scattered interface evidence became tangible system assets.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p class="ux-recipe-primary">
+            <span>Primary recipe</span>
+            <a href="../philosophy.html#r17">R17 · Make It Tangible Model</a>
+          </p>
+          <div class="ux-recipe-tags">
+            <span>Perception</span>
+            <span>Meaning</span>
+            <span>Matter</span>
+          </div>
+          <p>I used this method to turn interface evidence into tangible assets: colour rules, typography, icon grids, responsive layout, component anatomy and documentation guidelines.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
+            <span>Secondary recipe</span>
+          </p>
+          <div class="ux-recipe-popovers">
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R15 · Clarity &amp; Accessibility Audit"
+              data-recipe-body="Use clarity and accessibility checks to reduce cognitive load and improve component quality."
+              data-recipe-link="../philosophy.html#r15">R15</button>
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R03 · Brand Personality UI"
+              data-recipe-body="Translate brand personality into consistent UI behaviour, colour and microcopy."
+              data-recipe-link="../philosophy.html#r03">R03</button>
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R09 · Mission First Navigation"
+              data-recipe-body="Structure information around user and team goals rather than scattered content."
+              data-recipe-link="../philosophy.html#r09">R09</button>
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R18 · Step by Step Path Design"
+              data-recipe-body="Arrange interaction states and component behaviour in the order people understand and act."
+              data-recipe-link="../philosophy.html#r18">R18</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Related Projects -->
+    <section class="ux-section ux-related" aria-labelledby="related-title">
+      <div class="container">
+        <p class="ux-kicker">Related Projects</p>
+        <h2 id="related-title">More work across service, digital and spatial systems.</h2>
+        <div class="ux-related__grid">
+          <a class="ux-related-card" href="accessibility-support-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy"><span>Service Systems</span><strong>Accessibility Support Hub</strong><small>A support pathway case focused on clearer access to court assistance.</small></a>
+          <a class="ux-related-card" href="victim-hub.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-home.webp" alt="Victim Hub project preview." loading="lazy"><span>Service Systems</span><strong>Victim Hub</strong><small>A public sector service improvement case.</small></a>
+          <a class="ux-related-card" href="studier.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp" alt="Studier dashboard project preview." loading="lazy"><span>Digital Systems</span><strong>Studier</strong><small>A dashboard project for research task and response management.</small></a>
+          <a class="ux-related-card" href="guangzhou-baiyun-t2.html"><img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/bt2/bt2-home.webp" alt="Guangzhou Baiyun T2 project preview." loading="lazy"><span>Spatial Systems</span><strong>Guangzhou Baiyun T2</strong><small>An architecture case for complex spatial delivery.</small></a>
+        </div>
+        <div class="ux-related__actions"><a class="button button--soft" href="../works.html">Back to Works</a></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer"><div class="container footer-grid"><div class="footer-intro"><h2>Cafe Yi</h2><p>Creating evidence-informed design work across public services, digital products and built environments.</p><a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a></div><div class="footer-column"><h3>Social</h3><a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a><a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a></div><div class="footer-column"><h3>Explore</h3><a href="../about.html">About</a><a href="../philosophy.html">Philosophy</a><a href="../works.html">Works</a><a href="../lab.html">Lab</a></div></div><div class="container footer-bottom">Copyright © 2026 Cafe Yi. All rights reserved.</div></footer>

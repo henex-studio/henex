@@ -1,182 +1,289 @@
-/* Welnest (WST) case study page styles.
+/* Welnest case styles.
    Dependencies: global.css, ux-case-study.css
-   Theme colours are scoped to .ux-case-page--welnest only. */
+   [MODIFIED M3 2026-07-15] Rebuilt onto the VTH v2 token pattern (E19) for
+   the unified UX case build. See docs/specs/M3_VSK_WST_Migration_Spec.md.
+   Palette approved by Cafe 2026-07-12: purified v3 pair, primary #FF8C00
+   (pure amber), secondary #FFB200 (pure gold) — same-family pair by
+   Cafe's deliberate choice, harmony over contrast. This REPLACES the old
+   sitewide primary (#202124 neutral dark heading colour, #FB8A00 accent);
+   every reference to the old pair is retired from this file. Legacy
+   flat-token CSS (--ux-accent/--ux-tint/--wst-hmw/--wst-hmw-strong) is
+   retired wholesale; this file follows the ash.css/std.css/nds.css/
+   rkt.css/vsk.css token derivation exactly, with F6/F22/F29/F30 lessons
+   applied from the outset. The DS-internal product brand swatches
+   (wst-swatch--yellow/orange/cream, #FFB200/#FB8A00/#FFEFDE) are a
+   separate content-level system documenting Welnest's own product
+   colours and are kept unchanged — do not conflate with the page theme
+   tokens above (same pattern as NDS's dual red/purple DS swatches). */
+
 .ux-case-page--welnest {
-  --ux-theme: #202124;      /* Headings use the global neutral dark, not a brand brown */
-  --ux-accent: #FB8A00;     /* Decorative accent, kicker/icon use only, not AA-safe for body text */
-  --ux-tint: #FFEFDE;       /* Section tint background */
-  --ux-dark: #202124;
-  --ux-soft: #FFEFDE;
-  --ux-pale: #FFF8F0;
-  --wst-hmw: #FFB200;       /* "How might we" lead-in colour */
-  --wst-hmw-strong: #FB8A00; /* Emphasised keyword colour inside the HMW question */
+  --ux-primary: #FF8C00;
+  --ux-secondary: #FFB200;
+  --ux-theme: var(--ux-primary);
+  --ux-dark: #A85B00;
+  --ux-primary-soft: #FFAE4D;
+  --ux-primary-pale: #FFF6E9;
+  /* --ux-primary-dark — the deep-primary base the dark-mode --ux-emphasis
+     mixes into (Master Spec 2.4). Mandatory for mid-tone primaries. */
+  --ux-primary-dark: color-mix(in srgb, var(--ux-primary) 55%, black);
+  --ux-tone-s: linear-gradient(150deg, #FFE9CC, #FFEFDA 58%, #FFF4E4);
+  --ux-tone-p: linear-gradient(145deg, #FFF8ED, #FFE2B8 82%);
+  --ux-emphasis: linear-gradient(135deg, #A85B00, #C46B00 60%, #B06000);
+  --ux-alert-ink: #FFCB4D;
+  --ux-accent-ink: var(--ux-secondary);
+  --ux-strong-ink: var(--ux-primary);
+  --section-pad: 144px;
 }
 
-/* Theme colour mapping onto shared ux-case-study.css hooks: headings use the neutral dark */
-.ux-case-page--welnest .ux-intro h2,
-.ux-case-page--welnest .ux-wide-head h2,
-.ux-case-page--welnest .ux-copy h2,
-.ux-case-page--welnest .ux-copy h3,
-.ux-case-page--welnest .ux-video-grid h2,
-.ux-case-page--welnest .ux-feature h3,
-.ux-case-page--welnest .ux-ds-module h3,
-.ux-case-page--welnest .ux-retro h2,
-.ux-case-page--welnest .ux-retro h3 {
-  color: var(--ux-theme);
+@media (max-width: 900px) {
+  .ux-case-page--welnest {
+    --section-pad: 80px;
+  }
 }
-.ux-case-page--welnest .ux-lens a,
-.ux-case-page--welnest .ux-recipe-primary a {
-  color: color-mix(in srgb, var(--ux-accent) 82%, var(--ux-theme));
+
+/* Dark-mode block redefines ALL of --ux-primary-pale / --ux-tone-s /
+   --ux-tone-p / --ux-emphasis (Master Spec 13.8 item 1), and
+   --ux-emphasis mixes into --ux-primary-dark, not the raw mid-tone
+   primary (item 2). Applied from the outset per the F6 lesson. */
+[data-theme=dark] .ux-case-page--welnest {
+  --ux-accent-ink: color-mix(in srgb, var(--ux-secondary) 55%, white);
+  --ux-strong-ink: color-mix(in srgb, var(--ux-primary) 62%, white);
+  --ux-dark: var(--theme-text);
+  --ux-primary-pale: color-mix(in srgb, var(--ux-primary-soft) 46%, var(--theme-bg));
+  --ux-tone-s: linear-gradient(150deg, color-mix(in srgb, var(--ux-primary-soft) 28%, var(--theme-bg)), color-mix(in srgb, var(--ux-primary-soft) 16%, var(--theme-bg)) 72%);
+  --ux-tone-p: linear-gradient(145deg, var(--theme-bg), color-mix(in srgb, var(--ux-primary-soft) 30%, var(--theme-bg)) 82%);
+  --ux-emphasis: linear-gradient(135deg,
+    color-mix(in srgb, var(--ux-primary-soft) 22%, var(--ux-primary-dark)),
+    color-mix(in srgb, var(--ux-primary-soft) 34%, var(--ux-primary-dark)) 60%,
+    color-mix(in srgb, var(--ux-primary-soft) 20%, var(--ux-primary-dark)));
 }
+
 .ux-case-page--welnest figcaption {
-  color: var(--theme-text-soft);
+  color: color-mix(in srgb, var(--ux-theme) 70%, var(--theme-text-soft));
 }
 
-/* Kicker accent: brighten to WST accent orange, decorative use only (AA does not apply,
-   kicker text is small-caps label text, not body copy). Related Projects kicker stays neutral. */
-.ux-case-page--welnest .ux-kicker,
-.ux-case-page--welnest .ux-intro > p:first-child,
-.ux-case-page--welnest .ux-copy .ux-kicker,
-.ux-case-page--welnest .ux-meta span,
-.ux-case-page--welnest .ux-skills > span,
-.ux-case-page--welnest .ux-lens span,
-.ux-case-page--welnest .ux-process span,
-.ux-case-page--welnest .ux-recipe-primary span,
-.ux-case-page--welnest .ux-card span,
-.ux-case-page--welnest .ux-influence strong,
-.ux-case-page--welnest .wst-finding-grid span {
-  color: var(--ux-accent);
+[data-theme=dark] .ux-case-page--welnest figcaption {
+  color: color-mix(in srgb, var(--ux-primary-soft) 70%, var(--theme-text-soft));
 }
+
+/* Kickers and ink-token routing (Master Spec 6.1/10.4).
+   [F30 lesson applied] .ux-kicker--chapter listed here too. */
+.ux-case-page--welnest .ux-kicker,
+.ux-case-page--welnest .ux-intro p,
+.ux-case-page--welnest .ux-chapter-head .ux-kicker,
+.ux-case-page--welnest .ux-section-head .ux-kicker {
+  color: var(--ux-accent-ink);
+}
+
 .ux-case-page--welnest .ux-related .ux-kicker {
   color: var(--theme-muted);
 }
 
-/* Hero */
-.ux-case-page--welnest {
-  --hero-img: url("https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/hero.png");
+.ux-case-page--welnest .ux-meta span,
+.ux-case-page--welnest .ux-skills > span {
+  color: var(--ux-accent-ink);
 }
 
-/* Preview image: replaces video, must show the full image without cropping. No background
-   fill behind the image, so transparent PNG areas stay transparent rather than picking up
-   a themed or neutral panel colour. */
-.ux-case-page--welnest .ux-video-grid img.ux-video {
-  width: 100%;
-  height: auto;
-  aspect-ratio: auto;
-  display: block;
-  object-fit: contain;
-  background: transparent;
-  box-shadow: none;
+.ux-case-page--welnest .ux-skills em {
+  border-color: var(--ux-strong-ink);
+  color: var(--ux-strong-ink);
 }
 
-/* Problem: image moves below the copy, full width, new row instead of sitting beside the text */
-.ux-case-page--welnest .ux-problem__grid {
-  grid-template-columns: 1fr;
+.ux-case-page--welnest .ux-lens span {
+  color: var(--ux-accent-ink);
 }
-.ux-case-page--welnest .ux-problem__grid figure {
-  margin-top: 8px;
+
+.ux-case-page--welnest .ux-lens a {
+  color: var(--ux-strong-ink);
 }
-.ux-case-page--welnest .ux-problem__grid figure img {
-  width: 100%;
-  display: block;
+
+.ux-case-page--welnest .ux-recipe-primary span {
+  color: var(--ux-accent-ink);
 }
+
+/* Tier-d kicker override (matches vth-v2.css Section 2 pattern) */
+.ux-case-page--welnest .ux-tier-d .ux-kicker {
+  color: var(--ux-alert-ink) !important;
+}
+
+.ux-case-page--welnest .ux-tier-d .ux-influence strong {
+  color: var(--ux-alert-ink);
+}
+
+/* Dark-mode card lift across S/L/P tiers (vth-v2.css C4/E1 pattern) */
+[data-theme=dark] .ux-case-page--welnest .ux-tier-s .ux-card,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-l .ux-card,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-p .ux-card,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-p .ux-influence {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border-hover: var(--ux-strong-ink);
+}
+
+[data-theme=dark] .ux-case-page--welnest .ux-tier-s .ux-influence,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-l .ux-influence,
+[data-theme=dark] .ux-case-page--welnest .ux-tier-p .ux-influence {
+  --card-border-hover: var(--ux-alert-ink);
+}
+
+.ux-case-page--welnest .ux-influence {
+  margin-top: 56px;
+}
+
+.ux-case-page--welnest .ux-influence strong {
+  color: var(--ux-strong-ink);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Hero — frosted dual-bloom (Master Spec 7.1), strengthened dark-hero
+   (approved by Cafe 2026-07-12): amber-soft @0.72 / gold @0.52
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.wst-hero {
+  background-image: none;
+  background: linear-gradient(140deg, #FFF4E2, #FFFAF1);
+}
+
+.wst-hero::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 58% 54% at 14% 16%, rgba(255, 140, 0, 0.38), transparent 74%),
+    radial-gradient(ellipse 52% 46% at 90% 18%, rgba(255, 178, 0, 0.36), transparent 74%);
+  filter: blur(34px);
+}
+
+[data-theme=dark] .wst-hero {
+  background: #0A0601;
+}
+
+[data-theme=dark] .wst-hero::before {
+  background:
+    radial-gradient(ellipse 64% 60% at 15% 16%, rgba(255, 174, 77, 0.72), transparent 70%),
+    radial-gradient(ellipse 58% 52% at 88% 20%, rgba(255, 203, 77, 0.52), transparent 70%);
+  filter: blur(36px);
+}
+
+[data-theme=dark] .wst-hero .ux-hero__copy h1 {
+  color: #fff;
+}
+
+[data-theme=dark] .wst-hero .ux-hero__copy p {
+  color: rgba(255, 255, 255, .82);
+}
+
+/* HMW statement colour accent (uses the page's alert-ink, matches the
+   ASH/NDS pattern — replaces the old --wst-hmw/--wst-hmw-strong pair) */
+.ux-case-page--welnest .ux-hmw-statement strong {
+  color: var(--ux-alert-ink);
+}
+
 .ux-case-page--welnest .ux-problem h2 strong {
-  color: var(--wst-hmw);
+  color: var(--ux-strong-ink);
 }
+
+/* [MODIFIED M23 W2] em changed from --ux-dark (#A85B00, a muted brown)
+   to the primary orange, per Cafe's request to move the HMW emphasis off
+   brown and onto orange. */
 .ux-case-page--welnest .ux-problem h2 em {
-  color: var(--wst-hmw-strong);
+  color: var(--ux-primary);
   font-style: normal;
 }
 
-/* No background fill on any content image: transparent PNGs stay transparent. */
-.ux-case-page--welnest .ux-evidence img,
-.ux-case-page--welnest .wst-journey img,
-.ux-case-page--welnest .wst-flow-grid img,
-.ux-case-page--welnest .wst-final-stack img,
-.ux-case-page--welnest .ux-test-card img,
-.ux-case-page--welnest .wst-ds-typography img,
-.ux-case-page--welnest .wst-ds-brand img {
-  background: transparent;
-  box-shadow: none;
+/* [MODIFIED M23 W2] Stacked Problem layout: text above, image below,
+   overriding the shared .ux-problem__grid side-by-side columns. Same
+   pattern as NDS Solution's nds-solution-stack (N4). */
+.wst-problem-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: var(--space-xl);
 }
 
-/* Feedback — uses shared ux-feedback-* from ux-case-study.css.
-   WEL accent overrides: --ux-theme is a neutral dark (#202124) for headings,
-   so the shared card gradient/icon/hover (which derive from --ux-theme) read
-   as dirty gray on this page. Override background, icon and hover to use
-   --ux-accent (orange) instead, matching WEL's warm brand colour. */
-.ux-case-page--welnest .ux-feedback-card {
-  background:
-    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--ux-accent) 8%, transparent), transparent 34%),
-    color-mix(in srgb, var(--ux-soft) 50%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-accent) 22%, var(--theme-border-soft));
-}
-.ux-case-page--welnest .ux-feedback-icon {
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
-  color: var(--ux-accent);
-}
-.ux-case-page--welnest .ux-feedback-card:hover {
-  border-color: color-mix(in srgb, var(--ux-accent) 34%, var(--theme-border));
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   Background — new section (M3 spec §2, mapping §7), no unique layout
+   ═══════════════════════════════════════════════════════════════════════ */
 
-/* Discover: findings, journey and influence share one layout column so they read as a single
-   sequence rather than two disconnected blocks. Journey (image + copy + influence) comes first,
-   findings cards follow underneath. */
+/* ═══════════════════════════════════════════════════════════════════════
+   Research (Discover content) — journey figure + influence, findings grid
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .wst-discover-primary {
   display: grid;
   gap: 40px;
   margin-top: 36px;
 }
+
 .wst-discover-primary figure {
   margin: 0;
 }
+
 .wst-discover-primary img {
   width: 100%;
   display: block;
   border-radius: var(--ux-radius);
 }
-.wst-discover-primary .ux-influence {
-  margin-top: 4px;
-}
+
 .wst-findings-block {
   margin-top: 64px;
 }
+
 .wst-findings-block > p {
   margin-bottom: 28px;
   color: var(--theme-text-soft);
   line-height: 1.62;
 }
+
 .wst-finding-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
 }
-/* C1 base (border, radius, shadow) is in global.css. */
+
 .wst-finding-grid article {
   padding: 30px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
+  border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
+
 .wst-finding-grid span {
   display: block;
   margin-bottom: 14px;
+  color: var(--ux-accent-ink);
   font-size: .72rem;
   font-weight: 850;
   letter-spacing: .12em;
   text-transform: uppercase;
 }
+
 .wst-finding-grid h3 {
   margin-bottom: 14px;
   color: var(--theme-text);
   font-size: 1.1rem;
   line-height: 1.35;
 }
+
 .wst-finding-grid p {
   color: var(--theme-text-soft);
   font-size: .96rem;
   line-height: 1.62;
 }
 
-/* Design Principles grid (6 cards) */
+[data-theme=dark] .wst-finding-grid article {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Design (Define principles + Design System folded in)
+   ═══════════════════════════════════════════════════════════════════════ */
+
 .wst-principle-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -184,210 +291,215 @@
   row-gap: 28px;
   margin-top: 44px;
 }
+
 .wst-principle-card {
   min-height: 190px;
   padding: 32px;
 }
+
+/* [MODIFIED M23 W5, updated Bug2 A1/E2, resized Bug2-followup, fixed
+   Bug2-followup-2] Unframed icon matching the VTH v2 reference,
+   Welnest's own theme colour. Size corrected from 1.9rem to 2.75rem:
+   .wst-principle-grid is a 3-column card grid (6 cards, 2 rows), which
+   matches VTH v2's .vth2-icon-card pattern (font-size 2.75rem), not the
+   denser 9-up .vth2-principle-top grid (1.9rem) it had been sized
+   against.
+   ROOT CAUSE of the size never actually applying: the global ".ux-card
+   span" rule (ux-case-study.css) sets font-size: .72rem (~11px) on any
+   bare <span> inside a .ux-card, and it outranks .wst-principle-icon
+   (1 class vs 2), so neither the 1.9rem nor the 2.75rem attempt ever
+   took effect — the icon was stuck at 11px the whole time, which is why
+   Cafe saw no change after the previous fix. Fixed below with a selector
+   routed through the actual .ux-card parent so it wins outright. */
 .wst-principle-icon {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  margin-bottom: 28px;
-  border-radius: var(--radius-full);
-  color: var(--ux-accent);
-  background: color-mix(in srgb, var(--ux-soft) 72%, var(--theme-surface));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin-bottom: 22px;
+  border-radius: 0;
+  color: var(--ux-strong-ink);
+  background: none;
+  font-size: 2.75rem;
+  line-height: 1;
 }
-.wst-principle-icon svg {
-  width: 23px;
-  height: 23px;
+
+.ux-card.wst-principle-card .wst-principle-icon {
+  font-size: 2.75rem;
 }
-.wst-principle-icon path,
-.wst-principle-icon circle,
-.wst-principle-icon rect {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
+
 .wst-principle-card h3 {
   margin-bottom: 10px;
 }
+
 .wst-principle-card p {
   line-height: 1.6;
 }
 
-/* Develop: evidence images sit in the same right-hand column as the copy text above,
-   reusing the .ux-two-col grid with an empty first cell so both widths match exactly. */
+.ux-case-page--welnest .wst-principle-grid + .ux-influence,
+.ux-case-page--welnest .ux-card-grid + .ux-influence {
+  margin-top: 36px;
+}
+
+/* Develop content (design half, folded into Design): evidence images sit
+   in the same right-hand column as the copy text above, reusing the
+   .ux-two-col grid with an empty first cell so both widths match exactly. */
 .wst-evidence-row {
   margin-top: 32px;
 }
+
 .wst-evidence-row .ux-evidence {
   margin: 0;
 }
+
 .wst-evidence-row img {
   width: 100%;
   display: block;
 }
 
-/* User flow: three images stacked vertically, same column width as the copy above. */
+.wst-flow-block {
+  width: 100%;
+}
+
+/* [MODIFIED M23 W6] Hidden Read more panel for the user-flow and
+   low-fidelity prototype evidence, same pattern as wst-ut-more. */
+.wst-develop-more[hidden] {
+  display: none;
+}
+
+/* [FIXED Bug2-followup-2] The Read more button sat as a plain block
+   outside the .ux-two-col wrapper that holds the user-flow/lo-fi content
+   above it (that content uses an empty <div></div> as the 34% spacer
+   column, with real content in the 66% right column), so the button
+   defaulted to full left alignment instead of sitting under that same
+   right column. Rebuilt as a matching two-col grid with an empty first
+   column so the button lines up exactly under the content above it. */
+.wst-develop-expand {
+  display: grid;
+  grid-template-columns: minmax(220px, .34fr) minmax(0, 1fr);
+  gap: 80px;
+  margin-top: 32px;
+}
+
+.wst-develop-expand button {
+  grid-column: 2;
+  justify-self: start;
+}
+
+@media (max-width: 1180px) {
+  .wst-develop-expand {
+    display: block;
+  }
+  .wst-develop-expand button {
+    justify-self: auto;
+  }
+}
+
 .wst-flow-heading {
   margin-bottom: 22px;
-  color: var(--ux-theme);
+  color: var(--ux-dark, var(--theme-text));
   font-size: 1.2rem;
 }
+
 .wst-flow-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
+
 .wst-flow-grid figure {
   margin: 0;
 }
+
 .wst-flow-grid img {
   width: 100%;
   display: block;
   border-radius: var(--ux-radius);
 }
 
-/* Usability Testing: heading/copy use the same two-column layout as other sections.
-   Influence sits above the card row, matching the copy column width. Cards keep the
-   description-on-top, image-below layout with a centred Read more button beneath. */
-.ux-case-page--welnest .ux-usability {
-  display: block;
-}
-.wst-ut-head {
-  display: grid;
-  grid-template-columns: minmax(220px, .34fr) minmax(0, 1fr);
-  gap: 80px;
-  align-items: start;
-  margin-bottom: 40px;
-}
-.wst-ut-lead {
-  color: var(--theme-text-soft);
-  font-size: 1.05rem;
-  line-height: 1.62;
-}
-.wst-ut-influence {
-  margin-bottom: 40px;
-}
-.ux-test-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-/* C1 base (border, radius, shadow) is in global.css. */
-.ux-test-card {
-  display: flex;
-  flex-direction: column;
-  padding: 26px;
-  background: var(--theme-surface);
-}
-.ux-test-card h3 {
-  margin-bottom: 10px;
-  color: var(--ux-theme);
-  font-size: 1.05rem;
-}
-.ux-test-card p {
-  margin-bottom: 20px;
-  color: var(--theme-text-soft);
-  font-size: .92rem;
-  line-height: 1.6;
-}
-.ux-test-card figure {
-  margin: auto 0 0;
-}
-.ux-test-card img {
-  width: 100%;
-  display: block;
-  border-radius: var(--ux-radius);
-}
-.wst-ut-more {
-  margin-top: 32px;
-}
-.wst-ut-more[hidden] {
-  display: none;
-}
-.wst-ut-actions {
-  margin-top: 36px;
-  text-align: center;
-}
-
-/* Final design: two images stacked full width, each with heading + short copy above */
-.wst-final-stack {
-  display: grid;
-  gap: 60px;
-  margin-top: 8px;
-}
-.wst-final-stack article {
-  display: grid;
-  gap: 24px;
-}
-.wst-final-stack figure {
-  margin: 0;
-}
-.wst-final-stack img {
-  width: 100%;
-  display: block;
-  border-radius: var(--ux-radius);
-}
-
-/* Design System: modules alternate left/right like the other case pages.
-   Typography: copy 1/3, image 2/3. Colour: swatches 1/2, copy 1/2, image side first (reversed).
-   Brand: copy first, image second. */
+/* Design System (Deliver, folded in) */
 .wst-ds-stack {
   display: grid;
   gap: 56px;
 }
+
 .wst-ds-stack > article {
   padding-top: 44px;
 }
+
+/* [MODIFIED M23 W7] Explicit title/body sizing so Design System sub-block
+   typography matches the sitewide VTH-referenced standard (RKT's
+   .rkt-ds-stack h3 uses the same values) rather than falling through to
+   the raw global h3 scale. These blocks already used the correct plain
+   title+paragraph structure (no kicker); this closes the sizing gap only. */
+.wst-ds-stack h3 {
+  margin-bottom: 14px;
+  color: var(--ux-dark, var(--theme-text));
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+}
+
+.wst-ds-stack > article > div > p {
+  color: var(--theme-text-soft);
+  line-height: 1.62;
+}
+
 .wst-ds-typography {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
   gap: 42px;
   align-items: center;
 }
+
 .wst-ds-typography figure {
   margin: 0;
 }
+
 .wst-ds-typography img {
   width: 100%;
   display: block;
   border-radius: var(--ux-radius);
 }
+
 .wst-ds-colour {
   display: grid;
   grid-template-columns: minmax(320px, 1fr) minmax(240px, .72fr);
   gap: 42px;
   align-items: center;
 }
+
 .wst-ds-colour .wst-swatch-grid {
   margin-top: 0;
 }
+
 .wst-ds-brand {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(240px, .8fr);
   gap: 42px;
   align-items: center;
 }
+
 .wst-ds-brand figure {
   margin: 0;
 }
+
 .wst-ds-brand img {
   width: 100%;
   display: block;
   border-radius: var(--ux-radius);
 }
 
-/* Design System colour swatches, three Welnest product brand colours from the source PDF */
+/* DS-internal product brand swatches — Welnest's own product colours,
+   a separate content-level system from the page theme tokens above
+   (M3 spec §1 note, same pattern as NDS). Values unchanged from the
+   legacy build. */
 .wst-swatch-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 26px;
 }
+
 .wst-swatch {
   min-height: 108px;
   display: grid;
@@ -398,62 +510,172 @@
   border: 1px solid rgba(0, 0, 0, .08);
   color: #2A1A06;
 }
+
 .wst-swatch b { font-size: .78rem; }
 .wst-swatch strong { color: inherit; font-size: .9rem; }
 .wst-swatch--yellow { background: #FFB200; }
 .wst-swatch--orange { background: #FB8A00; color: #2A1A06; }
 .wst-swatch--cream  { background: #FFEFDE; color: #2A1A06; }
 
-/* Influence blocks that follow a card grid directly (Define principles, other standalone
-   grids) need their own top spacing since they are not wrapped in a component that already
-   sets this gap, unlike .wst-discover-primary or .wst-ut-head. */
-.ux-case-page--welnest .wst-principle-grid + .ux-influence,
-.ux-case-page--welnest .ux-card-grid + .ux-influence {
+/* ═══════════════════════════════════════════════════════════════════════
+   Validation — extracted from Develop's 6-test-card sub-block (M3 spec
+   §2, mapping §7). Kept as its own chapter-level section.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.wst-ut-influence {
+  margin-bottom: 40px;
+}
+
+.ux-test-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ux-test-card {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  border-radius: var(--ux-radius);
+  background: var(--theme-surface);
+}
+
+.ux-test-card h3 {
+  margin-bottom: 10px;
+  color: var(--ux-dark, var(--theme-text));
+  font-size: 1.05rem;
+}
+
+.ux-test-card p {
+  margin-bottom: 20px;
+  color: var(--theme-text-soft);
+  font-size: .92rem;
+  line-height: 1.6;
+}
+
+.ux-test-card figure {
+  margin: auto 0 0;
+}
+
+.ux-test-card img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+  background: transparent;
+  box-shadow: none;
+}
+
+.wst-ut-more {
+  margin-top: 32px;
+}
+
+.wst-ut-more[hidden] {
+  display: none;
+}
+
+.wst-ut-actions {
   margin-top: 36px;
+  text-align: center;
 }
 
-/* Solution: overrides the shared teal .ux-solution background with the Welnest brand yellow,
-   text switches to the neutral dark for AA contrast on the lighter background. */
-.ux-case-page--welnest .ux-solution {
+[data-theme=dark] .ux-test-card {
+  background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
+  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Delivery (Final Design: Comparison View, Contact, Inspection) — final
+   design stack, standard shared .ux-tier-d rules
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.wst-final-stack {
+  display: grid;
+  gap: 60px;
+  margin-top: 8px;
+}
+
+.wst-final-stack article {
+  display: grid;
+  gap: 24px;
+}
+
+.wst-final-stack figure {
+  margin: 0;
+}
+
+.wst-final-stack img {
+  width: 100%;
+  display: block;
+  border-radius: var(--ux-radius);
+  background: transparent;
+  box-shadow: none;
+}
+
+/* [MODIFIED M23 W3b, reversed Bug2 E1] W3b retired the Welnest brand
+   yellow Solution background because the section carried both ux-tier-s
+   and a ux-solution override that forced product yellow behind white
+   text, and Cafe found the extra hue jarring against the amber theme.
+   Bug2 brings a yellow background back for a different, concrete reason:
+   the Solution illustration's own colours (pale interior, orange
+   elements) merge into the pale amber ux-tier-s background and the
+   illustration cannot be re-exported or recoloured, so the background is
+   the only lever left to separate it. This time the yellow is applied as
+   a scoped, contrast-checked override (not the old ux-solution class)
+   with all text set to a high-contrast dark ink. */
+.ux-case-page--welnest #solution.ux-tier-s {
   background: #FFB200;
-  color: #202124;
 }
 
-/* Retrospective: the shared .ux-retro background is derived from --ux-theme, which is now the
-   neutral dark grey used for headings. Restore the original warm cream tint here directly so
-   switching the heading colour does not change this section's background. */
-.ux-case-page--welnest .ux-retro {
-  background: linear-gradient(145deg, color-mix(in srgb, var(--ux-accent) 16%, var(--theme-surface)), var(--theme-bg) 82%);
-}
-.ux-case-page--welnest .ux-solution .ux-kicker,
-.ux-case-page--welnest .ux-solution h2 {
-  color: #202124;
-}
-.ux-case-page--welnest .ux-solution p {
-  color: color-mix(in srgb, #202124 82%, transparent);
+.ux-case-page--welnest #solution.ux-tier-s .ux-kicker,
+.ux-case-page--welnest #solution.ux-tier-s h2,
+.ux-case-page--welnest #solution.ux-tier-s p {
+  color: #231F20;
 }
 
-/* Section rhythm: increase breathing room between major blocks inside sections */
+[data-theme=dark] .ux-case-page--welnest #solution.ux-tier-s {
+  background: #FFB200;
+}
+
+[data-theme=dark] .ux-case-page--welnest #solution.ux-tier-s .ux-kicker,
+[data-theme=dark] .ux-case-page--welnest #solution.ux-tier-s h2,
+[data-theme=dark] .ux-case-page--welnest #solution.ux-tier-s p {
+  color: #231F20;
+}
+
+/* No background fill on content images: transparent PNGs stay transparent */
+.ux-case-page--welnest .ux-evidence img,
+.ux-case-page--welnest .wst-journey img {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Preview content folded into Outcome: full image, no cropping, no fill */
+.ux-case-page--welnest .ux-video-grid img.ux-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+  display: block;
+  object-fit: contain;
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Section rhythm: extra breathing room between major blocks inside a
+   section that stacks multiple .container rows */
 .ux-case-page--welnest .ux-section > .container + .container {
   margin-top: 48px;
 }
+
 .ux-case-page--welnest .ux-two-col + .container {
   margin-top: 48px;
 }
 
-/* Dark mode surfaces */
-[data-theme="dark"] .ux-feedback-card,
-[data-theme="dark"] .wst-finding-grid article,
-[data-theme="dark"] .ux-test-card {
-  background: var(--theme-surface);
-}
-[data-theme="dark"] .ux-case-page--welnest .ux-solution {
-  color: #202124;
-}
+/* ═══════════════════════════════════════════════════════════════════════
+   Responsive
+   ═══════════════════════════════════════════════════════════════════════ */
 
-/* Responsive: 1180px */
 @media (max-width: 1180px) {
-  .ux-feedback-grid,
   .wst-finding-grid,
   .ux-test-row {
     grid-template-columns: 1fr;
@@ -469,13 +691,8 @@
   .wst-ds-brand {
     grid-template-columns: 1fr;
   }
-  .wst-ut-head {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
 }
 
-/* Responsive: 640px */
 @media (max-width: 640px) {
   .wst-principle-grid {
     grid-template-columns: 1fr;

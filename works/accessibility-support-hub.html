@@ -100,7 +100,7 @@
     <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
-          <p>Overview</p>
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
           <h2 id="overview-title">A central hub for inclusive court access.</h2>
         </aside>
         <div class="ux-copy">
@@ -135,13 +135,15 @@
     </section>
 
 
-    <!-- 3. Background -->
+    <!-- 3. Background — [MODIFIED F7 2026-07-14] side-by-side layout;
+         [MODIFIED F26 2026-07-14] text 1/3, image 2/3 (ux-media-row--wide-image). -->
     <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
-      <div class="container">
-        <div class="ux-chapter-head">
-          <p class="ux-kicker">Background</p>
+      <div class="container ux-media-row ux-media-row--wide-image">
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Background</p>
           <h2 id="background-title">Serving the NZ Disabilities Strategy.</h2>
-          <p>In support of the New Zealand Government's Disabilities Strategy, this project worked with the Ministry of Justice to create an Accessibility Support Hub. The goal was to take scattered accessibility information and turn it into a clear, inclusive digital experience that helps users find and request court support services easily.</p>
+          <p>In support of the New Zealand Government's Disabilities Strategy, this project worked with the Ministry of Justice to create an Accessibility Support Hub.</p>
+          <p>The goal was to take scattered accessibility information and turn it into a clear, inclusive digital experience that helps users find and request court support services easily.</p>
         </div>
         <figure>
           <img
@@ -158,7 +160,7 @@
     <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
       <div class="container ux-problem__grid">
         <div>
-          <p class="ux-kicker">Problem</p>
+          <p class="ux-kicker ux-kicker--chapter">Problem</p>
           <h2 id="problem-title">
             Fragmented accessibility information leaves people unsure how to
             <em>find, understand, and request</em> court assistance across the website.
@@ -187,11 +189,12 @@
     </section>
 
 
-    <!-- 6. Solution -->
+    <!-- 6. Solution — [MODIFIED F7 2026-07-14] side-by-side layout;
+         [MODIFIED F26 2026-07-14] text 1/3, image 2/3 (ux-media-row--wide-image). -->
     <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
-      <div class="container">
-        <div class="ux-chapter-head">
-          <p class="ux-kicker">Solution</p>
+      <div class="container ux-media-row ux-media-row--wide-image">
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
           <h2 id="solution-title">A central landing page for all accessibility services.</h2>
           <p>The solution centralises accessibility services and uses "finding information" and "requesting services" as repeatable templates. The hub sits within the court area of the main site while keeping a clear connection to related pages.</p>
         </div>
@@ -209,7 +212,7 @@
     <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
       <div class="container ux-video-grid">
         <div>
-          <p class="ux-kicker">Outcome</p>
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
           <h2 id="outcome-title">Prototype walkthrough.</h2>
           <p>A short walkthrough of the Accessibility Support Hub prototype and support pathway experience.</p>
         </div>
@@ -242,7 +245,7 @@
             <p>I built the roadmap, contributed to research, developed the interpreter service blueprint, designed the information architecture, and created prototypes for the wheelchair access flow.</p>
           </article>
         </div>
-        <div class="ux-card-grid ux-card-grid--three" style="margin-top: 32px;">
+        <div class="ux-card-grid ux-card-grid--three ux-media-gap">
           <article class="ux-card"><span>01</span><h3>Service Blueprint Workshop</h3><p>Led the development of the service blueprint and facilitated the workshop.</p></article>
           <article class="ux-card"><span>02</span><h3>Evaluative Workshop</h3><p>Designed the evaluation framework, led the workshop, and aligned the project scope.</p></article>
           <article class="ux-card"><span>03</span><h3>Information Architecture</h3><p>Restructured the relationship between new and existing accessibility content.</p></article>
@@ -263,22 +266,40 @@
           <p>The project used the Double Diamond framework as a base, while keeping the roadmap flexible enough to respond to research findings and stakeholder feedback.</p>
         </div>
         <div class="ux-card-grid ux-card-grid--four">
-          <a class="ux-card" href="#research">
-            <h3>Research</h3>
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Service blueprint workshop, evaluative workshop.</p>
           </a>
-          <a class="ux-card" href="#design">
-            <h3>Design</h3>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Information architecture, design system.</p>
           </a>
-          <a class="ux-card" href="#validation">
-            <h3>Validation</h3>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Severity rating, MS Clarity analysis.</p>
           </a>
-          <a class="ux-card" href="#delivery">
-            <h3>Delivery</h3>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Final design, key features.</p>
           </a>
+        </div>
+        <!-- [MODIFIED F9 2026-07-14] Roadmap figure moved here from the end
+             of Research — it describes the whole process, so it belongs
+             with the gateway, directly below the nav cards. -->
+        <div class="ux-scope-block ux-content-gap">
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button
+              type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
+              data-modal-title="Project roadmap"
+              data-modal-caption="Roadmap showing four overlapping waves of discovery, design and validation.">
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
+                alt="Project roadmap showing overlapping waves of discovery, design and validation."
+                loading="lazy">
+            </button>
+            <figcaption>The final process looked like four overlapping waves, reflecting how discovery, design and validation happened in parallel rather than in a strict order.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -317,57 +338,48 @@
           <p>This filled a blank in the Ministry's documentation. It also helped us see the service as a whole system, where changing a small visible touchpoint affects everything beneath it.</p>
         </div>
 
-        <div class="ux-section-head" style="margin-top: 96px;">
+        <div class="ux-section-head ux-subsection">
           <div class="ux-section-head__title">
             <p class="ux-kicker">Evaluative Workshop</p>
             <h3>Aligning priorities through shared evaluation.</h3>
           </div>
           <p class="ux-section-head__desc">After research, the team realised the problems were connected across the whole system. With limited time and resources, the project needed a clear way to prioritise. I designed a scoring framework based on control, capability, impact, and value. Both teams scored and merged results, placing problems on a feasibility-benefit quadrant.</p>
         </div>
-        <figure class="ux-evidence ux-evidence--controlled">
-          <button
-            type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluative-table-big.png"
-            data-modal-title="Evaluative workshop table"
-            data-modal-caption="Large evaluative scoring table used by the Ministry and design team.">
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluative-table.png"
-              alt="Evaluative scoring table used by the Ministry and design team."
-              loading="lazy">
-          </button>
-        </figure>
-        <figure class="ux-evidence ux-evidence--controlled" style="margin-top: 32px;">
-          <button
-            type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluation-pathway.png"
-            data-modal-title="Evaluation pathway"
-            data-modal-caption="Evaluation pathway from insights to scoring results and prioritisation.">
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluation-pathway.png"
-              alt="Evaluation pathway from insights to scoring results and prioritisation."
-              loading="lazy">
-          </button>
-          <figcaption>Evaluation pathway: Summary of Insights → 4-Dimension Evaluation → Score Result → 4-Quadrant Grid.</figcaption>
-        </figure>
-        <div class="ux-influence">
-          <strong>Influence</strong>
-          <p>This workshop narrowed the focus, improved how resources were used, and gave the Ministry a repeatable decision-making method.</p>
-        </div>
-
-        <div class="ux-scope-block" style="margin-top: 96px;">
+        <!-- [MODIFIED F8 2026-07-14] Both evaluative figures aligned to the
+             description column's width instead of running full container
+             width, so they don't upscale. -->
+        <div class="ux-desc-aligned">
           <figure class="ux-evidence ux-evidence--controlled">
             <button
               type="button"
-              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
-              data-modal-title="Project roadmap"
-              data-modal-caption="Roadmap showing four overlapping waves of discovery, design and validation.">
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluative-table-big.png"
+              data-modal-title="Evaluative workshop table"
+              data-modal-caption="Large evaluative scoring table used by the Ministry and design team.">
               <img
-                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/roadmap.png"
-                alt="Project roadmap showing overlapping waves of discovery, design and validation."
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluative-table.png"
+                alt="Evaluative scoring table used by the Ministry and design team."
                 loading="lazy">
             </button>
-            <figcaption>The final process looked like four overlapping waves, reflecting how discovery, design and validation happened in parallel rather than in a strict order.</figcaption>
           </figure>
+        </div>
+        <div class="ux-desc-aligned ux-media-gap">
+          <figure class="ux-evidence ux-evidence--controlled">
+            <button
+              type="button"
+              data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluation-pathway.png"
+              data-modal-title="Evaluation pathway"
+              data-modal-caption="Evaluation pathway from insights to scoring results and prioritisation.">
+              <img
+                src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/evaluation-pathway.png"
+                alt="Evaluation pathway from insights to scoring results and prioritisation."
+                loading="lazy">
+            </button>
+            <figcaption>Evaluation pathway: Summary of Insights → 4-Dimension Evaluation → Score Result → 4-Quadrant Grid.</figcaption>
+          </figure>
+        </div>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>This workshop narrowed the focus, improved how resources were used, and gave the Ministry a repeatable decision-making method.</p>
         </div>
       </div>
     </section>
@@ -388,14 +400,18 @@
           </div>
           <p class="ux-section-head__desc">The challenge was to link new pages with old ones without breaking the existing site. It is like adding a modern bathroom centre to an old apartment building. People still enter through the old building, but each room now has a path into the new centre. Over time, both systems can merge.</p>
         </div>
-        <figure>
-          <img
-            src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ia-concept.png"
-            alt="Hand-drawn concept diagram explaining the relationship between existing Ministry pages and the Accessibility Support Hub."
-            loading="lazy">
-          <figcaption>Concept sketch for the relationship between existing Ministry content and the new hub structure.</figcaption>
-        </figure>
-        <figure class="ux-evidence ux-evidence--controlled" style="margin-top: 32px;">
+        <!-- [MODIFIED F10 2026-07-14] Hand-drawn concept sketch moved out of
+             full-width flow, right-aligned at description width. -->
+        <div class="ux-desc-aligned">
+          <figure>
+            <img
+              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ia-concept.png"
+              alt="Hand-drawn concept diagram explaining the relationship between existing Ministry pages and the Accessibility Support Hub."
+              loading="lazy">
+            <figcaption>Concept sketch for the relationship between existing Ministry content and the new hub structure.</figcaption>
+          </figure>
+        </div>
+        <figure class="ux-evidence ux-evidence--controlled ux-media-gap">
           <button
             type="button"
             data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ia.png"
@@ -413,7 +429,7 @@
           <p>This solved the problem of old and new pages existing at the same time and created a path for the website's long-term growth. It also supported high-fidelity prototyping.</p>
         </div>
 
-        <div class="ux-section-head" style="margin-top: 96px;">
+        <div class="ux-section-head ux-subsection">
           <div class="ux-section-head__title">
             <p class="ux-kicker">Design System</p>
             <h3>A consistent, accessible system built for reuse and growth.</h3>
@@ -424,7 +440,9 @@
           <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ds-hero.png" alt="Design system brand header." loading="lazy">
         </figure>
         <div class="ux-ds-list">
-          <article class="ux-ds-module">
+          <!-- [MODIFIED F11 2026-07-14] Colour module reversed: swatch grid
+               sits left (wide column), text right. -->
+          <article class="ux-ds-module ux-ds-module--reverse">
             <div>
               <h3>Colour</h3>
               <p>Cabbage Green signals guidance and navigation. Care Pink expresses warmth and support. MoJ Blue is maintained for universal components.</p>
@@ -474,7 +492,7 @@
     <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
       <div class="container ux-usability">
         <aside class="ux-intro">
-          <p>Validation</p>
+          <p class="ux-kicker ux-kicker--chapter">Validation</p>
           <h2 id="validation-title">Mixed-method usability tests helped get specific design direction.</h2>
         </aside>
         <div class="ux-copy">
@@ -598,7 +616,7 @@
     <!-- 14. Reflection -->
     <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
       <div class="container">
-        <p class="ux-kicker">Reflection</p>
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
         <h2 id="retro-title">Looking back, looking forward.</h2>
         <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
           <article class="ux-card">
@@ -606,24 +624,26 @@
             <p>This capstone project delivered a complete, reusable way of working across management, decision-making, research, and design.</p>
           </article>
           <article class="ux-card">
-            <h3>Learnings</h3>
+            <h3>Learned</h3>
             <p>The biggest takeaway was learning to be goal-oriented rather than task-oriented, doing less and enough, but doing it right.</p>
           </article>
           <article class="ux-card">
-            <h3>Next Steps</h3>
-            <ul>
-              <li>Conduct testing on the high-fidelity prototypes.</li>
-              <li>Run cognitive testing on the new icon set.</li>
-              <li>Document the methodology into a Knowledge Base for the Ministry team.</li>
-            </ul>
+            <h3>Next</h3>
+            <p>Conduct testing on the high-fidelity prototypes, run cognitive testing on the new icon set, and document the methodology into a knowledge base for the Ministry team.</p>
           </article>
         </div>
       </div>
     </section>
 
 
-    <!-- 15. HENEX Method Recipe -->
-    <section class="ux-section ux-tier-l vth2-recipe" aria-labelledby="recipe-title">
+    <!-- 15. HENEX Method Recipe — [MODIFIED F15 2026-07-14] rebuilt to the
+         VTH layout: node tags directly under the recipe name (before the
+         description), no <small> triad line, Secondary Recipe label via
+         the shared .ux-secondary-recipe utility. Removed the vth2-recipe
+         class (E21-class contamination — it referenced another page's
+         stylesheet); tier-l plus the F6 dark pale override now cover the
+         background in both modes. -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>HENEX Method Recipe</p>
@@ -633,15 +653,14 @@
           <p class="ux-recipe-primary">
             <span>Primary recipe</span>
             <a href="../philosophy.html#r15">R15 · Clarity &amp; Accessibility Audit</a>
-            <small>Perception × Empathy × Interface</small>
           </p>
-          <p>This project uses R15 to connect how people understand support information, how the service recognises access needs, and how the interface turns repeated barriers into clearer pathways.</p>
           <div class="ux-recipe-tags">
             <span>Perception</span>
             <span>Empathy</span>
             <span>Interface</span>
           </div>
-          <p class="ux-recipe-primary" style="margin-top: 28px;">
+          <p>This project uses R15 to connect how people understand support information, how the service recognises access needs, and how the interface turns repeated barriers into clearer pathways.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
             <span>Secondary recipe</span>
           </p>
           <div class="ux-recipe-popovers">

@@ -91,7 +91,7 @@
     <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
-          <p>Overview</p>
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
           <h2 id="overview-title">A fast internal tool for a time-critical research need.</h2>
         </aside>
         <div class="ux-copy">
@@ -137,25 +137,14 @@
       </div>
     </section>
 
-    <!-- 4. Problem -->
+    <!-- 4. Problem — [MODIFIED F17 2026-07-14] product-screenshot figure
+         removed; the dashboard image now appears in Outcome as the
+         finished-product showcase, not here as a Problem illustration. -->
     <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
-      <div class="container ux-problem__grid studier-problem__grid">
-        <div>
-          <p class="ux-kicker">Problem</p>
-          <h2 id="problem-title"><strong>How might I</strong> create a safe, fast and customisable tree testing workflow that captures enough behavioural evidence for IA decisions without delaying the project?</h2>
-          <p class="studier-problem-note">The project team needed evidence about whether people could find support information in a proposed navigation structure. A standard survey could not capture enough behavioural evidence. The research needed selected paths, first clicks, click history, time, click count, skipped tasks and acceptable path logic.</p>
-        </div>
-        <figure class="studier-product-frame">
-          <button type="button"
-            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
-            data-modal-title="Studier dashboard"
-            data-modal-caption="Dashboard for creating, reviewing and managing tree test studies.">
-            <img
-              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
-              alt="Studier dashboard for managing tree test studies." loading="lazy">
-          </button>
-          <figcaption>The dashboard made study status, links and response management visible in one place.</figcaption>
-        </figure>
+      <div class="container">
+        <p class="ux-kicker ux-kicker--chapter">Problem</p>
+        <h2 id="problem-title"><strong>How might I</strong> create a safe, fast and customisable tree testing workflow that captures enough behavioural evidence for IA decisions without delaying the project?</h2>
+        <p class="studier-problem-note">The project team needed evidence about whether people could find support information in a proposed navigation structure. A standard survey could not capture enough behavioural evidence. The research needed selected paths, first clicks, click history, time, click count, skipped tasks and acceptable path logic.</p>
       </div>
     </section>
 
@@ -167,19 +156,21 @@
           <h2 id="solution-title">A controlled workflow for tree testing.</h2>
           <p>Studier turned tree testing into a controlled research workflow. It was designed around the smallest useful flow, avoiding unnecessary personal data while still capturing the behavioural evidence needed for IA decisions.</p>
         </div>
+        <!-- [MODIFIED F19 2026-07-14] Sequence numbers replaced with
+             VTH-style unframed glyph icons. -->
         <div class="studier-solution-cards" aria-label="Studier solution areas">
-          <article class="ux-card">
-            <span>01</span>
+          <article class="ux-card ux-glyph-card">
+            <i class="ti ti-list-details ux-glyph" aria-hidden="true"></i>
             <h3>Create and publish tests</h3>
             <p>Set up studies, IA trees, task scenarios, target paths, acceptable paths and public participant links.</p>
           </article>
-          <article class="ux-card">
-            <span>02</span>
+          <article class="ux-card ux-glyph-card">
+            <i class="ti ti-route ux-glyph" aria-hidden="true"></i>
             <h3>Run participant flows</h3>
             <p>Guide participants through intro, privacy guidance, task-by-task navigation and selected path submission.</p>
           </article>
-          <article class="ux-card">
-            <span>03</span>
+          <article class="ux-card ux-glyph-card">
+            <i class="ti ti-chart-bar ux-glyph" aria-hidden="true"></i>
             <h3>Export and analyse responses</h3>
             <p>Capture path choices, match types, first clicks, time, click count and outputs for data cleaning.</p>
           </article>
@@ -211,6 +202,24 @@
             <h3>Supported wider programme use.</h3>
             <p>Other programme members could register, create studies and manage tests from the dashboard.</p>
           </article>
+        </div>
+        <!-- [MODIFIED F18 2026-07-14] Finished-product showcase (the
+             dashboard image, moved here from Problem) plus a direct CTA
+             to the live platform. -->
+        <figure class="studier-product-frame ux-content-gap">
+          <button type="button"
+            data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+            data-modal-title="Studier dashboard"
+            data-modal-caption="Dashboard for creating, reviewing and managing tree test studies.">
+            <img
+              src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/dashboard.png"
+              alt="Studier dashboard for managing tree test studies." loading="lazy">
+          </button>
+          <figcaption>The finished dashboard: study status, links and response management visible in one place.</figcaption>
+        </figure>
+        <div class="studier-platform-cta">
+          <a class="button button--primary" href="https://uxstudier.vercel.app" target="_blank" rel="noopener noreferrer">Open Studier Platform</a>
+          <p>Public access starts from a registration screen.</p>
         </div>
       </div>
     </section>
@@ -249,8 +258,9 @@
       </div>
     </section>
 
-    <!-- 8. Process — chapter-2 gateway, 3 nav cards (no Research chapter).
-         Product Evolution rides here as supporting content. -->
+    <!-- 8. Process — [MODIFIED F20 2026-07-14] chapter-2 gateway, 4 nav
+         cards with arrows (Design / Develop / Validation / Delivery). The
+         evolution timeline moved out to the new Develop chapter below. -->
     <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
       <div class="container">
         <div class="ux-chapter-head">
@@ -258,41 +268,23 @@
           <h2 id="process-title">Built from real use, not a fixed roadmap.</h2>
           <p>Studier did not grow from a fixed roadmap. It grew from real use. Each update responded to a specific research or operational need.</p>
         </div>
-        <div class="ux-card-grid ux-card-grid--three">
-          <a class="ux-card" href="#design">
-            <h3>Design</h3>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Dashboard, study builder, responsible-use gate, participant flow.</p>
           </a>
-          <a class="ux-card" href="#validation">
-            <h3>Validation</h3>
+          <a class="ux-card ux-nav-card" href="#develop">
+            <h3>Develop <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Iteration history, from MVP workflow to full data operations.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Tree test results, IA findings across ten scenarios.</p>
           </a>
-          <a class="ux-card" href="#delivery">
-            <h3>Delivery</h3>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
             <p>Public platform, guide content, version history.</p>
           </a>
-        </div>
-        <div class="studier-timeline" style="margin-top: 56px;">
-          <article class="ux-card">
-            <span>01</span>
-            <h3>MVP workflow</h3>
-            <p>Create study, IA tree, tasks, participant runner and response capture.</p>
-          </article>
-          <article class="ux-card">
-            <span>02</span>
-            <h3>Study setup maturity</h3>
-            <p>Add pre-task questions, CSV checks, preview and readiness checks.</p>
-          </article>
-          <article class="ux-card">
-            <span>03</span>
-            <h3>Lifecycle and review</h3>
-            <p>Add closing time, review mode, task navigation and response path review.</p>
-          </article>
-          <article class="ux-card">
-            <span>04</span>
-            <h3>Data operations</h3>
-            <p>Add exports, data cleaning, clear data options, guide content and version history.</p>
-          </article>
         </div>
       </div>
     </section>
@@ -362,8 +354,59 @@
       </div>
     </section>
 
-    <!-- 10. Validation — Research Use Case, relabelled -->
-    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
+    <!-- 10. Develop (NEW, F20 2026-07-14) — the evolution timeline moved
+         here from Process, plus a short build-approach summary sourced
+         from docs/reference/Studier_development_log.md.
+         [MODIFIED F27 2026-07-14] Unified all 6 cards to a single
+         kicker+title+description format (no sequence numbers), laid out
+         3+3 in one grid (studier-develop-grid) instead of the previous
+         mixed 4-numbered + 2-unnumbered split across two grids. -->
+    <section class="ux-section ux-tier-s" id="develop" aria-labelledby="develop-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Develop</p>
+          <h2 id="develop-title">From a three day MVP to a reusable research tool.</h2>
+          <p>Studier did not grow from a fixed roadmap. It grew from real use. Each update responded to a specific research or operational need, tracked across the project's own development log.</p>
+        </div>
+        <div class="studier-develop-grid">
+          <article class="ux-card">
+            <span>Core workflow</span>
+            <h3>MVP workflow</h3>
+            <p>Create study, IA tree, tasks, participant runner and response capture.</p>
+          </article>
+          <article class="ux-card">
+            <span>Study setup</span>
+            <h3>Study setup maturity</h3>
+            <p>Add pre-task questions, CSV checks, preview and readiness checks.</p>
+          </article>
+          <article class="ux-card">
+            <span>Task navigation</span>
+            <h3>Locked review mode</h3>
+            <p>Added a locked review state so completed studies could not be edited mid-analysis, keeping response data consistent.</p>
+          </article>
+          <article class="ux-card">
+            <span>Lifecycle</span>
+            <h3>Lifecycle and review</h3>
+            <p>Add closing time, review mode, task navigation and response path review.</p>
+          </article>
+          <article class="ux-card">
+            <span>Data cleaning</span>
+            <h3>Republish workflow</h3>
+            <p>Introduced a republish path so a study could be corrected and reopened without losing existing responses.</p>
+          </article>
+          <article class="ux-card">
+            <span>Data operations</span>
+            <h3>Data operations</h3>
+            <p>Add exports, data cleaning, clear data options, guide content and version history.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Validation — Research Use Case, relabelled. Tier changed
+         S → L (F20) to keep adjacency valid against the new Develop
+         chapter above it. -->
+    <section class="ux-section ux-tier-l" id="validation" aria-labelledby="validation-title">
       <div class="container">
         <div class="ux-chapter-head">
           <p class="ux-kicker">Validation</p>
@@ -436,7 +479,7 @@
     <!-- 12. Reflection -->
     <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
       <div class="container">
-        <p class="ux-kicker">Reflection</p>
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
         <h2 id="retro-title">Build only what the delivery risk needs.</h2>
         <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
           <article class="ux-card">
@@ -444,7 +487,7 @@
             <p>A focused internal tool protected the research timeline and turned IA testing into a repeatable workflow.</p>
           </article>
           <article class="ux-card">
-            <h3>Learnings</h3>
+            <h3>Learned</h3>
             <p>The platform was built under pressure, so advanced reporting and dashboard visualisation stayed outside the MVP.</p>
           </article>
           <article class="ux-card">
@@ -455,8 +498,9 @@
       </div>
     </section>
 
-    <!-- 13. HENEX Method Recipe -->
-    <section class="ux-section ux-tier-l vth2-recipe" aria-labelledby="recipe-title">
+    <!-- 13. HENEX Method Recipe — [MODIFIED F15 2026-07-14] rebuilt to the
+         VTH layout, vth2-recipe class removed (E21-class contamination). -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>HENEX Method Recipe</p>
@@ -466,15 +510,14 @@
           <p class="ux-recipe-primary">
             <span>Primary recipe</span>
             <a href="../philosophy.html#r27">R27 · Impact Dashboard</a>
-            <small>Agency × Meaning × Interface</small>
           </p>
-          <p>Studier uses R27 because the project turned a time critical research process into an actionable internal dashboard. It made study status, participant links, response capture, lifecycle controls, exports and IA evidence visible enough for the team to manage progress and act on findings.</p>
           <div class="ux-recipe-tags">
             <span>Agency</span>
             <span>Meaning</span>
             <span>Interface</span>
           </div>
-          <p class="ux-recipe-primary" style="margin-top: 28px;">
+          <p>Studier uses R27 because the project turned a time critical research process into an actionable internal dashboard. It made study status, participant links, response capture, lifecycle controls, exports and IA evidence visible enough for the team to manage progress and act on findings.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
             <span>Secondary recipe</span>
           </p>
           <div class="ux-recipe-popovers">

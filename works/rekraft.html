@@ -19,12 +19,12 @@
   <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="HENEX">
-<meta property="og:title" content="Rekraft | HENEX">
-<meta property="og:description" content="Rekraft UX case study by HENEX.">
+<meta property="og:title" content="ReKraft | HENEX">
+<meta property="og:description" content="ReKraft UX case study by HENEX.">
 <meta property="og:image" content="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/rkt-home.webp">
 <meta property="og:url" content="https://henex.uk/works/rekraft.html">
 </head>
-<body class="ux-case-page ux-case-page--rekraft ux-case-page--background-hero">
+<body class="ux-case-page ux-case-page--rekraft">
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -52,8 +52,8 @@
 
   <main id="main-content">
 
-    <!-- Hero -->
-    <section class="ux-hero ux-hero--cover rkt-hero" aria-labelledby="case-title">
+    <!-- 1. Hero — frosted dual-bloom (Master Spec 7.1), replaces the old cover-image hero -->
+    <section class="ux-hero rkt-hero" aria-labelledby="case-title">
       <div class="container ux-hero__top">
         <div class="case-tag-row case-tag-row--overlay">
           <div class="case-tags case-tags--primary" aria-label="Project categories">
@@ -68,7 +68,7 @@
       </div>
       <div class="container ux-hero__inner">
         <div class="ux-hero__copy">
-<h1 id="case-title">ReKraft</h1>
+          <h1 id="case-title">ReKraft</h1>
           <p>A mobile platform for sharing, trading and learning upcycling, grounded in Kaitiakitanga — the Māori principle of reciprocal guardianship over people, materials and place.</p>
           <div class="ux-actions">
             <a class="button button--primary" href="#" target="_blank" rel="noopener noreferrer">View Prototype</a>
@@ -78,11 +78,11 @@
       </div>
     </section>
 
-    <!-- Overview -->
-    <section class="ux-section" aria-labelledby="overview-title">
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
-          <p>Overview</p>
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
           <h2 id="overview-title">A values-anchored app that turns reuse intent into community action.</h2>
         </aside>
         <div class="ux-copy">
@@ -117,10 +117,41 @@
       </div>
     </section>
 
-    <!-- Problem -->
-    <section class="ux-section ux-problem" aria-labelledby="problem-title">
+    <!-- 3. Background — from the former Concept section (M2 spec §2) -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
       <div class="container">
-        <p class="ux-kicker">Problem</p>
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Background</p>
+          <h2 id="background-title">A dream grounded in research and shaped into a cultural story.</h2>
+          <p>As emerging UX designers, we wanted to respond to global sustainability challenges with empathy and cultural understanding rather than technology alone. Guided by SDG 12, we explored New Zealand's throwaway culture and found that people want to live more sustainably but often lack the time, tools and support. Rooted in Kaitiakitanga — guardianship and care for the sky, land and sea — we used this value as the cultural foundation for everyday sustainable practice.</p>
+        </div>
+        <div class="rkt-concept-grid">
+          <figure>
+            <div class="rkt-concept-grid__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-dream.png" alt="Our Dream — the shared vision anchoring the ReKraft project direction." loading="lazy">
+            </div>
+            <figcaption>Our Dream</figcaption>
+          </figure>
+          <figure>
+            <div class="rkt-concept-grid__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-explore.png" alt="Our Explore — competitive landscape and benchmarking research." loading="lazy">
+            </div>
+            <figcaption>Our Explore</figcaption>
+          </figure>
+          <figure>
+            <div class="rkt-concept-grid__media">
+              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-story.png" alt="Our Story — the cultural foundation guiding the design direction." loading="lazy">
+            </div>
+            <figcaption>Our Story</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Problem -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <p class="ux-kicker ux-kicker--chapter">Problem</p>
         <h2 id="problem-title"><strong>How might we</strong> empower individuals and communities to reduce waste by creatively reusing materials, in ways that reflect the values of <em>Kaitiakitanga</em>?</h2>
         <div class="rkt-problem-gallery">
           <figure>
@@ -182,40 +213,18 @@
       </div>
     </section>
 
-    <!-- Concept -->
-    <section class="ux-section ux-section--tint" aria-labelledby="concept-title">
-      <div class="container">
-        <p class="ux-kicker">Concept</p>
-        <h2 id="concept-title">A dream grounded in research and shaped into a cultural story.</h2>
-        <p class="ux-problem-note">As emerging UX designers, we wanted to respond to global sustainability challenges with empathy and cultural understanding rather than technology alone. Guided by SDG 12, we explored New Zealand's throwaway culture and found that people want to live more sustainably but often lack the time, tools and support. Rooted in Kaitiakitanga — guardianship and care for the sky, land and sea — we used this value as the cultural foundation for everyday sustainable practice.</p>
-        <div class="rkt-concept-grid">
-          <figure>
-            <div class="rkt-concept-grid__media">
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-dream.png" alt="Our Dream — the shared vision anchoring the ReKraft project direction." loading="lazy">
-            </div>
-            <figcaption>Our Dream</figcaption>
-          </figure>
-          <figure>
-            <div class="rkt-concept-grid__media">
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-explore.png" alt="Our Explore — competitive landscape and benchmarking research." loading="lazy">
-            </div>
-            <figcaption>Our Explore</figcaption>
-          </figure>
-          <figure>
-            <div class="rkt-concept-grid__media">
-              <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/our-story.png" alt="Our Story — the cultural foundation guiding the design direction." loading="lazy">
-            </div>
-            <figcaption>Our Story</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- Solution -->
-    <section class="ux-solution" aria-labelledby="solution-title">
+    <!-- 5. Solution -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
       <div class="container ux-solution__grid">
-        <div>
-          <p class="ux-kicker">Solution</p>
+        <!-- [MODIFIED M23 R1] Text column was a bare div, so it fell through
+             to the raw global h2 (clamp 2.25-4.3rem) instead of the
+             case-study .ux-copy h2 scale, and the paragraph got no
+             heading-to-body spacing rule. Wrapped in .ux-copy to match the
+             pattern every other Solution section on the site already uses
+             (see nds.css Solution), fixing both the oversized heading and
+             the tight spacing Cafe flagged in one change. -->
+        <div class="ux-copy">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
           <h2 id="solution-title">A values-anchored, community upcycling app.</h2>
           <p>A mobile app grounded in Kaitiakitanga and SDG 12, organised around three linked modules — Community (share DIY practices and inspiration), Marketplace (trade, buy, swap or share items and materials with origin and impact cues and a Koin value mechanism), and Ako (missions and micro-quizzes that teach guardianship principles) — to turn guardianship into concrete micro-actions supported by social motivation and transparent impact.</p>
         </div>
@@ -225,11 +234,11 @@
       </div>
     </section>
 
-    <!-- Outcome -->
-    <section class="ux-section ux-section--tint" aria-labelledby="outcome-title">
+    <!-- 6. Outcome -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
       <div class="container">
         <div class="ux-wide-head">
-          <p class="ux-kicker">Outcome</p>
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
           <h2 id="outcome-title">Tangible guardianship in practice.</h2>
           <p>The project delivered a culturally grounded MVP concept and hi-fi prototype showing how people can move fluidly between sharing ideas, obtaining materials, making and repairing, exchanging output, and learning values, while tracking their contributions. The result demonstrates tangible waste reduction behaviours, stronger community participation, and a respectful operationalisation of Kaitiakitanga in contemporary UX.</p>
         </div>
@@ -240,11 +249,11 @@
       </div>
     </section>
 
-    <!-- Feedback -->
-    <section class="ux-section" aria-labelledby="feedback-title">
+    <!-- 7. Feedback -->
+    <section class="ux-section ux-tier-l" aria-labelledby="feedback-title">
       <div class="container">
         <div class="ux-wide-head">
-          <p class="ux-kicker">Course Feedback</p>
+          <p class="ux-kicker">Feedback</p>
           <h2 id="feedback-title">Feedback highlighted cultural depth and research breadth.</h2>
           <p>The instructor feedback recognised the project's nuanced, non-tokenistic integration of Kaitiakitanga and the professional-level breadth of research that grounded the concept credibly.</p>
         </div>
@@ -265,108 +274,209 @@
       </div>
     </section>
 
-    <!-- Design Process -->
-    <section class="ux-section ux-section--tint" aria-labelledby="process-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Design Process</p>
-          <h2 id="process-title">From grounding UX in Kaitiakitanga to a tested share-trade-learn experience.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>We combined desk and contextual research on Māori values, policies, precedents and markets with co-analysis, then articulated actionable principles and scope. We translated these into information architecture, user flows and iterative prototypes, validated with tasks that exercise community sharing, marketplace transactions and learning missions — applying culturally respectful integration of Te Ao Māori throughout.</p>
-          <div class="ux-process">
-            <div><span>Discover</span><p>Kaitiakitanga and SDG 12 grounding, desk research, findings and insights.</p></div>
-            <div><span>Define</span><p>Problem reframing, HMW questions, design principles.</p></div>
-            <div><span>Develop</span><p>Ideation, wireframing, information architecture, user flow, prototyping.</p></div>
-            <div><span>Deliver</span><p>High-fidelity design, design system, final prototype, usability test plan.</p></div>
-          </div>
+    <!-- 8. Contribution — NEW, two-hats pattern from ASH (mapping §6) -->
+    <section class="ux-section ux-tier-s" id="contribution" aria-labelledby="contribution-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Contribution</p>
+          <h2 id="contribution-title">Wearing two hats across the project lifecycle.</h2>
+          <p>In this project, I served as Project Manager and led the UX research and design work.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--two">
+          <article class="ux-card">
+            <span>Project Management</span>
+            <h3>Keeping the team and schedule aligned</h3>
+            <p>I set the project schedule, coordinated the team of four, and kept the research, design and delivery phases moving within the five-week timeline.</p>
+          </article>
+          <article class="ux-card">
+            <span>UX Research and Design</span>
+            <h3>From information architecture to prototype</h3>
+            <p>I defined the information architecture and user flows, produced low-to-high-fidelity prototypes and brand and visual assets, and validated the share-trade-learn pathway through usability testing.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Discover -->
-    <section class="ux-section ux-section--tint" aria-labelledby="discover-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Discover</p>
-          <h2 id="discover-title">Finding out where motivation actually breaks down.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>Discovery started with a deliberate question: what does Kaitiakitanga demand of a digital product? Literature review established the cultural and ethical stakes. Te Ao Māori frames guardianship as relational and reciprocal, not transactional. SDG 12 sets the global policy direction. But neither translates into interaction design without understanding where and why reuse breaks down for real people.</p>
-          <p>Platform benchmarking surfaced the gap. Existing tools — Pinterest, Facebook Marketplace, Depop, repair café networks — each solve one dimension. None hold community reciprocity, cultural meaning and practical reuse literacy together in one place. This was not a feature gap. It pointed to a missing motivation architecture: without a reason to act that connects personal behaviour to collective or cultural value, the habit does not form.</p>
-          <p>Research synthesis produced six findings and six design insights. The findings confirmed that practical barriers and motivation gaps reinforce each other. The insights redirected the design toward activation over education.</p>
-          <div class="ux-influence">
-            <strong>Influence</strong>
-            <p>This redirected the entire design strategy from education to activation: lower the first step, make community visible, surface provenance and impact, and embed Māori values through action rather than aesthetics.</p>
-          </div>
+    <!-- 9. Process — chapter-2 gateway with 4 nav cards.
+         [MODIFIED M2 2026-07-14] Discover retitled to Research and Design
+         Process retitled to Process itself, so this section no longer
+         sits directly adjacent to another tint section — resolves the
+         mapping table's flagged adjacent-tint violation between the old
+         "Design Process" and "Discover" sections. -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
+          <h2 id="process-title">From grounding UX in Kaitiakitanga to a tested share-trade-learn experience.</h2>
+          <p>We combined desk and contextual research on Māori values, policies, precedents and markets with co-analysis, then articulated actionable principles and scope. We translated these into information architecture, user flows and iterative prototypes, validated with tasks that exercise community sharing, marketplace transactions and learning missions.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Kaitiakitanga and SDG 12 grounding, desk research, findings.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Persona, scope, IA, user flows, prototyping, design system.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Usability testing across Community, Market and Ako.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Final module designs, design system, brand identity.</p>
+          </a>
         </div>
       </div>
-      <div class="container" style="margin-top: 52px;">
+    </section>
+
+    <!-- 10. Research (formerly Discover) -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
+          <h2 id="research-title">Finding out where motivation actually breaks down.</h2>
+          <p>Discovery started with a deliberate question: what does Kaitiakitanga demand of a digital product?</p>
+        </div>
+
+        <!-- [MODIFIED M23 R4] The three dense paragraphs (literature review,
+             platform benchmarking, research synthesis) were condensed into
+             three refined cards, so the reasoning reads at a glance rather
+             than as a long block few would finish. -->
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card">
+            <span>Literature review</span>
+            <h3>Guardianship is relational, not transactional.</h3>
+            <p>Te Ao Māori frames guardianship as reciprocal care, not a one-off act. SDG 12 sets the global policy direction. Neither translates into interaction design without knowing where reuse actually breaks down.</p>
+          </article>
+          <article class="ux-card">
+            <span>Platform benchmarking</span>
+            <h3>No tool holds the full picture.</h3>
+            <p>Pinterest, Facebook Marketplace, Depop and repair café networks each solve one dimension. None hold community reciprocity, cultural meaning and practical reuse literacy together.</p>
+          </article>
+          <article class="ux-card">
+            <span>Research synthesis</span>
+            <h3>Six findings, six insights.</h3>
+            <p>Practical barriers and motivation gaps reinforce each other. The insights redirected the design toward activation over education.</p>
+          </article>
+        </div>
+
+        <!-- [MODIFIED M23 R5] Finding and Implication split into two aligned
+             card rows (Finding 01-06 above, Implication 01-06 below, same
+             column position), showing the pairing instead of stacking both
+             inside one combined card. -->
         <div class="rkt-finding-grid">
           <article class="rkt-finding">
             <span>Finding 01</span>
             <h3>Intent exists without a path.</h3>
             <p>People want to upcycle but lack the tools, skills and community support to act consistently.</p>
-            <strong>Implication</strong>
-            <p>Design for the first step, not the informed user.</p>
           </article>
           <article class="rkt-finding">
             <span>Finding 02</span>
             <h3>Repurposing potential is invisible.</h3>
             <p>Most people do not see creative reuse potential in everyday waste without a prompt or example.</p>
-            <strong>Implication</strong>
-            <p>Surface ideas before asking people to act on them.</p>
           </article>
           <article class="rkt-finding">
             <span>Finding 03</span>
             <h3>Trust and provenance both matter.</h3>
             <p>The origin of materials and the real impact of actions shape whether people participate and return.</p>
-            <strong>Implication</strong>
-            <p>Make impact visible, not assumed.</p>
           </article>
           <article class="rkt-finding">
             <span>Finding 04</span>
             <h3>Cultural values are absent from mainstream tools.</h3>
             <p>No existing platform connects reuse to a relational ethic, which weakens long-term meaning.</p>
-            <strong>Implication</strong>
-            <p>Embed values through interaction, not decoration.</p>
           </article>
           <article class="rkt-finding">
             <span>Finding 05</span>
             <h3>Community sustains behaviour better than tips.</h3>
             <p>Social recognition and shared momentum outperform one-off informational nudges.</p>
-            <strong>Implication</strong>
-            <p>Design for contribution, not just consumption.</p>
           </article>
           <article class="rkt-finding">
             <span>Finding 06</span>
             <h3>Making can generate its own waste.</h3>
             <p>Craft and DIY processes often produce offcuts and discards that extend the circularity problem.</p>
-            <strong>Implication</strong>
+          </article>
+        </div>
+        <div class="rkt-finding-grid rkt-finding-grid--implication">
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 01</span>
+            <p>Design for the first step, not the informed user.</p>
+          </article>
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 02</span>
+            <p>Surface ideas before asking people to act on them.</p>
+          </article>
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 03</span>
+            <p>Make impact visible, not assumed.</p>
+          </article>
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 04</span>
+            <p>Embed values through interaction, not decoration.</p>
+          </article>
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 05</span>
+            <p>Design for contribution, not just consumption.</p>
+          </article>
+          <article class="rkt-finding rkt-finding--implication">
+            <span>Implication 06</span>
             <p>Close the loop by including material sharing in the making flow.</p>
           </article>
+        </div>
+
+        <!-- [MODIFIED M23 CA3] Influence moved to the end of the Research
+             sub-section, after the finding/implication evidence it comments
+             on, instead of sitting between the intro copy and the cards. -->
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>This redirected the entire design strategy from education to activation: lower the first step, make community visible, surface provenance and impact, and embed Māori values through action rather than aesthetics.</p>
         </div>
       </div>
     </section>
 
-    <!-- Define -->
-    <section class="ux-section" aria-labelledby="define-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Define</p>
-          <h2 id="define-title">Turning research into a focused design scope.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>With six findings in hand, the next step was deciding what the product should actually do. A persona, Emma, consolidated the target user: a young professional who cares about sustainability, has some DIY interest, and wants community but lacks the skills and confidence to start. Emma was not designed to represent everyone. She was designed to hold the tension between intent and inaction that the research kept returning to.</p>
-          <p>Ideation expanded the solution space before collapsing it. The core MVP scope — community sharing, a values-aligned marketplace, and short learning missions — was separated from post-MVP extensions such as AI material recognition and token systems. This decision mattered because it kept the first version coherent and testable rather than ambitious and diffuse.</p>
-          <div class="ux-influence">
-            <strong>Design Scope</strong>
-            <p>Three modules defined the MVP: Community for sharing and co-creating, Market for trading and gifting with origin and impact cues, and Ako for short learning missions tied to guardianship values. Each module addresses a different barrier from the research without duplicating what the others do.</p>
-          </div>
+    <!-- 11. Design — Define + Develop's design half + Design System folded in -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="design-title">
+      <div class="container">
+        <!-- [MODIFIED M23 Bug2 D3] Rewritten to match docs/reference/
+             rkt.pdf. The previous paragraph invented a persona named
+             "Emma" and an unrelated ideation-scoping sentence that do not
+             appear anywhere in the source PDF; the PDF's own words are
+             used here instead ("Ideation surveyed adjacent directions...
+             converged on a waste-to-treasure community platform" and
+             "Development translated principles into a three-module
+             product structure"). -->
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
+          <h2 id="design-title">Turning research into a focused design scope.</h2>
+          <p>With six findings in hand, ideation surveyed adjacent directions, including a DIY reuse platform, energy sharing and trail-based cultural learning, before converging on a waste-to-treasure community platform for the strongest alignment of SDG 12, feasibility and user appeal. Development then translated the six principles into a three-module product structure, refining flows around publishing, discovery, filtering and missions.</p>
         </div>
-      </div>
-      <div class="container" style="margin-top: 52px;">
-        <div class="rkt-scope-grid rkt-scope-grid--four">
+
+        <!-- [MODIFIED M23 R6] Design Scope changed from one paragraph plus
+             a single Influence card into three module cards, one per MVP
+             module, so the scope reads as distinct, parallel decisions. -->
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card">
+            <span>Community</span>
+            <h3>Sharing and co-creating</h3>
+            <p>Addresses the isolation barrier from the research: community sustains behaviour better than tips.</p>
+          </article>
+          <article class="ux-card">
+            <span>Market</span>
+            <h3>Trading and gifting, with origin and impact cues</h3>
+            <p>Addresses the trust barrier: the origin of materials and the real impact of actions shape whether people participate.</p>
+          </article>
+          <article class="ux-card">
+            <span>Ako</span>
+            <h3>Short learning missions tied to guardianship values</h3>
+            <p>Addresses the values barrier: cultural values are absent from mainstream reuse tools.</p>
+          </article>
+        </div>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>Each module addresses a different barrier from the research without duplicating what the others do, which kept the MVP scope from turning into three copies of the same feature.</p>
+        </div>
+        <div class="rkt-scope-grid rkt-scope-grid--four ux-content-gap">
           <figure>
             <button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/principle1.png" data-modal-title="Understand Context" data-modal-caption="What lies in the periphery of simplicity is definitely not peripheral.">
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/principle1.png" alt="Design principle — Understand Context." loading="lazy">
@@ -392,23 +502,39 @@
             <figcaption>Be Consistent</figcaption>
           </figure>
         </div>
-      </div>
-    </section>
 
-    <!-- Develop -->
-    <section class="ux-section ux-section--tint" aria-labelledby="develop-title">
-      <div class="container ux-two-col">
-        <aside class="ux-intro">
-          <p>Develop</p>
-          <h2 id="develop-title">From architecture to testable prototype.</h2>
-        </aside>
-        <div class="ux-copy">
-          <p>The user journey mapped three phases: Before, where users discover ideas and enter the platform through a values-anchored onboarding; During, where they circulate materials, make things and share outcomes; and After, where they track impact, earn recognition and deepen their understanding of guardianship. This three-phase framing influenced every information architecture decision that followed.</p>
-          <p>Prototyping moved from paper sketches to lo-fi flows to mid-fidelity screens. Each stage had a specific job. Sketches validated navigation and entry points. Lo-fi flows established content hierarchy and tested whether the three modules felt distinct but connected.</p>
-          <div class="ux-influence">
-            <strong>Influence</strong>
-            <p>Testing whether the three modules felt distinct but connected directly shaped the final IA — confirming that Community, Market and Ako needed shared navigation but separate content rhythms.</p>
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Develop</p>
+            <h3>From architecture to testable prototype.</h3>
           </div>
+          <p>The concept diagram anchors everything that follows: three linked modules inside a Kaitiakitanga and SDG 12 frame, with Koin as the connecting mechanism.</p>
+        </div>
+
+        <!-- [MODIFIED M23 R7] Develop reordered: concept diagram first (the
+             design idea's core), then the journey map, then the existing
+             wireframe/lo-fi prototype evidence, then the rest. Previously
+             the journey description opened the section with no diagram,
+             and the concept diagram did not appear at all.
+             [MODIFIED M23 Bug2 D2] All Develop media (concept diagram,
+             journey map, wireframe/lo-fi stack) wrapped in rkt-develop-media
+             so it renders at two-thirds width instead of full width — the
+             concept diagram, journey map and screenshots read too large
+             at full container width. -->
+        <div class="rkt-develop-media">
+          <figure class="ux-evidence ux-content-gap">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/functions.png" alt="ReKraft concept diagram showing the Community, Market and Ako modules nested inside the Kaitiakitanga and SDG 12 frame, connected by the Koin mechanism." loading="lazy">
+            <figcaption>Community, Circulate and Cultivate, three modules nested inside the Kaitiakitanga and SDG 12 frame, connected by Koin.</figcaption>
+          </figure>
+
+          <!-- [MODIFIED M23 Bug2 D1] Native HTML journey matrix (R7)
+               replaced with Cafe's uploaded journey.png image. -->
+          <figure class="ux-evidence ux-content-gap">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/journey.png" alt="ReKraft journey map showing goals, thoughts, feelings, pain points and opportunities across the Before, During and After stages." loading="lazy">
+            <figcaption>The journey map traced goals, thoughts, feelings, pain points and opportunities across Connect, Circulate and Cultivate.</figcaption>
+          </figure>
+
+          <p>Prototyping moved from paper sketches to lo-fi flows to mid-fidelity screens. Each stage had a specific job. Sketches validated navigation and entry points. Lo-fi flows established content hierarchy and tested whether the three modules felt distinct but connected.</p>
           <div class="rkt-develop-stack">
             <figure>
               <button type="button" data-modal-src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/wireframe.png" data-modal-title="Wireframes" data-modal-caption="Early wireframes validating navigation structure and entry points.">
@@ -443,27 +569,28 @@
             </button>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Deliver — Design System -->
-    <section class="ux-section" aria-labelledby="ds-title">
-      <div class="container">
-        <div class="ux-wide-head">
-          <p class="ux-kicker">Design System</p>
-          <h2 id="ds-title">A visual language that carries values, not just aesthetics.</h2>
-          <p>The design system was not built after the content. It was developed alongside it, because the visual language needed to express Kaitiakitanga rather than decorate it. Every colour, type and illustration decision was tested against the question: does this feel like guardianship, or does it feel like greenwashing?</p>
-          <div class="ux-influence">
-            <strong>Influence</strong>
-            <p>This question filtered every visual decision that followed — pushing the palette toward natural greens, the illustrations toward hand-drawn warmth, and the brand mark toward symbolism rather than decoration.</p>
-          </div>
+        <!-- [MODIFIED M23 CA3] Influence moved to the end of the Develop
+             sub-section, after the prototype evidence it comments on. -->
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>Testing whether the three modules felt distinct but connected directly shaped the final IA — confirming that Community, Market and Ako needed shared navigation but separate content rhythms.</p>
         </div>
+
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Design System</p>
+            <h3>A visual language that carries values, not just aesthetics.</h3>
+          </div>
+          <p>The design system was not built after the content. It was developed alongside it, because the visual language needed to express Kaitiakitanga rather than decorate it. Every colour, type and illustration decision was tested against the question: does this feel like guardianship, or does it feel like greenwashing?</p>
+        </div>
+        <!-- [MODIFIED M23 CA4] Design System sub-blocks unified to the VTH
+             pattern: one h3 title plus one merged paragraph, no kicker. -->
         <div class="rkt-ds-stack">
           <article>
             <div>
-              <p class="ux-kicker">Colour</p>
               <h3>Deep greens that signal growth, not trend.</h3>
-              <p>The palette centres on forest and teal greens drawn from natural ecosystems rather than brand conventions. The dark green grounds the interface with stability. The mid teal carries interactive and action states. Secondary tones support hierarchy without competing for attention.</p>
+              <p>The palette centres on forest and teal greens drawn from natural ecosystems rather than brand conventions. The dark green grounds the interface with stability, the mid teal carries interactive and action states, and secondary tones support hierarchy without competing for attention.</p>
             </div>
             <figure>
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/ds-color.png" alt="ReKraft colour palette showing deep green and teal tones." loading="lazy">
@@ -474,16 +601,14 @@
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/ds-typography.png" alt="ReKraft typography system showing type hierarchy." loading="lazy">
             </figure>
             <div>
-              <p class="ux-kicker">Typography</p>
               <h3>Seravek and Roboto for warmth and clarity.</h3>
-              <p>Seravek carries headlines with a rounded, approachable quality that suits community content. Roboto handles body text and interface labels at smaller sizes. The pairing avoids the coldness of purely technical typefaces while maintaining clear reading hierarchy across a dense information environment.</p>
+              <p>Seravek carries headlines with a rounded, approachable quality that suits community content, while Roboto handles body text and interface labels at smaller sizes. The pairing avoids the coldness of purely technical typefaces while maintaining clear reading hierarchy across a dense information environment.</p>
             </div>
           </article>
           <article>
             <div>
-              <p class="ux-kicker">Illustration</p>
               <h3>Hand-drawn quality that signals human making.</h3>
-              <p>Illustrations use a loose, crafted style that references the act of making by hand. This was a deliberate choice against polished stock imagery, which would undermine the platform's claim that reuse is accessible.</p>
+              <p>Illustrations use a loose, crafted style that references the act of making by hand, a deliberate choice against polished stock imagery, which would undermine the platform's claim that reuse is accessible.</p>
             </div>
             <figure>
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/ds-illustration.png" alt="ReKraft illustration style showing hand-drawn quality." loading="lazy">
@@ -494,30 +619,71 @@
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/ds-icon.png" alt="ReKraft icon system showing consistent weight and navigation states." loading="lazy">
             </figure>
             <div>
-              <p class="ux-kicker">Icons</p>
               <h3>A consistent weight system for clarity.</h3>
               <p>Icons follow a consistent weight system for navigational and action states, keeping recognisability and legibility across small touch targets on mobile.</p>
             </div>
           </article>
           <article>
             <div>
-              <p class="ux-kicker">Brand Identity</p>
               <h3>A mark that reads as cycle and community.</h3>
-              <p>The ReKraft wordmark pairs with a circular mark that references both the recycling loop and the koru — a Māori symbol of growth and new beginnings. The identity needed to work across a mobile interface and physical touchpoints without losing legibility or cultural resonance at small sizes.</p>
+              <p>The ReKraft wordmark pairs with a circular mark that references both the recycling loop and the koru, a Māori symbol of growth and new beginnings. The identity needed to work across a mobile interface and physical touchpoints without losing legibility or cultural resonance at small sizes.</p>
             </div>
             <figure>
               <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/rkt/ds-brand.png" alt="ReKraft brand identity and logo system." loading="lazy">
             </figure>
           </article>
         </div>
+        <!-- [MODIFIED M23 Bug2 D4] Moved from directly under the section
+             heading to the end, after the sub-blocks it comments on,
+             matching how Influence closes every other section. -->
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>This question filtered every visual decision that followed — pushing the palette toward natural greens, the illustrations toward hand-drawn warmth, and the brand mark toward symbolism rather than decoration.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Deliver — Final Design -->
-    <section class="ux-section" aria-labelledby="final-modules-title">
+    <!-- 12. Validation — NEW, extracted from the project's usability test
+         plan (test objectives, tasks and script) plus the "five
+         participants" reference that previously lived only in
+         Retrospective. Source: Cafe's usability test plan slide,
+         2026-07-15. -->
+    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Validation</p>
+          <h2 id="validation-title">Testing whether the three modules held together in practice.</h2>
+          <p>Five participants completed a moderated usability test of the ReKraft prototype. The test measured three things: whether people could complete a core task in each module, where navigation and content discovery broke down, and whether Kaitiakitanga and SDG 12 came through clearly in the design rather than staying implicit.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three">
+          <article class="ux-card">
+            <span>Task 01 · Market</span>
+            <h3>List an item for exchange</h3>
+            <p>Given an old wooden chair to sell, participants used ReKraft to publish the relevant product information.</p>
+          </article>
+          <article class="ux-card">
+            <span>Task 02 · Community</span>
+            <h3>Find reuse guidance</h3>
+            <p>Given unused glass jars, participants used ReKraft to find relevant information on what to do with them.</p>
+          </article>
+          <article class="ux-card">
+            <span>Task 03 · Ako</span>
+            <h3>Complete a values quiz</h3>
+            <p>Participants located and completed a short quiz about Kaitiakitanga inside the Ako module.</p>
+          </article>
+        </div>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>Pre- and post-test questions checked participants' prior engagement with sustainability topics and, afterward, whether the social features helped them find what they needed, whether the learning module met expectations, and where the app still felt confusing. This shaped the Delivery-stage refinements to onboarding, module navigation and the Ako quiz flow.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Delivery — Final Design (dark tier-d, standard shared rules) -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="final-modules-title">
       <div class="container">
         <div class="ux-wide-head">
-          <p class="ux-kicker">Final Design</p>
+          <p class="ux-kicker">Delivery</p>
           <h2 id="final-modules-title">Each module earns its place.</h2>
           <p>The three modules were not designed as features. They were designed as answers to specific research findings. The community feed answers the isolation problem. The market answers the access and trust problem. Ako answers the skills and meaning problem. Together they form a loop rather than a list.</p>
         </div>
@@ -575,18 +741,18 @@
       </div>
     </section>
 
-    <!-- Retrospective -->
-    <section class="ux-retro" aria-labelledby="retro-title">
+    <!-- 14. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
       <div class="container">
-        <p class="ux-kicker">Retrospective</p>
-        <h2 id="retro-title">What this project clarified.</h2>
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
+        <h2 id="retro-title">Looking back, looking forward.</h2>
         <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
           <article class="ux-card">
             <h3>Value</h3>
             <p>The project demonstrated that cultural framing can function as a motivation architecture rather than a visual add-on. The three-module structure held together through testing without needing significant structural revision.</p>
           </article>
           <article class="ux-card">
-            <h3>Limitation</h3>
+            <h3>Learned</h3>
             <p>Five usability participants is not enough to test a culturally situated product. Māori community input was referenced in the literature review but not embedded in the co-design process. That gap needs closing before any real deployment.</p>
           </article>
           <article class="ux-card">
@@ -597,8 +763,8 @@
       </div>
     </section>
 
-    <!-- HENEX Method Recipe -->
-    <section class="ux-section" aria-labelledby="recipe-title">
+    <!-- 15. HENEX Method Recipe -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
       <div class="container ux-two-col">
         <aside class="ux-intro">
           <p>HENEX Method Recipe</p>
@@ -608,14 +774,16 @@
           <p class="ux-recipe-primary">
             <span>Primary recipe</span>
             <a href="../philosophy.html#r07">R07 · Purpose Story Script</a>
-            <small>Identity × Meaning × Medium</small>
           </p>
-          <p>This project uses R07 because the core design challenge was not functional. It was motivational. ReKraft needed to help people understand who they are in relation to materials, community and the environment before it asked them to do anything. The onboarding, the Ako missions and the provenance fields in the Market all express the same recipe: anchor identity, then invite action.</p>
           <div class="ux-recipe-tags">
             <span>Identity</span>
             <span>Meaning</span>
             <span>Medium</span>
           </div>
+          <p>This project uses R07 because the core design challenge was not functional. It was motivational. ReKraft needed to help people understand who they are in relation to materials, community and the environment before it asked them to do anything. The onboarding, the Ako missions and the provenance fields in the Market all express the same recipe: anchor identity, then invite action.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
+            <span>Secondary recipe</span>
+          </p>
           <div class="ux-recipe-popovers">
             <button type="button" class="ux-recipe-trigger"
               data-recipe-title="R25 · Impact Story Chain"
@@ -630,7 +798,7 @@
               data-recipe-body="Use community visibility and social proof to sustain behaviour over time."
               data-recipe-link="../philosophy.html#r22">R22</button>
             <button type="button" class="ux-recipe-trigger"
-              data-recipe-title="R24 · Trust Cooperation Rules"
+              data-recipe-title="R24 · Trust &amp; Cooperation Rules"
               data-recipe-body="Build platform trust through transparent exchange norms and provenance cues."
               data-recipe-link="../philosophy.html#r24">R24</button>
           </div>
@@ -638,7 +806,7 @@
       </div>
     </section>
 
-    <!-- Related Projects -->
+    <!-- 16. Related Projects -->
     <section class="ux-section ux-related" aria-labelledby="related-title">
       <div class="container">
         <p class="ux-kicker">Related Projects</p>

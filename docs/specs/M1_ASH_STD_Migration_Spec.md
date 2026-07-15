@@ -100,3 +100,30 @@ Adjacency check: S P L S D S D L S D P L — no adjacent repeats. ✓
 3. **ASH HMW copy:** the existing HMW text already on the ASH page is used directly.
 
 **Status:** Spec approved in substance; implementation DEFERRED by Cafe's decision — all remaining UX page specs (M-2 NDS+RKT, M-3 VSK+WST, M-4 WSO) are to be defined first, then all migrations implemented together as one build phase.
+
+---
+
+## 5. F-Series Addendum — 2026-07-14
+
+Both pages were built 2026-07-13 and walked through by Cafe (light+dark PDFs plus Bug.docx, 2026-07-14). The walkthrough surfaced six shared root causes and a set of per-page layout corrections, all specified in **`M1_F_Series_Fix_Spec.md`** (the authoritative execution guide for the fix round — read it in full before touching code). Highlights:
+
+1. Dark tier-l/tier-d backgrounds too bright: missing dark `--ux-primary-pale` override and emphasis mixed into raw mid-tone primary instead of `--ux-primary-dark`. Master Spec 2.4 amended.
+2. Tier-d text cascade tie (unreadable ASH Outcome heading): shared tier block relocated to end of `ux-case-study.css` with raised specificity.
+3. `.ux-card-grid--four` and the arrow nav-card existed only in vth-v2.css; promoted to shared (`.ux-nav-card`).
+4. Recipe layout aligned to VTH (tags under recipe name, no `<small>` triad, Secondary Recipe label); node tags stay theme-coloured per Cafe.
+5. Kicker hierarchy sizing codified (Master Spec 6.1).
+6. Reflection card naming standardised: Value / Learned / Next, prose only.
+
+**STD structure change (approved):** a Develop chapter is added between Design and Validation; Process nav becomes 4 cards (Design / Develop / Validation / Delivery); the evolution timeline moves into Develop. STD's tone ladder is superseded by:
+
+| # | Section | Tone |
+|---|---------|------|
+| 8 | Process | D (gateway, 4 nav cards) |
+| 9 | Design | L |
+| 10 | Develop | S (NEW — evolution timeline + dev-log summary cards) |
+| 11 | Validation | L (changed from S) |
+| 12 | Delivery | D |
+
+Full ladder: S P L S D S D L S L D P L — verified, no adjacent repeats.
+
+A permanent self-audit checklist graduated from this round into Master Spec Section 13.8; every subsequent page build (M-2/M-3/M-4) runs it before handover.
