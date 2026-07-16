@@ -15,7 +15,6 @@
 
 .arch-kicker,
 .arch-section-head p,
-.arch-henex__label,
 .arch-meta-item span,
 .arch-skills > span,
 .arch-award-card span,
@@ -109,8 +108,7 @@
 .arch-skills > span,
 .arch-award-card span,
 .arch-publication-block span,
-.arch-related-card span,
-.arch-henex__label {
+.arch-related-card span {
   display: block;
   margin-bottom: 8px;
 }
@@ -176,7 +174,6 @@
 }
 
 .arch-two-col,
-.arch-media-row,
 .arch-henex {
   display: grid;
   grid-template-columns: minmax(220px, 0.32fr) minmax(0, 0.68fr);
@@ -184,14 +181,37 @@
   align-items: start;
 }
 
-.arch-media-row--context {
-  grid-template-columns: minmax(220px, 0.31fr) minmax(0, 0.69fr);
-  gap: 48px;
+/* [REMOVED] .arch-media-row / .arch-media-row--context deleted — both
+   Context sections that used this (AYG, BT2) were rebuilt onto
+   .arch-two-col, because squeezing a full heading plus 2 paragraphs into
+   the same ~31% column as the kicker made the text read as cramped. The
+   image below moved to .arch-context-image (see below), not the generic
+   .arch-wide-image, so it aligns to the copy column instead of stretching
+   full container width. Confirmed zero remaining references before
+   removal. */
+
+/* Context image — a third grid item inside the same .arch-two-col grid
+   (grid-column: 2), so its left edge and width exactly match the
+   description text column above it, instead of the full-bleed
+   .arch-wide-image treatment used everywhere else on the site. Falls back
+   to the implicit single-column grid automatically at the 1180px
+   breakpoint where .arch-two-col collapses, no extra media query needed. */
+.arch-two-col--context {
+  row-gap: 52px;
+}
+
+.arch-context-image {
+  grid-column: 2;
+}
+
+.arch-context-image img {
+  width: 100%;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 .arch-section-head h2,
-.arch-related h2,
-.arch-henex__intro h2 {
+.arch-related h2 {
   font-size: clamp(2rem, 3.5vw, 3.5rem);
   line-height: 1.03;
 }
@@ -644,9 +664,17 @@
   color: color-mix(in srgb, var(--arch-award-gold) 68%, var(--theme-text-soft));
 }
 
+/* [MODIFIED A1/E19] Converted from a :hover border-color declaration to a
+   --card-border-hover assignment on the resting element, so this reads
+   through the shared C1 contract instead of hard-overriding it (same
+   pattern as .ux-influence in this file's C1 base rule). background stays
+   as a genuine hover-only addition beyond the C1 base. */
+.arch-award-card {
+  --card-border-hover: color-mix(in srgb, var(--arch-award-gold-strong) 58%, var(--theme-border));
+}
+
 .arch-award-card:hover,
 .arch-award-card:focus-within {
-  border-color: color-mix(in srgb, var(--arch-award-gold-strong) 58%, var(--theme-border));
   background: color-mix(in srgb, var(--arch-award-gold-tint) 88%, var(--theme-surface));
 }
 
@@ -657,29 +685,87 @@
 
 /* HENEX section */
 
+/* [CORRECTED A1] .arch-henex__intro h2 was grouped into the same shared
+   list as .arch-section-head h2/.arch-related h2 (font-size up to 3.5rem),
+   the large chapter-opener size used 9 times per page for real section
+   openers (Overview, Role, etc). But .arch-henex__intro is not one of
+   those 9 .arch-section-head asides — it's its own class, structurally
+   the same "two-column intro aside" component as UX's .ux-intro, which
+   uses a smaller size on every UX page including for its own Overview
+   section (ux-case-study.css line 315-327: clamp(1.55rem, 2.4vw, 2.45rem)).
+   Decoupled from the chapter-opener list and matched to that exact size;
+   .arch-section-head h2/.arch-related h2 are untouched and correctly stay
+   at the larger size. Colour stays on the neutral system, unaffected. */
 .arch-henex__intro h2 {
   color: color-mix(in srgb, var(--color-brand-secondary) 68%, var(--theme-text));
-}
-
-.arch-henex__body h3 {
-  font-size: clamp(1.55rem, 2vw, 2.1rem);
+  font-size: clamp(1.55rem, 2.4vw, 2.45rem);
   line-height: 1.12;
 }
 
-.arch-henex__body h3 a {
+/* [MODIFIED A1] Recipe — restructured to match the UX .ux-recipe-primary/
+   .ux-recipe-tags content pattern (see docs/specs/A1_Architecture_
+   Consistency_Fix_Spec.md). Retires the old .arch-henex__label + <h3> +
+   .arch-henex__triad markup (h3/triad rules removed below). Colour stays
+   on the neutral system (--theme-text/--theme-muted), no --ux-theme
+   dependency, matching the rest of this file. */
+.arch-recipe-primary {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 var(--space-lg);
+}
+
+/* [CORRECTED A1] The initial A1 build wrongly reused the retired
+   .arch-henex__label kicker typography (uppercase, bold, letter-spaced,
+   small) for this span. Checked against the real UX rendering (ux-case-
+   study.css line 47-56): .ux-recipe-primary span carries ONLY a colour
+   rule, no font-size/weight/letter-spacing/text-transform of its own — it
+   inherits plain paragraph text and just tints the colour per project.
+   Matching that here: no typography override, colour only. Uses the same
+   colour-mix formula as .arch-pill-row--nodes span just below, so the
+   label reads as part of the same neutral-accent family as the tags it
+   introduces, staying on --color-brand-secondary (a neutral slate, not a
+   per-project theme colour) rather than UX's saturated --ux-theme. */
+.arch-recipe-primary span {
+  color: color-mix(in srgb, var(--color-brand-secondary) 54%, var(--theme-text));
+}
+
+.arch-recipe-primary a {
+  width: fit-content;
   color: var(--theme-text);
-  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.16rem;
+  font-weight: 750;
 }
 
-.arch-henex__triad {
-  margin-top: 8px;
-  color: var(--theme-text-soft);
-  font-weight: 700;
+/* [PORTED F25/Bug2-A2 fix] .arch-recipe-primary carries its own --space-lg
+   (32px) bottom margin. Without this pair of rules, adjacent margins
+   collapse to the larger value and the tags row would sit 32px away
+   regardless of its own margin-top. Only fires for the primary-recipe-name
+   -> nodes-tags pairing, not for the secondary-recipe-label -> trigger-
+   buttons pairing (matches UX behaviour, where that second gap is
+   intentionally left at the collapsed 32px). */
+.arch-recipe-primary:has(+ .arch-pill-row--nodes) {
+  margin-bottom: 8px;
 }
 
-.arch-pill-row--nodes {
-  margin-top: 24px;
+.arch-recipe-primary + .arch-pill-row--nodes {
+  margin-top: 0;
 }
+
+.arch-pill-row--nodes + p {
+  margin-top: 22px;
+}
+
+/* Secondary Recipe label — reuses .arch-recipe-primary's layout, only adds
+   the separating top margin (same pattern as .ux-secondary-recipe). */
+.arch-secondary-recipe {
+  margin-top: 28px;
+}
+
+/* [REMOVED A1] .arch-pill-row--nodes { margin-top: 24px; } deleted — dead
+   now that the nodes row always immediately follows .arch-recipe-primary,
+   whose own combinator rule above (.arch-recipe-primary + .arch-pill-row
+   --nodes) unconditionally overrides this to 0 at higher specificity. */
 
 .arch-pill-row--nodes span {
   border-color: color-mix(in srgb, var(--color-brand-secondary) 32%, var(--theme-border));
@@ -772,13 +858,16 @@
   border-color: var(--theme-text);
 }
 
-/* C1 base (border, radius, shadow) is in global.css. */
+/* C1 base (border, radius, shadow) is in global.css. [MODIFIED A1/E19]
+   border-color routed through --card-border instead of declared directly,
+   so this stays compliant with the C1 contract (same computed value as
+   before, --theme-border, just assigned through the variable). */
 .arch-popover {
   position: fixed;
   z-index: 120;
   width: min(360px, calc(100vw - 32px));
   padding: 18px;
-  border-color: var(--theme-border);
+  --card-border: var(--theme-border);
   background: var(--theme-surface);
   display: none;
 }
@@ -891,9 +980,7 @@
 @media (max-width: 1180px) {
   .arch-title-grid,
   .arch-two-col,
-  .arch-media-row,
   .arch-henex,
-  .arch-media-row--context,
   .arch-callout-row {
     grid-template-columns: 1fr;
   }

@@ -284,15 +284,17 @@
   margin-top: 52px;
 }
 
+/* [MODIFIED E19] Was declaring the full `border:` shorthand directly (an
+   even more direct bypass than a lone border-color override) plus a
+   separate :hover border-color rule. Both routed through the contract
+   variables; the C1 base's own `border: 1px solid var(--card-border, ...)`
+   now supplies the width/style. */
 .rkt-finding {
   padding: 24px;
-  border: 1px solid color-mix(in srgb, var(--ux-secondary) 24%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-secondary) 24%, var(--theme-border-soft));
+  --card-border-hover: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
-}
-
-.rkt-finding:hover {
-  border-color: color-mix(in srgb, var(--ux-theme) 34%, var(--theme-border));
 }
 
 .rkt-finding span {
@@ -336,10 +338,14 @@
   margin-top: 14px;
 }
 
+/* [MODIFIED E19] .rkt-finding--implication is a modifier applied alongside
+   the base .rkt-finding class (a C1 member) on the same element — its
+   border-color was tied in specificity with the C1 base and won on source
+   order, silently bypassing the contract. Routed through --card-border. */
 .rkt-finding--implication {
   padding: 16px 24px;
   background: var(--ux-primary-pale);
-  border-color: color-mix(in srgb, var(--ux-secondary) 30%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-secondary) 30%, var(--theme-border-soft));
 }
 
 .rkt-finding--implication span {
@@ -355,9 +361,10 @@
   background: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-surface));
 }
 
+/* [MODIFIED E19] border-color routed through --card-border. */
 [data-theme=dark] .rkt-finding {
   background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
 /* ═══════════════════════════════════════════════════════════════════════

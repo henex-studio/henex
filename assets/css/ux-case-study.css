@@ -934,6 +934,10 @@ figcaption {
   gap: 16px;
 }
 
+/* [MODIFIED E19] Both border-color declarations here routed through the
+   contract variables (--card-border resting, --card-border-hover on
+   interaction) instead of being declared directly, which had been
+   bypassing the shared C1 base/hover rules in global.css. */
 .ux-feedback-card {
   /* Reset browser default blockquote margin (1em 40px) — without this the
      card visually indents ~40px on each side inside its grid cell, making
@@ -942,15 +946,11 @@ figcaption {
   margin: 0;
   min-height: 0;
   padding: 22px 24px;
-  border-color: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 22%, var(--theme-border-soft));
+  --card-border-hover: color-mix(in srgb, var(--ux-theme) 42%, var(--theme-border));
   background:
     radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--ux-theme) 8%, transparent), transparent 34%),
     color-mix(in srgb, var(--ux-soft, var(--theme-surface-soft)) 50%, var(--theme-surface));
-}
-
-.ux-feedback-card:hover,
-.ux-feedback-card:focus-within {
-  border-color: color-mix(in srgb, var(--ux-theme) 42%, var(--theme-border));
 }
 
 .ux-feedback-icon {
@@ -1331,13 +1331,15 @@ figcaption {
 
 /* Popover */
 
-/* C1 base (shadow) is in global.css; radius overridden to --ux-radius there too. */
+/* C1 base (shadow) is in global.css; radius overridden to --ux-radius there
+   too. [MODIFIED E19] border-color routed through --card-border instead of
+   declared directly (same fix pattern as .arch-popover). */
 .ux-popover {
   position: fixed;
   z-index: 120;
   width: min(360px, calc(100vw - 32px));
   padding: 18px;
-  border-color: var(--theme-border);
+  --card-border: var(--theme-border);
   background: var(--theme-surface);
   display: none;
 }

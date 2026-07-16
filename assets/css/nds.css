@@ -211,9 +211,13 @@
   margin: 42px 0 52px;
 }
 
+/* [MODIFIED E19] Was declaring the full border: shorthand directly, even
+   though the value coincidentally matched the C1 base's own fallback
+   (harmless today, but still a latent contract bypass). Removed — the C1
+   base's `border: 1px solid var(--card-border, var(--theme-border-soft))`
+   already produces the identical result with nothing set here. */
 .system-findings-grid article {
   padding: 20px;
-  border: 1px solid var(--theme-border-soft);
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
@@ -351,9 +355,10 @@
   line-height: 1.62;
 }
 
+/* [MODIFIED E19] border-color routed through --card-border. */
 [data-theme=dark] .system-findings-grid article {
   background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -364,10 +369,11 @@
    covers that ground directly.
    ═══════════════════════════════════════════════════════════════════════ */
 
+/* [MODIFIED E19] Light-mode border: shorthand routed through --card-border. */
 .system-foundation-card,
 .system-component-demo {
   padding: clamp(30px, 4vw, 46px);
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
@@ -407,10 +413,11 @@
   font-size: 1rem;
 }
 
+/* [MODIFIED E19] border-color routed through --card-border. */
 [data-theme=dark] .system-foundation-card,
 [data-theme=dark] .system-component-demo {
   background: color-mix(in srgb, var(--ux-primary-soft) 22%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 20%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 20%, var(--theme-border));
 }
 
 /* DS-internal colour swatch values — a separate content-level system from

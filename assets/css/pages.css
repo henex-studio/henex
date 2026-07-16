@@ -236,14 +236,12 @@
   padding: var(--space-lg);
 }
 
-.capability-card--human  { --card-accent: var(--color-human); }
-.capability-card--emotion { --card-accent: var(--color-emotion); }
-.capability-card--nature  { --card-accent: var(--color-nature); }
-
-.capability-card:hover,
-.capability-card:focus-within {
-  border-color: color-mix(in srgb, var(--card-accent) 34%, var(--theme-border));
-}
+/* [MODIFIED E19] --card-border-hover assigned per modifier instead of a
+   :hover rule declaring border-color directly, so this reads through the
+   shared C1 contract. */
+.capability-card--human  { --card-accent: var(--color-human); --card-border-hover: color-mix(in srgb, var(--color-human) 34%, var(--theme-border)); }
+.capability-card--emotion { --card-accent: var(--color-emotion); --card-border-hover: color-mix(in srgb, var(--color-emotion) 34%, var(--theme-border)); }
+.capability-card--nature  { --card-accent: var(--color-nature); --card-border-hover: color-mix(in srgb, var(--color-nature) 34%, var(--theme-border)); }
 
 /* Icon replaces the number index — linear SVG, coloured per capability */
 .capability-card__icon {

@@ -108,25 +108,17 @@
   background: var(--theme-card);
 }
 
-.evidence-item:hover,
-.evidence-item:focus-within {
-  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
-}
-
-.about-profile-card:hover,
-.about-profile-card:focus-within,
-.about-foundation-card:hover,
-.about-foundation-card:focus-within,
-.about-capability-card:hover,
-.about-capability-card:focus-within,
-.about-work-card:hover,
-.about-work-card:focus-within {
-  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
-}
-
-.marker-card:hover,
-.marker-card:focus-within {
-  border-color: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
+/* [MODIFIED E19] Converted from 3 separate :hover border-color blocks
+   (all 6 selectors shared the identical formula) to one --card-border-hover
+   assignment on the resting elements, so this reads through the shared
+   C1 contract instead of hard-overriding it. */
+.evidence-item,
+.about-profile-card,
+.about-foundation-card,
+.about-work-card,
+.about-capability-card,
+.marker-card {
+  --card-border-hover: color-mix(in srgb, var(--page-accent) 34%, var(--theme-border));
 }
 .evidence-item {
   min-height: 150px;
@@ -153,7 +145,7 @@
 }
 .about-profile-card {
   padding: var(--space-lg);
-  border-color: var(--page-accent-border);
+  --card-border: var(--page-accent-border);
   border-radius: var(--radius-lg);
   background: color-mix(in srgb, var(--page-accent) 7%, var(--theme-card));
 }
@@ -321,7 +313,7 @@
   gap: 64px;
   align-items: center;
   padding: 42px;
-  border-color: var(--page-accent-border);
+  --card-border: var(--page-accent-border);
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
 }
 @media (max-width: 900px) {

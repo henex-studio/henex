@@ -546,14 +546,25 @@ body.nav-open .nav-toggle__line:nth-child(2) {
   border-radius: var(--radius-md);
 }
 
-/* C1 cards using --ux-radius inside case study template */
+/* [MODIFIED A1] C1 cards using the shared 18px radius, across both the UX
+   case template and the architecture case template. Uses --radius-md
+   directly rather than --ux-radius: --ux-radius is only defined in
+   ux-case-study.css, which architecture pages never load, so referencing
+   it here would silently fail to resolve for the .arch-* selectors below
+   (--ux-radius is always just an alias for --radius-md anyway, so this is
+   the same computed value for every page, not a visual change for UX). */
 .ux-card,
 .ux-influence,
 .ux-popover,
 .ux-feedback-card,
 .ux-test-card,
-.vth-metrics article {
-  border-radius: var(--ux-radius);
+.vth-metrics article,
+.arch-finding-card,
+.arch-award-card,
+.arch-callout,
+.arch-publication-block,
+.arch-popover {
+  border-radius: var(--radius-md);
 }
 
 /* C3: Navigation cards — lift + shadow-hover */

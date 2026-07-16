@@ -245,9 +245,14 @@
   gap: 24px;
 }
 
+/* [MODIFIED E19] Was declaring the full border: shorthand directly on the
+   light-mode resting state, bypassing the C1 base's own border declaration
+   from the start (not just the dark-mode layer fixed elsewhere in this
+   file). Routed through --card-border so the C1 base rule supplies the
+   width/style. */
 .wst-finding-grid article {
   padding: 30px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
@@ -275,9 +280,12 @@
   line-height: 1.62;
 }
 
+/* [MODIFIED E19] border-color routed through --card-border instead of
+   declared directly — this dark-mode rule sits at higher specificity than
+   the C1 base and was silently pre-empting the contract variable. */
 [data-theme=dark] .wst-finding-grid article {
   background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
 /* ═══════════════════════════════════════════════════════════════════════
@@ -532,11 +540,12 @@
   gap: 24px;
 }
 
+/* [MODIFIED E19] Light-mode border: shorthand routed through --card-border. */
 .ux-test-card {
   display: flex;
   flex-direction: column;
   padding: 26px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 18%, var(--theme-border-soft));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
@@ -579,9 +588,11 @@
   text-align: center;
 }
 
+/* [MODIFIED E19] border-color routed through --card-border, same fix as
+   .wst-finding-grid article above. */
 [data-theme=dark] .ux-test-card {
   background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
 /* ═══════════════════════════════════════════════════════════════════════

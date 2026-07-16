@@ -283,9 +283,10 @@
   margin-top: 42px;
 }
 
+/* [MODIFIED E19] Light-mode border: shorthand routed through --card-border. */
 .vsk-finding-grid article {
   padding: 24px;
-  border: 1px solid color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
+  --card-border: color-mix(in srgb, var(--ux-theme) 20%, var(--theme-border-soft));
   border-radius: var(--ux-radius);
   background: var(--theme-surface);
 }
@@ -318,9 +319,11 @@
   color: var(--ux-strong-ink);
 }
 
+/* [MODIFIED E19] border-color routed through --card-border instead of
+   declared directly — same silent-override pattern already fixed on WST. */
 [data-theme=dark] .vsk-finding-grid article {
   background: color-mix(in srgb, var(--ux-primary-soft) 26%, var(--theme-surface));
-  border-color: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
+  --card-border: color-mix(in srgb, var(--ux-primary-soft) 24%, var(--theme-border));
 }
 
 /* [MODIFIED M23 V5] Implication row, paired underneath the Finding row,
