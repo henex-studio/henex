@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo credit — Option A final</title>
+<style>
+  body {
+    margin: 0; padding: 48px 24px; background: #f6f7f8;
+    font-family: "Inter", system-ui, -apple-system, sans-serif; color: #15171a;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin: 0 0 8px; }
+  .intro { color: #4b5259; font-size: 0.95rem; line-height: 1.6; margin: 0 0 40px; }
+  .label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7a828b; margin: 0 0 6px; }
+  .desc { color: #4b5259; font-size: 0.9rem; line-height: 1.55; margin: 0 0 14px; }
+  .block { margin-bottom: 56px; }
+
+  .photo-figure { position: relative; margin: 0; border-radius: 18px; overflow: hidden; background: #000; }
+  .photo-figure img { display: block; width: 100%; height: auto; }
+
+  /* Option A (final) — white corner credit, pure text, no box, no scrim.
+     Legibility on bright images comes entirely from a slightly stronger
+     multi-layer text shadow, so the image stays completely clean. */
+  .photo-credit {
+    position: absolute; right: 12px; bottom: 10px; z-index: 1;
+    color: #fff; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.9), 0 0 4px rgba(0,0,0,0.6), 0 0 1px rgba(0,0,0,0.8);
+  }
+
+  figcaption { margin-top: 12px; color: #4b5259; font-size: 0.95rem; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Option A (final) — white corner credit, soft shadow, no box</h1>
+    <p class="intro">Pure white text in the bottom-right corner, text shadow only — no box, no gradient scrim, nothing overlaid on the image. Legibility on bright photos comes from a slightly stronger multi-layer text shadow. Four real photos below, including bright ones, to check the white stays readable. Everything is adjustable — say if you want the text smaller, the shadow softer or stronger, or a different corner.</p>
+
+    <div class="block">
+      <p class="label">Bright sky test</p>
+      <figure class="photo-figure">
+        <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/gsh/white-sail.png" alt="White sail form.">
+        <span class="photo-credit">© Photographer Name</span>
+      </figure>
+    </div>
+
+    <div class="block">
+      <p class="label">Riverside — with description caption underneath</p>
+      <figure class="photo-figure">
+        <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/gsh/riverside.png" alt="Riverside view.">
+        <span class="photo-credit">© Photographer Name</span>
+      </figure>
+      <figcaption>The riverside view shows how the sail form reads against the water.</figcaption>
+    </div>
+
+    <div class="block">
+      <p class="label">Longer credit line</p>
+      <figure class="photo-figure">
+        <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/gsh/south-entrance.png" alt="South entrance.">
+        <span class="photo-credit">© Photographer Name · Courtesy of [Firm]</span>
+      </figure>
+    </div>
+
+    <div class="block">
+      <p class="label">Innovation hub</p>
+      <figure class="photo-figure">
+        <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/gsh/inovation-hub.png" alt="Innovation hub.">
+        <span class="photo-credit">© Photographer Name</span>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

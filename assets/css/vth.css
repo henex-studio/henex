@@ -45,6 +45,24 @@
 .ux-case-page--victim-hub {
   --ux-primary: #00164B;
   --ux-secondary: #B30D0D;
+  /* [MODIFIED 2026-07-17] Two light-mode tokens were missing on this page,
+     both surfaced by the Recipe dimension tags (Agency/Empathy/Interface)
+     rendering with no border and no colour.
+     (1) --ux-theme was never defined here, unlike every other UX case
+     (e.g. ash.css: --ux-theme: var(--ux-primary)). The shared
+     .ux-recipe-tags span rule and several vth.css rules read var(--ux-theme)
+     for borders/backgrounds; undefined, those color-mix() values were
+     invalid, so the tags lost their border and tint.
+     (2) --ux-dark had a light-mode base value (#00164B) in the old
+     production vth.css that was dropped during the M-5 merge — only the
+     dark-mode override (var(--theme-text), further below) survived. In light
+     mode --ux-dark was therefore undefined, so every bare var(--ux-dark)
+     reference (tag text, .ux-recipe-primary a heading link) fell back to
+     inherited near-black instead of the brand navy, reading as grey.
+     Both restored below, matching the sitewide pattern (light block defines
+     the brand dark tone; dark block overrides to theme text). */
+  --ux-theme: var(--ux-primary);
+  --ux-dark: #00164B;
   --ux-primary-dark: #000B29;
   --ux-primary-soft: #3A56A0;
   /* [MODIFIED E16] #EEF1F8 → #F0F5FD. The old value was a grey-lavender

@@ -1022,3 +1022,80 @@ body.nav-open .nav-toggle__line:nth-child(2) {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Glossary term popover — sitewide inline component.
+   An inline <button class="glossary-term" data-term="slug"> in body copy
+   gets a dotted underline; clicking it opens a small popover with the
+   term's plain-language definition, looked up from assets/js/glossary.js.
+   Independent of the recipe popover (which is case-study-only) so it can
+   run on any page. Visuals mirror .ux-popover / .arch-popover.
+   ═══════════════════════════════════════════════════════════════════════ */
+
+.glossary-term {
+  /* reset the button so it flows as inline text */
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  /* the dashed underline that marks it as a defined term — dashed (not
+     dotted) gives longer, more visible segments; colour kept at ~65% of
+     the text colour so it reads clearly without competing with the copy */
+  text-decoration: underline dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in srgb, currentColor 65%, transparent);
+  transition: text-decoration-color 160ms ease, color 160ms ease;
+}
+
+.glossary-term:hover,
+.glossary-term:focus-visible {
+  text-decoration-color: currentColor;
+}
+
+.glossary-term:focus-visible {
+  outline: 2px solid var(--theme-text);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.glossary-term[aria-expanded="true"] {
+  text-decoration-color: currentColor;
+}
+
+.glossary-popover {
+  position: fixed;
+  z-index: 120;
+  width: min(340px, calc(100vw - 32px));
+  padding: 18px;
+  border: 1px solid var(--theme-border);
+  border-radius: var(--radius-md);
+  background: var(--theme-surface);
+  box-shadow: var(--theme-shadow-card);
+  display: none;
+}
+
+.glossary-popover.is-open {
+  display: block;
+}
+
+.glossary-popover__term {
+  margin: 0 0 8px;
+  color: var(--theme-text);
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 720;
+  line-height: 1.2;
+}
+
+.glossary-popover__def {
+  margin: 0;
+  color: var(--theme-text-soft);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
