@@ -259,6 +259,47 @@
   box-shadow: none;
 }
 
+/* [MODIFIED 2026-07-17] Positioning wrapper for the image only, used when a
+   photo carries a credit watermark. Necessary because .arch-figure also
+   contains the figcaption below the image — if .photo-credit positioned
+   against .arch-figure directly, "bottom: 10px" measured from the bottom of
+   the whole figure (image + caption text), landing the watermark in the
+   caption line instead of the image corner. This wrapper's box is exactly
+   the image's box, so the watermark anchors to the image itself regardless
+   of caption length. */
+.arch-figure__media {
+  position: relative;
+}
+
+/* Photo credit watermark — bottom-right corner overlay, plain white text +
+   shadow, no box, no scrim. Positioned against .arch-figure__media (photos)
+   or .arch-hero (the page hero, which has no caption so its own box already
+   equals the image box). Approved design: docs/specs/photo-credit-demo.html
+   (Option A final).
+   [MODIFIED 2026-07-17] Shadow lightened — the original 3-layer stack
+   (0.9/0.6/0.8 alpha) read as a heavy dark outline on bright/white
+   backgrounds (e.g. line drawings on white). Reduced to a single soft drop
+   shadow plus a faint glow; still legible on dark photo backgrounds since
+   the text itself stays solid white, just without the over-inked edge. */
+.photo-credit {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 1;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.55), 0 0 3px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+.arch-hero .photo-credit {
+  right: 20px;
+  bottom: 16px;
+  font-size: 0.8rem;
+}
+
 .arch-figure figcaption {
   max-width: 980px;
   margin-top: 12px;
@@ -1010,4 +1051,50 @@
   .arch-meta-grid {
     grid-template-columns: 1fr;
   }
+}
+
+
+/* [MODIFIED 2026-07-17] Photo credit component and supporting utility class,
+   added for the architecture photo copyright pass. */
+
+/* Standard visually-hidden utility (matches vth.css's implementation,
+   duplicated here since architecture pages don't load vth.css). Used to
+   keep a section's real <h2> in the accessibility tree for
+   aria-labelledby while the visible heading is just the .arch-kicker
+   label above it. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+}
+
+/* [MODIFIED 2026-07-17] Reference-image source note, used inline inside a
+   figcaption for the handful of second-hand/URL-sourced images that have no
+   named author (so they don't get a .photo-credit corner watermark). Sits
+   directly under the image it belongs to, rather than a separate page-end
+   block, per Cafe's feedback that a footnote list disconnected from its
+   image reads oddly. Deliberately a step quieter than the figcaption text
+   itself. */
+.arch-figure__source {
+  display: block;
+  margin-top: 4px;
+  color: var(--theme-muted);
+  font-size: 0.82rem;
+}
+
+.arch-figure__source a {
+  color: var(--theme-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.arch-figure__source a:hover,
+.arch-figure__source a:focus-visible {
+  color: var(--theme-text-soft);
 }
