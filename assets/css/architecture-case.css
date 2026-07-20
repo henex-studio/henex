@@ -421,6 +421,16 @@
   height: auto;
 }
 
+/* Depthmap images are full-bleed plots (dark background), not line drawings
+   on white paper, so the shared .arch-figure--drawing white padding/background
+   (line 311) creates a visible white ring outside the actual image content and
+   pushes the corner watermark out past the image's true edge. Override to
+   bleed: image fills its wrapper exactly, watermark lands on the image itself. */
+.arch-image-pair--analysis img {
+  padding: 0;
+  background: transparent;
+}
+
 .arch-image-pair--site .arch-figure--photo img {
   height: 460px;
   object-fit: cover;
@@ -591,6 +601,12 @@
 
 .arch-media-col__drawing img {
   width: 100%;
+  /* Overrides .arch-figure--line-plain img's 280px thumbnail cap (shared with
+     the small concept-stack diagrams elsewhere on the site): here the drawing
+     should fill the media-col's own text column, not sit at thumbnail size
+     inside a wider box, or the corner watermark ends up in the empty space
+     beside it rather than on the image itself. */
+  max-width: 100%;
   object-fit: contain;
   background: transparent;
 }
@@ -1002,9 +1018,14 @@
 
 [data-theme="dark"] .arch-figure--line img,
 [data-theme="dark"] .arch-figure--drawing img,
-[data-theme="dark"] .arch-image-pair--analysis img,
 [data-theme="dark"] .arch-interface-grid .arch-figure--drawing .arch-drawing-frame {
   background: #FFFFFF;
+}
+
+/* Depthmap bleed override (see light-mode rule near line 420): keep
+   transparent in dark mode too, do not restore the white ring. */
+[data-theme="dark"] .arch-image-pair--analysis img {
+  background: transparent;
 }
 
 [data-theme="dark"] .arch-award-card:hover,
