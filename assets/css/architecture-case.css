@@ -300,6 +300,17 @@
   font-size: 0.8rem;
 }
 
+/* Video credit sits top-right instead of bottom-right: the native <video
+   controls> bar spans the bottom edge and its rightmost icons (fullscreen,
+   picture-in-picture) occupy the same corner the default .photo-credit
+   position uses, so bottom placement would overlap the controls once a
+   visitor interacts with the player. */
+.arch-video__frame .photo-credit {
+  top: 14px;
+  right: 14px;
+  bottom: auto;
+}
+
 .arch-figure figcaption {
   max-width: 980px;
   margin-top: 12px;
