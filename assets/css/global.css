@@ -78,6 +78,11 @@
   --container: 1320px;
   --gutter: 40px;
   --section-pad: 96px;
+
+  /* Home hero portrait — mask-image ink colour. Controlled here, not
+     baked into the PNG, so the portrait can follow theme or brand
+     colour without re-exporting the asset. */
+  --portrait-ink: #1B1B1B;
 }
 
 
@@ -106,6 +111,10 @@
 
   --page-nav-card-bg: var(--theme-card);
   --page-nav-card-border: var(--theme-border);
+
+  /* Heavy line weight on pure white reads as glare against #02040A —
+     88% keeps it legible without glowing. First value to tune on preview. */
+  --portrait-ink: rgba(255, 255, 255, 0.88);
 }
 
 
