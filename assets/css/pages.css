@@ -49,14 +49,25 @@
   color: var(--hero-text-soft);
 }
 
+/* [FIXED 2026-08-21] Reworked from a two-column grid to text-in-flow +
+   absolutely-positioned portrait. The grid version paired the portrait's
+   vertical position to the text column's height via align-self:end — on
+   any viewport where the H1 wrapped past 3-4 lines, the row grew tall and
+   dragged the portrait down with it, pushing it below the fold entirely
+   at normal desktop widths. Positioning the portrait relative to the
+   hero itself, independent of text flow, removes that coupling. */
 .home-hero__content {
+  position: relative;
   min-height: 720px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  gap: var(--space-2xl);
-  align-items: center;
+  display: block;
   padding-top: 44px;
   padding-bottom: var(--space-2xl);
+}
+
+.home-hero__text {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
 }
 
 .home-hero__greeting {
@@ -68,8 +79,13 @@
   letter-spacing: -0.026em;
 }
 
+/* Tighter cap than the global h1 (5.75rem) — at a ~700px text column,
+   the global max reads as 4-5 words per line and wraps the hero
+   statement to 5-6 lines. This keeps it to 3-4 lines on most desktop
+   widths without touching h1 anywhere else on the site. */
 .home-hero h1 {
   max-width: 100%;
+  font-size: clamp(2.75rem, 4.4vw, 4.5rem);
 }
 
 .home-hero__lead {
@@ -77,18 +93,19 @@
   margin-top: 24px;
 }
 
-/* Home hero portrait — mask-image so the colour is a CSS variable
+/* Home hero portrait — pinned to the hero's own bottom-right corner, not
+   to the text column, so it holds position regardless of how many lines
+   the H1 wraps to. Mask-image keeps colour a CSS variable
    (--portrait-ink, defined in global.css) rather than baked into the
-   asset. Only the PNG's alpha channel is used. Bottom edge bleeds past
-   the hero padding; .page-hero has overflow:hidden so the bleed clips
-   cleanly at the hero boundary. */
+   asset; only the PNG's alpha channel is used. .page-hero has
+   overflow:hidden so the bottom bleed clips cleanly at the hero edge. */
 .home-hero__portrait {
-  align-self: end;
-  width: 100%;
-  max-width: 560px;
-  justify-self: end;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: calc(var(--space-2xl) * -1);
+  width: min(38%, 520px);
   aspect-ratio: 1290 / 1022;
-  margin-bottom: calc(var(--space-2xl) * -2);
   background: var(--portrait-ink);
   -webkit-mask: url(../img/home/home-portrait.png) center bottom / contain no-repeat;
           mask: url(../img/home/home-portrait.png) center bottom / contain no-repeat;
@@ -764,11 +781,13 @@
 
   .home-hero__content {
     width: min(var(--container), calc(100vw - 48px));
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
     min-height: 0;
     padding-top: 112px;
     padding-bottom: 0;
+  }
+
+  .home-hero__text {
+    max-width: 100%;
   }
 
   .home-hero h1 {
@@ -779,10 +798,13 @@
     max-width: 100%;
   }
 
+  /* Below 900px the portrait drops out of the flow-independent absolute
+     position and back into normal document flow, below the text, since
+     absolute positioning would overlap full-width stacked copy. */
   .home-hero__portrait {
-    max-width: 340px;
-    justify-self: start;
-    margin-bottom: calc(var(--space-2xl) * -1);
+    position: static;
+    width: min(340px, 60%);
+    margin: var(--space-lg) 0 0;
   }
 
   .capability-grid,
@@ -827,7 +849,7 @@
   }
 
   .home-hero__portrait {
-    max-width: 260px;
+    width: min(260px, 60%);
   }
 
   .capability-card {
