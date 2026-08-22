@@ -93,8 +93,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
+/* Evidence strip dropped from 4 items to 3 (the fourth, a single
+   project's usability-test result, didn't belong next to career-wide
+   totals like years/sqm/awards — see decision log). Now shares the
+   standard 3-column base above; only the tighter gap is kept here. */
 .evidence-strip {
-  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 /* C1 base (border, shadow, radius, transition) is in global.css.
@@ -317,7 +320,9 @@
   background: color-mix(in srgb, var(--page-accent) 6%, var(--theme-surface));
 }
 @media (max-width: 900px) {
-  .evidence-strip,
+  /* .evidence-strip is 3 items now (was 4) — it stays 3-across through
+     this breakpoint instead of dropping to 2, which would leave the
+     third card alone on its own row. */
   .about-foundation-grid,
   .about-work-grid,
   .about-capability-grid,
