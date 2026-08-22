@@ -49,24 +49,32 @@
   color: var(--hero-text-soft);
 }
 
-/* [FIXED 2026-08-21] Reworked from a two-column grid to text-in-flow +
-   absolutely-positioned portrait. The grid version paired the portrait's
-   vertical position to the text column's height via align-self:end — on
-   any viewport where the H1 wrapped past 3-4 lines, the row grew tall and
-   dragged the portrait down with it, pushing it below the fold entirely
-   at normal desktop widths. Positioning the portrait relative to the
-   hero itself, independent of text flow, removes that coupling. */
+/* [REVISED 2026-08-21, round 2] First fix used position:absolute pinned
+   to the hero's bottom-right corner — that solved the disappearing-
+   portrait bug (see below) but reads as two disconnected zones rather
+   than text-and-portrait side by side, since the portrait's vertical
+   position is decoupled from the text entirely.
+
+   This version restores a real two-column row, but the failure mode of
+   the ORIGINAL (pre-fix) attempt was specifically align-self:end —
+   pinning the portrait to the BOTTOM of the row, which grows without
+   bound as the row gets taller. align-items:center on the row instead
+   grows the offset by only half the row's height, so the portrait stays
+   on screen and visually centred against the text block regardless of
+   how many lines the H1 wraps to. Verified at 960-1512px: portrait
+   never leaves the first screen, never overlaps text. */
 .home-hero__content {
-  position: relative;
   min-height: 720px;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
   padding-top: 44px;
   padding-bottom: var(--space-2xl);
 }
 
 .home-hero__text {
-  position: relative;
-  z-index: 2;
+  flex: 1 1 480px;
+  min-width: 0;
   max-width: 700px;
 }
 
@@ -93,18 +101,15 @@
   margin-top: 24px;
 }
 
-/* Home hero portrait — pinned to the hero's own bottom-right corner, not
-   to the text column, so it holds position regardless of how many lines
-   the H1 wraps to. Mask-image keeps colour a CSS variable
-   (--portrait-ink, defined in global.css) rather than baked into the
-   asset; only the PNG's alpha channel is used. .page-hero has
-   overflow:hidden so the bottom bleed clips cleanly at the hero edge. */
+/* Home hero portrait — a normal flex sibling of the text, vertically
+   centred against it by the row's align-items:center. No bottom bleed
+   in this version; centring against text took priority over the
+   original bleed idea once the two conflicted. Mask-image keeps colour
+   a CSS variable (--portrait-ink, defined in global.css) rather than
+   baked into the asset; only the PNG's alpha channel is used. */
 .home-hero__portrait {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  bottom: calc(var(--space-2xl) * -1);
-  width: min(38%, 520px);
+  flex: 0 0 auto;
+  width: min(36%, 480px);
   aspect-ratio: 1290 / 1022;
   background: var(--portrait-ink);
   -webkit-mask: url(../img/home/home-portrait.png) center bottom / contain no-repeat;
@@ -781,6 +786,9 @@
 
   .home-hero__content {
     width: min(var(--container), calc(100vw - 48px));
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
     min-height: 0;
     padding-top: 112px;
     padding-bottom: 0;
@@ -798,13 +806,11 @@
     max-width: 100%;
   }
 
-  /* Below 900px the portrait drops out of the flow-independent absolute
-     position and back into normal document flow, below the text, since
-     absolute positioning would overlap full-width stacked copy. */
+  /* Below 900px the row becomes a column — portrait drops below the
+     text, full stacked width, since side-by-side alignment only makes
+     sense once there's room for two columns. */
   .home-hero__portrait {
-    position: static;
     width: min(340px, 60%);
-    margin: var(--space-lg) 0 0;
   }
 
   .capability-grid,
