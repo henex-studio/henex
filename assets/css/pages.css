@@ -821,7 +821,7 @@
        72px in normal flow, so this only needs to add breathing room
        below it, not clear its height again. The old 112px value left
        roughly 176px of dead space above the greeting. */
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 0;
   }
 
@@ -875,7 +875,7 @@
   .home-hero__content {
     width: calc(100vw - 48px);
     min-height: 0;
-    padding-top: 32px;
+    padding-top: 16px;
     padding-bottom: 0;
   }
 
