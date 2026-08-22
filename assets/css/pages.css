@@ -49,33 +49,54 @@
   color: var(--hero-text-soft);
 }
 
-/* [REVISED 2026-08-21, round 2] First fix used position:absolute pinned
-   to the hero's bottom-right corner — that solved the disappearing-
-   portrait bug (see below) but reads as two disconnected zones rather
-   than text-and-portrait side by side, since the portrait's vertical
-   position is decoupled from the text entirely.
+/* [REVISED 2026-08-22, round 3] Switched the hero content from flex to
+   CSS grid with named areas, because round 3 needed the portrait to sit
+   BETWEEN two text blocks (.home-hero__intro, .home-hero__text) on
+   mobile while staying beside them as one column on desktop — that
+   ordering can't be done reliably with flex-wrap, since wrap decisions
+   are driven by available space per row, not by which items should be
+   grouped. Grid areas make the two arrangements explicit and independent.
 
-   This version restores a real two-column row, but the failure mode of
-   the ORIGINAL (pre-fix) attempt was specifically align-self:end —
-   pinning the portrait to the BOTTOM of the row, which grows without
-   bound as the row gets taller. align-items:center on the row instead
-   grows the offset by only half the row's height, so the portrait stays
-   on screen and visually centred against the text block regardless of
-   how many lines the H1 wraps to. Verified at 960-1512px: portrait
-   never leaves the first screen, never overlaps text. */
+   Desktop/tablet (this rule): two columns, "text" | "portrait", intro
+   and text stacked in the left column, portrait spanning both rows on
+   the right, vertically centered by align-items:center on the grid.
+   Below 900px the areas are redefined to a single column with the
+   portrait area between intro and text — see the 900px media query.
+   Verified at 960-1512px: portrait never leaves the first screen, never
+   overlaps text; at 390/676/899px: intro, portrait, text stack in that
+   order with no overlap. */
+/* Portrait column uses minmax(0, 560px) rather than auto — the portrait
+   itself is an empty div with no intrinsic size (its visible size comes
+   from mask-image + the width below), so an auto track can't measure it
+   and collapses to 0. Sizing the track directly and letting the
+   portrait fill it (width: 100% below) avoids that. */
 .home-hero__content {
   min-height: 720px;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, min(44%, 560px));
+  grid-template-areas:
+    "intro    portrait"
+    "text     portrait";
   align-items: center;
-  gap: var(--space-2xl);
+  column-gap: var(--space-2xl);
+  row-gap: 0;
   padding-top: 44px;
   padding-bottom: var(--space-2xl);
 }
 
+.home-hero__intro {
+  grid-area: intro;
+  max-width: 620px;
+}
+
 .home-hero__text {
-  flex: 1 1 440px;
+  grid-area: text;
   min-width: 0;
   max-width: 620px;
+}
+
+.home-hero__portrait {
+  grid-area: portrait;
 }
 
 .home-hero__greeting {
@@ -101,15 +122,13 @@
   margin-top: 24px;
 }
 
-/* Home hero portrait — a normal flex sibling of the text, vertically
-   centred against it by the row's align-items:center. No bottom bleed
-   in this version; centring against text took priority over the
-   original bleed idea once the two conflicted. Mask-image keeps colour
-   a CSS variable (--portrait-ink, defined in global.css) rather than
-   baked into the asset; only the PNG's alpha channel is used. */
+/* Home hero portrait — a grid item spanning both text rows on desktop
+   (see grid-template-areas above), vertically centred against them by
+   the grid's align-items:center. Mask-image keeps colour a CSS variable
+   (--portrait-ink, defined in global.css) rather than baked into the
+   asset; only the PNG's alpha channel is used. */
 .home-hero__portrait {
-  flex: 0 0 auto;
-  width: min(44%, 560px);
+  width: 100%;
   aspect-ratio: 1290 / 1022;
   background: var(--portrait-ink);
   -webkit-mask: url(../img/home/home-portrait.png) center bottom / contain no-repeat;
@@ -784,16 +803,25 @@
     min-height: 700px;
   }
 
+  /* Below 900px the two-column grid becomes a single column, and the
+     row order is redefined so the portrait sits between .home-hero__intro
+     (greeting + kicker) and .home-hero__text (h1 + lead + buttons) —
+     a waving hand as the first thing seen, before the full statement. */
   .home-hero__content {
     width: min(var(--container), calc(100vw - 48px));
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-lg);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "portrait"
+      "text";
+    justify-items: start;
+    row-gap: var(--space-lg);
     min-height: 0;
     padding-top: 112px;
     padding-bottom: 0;
   }
 
+  .home-hero__intro,
   .home-hero__text {
     max-width: 100%;
   }
@@ -806,9 +834,6 @@
     max-width: 100%;
   }
 
-  /* Below 900px the row becomes a column — portrait drops below the
-     text, full stacked width, since side-by-side alignment only makes
-     sense once there's room for two columns. */
   .home-hero__portrait {
     width: min(340px, 60%);
   }
