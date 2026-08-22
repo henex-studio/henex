@@ -817,7 +817,11 @@
     justify-items: start;
     row-gap: var(--space-lg);
     min-height: 0;
-    padding-top: 112px;
+    /* .site-header is sticky, not fixed — it already occupies its own
+       72px in normal flow, so this only needs to add breathing room
+       below it, not clear its height again. The old 112px value left
+       roughly 176px of dead space above the greeting. */
+    padding-top: 40px;
     padding-bottom: 0;
   }
 
@@ -871,7 +875,7 @@
   .home-hero__content {
     width: calc(100vw - 48px);
     min-height: 0;
-    padding-top: 104px;
+    padding-top: 32px;
     padding-bottom: 0;
   }
 
