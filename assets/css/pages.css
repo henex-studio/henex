@@ -73,9 +73,9 @@
 }
 
 .home-hero__text {
-  flex: 1 1 480px;
+  flex: 1 1 440px;
   min-width: 0;
-  max-width: 700px;
+  max-width: 620px;
 }
 
 .home-hero__greeting {
@@ -87,10 +87,10 @@
   letter-spacing: -0.026em;
 }
 
-/* Tighter cap than the global h1 (5.75rem) — at a ~700px text column,
-   the global max reads as 4-5 words per line and wraps the hero
-   statement to 5-6 lines. This keeps it to 3-4 lines on most desktop
-   widths without touching h1 anywhere else on the site. */
+/* Tighter cap than the global h1 (5.75rem) — at a ~620px text column,
+   the global max would wrap the hero statement to too many lines. This
+   keeps it to 3-4 lines on most desktop widths without touching h1
+   anywhere else on the site. */
 .home-hero h1 {
   max-width: 100%;
   font-size: clamp(2.75rem, 4.4vw, 4.5rem);
@@ -109,7 +109,7 @@
    baked into the asset; only the PNG's alpha channel is used. */
 .home-hero__portrait {
   flex: 0 0 auto;
-  width: min(36%, 480px);
+  width: min(44%, 560px);
   aspect-ratio: 1290 / 1022;
   background: var(--portrait-ink);
   -webkit-mask: url(../img/home/home-portrait.png) center bottom / contain no-repeat;
