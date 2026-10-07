@@ -208,7 +208,7 @@ Carried forward from v1. No changes.
 | 2 | Shenzhen Reform and Opening-up Exhibition Hall | srh | Spatial system | 2020 | Culture | Professional Work | Work | Spatial Systems | shenzhen-reform-exhibition-hall | assets/img/projects/srh/ | assets/img/projects/srh/srh-home.webp | works/shenzhen-reform-exhibition-hall.html | Not on Home v1 | Level 1 |
 | 2 | Nanning Wuxu International Airport Terminal 3 | nt3 | Spatial system | 2021 | Transportation | Professional Work | Work | Spatial Systems | nanning-wuxu-t3 | assets/img/projects/nt3/ | assets/img/projects/nt3/nt3-home.webp | works/nanning-wuxu-t3.html | Not on Home v1 | Level 1 |
 | 2 | Poly Yuzhu Apartment and Commercial Street | pyz | Spatial system | 2022-now | Residence and Commercial | Professional Work | Work | Spatial Systems | poly-yuzhu | assets/img/projects/pyz/ | assets/img/projects/pyz/pyz-home.webp | works/poly-yuzhu.html | Not on Home v1 | Level 1 |
-| 2 | Henex website | hnx | Digital system | 2026 | Portfolio | Professional Work | Work | Digital Systems | henex-website | assets/img/projects/hnx/ | assets/img/projects/hnx/hnx-home.webp | works/henex-website.html | Works only for now | Level 2, process archive available |
+| 2 | Henex website | hnx | Digital system | 2026 | Portfolio | Professional Work | Work | Digital Systems | henex-website | assets/img/projects/hnx/ | assets/img/projects/hnx/hnx-home.webp | works/henex-website.html | Removed 2026-10-07 | No case study content yet. Cards deleted from Works and Chronology. Keep slug and paths for a future rebuild |
 
 
 ## Sheet: Home Scenarios
