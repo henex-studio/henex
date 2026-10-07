@@ -191,6 +191,7 @@ Carried forward from v1. No changes.
 
 | Phase | Project name | Short name | Category | Time | Type | Source | Destination | Category canonical | Slug | Asset folder | Home image path | Detail page path | Home role | Case study readiness |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2 | Fevnote | fev | Digital system | 2026 | Health, Product | Self-initiated | Work | Digital Systems | fevnote | assets/img/projects/fev/ | https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/fev-home.webp | works/fevnote.html | Not on Home v1 | Level 1 |
 | 2 | Welnest | wst | Digital system | 2025 | Real estate | Course work | Work | Digital Systems | welnest | assets/img/projects/wst/ | assets/img/projects/wst/wst-home.webp | works/welnest.html | Not on Home v1 | Level 1 |
 | 1 | New World Design System | nds | Digital system | 2025 | Design System | Course work | Work | Digital Systems | new-world-design-system | assets/img/projects/nds/ | assets/img/projects/nds/nds-home.webp | works/new-world-design-system.html | Home card, Service and Digital | Level 1-2 |
 | 1 | Who's Singing OuTūīside? | wso | Digital system | 2025 | Infographic, Data Visualization | Course work | Work | Digital Systems | whos-singing-outu-side | assets/img/projects/wso/ | assets/img/projects/wso/wso-home.webp | works/whos-singing-outu-side.html | Not on Home v1 | Level 1 |

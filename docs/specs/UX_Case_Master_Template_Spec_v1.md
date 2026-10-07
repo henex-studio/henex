@@ -86,6 +86,7 @@ Every UX case study page defines a primary and secondary theme color. All other 
 | STD | #315CF6 (blue) | #7A3CEC (purple) | |
 | RKT | #187A62 (green) | #3CBC9A (mint) | Mint is the existing --ux-accent value. |
 | WST | #FF8C00 (pure amber) | #FFB200 (pure gold) | **⚠️ MODIFIED 2026-07-12 (M-3 palette round):** previous #FB8A02/#FFB202 pair read muddy together; both purified per Cafe. |
+| FEV | #AF4941 (deep brick red from the Fevnote palette) | #F5847A (Fevnote coral, decorative only, 2.48:1 on white) | Added 2026-10-07 for Fevnote. White text on primary 5.45:1. Kickers and emphasis use ink tokens `#AF4941` and `#92372F`. |
 | WSO | #16402E (ink green) | #FF7701 (orange) | **⚠️ MODIFIED 2026-07-12 (M-4 palette round):** pair inverted per Cafe — ink-green leads, orange accents. Green adjusted from the near-black #30352E to keep a readable hue. |
 
 ### 2.3 Global Neutral Colors

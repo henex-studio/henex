@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fevnote UX case study by HENEX. A fever log for parents, designed for one hand at 3am.">
+  <title>Fevnote | HENEX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100..800&family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css">
+  <link rel="icon" href="../assets/icons/favicon-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="../assets/icons/favicon-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/ux-case-study.css">
+  <link rel="stylesheet" href="../assets/css/fev.css">
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/case-interactions.js" defer></script>
+  <script src="../assets/js/glossary.js" defer></script>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="HENEX">
+  <meta property="og:title" content="Fevnote | HENEX">
+  <meta property="og:description" content="Fevnote UX case study by HENEX.">
+  <meta property="og:image" content="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/fev-home.webp">
+  <meta property="og:url" content="https://henex.uk/works/fevnote.html">
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xf0x448n7k");
+  </script>
+</head>
+<body class="ux-case-page ux-case-page--fevnote">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header" data-site-header>
+    <div class="container site-header__inner">
+      <a class="site-brand" href="../index.html" aria-label="Cafe Yi home">HENEX</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-nav-toggle>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-site-nav>
+        <a href="../about.html">About</a>
+        <a href="../philosophy.html">Philosophy</a>
+        <a href="../works.html" aria-current="page">Works</a>
+        <a href="../lab.html">Lab</a>
+        <a class="site-nav__cta" href="mailto:cafeyee@gmail.com">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <i class="ti ti-sun theme-icon theme-icon--sun" aria-hidden="true"></i>
+          <i class="ti ti-moon theme-icon theme-icon--moon" aria-hidden="true"></i>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- 1. Hero: frosted dual-bloom (Master Spec 7.1) -->
+    <section class="ux-hero fev-hero" aria-labelledby="case-title">
+      <div class="container ux-hero__top">
+        <div class="case-tag-row case-tag-row--overlay">
+          <div class="case-tags case-tags--primary" aria-label="Project categories">
+            <span class="case-tag">UX</span>
+            <span class="case-tag">Health</span>
+            <span class="case-tag">PWA</span>
+          </div>
+          <div class="case-tags case-tags--secondary" aria-label="Project type">
+            <span class="case-tag">Individual work</span>
+          </div>
+        </div>
+      </div>
+      <div class="container ux-hero__inner">
+        <div class="ux-hero__copy">
+          <h1 id="case-title">Fevnote</h1>
+          <p>A fever log for parents that records a reading in seconds, keeps every moment of care on one timestamp, and turns a sleepless night into one clear summary for the doctor.</p>
+          <div class="ux-actions">
+            <a class="button button--primary" href="https://fevnote.henex.uk" target="_blank" rel="noopener noreferrer">Visit Fevnote</a>
+            <a class="button button--soft" href="#process">Explore the process</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Overview -->
+    <section class="ux-section ux-tier-s" aria-labelledby="overview-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p class="ux-kicker ux-kicker--chapter">Overview</p>
+          <h2 id="overview-title">A fever record built for the middle of the night.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p>Fevnote helps parents record temperature, medicine and how a child is doing during a fever, then review the whole illness as one timeline and one chart. It is built for night use and makes no medical judgement.</p>
+          <p>I designed and built it alone, from the first sketch to a live, invite-only release, working with Claude as an AI pair developer. The story here is mostly about the interface: what it takes to log a fever with one hand, in the dark, inside strict medical boundaries.</p>
+          <div class="ux-meta" aria-label="Project facts">
+            <div><span>Client</span><strong>Self-initiated product</strong></div>
+            <div><span>Role</span><strong>Independent designer and developer</strong></div>
+            <div><span>Team</span><strong>Solo</strong></div>
+            <div><span>Timeline</span><strong>August 2026, about three weeks</strong></div>
+            <div><span>Tools</span><strong>Claude, React, Vite, Supabase, Vercel, Chart.js</strong></div>
+            <div class="ux-lens">
+              <span>HENEX Lens</span>
+              <a href="../philosophy.html#r12">R12 · Calm Clarity Tuning</a>
+              <small>Perception × Affect × Interface</small>
+            </div>
+          </div>
+          <div class="ux-skills">
+            <span>Skills</span>
+            <div>
+              <em>Product strategy</em>
+              <em>Interaction design</em>
+              <em>Information design</em>
+              <em>Design systems</em>
+              <em>Accessibility</em>
+              <em>Privacy by design</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Background -->
+    <section class="ux-section ux-tier-p" id="background" aria-labelledby="background-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Background</p>
+          <h2 id="background-title">A child's fever is tracked in notes, messages and memory.</h2>
+          <p>When a child has a fever, parents keep track of readings and doses wherever they can: a notes app, a message thread, or just memory. At night this means typing in the dark, information split between two parents, doubt about when the last dose was given, and a hard conversation with the doctor the next day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Problem -->
+    <section class="ux-section ux-tier-l ux-problem" id="problem" aria-labelledby="problem-title">
+      <div class="container">
+        <div class="fev-problem-head">
+          <p class="ux-kicker ux-kicker--chapter">Problem</p>
+          <h2 id="problem-title">Four things get in the way when a parent is tired and worried.</h2>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four fev-problem-grid">
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-keyboard"></i></span>
+            <h3>Typing at night</h3>
+            <p>Recording a reading takes too much typing for a parent holding a child with one hand.</p>
+          </article>
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-puzzle"></i></span>
+            <h3>Fragmented records</h3>
+            <p>Readings, doses and notes end up in different places, or go unrecorded.</p>
+          </article>
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-clock-question"></i></span>
+            <h3>Lost track of the last dose</h3>
+            <p>Parents lose track of when each medicine was last given, and by whom.</p>
+          </article>
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-stethoscope"></i></span>
+            <h3>Hard to explain to a doctor</h3>
+            <p>The course of the illness is difficult to describe clearly in a short appointment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4b. How Might We interlude -->
+    <section class="ux-section ux-tier-d ux-hmw-section" aria-labelledby="hmw-title">
+      <div class="container">
+        <h2 class="ux-hmw-statement" id="hmw-title"><strong>How might we</strong> let a tired parent record a fever <strong>in seconds, one-handed, in the dark</strong>, and still hand the doctor <strong>one clear story</strong> of the illness?</h2>
+      </div>
+    </section>
+
+    <!-- 5. Solution -->
+    <section class="ux-section ux-tier-s" id="solution" aria-labelledby="solution-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker ux-kicker--chapter">Solution</p>
+          <h2 id="solution-title">One moment, one record, and no advice.</h2>
+          <p>Three decisions shape every screen in Fevnote.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--three fev-problem-grid">
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-clock-check"></i></span>
+            <h3>One moment, one record</h3>
+            <p>Temperature, medicine, condition and a note are saved together under a single time, so a dose and the reading around it always stay linked.</p>
+          </article>
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-hand-finger"></i></span>
+            <h3>No keyboard for the common case</h3>
+            <p>Scroll wheels set the temperature and the dose. The keyboard only opens for an optional note.</p>
+          </article>
+          <article class="ux-card">
+            <span class="fev-icon" aria-hidden="true"><i class="ti ti-info-circle"></i></span>
+            <h3>Facts, not advice</h3>
+            <p>The app shows what was recorded and how long ago. It never says whether to give medicine or whether a reading is dangerous.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Outcome: product result only -->
+    <section class="ux-section ux-tier-d" id="outcome" aria-labelledby="outcome-title">
+      <div class="container ux-video-grid">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">Outcome</p>
+          <h2 id="outcome-title">Live, and ready for the next fever.</h2>
+          <p>Fevnote is live as an installable web app, currently at version 0.9 and in invite-only testing. All screens on this page use sample data for a fictional child.</p>
+          <ul class="fev-fact-list">
+            <li>One-tap recording moments with temperature, medicine and condition on one timestamp.</li>
+            <li>A timeline and chart of the whole illness, in light and dark themes.</li>
+            <li>Doctor View, a read-only summary that can be printed or saved as a PDF.</li>
+            <li>Several children per account, for families with more than one.</li>
+          </ul>
+          <div class="fev-outcome-actions">
+            <a class="button button--primary" href="https://fevnote.henex.uk" target="_blank" rel="noopener noreferrer">Visit Fevnote</a>
+          </div>
+        </div>
+        <img class="ux-video"
+          src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/outcome.webp"
+          alt="Fevnote home screen in light and dark themes, next to the Doctor View summary."
+          loading="lazy">
+      </div>
+    </section>
+
+    <!-- 7. In Use (Feedback slot) -->
+    <section class="ux-section ux-tier-l" id="in-use" aria-labelledby="inuse-title">
+      <div class="container fev-inuse">
+        <div>
+          <p class="ux-kicker ux-kicker--chapter">In Use</p>
+          <h2 id="inuse-title">Tested where it matters.</h2>
+          <p>I used Fevnote through my own child's fever. At the GP visit I opened Doctor View, and the doctor could follow the whole course of the illness from that one summary. That was the scenario the product was designed for, and it was the success measure I set in the specification.</p>
+          <p>It is one family's experience, not a study. The screen on the right uses sample data.</p>
+        </div>
+        <figure>
+          <img
+            src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/after-doctor.webp"
+            alt="Doctor View showing the child details, a fever record summary and the full timeline."
+            loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <!-- 8. Process: chapter 2 gateway -->
+    <section class="ux-section ux-tier-d" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Process</p>
+          <h2 id="process-title">From a lived problem to a live product.</h2>
+          <p>Constraints were set before any screen was drawn, and every build was tried on a real phone within hours.</p>
+        </div>
+        <div class="ux-card-grid ux-card-grid--four">
+          <a class="ux-card ux-nav-card" href="#research">
+            <h3>Research <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Constraints, medical boundaries and a smaller first scope.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#design">
+            <h3>Design <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Five decisions, from one record to a calm visual system.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#validation">
+            <h3>Validation <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Same-day device testing, a real fever and a GP visit.</p>
+          </a>
+          <a class="ux-card ux-nav-card" href="#delivery">
+            <h3>Delivery <i class="ti ti-arrow-down" aria-hidden="true"></i></h3>
+            <p>Doctor View, an invite-only product and an installable app.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. Research: framed as problem framing, no interviews took place -->
+    <section class="ux-section ux-tier-s" id="research" aria-labelledby="research-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Research</p>
+          <h2 id="research-title">Constraints first, so the first build was small enough to test.</h2>
+          <p>I did not run interviews. The research was problem framing: writing down the conditions the app had to survive, the lines it must never cross, and what could wait.</p>
+        </div>
+        <div class="fev-research-grid">
+          <article class="fev-card">
+            <span class="fev-number">01</span>
+            <h3>The lived problem</h3>
+            <p>Night use, one free hand, two parents on two phones, and a doctor at the end of the illness who needs a clear account.</p>
+          </article>
+          <article class="fev-card">
+            <span class="fev-number">02</span>
+            <h3>Medical boundaries before any screen</h3>
+            <p>No dose advice and no labels such as safe or dangerous. Elapsed time is shown as a plain fact, with no colour or threshold attached to it.</p>
+          </article>
+          <article class="fev-card">
+            <span class="fev-number">03</span>
+            <h3>Specification v1 to v2</h3>
+            <p>Scope was cut before the build began.</p>
+            <ul class="fev-cut-list">
+              <li>No undo</li>
+              <li>No realtime sync between phones</li>
+              <li>One temperature wheel instead of two</li>
+              <li>Doctor View printed through the browser, not a PDF library</li>
+            </ul>
+          </article>
+        </div>
+        <div class="ux-influence">
+          <strong>Influence</strong>
+          <p>Writing the constraints first meant the first build was small enough to try on a phone the same day.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. Design: five decisions, the first visible and the rest behind Read more -->
+    <section class="ux-section ux-tier-l" id="design" aria-labelledby="design-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Design</p>
+          <h2 id="design-title">Five decisions made the app usable with one hand.</h2>
+          <p>Each one came from using the app on a real phone, not from the specification alone. There was no Figma stage. The interface was designed directly in code and judged on device.</p>
+        </div>
+
+        <!-- Decision 1: lead story -->
+        <div class="ux-section-head ux-subsection">
+          <div class="ux-section-head__title">
+            <p class="ux-kicker">Decision 1</p>
+            <h3>Three buttons became one record.</h3>
+          </div>
+          <p>The first version had separate actions for temperature, medicine and note, each stamped with its own time. In real use a parent measures, fetches medicine, gives it and writes a note over several minutes. One moment of care became three timestamps, and the record could not answer the key question: what was the temperature when the medicine was given.</p>
+        </div>
+        <div class="fev-compare">
+          <figure>
+            <span class="fev-tag">Before</span>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/before-current.webp" alt="Early Fevnote home screen with three separate record buttons." loading="lazy">
+            <figcaption>Three separate actions on the home screen.</figcaption>
+          </figure>
+          <figure>
+            <span class="fev-tag">Before</span>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/before-med-sheet.webp" alt="Early separate medicine sheet with its own time field." loading="lazy">
+            <figcaption>Each sheet carried its own time.</figcaption>
+          </figure>
+          <figure>
+            <span class="fev-tag">After</span>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/after-record-form.webp" alt="Unified Add Record form with one recorded-at time, temperature and medicine." loading="lazy">
+            <figcaption>One form, one "Recorded at" time.</figcaption>
+          </figure>
+        </div>
+        <div class="fev-block-body fev-block-body--text">
+          <div>
+            <p>A first fix used collapsible sections, which I rejected because every reveal step costs time at night. The form was flattened so time, temperature and medicine are usable straight away. Temperature then became required, because a reading is always taken.</p>
+          </div>
+        </div>
+
+        <div class="fev-more" id="fev-design-more" hidden>
+
+          <!-- Decision 2 -->
+          <div class="fev-block">
+            <div class="ux-section-head ux-subsection">
+              <div class="ux-section-head__title">
+                <p class="ux-kicker">Decision 2</p>
+                <h3>A list that shows cause and effect.</h3>
+              </div>
+            </div>
+            <div class="fev-block-body">
+              <div>
+                <p>The recent readings list went through three shapes. It began as temperature only, then showed medicine as separate rows, and finally became one row per moment with time, temperature and medicine together. The separate-row version was rejected because it hid the link between a dose and the reading that followed.</p>
+                <p>Recent readings and the full timeline were then merged into one component with a Show more toggle, so there is a single list to learn.</p>
+              </div>
+              <figure class="fev-shot">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/after-current.webp" alt="Fevnote home screen with latest and highest readings and grouped timeline rows." loading="lazy">
+                <figcaption>One row per moment of care.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Decision 3 -->
+          <div class="fev-block">
+            <div class="ux-section-head ux-subsection">
+              <div class="ux-section-head__title">
+                <p class="ux-kicker">Decision 3</p>
+                <h3>A chart that informs without alarming.</h3>
+              </div>
+            </div>
+            <div class="fev-block-body">
+              <div>
+                <p>A shaded band marks the typical range of 36.1 to 37.2°C, taken from Mayo Clinic and checked against the original page. It uses a neutral tint, not traffic-light colours, so the chart shows where a reading sits without telling a parent how to feel about it.</p>
+                <p>The vertical axis keeps a minimum span, so a small change is never drawn as a dramatic curve. Only the highest, lowest and latest readings are labelled, after labelling every point made the chart feel cluttered.</p>
+              </div>
+              <figure class="fev-shot">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/chart-detail.webp" alt="Detail of the Fevnote chart showing a rising and falling temperature curve with labelled peak." loading="lazy">
+                <figcaption>Chart detail with sample data. Only key readings are labelled.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Decision 4 -->
+          <div class="fev-block">
+            <div class="ux-section-head ux-subsection">
+              <div class="ux-section-head__title">
+                <p class="ux-kicker">Decision 4</p>
+                <h3>One-handed input without the keyboard.</h3>
+              </div>
+            </div>
+            <div class="fev-block-body fev-block-body--text">
+              <div>
+                <p>Temperature and dose use scroll wheels built on native scroll snapping, so a thumb flick lands on a value. Testing on a real phone showed the wheel was capturing the page scroll, which made the whole screen feel stuck. The touch area was narrowed to the centre column, which left the sides free for normal scrolling.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decision 5 -->
+          <div class="fev-block">
+            <div class="ux-section-head ux-subsection">
+              <div class="ux-section-head__title">
+                <p class="ux-kicker">Decision 5</p>
+                <h3>A calm visual system.</h3>
+              </div>
+            </div>
+            <div class="fev-block-body">
+              <div>
+                <p>The coral palette comes from the app icon and follows the brief: warm, soft, comfortable, relaxed. An early orange button passed the contrast ratio on paper but read poorly, because the text and the background shared one hue. It moved to black text on coral.</p>
+                <p>Header controls were regrouped after mis-taps. A five-tier rule now decides whether a control is a button or a text link.</p>
+                <div class="fev-swatch-row" aria-label="Fevnote product colours">
+                  <div class="fev-swatch fev-swatch--primary"><b>Brick</b><span>#AF4941</span></div>
+                  <div class="fev-swatch fev-swatch--secondary"><b>Coral</b><span>#F5847A</span></div>
+                  <div class="fev-swatch fev-swatch--ink"><b>Ink</b><span>#202124</span></div>
+                </div>
+              </div>
+              <figure class="fev-shot">
+                <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/after-current-dark.webp" alt="Fevnote home screen in dark theme." loading="lazy">
+                <figcaption>The dark theme keeps the same hierarchy for night use.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div class="fev-expand">
+          <button type="button" class="button button--soft" id="fev-design-btn" data-expand-trigger aria-expanded="false" aria-controls="fev-design-more" data-label-more="Read decisions 2 to 5" data-label-less="Show fewer">Read decisions 2 to 5</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. Validation: live verification, no formal usability study -->
+    <section class="ux-section ux-tier-s" id="validation" aria-labelledby="validation-title">
+      <div class="container">
+        <div class="ux-chapter-head">
+          <p class="ux-kicker">Validation</p>
+          <h2 id="validation-title">Verified in a real illness, with the limits stated.</h2>
+          <p>There was no formal usability study. Validation came from four kinds of live verification.</p>
+        </div>
+        <div class="fev-verify-grid">
+          <article class="fev-card">
+            <span class="fev-number">01</span>
+            <h3>Same-day device testing</h3>
+            <p>Each build was tried on a phone within hours. The findings drove the redesigns above: the unified record, the list shape, header mis-taps, wheel scroll capture and contrast.</p>
+          </article>
+          <article class="fev-card">
+            <span class="fev-number">02</span>
+            <h3>A real fever</h3>
+            <p>I used Fevnote through my own child's illness, at night, with one hand.</p>
+          </article>
+          <article class="fev-card">
+            <span class="fev-number">03</span>
+            <h3>The doctor test</h3>
+            <p>The GP followed the illness from Doctor View, which is the scenario the whole product was designed for.</p>
+          </article>
+          <article class="fev-card">
+            <span class="fev-number">04</span>
+            <h3>Security verified, not assumed</h3>
+            <p>Database access rules were tested inside the database. The owner sees their own rows and anonymous visitors see none. A first check was found to prove nothing, so it was redone.</p>
+          </article>
+        </div>
+        <p class="fev-limit">No formal usability study has been run yet. Testing with other parents is the next step.</p>
+      </div>
+    </section>
+
+    <!-- 12. Delivery -->
+    <section class="ux-section ux-tier-d" id="delivery" aria-labelledby="delivery-title">
+      <div class="container">
+        <div class="ux-wide-head">
+          <p class="ux-kicker">Delivery</p>
+          <h2 id="delivery-title">From a family tool to an invite-only product.</h2>
+          <p>The same app serves a parent at night and a doctor in the morning.</p>
+        </div>
+      </div>
+      <div class="container fev-delivery-stack">
+        <article>
+          <div>
+            <p class="ux-kicker">Doctor View</p>
+            <h3>One summary of the whole illness.</h3>
+            <p>Doctor View is a read-only page with the child's details, a summary of the record, the chart and the full timeline. It prints or saves as a PDF through the browser, with a plain note that it is a record of information and not medical advice.</p>
+          </div>
+          <figure>
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/after-doctor.webp" alt="Doctor View with a read-only summary, print button and timeline." loading="lazy">
+          </figure>
+        </article>
+        <article class="fev-delivery--text">
+          <div>
+            <p class="ux-kicker">Product features</p>
+            <h3>Ready for other families.</h3>
+            <p>Registration uses invite codes. One account can hold several children. The privacy policy is recorded with consent at sign-up, data can be exported, and an account can be deleted. A read-only admin panel exists, and it cannot see any child's name or recorded values.</p>
+          </div>
+        </article>
+        <article class="fev-delivery--text">
+          <div>
+            <p class="ux-kicker">Installable app</p>
+            <h3>On the home screen, in the dark or the light.</h3>
+            <p>Fevnote installs from the browser on iPhone and Android and has light and dark themes. A short onboarding guide, built from the real screens, explains how it works before sign-up. Every decision and every change to the specification is written in a build log with its reason, which doubles as the handover document.</p>
+          </div>
+        </article>
+        <div class="fev-live-card">
+          <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/fev/icon.webp" alt="Fevnote app icon." loading="lazy">
+          <div>
+            <h3>fevnote.henex.uk</h3>
+            <p>Registration is invite-only. You can still open the login page and read the "How Fevnote works" guide.</p>
+          </div>
+          <a class="button button--primary" href="https://fevnote.henex.uk" target="_blank" rel="noopener noreferrer">Visit Fevnote</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. Reflection -->
+    <section class="ux-retro ux-tier-p" aria-labelledby="retro-title">
+      <div class="container">
+        <p class="ux-kicker ux-kicker--chapter">Reflection</p>
+        <h2 id="retro-title">Looking back, looking forward.</h2>
+        <div class="ux-card-grid ux-card-grid--three ux-retro__grid">
+          <article class="ux-card">
+            <h3>Value</h3>
+            <p>A small product, scoped hard, that did its job in a real illness and at a real GP visit.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Learned</h3>
+            <p>Testing in real conditions changed the core interaction within hours, which no amount of specification writing had predicted. A colour pair can also pass a contrast ratio and still be hard to read when both colours share one hue, so I now check contrast by eye as well as by number.</p>
+          </article>
+          <article class="ux-card">
+            <h3>Next</h3>
+            <p>Testing with other parents beyond my own family, a re-consent flow for when the privacy policy changes, offline saving, and photo-to-record scanning, which was deferred.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. HENEX Method Recipe: R12 primary -->
+    <section class="ux-section ux-tier-l" aria-labelledby="recipe-title">
+      <div class="container ux-two-col">
+        <aside class="ux-intro">
+          <p>HENEX Method Recipe</p>
+          <h2 id="recipe-title">R12 explains how Fevnote stays calm for a tired parent.</h2>
+        </aside>
+        <div class="ux-copy">
+          <p class="ux-recipe-primary">
+            <span>Primary recipe</span>
+            <a href="../philosophy.html#r12">R12 · Calm Clarity Tuning</a>
+          </p>
+          <div class="ux-recipe-tags">
+            <span>Perception</span>
+            <span>Affect</span>
+            <span>Interface</span>
+          </div>
+          <p>A parent logging a fever is worried and short of sleep, so the interface has to lower the load rather than add to it. R12 covers the three places this shows: the soft palette taken from the app icon, a chart that shows a reading without alarming anyone, and screens that keep one clear next action.</p>
+          <p class="ux-recipe-primary ux-secondary-recipe">
+            <span>Secondary recipe</span>
+          </p>
+          <div class="ux-recipe-popovers">
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R21 · Small Step Actions"
+              data-recipe-body="Break complex action into manageable interface steps."
+              data-recipe-link="../philosophy.html#r21">R21</button>
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R13 · Multiple Viewpoint Story"
+              data-recipe-body="Reframe information through multiple viewpoints to reveal gaps and reduce bias in decisions."
+              data-recipe-link="../philosophy.html#r13">R13</button>
+            <button type="button" class="ux-recipe-trigger"
+              data-recipe-title="R24 · Trust &amp; Cooperation Rules"
+              data-recipe-body="Build trust mechanisms and collaboration norms for safe, reliable exchange and participation."
+              data-recipe-link="../philosophy.html#r24">R24</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. Related Projects -->
+    <section class="ux-section ux-related" aria-labelledby="related-title">
+      <div class="container">
+        <p class="ux-kicker">Related Projects</p>
+        <h2 id="related-title">More work across digital and service systems.</h2>
+        <div class="ux-related__grid">
+          <a class="ux-related-card" href="studier.html">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/std/std-home.webp" alt="Studier dashboard project preview." loading="lazy">
+            <span>Digital Systems</span>
+            <strong>Studier</strong>
+            <small>A product design case built around a dashboard.</small>
+          </a>
+          <a class="ux-related-card" href="accessibility-support-hub.html">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/ash/ash-home.webp" alt="Accessibility Support Hub project preview." loading="lazy">
+            <span>Service Systems</span>
+            <strong>Accessibility Support Hub</strong>
+            <small>A support pathway case focused on clearer access to court assistance.</small>
+          </a>
+          <a class="ux-related-card" href="victim-hub.html">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/vth/vth-home.webp" alt="Victims Hub project preview." loading="lazy">
+            <span>Service Systems</span>
+            <strong>Victims Hub</strong>
+            <small>A public sector service improvement case.</small>
+          </a>
+          <a class="ux-related-card" href="welnest.html">
+            <img src="https://pub-1cd8987f6bec4bed9e8f92d877e3e854.r2.dev/projects/wst/wst-home.webp" alt="Welnest project preview." loading="lazy">
+            <span>Digital Systems</span>
+            <strong>Welnest</strong>
+            <small>A property search concept built around trust for newcomers.</small>
+          </a>
+        </div>
+        <div class="ux-related__actions">
+          <a class="button button--soft" href="../works.html">Back to Works</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-intro">
+        <h2>Cafe Yi</h2>
+        <p>Creating evidence-informed design work across public services, digital products and built environments.</p>
+        <a class="button button--footer" href="mailto:cafeyee@gmail.com">Contact</a>
+      </div>
+      <div class="footer-column">
+        <h3>Social</h3>
+        <a href="https://www.linkedin.com/in/cafeyi">LinkedIn</a>
+        <a href="https://www.instagram.com/cafe.yi_photo/">Instagram</a>
+      </div>
+      <div class="footer-column">
+        <h3>Explore</h3>
+        <a href="../about.html">About</a>
+        <a href="../philosophy.html">Philosophy</a>
+        <a href="../works.html">Works</a>
+        <a href="../lab.html">Lab</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      Copyright &copy; 2026 Cafe Yi. All rights reserved.
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" data-back-to-top aria-label="Back to top">
+    <i class="ti ti-chevron-up" aria-hidden="true"></i>
+  </button>
+
+  <div class="ux-popover" data-recipe-popover role="dialog" aria-modal="false" aria-live="polite"></div>
+
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
